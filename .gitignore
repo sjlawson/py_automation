@@ -1,0 +1,4 @@
+.env
+py36/
+*.pyc
+*results.txt

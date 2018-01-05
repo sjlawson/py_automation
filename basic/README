@@ -1,0 +1,15 @@
+# make sure you have python >= 3.5 and pip
+
+# create a virtual env with:
+virtualenv -p python3.6 py36
+
+# Actuvate your env:
+source py36/bin/activate
+
+# install requirements
+pip install -r requirements.txt
+
+# run the test!
+python test_h1-title-canonical.py > test_output.txt
+
+# check page-by-page results results in test_output.txt

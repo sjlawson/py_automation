@@ -1,0 +1,35 @@
+# make sure you have python >= 3.5 and pip
+# probably will have to install the Selenium chromedriver: brew install chromedriver
+# also: brew install geckodriver
+
+# create a virtual env with:
+virtualenv -p python3.6 py36
+
+# Actuvate your env:
+source py36/bin/activate
+
+# install requirements
+pip install -r requirements.txt
+
+# create .env and put the following contents in the .env file:
+VISITOR_SITE_URL=http://angiesmr2stg.prod.acquia-sites.com
+BROWSER_CLIENTS=Chrome,Firefox 
+
+# run the test!
+python manage.py test
+
+# OPTIONAL: run and direct stdout to text file
+python manage.py test > test_output.txt
+
+# check page-by-page results in test_output.txt
+
+# Dev options
+# open interactive python shell with .env os.environ values:
+
+python manage.py shell
+
+##
+# ToDo: abstract-ify common selenium checks (element exists, does not exist, etc...) 
+# research different multi-browser test implementations
+# 
+#
