@@ -1,6 +1,7 @@
 from app import create_app
-from flask_script import Manager, Shell
+from flask_script import Manager, Shell, Command
 import os, unittest, time
+
 
 if os.path.exists('.env'):
     print('Importing environment from .env...')
@@ -22,7 +23,7 @@ def make_shell_context():
 manager.add_command("shell", Shell(make_context=make_shell_context))
 
 @manager.command
-def testall():
+def testall(*args):
     print("Starting Python Flask Selenium Test Framework")
     print("Visitor site: ", os.environ['VISITOR_SITE_URL'])
     tests = unittest.TestLoader().discover('tests')
@@ -30,7 +31,7 @@ def testall():
 
     
 @manager.command
-def test_h1TitleCanonical():
+def test_h1TitleCanonical(*args):
     print("Starting Python Flask Selenium Test Framework")
     print("Visitor site: ", os.environ['VISITOR_SITE_URL'])
     tests = unittest.TestLoader().discover('tests', pattern='test_h1TitleCanonical.py')
@@ -38,22 +39,25 @@ def test_h1TitleCanonical():
 
     
 @manager.command
-def test_redirects():
+def test_redirects(*args):
     print("Starting Python Flask Selenium Test Framework")
     print("Visitor site: ", os.environ['VISITOR_SITE_URL'])
     tests = unittest.TestLoader().discover('tests', pattern='test_Redirects.py')
     unittest.TextTestRunner(verbosity=2).run(tests)
 
-# @manager.command
-# def sandbox():
-#     import argparse
-#     parser = argparse.ArgumentParser()
-#     parser.add_argument("command", nargs='+', help="command missing", type=str)
-#     parser.add_argument("test", nargs='+', help="[test identifier]", type=str)
-#     args = parser.parse_args()
-#     print(args.command)
-#     if args.test:
-#         print("Test to run %s", args.test_to_run)
-    
+@manager.command
+def runtest(*args):
+    import sys
+    if len(args[0]):
+        print("Starting Python Flask Selenium Test Framework")
+        print("Visitor site: ", os.environ['VISITOR_SITE_URL'])
+        print("Running test, %s" % args[0][0])
+        tests = unittest.TestLoader().discover('tests', pattern='test_' + args[0][0]  + '.py')
+        unittest.TextTestRunner(verbosity=2).run(tests)
+
+    else:
+        print("No test selected")
+        
 if __name__ == '__main__':
+    Command.capture_all_args = True
     manager.run()
