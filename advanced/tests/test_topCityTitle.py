@@ -74,7 +74,7 @@ class TopCityH1TestCase(SeleniumTestCase):
                          '/companylist/el-paso',
                          '/companylist/harrisburg',
                          '/companylist/new-orleans']
-            varnish_buster = "?adf54"
+            varnish_buster = "?adf54634y67e5u"
             errors = ""
             success_count = 0
             error_count = 0

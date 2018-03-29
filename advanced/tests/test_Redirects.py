@@ -19,7 +19,7 @@ class RedirectsTestCase(SeleniumTestCase):
             try:
                 self.assertEqual(self.visitor_site_url + test_url[1].strip(), endurl.strip())
             except:
-                print(test_url[0] + " expected redirect to: " + test_url[1] + " -- but got: " + endurl)
+                print(test_url[0] + " expected redirect to: " + self.visitor_site_url + test_url[1].strip() + " -- but got: " + endurl)
 
 
             
