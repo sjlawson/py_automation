@@ -6,7 +6,8 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 
-
+# NOTE: Must select Chrome for this test.
+# currently only Chrome can test for console errors
 class JoinBtnSegmentTestCase(SeleniumTestCase):
     
     def test_homePageJSError(self):

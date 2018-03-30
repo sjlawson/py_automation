@@ -1,6 +1,9 @@
-# make sure you have python >= 3.5 and pip
+# make sure you have python >= 3.6 and pip,
+# and can create virtual environment containers either with virtualenv or pythonx.x -m venv container_name
+#
 # probably will have to install the Selenium chromedriver: brew install chromedriver
 # also: brew install geckodriver
+
 
 # create a virtual env with:
 virtualenv -p python3.6 py36
@@ -11,12 +14,20 @@ source py36/bin/activate
 # install requirements
 pip install -r requirements.txt
 
-# create .env and put the following contents in the .env file:
+# modify the .env file to point to the environment you want to test and select which browser to use
+# e.g.: setting TEST_BROWSER to 1 would select Firefox
+#
+# currently only Chrome and Firefox are supported, and only Chrome can currently test for console errors
+
+# .env ->
 VISITOR_SITE_URL=http://angiesmr2stg.prod.acquia-sites.com
-BROWSER_CLIENTS=Chrome,Firefox 
+BROWSER_CLIENTS=Chrome,Firefox
+TEST_BROWSER=0
 
 # run the test!
-python manage.py test
+# 
+# this will run the tests in tests/test_h1TitleCanonical.py ->
+python manage.py runtest h1TitleCanonical
 
 # OPTIONAL: run and direct stdout to text file
 python manage.py test > test_output.txt
@@ -32,4 +43,6 @@ python manage.py shell
 # ToDo: abstract-ify common selenium checks (element exists, does not exist, etc...) 
 # research different multi-browser test implementations
 # 
+# Setup proxy configuration to be able to check async network calls
 #
+# Find out what modifications would be needed to run these with Jenkins

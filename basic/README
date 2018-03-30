@@ -1,4 +1,8 @@
-# make sure you have python >= 3.5 and pip
+#
+# This directory is for basic, stand-alone tests.
+#
+# make sure you have python >= 3.6 and pip,
+# and can create virtual environment containers either with virtualenv or pythonx.x -m venv container_name
 
 # create a virtual env with:
 virtualenv -p python3.6 py36
@@ -12,4 +16,4 @@ pip install -r requirements.txt
 # run the test!
 python test_h1-title-canonical.py > test_output.txt
 
-# check page-by-page results results in test_output.txt
+# check page-by-page results results in test_output.txt, or leave it out to see the output in the terminal
