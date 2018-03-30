@@ -1,0 +1,4 @@
+Two ways you can go from here:
+
+1. ./basic -> single, stand-alone tests. Probably best used for seeing an example of a quick and dirty test
+2. ./advanced -> cli test suite (cli tools built with Flask). SeleniumTests.py is essentially an abstract class for setting up all tests while the test_SomeTestName.py files contain actual test-case code. 
