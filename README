@@ -1,3 +1,14 @@
+First - you need python >= 3.6.
+On Mac, best way is with brew:
+
+$ brew install python3
+
+Then after:
+$ python3 --version
+Python 3.6.4
+
+Don't run the tests with the globally installed python, though. Create virtualenv container by following instructions in the README files under basic or advanced
+
 Two ways you can go from here:
 
 1. ./basic -> single, stand-alone tests. Probably best used for seeing an example of a quick and dirty test
