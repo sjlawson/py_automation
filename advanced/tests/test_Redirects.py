@@ -10,6 +10,7 @@ class RedirectsTestCase(SeleniumTestCase):
     
     def test_redirects(self):
         test_urls = get_redirect_tuples('sd-2988')
+        #test_urls = get_redirect_tuples('SD-2978')
 
         wait = WebDriverWait(self.client, 2)
         for test_url in test_urls:
@@ -18,6 +19,8 @@ class RedirectsTestCase(SeleniumTestCase):
             endurl = self.client.current_url
             try:
                 self.assertEqual(self.visitor_site_url + test_url[1].strip(), endurl.strip())
+                # Use this for non-domain-tests
+                # self.assertEqual(test_url[1].strip(), endurl.strip())
             except:
                 print(test_url[0] + " expected redirect to: " + self.visitor_site_url + test_url[1].strip() + " -- but got: " + endurl)
 
@@ -497,6 +500,11 @@ def get_redirect_tuples(idx):
             ('window-treatments/', '/companylist/window-treatments.htm'),
             ('woodworking/', '/companylist/woodworking.htm'),
             ('wrought-iron/', '/companylist/wrought-iron.htm'),
+        ]
+        
+    tups['SD-2978'] = [
+            ('terms-of-use.htm', 'https://vault.pactsafe.io/s/a84ad12b-7245-4a12-9fc5-2011a3bf4d62/legal.html#contract-skmav5s0l'),
+            ('privacypolicy.htm', 'https://vault.pactsafe.io/s/a84ad12b-7245-4a12-9fc5-2011a3bf4d62/legal.html#contract-h1zrnbhtx'),
         ]
     
     tups['old'] = [
