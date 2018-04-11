@@ -4,12 +4,25 @@
 # probably will have to install the Selenium chromedriver: brew install chromedriver
 # also: brew install geckodriver
 
+## For First Time installation:
+First - you need python >= 3.6.
+Must use Bash or zsh (or some variant of sh -- fish doesn't seem to be compatible)
+On Mac, best way is with brew:
 
-# create a virtual env with:
-virtualenv -p python3.6 py36
+$ brew install python3
 
-# Actuvate your env:
-source py36/bin/activate
+Then after:
+$ python3 --version
+Python 3.6.4
+
+Then install the virtual environment module:
+$ brew install ---pyenv-virtualenv
+
+Create the virtual env:
+$ python3 -m venv py36
+
+Next, activate the virtual env
+$ source py36/bin/activate
 
 # install requirements
 pip install -r requirements.txt
@@ -24,13 +37,24 @@ VISITOR_SITE_URL=http://angiesmr2stg.prod.acquia-sites.com
 BROWSER_CLIENTS=Chrome,Firefox
 TEST_BROWSER=0
 
+# That's all the setup requirements
+## After py36 environment has been setup, all you need to do after that is:
+$ source py36/bin/activate
+
 # run the test!
-# 
+#
 # this will run the tests in tests/test_h1TitleCanonical.py ->
 python manage.py runtest h1TitleCanonical
 
+^^^ tells python to run manage.py which hass all the testing commands. runtest tells it you want to run one test, 
+h1TitleCanonical is the name portion of the test you want.
+
+
 # OPTIONAL: run and direct stdout to text file
-python manage.py test > test_output.txt
+python manage.py runtest someTest > test_output.txt
+
+# OPTIONAL: run all tests:
+python manage.py testall
 
 # check page-by-page results in test_output.txt
 
