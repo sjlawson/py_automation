@@ -39,12 +39,12 @@ TEST_BROWSER=0
 
 # That's all the setup requirements
 ## After py36 environment has been setup, all you need to do after that is:
-$ source py36/bin/activate
+$ source activate
 
 # run the test!
 #
 # this will run the tests in tests/test_h1TitleCanonical.py ->
-python manage.py runtest h1TitleCanonical
+manage.py runtest h1TitleCanonical
 
 ^^^ tells python to run manage.py which hass all the testing commands. runtest tells it you want to run one test, 
 h1TitleCanonical is the name portion of the test you want.

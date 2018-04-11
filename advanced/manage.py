@@ -1,3 +1,4 @@
+#!./py36/bin/python
 from app import create_app
 from flask_script import Manager, Shell, Command
 import os, unittest, time
