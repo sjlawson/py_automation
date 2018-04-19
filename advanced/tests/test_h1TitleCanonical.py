@@ -7,8 +7,9 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 
 ##
-# 
-#
+# Check all representative pages in regression template for existence of H1, Title, and Canonical
+# has final meta test asserting that the tests did not fail, so that all tests run in a single browser#
+##
 class TitleCanonicalH1TestCase(SeleniumTestCase):
 
     def test_titleCanonicalH1(self):
@@ -43,7 +44,7 @@ class TitleCanonicalH1TestCase(SeleniumTestCase):
                           "/companylist/us/in/fishers/",
                           "/companylist/indianapolis/",
                           "/companylist/us/in/fishers/tree-service.htm",
-                          "/companylist/us/in/fishers/service-plus-heating-cooling-plumbing-reviews-140447.htm",
+                          "/companylist/us/in/indianapolis/service-plus-heating-cooling-plumbing-reviews-140447.htm",
                           "/companylist/cleaning.htm",
                           "/in-the-press.htm",
                           "/press-backlinks/",
@@ -119,4 +120,4 @@ class TitleCanonicalH1TestCase(SeleniumTestCase):
             # print(start_time)
             # print("END TIME: " + str(datetime.datetime.now()))
 
-            # test.assertFalse(error_count)
+        self.assertFalse(error_count)
