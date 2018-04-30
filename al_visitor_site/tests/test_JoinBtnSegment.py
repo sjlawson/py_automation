@@ -31,6 +31,14 @@ class JoinBtnSegmentTestCase(SeleniumTestCase):
                 if re.search(r'api\.segment\.io\/v1\/t', ent['request']['url']):
                     collectSeg.append(json.loads(ent['request']['postData']['text'])['properties'])
 
+            seg_call_present = False
+            for seg_call in collectSeg:
+                if seg_call['activityLocation'] == 'Visitor : Home':
+                    self.assertEqual(seg_call['description'], 'Join link in header')
+                    seg_call_present = True
+
+            self.assertTrue(seg_call_present)                    
+                    
             severe_logs = []
             for console_log in console_logs:
                 if console_log['level'] == 'SEVERE':
@@ -40,10 +48,11 @@ class JoinBtnSegmentTestCase(SeleniumTestCase):
                 print(severe_logs)
             self.assertFalse(len(severe_logs))
 
+            
             # to make sure you get the logs *before* the page load, add something like:
             # jQuery('#header-join').on('click', function() { console.log('CLICK EVENT: ' + document.location.href);});
             # print("Full logs:")
             # print(console_logs)
-            print(collectSeg)
+            # print(collectSeg)
         else:
             print("Client not available")
