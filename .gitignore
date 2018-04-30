@@ -1,4 +1,5 @@
 py36/
+*.log
 *.pyc
 *results.txt
 geckodriver.log
