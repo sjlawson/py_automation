@@ -10,9 +10,10 @@ from selenium.webdriver.common.action_chains import ActionChains
 
 # NOTE: Must select Chrome for this test.
 # currently only Chrome can test for console errors
+# Also tests that segment track call gets sent on click
 class JoinBtnSegmentTestCase(SeleniumTestCase):
     
-    def test_homePageJSError(self):
+    def test_homePageJSErrorAndSegment(self):
         wait = WebDriverWait(self.client, 20)
         collectSeg = []
         if self.client:
