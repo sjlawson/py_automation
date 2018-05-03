@@ -8,6 +8,7 @@ class SeleniumTestCase(unittest.TestCase):
     client = None
     server = None
     proxy = None
+    use_proxy = True if int(os.environ.get('USE_PROXY', 0)) else False
     visitor_site_url = os.environ.get('VISITOR_SITE_URL', 'http://angiesmr2stg.prod.acquia-sites.com')
     browser_clients = os.environ.get('BROWSER_CLIENTS', 'Chrome').split(',')
     test_browser = int(os.environ.get('TEST_BROWSER', 0))
@@ -16,10 +17,11 @@ class SeleniumTestCase(unittest.TestCase):
     browsermob_host = os.environ.get('BROWSERMOB_HOST', '127.0.0.1')
     
     def setUp(self):
-        self.server = Server(self.browsermob_path, {'host':self.browsermob_host,'port':self.browsermob_port})
-        self.server.start()
-        self.proxy = self.server.create_proxy()
-        print(self.proxy.selenium_proxy().httpProxy)
+        if self.use_proxy:
+            self.server = Server(self.browsermob_path, {'host':self.browsermob_host,'port':self.browsermob_port})
+            self.server.start()
+            self.proxy = self.server.create_proxy()
+
         method_name = self.browser_clients[self.test_browser]
         try:
             client_method = getattr(webdriver, method_name)
@@ -31,13 +33,14 @@ class SeleniumTestCase(unittest.TestCase):
             d['loggingPrefs'] = { 'browser':'ALL' }
             if method_name == 'Chrome':
                 ch_profile = webdriver.ChromeOptions()
-                ch_profile.add_argument('--proxy-server=http://%s' % self.proxy.selenium_proxy().httpProxy)
+                if self.use_proxy:
+                    ch_profile.add_argument('--proxy-server=http://%s' % self.proxy.selenium_proxy().httpProxy)
                 browser = client_method(desired_capabilities=d, chrome_options=ch_profile)
             elif method_name == 'Firefox':
                 fp = webdriver.FirefoxProfile()
-                fp.set_proxy(self.proxy.selenium_proxy())
-                browser = client_method(capabilities=d,firefox_profile=fp)
-                
+                if self.use_proxy:
+                    fp.set_proxy(self.proxy.selenium_proxy())
+                browser = client_method(capabilities=d,firefox_profile=fp)                
             else:
                 browser = client_method()
             
