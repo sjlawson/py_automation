@@ -30,9 +30,13 @@ class SeleniumTestCase(unittest.TestCase):
             
         try:
             d = getattr(DesiredCapabilities, method_name.upper())
-            d['loggingPrefs'] = { 'browser':'ALL' }
+            d['loggingPrefs'] = { 'browser':'ALL','driver': 'ALL','performance': 'ALL'}
             if method_name == 'Chrome':
                 ch_profile = webdriver.ChromeOptions()
+                ch_profile.perfLoggingPrefs = {'enableNetwork': True, 'traceCategories': 'performance, devtools.network'}
+                ch_profile.add_argument('incognito')
+                ch_profile.add_argument('disable-extensions')
+                ch_profile.add_argument('auto-open-devtools-for-tabs')
                 if self.use_proxy:
                     ch_profile.add_argument('--proxy-server=http://%s' % self.proxy.selenium_proxy().httpProxy)
                 browser = client_method(desired_capabilities=d, chrome_options=ch_profile)
