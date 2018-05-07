@@ -3,3 +3,4 @@ py36/
 *.pyc
 *results.txt
 geckodriver.log
+.flycheck*
