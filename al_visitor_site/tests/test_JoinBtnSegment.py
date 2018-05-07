@@ -13,7 +13,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 # Also tests that segment track call gets sent on click
 class JoinBtnSegmentTestCase(SeleniumTestCase):
 
-    def test_homePageJSErrors(self):
+    def skip_test_homePageJSErrors(self):
         if self.test_browser == 1:
             print("JoinBtnSegment test is not supported by Firefox")
             self.assertTrue(self.test_browser != 1)
