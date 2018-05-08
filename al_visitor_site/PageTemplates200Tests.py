@@ -2,7 +2,10 @@ import sys, urllib
 from urllib import request
 from tests.SeleniumTestCase import SeleniumTestCase
 
-class PageTemplatesTests(SeleniumTestCase):
+##
+# Check that all templates return 200 or 300 response
+# @param SeleniumTestCase
+class PageTemplates200Tests(SeleniumTestCase):
 
     ##
     # Test all URLs in the templates doc. Make sure all are success or redirect.
