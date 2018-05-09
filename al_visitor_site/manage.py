@@ -30,6 +30,26 @@ def testall(*args):
     tests = unittest.TestLoader().discover('tests')
     unittest.TextTestRunner(verbosity=2).run(tests)
 
+
+@manager.command
+def menu(*args):
+    print("Starting Python Flask Selenium Test Framework")
+    print("Visitor site: ", os.environ['VISITOR_SITE_URL'])
+    print("Choose a test to run below: \n")
+    tests = unittest.TestLoader().discover('tests')
+    test_menu = {}
+    count = 0
+    for group in tests:
+        for suite in group:
+            for test in suite:
+                count += 1
+                print("%s : %s" % (count, str(test).replace('test_','')))
+                test_menu[count] = test
+    selected_test = int(input("Enter test number to run: "))
+    if selected_test in test_menu:  
+        unittest.TextTestRunner(verbosity=2).run(test_menu[int(selected_test)])
+        
+
     
 @manager.command
 def test_h1TitleCanonical(*args):

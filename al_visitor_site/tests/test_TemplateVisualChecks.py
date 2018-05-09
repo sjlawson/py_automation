@@ -19,7 +19,7 @@ class TemplateVisualChecks(SeleniumTestCase):
         wait = WebDriverWait(self.client, 20)
         count = 0
         fails = 0
-        fail_dict = {}
+        fail_details = []
         for prod_url in urls:
             if count == 5:
                 break
@@ -28,9 +28,15 @@ class TemplateVisualChecks(SeleniumTestCase):
             self.client.get(test_url)
             wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, 'body')))
             print("\n-------------\nDisplaying: %s" % test_url)
-            qa_response = input("Press enter to continue or type 'fail' (or anything) if soemthing is not right:")
-            if qa_response:
+            qa_response = input("Press enter to continue or type 'fail' (or anything) if something is not right. 'q' exits:")
+            if qa_response == 'q':
+                break
+            elif qa_response:
                 fails += 1
-                fail_dict[test_url] = input("Describe the problem (current page is already noted):")
+                fail_details.append((test_url, input("Describe the problem (current page is already noted):")))
 
-        print(fail_dict)
+        if fail_details:
+            print("\n---- SUMMARY ----")
+        for fail_item in fail_details:
+            print('Problem in %s- %s' % fail_item)
+            print('--------------------------')
