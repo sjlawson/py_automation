@@ -41,13 +41,13 @@ class JoinBtnSegmentTestCase(SeleniumTestCase):
         #     print("Proxy must be enabled for this test.")
         #     self.assertTrue(self.use_proxy)
         seg_call_present = False    
-        wait = WebDriverWait(self.client, 10)
+        wait = WebDriverWait(self.client, 15)
         collectSeg = []
         if not self.client:
             return 0
         tries = 0
         # sometimes network problems prevent a valid test, so try again on the first fail
-        while tries < 2:
+        while tries < 3:
             try:    
                 self.client.get(self.visitor_site_url)
                 join_link = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, '#header-join')))
@@ -68,6 +68,9 @@ class JoinBtnSegmentTestCase(SeleniumTestCase):
             except json.decoder.JSONDecodeError:
                 tries += 1
                 print("JSON Parse problem, trying again...")
+            except selenium.common.exceptions.TimeoutException:
+                tries += 1
+                print("Selenium timeout exception. Trying again...")
                         
         for seg_call in collectSeg:
             if 'activityLocation' in seg_call and seg_call['activityLocation'] == 'Visitor : Home':
