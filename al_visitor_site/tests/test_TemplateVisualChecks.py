@@ -21,8 +21,6 @@ class TemplateVisualChecks(SeleniumTestCase):
         fails = 0
         fail_details = []
         for prod_url in urls:
-            if count == 5:
-                break
             count += 1
             test_url = prod_url.replace('https://www.angieslist.com', self.visitor_site_url)
             self.client.get(test_url)
