@@ -1,4 +1,7 @@
 import unittest, sys, datetime, time, os
+import tty, termios
+from time import sleep
+import _thread
 from selenium import webdriver
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
@@ -15,6 +18,7 @@ class SeleniumTestCase(unittest.TestCase):
     browsermob_path = os.environ.get('BROWSERMOB_PATH', './../browsermob-proxy/bin/browsermob-proxy')
     browsermob_port = int(os.environ.get('BROWSERMOB_PORT', '9090'))
     browsermob_host = os.environ.get('BROWSERMOB_HOST', '127.0.0.1')
+    char_key = None
     
     def setUp(self):
         if self.use_proxy:
@@ -69,3 +73,39 @@ class SeleniumTestCase(unittest.TestCase):
         except NoSuchElementException:
             return False
         return False
+    
+    def prompt_with_timeout(self, prompt, time_limit):
+        fd = sys.stdin.fileno()
+        old_settings = termios.tcgetattr(fd)
+        myThread = _thread.start_new_thread(self.keypress, ())
+        # print(myThread)
+        print(prompt)
+        for i in range(0, time_limit):
+            self.char_key = None
+            sleep(1)
+            if self.char_key is not None:
+                termios.tcsetattr(fd, termios.TCSADRAIN, old_settings)
+                char = self.char_key
+                self.char_key = None
+                try:
+                    _thread.exit()
+                except SystemExit:
+                    pass
+                return char
+        termios.tcsetattr(fd, termios.TCSADRAIN, old_settings)
+        print("Continuing...")
+        self.char_key = None                
+        return None
+
+    def getch(self):
+        fd = sys.stdin.fileno()
+        old_settings = termios.tcgetattr(fd)
+        try:
+            tty.setraw(sys.stdin.fileno())
+            ch = sys.stdin.read(1)
+        finally:
+            termios.tcsetattr(fd, termios.TCSADRAIN, old_settings)
+        return ch
+
+    def keypress(self):
+        self.char_key = self.getch()

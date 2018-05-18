@@ -26,15 +26,18 @@ class TemplateVisualChecks(SeleniumTestCase):
             self.client.get(test_url)
             wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, 'body')))
             print("\n-------------\nDisplaying: %s" % test_url)
-            qa_response = input("Press enter to continue or type 'fail' (or anything) if something is not right. 'q' exits:")
-            if qa_response == 'q':
-                break
-            elif qa_response:
-                fails += 1
-                fail_details.append((test_url, input("Describe the problem (current page is already noted):")))
+            qa_response = self.prompt_with_timeout("Press a key to stop auto-pageload (q quits)", 5)
+            if qa_response is not None:
+                if qa_response == 'q':
+                    break
+                else:
+                    fails += 1
+                    details = input("Describe the problem (current page is already noted): \n")
+                    fail_details.append([test_url, details])
+            qa_response = None
 
         if fail_details:
             print("\n---- SUMMARY ----")
         for fail_item in fail_details:
-            print('Problem in %s- %s' % fail_item)
+            print('Problem in %s- %s' % (fail_item[0], fail_item[1]))
             print('--------------------------')
