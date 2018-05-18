@@ -51,7 +51,8 @@ class SeleniumTestCase(unittest.TestCase):
                 browser = client_method(capabilities=d,firefox_profile=fp)                
             else:
                 browser = client_method()
-            
+                browser.set_window_size(1500, 900)
+
             self.client = browser
         except:
             print('Web browser not available')
