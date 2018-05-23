@@ -18,7 +18,7 @@ class JoinBtnSegmentTestCase(SeleniumTestCase):
         if self.test_browser == 1:
             print("JoinBtnSegment test is not supported by Firefox")
             self.assertTrue(self.test_browser != 1)
-            
+
         if self.client:
             wait = WebDriverWait(self.client, 20)
             self.client.get(self.visitor_site_url)
@@ -36,43 +36,51 @@ class JoinBtnSegmentTestCase(SeleniumTestCase):
                 print("Console errors: ")
                 print(severe_logs)
             self.assertFalse(len(severe_logs))
-            
-    def test_homePageSegmentJoin(self):
-        # if not self.use_proxy:
-        #     print("Proxy must be enabled for this test.")
-        #     self.assertTrue(self.use_proxy)
-        seg_call_present = False    
-        wait = WebDriverWait(self.client, 15)
+
+    # TODO: Use parameters to abstract segment tracking
+    def gather_segment_requests_for_url(self, url, target, action):
         collectSeg = []
-        if not self.client:
-            return 0
         tries = 0
         # sometimes network problems prevent a valid test, so try again on the first fail
         while tries < 3:
-            try:    
+            try:
                 self.client.get(self.visitor_site_url)
                 join_link = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, '#header-join')))
                 wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, '#footer-join')))
                 ActionChains(self.client).move_to_element(join_link).click().perform()
-            
+
                 wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, '#footer--copyright-link-2')))
                 perf_logs = self.client.get_log('performance')
                 for perflog in perf_logs:
                     perf_msgs = json.loads(perflog['message'])
-                    if 'request' in perf_msgs['message']['params'] and 'postData' in perf_msgs['message']['params']['request'] and perf_msgs['message']['params']['request']['postData'] is not None:
+                    if 'request' in perf_msgs['message']['params'] and 'postData' in perf_msgs['message']['params']['request'] \
+                       and perf_msgs['message']['params']['request']['postData'] is not None:
                         props_string = json.loads(perf_msgs['message']['params']['request']['postData'])['properties']
                         if props_string is not None:
                             collectSeg.append(props_string)
                 if len(collectSeg):
                     break
-            
+
             except json.decoder.JSONDecodeError:
                 tries += 1
                 print("JSON Parse problem, trying again...")
             except TimeoutException:
                 tries += 1
                 print("Selenium timeout exception. Trying again...")
-                        
+
+        return collectSeg
+
+    def test_homePageSegmentJoin(self):
+        # if not self.use_proxy:
+        #     print("Proxy must be enabled for this test.")
+        #     self.assertTrue(self.use_proxy)
+        if not self.client:
+            return 0
+        seg_call_present = False
+        wait = WebDriverWait(self.client, 15)
+
+        # TODO:
+
         for seg_call in collectSeg:
             if 'activityLocation' in seg_call and seg_call['activityLocation'] == 'Visitor : Home':
                 self.assertEqual(seg_call['description'], 'Join link in header')
@@ -83,6 +91,5 @@ class JoinBtnSegmentTestCase(SeleniumTestCase):
             print("Segment call detected!")
         except:
             print("FAIL")
-                 
+
         print(collectSeg)
-        
