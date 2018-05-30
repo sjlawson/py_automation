@@ -47,6 +47,7 @@ class JoinBtnSegmentTestCase(SeleniumTestCase):
                 ('srCtaDisplayed', True),
                 ('srCtaVersion', 'v2.1'),
                 ('userId', ''),
+                ('userType', 'Visitor - New'),
             ]
         }
 
