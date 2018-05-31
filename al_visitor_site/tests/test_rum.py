@@ -8,7 +8,6 @@ from selenium.webdriver.common.by import By
 
 ##
 # Check all representative pages in regression template for existence of RUM
-# has final meta test asserting that the tests did not fail, so that all tests run in a single browser#
 ##
 class RumTestCase(SeleniumTestCase):
 
