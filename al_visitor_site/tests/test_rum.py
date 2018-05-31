@@ -45,4 +45,3 @@ class RumTestCase(SeleniumTestCase):
 
                 rum = self.client.find_elements_by_css_selector('script[src="/sites/all/libraries/rum/rum.min.js"]')
                 self.assertTrue(len(rum))
-                
