@@ -26,7 +26,7 @@ class JoinBtnSegmentTestCase(SeleniumTestCase):
             'main_field': 'name',
             'main_value': 'CNT : Article Landing Page',
             'segment_params': [
-                ('atTestOffer', ''),
+                #('atTestOffer'), #example of what we want to do when only checking for property name
                 ('cid', ''),
                 ('path', '/articles/'),
                 ('title', 'Solution Center - Tips, Advice, and Ideas | Angie\'s List'),

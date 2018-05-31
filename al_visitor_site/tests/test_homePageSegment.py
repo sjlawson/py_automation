@@ -120,3 +120,24 @@ class JoinBtnSegmentTestCase(SeleniumTestCase):
         }
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+
+    # Header Join
+    def test_headerJoinCTA(self):
+        # quit if browser didn't load
+        if not self.client:
+            return 0
+
+        # req'd params: current test case (self), relative path to triggering page, target element, and the triggering action
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/', '#header-join', 'click')
+
+        segcall_info = {
+            'main_field': 'activityLocation',
+            'main_value': 'Visitor : Home',
+            'segment_params': [
+                ('description', 'Join link in header'),
+                ('userId', ''),
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
