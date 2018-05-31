@@ -46,7 +46,7 @@ class JoinBtnSegmentTestCase(SeleniumTestCase):
                 ('title', 'Angie\'s List | Join for FREE to see 10 Million Verified Reviews'),
                 ('srCtaDisplayed', True),
                 ('srCtaVersion', 'v2.1'),
-                ('userId', ''),
+                ('userId',),
                 ('userType', 'Visitor - New'),
             ]
         }

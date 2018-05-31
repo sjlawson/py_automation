@@ -77,5 +77,9 @@ class SegmentTestHelper():
         for seg_call in collect_seg_calls:
             if segcall_info['main_field'] in seg_call and seg_call[segcall_info['main_field']] == segcall_info['main_value']:
                 for seg_check in segcall_info['segment_params']:
-                    test_case.assertEqual(seg_call[seg_check[0]], seg_check[1])
-                    print("Segment call detected. %s | %s" % (seg_check[0], seg_call[seg_check[0]]))
+                    if len(seg_check) > 1:
+                        test_case.assertEqual(seg_call[seg_check[0]], seg_check[1])
+                        print("Segment call detected. %s | %s" % (seg_check[0], seg_call[seg_check[0]]))
+                    else:
+                        test_case.assertTrue(seg_check[0] in seg_call)
+                        print("Segment property %s exists" % seg_check[0])
