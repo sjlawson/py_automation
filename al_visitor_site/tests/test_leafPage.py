@@ -23,7 +23,7 @@ class LeafTestCase(SeleniumTestCase):
             errors = ""
             success_count = 0
             wait = WebDriverWait(self.client, 2)
-            varnish_buster = "?asdf7654"
+            varnish_buster = "?bustARhyme"
             for test_url in test_urls:
                 self.client.get(self.visitor_site_url + test_url + varnish_buster)
                 wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, 'div')))
