@@ -74,7 +74,8 @@ def runtest(*args):
         print("Starting Python Flask Selenium Test Framework")
         print("Visitor site: ", os.environ['VISITOR_SITE_URL'])
         print("Running test, %s" % args[0][0])
-        tests = unittest.TestLoader().discover('tests', pattern='test_' + args[0][0]  + '.py')
+        test_suite_name = args[0][0].replace('test_','').replace('.py','')
+        tests = unittest.TestLoader().discover('tests', pattern='test_' + test_suite_name + '.py')
         # unittest.TextTestRunner(verbosity=2).run(tests)
         xmlrunner.XMLTestRunner(verbosity=2, output='reports').run(tests)
 
