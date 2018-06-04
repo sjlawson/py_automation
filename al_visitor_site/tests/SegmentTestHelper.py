@@ -16,7 +16,7 @@ class SegmentTestHelper():
     # @param action - must match with ActionChains events found here:
     #               -- http://selenium-python.readthedocs.io/api.html#module-selenium.webdriver.common.action_chains
     # @optionalParam wait_for_pageload - defaults to True. Set to False if not needed
-    def gather_segment_requests_for_url(test_case, path, target='page', action_name='click', wait_for_pageload=True):
+    def gather_segment_requests_for_url(test_case, path, target='page', action_name='click', wait_for_pageload=True, prep_actions=None):
         wait = WebDriverWait(test_case.client, 15)
         collect_seg = []
         tries = 0
@@ -26,6 +26,22 @@ class SegmentTestHelper():
                 test_case.client.get(test_case.visitor_site_url + path)
                 if target != 'page':
                     target_element = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, target)))
+                    if prep_actions:
+                        for prep_action in prep_actions:
+                            prep_action_element = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, prep_action['action_element'])))
+                            prep_action_chain = ActionChains(test_case.client).move_to_element(prep_action_element)
+                            for element_action_method in prep_action['action_list']:
+                                try:
+                                    p_action_method = getattr(prep_action_chain, element_action_method[0])
+                                    if len(element_action_method) == 2:
+                                        p_action_method(element_action_method[1])
+                                    else:
+                                        p_action_method()
+                                except AttributeError:
+                                    raise NotImplementedError("ActionChains does not implement %s" % element_action_method[0])
+
+                            prep_action_chain.perform()
+
                     action_chain = ActionChains(test_case.client).move_to_element(target_element)
                     try:
                         action_method = getattr(action_chain, action_name)
