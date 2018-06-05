@@ -28,7 +28,6 @@ def testall(*args):
     print("Starting Python Flask Selenium Test Framework")
     print("Visitor site: ", os.environ['VISITOR_SITE_URL'])
     tests = unittest.TestLoader().discover('tests')
-    #unittest.TextTestRunner(verbosity=2).run(tests)
     xmlrunner.XMLTestRunner(verbosity=2, output='reports').run(tests)
 
 @manager.command
@@ -47,7 +46,6 @@ def menu(*args):
                 test_menu[count] = test
     selected_test = int(input("Enter test number to run: "))
     if selected_test in test_menu:
-        #unittest.TextTestRunner(verbosity=2).run(test_menu[int(selected_test)])
         xmlrunner.XMLTestRunner(verbosity=2, output='reports').run(test_menu[int(selected_test)])
 
 
@@ -56,7 +54,6 @@ def test_h1TitleCanonical(*args):
     print("Starting Python Flask Selenium Test Framework")
     print("Visitor site: ", os.environ['VISITOR_SITE_URL'])
     tests = unittest.TestLoader().discover('tests', pattern='test_h1TitleCanonical.py')
-    # unittest.TextTestRunner(verbosity=2).run(tests)
     xmlrunner.XMLTestRunner(verbosity=2, output='reports').run(tests)
 
 @manager.command
@@ -64,7 +61,6 @@ def test_redirects(*args):
     print("Starting Python Flask Selenium Test Framework")
     print("Visitor site: ", os.environ['VISITOR_SITE_URL'])
     tests = unittest.TestLoader().discover('tests', pattern='test_Redirects.py')
-    #unittest.TextTestRunner(verbosity=2).run(tests)
     xmlrunner.XMLTestRunner(verbosity=2, output='reports').run(tests)
 
 @manager.command
@@ -76,7 +72,6 @@ def runtest(*args):
         print("Running test, %s" % args[0][0])
         test_suite_name = args[0][0].replace('test_','').replace('.py','')
         tests = unittest.TestLoader().discover('tests', pattern='test_' + test_suite_name + '.py')
-        # unittest.TextTestRunner(verbosity=2).run(tests)
         xmlrunner.XMLTestRunner(verbosity=2, output='reports').run(tests)
 
     else:
