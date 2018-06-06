@@ -141,3 +141,28 @@ class JoinBtnSegmentTestCase(SeleniumTestCase):
         }
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+
+    # SR Popular Service Quick Links
+    def test_popularServiceQuickLink(self):
+        # quit if browser didn't load
+        if not self.client:
+            return 0
+
+        # req'd params: current test case (self), relative path to triggering page, target element, and the triggering action
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/', '#ha-lead-ps-plumbing', 'click')
+
+        segcall_info = {
+            'main_field': 'description',
+            'main_value': 'Popular Services icon',
+            'segment_params': [
+                ('categoryId', 107),
+                ('categorySelected', 'Plumbing'),
+                ('description', 'Popular Services icon'),
+                ('homeAdvisorCategoryId', 10216),
+                ('userId',),
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
