@@ -143,7 +143,7 @@ class JoinBtnSegmentTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
 
-    # SR Plumbing Popular Service Quick Links
+    # SR Plumbing Popular Service Quick Links Text
     def test_plumbingPopularServiceQuickLink(self):
         # quit if browser didn't load
         if not self.client:
@@ -167,7 +167,7 @@ class JoinBtnSegmentTestCase(SeleniumTestCase):
 
 
 
-    # SR Plumbing Popular Service Quick Links v2
+    # SR Plumbing Popular Service Quick Links Image
     def test_plumbingPopularServiceQuickLinkV2(self):
         # quit if browser didn't load
         if not self.client:
@@ -191,7 +191,7 @@ class JoinBtnSegmentTestCase(SeleniumTestCase):
 
 
 
-    # SR Roofing Popular Service Quick Links
+    # SR Roofing Popular Service Quick Links Text
     def test_roofingPopularServiceQuickLink(self):
         # quit if browser didn't load
         if not self.client:
@@ -215,7 +215,7 @@ class JoinBtnSegmentTestCase(SeleniumTestCase):
 
 
 
-    # SR Roofing Popular Service Quick Links v2
+    # SR Roofing Popular Service Quick Links Image
     def test_roofingPopularServiceQuickLinkV2(self):
         # quit if browser didn't load
         if not self.client:
@@ -238,7 +238,7 @@ class JoinBtnSegmentTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
 
-    # SR Heating & A/C Popular Service Quick Links
+    # SR HVAC Popular Service Quick Links Text
     def test_heatacPopularServiceQuickLink(self):
         # quit if browser didn't load
         if not self.client:
@@ -261,8 +261,8 @@ class JoinBtnSegmentTestCase(SeleniumTestCase):
 
 
 
-    # SR Heating & A/C Popular Service Quick Links v2
-    def test_heatacPopularServiceQuickLinkV2(self):
+    # SR HVAC Popular Service Quick Links Image
+    def test_hvacPopularServiceQuickLinkV2(self):
         # quit if browser didn't load
         if not self.client:
             return 0
@@ -278,6 +278,237 @@ class JoinBtnSegmentTestCase(SeleniumTestCase):
                 ('categorySelected', 'Heating & A/C'),
                 ('description', 'Popular Services icon'),
                 ('homeAdvisorCategoryId', 10211),
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+
+    # SR Electrical Popular Service Quick Links Text
+    def test_electricalPopularServiceQuickLink(self):
+        # quit if browser didn't load
+        if not self.client:
+            return 0
+
+        # req'd params: current test case (self), relative path to triggering page, target element, and the triggering action
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/', '#ha-lead-ps-electrical', 'click')
+
+        segcall_info = {
+            'main_field': 'description',
+            'main_value': 'Popular Services icon',
+            'segment_params': [
+                ('categoryId', 54),
+                ('categorySelected', 'electrical'),
+                ('description', 'Popular Services icon'),
+                ('homeAdvisorCategoryId', 12026),            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+
+
+    # SR Electrical Popular Service Quick Links Image
+    def test_electricalPopularServiceQuickLinkV2(self):
+        # quit if browser didn't load
+        if not self.client:
+            return 0
+
+        # req'd params: current test case (self), relative path to triggering page, target element, and the triggering action
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/', '.bg-electrical.no-border.img', 'click')
+
+        segcall_info = {
+            'main_field': 'description',
+            'main_value': 'Popular Services icon',
+            'segment_params': [
+                ('categoryId', 54),
+                ('categorySelected', 'electrical'),
+                ('description', 'Popular Services icon'),
+                ('homeAdvisorCategoryId', 12026),
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+
+    # SR Landscaping Popular Service Quick Links Text
+    def test_landscapingPopularServiceQuickLink(self):
+        # quit if browser didn't load
+        if not self.client:
+            return 0
+
+        # req'd params: current test case (self), relative path to triggering page, target element, and the triggering action
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/', '#ha-lead-ps-landscaping', 'click')
+
+        segcall_info = {
+            'main_field': 'description',
+            'main_value': 'Popular Services icon',
+            'segment_params': [
+                ('categoryId', 85),
+                ('categorySelected', 'landscaping'),
+                ('description', 'Popular Services icon'),
+                ('homeAdvisorCategoryId', 12046),            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+
+
+    # SR Landscaping Popular Service Quick Links Image
+    def test_landscapingPopularServiceQuickLinkV2(self):
+        # quit if browser didn't load
+        if not self.client:
+            return 0
+
+        # req'd params: current test case (self), relative path to triggering page, target element, and the triggering action
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/', '.bg-landscaping.no-border.img', 'click')
+
+        segcall_info = {
+            'main_field': 'description',
+            'main_value': 'Popular Services icon',
+            'segment_params': [
+                ('categoryId', 85),
+                ('categorySelected', 'landscaping'),
+                ('description', 'Popular Services icon'),
+                ('homeAdvisorCategoryId', 12046),
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+
+    # SR Housecleaning Popular Service Quick Links Text
+    def test_housecleaningPopularServiceQuickLink(self):
+        # quit if browser didn't load
+        if not self.client:
+            return 0
+
+        # req'd params: current test case (self), relative path to triggering page, target element, and the triggering action
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/', '#ha-lead-ps-housecleaning', 'click')
+
+        segcall_info = {
+            'main_field': 'description',
+            'main_value': 'Popular Services icon',
+            'segment_params': [
+                ('categoryId', 80),
+                ('categorySelected', 'Housecleaning'),
+                ('description', 'Popular Services icon'),
+                ('homeAdvisorCategoryId', 12014),            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+
+
+    # SR Housecleaning Popular Service Quick Links Image
+    def test_housecleaningPopularServiceQuickLinkV2(self):
+        # quit if browser didn't load
+        if not self.client:
+            return 0
+
+        # req'd params: current test case (self), relative path to triggering page, target element, and the triggering action
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/', '.bg-housecleaning.no-border.img', 'click')
+
+        segcall_info = {
+            'main_field': 'description',
+            'main_value': 'Popular Services icon',
+            'segment_params': [
+                ('categoryId', 80),
+                ('categorySelected', 'Housecleaning'),
+                ('description', 'Popular Services icon'),
+                ('homeAdvisorCategoryId', 12014),
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+
+    # SR Remodeling Popular Service Quick Links Text
+    def test_housecleaningPopularServiceQuickLink(self):
+        # quit if browser didn't load
+        if not self.client:
+            return 0
+
+        # req'd params: current test case (self), relative path to triggering page, target element, and the triggering action
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/', '#ha-lead-ps-remodeling', 'click')
+
+        segcall_info = {
+            'main_field': 'description',
+            'main_value': 'Popular Services icon',
+            'segment_params': [
+                ('categoryId', 111),
+                ('categorySelected', 'Remodeling'),
+                ('description', 'Popular Services icon'),
+                ('homeAdvisorCategoryId', 12001),            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+
+
+    # SR Remodeling Popular Service Quick Links Image
+    def test_housecleaningPopularServiceQuickLinkV2(self):
+        # quit if browser didn't load
+        if not self.client:
+            return 0
+
+        # req'd params: current test case (self), relative path to triggering page, target element, and the triggering action
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/', '.bg-remodeling.no-border.img', 'click')
+
+        segcall_info = {
+            'main_field': 'description',
+            'main_value': 'Popular Services icon',
+            'segment_params': [
+                ('categoryId', 111),
+                ('categorySelected', 'Remodeling'),
+                ('description', 'Popular Services icon'),
+                ('homeAdvisorCategoryId', 12001),
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+
+
+    # SR Painting Popular Service Quick Links Text
+    def test_paintingPopularServiceQuickLink(self):
+        # quit if browser didn't load
+        if not self.client:
+            return 0
+
+        # req'd params: current test case (self), relative path to triggering page, target element, and the triggering action
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/', '#ha-lead-ps-painting', 'click')
+
+        segcall_info = {
+            'main_field': 'description',
+            'main_value': 'Popular Services icon',
+            'segment_params': [
+                ('categoryId', 294),
+                ('categorySelected', 'Painting'),
+                ('description', 'Popular Services icon'),
+                ('homeAdvisorCategoryId', 10381),            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+
+
+    # SR Painting Popular Service Quick Links Image
+    def test_paintingPopularServiceQuickLinkV2(self):
+        # quit if browser didn't load
+        if not self.client:
+            return 0
+
+        # req'd params: current test case (self), relative path to triggering page, target element, and the triggering action
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/', '.bg-painting.no-border.img', 'click')
+
+        segcall_info = {
+            'main_field': 'description',
+            'main_value': 'Popular Services icon',
+            'segment_params': [
+                ('categoryId', 294),
+                ('categorySelected', 'Painting'),
+                ('description', 'Popular Services icon'),
+                ('homeAdvisorCategoryId', 10381),
             ]
         }
 
