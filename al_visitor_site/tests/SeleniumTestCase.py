@@ -6,6 +6,9 @@ from selenium import webdriver
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from browsermobproxy import Server
+from contextlib import contextmanager
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support.expected_conditions import staleness_of
 
 class SeleniumTestCase(unittest.TestCase):
     client = None
@@ -19,7 +22,7 @@ class SeleniumTestCase(unittest.TestCase):
     browsermob_port = int(os.environ.get('BROWSERMOB_PORT', '9090'))
     browsermob_host = os.environ.get('BROWSERMOB_HOST', '127.0.0.1')
     char_key = None
-    
+
     def setUp(self):
         if self.use_proxy:
             self.server = Server(self.browsermob_path, {'host':self.browsermob_host,'port':self.browsermob_port})
@@ -31,7 +34,7 @@ class SeleniumTestCase(unittest.TestCase):
             client_method = getattr(webdriver, method_name)
         except AttributeError:
             raise NotImplementedError("Class `{}` does not implement `{}`".format(webdriver.__class__.__name__, method_name))
-            
+
         try:
             d = getattr(DesiredCapabilities, method_name.upper())
             d['loggingPrefs'] = { 'browser':'ALL','driver': 'ALL','performance': 'ALL'}
@@ -48,16 +51,17 @@ class SeleniumTestCase(unittest.TestCase):
                 fp = webdriver.FirefoxProfile()
                 if self.use_proxy:
                     fp.set_proxy(self.proxy.selenium_proxy())
-                browser = client_method(capabilities=d,firefox_profile=fp)                
+                browser = client_method(capabilities=d,firefox_profile=fp)
             else:
                 browser = client_method()
-                browser.set_window_size(1500, 900)
+
+            browser.set_window_size(2000, 1400)
 
             self.client = browser
         except:
             print('Web browser not available')
             self.skiptest('Browser not available')
-        
+
         time.sleep(1)
 
     def tearDown(self):
@@ -73,12 +77,11 @@ class SeleniumTestCase(unittest.TestCase):
         except NoSuchElementException:
             return False
         return False
-    
+
     def prompt_with_timeout(self, prompt, time_limit):
         fd = sys.stdin.fileno()
         old_settings = termios.tcgetattr(fd)
         myThread = _thread.start_new_thread(self.keypress, ())
-        # print(myThread)
         print(prompt)
         for i in range(0, time_limit):
             self.char_key = None
@@ -94,7 +97,7 @@ class SeleniumTestCase(unittest.TestCase):
                 return char
         termios.tcsetattr(fd, termios.TCSADRAIN, old_settings)
         print("Continuing...")
-        self.char_key = None                
+        self.char_key = None
         return None
 
     def getch(self):
@@ -109,3 +112,13 @@ class SeleniumTestCase(unittest.TestCase):
 
     def keypress(self):
         self.char_key = self.getch()
+
+    # Helper method to use after an event triggers a new page load
+    # @param old_page - client.find_element_by_tag_name('html') grabbed BEFORE new page call
+    # @param timeout - int seconds
+    @contextmanager
+    def wait_for_new_page_load(self, old_page, timeout=30):
+        yield
+        WebDriverWait(self.client, timeout).until(
+            staleness_of(old_page)
+        )
