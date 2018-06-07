@@ -298,7 +298,7 @@ class JoinBtnSegmentTestCase(SeleniumTestCase):
             'main_value': 'Popular Services icon',
             'segment_params': [
                 ('categoryId', 54),
-                ('categorySelected', 'electrical'),
+                ('categorySelected', 'Electrical'),
                 ('description', 'Popular Services icon'),
                 ('homeAdvisorCategoryId', 12026),            ]
         }
@@ -321,7 +321,7 @@ class JoinBtnSegmentTestCase(SeleniumTestCase):
             'main_value': 'Popular Services icon',
             'segment_params': [
                 ('categoryId', 54),
-                ('categorySelected', 'electrical'),
+                ('categorySelected', 'Electrical'),
                 ('description', 'Popular Services icon'),
                 ('homeAdvisorCategoryId', 12026),
             ]
@@ -344,7 +344,7 @@ class JoinBtnSegmentTestCase(SeleniumTestCase):
             'main_value': 'Popular Services icon',
             'segment_params': [
                 ('categoryId', 85),
-                ('categorySelected', 'landscaping'),
+                ('categorySelected', 'Landscaping'),
                 ('description', 'Popular Services icon'),
                 ('homeAdvisorCategoryId', 12046),            ]
         }
@@ -367,7 +367,7 @@ class JoinBtnSegmentTestCase(SeleniumTestCase):
             'main_value': 'Popular Services icon',
             'segment_params': [
                 ('categoryId', 85),
-                ('categorySelected', 'landscaping'),
+                ('categorySelected', 'Landscaping'),
                 ('description', 'Popular Services icon'),
                 ('homeAdvisorCategoryId', 12046),
             ]
