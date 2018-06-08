@@ -69,7 +69,7 @@ class JoinBtnSegmentTestCase(SeleniumTestCase):
             'main_value': 'Visitor : Home',
             'segment_params': [
                 ('description', 'Join link in hero image'),
-                ('userId', ''),
+                ('userId',),
             ]
         }
 
@@ -90,11 +90,11 @@ class JoinBtnSegmentTestCase(SeleniumTestCase):
             'main_value': 'Visitor : Home',
             'segment_params': [
                 ('description', 'Find Pros button in hero image - to SR path'),
-                ('categoryId', ''),
-                ('categorySelected', ''),
-                ('homeAdvisorCategoryId', ''),
-                ('manualTextInput', ''),
-                ('userId', ''),
+                ('categoryId',),
+                ('categorySelected',),
+                ('homeAdvisorCategoryId',),
+                ('manualTextInput',),
+                ('userId',),
             ]
         }
 
@@ -115,7 +115,7 @@ class JoinBtnSegmentTestCase(SeleniumTestCase):
             'main_value': 'Visitor : Home',
             'segment_params': [
                 ('description', 'Join button in footer'),
-                ('userId', ''),
+                ('userId',),
             ]
         }
 
@@ -136,7 +136,7 @@ class JoinBtnSegmentTestCase(SeleniumTestCase):
             'main_value': 'Visitor : Home',
             'segment_params': [
                 ('description', 'Join link in header'),
-                ('userId', ''),
+                ('userId',),
             ]
         }
 
@@ -160,6 +160,7 @@ class JoinBtnSegmentTestCase(SeleniumTestCase):
                 ('categorySelected', 'Plumbing'),
                 ('description', 'Popular Services icon'),
                 ('homeAdvisorCategoryId', 10216),
+                ('userId',),
             ]
         }
 
@@ -184,6 +185,7 @@ class JoinBtnSegmentTestCase(SeleniumTestCase):
                 ('categorySelected', 'Plumbing'),
                 ('description', 'Popular Services icon'),
                 ('homeAdvisorCategoryId', 10216),
+                ('userId',),
             ]
         }
 
@@ -208,6 +210,7 @@ class JoinBtnSegmentTestCase(SeleniumTestCase):
                 ('categorySelected', 'Roofing'),
                 ('description', 'Popular Services icon'),
                 ('homeAdvisorCategoryId', 10217),
+                ('userId',),
             ]
         }
 
@@ -232,6 +235,7 @@ class JoinBtnSegmentTestCase(SeleniumTestCase):
                 ('categorySelected', 'Roofing'),
                 ('description', 'Popular Services icon'),
                 ('homeAdvisorCategoryId', 10217),
+                ('userId',),
             ]
         }
 
@@ -254,7 +258,9 @@ class JoinBtnSegmentTestCase(SeleniumTestCase):
                 ('categoryId', 78),
                 ('categorySelected', 'Heating & A/C'),
                 ('description', 'Popular Services icon'),
-                ('homeAdvisorCategoryId', 10211),            ]
+                ('homeAdvisorCategoryId', 10211),
+                ('userId',),
+            ]
         }
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
@@ -278,6 +284,7 @@ class JoinBtnSegmentTestCase(SeleniumTestCase):
                 ('categorySelected', 'Heating & A/C'),
                 ('description', 'Popular Services icon'),
                 ('homeAdvisorCategoryId', 10211),
+                ('userId',),
             ]
         }
 
@@ -300,7 +307,9 @@ class JoinBtnSegmentTestCase(SeleniumTestCase):
                 ('categoryId', 54),
                 ('categorySelected', 'Electrical'),
                 ('description', 'Popular Services icon'),
-                ('homeAdvisorCategoryId', 12026),            ]
+                ('homeAdvisorCategoryId', 12026),
+                ('userId',), 
+            ]
         }
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
@@ -324,6 +333,7 @@ class JoinBtnSegmentTestCase(SeleniumTestCase):
                 ('categorySelected', 'Electrical'),
                 ('description', 'Popular Services icon'),
                 ('homeAdvisorCategoryId', 12026),
+                ('userId',),
             ]
         }
 
@@ -346,7 +356,9 @@ class JoinBtnSegmentTestCase(SeleniumTestCase):
                 ('categoryId', 85),
                 ('categorySelected', 'Landscaping'),
                 ('description', 'Popular Services icon'),
-                ('homeAdvisorCategoryId', 12046),            ]
+                ('homeAdvisorCategoryId', 12046),
+                ('userId',),
+          ]
         }
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
@@ -370,6 +382,7 @@ class JoinBtnSegmentTestCase(SeleniumTestCase):
                 ('categorySelected', 'Landscaping'),
                 ('description', 'Popular Services icon'),
                 ('homeAdvisorCategoryId', 12046),
+                ('userId',),
             ]
         }
 
@@ -392,7 +405,9 @@ class JoinBtnSegmentTestCase(SeleniumTestCase):
                 ('categoryId', 80),
                 ('categorySelected', 'Housecleaning'),
                 ('description', 'Popular Services icon'),
-                ('homeAdvisorCategoryId', 12014),            ]
+                ('homeAdvisorCategoryId', 12014),
+                ('userId',),
+           ]
         }
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
@@ -416,6 +431,8 @@ class JoinBtnSegmentTestCase(SeleniumTestCase):
                 ('categorySelected', 'Housecleaning'),
                 ('description', 'Popular Services icon'),
                 ('homeAdvisorCategoryId', 12014),
+                ('userId',),
+
             ]
         }
 
@@ -438,7 +455,9 @@ class JoinBtnSegmentTestCase(SeleniumTestCase):
                 ('categoryId', 111),
                 ('categorySelected', 'Remodeling'),
                 ('description', 'Popular Services icon'),
-                ('homeAdvisorCategoryId', 12001),            ]
+                ('homeAdvisorCategoryId', 12001),
+                ('userId',),
+            ]
         }
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
@@ -462,6 +481,7 @@ class JoinBtnSegmentTestCase(SeleniumTestCase):
                 ('categorySelected', 'Remodeling'),
                 ('description', 'Popular Services icon'),
                 ('homeAdvisorCategoryId', 12001),
+                ('userId',),
             ]
         }
 
@@ -485,7 +505,9 @@ class JoinBtnSegmentTestCase(SeleniumTestCase):
                 ('categoryId', 294),
                 ('categorySelected', 'Painting'),
                 ('description', 'Popular Services icon'),
-                ('homeAdvisorCategoryId', 10381),            ]
+                ('homeAdvisorCategoryId', 10381),
+                ('userId',),
+            ]
         }
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
@@ -509,6 +531,7 @@ class JoinBtnSegmentTestCase(SeleniumTestCase):
                 ('categorySelected', 'Painting'),
                 ('description', 'Popular Services icon'),
                 ('homeAdvisorCategoryId', 10381),
+                ('userId',),
             ]
         }
 
