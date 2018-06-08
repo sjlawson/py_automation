@@ -4,3 +4,5 @@ py36/
 *results.txt
 geckodriver.log
 .flycheck*
+reports/
+.DS_Store
