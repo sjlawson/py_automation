@@ -536,3 +536,65 @@ class JoinBtnSegmentTestCase(SeleniumTestCase):
         }
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+
+
+
+
+    # Homepage SR Flow Negative Testing Scenerio
+    def test_homePageSegmentSRCTAwithTacos(self):
+        if not self.client:
+            return 0
+        prep_actions = [
+            {
+                'action_element': '#edit-category-2',
+                'action_list': [
+                    ('click',),
+                    ('send_keys','Tacos'),
+                ]
+            }
+        ]
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/', '#ha-lead-submit-v2', 'click', True, prep_actions)
+        segcall_info = {
+            'main_field': 'activityLocation',
+            'main_value': 'Visitor : Home',
+            'segment_params': [
+                ('description', 'Find Pros button in hero image - to SR path'),
+                ('manualTextInput', 'Tacos'),
+                ('userId',),
+                ('homeAdvisorCategoryId',),
+                ('categoryId',),
+                ('categorySelected',),
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # Homepage SR Flow - Plumbing
+    def test_homePageSegmentSrCtaWithCat(self):
+        if not self.client:
+            return 0
+        prep_actions = [
+            {
+                'action_element': '#edit-category-2',
+                'action_list': [
+                    ('click',),
+                    ('send_keys','Plumbing'),
+                ]
+
+            }
+        ]
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/', '#ha-lead-submit-v2', 'click', True, prep_actions)
+        segcall_info = {
+            'main_field': 'activityLocation',
+            'main_value': 'Visitor : Home',
+            'segment_params': [
+                ('description', 'Find Pros button in hero image - to SR path'),
+                ('userId',),
+                ('homeAdvisorCategoryId', '10216'),
+                ('categoryId', '107'),
+                ('categorySelected', 'Plumbing'),
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
