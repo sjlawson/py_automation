@@ -13,10 +13,6 @@ class HowItWorksPageSegmentTestCase(SeleniumTestCase):
         # req'd params: current test case (self), relative path to triggering page, target element, and the triggering action
         collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/how-it-works.htm?bustARhyme')
 
-        # describe what you are expecting in the segment call.
-        # main field is how Python finds the test data in the page info, should probably be 'name' or 'activityLocation'
-        # segment_params is a list of other segment fields to check. Can include main field as well.
-        # Take note of formatting...
         segcall_info = {
             'main_field': 'name',
             'main_value': 'Visitor : How It Works',
