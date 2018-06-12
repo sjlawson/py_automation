@@ -55,7 +55,7 @@ class SeleniumTestCase(unittest.TestCase):
             else:
                 browser = client_method()
 
-            browser.set_window_size(1800, 1400)
+            browser.set_window_size(2000, 1400)
 
             self.client = browser
         except:
