@@ -114,9 +114,10 @@ class SeleniumTestCase(unittest.TestCase):
         self.char_key = self.getch()
 
     # Helper method to use after an event triggers a new page load
+    # @param old_page - client.find_element_by_tag_name('html') grabbed BEFORE new page call
+    # @param timeout - int seconds
     @contextmanager
-    def wait_for_new_page_load(self, timeout=30):
-        old_page = self.client.find_element_by_tag_name('html')
+    def wait_for_new_page_load(self, old_page, timeout=30):
         yield
         WebDriverWait(self.client, timeout).until(
             staleness_of(old_page)

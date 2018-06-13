@@ -58,17 +58,17 @@ class TitleCanonicalH1TestCase(SeleniumTestCase):
                           "/aboutus.htm",
                           "/photos/landscaping-ideas.htm",
             ]
-            
-            # start_time = "START TIME: " + str(datetime.datetime.now())
+
             error_count = 0
             errors = ""
             success_count = 0
             wait = WebDriverWait(self.client, 2)
             varnish_buster = "?asdf7654"
+            print("<pre>")
             for test_url in test_urls:
                 self.client.get(self.visitor_site_url + test_url + varnish_buster)
                 wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, 'div')))
-    
+
                 print("TESTING: " + test_url)
                 try:
                     h1_list = self.client.find_elements_by_css_selector('h1')
@@ -79,7 +79,7 @@ class TitleCanonicalH1TestCase(SeleniumTestCase):
                     error_count += 1
                     errors += test_url + " --- H1 FAIL\n";
                     print("-------- H1 FAIL: ", sys.exc_info()[0])
-        
+
                 try:
                     title = self.client.title
                     self.assertTrue(len(title) > 10)
@@ -91,7 +91,7 @@ class TitleCanonicalH1TestCase(SeleniumTestCase):
                     error_count += 1
                     errors += test_url + " --- TITLE FAIL: " + title + "\n";
                     print("-------- TITLE FAIL: " + title + " ", sys.exc_info()[0])
-        
+
                 try:
                     canonical = self.client.find_element_by_css_selector('link[rel="canonical"]')
                     self.assertTrue(len(canonical.get_attribute('href')) > 1)
@@ -110,14 +110,12 @@ class TitleCanonicalH1TestCase(SeleniumTestCase):
                     errors += test_url + " --- PAGE HAS ERROR NOTICE\n"
                     print("-------- PAGE HAS ERROR NOTICE")
                 print("")
-                
+
             print(str(success_count) + " ASSERTIONS PASSED")
             print("ASSERTION FAILURES: " + (str(error_count) + " \n" + errors) if len(errors) else 'None!')
+            print("</pre>")
 
         else:
             print("Client not available")
-            
-            # print(start_time)
-            # print("END TIME: " + str(datetime.datetime.now()))
 
         self.assertFalse(error_count)

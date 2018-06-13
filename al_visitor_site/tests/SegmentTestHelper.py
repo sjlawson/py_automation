@@ -47,13 +47,14 @@ class SegmentTestHelper():
                         action_method = getattr(action_chain, action_name)
                     except AttributeError:
                         raise NotImplementedError("Class ActionChains does not implement %s" % action_name)
+                    old_page = test_case.client.find_element_by_tag_name('html')
                     action_method().perform()
 
                     # not relevant if action is page
                     if wait_for_pageload:
-                        with test_case.wait_for_new_page_load(timeout=10):
+                        with test_case.wait_for_new_page_load(old_page, timeout=10):
                             print('New page loaded')
-                if target == 'page':
+                else:
                     time.sleep(5)
                     # page calls need time to sleep
 
@@ -61,13 +62,14 @@ class SegmentTestHelper():
                 for perflog in perf_logs:
                     perf_msgs = json.loads(perflog['message'])
                     if 'request' in perf_msgs['message']['params'] and 'postData' in perf_msgs['message']['params']['request']\
-                       and perf_msgs['message']['params']['request']['postData'] is not None:
+                       and perf_msgs['message']['params']['request']['postData'] is not None and 'properties' in perf_msgs['message']['params']['request']['postData']:
                         props_string = json.loads(perf_msgs['message']['params']['request']['postData'])['properties']
                         if props_string is not None:
                             collect_seg.append(props_string)
+
                 if len(collect_seg):
                     break
-                elif tries < 2:
+                elif tries < 3:
                     tries += 1
                     raise TimeoutException
 
