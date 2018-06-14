@@ -598,3 +598,20 @@ class JoinBtnSegmentTestCase(SeleniumTestCase):
         }
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+
+    # Homepage Top Cities NY
+    def test_homePageTopCitiesNYC(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/', 'div.footer-region.cities-left > li > a[title="Search New York Pros"]', 'click')
+        segcall_info = {
+            'main_field': '',
+            'main_value': '',
+            'segment_params': [
+                ('', ''),
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
