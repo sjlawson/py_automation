@@ -38,7 +38,7 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
 
 
     # SR ha-lead-submit-v2 w/o postal code
-    def skiptest_leafPageSegmentCTAwithoutZIP(self):
+    def test_leafPageSegmentCTAwithoutZIP(self):
         if not self.client:
             return 0
 
