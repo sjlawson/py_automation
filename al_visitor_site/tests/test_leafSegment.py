@@ -26,9 +26,9 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
             'main_value': 'Visitor : SP Profile',
             'segment_params': [
                 ('name', 'Visitor : SP Profile'),
-                ('title', 'Angie\'s List | Join for FREE to see 10 Million Verified Reviews'),
+                ('title', 'All about u heating & air Reviews - Memphis, | Angie\'s List'),
                 ('srCtaDisplayed', True),
-                ('srCtaVersion', 'v2.1'),
+                ('srCtaVersion', 'v1'),
                 ('userId',),
                 ('userType', 'Visitor - New'),
             ]
