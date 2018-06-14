@@ -15,7 +15,7 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
             return 0
 
         # req'd params: current test case (self), relative path to triggering page, target element, and the triggering action
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/?CacheBuster')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/xx/memphis/all-about-u-heating-and-air-reviews-8499678.htm?CacheBuster')
 
         # describe what you are expecting in the segment call.
         # main field is how Python finds the test data in the page info, should probably be 'name' or 'activityLocation'
