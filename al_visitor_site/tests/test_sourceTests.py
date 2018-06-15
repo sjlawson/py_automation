@@ -9,7 +9,7 @@ from selenium.webdriver.common.by import By
 
 class CheckingSourceTestCase(SeleniumTestCase):
 
-    def test_pageSource(self):
+    def test_pageSourceTest(self):
         if self.client:
             test_urls = [ "/",
                           "/articles/",
@@ -17,15 +17,22 @@ class CheckingSourceTestCase(SeleniumTestCase):
                           "/auto/",
                           "/videos/",
                           "/how-it-works.htm",
+                          "/aboutus.htm",
                           "/hvac/",
                           "/faq/",
                           "/photos/",
                           "/videos/",
+                          "/videos/video-dont-let-fear-result-air-duct-cleaning-scam.htm",
                           "/in-the-press.htm",
+                          "/press-backlinks/",
                           "/author/angie-hicks.htm",
                           "/companylist/",
                           "/companylist/us/in/",
                           "/companylist/us/in/greenwood/a-new-horizon-renovations-llp-reviews-6422533.htm",
+                          "/companylist/us/ga/winder/1-a-team-home-repair-and-waterproofing-reviews-7804577.htm",
+                          "/companylist/us/in/indianapolis/service-plus-heating-cooling-plumbing-reviews-140447.htm",
+                          "/companylist/us/in/greenwood/a-new-horizon-renovations-llp-reviews-6422533.htm",
+                          "/companylist/us/nc/candler/blue-ridge-construction-reviews-7682402.htm",
             ]
             
             # start_time = "START TIME: " + str(datetime.datetime.now())
