@@ -180,10 +180,10 @@ class SolutionCenterSegmentTestCase(SeleniumTestCase):
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
-        
 
-    # Homepage Top Cities NYC
-    def test_homePageTopCitiesNYC(self):
+
+    # Solution Center Top Cities NYC
+    def test_solutionCenterTopCitiesNYC(self):
         if not self.client:
             return 0
 
@@ -200,8 +200,8 @@ class SolutionCenterSegmentTestCase(SeleniumTestCase):
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
-    # Homepage Top Cities Houston
-    def test_homePageTopCitiesHouston(self):
+    # Solution Center Top Cities Houston
+    def test_solutionCenterTopCitiesHouston(self):
         if not self.client:
             return 0
 
@@ -218,8 +218,8 @@ class SolutionCenterSegmentTestCase(SeleniumTestCase):
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
-    # Homepage Top Cities Chicago
-    def test_homePageTopCitiesChicago(self):
+    # Solution Center Top Cities Chicago
+    def test_solutionCenterTopCitiesChicago(self):
         if not self.client:
             return 0
 
@@ -236,8 +236,8 @@ class SolutionCenterSegmentTestCase(SeleniumTestCase):
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
-    # Homepage Top Cities Indianapolis
-    def test_homePageTopCitiesIndianapolis(self):
+    # Solution Center Top Cities Indianapolis
+    def test_solutionCenterTopCitiesIndianapolis(self):
         if not self.client:
             return 0
 
@@ -254,8 +254,8 @@ class SolutionCenterSegmentTestCase(SeleniumTestCase):
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
-    # Homepage Top Cities Boston
-    def test_homePageTopCitiesBoston(self):
+    # Solution Center Top Cities Boston
+    def test_solutionCenterTopCitiesBoston(self):
         if not self.client:
             return 0
 
@@ -272,8 +272,8 @@ class SolutionCenterSegmentTestCase(SeleniumTestCase):
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
-    # Homepage Top Cities Atlanta
-    def test_homePageTopCitiesAtlanta(self):
+    # Solution Center Top Cities Atlanta
+    def test_solutionCenterTopCitiesAtlanta(self):
         if not self.client:
             return 0
 
@@ -290,8 +290,8 @@ class SolutionCenterSegmentTestCase(SeleniumTestCase):
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
-    # Homepage Top Cities Cincinatti
-    def test_homePageTopCitiesCincinatti(self):
+    # Solution Center Top Cities Cincinatti
+    def test_solutionCenterTopCitiesCincinatti(self):
         if not self.client:
             return 0
 
@@ -308,8 +308,8 @@ class SolutionCenterSegmentTestCase(SeleniumTestCase):
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
-    # Homepage Top Cities Los Angeles
-    def test_homePageTopCitiesLosAngeles(self):
+    # Solution Center Top Cities Los Angeles
+    def test_solutionCenterTopCitiesLosAngeles(self):
         if not self.client:
             return 0
 
@@ -326,8 +326,8 @@ class SolutionCenterSegmentTestCase(SeleniumTestCase):
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
-    # Homepage Top Cities Dallas
-    def test_homePageTopCitiesDallas(self):
+    # Solution Center Top Cities Dallas
+    def test_solutionCenterTopCitiesDallas(self):
         if not self.client:
             return 0
 
@@ -344,8 +344,8 @@ class SolutionCenterSegmentTestCase(SeleniumTestCase):
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
-    # Homepage Top Cities Pittsburgh
-    def test_homePageTopCitiesPittsburgh(self):
+    # Solution Center Top Cities Pittsburgh
+    def test_solutionCenterTopCitiesPittsburgh(self):
         if not self.client:
             return 0
 
@@ -362,8 +362,8 @@ class SolutionCenterSegmentTestCase(SeleniumTestCase):
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
-    # Homepage Top Cities Minneapolis
-    def test_homePageTopCitiesMinneapolis(self):
+    # Solution Center Top Cities Minneapolis
+    def test_solutionCenterTopCitiesMinneapolis(self):
         if not self.client:
             return 0
 
@@ -380,8 +380,8 @@ class SolutionCenterSegmentTestCase(SeleniumTestCase):
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
-    # Homepage Top Cities Las Vegas
-    def test_homePageTopCitiesLasVegas(self):
+    # Solution Center Top Cities Las Vegas
+    def test_solutionCenterTopCitiesLasVegas(self):
         if not self.client:
             return 0
 
@@ -398,8 +398,8 @@ class SolutionCenterSegmentTestCase(SeleniumTestCase):
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
-    # Homepage Top Cities San Antonio
-    def test_homePageTopCitiesSanAntonio(self):
+    # Solution Center Top Cities San Antonio
+    def test_solutionCenterTopCitiesSanAntonio(self):
         if not self.client:
             return 0
 
@@ -416,8 +416,8 @@ class SolutionCenterSegmentTestCase(SeleniumTestCase):
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
-    # Homepage Top Cities Tampa
-    def test_homePageTopCitiesTampa(self):
+    # Solution Center Top Cities Tampa
+    def test_solutionCenterTopCitiesTampa(self):
         if not self.client:
             return 0
 
