@@ -7,9 +7,35 @@ from SegmentTestHelper import SegmentTestHelper
 # Also tests that segment track call gets sent on click
 class LeafPageSegmentTestCase(SeleniumTestCase):
 
+    # basic leaf page call test for advertisers
+    def test_leafPageSegmentPagecallAdvertisers(self):
+        # quit if browser didn't load
+        if not self.client:
+            return 0
 
-    # basic leaf page call test
-    def test_leafPageSegmentPagecall(self):
+        # req'd params: current test case (self), relative path to triggering page, target element, and the triggering action
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/ga/atlanta/aaa-plumbing-heating-and-air-conditioning-reviews-101241.htm?CacheBuster')
+
+        segcall_info = {
+            'main_field': 'name',
+            'main_value': 'Visitor : SP Profile',
+            'segment_params': [
+                ('name', 'Visitor : SP Profile'),
+                ('title', 'AAA Plumbing Heating & Air Conditioning Reviews - Atlanta, GA | Angie\'s List'),
+                ('srCtaDisplayed', True),
+                ('srCtaVersion', 'v1'),
+                ('userId',),
+                ('userType', 'Visitor - New'),
+                ('visitorPageCategory', 'Plumbing'),
+                ('visitorPageGeo', 'Atlanta'),
+                ('visitorPageGeoCategory', 'ATLANTA - PLUMBING'),
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # basic leaf page call test for new advertisers
+    def test_leafPageSegmentPagecallNewAdvertisers(self):
         # quit if browser didn't load
         if not self.client:
             return 0
@@ -17,10 +43,6 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
         # req'd params: current test case (self), relative path to triggering page, target element, and the triggering action
         collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/xx/memphis/all-about-u-heating-and-air-reviews-8499678.htm?CacheBuster')
 
-        # describe what you are expecting in the segment call.
-        # main field is how Python finds the test data in the page info, should probably be 'name' or 'activityLocation'
-        # segment_params is a list of other segment fields to check. Can include main field as well.
-        # Take note of formatting...
         segcall_info = {
             'main_field': 'name',
             'main_value': 'Visitor : SP Profile',
@@ -31,10 +53,41 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
                 ('srCtaVersion', 'v1'),
                 ('userId',),
                 ('userType', 'Visitor - New'),
+                ('visitorPageCategory', 'HEATING & A/C'),
+                ('visitorPageGeo', 'Memphis'),
+                ('visitorPageGeoCategory', 'MEMPHIS - HEATING & A/C'),
             ]
         }
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # basic leaf page call test for non-advertisers
+    def test_leafPageSegmentPagecallNonAdvertisers(self):
+        # quit if browser didn't load
+        if not self.client:
+            return 0
+
+        # req'd params: current test case (self), relative path to triggering page, target element, and the triggering action
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/in/indianapolis/247-lock-change-service-reviews-8498073.htm?CacheBuster')
+
+        segcall_info = {
+            'main_field': 'name',
+            'main_value': 'Visitor : SP Profile',
+            'segment_params': [
+                ('name', 'Visitor : SP Profile'),
+                ('title', '24/7 Lock Change Service Reviews - Indianapolis, IN | Angie\'s List'),
+                ('srCtaDisplayed', False),
+                ('srCtaVersion',),
+                ('userId',),
+                ('userType', 'Visitor - New'),
+                ('visitorPageCategory', 'AUTO SERVICE'),
+                ('visitorPageGeo', 'INDIANAPOLIS'),
+                ('visitorPageGeoCategory', 'INDIANAPOLIS - AUTO SERVICE'),
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
 
 
     # SR ha-lead-submit-v2 w/o postal code
@@ -42,8 +95,7 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/nc/raleigh/alpha-omega-construction-group-inc-reviews-8807061.htm',\
-                                                                              '#ha-lead-submit', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/nc/raleigh/alpha-omega-construction-group-inc-reviews-8807061.htm','#ha-lead-submit', 'click')
         segcall_info = {
             'main_field': 'activityLocation',
             'main_value': 'Visitor : SP Profile',
@@ -67,8 +119,7 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
                 ]
             }
         ]
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/nc/raleigh/alpha-omega-construction-group-inc-reviews-8807061.htm',\
-                                                                              '#ha-lead-submit', 'click', True, prep_actions)
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/nc/raleigh/alpha-omega-construction-group-inc-reviews-8807061.htm','#ha-lead-submit', 'click', True, prep_actions)
         segcall_info = {
             'main_field': 'activityLocation',
             'main_value': 'Visitor : SP Profile',
@@ -120,4 +171,3 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
         }
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
-
