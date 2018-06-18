@@ -607,10 +607,12 @@ class JoinBtnSegmentTestCase(SeleniumTestCase):
 
         collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/', 'div.footer-region.cities-left > li > a[title="Search New York Pros"]', 'click')
         segcall_info = {
-            'main_field': '',
-            'main_value': '',
+            'main_field': 'description',
+            'main_value': 'Top Cities link in footer',
             'segment_params': [
-                ('', ''),
+                ('description', 'Top Cities link in footer'),
+                ('activityLocation', 'Visitor : Home'),
+                ('userId',),
             ]
         }
 
