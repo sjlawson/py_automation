@@ -53,7 +53,7 @@ class SegmentTestHelper():
 
                     # not relevant if action is page
                     if wait_for_pageload:
-                        with test_case.wait_for_new_page_load(old_page, timeout=10):
+                        with test_case.wait_for_new_page_load(old_page, timeout=20):
                             print('New page loaded')
                 else:
                     time.sleep(5)
