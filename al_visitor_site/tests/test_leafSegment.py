@@ -95,12 +95,19 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/nc/raleigh/alpha-omega-construction-group-inc-reviews-8807061.htm','#ha-lead-submit', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/tx/houston/2-brothers-home-remodeling-reviews-8990024.htm','#ha-lead-submit', 'click')
         segcall_info = {
             'main_field': 'activityLocation',
             'main_value': 'Visitor : SP Profile',
             'segment_params': [
                 ("description","Service Request Flow entry button"),
+                ('homeAdvisorCategoryId','10217'),
+                ('marketId', '15'),
+                ('userId', '47377632'),
+                ('userSelectedZipCode',),
+                ('visitorPageCategory', 'Roofing'),
+                ('visitorPageGeo', 'Houston'),
+                ('visitorPageGeoCategory', 'HOUSTON - ROOFING'),
             ]
         }
 
@@ -125,6 +132,13 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
             'main_value': 'Visitor : SP Profile',
             'segment_params': [
                 ("description","Service Request Flow entry button"),
+                ('homeAdvisorCategoryId','10217'),
+                ('marketId', '40'),
+                ('userId', '47377632'),
+                ('userSelectedZipCode', '27610'),
+                ('visitorPageCategory', 'Roofing'),
+                ('visitorPageGeo', 'RALEIGH/DURHAM'),
+                ('visitorPageGeoCategory', 'RALEIGH/DURHAM - ROOFING'),
             ]
         }
 
