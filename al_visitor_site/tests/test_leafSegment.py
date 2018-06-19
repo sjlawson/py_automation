@@ -90,7 +90,7 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
 
 
 
-    # SR ha-lead-submit-v2 w/o postal code
+    # SR ha-lead-submit-v2 w/o postal code Leaf Page Advertiser
     def test_leafPageSegmentCTAwithoutZIP(self):
         if not self.client:
             return 0
@@ -113,7 +113,7 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
-    # SR ha-lead-submit-v2 with postal code
+    # SR ha-lead-submit-v2 with postal code Leaf Page Advertiser
     def test_leafPageSegmentCTAwithZIP(self):
         if not self.client:
             return 0
@@ -145,42 +145,76 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
 
-    # Footer Join
+    # Footer Join Leaf Page Advertiser
     def test_footerJoinCTA(self):
         # quit if browser didn't load
         if not self.client:
             return 0
 
         # req'd params: current test case (self), relative path to triggering page, target element, and the triggering action
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/', '#footer-join', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/nc/charlotte/all-phaze-electric-llc-reviews-8841148.htm', '#footer-join', 'click')
 
         segcall_info = {
             'main_field': 'activityLocation',
             'main_value': 'Visitor : SP Profile',
             'segment_params': [
+                ('activityLocation', 'CompanyProfile'),
                 ('description', 'Join button in footer'),
+                ('marketId', '10'),
                 ('userId', ''),
+                ('visitorPageCategory', 'Electrical'),
+                ('visitorPageGeo', 'CHARLOTTE'),
+                ('visitorPageGeoCategory', 'CHARLOTTE - ELECTRICAL'),
             ]
         }
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
 
-    # Header Join
+    # Header Join Leaf page New Advertiser
     def test_headerJoinCTA(self):
         # quit if browser didn't load
         if not self.client:
             return 0
 
         # req'd params: current test case (self), relative path to triggering page, target element, and the triggering action
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/', '#header-join', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/il/downers-grove/1212-architects-and-planners-reviews-3079269.htm', '#header-join', 'click')
 
         segcall_info = {
             'main_field': 'activityLocation',
             'main_value': 'Visitor : SP Profile',
             'segment_params': [
+                ('activityLocation', 'Visitor : SP Profile'),
                 ('description', 'Join link in header'),
+                ('marketId', '7'),
                 ('userId', ''),
+                ('visitorPageCategory', 'Remodeling - General'),
+                ('visitorPageGeo', 'CHICAGO'),
+                ('visitorPageGeoCategory', 'CHICAGO - REMODELING - GENERAL'),
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+
+    # Sign In Header Leaf Page New Advertiser
+    def test_SignInHeaderLeaf(self):
+        # quit if browser didn't load
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/fl/miami/advanced-turf-property-maintenance-reviews-5966518.htm','#header-join', 'click')
+
+        segcall_info = {
+            'main_field': 'activityLocation',
+            'main_value': 'Visitor : SP Profile',
+            'segment_params': [
+                ('description', 'Sign In link in header'),
+                ('marketId', '31'),
+                ('userId', ''),
+                ('visitorPageCategory', 'Landscaping'),
+                ('visitorPageGeo', 'MIAMI/FT. LAUDERDALE'),
+                ('visitorPageGeoCategory', 'MIAMI/FT. LAUDERDALE - LANDSCAPING'),
             ]
         }
 
