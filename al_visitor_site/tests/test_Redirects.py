@@ -9,7 +9,7 @@ from selenium.webdriver.common.by import By
 class RedirectsTestCase(SeleniumTestCase):
     
     def test_redirects(self):
-        test_urls = get_redirect_tuples('SD-3011')
+        test_urls = get_redirect_tuples('SD-3275')
         #test_urls = get_redirect_tuples('SD-2978')
 
         wait = WebDriverWait(self.client, 2)
@@ -28,6 +28,12 @@ class RedirectsTestCase(SeleniumTestCase):
             
 def get_redirect_tuples(idx):
     tups = {}
+
+    tups['SD-3275'] = [
+            ('basic/new-angies-list-membership-plans.htm', '/'),
+            ('new-membership-plans', '/'),
+            ('newmembershipplans', '/'),
+        ]
 
     tups['sd-2988'] = [
             ('accountants/', '/companylist/accountants.htm'),
