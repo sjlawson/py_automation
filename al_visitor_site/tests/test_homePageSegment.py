@@ -6,7 +6,7 @@ from SegmentTestHelper import SegmentTestHelper
 # TODO: adapt for other webdrivers
 # currently only Chrome can test for console errors
 # Also tests that segment track call gets sent on click
-class JoinBtnSegmentTestCase(SeleniumTestCase):
+class HomepageSegmentTestCase(SeleniumTestCase):
 
     # test segment call on clicking the join link in home page header
     def test_homePageSegmentJoin(self):
@@ -594,6 +594,259 @@ class JoinBtnSegmentTestCase(SeleniumTestCase):
                 ('homeAdvisorCategoryId', '10216'),
                 ('categoryId', '107'),
                 ('categorySelected', 'Plumbing'),
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+
+    # Homepage Top Cities NYC
+    def test_homePageTopCitiesNYC(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/', 'div.footer-region.cities-left > li > a[title="Search New York Pros"]', 'click')
+        segcall_info = {
+            'main_field': 'description',
+            'main_value': 'Top Cities link in footer',
+            'segment_params': [
+                ('description', 'Top Cities link in footer'),
+                ('activityLocation', 'Visitor : Home'),
+                ('userId',),
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # Homepage Top Cities Houston
+    def test_homePageTopCitiesHouston(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/', 'div.footer-region.cities-left > li > a[title="Search Houston Pros"]', 'click')
+        segcall_info = {
+            'main_field': 'description',
+            'main_value': 'Top Cities link in footer',
+            'segment_params': [
+                ('description', 'Top Cities link in footer'),
+                ('activityLocation', 'Visitor : Home'),
+                ('userId',),
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # Homepage Top Cities Chicago
+    def test_homePageTopCitiesChicago(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/', 'div.footer-region.cities-left > li > a[title="Search Chicago Pros"]', 'click')
+        segcall_info = {
+            'main_field': 'description',
+            'main_value': 'Top Cities link in footer',
+            'segment_params': [
+                ('description', 'Top Cities link in footer'),
+                ('activityLocation', 'Visitor : Home'),
+                ('userId',),
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # Homepage Top Cities Indianapolis
+    def test_homePageTopCitiesIndianapolis(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/', 'div.footer-region.cities-left > li > a[title="Search Indianapolis Pros"]', 'click')
+        segcall_info = {
+            'main_field': 'description',
+            'main_value': 'Top Cities link in footer',
+            'segment_params': [
+                ('description', 'Top Cities link in footer'),
+                ('activityLocation', 'Visitor : Home'),
+                ('userId',),
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # Homepage Top Cities Boston
+    def test_homePageTopCitiesBoston(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/', 'div.footer-region.cities-left > li > a[title="Search Boston Pros"]', 'click')
+        segcall_info = {
+            'main_field': 'description',
+            'main_value': 'Top Cities link in footer',
+            'segment_params': [
+                ('description', 'Top Cities link in footer'),
+                ('activityLocation', 'Visitor : Home'),
+                ('userId',),
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # Homepage Top Cities Atlanta
+    def test_homePageTopCitiesAtlanta(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/', 'div.footer-region.cities-left > li > a[title="Search Atlanta Pros"]', 'click')
+        segcall_info = {
+            'main_field': 'description',
+            'main_value': 'Top Cities link in footer',
+            'segment_params': [
+                ('description', 'Top Cities link in footer'),
+                ('activityLocation', 'Visitor : Home'),
+                ('userId',),
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # Homepage Top Cities Cincinnati
+    def test_homePageTopCitiesCincinnati(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/', 'div.footer-region.cities-left > li > a[title="Search Cincinnati Pros"]', 'click')
+        segcall_info = {
+            'main_field': 'description',
+            'main_value': 'Top Cities link in footer',
+            'segment_params': [
+                ('description', 'Top Cities link in footer'),
+                ('activityLocation', 'Visitor : Home'),
+                ('userId',),
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # Homepage Top Cities Los Angeles
+    def test_homePageTopCitiesLosAngeles(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/', 'div.footer-region.cities-right > li > a[title="Search Los Angeles Pros"]', 'click')
+        segcall_info = {
+            'main_field': 'description',
+            'main_value': 'Top Cities link in footer',
+            'segment_params': [
+                ('description', 'Top Cities link in footer'),
+                ('activityLocation', 'Visitor : Home'),
+                ('userId',),
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # Homepage Top Cities Dallas
+    def test_homePageTopCitiesDallas(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/', 'div.footer-region.cities-right > li > a[title="Search Dallas Pros"]', 'click')
+        segcall_info = {
+            'main_field': 'description',
+            'main_value': 'Top Cities link in footer',
+            'segment_params': [
+                ('description', 'Top Cities link in footer'),
+                ('activityLocation', 'Visitor : Home'),
+                ('userId',),
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # Homepage Top Cities Pittsburgh
+    def test_homePageTopCitiesPittsburgh(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/', 'div.footer-region.cities-right > li > a[title="Search Pittsburgh Pros"]', 'click')
+        segcall_info = {
+            'main_field': 'description',
+            'main_value': 'Top Cities link in footer',
+            'segment_params': [
+                ('description', 'Top Cities link in footer'),
+                ('activityLocation', 'Visitor : Home'),
+                ('userId',),
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # Homepage Top Cities Minneapolis
+    def test_homePageTopCitiesMinneapolis(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/', 'div.footer-region.cities-right > li > a[title="Search Minneapolis Pros"]', 'click')
+        segcall_info = {
+            'main_field': 'description',
+            'main_value': 'Top Cities link in footer',
+            'segment_params': [
+                ('description', 'Top Cities link in footer'),
+                ('activityLocation', 'Visitor : Home'),
+                ('userId',),
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # Homepage Top Cities Las Vegas
+    def test_homePageTopCitiesLasVegas(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/', 'div.footer-region.cities-right > li > a[title="Search Las Vegas Pros"]', 'click')
+        segcall_info = {
+            'main_field': 'description',
+            'main_value': 'Top Cities link in footer',
+            'segment_params': [
+                ('description', 'Top Cities link in footer'),
+                ('activityLocation', 'Visitor : Home'),
+                ('userId',),
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # Homepage Top Cities San Antonio
+    def test_homePageTopCitiesSanAntonio(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/', 'div.footer-region.cities-right > li > a[title="Search San Antonio Pros"]', 'click')
+        segcall_info = {
+            'main_field': 'description',
+            'main_value': 'Top Cities link in footer',
+            'segment_params': [
+                ('description', 'Top Cities link in footer'),
+                ('activityLocation', 'Visitor : Home'),
+                ('userId',),
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # Homepage Top Cities Tampa
+    def test_homePageTopCitiesTampa(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/', 'div.footer-region.cities-right > li > a[title="Search Tampa Pros"]', 'click')
+        segcall_info = {
+            'main_field': 'description',
+            'main_value': 'Top Cities link in footer',
+            'segment_params': [
+                ('description', 'Top Cities link in footer'),
+                ('activityLocation', 'Visitor : Home'),
+                ('userId',),
             ]
         }
 
