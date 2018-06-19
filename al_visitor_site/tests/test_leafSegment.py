@@ -26,8 +26,8 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
                 ('srCtaVersion', 'v1'),
                 ('userId',),
                 ('userType', 'Visitor - New'),
-                ('visitorPageCategory', 'Plumbing'),
-                ('visitorPageGeo', 'Atlanta'),
+                ('visitorPageCategory', 'PLUMBING'),
+                ('visitorPageGeo', 'ATLANTA'),
                 ('visitorPageGeoCategory', 'ATLANTA - PLUMBING'),
             ]
         }
@@ -54,7 +54,7 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
                 ('userId',),
                 ('userType', 'Visitor - New'),
                 ('visitorPageCategory', 'HEATING & A/C'),
-                ('visitorPageGeo', 'Memphis'),
+                ('visitorPageGeo', 'MEMPHIS'),
                 ('visitorPageGeoCategory', 'MEMPHIS - HEATING & A/C'),
             ]
         }
@@ -103,10 +103,10 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
                 ("description","Service Request Flow entry button"),
                 ('homeAdvisorCategoryId','10217'),
                 ('marketId', '15'),
-                ('userId', '47377632'),
+                ('userId',),
                 ('userSelectedZipCode',),
                 ('visitorPageCategory', 'Roofing'),
-                ('visitorPageGeo', 'Houston'),
+                ('visitorPageGeo', 'HOUSTON'),
                 ('visitorPageGeoCategory', 'HOUSTON - ROOFING'),
             ]
         }
@@ -134,7 +134,7 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
                 ("description","Service Request Flow entry button"),
                 ('homeAdvisorCategoryId','10217'),
                 ('marketId', '40'),
-                ('userId', '47377632'),
+                ('userId',),
                 ('userSelectedZipCode', '27610'),
                 ('visitorPageCategory', 'Roofing'),
                 ('visitorPageGeo', 'RALEIGH/DURHAM'),
