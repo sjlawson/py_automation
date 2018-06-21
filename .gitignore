@@ -6,3 +6,5 @@ geckodriver.log
 .flycheck*
 reports/
 .DS_Store
+.idea/*
+.vscode/*

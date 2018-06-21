@@ -12,7 +12,7 @@ class CompanyListTestCase(SeleniumTestCase):
             return 0
 
         # req'd params: current test case (self), relative path to triggering page, target element, and the triggering action
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/?bustARhyme')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist//?bustA1')
 
         segcall_info = {
             'main_field': 'name',
@@ -40,7 +40,7 @@ class CompanyListTestCase(SeleniumTestCase):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/?bustARhyme', '#header-join', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist//?bustA1', '#header-join', 'click')
         segcall_info = {
             'main_field': 'activityLocation',
             'main_value': 'Visitor : Directory',
@@ -59,7 +59,7 @@ class CompanyListTestCase(SeleniumTestCase):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/?bustARhyme', '.btnHiw', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist//?bustA1', '.btnHiw', 'click')
         segcall_info = {
             'main_field': 'activityLocation',
             'main_value': 'Visitor : Directory',
@@ -76,7 +76,7 @@ class CompanyListTestCase(SeleniumTestCase):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/?bustARhyme', '#header-sign-in', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist//?bustA1', '#header-sign-in', 'click')
         segcall_info = {
             'main_field': 'activityLocation',
             'main_value': 'Visitor : Directory',
@@ -94,7 +94,7 @@ class CompanyListTestCase(SeleniumTestCase):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/?bustARhyme', '#faq', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist//?bustA1', '#faq', 'click')
         segcall_info = {
             'main_field': 'activityLocation',
             'main_value': 'Visitor : Directory',
@@ -111,7 +111,7 @@ class CompanyListTestCase(SeleniumTestCase):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/?bustARhyme', '#press', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist//?bustA1', '#press', 'click')
         segcall_info = {
             'main_field': 'activityLocation',
             'main_value': 'Visitor : Directory',
@@ -128,7 +128,7 @@ class CompanyListTestCase(SeleniumTestCase):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/?bustARhyme', '#articles', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist//?bustA1', '#articles', 'click')
         segcall_info = {
             'main_field': 'activityLocation',
             'main_value': 'Visitor : Directory',
@@ -145,7 +145,7 @@ class CompanyListTestCase(SeleniumTestCase):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/?bustARhyme', '#nav_business_owner', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist//?bustA1', '#nav_business_owner', 'click')
         segcall_info = {
             'main_field': 'activityLocation',
             'main_value': 'Visitor : Directory',
@@ -164,10 +164,10 @@ class CompanyListTestCase(SeleniumTestCase):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/?bustARhyme', '#footer-join', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist//?bustA1', '#footer-join', 'click')
         segcall_info = {
             'main_field': 'activityLocation',
-            'main_value': 'Visitor : Directory',
+            'main_value': 'Directory',
             'segment_params': [
                 ('description', 'Join button in footer'),
                 ('userId',),
@@ -182,13 +182,13 @@ class CompanyListTestCase(SeleniumTestCase):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/?bustARhyme', 'div.footer-region.cities-left > li > a[title="Search New York Pros"]', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist//?bustA1', 'div.footer-region.cities-left > li > a[title="Search New York Pros"]', 'click')
         segcall_info = {
             'main_field': 'description',
             'main_value': 'Top Cities link in footer',
             'segment_params': [
                 ('description', 'Top Cities link in footer'),
-                ('activityLocation', 'Visitor : Directory'),
+                ('activityLocation', 'Directory'),
                 ('userId',),
             ]
         }
@@ -200,13 +200,13 @@ class CompanyListTestCase(SeleniumTestCase):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/?bustARhyme', 'div.footer-region.cities-left > li > a[title="Search Houston Pros"]', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist//?bustA1', 'div.footer-region.cities-left > li > a[title="Search Houston Pros"]', 'click')
         segcall_info = {
             'main_field': 'description',
             'main_value': 'Top Cities link in footer',
             'segment_params': [
                 ('description', 'Top Cities link in footer'),
-                ('activityLocation', 'Visitor : Directory'),
+                ('activityLocation', 'Directory'),
                 ('userId',),
             ]
         }
@@ -218,13 +218,13 @@ class CompanyListTestCase(SeleniumTestCase):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/?bustARhyme', 'div.footer-region.cities-left > li > a[title="Search Chicago Pros"]', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist//?bustA1', 'div.footer-region.cities-left > li > a[title="Search Chicago Pros"]', 'click')
         segcall_info = {
             'main_field': 'description',
             'main_value': 'Top Cities link in footer',
             'segment_params': [
                 ('description', 'Top Cities link in footer'),
-                ('activityLocation', 'Visitor : Directory'),
+                ('activityLocation', 'Directory'),
                 ('userId',),
             ]
         }
@@ -236,13 +236,13 @@ class CompanyListTestCase(SeleniumTestCase):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/?bustARhyme', 'div.footer-region.cities-left > li > a[title="Search Indianapolis Pros"]', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist//?bustA1', 'div.footer-region.cities-left > li > a[title="Search Indianapolis Pros"]', 'click')
         segcall_info = {
             'main_field': 'description',
             'main_value': 'Top Cities link in footer',
             'segment_params': [
                 ('description', 'Top Cities link in footer'),
-                ('activityLocation', 'Visitor : Directory'),
+                ('activityLocation', 'Directory'),
                 ('userId',),
             ]
         }
@@ -254,13 +254,13 @@ class CompanyListTestCase(SeleniumTestCase):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/?bustARhyme', 'div.footer-region.cities-left > li > a[title="Search Boston Pros"]', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist//?bustA1', 'div.footer-region.cities-left > li > a[title="Search Boston Pros"]', 'click')
         segcall_info = {
             'main_field': 'description',
             'main_value': 'Top Cities link in footer',
             'segment_params': [
                 ('description', 'Top Cities link in footer'),
-                ('activityLocation', 'Visitor : Directory'),
+                ('activityLocation', 'Directory'),
                 ('userId',),
             ]
         }
@@ -272,13 +272,13 @@ class CompanyListTestCase(SeleniumTestCase):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/?bustARhyme', 'div.footer-region.cities-left > li > a[title="Search Atlanta Pros"]', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist//?bustA1', 'div.footer-region.cities-left > li > a[title="Search Atlanta Pros"]', 'click')
         segcall_info = {
             'main_field': 'description',
             'main_value': 'Top Cities link in footer',
             'segment_params': [
                 ('description', 'Top Cities link in footer'),
-                ('activityLocation', 'Visitor : Directory'),
+                ('activityLocation', 'Directory'),
                 ('userId',),
             ]
         }
@@ -290,13 +290,13 @@ class CompanyListTestCase(SeleniumTestCase):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/?bustARhyme', 'div.footer-region.cities-left > li > a[title="Search Cincinnati Pros"]', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist//?bustA1', 'div.footer-region.cities-left > li > a[title="Search Cincinnati Pros"]', 'click')
         segcall_info = {
             'main_field': 'activityLocation',
-            'main_value': 'CNT : Articles List',
+            'main_value': 'Directory',
             'segment_params': [
                 ('description', 'Top Cities link in footer'),
-                ('activityLocation', 'Visitor : Directory'),
+                ('activityLocation', 'Directory'),
                 ('userId',),
             ]
         }
@@ -308,13 +308,13 @@ class CompanyListTestCase(SeleniumTestCase):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/?bustARhyme', 'div.footer-region.cities-right > li > a[title="Search Los Angeles Pros"]', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist//?bustA1', 'div.footer-region.cities-right > li > a[title="Search Los Angeles Pros"]', 'click')
         segcall_info = {
             'main_field': 'description',
             'main_value': 'Top Cities link in footer',
             'segment_params': [
                 ('description', 'Top Cities link in footer'),
-                ('activityLocation', 'Visitor : Directory'),
+                ('activityLocation', 'Directory'),
                 ('userId',),
             ]
         }
@@ -326,13 +326,13 @@ class CompanyListTestCase(SeleniumTestCase):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/?bustARhyme', 'div.footer-region.cities-right > li > a[title="Search Dallas Pros"]', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist//?bustA1', 'div.footer-region.cities-right > li > a[title="Search Dallas Pros"]', 'click')
         segcall_info = {
             'main_field': 'description',
             'main_value': 'Top Cities link in footer',
             'segment_params': [
                 ('description', 'Top Cities link in footer'),
-                ('activityLocation', 'Visitor : Directory'),
+                ('activityLocation', 'Directory'),
                 ('userId',),
             ]
         }
@@ -344,13 +344,13 @@ class CompanyListTestCase(SeleniumTestCase):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/?bustARhyme', 'div.footer-region.cities-right > li > a[title="Search Pittsburgh Pros"]', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist//?bustA1', 'div.footer-region.cities-right > li > a[title="Search Pittsburgh Pros"]', 'click')
         segcall_info = {
             'main_field': 'description',
             'main_value': 'Top Cities link in footer',
             'segment_params': [
                 ('description', 'Top Cities link in footer'),
-                ('activityLocation', 'Visitor : Directory'),
+                ('activityLocation', 'Directory'),
                 ('userId',),
             ]
         }
@@ -362,13 +362,13 @@ class CompanyListTestCase(SeleniumTestCase):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/?bustARhyme', 'div.footer-region.cities-right > li > a[title="Search Minneapolis Pros"]', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist//?bustA1', 'div.footer-region.cities-right > li > a[title="Search Minneapolis Pros"]', 'click')
         segcall_info = {
             'main_field': 'description',
             'main_value': 'Top Cities link in footer',
             'segment_params': [
                 ('description', 'Top Cities link in footer'),
-                ('activityLocation', 'Visitor : Directory'),
+                ('activityLocation', 'Directory'),
                 ('userId',),
             ]
         }
@@ -380,13 +380,13 @@ class CompanyListTestCase(SeleniumTestCase):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/?bustARhyme', 'div.footer-region.cities-right > li > a[title="Search Las Vegas Pros"]', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist//?bustA1', 'div.footer-region.cities-right > li > a[title="Search Las Vegas Pros"]', 'click')
         segcall_info = {
             'main_field': 'description',
             'main_value': 'Top Cities link in footer',
             'segment_params': [
                 ('description', 'Top Cities link in footer'),
-                ('activityLocation', 'Visitor : Directory'),
+                ('activityLocation', 'Directory'),
                 ('userId',),
             ]
         }
@@ -398,13 +398,13 @@ class CompanyListTestCase(SeleniumTestCase):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/?bustARhyme', 'div.footer-region.cities-right > li > a[title="Search San Antonio Pros"]', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist//?bustA1', 'div.footer-region.cities-right > li > a[title="Search San Antonio Pros"]', 'click')
         segcall_info = {
             'main_field': 'description',
             'main_value': 'Top Cities link in footer',
             'segment_params': [
                 ('description', 'Top Cities link in footer'),
-                ('activityLocation', 'Visitor : Directory'),
+                ('activityLocation', 'Directory'),
                 ('userId',),
             ]
         }
@@ -416,13 +416,13 @@ class CompanyListTestCase(SeleniumTestCase):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/?bustARhyme', 'div.footer-region.cities-right > li > a[title="Search Tampa Pros"]', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist//?bustA1', 'div.footer-region.cities-right > li > a[title="Search Tampa Pros"]', 'click')
         segcall_info = {
             'main_field': 'description',
             'main_value': 'Top Cities link in footer',
             'segment_params': [
                 ('description', 'Top Cities link in footer'),
-                ('activityLocation', 'Visitor : Directory'),
+                ('activityLocation', 'Directory'),
                 ('userId',),
             ]
         }
@@ -692,7 +692,7 @@ class CompanyListTestCase(SeleniumTestCase):
         collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/home-inspection.htm?bustARhyme', 'div.footer-region.cities-left > li > a[title="Search Cincinnati Pros"]', 'click')
         segcall_info = {
             'main_field': 'activityLocation',
-            'main_value': 'CNT : Articles List',
+            'main_value': 'Visitor : CatNoGeo',
             'segment_params': [
                 ('description', 'Top Cities link in footer'),
                 ('activityLocation', 'Visitor : CatNoGeo'),
@@ -827,4 +827,3 @@ class CompanyListTestCase(SeleniumTestCase):
         }
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
-
