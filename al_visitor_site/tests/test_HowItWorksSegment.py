@@ -293,7 +293,7 @@ class HowItWorksPageSegmentTestCase(SeleniumTestCase):
         collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/how-it-works.htm?bustARhyme', 'div.footer-region.cities-left > li > a[title="Search Cincinnati Pros"]', 'click')
         segcall_info = {
             'main_field': 'activityLocation',
-            'main_value': 'CNT : Articles List',
+            'main_value': 'H: How it Works',
             'segment_params': [
                 ('description', 'Top Cities link in footer'),
                 ('activityLocation', 'H: How it Works'),
