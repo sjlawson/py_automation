@@ -92,8 +92,11 @@ class SegmentTestHelper():
     ## main_value - value of main field
     ## segment_params - LIST of TUPLES, (name, value) - value will be checked agaist a matching segment parameter name on the page
     def do_segment_assertions(test_case, collect_seg_calls, segcall_info):
+        main_field_exists = False
         for seg_call in collect_seg_calls:
             if segcall_info['main_field'] in seg_call and seg_call[segcall_info['main_field']] == segcall_info['main_value']:
+                main_field_exists = True
+                print('Segment call %s exists on page' % segcall_info['main_field'])
                 for seg_check in segcall_info['segment_params']:
                     if len(seg_check) > 1:
                         test_case.assertEqual(seg_call[seg_check[0]], seg_check[1])
@@ -101,3 +104,9 @@ class SegmentTestHelper():
                     else:
                         test_case.assertTrue(seg_check[0] in seg_call)
                         print("Segment property %s exists" % seg_check[0])
+
+        try:
+            test_case.assertTrue(main_field_exists)
+        except AssertionError as e:
+            e.args += (('Segment call "%s: %s" is MISSING' % (segcall_info['main_field'], segcall_info['main_value'])),)
+            raise
