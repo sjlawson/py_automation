@@ -212,11 +212,12 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
             'main_field': 'activityLocation',
             'main_value': 'Visitor : SP Profile',
             'segment_params': [
-                ("description","Service Request Flow entry button"),
-                ('homeAdvisorCategoryId','10217'),
+                ('activityLocation', 'Visitor : SP Profile'),
+                ('categoryId', '112'),
+                ('description', 'Service Request Flow entry button'),              
                 ('marketId', '40'),
                 ('userId',),
-                ('userSelectedZipCode', '27610'),
+                ('userSelectedZipCode','27610'),
                 ('visitorPageCategory', 'Roofing'),
                 ('visitorPageGeo', 'RALEIGH/DURHAM'),
                 ('visitorPageGeoCategory', 'RALEIGH/DURHAM - ROOFING'),
@@ -226,8 +227,42 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
 
+    # SR ha-lead-submit-v2 with postal code Leaf Page New Advertiser
+    def test_leafPageSegmentCTAwithZIP(self):
+        if not self.client:
+            return 0
+        prep_actions = [
+            {
+                'action_element': '#ha-lead-zip',
+                'action_list': [
+                    ('click',),
+                    ('send_keys','27610'),
+                ]
+            }
+        ]
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/co/denver/all-city-movers-reviews-4173765.htm','#ha-lead-submit', 'click', True, prep_actions)
+        segcall_info = {
+            'main_field': 'activityLocation',
+            'main_value': 'Visitor : SP Profile',
+            'segment_params': [
+                ('activityLocation', 'Visitor : SP Profile'),
+                ('categoryId', '98'),
+                ('description', 'Service Request Flow entry button'), 
+                ('homeAdvisorCategoryId', '12050'),         
+                ('marketId', '27'),
+                ('userId',),
+                ('userSelectedZipCode','80123'),
+                ('visitorPageCategory', 'Moving'),
+                ('visitorPageGeo', 'DENVER'),
+                ('visitorPageGeoCategory', 'DENVER - MOVING'),
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+
     # Footer Join Leaf Page Advertiser
-    def test_footerJoinCTA(self):
+    def test_footerJoinCTAAdvertiser(self):
         # quit if browser didn't load
         if not self.client:
             return 0
@@ -252,34 +287,59 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
 
-    # Header Join Leaf page New Advertiser
-    def test_headerJoinCTA(self):
+    # Footer Join Leaf Page New Advertiser
+    def test_footerJoinCTANewAdvertiser(self):
         # quit if browser didn't load
         if not self.client:
             return 0
 
         # req'd params: current test case (self), relative path to triggering page, target element, and the triggering action
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/il/downers-grove/1212-architects-and-planners-reviews-3079269.htm', '#header-join', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/az/phoenix/altaquip-llc-reviews-3708698.htm', '#footer-join', 'click')
 
         segcall_info = {
             'main_field': 'activityLocation',
             'main_value': 'Visitor : SP Profile',
             'segment_params': [
-                ('activityLocation', 'Visitor : SP Profile'),
-                ('description', 'Join link in header'),
-                ('marketId', '7'),
+                ('activityLocation', 'CompanyProfile'),
+                ('description', 'Join button in footer'),
+                ('marketId', '20'),
                 ('userId', ''),
-                ('visitorPageCategory', 'Remodeling - General'),
-                ('visitorPageGeo', 'CHICAGO'),
-                ('visitorPageGeoCategory', 'CHICAGO - REMODELING - GENERAL'),
+                ('visitorPageCategory', 'Appliance Repair - Large'),
+                ('visitorPageGeo', 'PHOENIX'),
+                ('visitorPageGeoCategory', 'PHOENIX - APPLIANCE REPAIR - LARGE'),
             ]
         }
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
 
-    # Sign In Header Leaf Page New Advertiser
-    def test_SignInHeaderLeaf(self):
+    # Footer Join Leaf Page NON Advertiser
+    def test_footerJoinCTAnonAdvertiser(self):
+        # quit if browser didn't load
+        if not self.client:
+            return 0
+
+        # req'd params: current test case (self), relative path to triggering page, target element, and the triggering action
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/oh/cleves/asap-critter-people-reviews-259270.htm', '#footer-join', 'click')
+
+        segcall_info = {
+            'main_field': 'activityLocation',
+            'main_value': 'Visitor : SP Profile',
+            'segment_params': [
+                ('activityLocation', 'CompanyProfile'),
+                ('description', 'Join button in footer'),
+                ('marketId', '6'),
+                ('userId', ''),
+                ('visitorPageCategory', 'Heating & A/C'),
+                ('visitorPageGeo', 'CINCINNATI'),
+                ('visitorPageGeoCategory', 'CINCINNATI - HEATING & A/C'),
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # Sign In Header Leaf Page Advertiser
+    def test_SignInHeaderLeafAdvertiser(self):
         # quit if browser didn't load
         if not self.client:
             return 0
@@ -300,3 +360,125 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
         }
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # Sign In Header Leaf Page New Advertiser
+    def test_SignInHeaderLeafnewAdvertiser(self):
+        # quit if browser didn't load
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/fl/miami/advanced-turf-property-maintenance-reviews-5966518.htm','#header-join', 'click')
+
+        segcall_info = {
+            'main_field': 'activityLocation',
+            'main_value': 'Visitor : SP Profile',
+            'segment_params': [
+                ('description', 'Sign In link in header'),
+                ('marketId', '31'),
+                ('userId', ''),
+                ('visitorPageCategory', 'Landscaping'),
+                ('visitorPageGeo', 'MIAMI/FT. LAUDERDALE'),
+                ('visitorPageGeoCategory', 'MIAMI/FT. LAUDERDALE - LANDSCAPING'),
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # Sign In Header Leaf Page NON Advertiser
+    def test_SignInHeaderLeafnewAdvertiser(self):
+        # quit if browser didn't load
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/fl/miami/advanced-turf-property-maintenance-reviews-5966518.htm','#header-join', 'click')
+
+        segcall_info = {
+            'main_field': 'activityLocation',
+            'main_value': 'Visitor : SP Profile',
+            'segment_params': [
+                ('description', 'Sign In link in header'),
+                ('marketId', '31'),
+                ('userId', ''),
+                ('visitorPageCategory', 'Landscaping'),
+                ('visitorPageGeo', 'MIAMI/FT. LAUDERDALE'),
+                ('visitorPageGeoCategory', 'MIAMI/FT. LAUDERDALE - LANDSCAPING'),
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+
+    # Header Join Leaf page Advertiser
+    def test_headerJoinCTAAdvertiser(self):
+        # quit if browser didn't load
+        if not self.client:
+            return 0
+
+        # req'd params: current test case (self), relative path to triggering page, target element, and the triggering action
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/tn/nashville/a1-remodeling%2Ca1-kitchen-and-bath-reviews-2284753.htm', '#header-join', 'click')
+
+        segcall_info = {
+            'main_field': 'activityLocation',
+            'main_value': 'Visitor : SP Profile',
+            'segment_params': [
+                ('activityLocation', 'CompanyProfile'),
+                ('description', 'Join link in header'),
+                ('marketId', '34'),
+                ('userId', ''),
+                ('visitorPageCategory', 'Plumbing'),
+                ('visitorPageGeo', 'NASHVILLE'),
+                ('visitorPageGeoCategory', 'NASHVILLE - PLUMBING'),
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+    # Header Join Leaf page New Advertiser
+    def test_headerJoinCTAnewAdvertiser(self):
+        # quit if browser didn't load
+        if not self.client:
+            return 0
+
+        # req'd params: current test case (self), relative path to triggering page, target element, and the triggering action
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/ny/albany/ims-moving-and-property-preservation-reviews-8191745.htm', '#header-join', 'click')
+
+        segcall_info = {
+            'main_field': 'activityLocation',
+            'main_value': 'Visitor : SP Profile',
+            'segment_params': [
+                ('activityLocation', 'Visitor : SP Profile'),
+                ('description', 'Join link in header'),
+                ('marketId', '52'),
+                ('userId', ''),
+                ('visitorPageCategory', 'Handymen'),
+                ('visitorPageGeo', 'ALBANY'),
+                ('visitorPageGeoCategory', 'ALBANY - HANDYMEN'),
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # Header Join Leaf page NON Advertiser
+    def test_headerJoinCTAnonAdvertiser(self):
+        # quit if browser didn't load
+        if not self.client:
+            return 0
+
+        # req'd params: current test case (self), relative path to triggering page, target element, and the triggering action
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/ky/louisville/a-cheaper-locksmith-reviews-6238590.htm', '#header-join', 'click')
+
+        segcall_info = {
+            'main_field': 'activityLocation',
+            'main_value': 'Visitor : SP Profile',
+            'segment_params': [
+                ('activityLocation', 'CompanyProfile'),
+                ('description', 'Join link in header'),
+                ('marketId', '41'),
+                ('userId', ''),
+                ('visitorPageCategory', 'Auto Service'),
+                ('visitorPageGeo', 'LOUISVILLE'),
+                ('visitorPageGeoCategory', 'LOUISVILLE - AUTO SERVICE'),
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
