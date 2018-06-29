@@ -1274,7 +1274,7 @@ class CompanyListRegularCityTestCase(SeleniumTestCase):
 
 
     # Company List Regular City Page Load
-    def test_companyListRegularCitySegmentPagecall(self):
+    def test_companyListRegCitySegmentPagecall(self):
         # quit if browser didn't load
         if not self.client:
             return 0
@@ -1282,8 +1282,8 @@ class CompanyListRegularCityTestCase(SeleniumTestCase):
         collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/in/fishers/flooring.htm?bustA3')
 
         segcall_info = {
-            'main_field': 'name',
-            'main_value': 'Visitor : Geocat',
+            'main_field': 'pageVersion',
+            'main_value': 'GeoCat Tampa Redesign',
             'segment_params': [
                 ('name', 'Visitor : Geocat'),
                 ('atTestOffer',),
@@ -1298,11 +1298,11 @@ class CompanyListRegularCityTestCase(SeleniumTestCase):
                 ('homeAdvisorCategoryId', '12032'),
                 ('marketId', '1'),
                 ('seoTestName',),
-                ('srCtaDisplayed' 'true',),
-                ('srCtaVersion' 'v1',),
-                ('visitorPageCategory' 'FLOORING SALES/INSTALLATION/REPAIR',),
-                ('visitorPageGeo' 'FISHERS IN',),
-                ('visitorPageGeoCategory' 'FISHERS IN - FLOORING SALES/INSTALLATION/REPAIR',),
+                ('srCtaDisplayed', True),
+                ('srCtaVersion', 'v1'),
+                ('visitorPageCategory', 'FLOORING SALES/INSTALLATION/REPAIR'),
+                ('visitorPageGeo', 'FISHERS IN'),
+                ('visitorPageGeoCategory', 'FISHERS IN - FLOORING SALES/INSTALLATION/REPAIR'),
             ]
         }
 
