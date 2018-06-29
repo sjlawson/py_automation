@@ -1265,3 +1265,452 @@ class CompanyListTopCityTestCase(SeleniumTestCase):
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
+
+
+
+## Regular City GeoCat ##
+
+class CompanyListRegularCityTestCase(SeleniumTestCase):
+
+
+    # Company List Regular City Page Load
+    def test_companyListRegularCitySegmentPagecall(self):
+        # quit if browser didn't load
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/in/fishers/flooring.htm?bustA3')
+
+        segcall_info = {
+            'main_field': 'name',
+            'main_value': 'Visitor : Geocat',
+            'segment_params': [
+                ('name', 'Visitor : Geocat'),
+                ('atTestOffer',),
+                ('cid',),
+                ('pageVersion', 'GeoCat Tampa Redesign'),
+                ('path', '/companylist/us/in/fishers/flooring.htm'),
+                ('search',),
+                ('title', 'Top 10 Best Fishers IN Flooring Installers | Angie\'s List'),
+                ('userId',),
+                ('userType', 'Visitor - New'),
+                ('categoryId', '63'),
+                ('homeAdvisorCategoryId', '12032'),
+                ('marketId', '1'),
+                ('seoTestName',),
+                ('srCtaDisplayed' 'true',),
+                ('srCtaVersion' 'v1',),
+                ('visitorPageCategory' 'FLOORING SALES/INSTALLATION/REPAIR',),
+                ('visitorPageGeo' 'FISHERS IN',),
+                ('visitorPageGeoCategory' 'FISHERS IN - FLOORING SALES/INSTALLATION/REPAIR',),
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+
+## Header Segment Events - Company List ##
+
+    # test segment call on clicking the join link in the header
+    def test_companyListRegularCitySegmentJoin(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/in/fishers/flooring.htm?bustA3', '#header-join', 'click')
+        segcall_info = {
+            'main_field': 'activityLocation',
+            'main_value': 'Visitor : Geocat',
+            'segment_params': [
+                ('activityLocation', 'Visitor : Geocat'),
+                ('description', 'Join link in header'),
+                ('userId',),
+                ('visitorPageGeo', 'FISHERS IN'),
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+
+    # test segment call on clicking the HIW link in the header
+    def test_companyListRegularCityHeaderLinkClick(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/in/fishers/flooring.htm?bustA3', '.btnHiw', 'click')
+        segcall_info = {
+            'main_field': 'activityLocation',
+            'main_value': 'Visitor : Geocat',
+            'segment_params': [
+                ('description', 'How it Works link in header'),
+                ('userId',),
+                ('visitorPageGeo', 'FISHERS IN'),
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # test segment call on clicking the Sign In link in the header
+    def test_companyListRegularCityHeaderSignInClick(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/in/fishers/flooring.htm?bustA3', '#header-sign-in', 'click')
+        segcall_info = {
+            'main_field': 'activityLocation',
+            'main_value': 'Visitor : Geocat',
+            'segment_params': [
+                ('description', 'Sign In link in header'),
+                ('userId',),
+                ('visitorPageGeo', 'FISHERS IN'),
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+
+    # test segment call on clicking the FAQ link in the header
+    def test_companyListRegularCityHeaderFAQClick(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/in/fishers/flooring.htm?bustA3', '#faq', 'click')
+        segcall_info = {
+            'main_field': 'activityLocation',
+            'main_value': 'Visitor : Geocat',
+            'segment_params': [
+                ('description', 'FAQ link in header'),
+                ('userId',),
+                ('visitorPageGeo', 'FISHERS IN'),
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # test segment call on clicking the Press link in the header
+    def test_companyListRegularCityHeaderITPClick(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/in/fishers/flooring.htm?bustA3', '#press', 'click')
+        segcall_info = {
+            'main_field': 'activityLocation',
+            'main_value': 'Visitor : Geocat',
+            'segment_params': [
+                ('description', 'In the Press link in header'),
+                ('userId',),
+                ('visitorPageGeo', 'FISHERS IN'),
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # test segment call on clicking the SC link in the header
+    def test_companyListRegularCityHeaderScClick(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/in/fishers/flooring.htm?bustA3', '#articles', 'click')
+        segcall_info = {
+            'main_field': 'activityLocation',
+            'main_value': 'Visitor : Geocat',
+            'segment_params': [
+                ('description', 'Solution Center link in header'),
+                ('userId',),
+                ('visitorPageGeo', 'FISHERS IN'),
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # test segment call on clicking the BC link in the header
+    def test_companyListRegularCityHeaderScClick(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/in/fishers/flooring.htm?bustA3', '#nav_business_owner', 'click')
+        segcall_info = {
+            'main_field': 'activityLocation',
+            'main_value': 'Visitor : Geocat',
+            'segment_params': [
+                ('description', 'Business Owners link in header'),
+                ('userId',),
+                ('visitorPageGeo', 'FISHERS IN'),
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+## Footer Segment Events - Company List ##
+
+    # test segment call on clicking the Join link in the footer
+    def test_companyListRegularCityFooterJoinClick(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/in/fishers/flooring.htm?bustA3', '#footer-join', 'click')
+        segcall_info = {
+            'main_field': 'activityLocation',
+            'main_value': 'Market Guide',
+            'segment_params': [
+                ('description', 'Join button in footer'),
+                ('userId',),
+                ('visitorPageGeo', 'FISHERS IN'),
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+
+    # Company List Regular City Top Cities NYC
+    def test_companyListRegularCityTopCitiesNYC(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/in/fishers/flooring.htm?bustA3', 'div.footer-region.cities-left > li > a[title="Search New York Pros"]', 'click')
+        segcall_info = {
+            'main_field': 'description',
+            'main_value': 'Top Cities link in footer',
+            'segment_params': [
+                ('description', 'Top Cities link in footer'),
+                ('activityLocation', 'Market Guide'),
+                ('userId',),
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # Company List Regular City Top Cities Houston
+    def test_companyListRegularCityTopCitiesHouston(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/in/fishers/flooring.htm?bustA3', 'div.footer-region.cities-left > li > a[title="Search Houston Pros"]', 'click')
+        segcall_info = {
+            'main_field': 'description',
+            'main_value': 'Top Cities link in footer',
+            'segment_params': [
+                ('description', 'Top Cities link in footer'),
+                ('activityLocation', 'Market Guide'),
+                ('userId',),
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # Company List Regular City Top Cities Chicago
+    def test_companyListRegularCityTopCitiesChicago(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/in/fishers/flooring.htm?bustA3', 'div.footer-region.cities-left > li > a[title="Search Chicago Pros"]', 'click')
+        segcall_info = {
+            'main_field': 'description',
+            'main_value': 'Top Cities link in footer',
+            'segment_params': [
+                ('description', 'Top Cities link in footer'),
+                ('activityLocation', 'Market Guide'),
+                ('userId',),
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # Company List Regular City Top Cities Indianapolis
+    def test_companyListRegularCityTopCitiesIndianapolis(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/in/fishers/flooring.htm?bustA3', 'div.footer-region.cities-left > li > a[title="Search Indianapolis Pros"]', 'click')
+        segcall_info = {
+            'main_field': 'description',
+            'main_value': 'Top Cities link in footer',
+            'segment_params': [
+                ('description', 'Top Cities link in footer'),
+                ('activityLocation', 'Market Guide'),
+                ('userId',),
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # Company List Regular City Top Cities Boston
+    def test_companyListRegularCityTopCitiesBoston(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/in/fishers/flooring.htm?bustA3', 'div.footer-region.cities-left > li > a[title="Search Boston Pros"]', 'click')
+        segcall_info = {
+            'main_field': 'description',
+            'main_value': 'Top Cities link in footer',
+            'segment_params': [
+                ('description', 'Top Cities link in footer'),
+                ('activityLocation', 'Market Guide'),
+                ('userId',),
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # Company List Regular City Top Cities Atlanta
+    def test_companyListRegularCityTopCitiesAtlanta(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/in/fishers/flooring.htm?bustA3', 'div.footer-region.cities-left > li > a[title="Search Atlanta Pros"]', 'click')
+        segcall_info = {
+            'main_field': 'description',
+            'main_value': 'Top Cities link in footer',
+            'segment_params': [
+                ('description', 'Top Cities link in footer'),
+                ('activityLocation', 'Market Guide'),
+                ('userId',),
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # Company List Regular City Top Cities Cincinnati
+    def test_companyListRegularCityTopCitiesCincinnati(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/in/fishers/flooring.htm?bustA3', 'div.footer-region.cities-left > li > a[title="Search Cincinnati Pros"]', 'click')
+        segcall_info = {
+            'main_field': 'activityLocation',
+            'main_value': 'Market Guide',
+            'segment_params': [
+                ('description', 'Top Cities link in footer'),
+                ('activityLocation', 'Market Guide'),
+                ('userId',),
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # Company List Regular City Top Cities Los Angeles
+    def test_companyListRegularCityTopCitiesLosAngeles(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/in/fishers/flooring.htm?bustA3', 'div.footer-region.cities-right > li > a[title="Search Los Angeles Pros"]', 'click')
+        segcall_info = {
+            'main_field': 'description',
+            'main_value': 'Top Cities link in footer',
+            'segment_params': [
+                ('description', 'Top Cities link in footer'),
+                ('activityLocation', 'Market Guide'),
+                ('userId',),
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # Company List Regular City Top Cities Dallas
+    def test_companyListRegularCityTopCitiesDallas(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/in/fishers/flooring.htm?bustA3', 'div.footer-region.cities-right > li > a[title="Search Dallas Pros"]', 'click')
+        segcall_info = {
+            'main_field': 'description',
+            'main_value': 'Top Cities link in footer',
+            'segment_params': [
+                ('description', 'Top Cities link in footer'),
+                ('activityLocation', 'Market Guide'),
+                ('userId',),
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # Company List Regular City Top Cities Pittsburgh
+    def test_companyListRegularCityTopCitiesPittsburgh(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/in/fishers/flooring.htm?bustA3', 'div.footer-region.cities-right > li > a[title="Search Pittsburgh Pros"]', 'click')
+        segcall_info = {
+            'main_field': 'description',
+            'main_value': 'Top Cities link in footer',
+            'segment_params': [
+                ('description', 'Top Cities link in footer'),
+                ('activityLocation', 'Market Guide'),
+                ('userId',),
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # Company List Regular City Top Cities Minneapolis
+    def test_companyListRegularCityTopCitiesMinneapolis(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/in/fishers/flooring.htm?bustA3', 'div.footer-region.cities-right > li > a[title="Search Minneapolis Pros"]', 'click')
+        segcall_info = {
+            'main_field': 'description',
+            'main_value': 'Top Cities link in footer',
+            'segment_params': [
+                ('description', 'Top Cities link in footer'),
+                ('activityLocation', 'Market Guide'),
+                ('userId',),
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # Company List Regular City Top Cities Las Vegas
+    def test_companyListRegularCityTopCitiesLasVegas(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/in/fishers/flooring.htm?bustA3', 'div.footer-region.cities-right > li > a[title="Search Las Vegas Pros"]', 'click')
+        segcall_info = {
+            'main_field': 'description',
+            'main_value': 'Top Cities link in footer',
+            'segment_params': [
+                ('description', 'Top Cities link in footer'),
+                ('activityLocation', 'Market Guide'),
+                ('userId',),
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # Company List Regular City Top Cities San Antonio
+    def test_companyListRegularCityTopCitiesSanAntonio(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/in/fishers/flooring.htm?bustA3', 'div.footer-region.cities-right > li > a[title="Search San Antonio Pros"]', 'click')
+        segcall_info = {
+            'main_field': 'description',
+            'main_value': 'Top Cities link in footer',
+            'segment_params': [
+                ('description', 'Top Cities link in footer'),
+                ('activityLocation', 'Market Guide'),
+                ('userId',),
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # Comapny List Top Cities Tampa
+    def test_companyListRegularCityTopCitiesTampa(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/in/fishers/flooring.htm?bustA3', 'div.footer-region.cities-right > li > a[title="Search Tampa Pros"]', 'click')
+        segcall_info = {
+            'main_field': 'description',
+            'main_value': 'Top Cities link in footer',
+            'segment_params': [
+                ('description', 'Top Cities link in footer'),
+                ('activityLocation', 'Market Guide'),
+                ('userId',),
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+
