@@ -338,7 +338,7 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/al/birmingham/allen-custom-forging-reviews-299905.htm','#header-sign-in', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/nv/las-vegas/brick-art-masonry-reviews-6291023.htm','#header-sign-in', 'click')
 
         segcall_info = {
             'main_field': 'activityLocation',
@@ -346,10 +346,10 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
             'segment_params': [
                 ('activityLocation', 'Visitor : SP Profile'),
                 ('description', 'Sign In link in header'),
-                ('marketId', '31'),
+                ('marketId', '35'),
                 ('userId', ''),
-                ('visitorPageCategory', 'Fencing'),
-                ('visitorPageGeo', 'BIRMINGHAM'),
+                ('visitorPageCategory', 'Concrete - Pouring & Repair'),
+                ('visitorPageGeo', 'LAS VEGAS'),
                 ('visitorPageGeoCategory', 'BIRMINGHAM - FENCING'),
             ]
         }
@@ -374,7 +374,7 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
                 ('userId', ''),
                 ('visitorPageCategory', 'Landscaping'),
                 ('visitorPageGeo', 'MIAMI/FT. LAUDERDALE'),
-                ('visitorPageGeoCategory', 'MIAMI/FT. LAUDERDALE - LANDSCAPING'),
+                ('visitorPageGeoCategory', 'LAS VEGAS - CONCRETE - POURING & REPAIR'),
             ]
         }
 
