@@ -20,6 +20,7 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
             'main_field': 'name',
             'main_value': 'Visitor : SP Profile',
             'segment_params': [
+                ('activityLocation', 'Visitor : SP Profile'),
                 ('atTestOffer', 'SEO-LEAF-v2: variation'), 
                 ('categoryId', '107'),
                 ('cid',),
@@ -57,6 +58,7 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
             'main_field': 'name',
             'main_value': 'Visitor : SP Profile',
             'segment_params': [
+                ('activityLocation', 'Visitor : SP Profile'),
                 ('atTestOffer', 'SEO-LEAF-v2: variation'), 
                 ('categoryId', '78'),
                 ('cid',),
@@ -94,6 +96,7 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
             'main_field': 'name',
             'main_value': 'Visitor : SP Profile',
             'segment_params': [
+                ('activityLocation', 'Visitor : SP Profile'),
                 ('atTestOffer', 'SEO-LEAF-v2: variation'), 
                 ('categoryId', '21'),
                 ('cid',),
