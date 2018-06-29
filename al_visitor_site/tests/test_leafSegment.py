@@ -20,7 +20,6 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
             'main_field': 'name',
             'main_value': 'Visitor : SP Profile',
             'segment_params': [
-                ('activityLocation', 'Visitor : SP Profile'),
                 ('atTestOffer', 'SEO-LEAF-v2: variation'), 
                 ('categoryId', '107'),
                 ('cid',),
@@ -28,13 +27,13 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
                 ('marketId', '11'),
                 ('name', 'Visitor : SP Profile'),
                 ('pageVersion', 'Lullabot Redesign'),
-                ('path', '/companylist/us/ga/atlanta/aaa-plumbing-heating-and-air-conditioning-reviews-101241.htm'),
+                ('path', '/companylist/us/ga/atlanta/a-and-k-plumbing-reviews-4514984.htm'),
                 ('referrer',),
-                ('search',),
+                ('search', '?CacheBuster'),
                 ('srCtaDisplayed', 'true'),
                 ('srCtaVersion', 'v1'),
-                ('title', 'AAA Plumbing Heating & Air Conditioning Reviews - Atlanta, GA | Angie\'s List'),
-                ('url', 'https://www.angieslist.com/companylist/us/ga/atlanta/aaa-plumbing-heating-and-air-conditioning-reviews-101241.htm'),
+                ('title', 'A & K Plumbing Reviews - Atlanta, GA | Angie\'s List'),
+                ('url', 'https://www.angieslist.com/companylist/us/ga/atlanta/a-and-k-plumbing-reviews-4514984.htm?CacheBuster'),
                 ('userId',),
                 ('userType', 'Visitor - New'),
                 ('visitorPageCategory', 'PLUMBING'),
@@ -58,7 +57,6 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
             'main_field': 'name',
             'main_value': 'Visitor : SP Profile',
             'segment_params': [
-                ('activityLocation', 'Visitor : SP Profile'),
                 ('atTestOffer', 'SEO-LEAF-v2: variation'), 
                 ('categoryId', '78'),
                 ('cid',),
@@ -68,7 +66,7 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
                 ('pageVersion', 'Lullabot Redesign'),
                 ('path', '/companylist/us/xx/memphis/all-about-u-heating-and-air-reviews-8499678.htm'),
                 ('referrer',),
-                ('search', '??CacheBuster'),
+                ('search', '?CacheBuster'),
                 ('srCtaDisplayed', 'true'),
                 ('srCtaVersion', 'v1'),
                 ('title', 'All about u heating & air Reviews - Memphis, | Angie\'s List'),
@@ -90,32 +88,31 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
             return 0
 
         # req'd params: current test case (self), relative path to triggering page, target element, and the triggering action
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/in/indianapolis/247-lock-change-service-reviews-8498073.htm?CacheBuster')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/ccompanylist/us/ky/louisville/lock-doctor-llc-reviews-6314008.htm?CacheBuster')
 
         segcall_info = {
             'main_field': 'name',
             'main_value': 'Visitor : SP Profile',
             'segment_params': [
-                ('activityLocation', 'Visitor : SP Profile'),
-                ('atTestOffer', 'SEO-LEAF-v2: variation'), 
-                ('categoryId', '21'),
+                ('atTestOffer',), 
+                ('categoryId', '377'),
                 ('cid',),
-                ('homeAdvisorCategoryId',),
-                ('marketId', '1'),
+                ('homeAdvisorCategoryId', '12024'),
+                ('marketId', '41'),
                 ('name', 'Visitor : SP Profile'),
                 ('pageVersion', 'Lullabot Redesign'),
-                ('path', '/companylist/us/in/indianapolis/247-lock-change-service-reviews-8498073.htm'),
-                ('referrer',),
+                ('path', '/companylist/us/ky/louisville/lock-doctor-llc-reviews-6314008.htm'),
+                ('referrer', 'https://wwwstg.angieslist.com/companylist/louisville/locksmiths.htm'),
                 ('search', '??CacheBuster'),
                 ('srCtaDisplayed', 'false'),
                 ('srCtaVersion',),
-                ('title', '24/7 Lock Change Service Reviews - Indianapolis, IN | Angie\'s List'),
-                ('url', 'https://www.angieslist.com/companylist/us/in/indianapolis/247-lock-change-service-reviews-8498073.htm?CacheBuster'),
+                ('title', 'Lock Doctor LLC Reviews - Louisville, KY | Angie\'s List'),
+                ('url', 'https://www.angieslist.com/companylist/us/ky/louisville/lock-doctor-llc-reviews-6314008.htm?CacheBuster'),
                 ('userId',),
                 ('userType', 'Visitor - New'),
-                ('visitorPageCategory', 'AUTO SERVICE'),
-                ('visitorPageGeo', 'INDIANAPOLIS'),
-                ('visitorPageGeoCategory', 'INDIANAPOLIS - AUTO SERVICE'),
+                ('visitorPageCategory', 'DOORS'),
+                ('visitorPageGeo', 'LOUISVILLE'),
+                ('visitorPageGeoCategory', 'LOUISVILLE - DOORS'),
             ]
         }
 
