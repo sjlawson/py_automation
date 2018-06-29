@@ -130,7 +130,7 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
             'main_field': 'activityLocation',
             'main_value': 'Visitor : SP Profile',
             'segment_params': [
-                ('activityLocation', 'Visitor : SP Profile')
+                ('activityLocation', 'Visitor : SP Profile'),
                 ('categoryId', '112'),
                 ('description', 'Service Request Flow entry button'),              
                 ('homeAdvisorCategoryId','10217'),
@@ -155,7 +155,7 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
             'main_field': 'activityLocation',
             'main_value': 'Visitor : SP Profile',
             'segment_params': [
-                ('activityLocation', 'Visitor : SP Profile')
+                ('activityLocation', 'Visitor : SP Profile'),
                 ('categoryId', '294'),
                 ('description', 'Service Request Flow entry button'),              
                 ('homeAdvisorCategoryId','10381'),
@@ -236,7 +236,7 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
                 'action_element': '#ha-lead-zip',
                 'action_list': [
                     ('click',),
-                    ('send_keys','27610'),
+                    ('send_keys','80123'),
                 ]
             }
         ]
@@ -274,7 +274,7 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
             'main_field': 'activityLocation',
             'main_value': 'Visitor : SP Profile',
             'segment_params': [
-                ('activityLocation', 'CompanyProfile'),
+                ('activityLocation', 'Visitor : SP Profile'),
                 ('description', 'Join button in footer'),
                 ('marketId', '10'),
                 ('userId', ''),
@@ -300,7 +300,7 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
             'main_field': 'activityLocation',
             'main_value': 'Visitor : SP Profile',
             'segment_params': [
-                ('activityLocation', 'CompanyProfile'),
+                ('activityLocation', 'Visitor : SP Profile'),
                 ('description', 'Join button in footer'),
                 ('marketId', '20'),
                 ('userId', ''),
@@ -326,7 +326,7 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
             'main_field': 'activityLocation',
             'main_value': 'Visitor : SP Profile',
             'segment_params': [
-                ('activityLocation', 'CompanyProfile'),
+                ('activityLocation', 'Visitor : SP Profile'),
                 ('description', 'Join button in footer'),
                 ('marketId', '6'),
                 ('userId', ''),
@@ -350,6 +350,7 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
             'main_field': 'activityLocation',
             'main_value': 'Visitor : SP Profile',
             'segment_params': [
+                ('activityLocation', 'Visitor : SP Profile'),
                 ('description', 'Sign In link in header'),
                 ('marketId', '31'),
                 ('userId', ''),
@@ -373,6 +374,7 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
             'main_field': 'activityLocation',
             'main_value': 'Visitor : SP Profile',
             'segment_params': [
+                ('activityLocation', 'Visitor : SP Profile'),
                 ('description', 'Sign In link in header'),
                 ('marketId', '31'),
                 ('userId', ''),
@@ -396,6 +398,7 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
             'main_field': 'activityLocation',
             'main_value': 'Visitor : SP Profile',
             'segment_params': [
+                ('activityLocation', 'Visitor : SP Profile'),
                 ('description', 'Sign In link in header'),
                 ('marketId', '31'),
                 ('userId', ''),
@@ -421,7 +424,7 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
             'main_field': 'activityLocation',
             'main_value': 'Visitor : SP Profile',
             'segment_params': [
-                ('activityLocation', 'CompanyProfile'),
+                ('activityLocation', 'Visitor : SP Profile'),
                 ('description', 'Join link in header'),
                 ('marketId', '34'),
                 ('userId', ''),
@@ -470,7 +473,7 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
             'main_field': 'activityLocation',
             'main_value': 'Visitor : SP Profile',
             'segment_params': [
-                ('activityLocation', 'CompanyProfile'),
+                ('activityLocation', 'Visitor : SP Profile'),
                 ('description', 'Join link in header'),
                 ('marketId', '41'),
                 ('userId', ''),
