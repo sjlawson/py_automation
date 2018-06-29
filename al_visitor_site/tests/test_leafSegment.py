@@ -118,8 +118,6 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
-
-
     # SR ha-lead-submit-v2 w/o postal code Leaf Page Advertiser
     def test_leafPageSegmentCTAwithoutZIP(self):
         if not self.client:
@@ -226,7 +224,6 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
-
     # SR ha-lead-submit-v2 with postal code Leaf Page New Advertiser
     def test_leafPageSegmentCTAwithZIP(self):
         if not self.client:
@@ -260,7 +257,6 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
-
     # Footer Join Leaf Page Advertiser
     def test_footerJoinCTAAdvertiser(self):
         # quit if browser didn't load
@@ -286,7 +282,6 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
-
     # Footer Join Leaf Page New Advertiser
     def test_footerJoinCTANewAdvertiser(self):
         # quit if browser didn't load
@@ -311,7 +306,6 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
         }
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
-
 
     # Footer Join Leaf Page NON Advertiser
     def test_footerJoinCTAnonAdvertiser(self):
@@ -344,7 +338,7 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/fl/miami/advanced-turf-property-maintenance-reviews-5966518.htm','#header-sign-in', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/al/birmingham/allen-custom-forging-reviews-299905.htm','#header-sign-in', 'click')
 
         segcall_info = {
             'main_field': 'activityLocation',
@@ -354,9 +348,9 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
                 ('description', 'Sign In link in header'),
                 ('marketId', '31'),
                 ('userId', ''),
-                ('visitorPageCategory', 'Landscaping'),
-                ('visitorPageGeo', 'MIAMI/FT. LAUDERDALE'),
-                ('visitorPageGeoCategory', 'MIAMI/FT. LAUDERDALE - LANDSCAPING'),
+                ('visitorPageCategory', 'Fencing'),
+                ('visitorPageGeo', 'BIRMINGHAM'),
+                ('visitorPageGeoCategory', 'BIRMINGHAM - FENCING'),
             ]
         }
 
@@ -376,7 +370,7 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
             'segment_params': [
                 ('activityLocation', 'Visitor : SP Profile'),
                 ('description', 'Sign In link in header'),
-                ('marketId', '31'),
+                ('marketId', '49'),
                 ('userId', ''),
                 ('visitorPageCategory', 'Landscaping'),
                 ('visitorPageGeo', 'MIAMI/FT. LAUDERDALE'),
@@ -392,7 +386,7 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/fl/miami/advanced-turf-property-maintenance-reviews-5966518.htm','#header-sign-in', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/wi/milwaukee/andrea-haas-reviews-420334.htm','#header-sign-in', 'click')
 
         segcall_info = {
             'main_field': 'activityLocation',
@@ -400,16 +394,15 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
             'segment_params': [
                 ('activityLocation', 'Visitor : SP Profile'),
                 ('description', 'Sign In link in header'),
-                ('marketId', '31'),
+                ('marketId', '3'),
                 ('userId', ''),
-                ('visitorPageCategory', 'Landscaping'),
-                ('visitorPageGeo', 'MIAMI/FT. LAUDERDALE'),
-                ('visitorPageGeoCategory', 'MIAMI/FT. LAUDERDALE - LANDSCAPING'),
+                ('visitorPageCategory', 'Real Estate Agents'),
+                ('visitorPageGeo', 'MILWAUKEE'),
+                ('visitorPageGeoCategory', 'MILWAUKEE - REAL ESTATE AGENTS'),
             ]
         }
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
-
 
     # Header Join Leaf page Advertiser
     def test_headerJoinCTAAdvertiser(self):
