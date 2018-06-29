@@ -1884,7 +1884,7 @@ class CompanyListStatePageTestCase(SeleniumTestCase):
         collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/mi/?ASd', '#footer-join', 'click')
         segcall_info = {
             'main_field': 'activityLocation',
-            'main_value': 'Visitor : US : State',
+            'main_value': 'Directory',
             'segment_params': [
                 ('description', 'Join button in footer'),
                 ('userId',),
