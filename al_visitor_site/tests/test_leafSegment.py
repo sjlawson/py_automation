@@ -173,20 +173,20 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/md/pasadena/bob-lester-jr-tree-service-inc-reviews-218967.htm','#block-system-main > div > div > div.grayRow.leaf--row__top > div > div.stick-helper.stuck > div > aside > div > div.leaf-join__join-link > a', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/md/pasadena/bob-lester-jr-tree-service-inc-reviews-218967.htm','join-link.boot-btn.btn-warning.btn-lg.primary-sans-serif.leaf-cta.leaf-join-cta', 'click')
         segcall_info = {
             'main_field': 'activityLocation',
             'main_value': 'Visitor : SP Profile',
             'segment_params': [
-                # ('activityLocation', 'Visitor : SP Profile'),
-                # ('categoryId', '126'),
-                # ('description', 'Join button in right rail'),              
-                # ('marketId', '36'),
-                # ('userId',),
-                # ('userSelectedZipCode',),
-                # ('visitorPageCategory', 'TREE SERVICE'),
-                # ('visitorPageGeo', 'BALTIMORE'),
-                # ('visitorPageGeoCategory', 'BALTIMORE - TREE SERVICE'),
+                ('activityLocation', 'Visitor : SP Profile'),
+                ('categoryId', '126'),
+                ('description', 'Join button in right rail'),              
+                ('marketId', '36'),
+                ('userId',),
+                ('userSelectedZipCode',),
+                ('visitorPageCategory', 'TREE SERVICE'),
+                ('visitorPageGeo', 'BALTIMORE'),
+                ('visitorPageGeoCategory', 'BALTIMORE - TREE SERVICE'),
             ]
         }
 
