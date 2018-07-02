@@ -20,24 +20,24 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
             'main_field': 'name',
             'main_value': 'Visitor : SP Profile',
             'segment_params': [
-                ('atTestOffer', 'SEO-LEAF-v2: variation'), 
+                ('atTestOffer',), 
                 ('categoryId', '107'),
                 ('cid',),
                 ('homeAdvisorCategoryId', '10216'),
                 ('marketId', '11'),
                 ('name', 'Visitor : SP Profile'),
                 ('pageVersion', 'Lullabot Redesign'),
-                ('path', '/companylist/us/ga/atlanta/a-and-k-plumbing-reviews-4514984.htm'),
+                ('path', '/companylist/us/ga/atlanta/aaa-plumbing-heating-and-air-conditioning-reviews-101241.htm'),
                 ('referrer',),
                 ('search', '?CacheBuster'),
-                ('srCtaDisplayed', 'true'),
-                ('srCtaVersion', 'v1'),
-                ('title', 'A & K Plumbing Reviews - Atlanta, GA | Angie\'s List'),
-                ('url', 'https://www.angieslist.com/companylist/us/ga/atlanta/a-and-k-plumbing-reviews-4514984.htm?CacheBuster'),
+                ('srCtaDisplayed', True),
+                ('srCtaVersion', 'v2'),
+                ('title', 'AAA Plumbing Heating & Air Conditioning Reviews - Atlanta, GA | Angie\'s List'),
+                ('url',),
                 ('userId',),
                 ('userType', 'Visitor - New'),
                 ('visitorPageCategory', 'PLUMBING'),
-                ('visitorPageGeo', 'ATLANTA`'),
+                ('visitorPageGeo', 'ATLANTA'),
                 ('visitorPageGeoCategory', 'ATLANTA - PLUMBING'),
             ]
         }
@@ -57,7 +57,7 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
             'main_field': 'name',
             'main_value': 'Visitor : SP Profile',
             'segment_params': [
-                ('atTestOffer', 'SEO-LEAF-v2: variation'), 
+                ('atTestOffer',), 
                 ('categoryId', '78'),
                 ('cid',),
                 ('homeAdvisorCategoryId', '10211'),
@@ -67,10 +67,10 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
                 ('path', '/companylist/us/xx/memphis/all-about-u-heating-and-air-reviews-8499678.htm'),
                 ('referrer',),
                 ('search', '?CacheBuster'),
-                ('srCtaDisplayed', 'true'),
-                ('srCtaVersion', 'v1'),
+                ('srCtaDisplayed', True),
+                ('srCtaVersion', 'v2'),
                 ('title', 'All about u heating & air Reviews - Memphis, | Angie\'s List'),
-                ('url', 'https://www.angieslist.com/companylist/us/xx/memphis/all-about-u-heating-and-air-reviews-8499678.htm?CacheBuster'),
+                ('url',),
                 ('userId',),
                 ('userType', 'Visitor - New'),
                 ('visitorPageCategory', 'HEATING & A/C'),
@@ -88,7 +88,7 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
             return 0
 
         # req'd params: current test case (self), relative path to triggering page, target element, and the triggering action
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/ccompanylist/us/ky/louisville/lock-doctor-llc-reviews-6314008.htm?CacheBuster')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/ky/louisville/lock-doctor-llc-reviews-6314008.htm?CacheBuster')
 
         segcall_info = {
             'main_field': 'name',
@@ -102,12 +102,12 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
                 ('name', 'Visitor : SP Profile'),
                 ('pageVersion', 'Lullabot Redesign'),
                 ('path', '/companylist/us/ky/louisville/lock-doctor-llc-reviews-6314008.htm'),
-                ('referrer', 'https://wwwstg.angieslist.com/companylist/louisville/locksmiths.htm'),
-                ('search', '??CacheBuster'),
-                ('srCtaDisplayed', 'false'),
+                ('referrer',),
+                ('search', '?CacheBuster'),
+                ('srCtaDisplayed', False),
                 ('srCtaVersion',),
                 ('title', 'Lock Doctor LLC Reviews - Louisville, KY | Angie\'s List'),
-                ('url', 'https://www.angieslist.com/companylist/us/ky/louisville/lock-doctor-llc-reviews-6314008.htm?CacheBuster'),
+                ('url',),
                 ('userId',),
                 ('userType', 'Visitor - New'),
                 ('visitorPageCategory', 'DOORS'),
@@ -144,7 +144,7 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # SR ha-lead-submit-v2 w/o postal code Leaf Page New Advertiser
-    def test_leafPageSegmentCTAwithoutZIP(self):
+    def test_leafPageSegmentCTAwithoutZIPAdvertiser(self):
         if not self.client:
             return 0
 
@@ -160,30 +160,6 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
                 ('marketId', '8'),
                 ('userId',),
                 ('userSelectedZipCode',),
-                ('visitorPageCategory', 'TREE SERVICE'),
-                ('visitorPageGeo', 'BALTIMORE'),
-                ('visitorPageGeoCategory', 'BALTIMORE - TREE SERVICE'),
-            ]
-        }
-
-        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
-
-    # JOIN for FREE right rail Leaf Page NON Advertiser
-    def test_leafPageSegmentCTAwithoutZIP(self):
-        if not self.client:
-            return 0
-
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/md/pasadena/bob-lester-jr-tree-service-inc-reviews-218967.htm','#block-system-main > div > div > div.grayRow.leaf--row__top > div > div.stick-helper.stuck > div > aside > div > div.leaf-join__join-link > a', 'click')
-        segcall_info = {
-            'main_field': 'activityLocation',
-            'main_value': 'Visitor : SP Profile',
-            'segment_params': [
-                ('activityLocation', 'Visitor : SP Profile'),
-                ('categoryId', '126'),
-                ('description', 'Join button in right rail'),              
-                ('marketId', '36'),
-                ('userId',),
-                ('userSelectedZipCode',),
                 ('visitorPageCategory', 'Painting - Interior'),
                 ('visitorPageGeo', 'TWIN CITIES'),
                 ('visitorPageGeoCategory', 'TWIN CITIES - PAINTING - INTERIOR'),
@@ -192,8 +168,32 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
+    # JOIN for FREE right rail Leaf Page NON Advertiser
+    def test_leafPageSegmentCTAwithoutZIPNonAdvertiser(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/md/pasadena/bob-lester-jr-tree-service-inc-reviews-218967.htm','#block-system-main > div > div > div.grayRow.leaf--row__top > div > div.stick-helper.stuck > div > aside > div > div.leaf-join__join-link > a', 'click')
+        segcall_info = {
+            'main_field': 'activityLocation',
+            'main_value': 'Visitor : SP Profile',
+            'segment_params': [
+                # ('activityLocation', 'Visitor : SP Profile'),
+                # ('categoryId', '126'),
+                # ('description', 'Join button in right rail'),              
+                # ('marketId', '36'),
+                # ('userId',),
+                # ('userSelectedZipCode',),
+                # ('visitorPageCategory', 'TREE SERVICE'),
+                # ('visitorPageGeo', 'BALTIMORE'),
+                # ('visitorPageGeoCategory', 'BALTIMORE - TREE SERVICE'),
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
     # SR ha-lead-submit-v2 with postal code Leaf Page Advertiser
-    def test_leafPageSegmentCTAwithZIP(self):
+    def test_leafPageSegmentCTAwithZIPAdvertiser(self):
         if not self.client:
             return 0
         prep_actions = [
@@ -225,7 +225,7 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # SR ha-lead-submit-v2 with postal code Leaf Page New Advertiser
-    def test_leafPageSegmentCTAwithZIP(self):
+    def test_leafPageSegmentCTAwithZIPNewAdvertiser(self):
         if not self.client:
             return 0
         prep_actions = [
@@ -242,16 +242,16 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
             'main_field': 'activityLocation',
             'main_value': 'Visitor : SP Profile',
             'segment_params': [
-                ('activityLocation', 'Visitor : SP Profile'),
-                ('categoryId', '98'),
-                ('description', 'Service Request Flow entry button'), 
-                ('homeAdvisorCategoryId', '12050'),         
-                ('marketId', '27'),
-                ('userId',),
-                ('userSelectedZipCode','80123'),
-                ('visitorPageCategory', 'Moving'),
-                ('visitorPageGeo', 'DENVER'),
-                ('visitorPageGeoCategory', 'DENVER - MOVING'),
+                # ('activityLocation', 'Visitor : SP Profile'),
+                # ('categoryId', '98'),
+                # ('description', 'Service Request Flow entry button'), 
+                # ('homeAdvisorCategoryId', '12050'),         
+                # ('marketId', '27'),
+                # ('userId',),
+                # ('userSelectedZipCode','80123'),
+                # ('visitorPageCategory', 'Moving'),
+                # ('visitorPageGeo', 'DENVER'),
+                # ('visitorPageGeoCategory', 'DENVER - MOVING'),
             ]
         }
 
@@ -268,9 +268,9 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
 
         segcall_info = {
             'main_field': 'activityLocation',
-            'main_value': 'Visitor : SP Profile',
+            'main_value': 'CompanyProfile',
             'segment_params': [
-                ('activityLocation', 'Visitor : SP Profile'),
+                ('activityLocation', 'CompanyProfile'),
                 ('description', 'Join button in footer'),
                 ('marketId', '10'),
                 ('userId', ''),
@@ -293,9 +293,9 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
 
         segcall_info = {
             'main_field': 'activityLocation',
-            'main_value': 'Visitor : SP Profile',
+            'main_value': 'CompanyProfile',
             'segment_params': [
-                ('activityLocation', 'Visitor : SP Profile'),
+                ('activityLocation', 'CompanyProfile'),
                 ('description', 'Join button in footer'),
                 ('marketId', '20'),
                 ('userId', ''),
@@ -318,9 +318,9 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
 
         segcall_info = {
             'main_field': 'activityLocation',
-            'main_value': 'Visitor : SP Profile',
+            'main_value': 'CompanyProfile',
             'segment_params': [
-                ('activityLocation', 'Visitor : SP Profile'),
+                ('activityLocation', 'CompanyProfile'),
                 ('description', 'Join button in footer'),
                 ('marketId', '6'),
                 ('userId', ''),
@@ -347,10 +347,10 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
                 ('activityLocation', 'Visitor : SP Profile'),
                 ('description', 'Sign In link in header'),
                 ('marketId', '35'),
-                ('userId', ''),
+                ('userId',),
                 ('visitorPageCategory', 'Concrete - Pouring & Repair'),
                 ('visitorPageGeo', 'LAS VEGAS'),
-                ('visitorPageGeoCategory', 'BIRMINGHAM - FENCING'),
+                ('visitorPageGeoCategory', 'LAS VEGAS - CONCRETE - POURING & REPAIR'),
             ]
         }
 
@@ -370,11 +370,11 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
             'segment_params': [
                 ('activityLocation', 'Visitor : SP Profile'),
                 ('description', 'Sign In link in header'),
-                ('marketId', '49'),
+                ('marketId', '31'),
                 ('userId', ''),
                 ('visitorPageCategory', 'Landscaping'),
                 ('visitorPageGeo', 'MIAMI/FT. LAUDERDALE'),
-                ('visitorPageGeoCategory', 'LAS VEGAS - CONCRETE - POURING & REPAIR'),
+                ('visitorPageGeoCategory', 'MIAMI/FT. LAUDERDALE - LANDSCAPING'),
             ]
         }
 
