@@ -431,10 +431,9 @@ class CompanyListTestCase(SeleniumTestCase):
 
 
 
+
+    ### Company List - catNoGeo ###
 class CompanyListCatNoGeoTestCase(SeleniumTestCase):
-
-
-    ### Company List - Category No GEO ###
 
 
     # test segment call on clicking the join link in company list header
@@ -833,7 +832,7 @@ class CompanyListCatNoGeoTestCase(SeleniumTestCase):
 
 
 
-#### Top City GeoCat ####
+#### Top City ####
 class CompanyListTopCityTestCase(SeleniumTestCase):
 
 
