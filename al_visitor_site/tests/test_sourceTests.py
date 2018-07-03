@@ -62,4 +62,4 @@ class CheckingSourceTestCase(SeleniumTestCase):
 
 
                 self.assertTrue(self.isElementPresent('script[src="https://www.angieslist.com/sites/all/modules/jquery_update/replace/jquery/1.7/jquery.min.js?v=1.7.2"]'.replace('https://www.angieslist.com', self.visitor_site_url)))
-                #self.assertTrue(self.isElementPresent('script[src="/sites/all/libraries/rum/rum.min.js"]'))
+                self.assertTrue(self.isElementPresent('script[src="/sites/all/libraries/rum/rum.min.js"]'))

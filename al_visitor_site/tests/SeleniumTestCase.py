@@ -15,7 +15,7 @@ class SeleniumTestCase(unittest.TestCase):
     server = None
     proxy = None
     use_proxy = True if int(os.environ.get('USE_PROXY', 0)) else False
-    visitor_site_url = os.environ.get('VISITOR_SITE_URL', 'http://angiesmr2stg.prod.acquia-sites.com')
+    visitor_site_url = os.environ.get('VISITOR_SITE_URL', 'http://visitor.angieslist.com')
     browser_clients = os.environ.get('BROWSER_CLIENTS', 'Chrome').split(',')
     test_browser = int(os.environ.get('TEST_BROWSER', 0))
     browsermob_path = os.environ.get('BROWSERMOB_PATH', './../browsermob-proxy/bin/browsermob-proxy')
