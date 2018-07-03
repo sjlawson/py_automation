@@ -1,0 +1,13 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: angieslist/circleci-node:8.11.1
+        auth:
+          username: $DOCKER_USERNAME
+          password: $DOCKER_AUTH
+    steps:
+      - checkout
+      - run:
+          name: No Op
+          command: echo "Success"
