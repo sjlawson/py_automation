@@ -6,13 +6,14 @@ from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.keys import Keys
 import time
+import csv
 
-SPID_string='58464'
 elementCount=1
 class LegacyContractBuilderTestCase(SeleniumTestCase):
     # Add individual contract items given Ad Element type (Call Center, Web Ad, Keyword, or Publication Coupon)
-    def addContractItem(self, AdElementType, AdElementTypeSubset='', discount=90):
+    def addContractItem(self, AdElementType, AdElementTypeSubset = '', discount = 90):
         global elementCount
+        print(AdElementType)
         wait = WebDriverWait(self.client, 20)
         add_contract_item_button = self.client.find_element(By.XPATH, '//a[@id=\'addNewTab\']')
         add_contract_item_click = ActionChains(self.client).move_to_element(add_contract_item_button).click().perform()
@@ -23,11 +24,11 @@ class LegacyContractBuilderTestCase(SeleniumTestCase):
         category_selector.select_by_index(4)
 
         adElementTypeSelector = Select(self.client.find_element(By.XPATH, '//div[@id=\'adElement'+str(elementCount)+'\']//select[contains(@name, \'adElementTypeSelect\')]'))
-        adElementTypeSelector.select_by_index(1)
+        adElementTypeSelector.select_by_visible_text(AdElementType)
 
-        #if AdElementTypeSubset != '':
-        #    adElementSubset = Select(self.client.find_element(By.XPATH, '//select[contains(@name, \'AdElementsSelect\')]'))
-        #    adElementSubset.select_by_index(1)
+        if AdElementTypeSubset != '':
+            adElementSubset = Select(self.client.find_element(By.XPATH, '//select[contains(@name, \'AdElementsSelect\')]'))
+            adElementSubset.select_by_visible_text(AdElementTypeSubset)
 
         # offer text is required
         offer_textarea = self.client.find_element(By.XPATH, '//div[@id=\'adElement'+str(elementCount)+'\']//textarea[contains(@id,\'CouponText\')]')
@@ -95,8 +96,9 @@ class LegacyContractBuilderTestCase(SeleniumTestCase):
                 print(severe_logs)
             self.assertFalse(len(severe_logs))
 
-    def test_activateMonthlyContract(self):
+    def test_activateMonthlyContract(self, SPID_string='58464'):
         global elementCount
+        elementCount = 1
         if self.client:
             wait = WebDriverWait(self.client, 20)
             self.client.get(self.legacy_url)
@@ -136,8 +138,8 @@ class LegacyContractBuilderTestCase(SeleniumTestCase):
             additional_detail_box = self.client.find_element(By.XPATH, '//textarea[@id=\'OCAAssociateMessage\']')
             additional_detail_entry = ActionChains(self.client).move_to_element(additional_detail_box).click().send_keys('test contract').perform()
 
-            self.addContractItem(self, 'Call Center')
-            self.addContractItem(self, 'Web Ad')
+            self.addContractItem('Call Center', AdElementTypeSubset='AL.COM Call Center Ad', discount=90)
+            self.addContractItem('Web Ad', AdElementTypeSubset='', discount=90)
 
             # publish
             publish_box = self.client.find_element(By.XPATH, '//a[@id=\'PublishContract\']')
@@ -180,6 +182,10 @@ class LegacyContractBuilderTestCase(SeleniumTestCase):
                 wait.until(EC.alert_is_present())
                 alert = self.client.switch_to.alert
                 alert.accept()
+
+            if len(self.client.find_elements(By.XPATH, '//div[@id=\'ActivationWizard\']//input[@id=\'activationWizardWaiveValidationErrorsCheckbox\']')) > 0:
+                wave_restrictions = self.client.find_element(By.XPATH, '//div[@id=\'ActivationWizard\']//input[@id=\'activationWizardWaiveValidationErrorsCheckbox\']')
+                wave_restrictions_click = ActionChains(self.client).move_to_element(wave_restrictions).click().perform()
 
             next_button = self.client.find_element(By.XPATH, '//div[@id=\'ActivationWizard\']//button[contains(text(),\'Next\')]')
             next_button_click = ActionChains(self.client).move_to_element(next_button).click().perform()
@@ -246,12 +252,12 @@ class LegacyContractBuilderTestCase(SeleniumTestCase):
 
             console_logs = self.client.get_log('browser')
 
-            # check js errors
-            #severe_logs = []
-            #for console_log in console_logs:
-            #    if console_log['level'] == 'SEVERE':
-            #        severe_logs += [{'message':console_log['message'], 'source':console_log['source']}]
-            #if len(severe_logs) > 0:
-            #    print("Console errors: ")
-            #    print(severe_logs)
-            #self.assertFalse(len(severe_logs))
+    def test_createContractForSPIDsInCSV (self):
+        with open('SPIDs.csv', newline='') as csvfile:
+            reader = csv.reader(csvfile, delimiter=',', quotechar='|')
+            next(reader)
+            for row in reader:
+                try:
+                    self.test_activateMonthlyContract(str(row[0]))
+                except: # catch *all* exceptions
+                    print('finished attempting contract for '+str(row[0]))
