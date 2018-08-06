@@ -17,7 +17,7 @@
 `brew install python3`
 
 Then after:  
-`python3 --version`
+`python3 --version`  
 _Python 3.6.4_
 
 Then install the virtual environment module:  
