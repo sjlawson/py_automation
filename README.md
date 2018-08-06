@@ -46,9 +46,9 @@ install python package requirements with pip:
   - cause git to temporarily ignore your env with: `git update-index --assume-unchanged .env`
 
 ### Minimum required content of .env ->
-`VISITOR_SITE_URL=http://angiesmr2stg.prod.acquia-sites.com  
-BROWSER_CLIENTS=Chrome,Firefox,Safari,CBT  
-TEST_BROWSER=0`
+`VISITOR_SITE_URL=http://angiesmr2stg.prod.acquia-sites.com`  
+`BROWSER_CLIENTS=Chrome,Firefox,Safari,CBT`  
+`TEST_BROWSER=0`  
 
 That's all the setup requirements  
 After py36 environment has been setup, all you need to do after that is:  
