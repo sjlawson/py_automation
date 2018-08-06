@@ -1,0 +1,72 @@
+# make sure you have python >= 3.6 and pip,
+# and can create virtual environment containers either with virtualenv or pythonx.x -m venv container_name
+#
+# probably will have to install the Selenium chromedriver: brew install chromedriver
+# also: brew install geckodriver
+
+## For First Time installation:
+First - you need python >= 3.6.
+Must use Bash or zsh (or some variant of sh -- fish doesn't seem to be compatible)
+On Mac, best way is with brew:
+
+$ brew install python3
+
+Then after:
+$ python3 --version
+Python 3.6.4
+
+Then install the virtual environment module:
+$ brew install ---pyenv-virtualenv
+
+Create the virtual env:
+$ python3 -m venv py36
+
+Next, activate the virtual env
+$ source py36/bin/activate
+
+# install requirements
+pip install -r requirements.txt
+
+# modify the .env file to point to the environment you want to test and select which browser to use
+# e.g.: setting TEST_BROWSER to 1 would select Firefox
+#
+# currently only Chrome and Firefox are supported, and only Chrome can currently test for console errors
+
+# .env ->
+VISITOR_SITE_URL=http://angiesmr2stg.prod.acquia-sites.com
+BROWSER_CLIENTS=Chrome,Firefox
+TEST_BROWSER=0
+
+# That's all the setup requirements
+## After py36 environment has been setup, all you need to do after that is:
+$ source activate
+
+# run the test!
+#
+# this will run the tests in tests/test_h1TitleCanonical.py ->
+manage.py runtest h1TitleCanonical
+
+^^^ tells python to run manage.py which hass all the testing commands. runtest tells it you want to run one test, 
+h1TitleCanonical is the name portion of the test you want.
+
+
+# OPTIONAL: run and direct stdout to text file
+python manage.py runtest someTest > test_output.txt
+
+# OPTIONAL: run all tests:
+python manage.py testall
+
+# check page-by-page results in test_output.txt
+
+# Dev options
+# open interactive python shell with .env os.environ values:
+
+python manage.py shell
+
+##
+# ToDo: abstract-ify common selenium checks (element exists, does not exist, etc...) 
+# research different multi-browser test implementations
+# 
+# Setup proxy configuration to be able to check async network calls
+#
+# Find out what modifications would be needed to run these with Jenkins
