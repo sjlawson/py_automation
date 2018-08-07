@@ -1,0 +1,290 @@
+Importing environment from .env...
+Starting Python Flask Selenium Test Framework
+Visitor site:  http://angiesmr2stg.prod.acquia-sites.com
+TESTING: /
+-------- H1 PASSED
+-------- TITLE PASSED
+-------- CANONICAL PASSED
+-------- NO ERROR NOTICE
+
+TESTING: /articles/
+-------- H1 PASSED
+-------- TITLE PASSED
+-------- CANONICAL PASSED
+-------- PAGE HAS ERROR NOTICE
+
+TESTING: /home-improvement/
+-------- H1 PASSED
+-------- TITLE FAIL: Home Improvement How-to, Tips and Ideas | Angies List  <class 'AssertionError'>
+-------- CANONICAL PASSED
+-------- PAGE HAS ERROR NOTICE
+
+TESTING: /auto/
+-------- H1 PASSED
+-------- TITLE FAIL: Automotive How-To, Tips and Advice | Angies List  <class 'AssertionError'>
+-------- CANONICAL PASSED
+-------- NO ERROR NOTICE
+
+TESTING: /videos/
+-------- H1 PASSED
+-------- TITLE PASSED
+-------- CANONICAL FAIL:  <class 'selenium.common.exceptions.NoSuchElementException'>
+-------- NO ERROR NOTICE
+
+TESTING: /videos/video-dont-let-fear-result-air-duct-cleaning-scam.htm
+-------- H1 PASSED
+-------- TITLE PASSED
+-------- CANONICAL PASSED
+-------- NO ERROR NOTICE
+
+TESTING: /videos/video-how-install-led-kitchen-cabinet-lighting.htm
+-------- H1 PASSED
+-------- TITLE PASSED
+-------- CANONICAL PASSED
+-------- NO ERROR NOTICE
+
+TESTING: /appliances/
+-------- H1 PASSED
+-------- TITLE FAIL: Appliances - Buying and Repair Resources | Angies List  <class 'AssertionError'>
+-------- CANONICAL PASSED
+-------- NO ERROR NOTICE
+
+TESTING: /research/carpet-cleaning/
+-------- H1 PASSED
+-------- TITLE PASSED
+-------- CANONICAL PASSED
+-------- NO ERROR NOTICE
+
+TESTING: /basements-and-foundations/
+-------- H1 PASSED
+-------- TITLE FAIL: Basement & Foundation Resources | Angies List  <class 'AssertionError'>
+-------- CANONICAL PASSED
+-------- NO ERROR NOTICE
+
+TESTING: /research/kitchen-cabinets/
+-------- H1 PASSED
+-------- TITLE PASSED
+-------- CANONICAL PASSED
+-------- NO ERROR NOTICE
+
+TESTING: /articles/selling-your-home-means-selling-lifestyle.htm
+-------- H1 PASSED
+-------- TITLE PASSED
+-------- CANONICAL PASSED
+-------- PAGE HAS ERROR NOTICE
+
+TESTING: /articles/common-tree-service-scams-avoid.htm
+-------- H1 PASSED
+-------- TITLE PASSED
+-------- CANONICAL PASSED
+-------- NO ERROR NOTICE
+
+TESTING: /articles/how-avoid-common-plumbing-scams.htm
+-------- H1 PASSED
+-------- TITLE PASSED
+-------- CANONICAL PASSED
+-------- NO ERROR NOTICE
+
+TESTING: /articles/how-find-and-hang-hammock.htm
+-------- H1 PASSED
+-------- TITLE PASSED
+-------- CANONICAL PASSED
+-------- NO ERROR NOTICE
+
+TESTING: /articles/5-transmission-problems-you-cant-ignore.htm
+-------- H1 PASSED
+-------- TITLE PASSED
+-------- CANONICAL PASSED
+-------- NO ERROR NOTICE
+
+TESTING: /articles/why-hospital-patients-increasingly-face-pricey-surprise.htm
+-------- H1 PASSED
+-------- TITLE PASSED
+-------- CANONICAL PASSED
+-------- PAGE HAS ERROR NOTICE
+
+TESTING: /articles/how-to-properly-hang-artwork.htm
+-------- H1 PASSED
+-------- TITLE PASSED
+-------- CANONICAL PASSED
+-------- NO ERROR NOTICE
+
+TESTING: /photos/
+-------- H1 PASSED
+-------- TITLE PASSED
+-------- CANONICAL FAIL:  <class 'selenium.common.exceptions.NoSuchElementException'>
+-------- PAGE HAS ERROR NOTICE
+
+TESTING: /photos/diy-tiny-houses.htm
+-------- H1 PASSED
+-------- TITLE PASSED
+-------- CANONICAL PASSED
+-------- NO ERROR NOTICE
+
+TESTING: /image/granite-countertops-and-stainless-steel-appliances-kitchen/
+-------- H1 PASSED
+-------- TITLE PASSED
+-------- CANONICAL PASSED
+-------- NO ERROR NOTICE
+
+TESTING: /author-profiles/
+-------- H1 PASSED
+-------- TITLE PASSED
+-------- CANONICAL FAIL:  <class 'selenium.common.exceptions.NoSuchElementException'>
+-------- NO ERROR NOTICE
+
+TESTING: /author/angie-hicks.htm
+-------- H1 PASSED
+-------- TITLE PASSED
+-------- CANONICAL PASSED
+-------- NO ERROR NOTICE
+
+TESTING: /research/handyman/
+-------- H1 PASSED
+-------- TITLE PASSED
+-------- CANONICAL PASSED
+-------- NO ERROR NOTICE
+
+TESTING: /companylist/
+-------- H1 PASSED
+-------- TITLE PASSED
+-------- CANONICAL PASSED
+-------- NO ERROR NOTICE
+
+TESTING: /companylist/us/
+-------- H1 PASSED
+-------- TITLE PASSED
+-------- CANONICAL PASSED
+-------- NO ERROR NOTICE
+
+TESTING: /companylist/us/in/
+-------- H1 PASSED
+-------- TITLE PASSED
+-------- CANONICAL PASSED
+-------- PAGE HAS ERROR NOTICE
+
+TESTING: /companylist/us/in/fishers/
+-------- H1 PASSED
+-------- TITLE PASSED
+-------- CANONICAL PASSED
+-------- NO ERROR NOTICE
+
+TESTING: /companylist/indianapolis/
+-------- H1 PASSED
+-------- TITLE PASSED
+-------- CANONICAL PASSED
+-------- NO ERROR NOTICE
+
+TESTING: /companylist/us/in/fishers/tree-service.htm
+-------- H1 PASSED
+-------- TITLE FAIL: Error | Angie's List | Join for FREE to see 10 Million Verified Reviews  <class 'AssertionError'>
+-------- CANONICAL FAIL:  <class 'selenium.common.exceptions.NoSuchElementException'>
+-------- PAGE HAS ERROR NOTICE
+
+TESTING: /companylist/us/in/fishers/service-plus-heating-cooling-plumbing-reviews-140447.htm
+-------- H1 PASSED
+-------- TITLE FAIL: Error | Angie's List | Join for FREE to see 10 Million Verified Reviews  <class 'AssertionError'>
+-------- CANONICAL FAIL:  <class 'selenium.common.exceptions.NoSuchElementException'>
+-------- PAGE HAS ERROR NOTICE
+
+TESTING: /companylist/cleaning.htm
+-------- H1 PASSED
+-------- TITLE PASSED
+-------- CANONICAL PASSED
+-------- NO ERROR NOTICE
+
+TESTING: /in-the-press.htm
+-------- H1 PASSED
+-------- TITLE PASSED
+-------- CANONICAL PASSED
+-------- NO ERROR NOTICE
+
+TESTING: /press-backlinks/
+-------- H1 PASSED
+-------- TITLE PASSED
+-------- CANONICAL FAIL:  <class 'selenium.common.exceptions.NoSuchElementException'>
+-------- NO ERROR NOTICE
+
+TESTING: /press-backlinks/how-handle-bad-contractor.htm
+-------- H1 FAIL:  <class 'AssertionError'>
+-------- TITLE PASSED
+-------- CANONICAL PASSED
+-------- NO ERROR NOTICE
+
+TESTING: /news-releases/
+-------- H1 PASSED
+-------- TITLE PASSED
+-------- CANONICAL FAIL:  <class 'selenium.common.exceptions.NoSuchElementException'>
+-------- NO ERROR NOTICE
+
+TESTING: /news-releases/angie-s-list-rescue-free-consumer-survival-guide-covers-home-auto-property-even-pets/
+-------- H1 FAIL:  <class 'AssertionError'>
+-------- TITLE PASSED
+-------- CANONICAL PASSED
+-------- NO ERROR NOTICE
+
+TESTING: /news-clips/angie-shares-secrets-her-balancing-act-today.htm
+-------- H1 FAIL:  <class 'AssertionError'>
+-------- TITLE PASSED
+-------- CANONICAL PASSED
+-------- NO ERROR NOTICE
+
+TESTING: /services.htm
+-------- H1 PASSED
+-------- TITLE PASSED
+-------- CANONICAL FAIL:  <class 'selenium.common.exceptions.NoSuchElementException'>
+-------- NO ERROR NOTICE
+
+TESTING: /quick-tour.htm
+-------- H1 PASSED
+-------- TITLE PASSED
+-------- CANONICAL PASSED
+-------- NO ERROR NOTICE
+
+TESTING: /how-it-works.htm
+-------- H1 PASSED
+-------- TITLE PASSED
+-------- CANONICAL PASSED
+-------- NO ERROR NOTICE
+
+TESTING: /aboutus.htm
+-------- H1 FAIL:  <class 'AssertionError'>
+-------- TITLE PASSED
+-------- CANONICAL PASSED
+-------- NO ERROR NOTICE
+
+TESTING: /photos/landscaping-ideas.htm
+-------- H1 PASSED
+-------- TITLE PASSED
+-------- CANONICAL PASSED
+-------- NO ERROR NOTICE
+
+111 ASSERTIONS PASSED
+ASSERTION FAILURES: 26 
+/articles/ --- PAGE HAS ERROR NOTICE
+/home-improvement/ --- TITLE FAIL: Home Improvement How-to, Tips and Ideas | Angies List
+/home-improvement/ --- PAGE HAS ERROR NOTICE
+/auto/ --- TITLE FAIL: Automotive How-To, Tips and Advice | Angies List
+/videos/ --- CANONICAL FAIL
+/appliances/ --- TITLE FAIL: Appliances - Buying and Repair Resources | Angies List
+/basements-and-foundations/ --- TITLE FAIL: Basement & Foundation Resources | Angies List
+/articles/selling-your-home-means-selling-lifestyle.htm --- PAGE HAS ERROR NOTICE
+/articles/why-hospital-patients-increasingly-face-pricey-surprise.htm --- PAGE HAS ERROR NOTICE
+/photos/ --- CANONICAL FAIL
+/photos/ --- PAGE HAS ERROR NOTICE
+/author-profiles/ --- CANONICAL FAIL
+/companylist/us/in/ --- PAGE HAS ERROR NOTICE
+/companylist/us/in/fishers/tree-service.htm --- TITLE FAIL: Error | Angie's List | Join for FREE to see 10 Million Verified Reviews
+/companylist/us/in/fishers/tree-service.htm --- CANONICAL FAIL
+/companylist/us/in/fishers/tree-service.htm --- PAGE HAS ERROR NOTICE
+/companylist/us/in/fishers/service-plus-heating-cooling-plumbing-reviews-140447.htm --- TITLE FAIL: Error | Angie's List | Join for FREE to see 10 Million Verified Reviews
+/companylist/us/in/fishers/service-plus-heating-cooling-plumbing-reviews-140447.htm --- CANONICAL FAIL
+/companylist/us/in/fishers/service-plus-heating-cooling-plumbing-reviews-140447.htm --- PAGE HAS ERROR NOTICE
+/press-backlinks/ --- CANONICAL FAIL
+/press-backlinks/how-handle-bad-contractor.htm --- H1 FAIL
+/news-releases/ --- CANONICAL FAIL
+/news-releases/angie-s-list-rescue-free-consumer-survival-guide-covers-home-auto-property-even-pets/ --- H1 FAIL
+/news-clips/angie-shares-secrets-her-balancing-act-today.htm --- H1 FAIL
+/services.htm --- CANONICAL FAIL
+/aboutus.htm --- H1 FAIL
+
