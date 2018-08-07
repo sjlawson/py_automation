@@ -22,8 +22,8 @@ class SeleniumTestCase(unittest.TestCase):
     browsermob_path = os.environ.get('BROWSERMOB_PATH', './../browsermob-proxy/bin/browsermob-proxy')
     browsermob_port = int(os.environ.get('BROWSERMOB_PORT', '9090'))
     browsermob_host = os.environ.get('BROWSERMOB_HOST', '127.0.0.1')
-    test_legacy_user=os.environ.get('TEST_LEGACY_USER', '')
-    test_legacy_password=os.environ.get('TEST_LEGACY_PASSWORD', '')
+    test_legacy_user=os.environ.get('LEGACY_USER', '')
+    test_legacy_password=os.environ.get('LEGACY_PASSWORD', '')
     char_key = None
 
     def setUp(self):
