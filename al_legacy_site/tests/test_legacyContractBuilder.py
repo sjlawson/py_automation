@@ -1,48 +1,50 @@
 from tests.SeleniumTestCase import SeleniumTestCase
+from LegacyPageObjects import LegacyPageObjects
 from selenium.webdriver.support.ui import WebDriverWait, Select
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.keys import Keys
+
 import time
 import csv
 
-elementCount=1
 class LegacyContractBuilderTestCase(SeleniumTestCase):
     # Add individual contract items given Ad Element type (Call Center, Web Ad, Keyword, or Publication Coupon)
     def addContractItem(self, AdElementType, AdElementTypeSubset = '', discount = 90):
         global elementCount
+        elementCount = LegacyPageObjects.getElementCount()
         print(AdElementType)
         wait = WebDriverWait(self.client, 20)
-        add_contract_item_button = self.client.find_element(By.XPATH, '//a[@id=\'addNewTab\']')
+        add_contract_item_button = self.client.find_element(By.XPATH, LegacyPageObjects.add_contract_item_button)
         add_contract_item_click = ActionChains(self.client).move_to_element(add_contract_item_button).click().perform()
 
-        add_contract_screen = wait.until(EC.visibility_of_element_located((By.XPATH, '//div[@id=\'adElement'+str(elementCount)+'\']//textarea[@class=\'CouponTextArea\']')))
+        add_contract_screen = wait.until(EC.visibility_of_element_located((By.XPATH, LegacyPageObjects.add_contract_screen)))
 
-        category_selector = Select(self.client.find_element(By.XPATH, '//div[@id=\'adElement'+str(elementCount)+'\']//select[contains(@name, \'categorySelect\')]'))
+        category_selector = Select(self.client.find_element(By.XPATH, LegacyPageObjects.contract_category_selector))
         category_selector.select_by_index(4)
 
-        adElementTypeSelector = Select(self.client.find_element(By.XPATH, '//div[@id=\'adElement'+str(elementCount)+'\']//select[contains(@name, \'adElementTypeSelect\')]'))
+        adElementTypeSelector = Select(self.client.find_element(By.XPATH, LegacyPageObjects.contract_element_type_selector))
         adElementTypeSelector.select_by_visible_text(AdElementType)
 
         if AdElementTypeSubset != '':
-            adElementSubset = Select(self.client.find_element(By.XPATH, '//select[contains(@name, \'AdElementsSelect\')]'))
+            adElementSubset = Select(self.client.find_element(By.XPATH, LegacyPageObjects.contract_ad_element_type_subset))
             adElementSubset.select_by_visible_text(AdElementTypeSubset)
 
         # offer text is required
-        offer_textarea = self.client.find_element(By.XPATH, '//div[@id=\'adElement'+str(elementCount)+'\']//textarea[contains(@id,\'CouponText\')]')
+        offer_textarea = self.client.find_element(By.XPATH, LegacyPageObjects.contract_offer_text_area)
         offer_textarea_entry = ActionChains(self.client).move_to_element(offer_textarea).click().send_keys('test ad element text').perform()
 
         #set a discount for the contract items
-        discountSelector = Select(self.client.find_element(By.XPATH, '//div[@id=\'adElement'+str(elementCount)+'\']//select[contains(@name, \'discountTypeSelect\')]'))
+        discountSelector = Select(self.client.find_element(By.XPATH, LegacyPageObjects.contract_discount_selector))
         discountSelector.select_by_index(1)
-        discount_textarea = self.client.find_element(By.XPATH, '//div[@id=\'adElement'+str(elementCount)+'\']//input[contains(@name,\'PricingDiscount\')]')
+        discount_textarea = self.client.find_element(By.XPATH, LegacyPageObjects.contract_discount_textbox)
         discount_textarea_entry = ActionChains(self.client).move_to_element(discount_textarea).click().send_keys(str(discount)).perform()
 
         # try to avoid getting a charge > $1,000 by grabbing the cheapest option
         minPriceIndex = 0
-        prices_list = self.client.find_elements(By.XPATH,'//div[@id=\'adElement'+str(elementCount)+'\']//td[contains(@id,\'price-adElement\')]')
+        prices_list = self.client.find_elements(By.XPATH, LegacyPageObjects.contract_pricing_list)
         for index, price_element in prices_list:
             price_string = price_element.text
             price_string_int = int(price_string.replace('$',''))
@@ -50,17 +52,18 @@ class LegacyContractBuilderTestCase(SeleniumTestCase):
                 minPriceIndex = index
 
         #checkbox_to_click = self.client.find_element(By.XPATH,'(//td[@class=\'supreg price\'])['+str(minPriceIndex)+']')
-        checkbox_to_click = self.client.find_elements(By.XPATH,'//div[@id=\'adElement'+str(elementCount)+'\']//input[@class=\'RSC\']')
+        checkbox_to_click = self.client.find_elements(By.XPATH, LegacyPageObjects.contract_pricing_checkbox)
         checkbox_click = ActionChains(self.client).move_to_element(checkbox_to_click[minPriceIndex]).click().perform()
 
-        monthly_total = self.client.find_element(By.XPATH,'//div[@id=\'adElement'+str(elementCount)+'\']//td[contains(@class,\'TabTotalCardMonthly\')]').text
+        monthly_total = self.client.find_element(By.XPATH, LegacyPageObjects.contract_monthly_total).text
 
         loopmax = 500
         counter = 0
         while monthly_total == '$0.00' and counter <= loopmax:
-            monthly_total = self.client.find_element(By.XPATH,'//div[@id=\'adElement'+str(elementCount)+'\']//td[contains(@class,\'TabTotalCardMonthly\')]').text
+            monthly_total = self.client.find_element(By.XPATH, LegacyPageObjects.contract_tab_total_card).text
             counter+=1
         elementCount+=1
+        LegacyPageObjects.setElementCount(elementCount)
 
     def test_legacyLogin(self):
         if self.client:
@@ -68,23 +71,22 @@ class LegacyContractBuilderTestCase(SeleniumTestCase):
             self.client.get(self.legacy_url)
 
             # check if we are already logged into legacy
-            if len(self.client.find_elements(By.XPATH, '//span[text()=\'Sales\']')) > 0:
-                logout_link = self.client.find_element(By.XPATH, '//a[@id=\'ctl00_loginPanel_ToolsLoginStatus\']')
+            if len(self.client.find_elements(By.XPATH, LegacyPageObjects.sales_lefthand_nav)) > 0:
+                logout_link = self.client.find_element(By.XPATH, LegacyPageObjects.logout_link)
                 logout_action = ActionChains(self.client).move_to_element(logout_link).click().perform()
 
-            user_box = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, '#ctl00_MainContentPlaceHolder_LogonControl_UserName')))
+            user_box = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, LegacyPageObjects.user_box_css)))
             user_input_action = ActionChains(self.client).move_to_element(user_box).click().send_keys(self.test_legacy_user).perform()
 
-            password_box = self.client.find_element(By.CSS_SELECTOR, '#ctl00_MainContentPlaceHolder_LogonControl_Password')
+            password_box = self.client.find_element(By.CSS_SELECTOR, LegacyPageObjects.password_box_css)
             password_input_action = ActionChains(self.client).move_to_element(password_box).click().send_keys(self.test_legacy_password).perform()
 
-            submit_button = self.client.find_element(By.CSS_SELECTOR, '#ctl00_MainContentPlaceHolder_LogonControl_LogOnSubmit')
+            submit_button = self.client.find_element(By.CSS_SELECTOR, LegacyPageObjects.submit_button_css)
             submit_action = ActionChains(self.client).move_to_element(submit_button).click().perform()
 
-            wait.until(EC.element_to_be_clickable((By.XPATH, '//span[contains(text(),\'Sales\')]')))
+            wait.until(EC.element_to_be_clickable((By.XPATH, sales_lefthand_nav)))
 
             console_logs = self.client.get_log('browser')
-
 
             # check js errors
             severe_logs = []
@@ -98,7 +100,7 @@ class LegacyContractBuilderTestCase(SeleniumTestCase):
 
     def test_activateMonthlyContract(self, SPID_string='58464'):
         global elementCount
-        elementCount = 1
+        elementCount = LegacyPageObjects.getElementCount()
         if self.client:
             wait = WebDriverWait(self.client, 20)
             self.client.get(self.legacy_url)
