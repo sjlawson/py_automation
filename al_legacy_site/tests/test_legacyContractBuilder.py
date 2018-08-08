@@ -14,7 +14,6 @@ class LegacyContractBuilderTestCase(SeleniumTestCase):
     # Add individual contract items given Ad Element type (Call Center, Web Ad, Keyword, or Publication Coupon)
     def addContractItem(self, pageObject, AdElementType, AdElementTypeSubset = '', discount = 90):
         elementCount = pageObject.getElementCount()
-        pageObject.updateElementCount()
         print(AdElementType)
         wait = WebDriverWait(self.client, 20)
         add_contract_item_button = self.client.find_element(By.XPATH, pageObject.add_contract_item_button)
@@ -64,6 +63,7 @@ class LegacyContractBuilderTestCase(SeleniumTestCase):
             counter+=1
         elementCount+=1
         pageObject.setElementCount(elementCount)
+        pageObject.updateElementCount()
 
     def test_legacyLogin(self):
         if self.client:
