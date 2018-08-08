@@ -66,6 +66,7 @@ class LegacyContractBuilderTestCase(SeleniumTestCase):
         pageObject.updateElementCount()
 
     def test_legacyLogin(self):
+        pageObject=LegacyPageObjects()
         if self.client:
             wait = WebDriverWait(self.client, 20)
             self.client.get(self.legacy_url)
@@ -88,6 +89,7 @@ class LegacyContractBuilderTestCase(SeleniumTestCase):
 
             console_logs = self.client.get_log('browser')
 
+            self.test_result = 'pass'
             # check js errors
             severe_logs = []
             for console_log in console_logs:
@@ -254,6 +256,7 @@ class LegacyContractBuilderTestCase(SeleniumTestCase):
             next_button_click = ActionChains(self.client).move_to_element(next_button).click().perform()
 
             console_logs = self.client.get_log('browser')
+            self.test_result = 'pass'
 
     def test_createContractForSPIDsInCSV (self):
         with open('SPIDs.csv', newline='') as csvfile:
