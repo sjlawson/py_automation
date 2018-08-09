@@ -40,8 +40,8 @@ class SeleniumTestCase(unittest.TestCase):
             self.proxy = self.server.create_proxy()
 
         if self.cbt_flag:
-            self.username = "joshua.king@homeadvisor.com"
-            self.authkey  = "ue7bf12ed67bedd7"
+            self.username = cbt_user
+            self.authkey  = cbt_key
             self.api_session = requests.Session()
             self.api_session.auth = (self.username,self.authkey)
             self.test_result = None
