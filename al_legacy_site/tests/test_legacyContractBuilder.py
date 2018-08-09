@@ -18,7 +18,6 @@ class LegacyContractBuilderTestCase(SeleniumTestCase):
         wait = WebDriverWait(self.client, 20)
         add_contract_item_button = self.client.find_element(By.XPATH, pageObject.add_contract_item_button)
         add_contract_item_click = ActionChains(self.client).move_to_element(add_contract_item_button).click().perform()
-        print(pageObject.add_contract_screen)
         add_contract_screen = wait.until(EC.visibility_of_element_located((By.XPATH, pageObject.add_contract_screen)))
 
         category_selector = Select(self.client.find_element(By.XPATH, pageObject.contract_category_selector))

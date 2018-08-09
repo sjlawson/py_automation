@@ -26,6 +26,8 @@ class SeleniumTestCase(unittest.TestCase):
     browsermob_host = os.environ.get('BROWSERMOB_HOST', '127.0.0.1')
     test_legacy_user=os.environ.get('LEGACY_USER', '')
     test_legacy_password=os.environ.get('LEGACY_PASSWORD', '')
+    cbt_user=os.environ.get('CBT_USER', '')
+    cbt_key=os.environ.get('CBT_KEY', '')
     cbt_flag = True if int(os.environ.get('CBT_FLAG', 1)) else False
     char_key = None
     caps = {}
@@ -59,7 +61,6 @@ class SeleniumTestCase(unittest.TestCase):
             raise NotImplementedError("Class `{}` does not implement `{}`".format(webdriver.__class__.__name__, method_name))
 
         try:
-            print(DesiredCapabilities)
             d = getattr(DesiredCapabilities, method_name.upper())
             d['loggingPrefs'] = { 'browser':'ALL','driver': 'ALL','performance': 'ALL'}
             if method_name == 'Chrome':
@@ -74,7 +75,6 @@ class SeleniumTestCase(unittest.TestCase):
                     ch_profile.add_argument('--proxy-server=http://%s' % self.proxy.selenium_proxy().httpProxy)
 
                 if self.cbt_flag:
-                    print(self.caps)
                     browser = webdriver.Remote(desired_capabilities=self.caps,command_executor="http://%s:%s@hub.crossbrowsertesting.com:80/wd/hub"%(self.username,self.authkey))
                     browser.implicitly_wait(20)
                 else:    
