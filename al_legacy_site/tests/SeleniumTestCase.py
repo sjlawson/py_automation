@@ -3,6 +3,7 @@ import tty, termios
 from time import sleep
 import _thread
 import requests
+import datetime
 from selenium import webdriver
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
@@ -40,12 +41,10 @@ class SeleniumTestCase(unittest.TestCase):
             self.proxy = self.server.create_proxy()
 
         if self.cbt_flag:
-            self.username = cbt_user
-            self.authkey  = cbt_key
             self.api_session = requests.Session()
-            self.api_session.auth = (self.username,self.authkey)
+            self.api_session.auth = (self.cbt_user,self.cbt_key)
             self.test_result = None
-            self.caps['name'] = 'Legacy Login'
+            self.caps['name'] = self.id()+' '+str(datetime.datetime.now())
             self.caps['build'] = '1.0'
             # caps['browserName'] = 'Safari'
             # caps['version'] = '8'
@@ -75,7 +74,7 @@ class SeleniumTestCase(unittest.TestCase):
                     ch_profile.add_argument('--proxy-server=http://%s' % self.proxy.selenium_proxy().httpProxy)
 
                 if self.cbt_flag:
-                    browser = webdriver.Remote(desired_capabilities=self.caps,command_executor="http://%s:%s@hub.crossbrowsertesting.com:80/wd/hub"%(self.username,self.authkey))
+                    browser = webdriver.Remote(desired_capabilities=self.caps,command_executor="http://%s:%s@hub.crossbrowsertesting.com:80/wd/hub"%(self.cbt_user,self.cbt_key))
                     browser.implicitly_wait(20)
                 else:    
                     browser = client_method(desired_capabilities=d, chrome_options=ch_profile)
@@ -84,7 +83,7 @@ class SeleniumTestCase(unittest.TestCase):
                 if self.use_proxy:
                     fp.set_proxy(self.proxy.selenium_proxy())
                 if self.cbt_flag:
-                    browser = webdriver.Remote(desired_capabilities=self.caps,command_executor="http://%s:%s@hub.crossbrowsertesting.com:80/wd/hub"%(self.username,self.authkey))
+                    browser = webdriver.Remote(desired_capabilities=self.caps,command_executor="http://%s:%s@hub.crossbrowsertesting.com:80/wd/hub"%(self.cbt_user,self.cbt_key))
                     browser.implicitly_wait(20)
                 else:
                     browser = client_method(capabilities=d,firefox_profile=fp)
