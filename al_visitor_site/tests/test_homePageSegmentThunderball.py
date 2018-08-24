@@ -221,8 +221,59 @@ class HomepageTballSegmentTestCase(SeleniumTestCase):
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
+    # About Angie’s List link in footer Tball
+    def test_footerAboutUsLinkTball(self):
+        if not self.client:
+            return 0
 
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/', '#footer--about-us-link', 'click')
 
+        segcall_info = {
+            'main_field': 'activityLocation',
+            'main_value': 'Visitor App : Home',
+            'segment_params': [
+                ('description', 'About Angie’s List link in footer'),
+                ('activityLocation', 'Visitor App : Home')
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # Careers link in footer Tball
+    def test_footerCareersLinkTball(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/', '#footer--careers-link', 'click')
+
+        segcall_info = {
+            'main_field': 'activityLocation',
+            'main_value': 'Visitor App : Home',
+            'segment_params': [
+                ('description', 'Careers link in footer'),
+                ('activityLocation', 'Visitor App : Home')
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # Contact Us link in footer Tball
+    def test_footerContactUsLinkTball(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/', '#footer--contact-us-link', 'click')
+
+        segcall_info = {
+            'main_field': 'activityLocation',
+            'main_value': 'Visitor App : Home',
+            'segment_params': [
+                ('description', 'Contact Us link in footer'),
+                ('activityLocation', 'Visitor App : Home')
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # Homepage Top Cities NYC Tball
     def test_HomePageTopCitiesNYCTball(self):
