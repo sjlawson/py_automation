@@ -3,7 +3,7 @@ from SegmentTestHelper import SegmentTestHelper
 
 class HomepageTballSegmentTestCase(SeleniumTestCase):
 
-    # Footer Join Tball
+    # Join button in footer Tball
     def test_footerJoinCTAHomepageTball(self):
         if not self.client:
             return 0
@@ -15,6 +15,78 @@ class HomepageTballSegmentTestCase(SeleniumTestCase):
             'main_value': 'Visitor App : Home',
             'segment_params': [
                 ('description', 'Join button in footer'),
+                ('activityLocation', 'Visitor App : Home')
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # Join For Free link in footer Tball
+    def test_footerJoinForFreeTball(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/', '#footer--join-for-free-link', 'click')
+
+        segcall_info = {
+            'main_field': 'activityLocation',
+            'main_value': 'Visitor App : Home',
+            'segment_params': [
+                ('description', 'Join For Free link in footer'),
+                ('activityLocation', 'Visitor App : Home')
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # Find Local Businesses link in footer Tball
+    def test_footerBcLinkTball(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/', '#footer--find-local-business-link', 'click')
+
+        segcall_info = {
+            'main_field': 'activityLocation',
+            'main_value': 'Visitor App : Home',
+            'segment_params': [
+                ('description', 'Find Local Businesses link in footer'),
+                ('activityLocation', 'Visitor App : Home')
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # How It Works link in footer Tball
+    def test_footerHiwLinkTball(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/', '#footer--how-it-works-link', 'click')
+
+        segcall_info = {
+            'main_field': 'activityLocation',
+            'main_value': 'Visitor App : Home',
+            'segment_params': [
+                ('description', 'How It Works link in footer'),
+                ('activityLocation', 'Visitor App : Home')
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # FAQs link in footer Tball
+    def test_footerFaqLinkTball(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/', '#footer--faq-link', 'click')
+
+        segcall_info = {
+            'main_field': 'activityLocation',
+            'main_value': 'Visitor App : Home',
+            'segment_params': [
+                ('description', 'FAQs link in footer'),
                 ('activityLocation', 'Visitor App : Home')
             ]
         }
