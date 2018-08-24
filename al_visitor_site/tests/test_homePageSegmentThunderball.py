@@ -94,6 +94,83 @@ class HomepageTballSegmentTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
 
+    # Solution Center link in footer Tball
+    def test_footerSolutionCenterLinkTball(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/', '#footer--solution-center-link', 'click')
+
+        segcall_info = {
+            'main_field': 'activityLocation',
+            'main_value': 'Visitor App : Home',
+            'segment_params': [
+                ('description', 'Solution Center link in footer'),
+                ('activityLocation', 'Visitor App : Home')
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # Photo Galleries link in footer Tball
+    def test_footerPhotosLinkTball(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/', '#footer--photo-galleries-link', 'click')
+
+        segcall_info = {
+            'main_field': 'activityLocation',
+            'main_value': 'Visitor App : Home',
+            'segment_params': [
+                ('description', 'Photo Galleries link in footer'),
+                ('activityLocation', 'Visitor App : Home')
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # Videos link in footer Tball
+    def test_footerVideoLinkTball(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/', '#footer--videos-link', 'click')
+
+        segcall_info = {
+            'main_field': 'activityLocation',
+            'main_value': 'Visitor App : Home',
+            'segment_params': [
+                ('description', 'Videos link in footer'),
+                ('activityLocation', 'Visitor App : Home')
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # Answers link in footer Tball
+    def test_footerAnswersLinkTball(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/', '#footer--answers-link', 'click')
+
+        segcall_info = {
+            'main_field': 'activityLocation',
+            'main_value': 'Visitor App : Home',
+            'segment_params': [
+                ('description', 'Answers link in footer'),
+                ('activityLocation', 'Visitor App : Home')
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+
+
+
+
+
     # Homepage Top Cities NYC Tball
     def test_HomePageTopCitiesNYCTball(self):
         if not self.client:
