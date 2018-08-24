@@ -8,14 +8,14 @@ class HomepageTballSegmentTestCase(SeleniumTestCase):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/', '#footer-join', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/', '#footer--join-button', 'click')
 
         segcall_info = {
             'main_field': 'activityLocation',
             'main_value': 'Visitor App : Home',
             'segment_params': [
                 ('description', 'Join button in footer'),
-                ('userId',),
+                ('activityLocation', 'Visitor App : Home'),
             ]
         }
 
@@ -23,11 +23,11 @@ class HomepageTballSegmentTestCase(SeleniumTestCase):
 
 
     # Homepage Top Cities NYC Tball
-    def test_homePageTopCitiesNYCTball(self):
+    def test_HomePageTopCitiesNYCTball(self):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/', 'div.list-inline > li > a[title="Search New York Pros"]', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/', 'div.top-cities.row > ul.list-inline > li >a[title="Search New York Pros"]', 'click') 
         segcall_info = {
             'main_field': 'activityLocation',
             'main_value': 'Visitor App : Home',
