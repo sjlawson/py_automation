@@ -275,6 +275,31 @@ class HomepageTballSegmentTestCase(SeleniumTestCase):
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
+    #  FAQ link in header Tball
+    def test_headerFaqLinkTball(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/', '#header--faq-link', 'click')
+
+        segcall_info = {
+            'main_field': 'activityLocation',
+            'main_value': 'Visitor Header',
+            'segment_params': [
+                ('description', 'FAQ link in header'),
+                ('activityLocation', 'Visitor Header')
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+
+
+
+
+
+
+
     # Homepage Top Cities NYC Tball
     def test_HomePageTopCitiesNYCTball(self):
         if not self.client:
