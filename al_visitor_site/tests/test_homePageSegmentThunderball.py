@@ -166,7 +166,60 @@ class HomepageTballSegmentTestCase(SeleniumTestCase):
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
+    # For Business Owners link in footer Tball
+    def test_footerBcOwnersTball(self):
+        if not self.client:
+            return 0
 
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/', '#footer--for-business-owners-link', 'click')
+
+        segcall_info = {
+            'main_field': 'activityLocation',
+            'main_value': 'Visitor App : Home',
+            'segment_params': [
+                ('description', 'For Business Owners link in footer'),
+                ('activityLocation', 'Visitor App : Home')
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # Press link in footer Tball
+    def test_footerPressLinkTball(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/', '#footer--press-link', 'click')
+
+        segcall_info = {
+            'main_field': 'activityLocation',
+            'main_value': 'Visitor App : Home',
+            'segment_params': [
+                ('description', 'Press link in footer'),
+                ('activityLocation', 'Visitor App : Home')
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+
+    # Investor Relations link in footer Tball
+    def test_footerIRLinkTball(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/', '#footer--investor-relations-link', 'click')
+
+        segcall_info = {
+            'main_field': 'activityLocation',
+            'main_value': 'Visitor App : Home',
+            'segment_params': [
+                ('description', 'Investor Relations link in footer'),
+                ('activityLocation', 'Visitor App : Home')
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
 
 
