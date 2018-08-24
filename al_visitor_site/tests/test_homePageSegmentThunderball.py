@@ -294,10 +294,95 @@ class HomepageTballSegmentTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
 
+    #  In The Press link in header Tball
+    def test_headerInThePressLinkTball(self):
+        if not self.client:
+            return 0
 
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/', '#header--in-the-press-link', 'click')
 
+        segcall_info = {
+            'main_field': 'activityLocation',
+            'main_value': 'Visitor Header',
+            'segment_params': [
+                ('description', 'In the Press link in header'),
+                ('activityLocation', 'Visitor Header')
+            ]
+        }
 
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
+    #  Solution Center link in header Tball
+    def test_headerSCLinkTball(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/', '#header--articles-link', 'click')
+
+        segcall_info = {
+            'main_field': 'activityLocation',
+            'main_value': 'Visitor Header',
+            'segment_params': [
+                ('description', 'Solution Center link in header'),
+                ('activityLocation', 'Visitor Header')
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    #  Solution Center link in header Tball
+    def test_headerBOLinkTball(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/', '#header--business-owners-link', 'click')
+
+        segcall_info = {
+            'main_field': 'activityLocation',
+            'main_value': 'Visitor Header',
+            'segment_params': [
+                ('description', 'Business Owners link in header'),
+                ('activityLocation', 'Visitor Header')
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    #  AL Header link in header Tball
+    def test_headerAlLinkTball(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/', '#header--al-logo-link', 'click')
+
+        segcall_info = {
+            'main_field': 'activityLocation',
+            'main_value': 'Visitor Header',
+            'segment_params': [
+                ('description', 'Angie’s List logo in header'),
+                ('activityLocation', 'Visitor Header')
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    #  How It Works link in header Tball
+    def test_headerHiwLinkTball(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/', '#header--hiw-link', 'click')
+
+        segcall_info = {
+            'main_field': 'activityLocation',
+            'main_value': 'Visitor Header',
+            'segment_params': [
+                ('description', 'How It Works link in header'),
+                ('activityLocation', 'Visitor Header')
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
 
     # Homepage Top Cities NYC Tball
