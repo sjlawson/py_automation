@@ -102,7 +102,7 @@ class HomepageSegmentTestCase(SeleniumTestCase):
 
 
     # Footer Join
-    def test_footerJoinCTA(self):
+    def test_footerJoinCTAHomepage(self):
         # quit if browser didn't load
         if not self.client:
             return 0
