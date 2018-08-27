@@ -109,4 +109,6 @@ class SegmentTestHelper():
             test_case.assertTrue(main_field_exists)
         except AssertionError as e:
             e.args += (('Segment call "%s: %s" is MISSING' % (segcall_info['main_field'], segcall_info['main_value'])),)
+            test_case.test_result = 'fail' 
             raise
+        test_case.test_result = 'pass'
