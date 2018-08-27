@@ -88,14 +88,13 @@ class SeleniumTestCase(unittest.TestCase):
                 else:
                     browser = client_method(capabilities=d,firefox_profile=fp)
             elif method_name == 'Safari':
-                    sa = webdriver.SafariProfile()
                 if self.use_proxy:
                     sa.set_proxy(self.proxy.selenium_proxy())
                 if self.cbt_flag:
                     browser = webdriver.Remote(desired_capabilities=self.caps,command_executor="http://%s:%s@hub.crossbrowsertesting.com:80/wd/hub"%(self.cbt_user,self.cbt_key))
                     browser.implicitly_wait(20)
                 else:
-                    browser = client_method(capabilities=d,safari_profile=sa)
+                    browser = webdriver.Safari()
             else:
                 browser = client_method()
 
