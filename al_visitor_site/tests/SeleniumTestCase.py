@@ -94,7 +94,7 @@ class SeleniumTestCase(unittest.TestCase):
                     browser = webdriver.Remote(desired_capabilities=self.caps,command_executor="http://%s:%s@hub.crossbrowsertesting.com:80/wd/hub"%(self.cbt_user,self.cbt_key))
                     browser.implicitly_wait(20)
                 else:
-                    browser = webdriver.Safari()
+                    browser = webdriver.Safari()                
             else:
                 browser = client_method()
 
