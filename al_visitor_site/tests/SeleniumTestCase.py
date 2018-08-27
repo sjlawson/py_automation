@@ -2,6 +2,8 @@ import unittest, sys, datetime, time, os
 import tty, termios
 from time import sleep
 import _thread
+import requests
+import datetime
 from selenium import webdriver
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
@@ -16,20 +18,42 @@ class SeleniumTestCase(unittest.TestCase):
     proxy = None
     use_proxy = True if int(os.environ.get('USE_PROXY', 0)) else False
     visitor_site_url = os.environ.get('VISITOR_SITE_URL', 'http://visitor.angieslist.com')
+    legacy_url=os.environ.get('LEGACY_URL', 'http://qatools.angieslist.com')
     browser_clients = os.environ.get('BROWSER_CLIENTS', 'Chrome').split(',')
     test_browser = int(os.environ.get('TEST_BROWSER', 0))
+    test_client = os.environ.get('TEST_CLIENT', 'Mac OSX 10.10')
     browsermob_path = os.environ.get('BROWSERMOB_PATH', './../browsermob-proxy/bin/browsermob-proxy')
     browsermob_port = int(os.environ.get('BROWSERMOB_PORT', '9090'))
     browsermob_host = os.environ.get('BROWSERMOB_HOST', '127.0.0.1')
+    test_legacy_user=os.environ.get('LEGACY_USER', '')
+    test_legacy_password=os.environ.get('LEGACY_PASSWORD', '')
+    cbt_user=os.environ.get('CBT_USER', '')
+    cbt_key=os.environ.get('CBT_KEY', '')
+    cbt_flag = True if int(os.environ.get('CBT_FLAG', 1)) else False
     char_key = None
+    caps = {}
 
     def setUp(self):
+        method_name = self.browser_clients[self.test_browser]
         if self.use_proxy:
             self.server = Server(self.browsermob_path, {'host':self.browsermob_host,'port':self.browsermob_port})
             self.server.start()
             self.proxy = self.server.create_proxy()
 
-        method_name = self.browser_clients[self.test_browser]
+        if self.cbt_flag:
+            self.api_session = requests.Session()
+            self.api_session.auth = (self.cbt_user,self.cbt_key)
+            self.test_result = None
+            self.caps['name'] = self.id()+' '+str(datetime.datetime.now())
+            self.caps['build'] = '1.0'
+            # caps['browserName'] = 'Safari'
+            # caps['version'] = '8'
+            self.caps['browserName'] = method_name
+            self.caps['platform'] = self.test_client
+            self.caps['screenResolution'] = '1366x768'
+            self.caps['record_video'] = 'true'
+            self.caps['record_network'] = 'true'
+            self.caps['loggingPrefs'] = {'performance': 'INFO'}
         try:
             client_method = getattr(webdriver, method_name)
         except AttributeError:
@@ -44,14 +68,25 @@ class SeleniumTestCase(unittest.TestCase):
                 ch_profile.add_argument('incognito')
                 ch_profile.add_argument('disable-extensions')
                 ch_profile.add_argument('auto-open-devtools-for-tabs')
+                ch_profile.add_argument('disable-browser-side-navigation')
+
                 if self.use_proxy:
                     ch_profile.add_argument('--proxy-server=http://%s' % self.proxy.selenium_proxy().httpProxy)
-                browser = client_method(desired_capabilities=d, chrome_options=ch_profile)
+
+                if self.cbt_flag:
+                    browser = webdriver.Remote(desired_capabilities=self.caps,command_executor="http://%s:%s@hub.crossbrowsertesting.com:80/wd/hub"%(self.cbt_user,self.cbt_key))
+                    browser.implicitly_wait(20)
+                else:    
+                    browser = client_method(desired_capabilities=d, chrome_options=ch_profile)
             elif method_name == 'Firefox':
                 fp = webdriver.FirefoxProfile()
                 if self.use_proxy:
                     fp.set_proxy(self.proxy.selenium_proxy())
-                browser = client_method(capabilities=d,firefox_profile=fp)
+                if self.cbt_flag:
+                    browser = webdriver.Remote(desired_capabilities=self.caps,command_executor="http://%s:%s@hub.crossbrowsertesting.com:80/wd/hub"%(self.cbt_user,self.cbt_key))
+                    browser.implicitly_wait(20)
+                else:
+                    browser = client_method(capabilities=d,firefox_profile=fp)
             else:
                 browser = client_method()
 
@@ -69,6 +104,10 @@ class SeleniumTestCase(unittest.TestCase):
             self.client.close()
         if self.server:
             self.server.stop()
+        if self.cbt_flag:
+            self.client.quit()
+            self.api_session.put('https://crossbrowsertesting.com/api/v3/selenium/' + self.client.session_id,
+                data={'action':'set_score', 'score':self.test_result})
 
     def isElementPresent(self, cssSelector):
         try:
