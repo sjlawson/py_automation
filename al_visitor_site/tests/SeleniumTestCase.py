@@ -94,7 +94,13 @@ class SeleniumTestCase(unittest.TestCase):
                     browser = webdriver.Remote(desired_capabilities=self.caps,command_executor="http://%s:%s@hub.crossbrowsertesting.com:80/wd/hub"%(self.cbt_user,self.cbt_key))
                     browser.implicitly_wait(20)
                 else:
-                    browser = webdriver.Safari()                
+                    browser = webdriver.Safari()
+            elif method_name == 'Edge':
+                if self.cbt_flag:
+                    browser = webdriver.Remote(desired_capabilities=self.caps,command_executor="http://%s:%s@hub.crossbrowsertesting.com:80/wd/hub"%(self.cbt_user,self.cbt_key))
+                    browser.implicitly_wait(20)
+                else:
+                    browser = webdriver.Edge()
             else:
                 browser = client_method()
 
