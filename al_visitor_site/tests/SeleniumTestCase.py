@@ -87,6 +87,21 @@ class SeleniumTestCase(unittest.TestCase):
                     browser.implicitly_wait(20)
                 else:
                     browser = client_method(capabilities=d,firefox_profile=fp)
+            elif method_name == 'Safari':
+                if self.use_proxy:
+                    sa.set_proxy(self.proxy.selenium_proxy())
+                if self.cbt_flag:
+                    browser = webdriver.Remote(desired_capabilities=self.caps,command_executor="http://%s:%s@hub.crossbrowsertesting.com:80/wd/hub"%(self.cbt_user,self.cbt_key))
+                    browser.implicitly_wait(20)
+                else:
+                    browser = webdriver.Safari()
+            elif method_name == 'Edge':
+                if self.cbt_flag:
+                    browser = webdriver.Remote(desired_capabilities=self.caps,command_executor="http://%s:%s@hub.crossbrowsertesting.com:80/wd/hub"%(self.cbt_user,self.cbt_key))
+                    browser.implicitly_wait(20)
+                else:
+                    print('Will run locally ONLY on a Windows machine')
+                    browser = webdriver.Edge()
             else:
                 browser = client_method()
 
