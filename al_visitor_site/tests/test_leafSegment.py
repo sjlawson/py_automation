@@ -268,9 +268,9 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
 
         segcall_info = {
             'main_field': 'activityLocation',
-            'main_value': 'CompanyProfile',
+            'main_value': 'Visitor : SP Profile',
             'segment_params': [
-                ('activityLocation', 'CompanyProfile'),
+                ('activityLocation', 'Visitor : SP Profile'),
                 ('description', 'Join button in footer'),
                 ('marketId', '10'),
                 ('userId', ''),
@@ -293,9 +293,9 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
 
         segcall_info = {
             'main_field': 'activityLocation',
-            'main_value': 'CompanyProfile',
+            'main_value': 'Visitor : SP Profile',
             'segment_params': [
-                ('activityLocation', 'CompanyProfile'),
+                ('activityLocation', 'Visitor : SP Profile'),
                 ('description', 'Join button in footer'),
                 ('marketId', '20'),
                 ('userId', ''),
@@ -318,9 +318,9 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
 
         segcall_info = {
             'main_field': 'activityLocation',
-            'main_value': 'CompanyProfile',
+            'main_value': 'Visitor : SP Profile',
             'segment_params': [
-                ('activityLocation', 'CompanyProfile'),
+                ('activityLocation', 'Visitor : SP Profile'),
                 ('description', 'Join button in footer'),
                 ('marketId', '6'),
                 ('userId', ''),
