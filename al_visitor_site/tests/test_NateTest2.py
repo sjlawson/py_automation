@@ -15,7 +15,7 @@ class TestItemClickWorkDone(SeleniumTestCase):
 
 
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/edit?serviceProviderId=10803144', '#review--description-of-work-input]', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/edit?serviceProviderId=10803144', '#review--description-of-work-input', 'click')
 
         segcall_info = {
             'main_field': 'description',

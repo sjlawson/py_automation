@@ -15,7 +15,7 @@ class TestCompanyListTestCase(SeleniumTestCase):
 
 
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/edit?serviceProviderId=10803144', 'div.form-group > div.btn-group > #reviews--workComplete-button-yes]', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/edit?serviceProviderId=10803144', '#reviews--workComplete-button-yes', 'click')
 
         segcall_info = {
             'main_field': 'reviewSection',
@@ -25,6 +25,8 @@ class TestCompanyListTestCase(SeleniumTestCase):
                 
             ]
         }
+
+       
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
