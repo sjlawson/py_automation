@@ -13,7 +13,10 @@ class TestCompanyListTestCase(SeleniumTestCase):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/edit?serviceProviderId=10803144', '#reviews—workComplete-button-yes', 'click')
+
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/edit?serviceProviderId=10803144', 'div.row > div.btn-group > #reviews--workComplete-button-yes]', 'click')
+
         segcall_info = {
             'main_field': 'reviewSection',
             'main_value': 'Work Done',
