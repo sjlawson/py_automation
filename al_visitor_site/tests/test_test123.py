@@ -2,14 +2,14 @@ from tests.SeleniumTestCase import SeleniumTestCase
 from SegmentTestHelper import SegmentTestHelper
 
 
-##### Company List Page ####
-class TestCompanyListTestCase(SeleniumTestCase):
+##### Visitor Review Form ####
+class testWorkCompleteSegmentYes(SeleniumTestCase):
 
 
-## Header Segment Events - Company List ##
+## Work Performed Yes Segment Event ##
 
-    # test segment call on clicking the join link in company list header
-    def test_testCompanyListSegmentJoin(self):
+    # test segment call on clicking Yes Was money paid or were services performed? on VRF
+    def test_testWorkCompleteSegmentYes(self):
         if not self.client:
             return 0
 
