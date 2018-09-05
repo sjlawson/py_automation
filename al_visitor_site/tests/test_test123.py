@@ -13,7 +13,7 @@ class TestCompanyListTestCase(SeleniumTestCase):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/?bustA1', '#header-join', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/edit?serviceProviderId=10803144', 'div.row > div.btn-group > #reviews--workComplete-button-yes]', 'click')
         segcall_info = {
             'main_field': 'activityLocation',
             'main_value': 'Visitor : Directory',
@@ -25,6 +25,7 @@ class TestCompanyListTestCase(SeleniumTestCase):
         }
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
 
 
 
