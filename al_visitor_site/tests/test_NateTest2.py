@@ -15,13 +15,14 @@ class TestItemClickWorkDone(SeleniumTestCase):
 
 
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/edit?serviceProviderId=10803144', '#review--description-of-work-input', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/edit?serviceProviderId=10803144', '#review--description-of-work-input', 'click', False)
 
         segcall_info = {
             'main_field': 'description',
-            'main_value': 'Review - What work did you need done',
+            'main_value': 'Review - What work did you need done?',
             'segment_params': [
-                ('description', 'Review - What work did you need done'),
+                ('description', 'Review - What work did you need done?'),
+                ('userType', 'Not Authenticated')
                 
             ]
         }
