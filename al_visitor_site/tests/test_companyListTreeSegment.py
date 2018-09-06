@@ -206,7 +206,7 @@ class CompanyListTestCase(SeleniumTestCase):
             'main_value': 'Top Cities link in footer',
             'segment_params': [
                 ('description', 'Top Cities link in footer'),
-                ('activityLocation', 'Directory'),
+                ('activityLocation', 'Visitor : Directory'),
                 ('userId',),
             ]
         }
@@ -242,7 +242,7 @@ class CompanyListTestCase(SeleniumTestCase):
             'main_value': 'Top Cities link in footer',
             'segment_params': [
                 ('description', 'Top Cities link in footer'),
-                ('activityLocation', 'Directory'),
+                ('activityLocation', 'Visitor : Directory'),
                 ('userId',),
             ]
         }
@@ -290,13 +290,13 @@ class CompanyListTestCase(SeleniumTestCase):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/?bustA1', 'div.footer-region.cities-left > li > a[title="Search Cincinnati Pros"]', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/?bustA1', 'div.region.region-footer > div.top-cities > ul > div.footer-region.cities-left > li > a[title="Search Cincinnati Pros"]', 'click')
         segcall_info = {
             'main_field': 'activityLocation',
-            'main_value': 'Directory',
+            'main_value': 'Visitor : Directory',
             'segment_params': [
                 ('description', 'Top Cities link in footer'),
-                ('activityLocation', 'Directory'),
+                ('activityLocation', 'Visitor : Directory'),
                 ('userId',),
             ]
         }
@@ -308,13 +308,13 @@ class CompanyListTestCase(SeleniumTestCase):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/?bustA1', 'div.top-cities > ul > div.footer-region.cities-left > li > a[title="Search Los Angeles Pros"]"]', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/?bustA1', 'div.region.region-footer > div.top-cities > ul > div.footer-region.cities-left > li > a[title="Search Los Angeles Pros"]', 'click')
         segcall_info = {
             'main_field': 'description',
             'main_value': 'Top Cities link in footer',
             'segment_params': [
                 ('description', 'Top Cities link in footer'),
-                ('activityLocation', 'Directory'),
+                ('activityLocation', 'Visitor : Directory'),
                 ('userId',),
             ]
         }
@@ -350,7 +350,7 @@ class CompanyListTestCase(SeleniumTestCase):
             'main_value': 'Top Cities link in footer',
             'segment_params': [
                 ('description', 'Top Cities link in footer'),
-                ('activityLocation', 'Directory'),
+                ('activityLocation', 'Visitor : Directory'),
                 ('userId',),
             ]
         }
@@ -1132,7 +1132,7 @@ class CompanyListTopCityTestCase(SeleniumTestCase):
         collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/indianapolis/?bustA2', 'div.top-cities > ul > div.footer-region.cities-left > li > a[title="Search Cincinnati Pros"]', 'click')
         segcall_info = {
             'main_field': 'activityLocation',
-            'main_value': 'Directory',
+            'main_value': 'Visitor : US : City',
             'segment_params': [
                 ('description', 'Top Cities link in footer'),
                 ('activityLocation', 'Visitor : US : City'),
