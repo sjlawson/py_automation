@@ -22,6 +22,8 @@ class testWorkCompleteSegmentYes(SeleniumTestCase):
             'main_value': 'Work Done',
             'segment_params': [
                 ('reviewSection', 'Work Done'),
+                ('userType', 'Not Authenticated'),
+                ('userResponse', 'Yes'),
                 
             ]
         }
