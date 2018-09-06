@@ -15,8 +15,8 @@ class testWorkCompleteSegmentYes(SeleniumTestCase):
 
 
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/edit?serviceProviderId=10803144', '#reviews--workComplete-button-yes', 'click')
-
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/edit?serviceProviderId=10803144', '#reviews--workComplete-button-yes', 'click', False)
+        
         segcall_info = {
             'main_field': 'reviewSection',
             'main_value': 'Work Done',
