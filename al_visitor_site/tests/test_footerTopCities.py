@@ -70,7 +70,7 @@ class FooterTopCitiesTestCase(SeleniumTestCase):
                 self.assertTrue(self.client.find_elements_by_css_selector('div.top-cities > ul > div.footer-region.cities-left > li > a[title="Search Indianapolis Pros"]'))
                 self.assertTrue(self.client.find_elements_by_css_selector('div.top-cities > ul > div.footer-region.cities-left > li > a[title="Search Boston Pros"]'))
                 self.assertTrue(self.client.find_elements_by_css_selector('div.top-cities > ul > div.footer-region.cities-left > li > a[title="Search Atlanta Pros"]'))
-              # self.assertTrue(self.client.find_elements_by_css_selector('div.top-cities > ul > div.footer-region.cities-left > li > a[title="Search Cincinnati Pros"]'))
+                self.assertTrue(self.client.find_elements_by_css_selector('div.top-cities > ul > div.footer-region.cities-left > li > a[title="Search Cincinnati Pros"]'))
                 self.assertTrue(self.client.find_elements_by_css_selector('div.top-cities > ul > div.footer-region.cities-left > li > a[title="Search Los Angeles Pros"]'))
                 self.assertTrue(self.client.find_elements_by_css_selector('div.top-cities > ul > div.footer-region.cities-right > li > a[title="Search Dallas Pros"]'))
                 self.assertTrue(self.client.find_elements_by_css_selector('div.top-cities > ul > div.footer-region.cities-right > li > a[title="Search Pittsburgh Pros"]'))
