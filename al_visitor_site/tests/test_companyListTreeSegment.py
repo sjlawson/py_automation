@@ -167,7 +167,7 @@ class CompanyListTestCase(SeleniumTestCase):
         collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/?bustA1', '#footer-join', 'click')
         segcall_info = {
             'main_field': 'activityLocation',
-            'main_value': 'Directory',
+            'main_value': 'Visitor : Directory',
             'segment_params': [
                 ('description', 'Join button in footer'),
                 ('userId',),
@@ -224,7 +224,7 @@ class CompanyListTestCase(SeleniumTestCase):
             'main_value': 'Top Cities link in footer',
             'segment_params': [
                 ('description', 'Top Cities link in footer'),
-                ('activityLocation', 'Directory'),
+                ('activityLocation', 'Visitor : Directory'),
                 ('userId',),
             ]
         }
@@ -260,7 +260,7 @@ class CompanyListTestCase(SeleniumTestCase):
             'main_value': 'Top Cities link in footer',
             'segment_params': [
                 ('description', 'Top Cities link in footer'),
-                ('activityLocation', 'Directory'),
+                ('activityLocation', 'Visitor : Directory'),
                 ('userId',),
             ]
         }
@@ -278,7 +278,7 @@ class CompanyListTestCase(SeleniumTestCase):
             'main_value': 'Top Cities link in footer',
             'segment_params': [
                 ('description', 'Top Cities link in footer'),
-                ('activityLocation', 'Directory'),
+                ('activityLocation', 'Visitor : Directory'),
                 ('userId',),
             ]
         }
@@ -1908,7 +1908,7 @@ class CompanyListStatePageTestCase(SeleniumTestCase):
             'main_value': 'Top Cities link in footer',
             'segment_params': [
                 ('description', 'Top Cities link in footer'),
-                ('activityLocation', 'Directory'),
+                ('activityLocation', 'Visitor : US : State'),
                 ('userId',),
             ]
         }
@@ -2034,7 +2034,7 @@ class CompanyListStatePageTestCase(SeleniumTestCase):
             'main_value': 'Top Cities link in footer',
             'segment_params': [
                 ('description', 'Top Cities link in footer'),
-                ('activityLocation', 'Directory'),
+                ('activityLocation', 'Visitor : US : State'),
                 ('userId',),
             ]
         }
@@ -2052,7 +2052,7 @@ class CompanyListStatePageTestCase(SeleniumTestCase):
             'main_value': 'Top Cities link in footer',
             'segment_params': [
                 ('description', 'Top Cities link in footer'),
-                ('activityLocation', 'Directory'),
+                ('activityLocation', 'Visitor : US : State'),
                 ('userId',),
             ]
         }
@@ -2070,7 +2070,7 @@ class CompanyListStatePageTestCase(SeleniumTestCase):
             'main_value': 'Top Cities link in footer',
             'segment_params': [
                 ('description', 'Top Cities link in footer'),
-                ('activityLocation', 'Directory'),
+                ('activityLocation', 'Visitor : US : State'),
                 ('userId',),
             ]
         }
@@ -2088,7 +2088,7 @@ class CompanyListStatePageTestCase(SeleniumTestCase):
             'main_value': 'Top Cities link in footer',
             'segment_params': [
                 ('description', 'Top Cities link in footer'),
-                ('activityLocation', 'Directory'),
+                ('activityLocation', 'Visitor : US : State'),
                 ('userId',),
             ]
         }
@@ -2106,7 +2106,7 @@ class CompanyListStatePageTestCase(SeleniumTestCase):
             'main_value': 'Top Cities link in footer',
             'segment_params': [
                 ('description', 'Top Cities link in footer'),
-                ('activityLocation', 'Directory'),
+                ('activityLocation', 'Visitor : US : State'),
                 ('userId',),
             ]
         }
@@ -2124,7 +2124,7 @@ class CompanyListStatePageTestCase(SeleniumTestCase):
             'main_value': 'Top Cities link in footer',
             'segment_params': [
                 ('description', 'Top Cities link in footer'),
-                ('activityLocation', 'Directory'),
+                ('activityLocation', 'Visitor : US : State'),
                 ('userId',),
             ]
         }
@@ -2142,7 +2142,7 @@ class CompanyListStatePageTestCase(SeleniumTestCase):
             'main_value': 'Top Cities link in footer',
             'segment_params': [
                 ('description', 'Top Cities link in footer'),
-                ('activityLocation', 'Directory'),
+                ('activityLocation', 'Visitor : US : State'),
                 ('userId',),
             ]
         }
