@@ -43,7 +43,7 @@ class SeleniumTestCase(unittest.TestCase):
         if self.cbt_flag:
             self.api_session = requests.Session()
             self.api_session.auth = (self.cbt_user,self.cbt_key)
-            self.test_result = None
+            self.test_result = 'fail'
             self.caps['name'] = self.id()+' '+str(datetime.datetime.now())
             self.caps['build'] = '1.0'
             # caps['browserName'] = 'Safari'
