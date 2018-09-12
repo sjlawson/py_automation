@@ -9,7 +9,7 @@ class testWorkCompleteSegmentNo(SeleniumTestCase):
 ## Work Performed Yes Segment Event ##
 
     # test segment call on clicking No Was money paid or were services performed? on VRF
-    def test_testWorkCompleteSegmentYes(self):
+    def test_testWorkCompleteSegmentNo(self):
         if not self.client:
             return 0
 
