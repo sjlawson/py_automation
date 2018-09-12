@@ -3,25 +3,25 @@ from SegmentTestHelper import SegmentTestHelper
 
 
 ##### Visitor Review Form ####
-class TestItemClickHireAgainYes(SeleniumTestCase):
+class TestItemClickHireAgainNo(SeleniumTestCase):
 
 
-## test segment call on clicking yes on Would you hire again? on VRF
+## test segment call on clicking no on Would you hire again? on VRF
 
     # test segment call on clicking the Would you hire again? field on VRF
-    def test_testItemClickHireAgainYes(self):
+    def test_testItemClickHireAgainNo(self):
         if not self.client:
             return 0
 
 
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/edit?serviceProviderId=10803144', '#reviews--willHireAgain-button-yes', 'click', False)
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/edit?serviceProviderId=10803144', '#reviews--willHireAgain-button-no', 'click', False)
 
         segcall_info = {
             'main_field': 'reviewSection',
             'main_value': 'Hire Again',
             'segment_params': [
-                ('userResponse', 'Yes'),
+                ('userResponse', 'No'),
                 ('userType', 'Not Authenticated')
                 
             ]
