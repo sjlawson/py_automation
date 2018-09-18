@@ -357,10 +357,10 @@ class HomepageTballSegmentTestCase(SeleniumTestCase):
 
         segcall_info = {
             'main_field': 'activityLocation',
-            'main_value': 'Visitor Header',
+            'main_value': 'Visitor : Home',
             'segment_params': [
                 ('description', 'Angie’s List logo in header'),
-                ('activityLocation', 'Visitor Header')
+                ('activityLocation', 'Visitor : Home')
             ]
         }
 
