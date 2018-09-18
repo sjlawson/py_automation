@@ -25,7 +25,6 @@ class SegmentTestHelper():
             try:
                 test_case.client.get(test_case.visitor_site_url + path)
                 if target != 'page':
-                    target_element = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, target)))
                     if prep_actions:
                         for prep_action in prep_actions:
                             prep_action_element = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, prep_action['action_element'])))
@@ -42,6 +41,7 @@ class SegmentTestHelper():
 
                             prep_action_chain.perform()
 
+                    target_element = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, target)))
                     action_chain = ActionChains(test_case.client).move_to_element(target_element)
                     try:
                         action_method = getattr(action_chain, action_name)
