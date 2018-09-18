@@ -4,6 +4,25 @@ from SegmentTestHelper import SegmentTestHelper
 class HowItWorksThunderballPageSegmentTestCase(SeleniumTestCase):
 
     # test segment call on clicking the join link in the header - Thunderball version
+
+    #  AL Header link on HIW - Tball
+    def test_howItWorksHeaderAlLinkTball(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/how-it-works.htm', '#header--al-logo-link', 'click')
+
+        segcall_info = {
+            'main_field': 'activityLocation',
+            'main_value': 'Visitor : How it Works',
+            'segment_params': [
+                ('description', 'Angie’s List logo in header'),
+                ('activityLocation', 'Visitor : How it Works')
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
     def test_howItWorksTballHeaderJoinClick(self):
         if not self.client:
             return 0
@@ -20,19 +39,34 @@ class HowItWorksThunderballPageSegmentTestCase(SeleniumTestCase):
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
-
-
     # test segment call on clicking the HIW link in the header
     def test_howItWorksTballHeaderLinkClick(self):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/how-it-works.htm', '.btnHiw', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/how-it-works.htm', '#header--hiw-link', 'click')
         segcall_info = {
             'main_field': 'activityLocation',
             'main_value': 'Visitor : How it Works',
             'segment_params': [
                 ('description', 'How It Works link in header'),
+                ('activityLocation', 'Visitor : How it Works'),
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # test segment call on clicking the Sign In link in the header
+    def test_howItWorksTballSignInLinkClick(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/how-it-works.htm', '#header--sign-in-link', 'click')
+        segcall_info = {
+            'main_field': 'activityLocation',
+            'main_value': 'Visitor : How it Works',
+            'segment_params': [
+                ('description', 'Sign In link in header'),
                 ('activityLocation', 'Visitor : How it Works'),
             ]
         }
