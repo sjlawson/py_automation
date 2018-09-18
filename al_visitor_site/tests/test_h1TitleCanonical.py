@@ -1,5 +1,5 @@
 import sys
-from tests.SeleniumTestCase import SeleniumTestCase
+from common.SeleniumTestCase import SeleniumTestCase
 
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait

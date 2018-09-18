@@ -1,6 +1,8 @@
 # Suites should be listed by directory
 suites:
-  - al_visitor_site:
+  al_visitor_site:
       base_url: http://visitordev3.angieslist.com
-  - 
+  al_reviews:
+      base_url: https://tampa-stagegeosearch.angieslist.com/app/reviews
+
   

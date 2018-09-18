@@ -17,7 +17,8 @@ class SeleniumTestCase(unittest.TestCase):
     server = None
     proxy = None
     use_proxy = True if int(os.environ.get('USE_PROXY', 0)) else False
-    visitor_site_url = os.environ.get('VISITOR_SITE_URL', 'http://visitor.angieslist.com')
+    base_url = os.environ.get('BASE_URL', 'http://wwwstg.angieslist.com')
+    visitor_site_url = base_url # legacy setting
     legacy_url=os.environ.get('LEGACY_URL', 'http://qatools.angieslist.com')
     browser_clients = os.environ.get('BROWSER_CLIENTS', 'Chrome').split(',')
     test_browser = int(os.environ.get('TEST_BROWSER', 0))
@@ -76,7 +77,7 @@ class SeleniumTestCase(unittest.TestCase):
                 if self.cbt_flag:
                     browser = webdriver.Remote(desired_capabilities=self.caps,command_executor="http://%s:%s@hub.crossbrowsertesting.com:80/wd/hub"%(self.cbt_user,self.cbt_key))
                     browser.implicitly_wait(20)
-                else:    
+                else:
                     browser = client_method(desired_capabilities=d, chrome_options=ch_profile)
             elif method_name == 'Firefox':
                 fp = webdriver.FirefoxProfile()

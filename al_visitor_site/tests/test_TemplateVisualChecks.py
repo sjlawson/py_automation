@@ -1,6 +1,6 @@
 import sys
 
-from tests.SeleniumTestCase import SeleniumTestCase
+from common.SeleniumTestCase import SeleniumTestCase
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -10,12 +10,12 @@ class TemplateVisualChecks(SeleniumTestCase):
 
     def test_load_template_pages(self):
         print("\nThis test cycles through all page templates, waits for input, and if there are problems, prompts for description. When complete, it shows a summary of failures with respective URLs.")
-        with open('./resources/template_urls.txt' ,'r') as fp:
+        with open('./al_visitor_site/resources/template_urls.txt' ,'r') as fp:
             urls = [line for line in fp.readlines()]
 
         if not self.client:
             sys.exit()
-            
+
         wait = WebDriverWait(self.client, 20)
         count = 0
         fails = 0
