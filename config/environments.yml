@@ -1,0 +1,6 @@
+# Suites should be listed by directory
+suites:
+  - al_visitor_site:
+      base_url: http://visitordev3.angieslist.com
+  - 
+  
