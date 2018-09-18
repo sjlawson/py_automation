@@ -284,10 +284,10 @@ class HomepageTballSegmentTestCase(SeleniumTestCase):
 
         segcall_info = {
             'main_field': 'activityLocation',
-            'main_value': 'Visitor Header',
+            'main_value': 'Visitor : Home',
             'segment_params': [
                 ('description', 'FAQ link in header'),
-                ('activityLocation', 'Visitor Header')
+                ('activityLocation', 'Visitor : Home')
             ]
         }
 
@@ -303,10 +303,10 @@ class HomepageTballSegmentTestCase(SeleniumTestCase):
 
         segcall_info = {
             'main_field': 'activityLocation',
-            'main_value': 'Visitor Header',
+            'main_value': 'Visitor : Home',
             'segment_params': [
                 ('description', 'In the Press link in header'),
-                ('activityLocation', 'Visitor Header')
+                ('activityLocation', 'Visitor : Home')
             ]
         }
 
@@ -321,10 +321,10 @@ class HomepageTballSegmentTestCase(SeleniumTestCase):
 
         segcall_info = {
             'main_field': 'activityLocation',
-            'main_value': 'Visitor Header',
+            'main_value': 'Visitor : Home',
             'segment_params': [
                 ('description', 'Solution Center link in header'),
-                ('activityLocation', 'Visitor Header')
+                ('activityLocation', 'Visitor : Home')
             ]
         }
 
@@ -339,10 +339,10 @@ class HomepageTballSegmentTestCase(SeleniumTestCase):
 
         segcall_info = {
             'main_field': 'activityLocation',
-            'main_value': 'Visitor Header',
+            'main_value': 'Visitor : Home',
             'segment_params': [
                 ('description', 'Business Owners link in header'),
-                ('activityLocation', 'Visitor Header')
+                ('activityLocation', 'Visitor : Home')
             ]
         }
 
@@ -375,10 +375,10 @@ class HomepageTballSegmentTestCase(SeleniumTestCase):
 
         segcall_info = {
             'main_field': 'activityLocation',
-            'main_value': 'Visitor Header',
+            'main_value': 'Visitor : Home',
             'segment_params': [
                 ('description', 'How It Works link in header'),
-                ('activityLocation', 'Visitor Header')
+                ('activityLocation', 'Visitor : Home')
             ]
         }
 
