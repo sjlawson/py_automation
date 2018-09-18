@@ -72,3 +72,60 @@ class HowItWorksThunderballPageSegmentTestCase(SeleniumTestCase):
         }
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+
+    #  FAQ link in header Tball
+    def test_howItWorksHeaderFAQLinkTball(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/how-it-works.htm', '#header--faq-link', 'click')
+
+        segcall_info = {
+            'main_field': 'activityLocation',
+            'main_value': 'Visitor : How it Works',
+            'segment_params': [
+                ('description', 'FAQ link in header'),
+                ('activityLocation', 'Visitor : How it Works')
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+
+    #  HIW In The Press link in header Tball
+    def test_howItWorksHeaderInThePressLinkTball(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/how-it-works.htm', '#header--in-the-press-link', 'click')
+
+        segcall_info = {
+            'main_field': 'activityLocation',
+            'main_value': 'Visitor : How it Works',
+            'segment_params': [
+                ('description', 'In the Press link in header'),
+                ('activityLocation', 'Visitor : How it Works')
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+
+    #  HIW Solution Center link in header Tball
+    def test_howItWorksHeaderSolutionCenterLinkTball(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/how-it-works.htm', '#header--articles-link', 'click')
+
+        segcall_info = {
+            'main_field': 'activityLocation',
+            'main_value': 'Visitor : How it Works',
+            'segment_params': [
+                ('description', 'Solution Center link in header'),
+                ('activityLocation', 'Visitor : How it Works')
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)

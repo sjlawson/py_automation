@@ -330,7 +330,7 @@ class HomepageTballSegmentTestCase(SeleniumTestCase):
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
-    #  Solution Center link in header Tball
+    #  Business Owners link in header Tball
     def test_headerBOLinkTball(self):
         if not self.client:
             return 0
