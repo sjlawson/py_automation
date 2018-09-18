@@ -12,10 +12,10 @@ class HomepageTballSegmentTestCase(SeleniumTestCase):
 
         segcall_info = {
             'main_field': 'activityLocation',
-            'main_value': 'Visitor App : Home',
+            'main_value': 'Visitor : Home',
             'segment_params': [
                 ('description', 'Join button in footer'),
-                ('activityLocation', 'Visitor App : Home')
+                ('activityLocation', 'Visitor : Home')
             ]
         }
 
@@ -30,10 +30,10 @@ class HomepageTballSegmentTestCase(SeleniumTestCase):
 
         segcall_info = {
             'main_field': 'activityLocation',
-            'main_value': 'Visitor App : Home',
+            'main_value': 'Visitor : Home',
             'segment_params': [
                 ('description', 'Join For Free link in footer'),
-                ('activityLocation', 'Visitor App : Home')
+                ('activityLocation', 'Visitor : Home')
             ]
         }
 
@@ -48,10 +48,10 @@ class HomepageTballSegmentTestCase(SeleniumTestCase):
 
         segcall_info = {
             'main_field': 'activityLocation',
-            'main_value': 'Visitor App : Home',
+            'main_value': 'Visitor : Home',
             'segment_params': [
                 ('description', 'Find Local Businesses link in footer'),
-                ('activityLocation', 'Visitor App : Home')
+                ('activityLocation', 'Visitor : Home')
             ]
         }
 
@@ -66,10 +66,10 @@ class HomepageTballSegmentTestCase(SeleniumTestCase):
 
         segcall_info = {
             'main_field': 'activityLocation',
-            'main_value': 'Visitor App : Home',
+            'main_value': 'Visitor : Home',
             'segment_params': [
                 ('description', 'How It Works link in footer'),
-                ('activityLocation', 'Visitor App : Home')
+                ('activityLocation', 'Visitor : Home')
             ]
         }
 
@@ -84,10 +84,10 @@ class HomepageTballSegmentTestCase(SeleniumTestCase):
 
         segcall_info = {
             'main_field': 'activityLocation',
-            'main_value': 'Visitor App : Home',
+            'main_value': 'Visitor : Home',
             'segment_params': [
                 ('description', 'FAQs link in footer'),
-                ('activityLocation', 'Visitor App : Home')
+                ('activityLocation', 'Visitor : Home')
             ]
         }
 
@@ -103,10 +103,10 @@ class HomepageTballSegmentTestCase(SeleniumTestCase):
 
         segcall_info = {
             'main_field': 'activityLocation',
-            'main_value': 'Visitor App : Home',
+            'main_value': 'Visitor : Home',
             'segment_params': [
                 ('description', 'Solution Center link in footer'),
-                ('activityLocation', 'Visitor App : Home')
+                ('activityLocation', 'Visitor : Home')
             ]
         }
 
@@ -121,10 +121,10 @@ class HomepageTballSegmentTestCase(SeleniumTestCase):
 
         segcall_info = {
             'main_field': 'activityLocation',
-            'main_value': 'Visitor App : Home',
+            'main_value': 'Visitor : Home',
             'segment_params': [
                 ('description', 'Photo Galleries link in footer'),
-                ('activityLocation', 'Visitor App : Home')
+                ('activityLocation', 'Visitor : Home')
             ]
         }
 
@@ -139,10 +139,10 @@ class HomepageTballSegmentTestCase(SeleniumTestCase):
 
         segcall_info = {
             'main_field': 'activityLocation',
-            'main_value': 'Visitor App : Home',
+            'main_value': 'Visitor : Home',
             'segment_params': [
                 ('description', 'Videos link in footer'),
-                ('activityLocation', 'Visitor App : Home')
+                ('activityLocation', 'Visitor : Home')
             ]
         }
 
@@ -157,10 +157,10 @@ class HomepageTballSegmentTestCase(SeleniumTestCase):
 
         segcall_info = {
             'main_field': 'activityLocation',
-            'main_value': 'Visitor App : Home',
+            'main_value': 'Visitor : Home',
             'segment_params': [
                 ('description', 'Answers link in footer'),
-                ('activityLocation', 'Visitor App : Home')
+                ('activityLocation', 'Visitor : Home')
             ]
         }
 
@@ -175,10 +175,10 @@ class HomepageTballSegmentTestCase(SeleniumTestCase):
 
         segcall_info = {
             'main_field': 'activityLocation',
-            'main_value': 'Visitor App : Home',
+            'main_value': 'Visitor : Home',
             'segment_params': [
                 ('description', 'For Business Owners link in footer'),
-                ('activityLocation', 'Visitor App : Home')
+                ('activityLocation', 'Visitor : Home')
             ]
         }
 
@@ -193,10 +193,10 @@ class HomepageTballSegmentTestCase(SeleniumTestCase):
 
         segcall_info = {
             'main_field': 'activityLocation',
-            'main_value': 'Visitor App : Home',
+            'main_value': 'Visitor : Home',
             'segment_params': [
                 ('description', 'Press link in footer'),
-                ('activityLocation', 'Visitor App : Home')
+                ('activityLocation', 'Visitor : Home')
             ]
         }
 
@@ -212,10 +212,10 @@ class HomepageTballSegmentTestCase(SeleniumTestCase):
 
         segcall_info = {
             'main_field': 'activityLocation',
-            'main_value': 'Visitor App : Home',
+            'main_value': 'Visitor : Home',
             'segment_params': [
                 ('description', 'Investor Relations link in footer'),
-                ('activityLocation', 'Visitor App : Home')
+                ('activityLocation', 'Visitor : Home')
             ]
         }
 
@@ -230,10 +230,10 @@ class HomepageTballSegmentTestCase(SeleniumTestCase):
 
         segcall_info = {
             'main_field': 'activityLocation',
-            'main_value': 'Visitor App : Home',
+            'main_value': 'Visitor : Home',
             'segment_params': [
                 ('description', 'About Angie’s List link in footer'),
-                ('activityLocation', 'Visitor App : Home')
+                ('activityLocation', 'Visitor : Home')
             ]
         }
 
@@ -248,10 +248,10 @@ class HomepageTballSegmentTestCase(SeleniumTestCase):
 
         segcall_info = {
             'main_field': 'activityLocation',
-            'main_value': 'Visitor App : Home',
+            'main_value': 'Visitor : Home',
             'segment_params': [
                 ('description', 'Careers link in footer'),
-                ('activityLocation', 'Visitor App : Home')
+                ('activityLocation', 'Visitor : Home')
             ]
         }
 
@@ -266,10 +266,10 @@ class HomepageTballSegmentTestCase(SeleniumTestCase):
 
         segcall_info = {
             'main_field': 'activityLocation',
-            'main_value': 'Visitor App : Home',
+            'main_value': 'Visitor : Home',
             'segment_params': [
                 ('description', 'Contact Us link in footer'),
-                ('activityLocation', 'Visitor App : Home')
+                ('activityLocation', 'Visitor : Home')
             ]
         }
 
@@ -393,10 +393,10 @@ class HomepageTballSegmentTestCase(SeleniumTestCase):
         collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/', 'div.top-cities.row > ul.list-inline > li > a[title="Search New York Pros"]', 'click') 
         segcall_info = {
             'main_field': 'activityLocation',
-            'main_value': 'Visitor App : Home',
+            'main_value': 'Visitor : Home',
             'segment_params': [
                 ('description', 'Top Cities link in footer'),
-                ('activityLocation', 'Visitor App : Home')
+                ('activityLocation', 'Visitor : Home')
             ]
         }
 
@@ -413,7 +413,7 @@ class HomepageTballSegmentTestCase(SeleniumTestCase):
             'main_value': 'Top Cities link in footer',
             'segment_params': [
                 ('description', 'Top Cities link in footer'),
-                ('activityLocation', 'Visitor App : Home')
+                ('activityLocation', 'Visitor : Home')
             ]
         }
 
@@ -430,7 +430,7 @@ class HomepageTballSegmentTestCase(SeleniumTestCase):
             'main_value': 'Top Cities link in footer',
             'segment_params': [
                 ('description', 'Top Cities link in footer'),
-                ('activityLocation', 'Visitor App : Home')
+                ('activityLocation', 'Visitor : Home')
             ]
         }
 
@@ -447,7 +447,7 @@ class HomepageTballSegmentTestCase(SeleniumTestCase):
             'main_value': 'Top Cities link in footer',
             'segment_params': [
                 ('description', 'Top Cities link in footer'),
-                ('activityLocation', 'Visitor App : Home')
+                ('activityLocation', 'Visitor : Home')
             ]
         }
 
@@ -464,7 +464,7 @@ class HomepageTballSegmentTestCase(SeleniumTestCase):
             'main_value': 'Top Cities link in footer',
             'segment_params': [
                 ('description', 'Top Cities link in footer'),
-                ('activityLocation', 'Visitor App : Home')
+                ('activityLocation', 'Visitor : Home')
             ]
         }
 
@@ -478,10 +478,10 @@ class HomepageTballSegmentTestCase(SeleniumTestCase):
         collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/', 'div.top-cities.row > ul.list-inline > li > a[title="Search Atlanta Pros"]', 'click')
         segcall_info = {
             'main_field': 'activityLocation',
-            'main_value': 'Visitor App : Home',
+            'main_value': 'Visitor : Home',
             'segment_params': [
                 ('description', 'Top Cities link in footer'),
-                ('activityLocation', 'Visitor App : Home')
+                ('activityLocation', 'Visitor : Home')
             ]
         }
 
@@ -498,7 +498,7 @@ class HomepageTballSegmentTestCase(SeleniumTestCase):
             'main_value': 'Top Cities link in footer',
             'segment_params': [
                 ('description', 'Top Cities link in footer'),
-                ('activityLocation', 'Visitor App : Home')
+                ('activityLocation', 'Visitor : Home')
             ]
         }
 
@@ -515,7 +515,7 @@ class HomepageTballSegmentTestCase(SeleniumTestCase):
             'main_value': 'Top Cities link in footer',
             'segment_params': [
                 ('description', 'Top Cities link in footer'),
-                ('activityLocation', 'Visitor App : Home')
+                ('activityLocation', 'Visitor : Home')
             ]
         }
 
@@ -532,7 +532,7 @@ class HomepageTballSegmentTestCase(SeleniumTestCase):
             'main_value': 'Top Cities link in footer',
             'segment_params': [
                 ('description', 'Top Cities link in footer'),
-                ('activityLocation', 'Visitor App : Home')
+                ('activityLocation', 'Visitor : Home')
             ]
         }
 
@@ -549,7 +549,7 @@ class HomepageTballSegmentTestCase(SeleniumTestCase):
             'main_value': 'Top Cities link in footer',
             'segment_params': [
                 ('description', 'Top Cities link in footer'),
-                ('activityLocation', 'Visitor App : Home')
+                ('activityLocation', 'Visitor : Home')
             ]
         }
 
@@ -566,7 +566,7 @@ class HomepageTballSegmentTestCase(SeleniumTestCase):
             'main_value': 'Top Cities link in footer',
             'segment_params': [
                 ('description', 'Top Cities link in footer'),
-                ('activityLocation', 'Visitor App : Home')
+                ('activityLocation', 'Visitor : Home')
             ]
         }
 
@@ -583,7 +583,7 @@ class HomepageTballSegmentTestCase(SeleniumTestCase):
             'main_value': 'Top Cities link in footer',
             'segment_params': [
                 ('description', 'Top Cities link in footer'),
-                ('activityLocation', 'Visitor App : Home')
+                ('activityLocation', 'Visitor : Home')
             ]
         }
 
@@ -600,7 +600,7 @@ class HomepageTballSegmentTestCase(SeleniumTestCase):
             'main_value': 'Top Cities link in footer',
             'segment_params': [
                 ('description', 'Top Cities link in footer'),
-                ('activityLocation', 'Visitor App : Home')
+                ('activityLocation', 'Visitor : Home')
             ]
         }
 
@@ -617,7 +617,7 @@ class HomepageTballSegmentTestCase(SeleniumTestCase):
             'main_value': 'Top Cities link in footer',
             'segment_params': [
                 ('description', 'Top Cities link in footer'),
-                ('activityLocation', 'Visitor App : Home')
+                ('activityLocation', 'Visitor : Home')
             ]
         }
 
