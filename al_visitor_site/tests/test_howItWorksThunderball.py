@@ -386,3 +386,257 @@ class HowItWorksThunderballPageSegmentTestCase(SeleniumTestCase):
         }
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # Join For Free link in footer Tball
+    def test_howItWorksFooterJoinForFreeTball(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/how-it-works.htm', '#footer--join-for-free-link', 'click')
+
+        segcall_info = {
+            'main_field': 'activityLocation',
+            'main_value': 'Visitor : How it Works',
+            'segment_params': [
+                ('description', 'Join For Free link in footer'),
+                ('activityLocation', 'Visitor : How it Works')
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # Find Local Businesses link in footer Tball
+    def test_howItWorksFooterBusinessCenterLinkTball(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/how-it-works.htm', '#footer--find-local-business-link', 'click')
+
+        segcall_info = {
+            'main_field': 'activityLocation',
+            'main_value': 'Visitor : How it Works',
+            'segment_params': [
+                ('description', 'Find Local Businesses link in footer'),
+                ('activityLocation', 'Visitor : How it Works')
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # How It Works link in footer Tball
+    def test_howItWorksFooterHiwLinkTball(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/how-it-works.htm', '#footer--how-it-works-link', 'click')
+
+        segcall_info = {
+            'main_field': 'activityLocation',
+            'main_value': 'Visitor : How it Works',
+            'segment_params': [
+                ('description', 'How It Works link in footer'),
+                ('activityLocation', 'Visitor : How it Works')
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # FAQs link in footer Tball
+    def test_howItWorksFooterFaqLinkTball(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/how-it-works.htm', '#footer--faq-link', 'click')
+
+        segcall_info = {
+            'main_field': 'activityLocation',
+            'main_value': 'Visitor : How it Works',
+            'segment_params': [
+                ('description', 'FAQs link in footer'),
+                ('activityLocation', 'Visitor : How it Works')
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+
+    # Solution Center link in footer Tball 
+    def test_howItWorksFooterSolutionCenterLinkTball(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/how-it-works.htm', '#footer--solution-center-link', 'click')
+
+        segcall_info = {
+            'main_field': 'activityLocation',
+            'main_value': 'Visitor : How it Works',
+            'segment_params': [
+                ('description', 'Solution Center link in footer'),
+                ('activityLocation', 'Visitor : How it Works')
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # Photo Galleries link in footer Tball
+    def howItWorksFooterPhotosLinkTball(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/how-it-works.htm', '#footer--photo-galleries-link', 'click')
+
+        segcall_info = {
+            'main_field': 'activityLocation',
+            'main_value': 'Visitor : How it Works',
+            'segment_params': [
+                ('description', 'Photo Galleries link in footer'),
+                ('activityLocation', 'Visitor : How it Works')
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # Videos link in footer Tball
+    def howItWorksFooterVideoLinkTball(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/how-it-works.htm', '#footer--videos-link', 'click')
+
+        segcall_info = {
+            'main_field': 'activityLocation',
+            'main_value': 'Visitor : How it Works',
+            'segment_params': [
+                ('description', 'Videos link in footer'),
+                ('activityLocation', 'Visitor : How it Works')
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # Answers link in footer Tball
+    def howItWorksFooterAnswersLinkTball(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/how-it-works.htm', '#footer--answers-link', 'click')
+
+        segcall_info = {
+            'main_field': 'activityLocation',
+            'main_value': 'Visitor : How it Works',
+            'segment_params': [
+                ('description', 'Answers link in footer'),
+                ('activityLocation', 'Visitor : How it Works')
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # For Business Owners link in footer Tball
+    def howItWorksFooterBcOwnersTball(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/how-it-works.htm', '#footer--for-business-owners-link', 'click')
+
+        segcall_info = {
+            'main_field': 'activityLocation',
+            'main_value': 'Visitor : How it Works',
+            'segment_params': [
+                ('description', 'For Business Owners link in footer'),
+                ('activityLocation', 'Visitor : How it Works')
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # Press link in footer Tball
+    def howItWorksFooterPressLinkTball(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/how-it-works.htm', '#footer--press-link', 'click')
+
+        segcall_info = {
+            'main_field': 'activityLocation',
+            'main_value': 'Visitor : How it Works',
+            'segment_params': [
+                ('description', 'Press link in footer'),
+                ('activityLocation', 'Visitor : How it Works')
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+
+    # Investor Relations link in footer Tball
+    def howItWorksFooterIRLinkTball(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/how-it-works.htm', '#footer--investor-relations-link', 'click')
+
+        segcall_info = {
+            'main_field': 'activityLocation',
+            'main_value': 'Visitor : How it Works',
+            'segment_params': [
+                ('description', 'Investor Relations link in footer'),
+                ('activityLocation', 'Visitor : How it Works')
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # About Angie’s List link in footer Tball
+    def howItWorksFooterAboutUsLinkTball(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/how-it-works.htm', '#footer--about-us-link', 'click')
+
+        segcall_info = {
+            'main_field': 'activityLocation',
+            'main_value': 'Visitor : How it Works',
+            'segment_params': [
+                ('description', 'About Angie’s List link in footer'),
+                ('activityLocation', 'Visitor : How it Works')
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # Careers link in footer Tball
+    def howItWorksFooterCareersLinkTball(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/how-it-works.htm', '#footer--careers-link', 'click')
+
+        segcall_info = {
+            'main_field': 'activityLocation',
+            'main_value': 'Visitor : How it Works',
+            'segment_params': [
+                ('description', 'Careers link in footer'),
+                ('activityLocation', 'Visitor : How it Works')
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # Contact Us link in footer Tball
+    def howItWorksFooterContactUsLinkTball(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/how-it-works.htm', '#footer--contact-us-link', 'click')
+
+        segcall_info = {
+            'main_field': 'activityLocation',
+            'main_value': 'Visitor : How it Works',
+            'segment_params': [
+                ('description', 'Contact Us link in footer'),
+                ('activityLocation', 'Visitor : How it Works')
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
