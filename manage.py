@@ -13,8 +13,8 @@ if os.path.exists('.env'):
         if len(var) == 2:
             os.environ[var[0]] = var[1]
 
-with open("config/environments.yml", 'r') as stream:
-    environments = yaml.load(stream)
+with open("config/applications.yml", 'r') as stream:
+    applications = yaml.load(stream)
 
 if 'VISITOR_SITE_URL' not in os.environ:
     os.environ['VISITOR_SITE_URL'] = 'http://angiesmr2stg.prod.acquia-sites.com'
@@ -31,7 +31,7 @@ manager.add_command("shell", Shell(make_context=make_shell_context))
 @manager.command
 def testall(*args):
     """Big red button does all the things"""
-    suiteconf = environments['suites'][args[0][0]]
+    suiteconf = applications['appsuites'][args[0][0]]
     os.environ['BASE_URL'] = suiteconf['base_url']
     print("Starting Python Flask Selenium Test Framework")
     print("Test environment: %s" % args[0][0])
@@ -43,7 +43,7 @@ def testall(*args):
 @manager.command
 def menu(*args):
     """Shows menu consisting of all individual tests"""
-    suiteconf = environments['suites'][args[0][0]]
+    suiteconf = applications['appsuites'][args[0][0]]
     os.environ['BASE_URL'] = suiteconf['base_url']
     print("Starting Python Flask Selenium Test Framework")
     print("Test environment: %s" % args[0][0])
@@ -67,7 +67,7 @@ def menu(*args):
 @manager.command
 def suites(*args):
     """Display list of test suites and run the selected suite"""
-    suiteconf = environments['suites'][args[0][0]]
+    suiteconf = applications['appsuites'][args[0][0]]
     os.environ['BASE_URL'] = suiteconf['base_url']
     print("Starting Python Flask Selenium Test Framework")
     print("Test environment: %s" % args[0][0])
@@ -114,7 +114,7 @@ def runtest(*args):
     command syntax is: manage.py envname testname
     """
     if len(args[0]) and len(args[0][1]):
-        suiteconf = environments['suites'][args[0][0]]
+        suiteconf = applications['appsuites'][args[0][0]]
         os.environ['BASE_URL'] = suiteconf['base_url']
         print("Starting Python Flask Selenium Test Framework")
         print("Test environment: %s" % args[0][0])

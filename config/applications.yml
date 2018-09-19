@@ -1,5 +1,5 @@
-# Suites should be listed by directory
-suites:
+# application suites should be listed by directory name and base_url
+appsuites:
   al_visitor_site:
       base_url: http://visitordev3.angieslist.com
   al_reviews:

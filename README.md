@@ -23,10 +23,13 @@ _Python 3.6.4_
 Then install the virtual environment module:  
 `brew install ---pyenv-virtualenv`
 
-## From THIS POINT on you should be in the testing application directory: `al_visitor_site`
+---
+## From THIS POINT on you should be in the testing application directory: `al_py_automation`
 
 Create the virtual env:  
-`python3 -m venv py36`
+`python3 -m venv py36`  
+your python environment directory name is up to you, 
+I use py36 for Python 3.6
 
 Next, activate the virtual env make sure your PWD is:  
 `[where-you-put-it]/al_py_automation/al_visitor_site/`
@@ -46,30 +49,77 @@ install python package requirements with pip:
   - cause git to temporarily ignore your env with: `git update-index --assume-unchanged .env`
 
 ### Minimum required content of .env ->
-`VISITOR_SITE_URL=http://angiesmr2stg.prod.acquia-sites.com`  
+~~VISITOR_SITE_URL=http://angiesmr2stg.prod.acquia-sites.com~~ <- this moved to the YML file
 `BROWSER_CLIENTS=Chrome,Firefox,Safari,CBT`  
 `TEST_BROWSER=0`  
+
+## Config: applications.yml
+Holds configuration information for application test suites
+Currently, this is limited to the name of the suite (which _must_ be the directory name that holds the tests) and the application base_url. 
 
 That's all the setup requirements  
 After py36 environment has been setup, all you need to do after that is:  
 `cd al_visitor_site`
 `source ./activate`
 
-## run the test!
+## Making new tests
+If you are adding a test for a new application (e.g. The visitor site)
+1. Create a new directory in al_py_automation (e.g. al_py_automation/al_visitor_site)
+1. Create a new directory in your appsuite folder called 'tests'
+1. You might need a 'resources' directory in your app suite to store config files or test input data
+1. Create a test (must start with 'test_): for example:
+    - Here is a sample test, 
+    ```python
+    #common selenium library
+    from common.SeleniumTestCase import SeleniumTestCase 
+    #if you have segment tests, import the helper library:
+    from common.SegmentTestHelper import SegmentTestHelper
+
+    # Cap camel case the classname:
+    class HomepageSegmentTestCase(SeleniumTestCase):
+      
+      # test names must begin with `test_`
+      def test_homePageSegmentJoin(self):
+        if not self.client:
+          return 0
+        
+        # this is an example of a test to load the base page '/' click the join link
+        # in the header, gather segment call data and assert that it has the 
+        # expected data in the segment call
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/', '#header-join', 'click')
+        # Expected content of the segment call
+        segcall_info = {
+            # main_field and main_value are how the test selects this one call out of 
+            # all the other segments calls on the page
+            'main_field': 'activityLocation',
+            'main_value': 'Visitor : Home',
+            'segment_params': [
+                ('description', 'Join link in header'),
+            ]
+        }
+
+        # IMPORTANT - it's not a test without an assertion. This hellper method 
+        # asserts that the gathered segment call data matches the expected call info
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+    ```
+
+
+## Run the test!
 - if you activated the virtual environment with manage ./activate, you don't need to type "python"
 - if you activated with `source py36/bin/activate` you must preface commands with ./ for the cwd
 
-this will run the tests in tests/test_h1TitleCanonical.py ->  
-`manage.py runtest h1TitleCanonical`
+Do the following, replacing `appname` with your application suite test directory
 
-^^^ tells python to run manage.py which hass all the testing commands. runtest tells it you want to run one test, 
-h1TitleCanonical is the name portion of the test you want.
+this will run the tests in al_visitor_site/tests/test_h1TitleCanonical.py ->  
+`manage.py runtest al_visitor_site h1TitleCanonical`
+
+^^^ tells python to run `manage.py` which has all the testing commands. runtest tells it you want to run one test, al_visitor_site is the application test suite we want to run here, and h1TitleCanonical is the name portion of the test you want. This command runs all tests in the test_h1TitleCanonical.py file. 
 
 #### To use handy test suite menus:
-`manage.py suites`
+`manage.py suites appname`
 
 #### OPTIONAL: run and direct stdout to text file
-`python manage.py runtest someTest > test_output.txt`
+`python manage.py runtest app_name someTest > test_output.txt`
 
 check page-by-page results in test_output.txt
 
