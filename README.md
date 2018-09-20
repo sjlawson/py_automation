@@ -105,7 +105,7 @@ If you are adding a test for a new application (e.g. The visitor site)
 
 
 ## Run the test!
-- if you activated the virtual environment with manage ./activate, you don't need to type "python"
+- if you activated the virtual environment with `source ./activate`, you don't need to type "python"
 - if you activated with `source py36/bin/activate` you must preface commands with ./ for the cwd
 
 Do the following, replacing `appname` with your application suite test directory
