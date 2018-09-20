@@ -21,7 +21,7 @@ Then after:
 _Python 3.6.4_
 
 Then install the virtual environment module:  
-`brew install ---pyenv-virtualenv`
+`brew install pyenv-virtualenv`
 
 ---
 ## From THIS POINT on you should be in the testing application directory: `al_py_automation`
@@ -32,7 +32,7 @@ your python environment directory name is up to you,
 I use py36 for Python 3.6
 
 Next, activate the virtual env make sure your PWD is:  
-`[where-you-put-it]/al_py_automation/al_visitor_site/`
+`[where-you-put-it]/al_py_automation/`
 type: `source py36/bin/activate`
 
 install python package requirements with pip:  
@@ -49,7 +49,7 @@ install python package requirements with pip:
   - cause git to temporarily ignore your env with: `git update-index --assume-unchanged .env`
 
 ### Minimum required content of .env ->
-~~VISITOR_SITE_URL=http://angiesmr2stg.prod.acquia-sites.com~~ <- this moved to the YML file
+~~VISITOR_SITE_URL=http://angiesmr2stg.prod.acquia-sites.com~~ <- this moved to the YML file (below)
 `BROWSER_CLIENTS=Chrome,Firefox,Safari,CBT`  
 `TEST_BROWSER=0`  
 
@@ -59,8 +59,8 @@ Currently, this is limited to the name of the suite (which _must_ be the directo
 
 That's all the setup requirements  
 After py36 environment has been setup, all you need to do after that is:  
-`cd al_visitor_site`
-`source ./activate`
+`source ./activate`  
+(while insid ethe al_py_automation directory)
 
 ## Making new tests
 If you are adding a test for a new application (e.g. The visitor site)
