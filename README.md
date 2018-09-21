@@ -67,7 +67,9 @@ If you are adding a test for a new application (e.g. The visitor site)
 1. Create a new directory in al_py_automation (e.g. al_py_automation/al_visitor_site)
 1. Create a new directory in your appsuite folder called 'tests'
 1. You might need a 'resources' directory in your app suite to store config files or test input data
-1. Create a test (must start with 'test_): for example:
+1. Create a test (must start with 'test_):
+    - Please use human readable names for your tests. Ticket numbers are not enough to describe what you're doing for maximum readability by other engineers
+    - naming convention is CapitalCamelCase for class names and mixed snake_camelCase for functions;  __See example below__
     - Here is a sample test, 
     ```python
     #common selenium library
@@ -80,6 +82,11 @@ If you are adding a test for a new application (e.g. The visitor site)
       
       # test names must begin with `test_`
       def test_homePageSegmentJoin(self):
+        """ Block comments start with three double quotes
+           This is a good block comment area
+           in which you may include references to Jira tickets 
+           or other brief documentation.
+           """
         if not self.client:
           return 0
         
