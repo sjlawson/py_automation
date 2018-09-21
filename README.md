@@ -60,7 +60,7 @@ Currently, this is limited to the name of the suite (which _must_ be the directo
 That's all the setup requirements  
 After py36 environment has been setup, all you need to do after that is:  
 `source ./activate`  
-(while insid ethe al_py_automation directory)
+(while inside the al_py_automation directory)
 
 ## Making new tests
 If you are adding a test for a new application (e.g. The visitor site)
