@@ -13,7 +13,7 @@
 - Requires Python >= 3.6. 
   - check with: `python --version` -- that may return Python 2.7.x
   - also try: `python3 --version` -- hopefully this is 3.6.x
-- If you must install python 3.6, on Mac, easiest way is with brew:  
+- If you must install python 3.6, on Mac, the easiest way is with brew:  
 `brew install python3`
 
 Then after:  
@@ -41,7 +41,7 @@ install python package requirements with pip:
 ## Environment configuration file: `.env`
 - modify the .env file to point to the environment you want to test and select which browser to use
 - e.g.: setting TEST_BROWSER to 1 would select Firefox
-- currently only Chrome and Firefox are supported, and only Chrome can currently test for console errors
+- currently, only Chrome and Firefox are supported, and only Chrome can currently test for console errors
 - Your .env file may have configurations specific to your own use if it does, you may want to try this git trick:
   - Edit your .env file with your preferred config so that it's the only file with changes in the repo
   - stash your configs with: `git stash save myenvconfigs`
@@ -98,7 +98,7 @@ If you are adding a test for a new application (e.g. The visitor site)
             ]
         }
 
-        # IMPORTANT - it's not a test without an assertion. This hellper method 
+        # IMPORTANT - it's not a test without an assertion. This helper method 
         # asserts that the gathered segment call data matches the expected call info
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
     ```
@@ -127,4 +127,3 @@ check page-by-page results in test_output.txt
 open interactive python shell with .env os.environ values:
 
 `python manage.py shell`
-
