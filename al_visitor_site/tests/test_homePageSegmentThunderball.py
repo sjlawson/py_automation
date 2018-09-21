@@ -1,5 +1,5 @@
-from tests.SeleniumTestCase import SeleniumTestCase
-from SegmentTestHelper import SegmentTestHelper
+from common.SeleniumTestCase import SeleniumTestCase
+from common.SegmentTestHelper import SegmentTestHelper
 
 class HomepageTballSegmentTestCase(SeleniumTestCase):
 
@@ -390,7 +390,7 @@ class HomepageTballSegmentTestCase(SeleniumTestCase):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/', 'div.top-cities.row > ul.list-inline > li > a[title="Search New York Pros"]', 'click') 
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/', 'div.top-cities.row > ul.list-inline > li > a[title="Search New York Pros"]', 'click')
         segcall_info = {
             'main_field': 'activityLocation',
             'main_value': 'Visitor : Home',

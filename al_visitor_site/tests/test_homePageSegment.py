@@ -1,5 +1,5 @@
-from tests.SeleniumTestCase import SeleniumTestCase
-from SegmentTestHelper import SegmentTestHelper
+from common.SeleniumTestCase import SeleniumTestCase
+from common.SegmentTestHelper import SegmentTestHelper
 
 
 # NOTE: Must select Chrome for this test.
@@ -308,7 +308,7 @@ class HomepageSegmentTestCase(SeleniumTestCase):
                 ('categorySelected', 'Electrical'),
                 ('description', 'Popular Services icon'),
                 ('homeAdvisorCategoryId', 12026),
-                ('userId',), 
+                ('userId',),
             ]
         }
 

@@ -1,5 +1,5 @@
 import sys
-from tests.SeleniumTestCase import SeleniumTestCase
+from common.SeleniumTestCase import SeleniumTestCase
 
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
@@ -17,7 +17,7 @@ class LeafTestCase(SeleniumTestCase):
                          "/companylist/us/ga/winder/1-a-team-home-repair-and-waterproofing-reviews-7804577.htm",
                          "/companylist/us/in/indianapolis/service-plus-heating-cooling-plumbing-reviews-140447.htm",
             ]
-            
+
             # start_time = "START TIME: " + str(datetime.datetime.now())
             error_count = 0
             errors = ""
