@@ -29,6 +29,9 @@ class NearMeThunderballPageSegmentTestCase(SeleniumTestCase):
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
+    ### Header Tests ###
+
+
     #  AL Header link on NearMe - Tball
     def test_nearMePlumbingHeaderAlLinkTball(self):
         if not self.client:
@@ -172,3 +175,36 @@ class NearMeThunderballPageSegmentTestCase(SeleniumTestCase):
         }
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+
+
+    ### Body Tests ###
+
+    # Near Me Plumbing Body
+    def test_nearMePostalCodePlumbing(self):
+        if not self.client:
+            return 0
+        prep_actions = [
+            {
+                'action_element': '.postal-code-input.form-control',
+                'action_list': [
+                    ('click',),
+                    ('send_keys','90210'),
+                ]
+            }
+        ]
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/plumbing/','.postal-code-input.form-control', 'click', True, prep_actions)
+        segcall_info = {
+            'main_field': 'activityLocation',
+            'main_value': 'Visitor : Near Me',
+            'segment_params': [
+               # ('activityLocation', 'Visitor : Near Me'),
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+
+        ### Footer Tests ###
+
+        
