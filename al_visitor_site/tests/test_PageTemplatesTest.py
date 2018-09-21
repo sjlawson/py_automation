@@ -1,13 +1,13 @@
 import sys, urllib
 from urllib import request
-from tests.SeleniumTestCase import SeleniumTestCase
+from common.SeleniumTestCase import SeleniumTestCase
 
 class PageTemplatesTests(SeleniumTestCase):
 
     ##
     # Test all URLs in the templates doc. Make sure all are success or redirect.
     def test_templates_loaded(self):
-        with open('./resources/template_urls.txt' ,'r') as fp:
+        with open('./al_visitor_site/resources/template_urls.txt' ,'r') as fp:
             urls = [line for line in fp.readlines()]
 
         count = 0
@@ -34,4 +34,3 @@ class PageTemplatesTests(SeleniumTestCase):
                 print("FAIL: Connection refused - %s" % test_url)
 
         print("-------------------\n\n%s URL(s) tested\n-------------------" % count)
-

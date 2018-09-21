@@ -1,6 +1,6 @@
 import sys, urllib
 from urllib import request
-from tests.SeleniumTestCase import SeleniumTestCase
+from common.SeleniumTestCase import SeleniumTestCase
 
 class AA404(SeleniumTestCase):
 

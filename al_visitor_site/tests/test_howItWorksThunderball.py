@@ -1,5 +1,5 @@
-from tests.SeleniumTestCase import SeleniumTestCase
-from SegmentTestHelper import SegmentTestHelper
+from common.SeleniumTestCase import SeleniumTestCase
+from common.SegmentTestHelper import SegmentTestHelper
 
 class HowItWorksThunderballPageSegmentTestCase(SeleniumTestCase):
 
@@ -154,7 +154,7 @@ class HowItWorksThunderballPageSegmentTestCase(SeleniumTestCase):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/how-it-works.htm', 'div.top-cities.row > ul.list-inline > li > a[title="Search New York Pros"]', 'click') 
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/how-it-works.htm', 'div.top-cities.row > ul.list-inline > li > a[title="Search New York Pros"]', 'click')
         segcall_info = {
             'main_field': 'activityLocation',
             'main_value': 'Visitor : How it Works',
@@ -460,7 +460,7 @@ class HowItWorksThunderballPageSegmentTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
 
-    # Solution Center link in footer Tball 
+    # Solution Center link in footer Tball
     def test_howItWorksFooterSolutionCenterLinkTball(self):
         if not self.client:
             return 0

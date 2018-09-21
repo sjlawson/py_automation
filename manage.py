@@ -1,5 +1,6 @@
 #!./py36/bin/python
 import os, unittest
+import yaml
 from xmlrunner import xmlrunner
 from flask_script import Manager, Shell, Command
 from app import create_app
@@ -11,6 +12,9 @@ if os.path.exists('.env'):
         listvals = var[1].split(',')
         if len(var) == 2:
             os.environ[var[0]] = var[1]
+
+with open("config/applications.yml", 'r') as stream:
+    applications = yaml.load(stream)
 
 if 'VISITOR_SITE_URL' not in os.environ:
     os.environ['VISITOR_SITE_URL'] = 'http://angiesmr2stg.prod.acquia-sites.com'
@@ -27,20 +31,26 @@ manager.add_command("shell", Shell(make_context=make_shell_context))
 @manager.command
 def testall(*args):
     """Big red button does all the things"""
-    args += ('',)
+    suiteconf = applications['appsuites'][args[0][0]]
+    os.environ['BASE_URL'] = suiteconf['base_url']
     print("Starting Python Flask Selenium Test Framework")
-    print("Visitor site: ", os.environ['VISITOR_SITE_URL'])
-    tests = unittest.TestLoader().discover('tests')
+    print("Test environment: %s" % args[0][0])
+    print("Base URL: ", suiteconf['base_url'])
+
+    tests = unittest.TestLoader().discover('%s/tests' % args[0][0])
     xmlrunner.XMLTestRunner(verbosity=2, output='reports').run(tests)
 
 @manager.command
 def menu(*args):
     """Shows menu consisting of all individual tests"""
-    args += ('',)
+    suiteconf = applications['appsuites'][args[0][0]]
+    os.environ['BASE_URL'] = suiteconf['base_url']
     print("Starting Python Flask Selenium Test Framework")
-    print("Visitor site: ", os.environ['VISITOR_SITE_URL'])
+    print("Test environment: %s" % args[0][0])
+    print("Base URL: ", suiteconf['base_url'])
     print("Choose a test to run below: \n")
-    tests = unittest.TestLoader().discover('tests')
+
+    tests = unittest.TestLoader().discover('%s/tests' % args[0][0])
     test_menu = {}
     count = 0
     for group in tests:
@@ -57,11 +67,14 @@ def menu(*args):
 @manager.command
 def suites(*args):
     """Display list of test suites and run the selected suite"""
-    args += ('',)
+    suiteconf = applications['appsuites'][args[0][0]]
+    os.environ['BASE_URL'] = suiteconf['base_url']
     print("Starting Python Flask Selenium Test Framework")
-    print("Visitor site: ", os.environ['VISITOR_SITE_URL'])
-    print("Choose a test to run below: \n")
-    test_suite_list = [testname[5:(len(testname) - 3)] for testname in os.listdir('tests')\
+    print("Test environment: %s" % args[0][0])
+    print("Base URL: ", suiteconf['base_url'])
+
+    print("Choose a test suite to run below: \n")
+    test_suite_list = [testname[5:(len(testname) - 3)] for testname in os.listdir(('%s/tests' % args[0][0]))\
                        if testname[:5] == 'test_']
     count = 0
     suite_menu = {}
@@ -71,7 +84,7 @@ def suites(*args):
         print("%s : %s" % (count, test_suite))
         suite_menu[count] = test_suite
     selected_suite = int(input("Enter test suite (0 exits): "))
-    tests = unittest.TestLoader().discover('tests', pattern='test_' + suite_menu[selected_suite] + '.py')
+    tests = unittest.TestLoader().discover(('%s/tests' % args[0][0]), pattern='test_' + suite_menu[selected_suite] + '.py')
     count = 0
     for group in tests:
         for suite in group:
@@ -91,19 +104,24 @@ def test_h1TitleCanonical(*args):
     args += ('',)
     print("Starting Python Flask Selenium Test Framework")
     print("Visitor site: ", os.environ['VISITOR_SITE_URL'])
-    tests = unittest.TestLoader().discover('tests', pattern='test_h1TitleCanonical.py')
+    tests = unittest.TestLoader().discover('al_visitor_site/tests', pattern='test_h1TitleCanonical.py')
     xmlrunner.XMLTestRunner(verbosity=2, output='reports').run(tests)
 
 
 @manager.command
 def runtest(*args):
-    """runs a test suite - if file name is test_thisIsATest.py, use thisIsATest"""
-    if len(args[0]):
+    """runs a test suite - if file name is test_thisIsATest.py, use thisIsATest
+    command syntax is: manage.py envname testname
+    """
+    if len(args[0]) and len(args[0][1]):
+        suiteconf = applications['appsuites'][args[0][0]]
+        os.environ['BASE_URL'] = suiteconf['base_url']
         print("Starting Python Flask Selenium Test Framework")
-        print("Visitor site: ", os.environ['VISITOR_SITE_URL'])
-        print("Running test, %s" % args[0][0])
-        test_suite_name = args[0][0].replace('test_', '').replace('.py', '')
-        tests = unittest.TestLoader().discover('tests', pattern='test_' + test_suite_name + '.py')
+        print("Test environment: %s" % args[0][0])
+        print("Base URL: ", suiteconf['base_url'])
+        print("Running test, %s" % args[0][1])
+        test_suite_name = args[0][1].replace('test_', '').replace('.py', '')
+        tests = unittest.TestLoader().discover(('%s/tests' % args[0][0]), pattern='test_' + test_suite_name + '.py')
         xmlrunner.XMLTestRunner(verbosity=2, output='reports').run(tests)
 
     else:
