@@ -186,7 +186,7 @@ class PhotoGalleriesSegmentTestCase(SeleniumTestCase):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/photos/?CacheBuster', 'div.footer-region.cities-left > li > a[title="Search New York Pros"]', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/photos/?CacheBuster', 'div.top-cities > ul > div.footer-region.cities-left > li > a[title="Search New York Pros"]', 'click')
         segcall_info = {
             'main_field': 'description',
             'main_value': 'Top Cities link in footer',
@@ -432,8 +432,3 @@ class PhotoGalleriesSegmentTestCase(SeleniumTestCase):
         }
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
-
-
-
-
-
