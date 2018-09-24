@@ -1,4 +1,4 @@
-from tests.SeleniumTestCase import SeleniumTestCase
+from common.SeleniumTestCase import SeleniumTestCase
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
@@ -12,7 +12,7 @@ def HomePageJSTestCase(SeleniumTestCase):
     # Click the join button in header and check for JS errors
     def skiptest_homePageJSErrors(self):
         if self.test_browser != 0:
-            print("JoinBtnSegment test is not supported by Firefox")
+            print("HomePageJSTest is not supported by Firefox")
             self.assertTrue(self.test_browser == 0)
 
         if self.client:
