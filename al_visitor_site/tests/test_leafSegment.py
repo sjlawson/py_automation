@@ -1,5 +1,5 @@
-from tests.SeleniumTestCase import SeleniumTestCase
-from SegmentTestHelper import SegmentTestHelper
+from common.SeleniumTestCase import SeleniumTestCase
+from common.SegmentTestHelper import SegmentTestHelper
 
 # NOTE: Must select Chrome for this test.
 # TODO: adapt for other webdrivers
@@ -20,7 +20,7 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
             'main_field': 'name',
             'main_value': 'Visitor : SP Profile',
             'segment_params': [
-                ('atTestOffer',), 
+                ('atTestOffer',),
                 ('categoryId', '107'),
                 ('cid',),
                 ('homeAdvisorCategoryId', '10216'),
@@ -57,7 +57,7 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
             'main_field': 'name',
             'main_value': 'Visitor : SP Profile',
             'segment_params': [
-                ('atTestOffer',), 
+                ('atTestOffer',),
                 ('categoryId', '78'),
                 ('cid',),
                 ('homeAdvisorCategoryId', '10211'),
@@ -94,7 +94,7 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
             'main_field': 'name',
             'main_value': 'Visitor : SP Profile',
             'segment_params': [
-                ('atTestOffer',), 
+                ('atTestOffer',),
                 ('categoryId', '377'),
                 ('cid',),
                 ('homeAdvisorCategoryId', '12024'),
@@ -130,7 +130,7 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
             'segment_params': [
                 ('activityLocation', 'Visitor : SP Profile'),
                 ('categoryId', '112'),
-                ('description', 'Service Request Flow entry button'),              
+                ('description', 'Service Request Flow entry button'),
                 ('homeAdvisorCategoryId','10217'),
                 ('marketId', '15'),
                 ('userId',),
@@ -155,7 +155,7 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
             'segment_params': [
                 ('activityLocation', 'Visitor : SP Profile'),
                 ('categoryId', '294'),
-                ('description', 'Service Request Flow entry button'),              
+                ('description', 'Service Request Flow entry button'),
                 ('homeAdvisorCategoryId','10381'),
                 ('marketId', '8'),
                 ('userId',),
@@ -180,7 +180,7 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
             'segment_params': [
                 ('activityLocation', 'Visitor : SP Profile'),
                 ('categoryId', '126'),
-                ('description', 'Join button in right rail'),              
+                ('description', 'Join button in right rail'),
                 ('marketId', '36'),
                 ('userId',),
                 #('userSelectedZipCode',),
@@ -212,7 +212,7 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
             'segment_params': [
                 ('activityLocation', 'Visitor : SP Profile'),
                 ('categoryId', '112'),
-                ('description', 'Service Request Flow entry button'),              
+                ('description', 'Service Request Flow entry button'),
                 ('marketId', '40'),
                 ('userId',),
                 ('userSelectedZipCode','27610'),
@@ -244,8 +244,8 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
             'segment_params': [
                 # ('activityLocation', 'Visitor : SP Profile'),
                 # ('categoryId', '98'),
-                # ('description', 'Service Request Flow entry button'), 
-                # ('homeAdvisorCategoryId', '12050'),         
+                # ('description', 'Service Request Flow entry button'),
+                # ('homeAdvisorCategoryId', '12050'),
                 # ('marketId', '27'),
                 # ('userId',),
                 # ('userSelectedZipCode','80123'),
@@ -477,4 +477,3 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
         }
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
-

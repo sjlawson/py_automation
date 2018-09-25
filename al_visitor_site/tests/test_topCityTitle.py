@@ -1,5 +1,5 @@
 import sys, string
-from tests.SeleniumTestCase import SeleniumTestCase
+from common.SeleniumTestCase import SeleniumTestCase
 
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
@@ -79,7 +79,7 @@ class TopCityH1TestCase(SeleniumTestCase):
             success_count = 0
             error_count = 0
             wait = WebDriverWait(self.client, 2)
-            
+
             for test_url in test_urls:
                 self.client.get(self.visitor_site_url + test_url + varnish_buster)
                 wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, 'h1')))
@@ -98,7 +98,7 @@ class TopCityH1TestCase(SeleniumTestCase):
             self.assertEqual(0, error_count)
             print(str(success_count) + " ASSERTIONS PASSED")
             print("ASSERTION FAILURES: " + (str(error_count) + " \n" + errors) if len(errors) else 'None!')
-            
+
 
         else:
             print('Client not available')

@@ -1,5 +1,5 @@
 import sys
-from tests.SeleniumTestCase import SeleniumTestCase
+from common.SeleniumTestCase import SeleniumTestCase
 
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
@@ -49,7 +49,7 @@ class CheckingSourceTestCase(SeleniumTestCase):
                           "/companylist/us/in/greenwood/a-new-horizon-renovations-llp-reviews-6422533.htm",
                           "/companylist/us/nc/candler/blue-ridge-construction-reviews-7682402.htm",
             ]
-            
+
             # start_time = "START TIME: " + str(datetime.datetime.now())
             error_count = 0
             errors = ""

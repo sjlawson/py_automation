@@ -1,5 +1,5 @@
 import sys
-from tests.SeleniumTestCase import SeleniumTestCase
+from common.SeleniumTestCase import SeleniumTestCase
 
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
@@ -7,7 +7,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 
 class RedirectsTestCase(SeleniumTestCase):
-    
+
     def test_redirects(self):
         test_urls = get_redirect_tuples('SD-3275')
         #test_urls = get_redirect_tuples('SD-2978')
@@ -25,7 +25,7 @@ class RedirectsTestCase(SeleniumTestCase):
                 print("expected redirect to: " + self.visitor_site_url + test_url[1].strip() + "\n -- but got: " + endurl.strip())
 
 
-            
+
 def get_redirect_tuples(idx):
     tups = {}
 
@@ -507,12 +507,12 @@ def get_redirect_tuples(idx):
             ('woodworking/', '/companylist/woodworking.htm'),
             ('wrought-iron/', '/companylist/wrought-iron.htm'),
         ]
-        
+
     tups['SD-2978'] = [
             ('terms-of-use.htm', 'https://vault.pactsafe.io/s/a84ad12b-7245-4a12-9fc5-2011a3bf4d62/legal.html#contract-skmav5s0l'),
             ('privacypolicy.htm', 'https://vault.pactsafe.io/s/a84ad12b-7245-4a12-9fc5-2011a3bf4d62/legal.html#contract-h1zrnbhtx'),
         ]
-        
+
     tups['SD-3011'] = [
             ('appliance-repair/appliance-repairman-hunts-down-refrigerator-part.aspx', '/appliance-repair/appliance-repairman-hunts-down-refrigerator-part.aspx'),
             ('gutters/articles/gutter-cleaning-commended-by--tough-critic-.aspx', '/gutters/articles/gutter-cleaning-commended-by--tough-critic-.aspx'),
@@ -1052,8 +1052,8 @@ def get_redirect_tuples(idx):
             ('kitchen-bath-remodeling/articles/remodeling-ideas-for-aging-in-place.aspx', '/kitchen-bath-remodeling/articles/remodeling-ideas-for-aging-in-place.aspx'),
             ('carpet-cleaning/pet-stains-no-problem-for-d-c-area-carpet-cleaner.aspx', '/carpet-cleaning/pet-stains-no-problem-for-d-c-area-carpet-cleaner.aspx'),
         ]
-        
-    
+
+
     tups['old'] = [
             ('companylist/addiction-counseling.htm', '/companylist/counseling-mental-health.htm'),
             ('companylist/alcoholism-treatment-centers.htm', '/companylist/counseling-mental-health.htm'),
