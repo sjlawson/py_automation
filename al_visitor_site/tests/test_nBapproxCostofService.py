@@ -9,7 +9,7 @@ class TestItemClickApproxCostOfService(SeleniumTestCase):
 ## Item Clicked Segment Event - Approximate Cost of Service ##
 
     # test segment call on clicking the Approximate Cost of Service field on VRF
-    def test_testItemClickWorkDone(self):
+    def test_testItemAppoxCostOfService(self):
         if not self.client:
             return 0
 
