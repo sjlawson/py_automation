@@ -1,5 +1,5 @@
-from tests.SeleniumTestCase import SeleniumTestCase
-from SegmentTestHelper import SegmentTestHelper
+from common.SeleniumTestCase import SeleniumTestCase
+from common.SegmentTestHelper import SegmentTestHelper
 
 
 ##### Visitor Review Form ####
