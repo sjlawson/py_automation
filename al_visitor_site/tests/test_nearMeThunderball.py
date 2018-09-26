@@ -234,8 +234,36 @@ class NearMeThunderballPageSegmentTestCase(SeleniumTestCase):
 
 
 
-    # Fill Me In!
-    def test_nearMeLandscapingReadMoreLinkTballV2(self):
+    # Near Me Read More Review Card Tball Place #1
+    def test_nearMeLandscapingReadMoreLinkV1Tball(self):
+        if not self.client:
+            return 0
+        prep_actions = [
+            {
+                'action_element': '#review-card-review-expand-1',
+                'action_list': [
+                    ('click',)
+                ]
+            }
+        ]
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping/','#review-card-review-collapse-1', 'click', False, prep_actions)
+        segcall_info = {
+            'main_field': 'description',
+            'main_value': 'Review Collapsed',
+            'segment_params': [
+                ('activityLocation', 'Visitor : Near Me'),
+                ('description', 'Review Collapsed'),
+                ('keywordSearched', '/nearme/landscaping/'),
+                ('pathName', '/nearme/landscaping/'),
+                ('rankId', '0'),
+                ('reviewId', '1')
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # Near Me Read More Review Card Tball Place #2
+    def test_nearMeLandscapingReadMoreLinkV2Tball(self):
         if not self.client:
             return 0
         prep_actions = [
@@ -252,12 +280,15 @@ class NearMeThunderballPageSegmentTestCase(SeleniumTestCase):
             'main_value': 'Review Collapsed',
             'segment_params': [
                 ('activityLocation', 'Visitor : Near Me'),
-                ('description', 'Review Collapsed')
+                ('description', 'Review Collapsed'),
+                ('keywordSearched', '/nearme/landscaping/'),
+                ('pathName', '/nearme/landscaping/'),
+                ('rankId', '1'),
+                ('reviewId', '2')
             ]
         }
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
-
 
 
 
