@@ -1,5 +1,5 @@
-from tests.SeleniumTestCase import SeleniumTestCase
-from SegmentTestHelper import SegmentTestHelper
+from common.SeleniumTestCase import SeleniumTestCase
+from common.SegmentTestHelper import SegmentTestHelper
 
 class NearMeThunderballPageSegmentTestCase(SeleniumTestCase):
 
@@ -13,13 +13,13 @@ class NearMeThunderballPageSegmentTestCase(SeleniumTestCase):
         collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping/')
 
         segcall_info = {
-            'main_field': 'name',
-            'main_value': 'Visitor : Near Me',
+            'main_field': 'path',
+            'main_value': '/nearme/landscaping/',
             'segment_params': [
                 ('name', 'Visitor : Near Me'),
                 ('path', '/nearme/landscaping/'),
                 ('pathName', '/nearme/landscaping/'),
-                ('title', 'Near Me | Angie\'s List'),
+                ('title', 'Top 10 Landscapers Near Me | Angie\'s List'),
                 ('srCtaDisplayed', 'false'),
                 ('referrer',),
                 ('search',),
@@ -181,7 +181,7 @@ class NearMeThunderballPageSegmentTestCase(SeleniumTestCase):
     ### Body Tests ###
 
     # Near Me Plumbing Body
-    def test_nearMePostalCodePlumbing(self):
+    ''' def test_nearMePostalCodePlumbing(self):
         if not self.client:
             return 0
         prep_actions = [
@@ -208,7 +208,7 @@ class NearMeThunderballPageSegmentTestCase(SeleniumTestCase):
             ]
         }
 
-        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info) '''
 
 
         ### Footer Tests ###
