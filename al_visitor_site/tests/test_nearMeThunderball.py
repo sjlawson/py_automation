@@ -180,8 +180,9 @@ class NearMeThunderballPageSegmentTestCase(SeleniumTestCase):
 
     ### Body Tests ###
 
-    # Near Me Plumbing Body
-    ''' def test_nearMePostalCodePlumbing(self):
+
+    # Near Me Enter Your Zip Plumbing Body
+    def test_nearMePostalCodePlumbing(self):
         if not self.client:
             return 0
         prep_actions = [
@@ -191,15 +192,9 @@ class NearMeThunderballPageSegmentTestCase(SeleniumTestCase):
                     ('click',),
                     ('send_keys','90210'),
                 ]
-            },
-            {
-                'action_element': '#postal-code-empty-state-search',
-                'action_list': [
-                    ('click',)
-                ]
             }
         ]
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping/','#postal-code-empty-state-search', 'click', True, prep_actions)
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping/','#postal-code-empty-state-search', 'click', False, prep_actions)
         segcall_info = {
             'main_field': 'activityLocation',
             'main_value': 'Visitor : Near Me',
@@ -208,7 +203,59 @@ class NearMeThunderballPageSegmentTestCase(SeleniumTestCase):
             ]
         }
 
-        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info) '''
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info) 
+
+
+
+    #  Near Me Read More Review Card Tball
+    def test_nearMePlumbingReadMoreLinkTball(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping/', '#review-card-review-expand-1', 'click')
+
+        segcall_info = {
+            'main_field': 'description',
+            'main_value': 'Review Expanded',
+            'segment_params': [
+                ('description', 'Review Expanded'),
+                ('activityLocation', 'Visitor : Near Me'),
+                ('keywordSearched', '/nearme/landscaping/'),
+                ('pathName', '/nearme/landscaping/'),
+                ('rankId', '0'),
+                ('reviewId', '1')
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+
+
+    # Fill Me In!
+    def test_nearMePlumbingReadMoreLinkTballV2(self):
+        if not self.client:
+            return 0
+        prep_actions = [
+            {
+                'action_element': '#review-card-review-expand-2',
+                'action_list': [
+                    ('click',)
+                ]
+            }
+        ]
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping/','#review-card-review-collapse-2', 'click', False, prep_actions)
+        segcall_info = {
+            'main_field': 'description',
+            'main_value': 'Review Collapsed',
+            'segment_params': [
+                ('activityLocation', 'Visitor : Near Me'),
+                ('description', 'Review Collapsed')
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+
 
 
         ### Footer Tests ###
