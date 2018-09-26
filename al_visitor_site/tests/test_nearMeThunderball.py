@@ -72,7 +72,7 @@ class NearMeThunderballPageSegmentTestCase(SeleniumTestCase):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping/', '#header--Near Me-link', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping/', '#header--hiw-link', 'click')
         segcall_info = {
             'main_field': 'description',
             'main_value': 'How It Works link in header',
