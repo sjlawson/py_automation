@@ -4,7 +4,7 @@ from common.SegmentTestHelper import SegmentTestHelper
 class NearMeThunderballPageSegmentTestCase(SeleniumTestCase):
 
     # basic page call test
-    def test_nearMePlumbingThunderballSegmentPagecall(self):
+    def test_nearMeLandscapingThunderballSegmentPagecall(self):
         # quit if browser didn't load
         if not self.client:
             return 0
@@ -33,7 +33,7 @@ class NearMeThunderballPageSegmentTestCase(SeleniumTestCase):
 
 
     #  AL Header link on NearMe - Tball
-    def test_nearMePlumbingHeaderAlLinkTball(self):
+    def test_nearMeLandscapingHeaderAlLinkTball(self):
         if not self.client:
             return 0
 
@@ -51,7 +51,7 @@ class NearMeThunderballPageSegmentTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # Near Me join link in the header
-    def test_nearMePlumbingTballHeaderJoinClick(self):
+    def test_nearMeLandscapingTballHeaderJoinClick(self):
         if not self.client:
             return 0
 
@@ -68,7 +68,7 @@ class NearMeThunderballPageSegmentTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # Near Me link in the header
-    def test_nearMePlumbingTballHeaderLinkClick(self):
+    def test_nearMeLandscapingTballHeaderLinkClick(self):
         if not self.client:
             return 0
 
@@ -85,7 +85,7 @@ class NearMeThunderballPageSegmentTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # Near Me Sign In link in the header
-    def test_nearMePlumbingTballSignInLinkClick(self):
+    def test_nearMeLandscapingTballSignInLinkClick(self):
         if not self.client:
             return 0
 
@@ -103,7 +103,7 @@ class NearMeThunderballPageSegmentTestCase(SeleniumTestCase):
 
 
     #  Near Me FAQ link in header Tball
-    def test_nearMePlumbingHeaderFAQLinkTball(self):
+    def test_nearMeLandscapingHeaderFAQLinkTball(self):
         if not self.client:
             return 0
 
@@ -122,7 +122,7 @@ class NearMeThunderballPageSegmentTestCase(SeleniumTestCase):
 
 
     #  Near Me In The Press link in header Tball
-    def test_nearMePlumbingHeaderInThePressLinkTball(self):
+    def test_nearMeLandscapingHeaderInThePressLinkTball(self):
         if not self.client:
             return 0
 
@@ -141,7 +141,7 @@ class NearMeThunderballPageSegmentTestCase(SeleniumTestCase):
 
 
     #  Near Me Solution Center link in header Tball
-    def test_nearMePlumbingHeaderSolutionCenterLinkTball(self):
+    def test_nearMeLandscapingHeaderSolutionCenterLinkTball(self):
         if not self.client:
             return 0
 
@@ -159,7 +159,7 @@ class NearMeThunderballPageSegmentTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     #  Near Me Business Owners link in header Tball
-    def test_nearMePlumbingHeaderBusinessOwnerLinkTball(self):
+    def test_nearMeLandscapingHeaderBusinessOwnerLinkTball(self):
         if not self.client:
             return 0
 
@@ -181,8 +181,8 @@ class NearMeThunderballPageSegmentTestCase(SeleniumTestCase):
     ### Body Tests ###
 
 
-    # Near Me Enter Your Zip Plumbing Body
-    def test_nearMePostalCodePlumbing(self):
+    # Near Me Enter Your Zip Landscaping Body
+    def test_nearMePostalCodeLandscapingTball(self):
         if not self.client:
             return 0
         prep_actions = [
@@ -199,7 +199,10 @@ class NearMeThunderballPageSegmentTestCase(SeleniumTestCase):
             'main_field': 'activityLocation',
             'main_value': 'Visitor : Near Me',
             'segment_params': [
-               # ('activityLocation', 'Visitor : Near Me'),
+                ('activityLocation', 'Visitor : Near Me'),
+                ('description', 'IP lookup failed : input zip code'),
+                ('pathName', '/nearme/landscaping/'),
+                ('postalCode', '90210')
             ]
         }
 
@@ -208,7 +211,7 @@ class NearMeThunderballPageSegmentTestCase(SeleniumTestCase):
 
 
     #  Near Me Read More Review Card Tball
-    def test_nearMePlumbingReadMoreLinkTball(self):
+    def test_nearMeLandscapingReadMoreLinkTball(self):
         if not self.client:
             return 0
 
@@ -232,7 +235,7 @@ class NearMeThunderballPageSegmentTestCase(SeleniumTestCase):
 
 
     # Fill Me In!
-    def test_nearMePlumbingReadMoreLinkTballV2(self):
+    def test_nearMeLandscapingReadMoreLinkTballV2(self):
         if not self.client:
             return 0
         prep_actions = [
