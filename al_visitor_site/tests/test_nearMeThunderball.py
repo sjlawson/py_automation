@@ -4,7 +4,7 @@ from common.SegmentTestHelper import SegmentTestHelper
 class NearMeThunderballPageSegmentTestCase(SeleniumTestCase):
 
     # basic page call test
-    def test_nearMeLandscapingThunderballSegmentPagecall(self):
+    def test_nearMeLandscapingTballSegmentPagecall(self):
         # quit if browser didn't load
         if not self.client:
             return 0
@@ -209,31 +209,6 @@ class NearMeThunderballPageSegmentTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info) 
 
 
-
-    #  Near Me Read More Review Card Tball
-    def test_nearMeLandscapingReadMoreLinkTball(self):
-        if not self.client:
-            return 0
-
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping/', '#review-card-review-expand-1', 'click')
-
-        segcall_info = {
-            'main_field': 'description',
-            'main_value': 'Review Expanded',
-            'segment_params': [
-                ('description', 'Review Expanded'),
-                ('activityLocation', 'Visitor : Near Me'),
-                ('keywordSearched', '/nearme/landscaping/'),
-                ('pathName', '/nearme/landscaping/'),
-                ('rankId', '0'),
-                ('reviewId', '1')
-            ]
-        }
-
-        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
-
-
-
     # Near Me Read More Review Card Tball Place #1
     def test_nearMeLandscapingReadMoreLinkV1Tball(self):
         if not self.client:
@@ -261,35 +236,6 @@ class NearMeThunderballPageSegmentTestCase(SeleniumTestCase):
         }
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
-
-    # Near Me Read More Review Card Tball Place #2
-    def test_nearMeLandscapingReadMoreLinkV2Tball(self):
-        if not self.client:
-            return 0
-        prep_actions = [
-            {
-                'action_element': '#review-card-review-expand-2',
-                'action_list': [
-                    ('click',)
-                ]
-            }
-        ]
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping/','#review-card-review-collapse-2', 'click', False, prep_actions)
-        segcall_info = {
-            'main_field': 'description',
-            'main_value': 'Review Collapsed',
-            'segment_params': [
-                ('activityLocation', 'Visitor : Near Me'),
-                ('description', 'Review Collapsed'),
-                ('keywordSearched', '/nearme/landscaping/'),
-                ('pathName', '/nearme/landscaping/'),
-                ('rankId', '1'),
-                ('reviewId', '2')
-            ]
-        }
-
-        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
-
 
 
         ### Footer Tests ###
