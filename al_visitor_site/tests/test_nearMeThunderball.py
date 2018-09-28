@@ -10,16 +10,16 @@ class NearMeThunderballPageSegmentTestCase(SeleniumTestCase):
             return 0
 
         # req'd params: current test case (self), relative path to triggering page, target element, and the triggering action
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping/')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping')
 
         segcall_info = {
             'main_field': 'path',
-            'main_value': '/nearme/landscaping/',
+            'main_value': '/nearme/landscaping',
             'segment_params': [
                 ('name', 'Visitor : Near Me'),
-                ('path', '/nearme/landscaping/'),
-                ('pathName', '/nearme/landscaping/'),
-                ('title', 'Top 10 Landscapers Near Me | Angie\'s List'),
+                ('path', '/nearme/landscaping'),
+                ('pathName', '/nearme/landscaping'),
+                ('title', 'Near Me | Angie\'s List'),
                 ('srCtaDisplayed', 'false'),
                 ('referrer',),
                 ('search',),
@@ -37,7 +37,7 @@ class NearMeThunderballPageSegmentTestCase(SeleniumTestCase):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping/', '#header--al-logo-link', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping', '#header--al-logo-link', 'click')
 
         segcall_info = {
             'main_field': 'description',
@@ -55,7 +55,7 @@ class NearMeThunderballPageSegmentTestCase(SeleniumTestCase):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping/', '#header--join-for-free-button', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping', '#header--join-for-free-button', 'click')
         segcall_info = {
             'main_field': 'description',
             'main_value': 'Join link in header',
@@ -72,7 +72,7 @@ class NearMeThunderballPageSegmentTestCase(SeleniumTestCase):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping/', '#header--hiw-link', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping', '#header--hiw-link', 'click')
         segcall_info = {
             'main_field': 'description',
             'main_value': 'How It Works link in header',
@@ -89,7 +89,7 @@ class NearMeThunderballPageSegmentTestCase(SeleniumTestCase):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping/', '#header--sign-in-link', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping', '#header--sign-in-link', 'click')
         segcall_info = {
             'main_field': 'description',
             'main_value': 'Sign In link in header',
@@ -107,7 +107,7 @@ class NearMeThunderballPageSegmentTestCase(SeleniumTestCase):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping/', '#header--faq-link', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping', '#header--faq-link', 'click')
 
         segcall_info = {
             'main_field': 'description',
@@ -126,7 +126,7 @@ class NearMeThunderballPageSegmentTestCase(SeleniumTestCase):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping/', '#header--in-the-press-link', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping', '#header--in-the-press-link', 'click')
 
         segcall_info = {
             'main_field': 'description',
@@ -145,7 +145,7 @@ class NearMeThunderballPageSegmentTestCase(SeleniumTestCase):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping/', '#header--articles-link', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping', '#header--articles-link', 'click')
 
         segcall_info = {
             'main_field': 'description',
@@ -163,7 +163,7 @@ class NearMeThunderballPageSegmentTestCase(SeleniumTestCase):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping/', '#header--business-owners-link', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping', '#header--business-owners-link', 'click')
 
         segcall_info = {
             'main_field': 'description',
@@ -194,14 +194,14 @@ class NearMeThunderballPageSegmentTestCase(SeleniumTestCase):
                 ]
             }
         ]
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping/','#postal-code-empty-state-search', 'click', False, prep_actions)
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping','#postal-code-empty-state-search', 'click', False, prep_actions)
         segcall_info = {
             'main_field': 'activityLocation',
             'main_value': 'Visitor : Near Me',
             'segment_params': [
                 ('activityLocation', 'Visitor : Near Me'),
                 ('description', 'IP lookup failed : input zip code'),
-                ('pathName', '/nearme/landscaping/'),
+                ('pathName', '/nearme/landscaping'),
                 ('postalCode', '90210')
             ]
         }
@@ -221,15 +221,15 @@ class NearMeThunderballPageSegmentTestCase(SeleniumTestCase):
                 ]
             }
         ]
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping/','#review-card-review-collapse-1', 'click', False, prep_actions)
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping','#review-card-review-collapse-1', 'click', False, prep_actions)
         segcall_info = {
             'main_field': 'description',
             'main_value': 'Review Collapsed',
             'segment_params': [
                 ('activityLocation', 'Visitor : Near Me'),
                 ('description', 'Review Collapsed'),
-                ('keywordSearched', '/nearme/landscaping/'),
-                ('pathName', '/nearme/landscaping/'),
+                ('keywordSearched', '/nearme/landscaping'),
+                ('pathName', '/nearme/landscaping'),
                 ('rankId', '0'),
                 ('reviewId', '1')
             ]
