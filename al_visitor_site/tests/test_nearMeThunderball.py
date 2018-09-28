@@ -237,6 +237,26 @@ class NearMeThunderballPageSegmentTestCase(SeleniumTestCase):
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
+    #  Near Me Albany Tball
+    def test_nearMeLandscapingAlbanyTball(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping/', '#major-market-link-Detroit', 'click')
+
+        segcall_info = {
+            'main_field': 'description',
+            'main_value': 'Major Market Clicked',
+            'segment_params': [
+                ('description', 'Major Market Clicked'),
+                ('activityLocation', 'Visitor : Near Me'),
+                ('cityClicked', 'https://www.angieslist.com/companylist/albany'),
+                ('keywordSearched', '/nearme/landscaping/'),
+                ('pathName', '/nearme/landscaping/')
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
         ### Footer Tests ###
 
