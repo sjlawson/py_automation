@@ -58,7 +58,6 @@ class TestHowDidItGo(SeleniumTestCase):
             'main_value': 'Review - How did it go?',
             'segment_params': [
                ('userType', 'Not Authenticated'),
-               ('formFieldInput', 'I am testing field input'),
                ('characterCount', '24')
             ]
         }

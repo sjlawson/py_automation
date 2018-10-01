@@ -15,7 +15,7 @@ class TestSelectCategory(SeleniumTestCase):
 
 
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/edit?serviceProviderId=10803144', '#categroy-of-service-deselected', 'click', False)
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/edit?serviceProviderId=10803144', '#categroy-of-service-deselected.btn.btn-sm.btn-default', 'click', False)
 
         segcall_info = {
             'main_field': 'changeType',
