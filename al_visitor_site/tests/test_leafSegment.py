@@ -532,7 +532,7 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/in/indianapolis/absolute-restoration-llc-reviews-9039535.htm?CacheBuster', 'div.top-cities > ul > div.footer-region.cities-left > li > a[title="Search Indianapolis Pros"]', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/in/indianapolis/absolute-restoration-llc-reviews-9039535.htm?CacheBuster', 'div.top-cities > ul > div.footer-region.cities-left > li > a[title="Search Indianapolis Plumbers Pros"]', 'click')
         segcall_info = {
             'main_field': 'description',
             'main_value': 'Top Cities link in footer',
