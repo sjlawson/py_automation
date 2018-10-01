@@ -168,30 +168,6 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
-    # JOIN for FREE right rail Leaf Page NON Advertiser
-    def test_leafPageSegmentCTAwithoutZIPNonAdvertiser(self):
-        if not self.client:
-            return 0
-
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/md/pasadena/bob-lester-jr-tree-service-inc-reviews-218967.htm','.join-link.boot-btn.btn-warning.btn-lg.primary-sans-serif.leaf-cta.leaf-join-cta', 'click')
-        segcall_info = {
-            'main_field': 'activityLocation',
-            'main_value': 'Visitor : SP Profile',
-            'segment_params': [
-                ('activityLocation', 'Visitor : SP Profile'),
-                ('categoryId', '126'),
-                ('description', 'Join button in right rail'),
-                ('marketId', '36'),
-                ('userId',),
-                #('userSelectedZipCode',),
-                ('visitorPageCategory', 'TREE SERVICE'),
-                ('visitorPageGeo', 'BALTIMORE'),
-                ('visitorPageGeoCategory', 'BALTIMORE - TREE SERVICE'),
-            ]
-        }
-
-        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
-
     # SR ha-lead-submit-v2 with postal code Leaf Page Advertiser
     def test_leafPageSegmentCTAwithZIPAdvertiser(self):
         if not self.client:
@@ -238,6 +214,7 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
             }
         ]
         collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/co/denver/all-city-movers-reviews-4173765.htm','#ha-lead-submit', 'click', True, prep_actions)
+
         segcall_info = {
             'main_field': 'activityLocation',
             'main_value': 'Visitor : SP Profile',
@@ -295,7 +272,6 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
             'main_field': 'activityLocation',
             'main_value': 'Visitor : SP Profile',
             'segment_params': [
-                ('activityLocation', 'Visitor : SP Profile'),
                 ('description', 'Join button in footer'),
                 ('marketId', '20'),
                 ('userId', ''),
@@ -473,6 +449,279 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
                 ('visitorPageCategory', 'Auto Service'),
                 ('visitorPageGeo', 'LOUISVILLE'),
                 ('visitorPageGeoCategory', 'LOUISVILLE - AUTO SERVICE'),
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+## Footer Segment Events - 
+
+    # test segment call on clicking the Join link in the footer
+    def test_photoGalleriesFooterJoinClick(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/new-york-tristate-area/plumbing.htm?CacheBuster', '#footer-join', 'click')
+        segcall_info = {
+            'main_field': 'activityLocation',
+            'main_value': 'Visitor : SP Profile',
+            'segment_params': [
+                ('description', 'Join button in footer'),
+                ('userId',),
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # Photo Galleries Top Cities NYC
+    def test_leafPageSegmentTopCitiesLinkNYC(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/new-york-tristate-area/plumbing.htm?CacheBuster', 'div.top-cities > ul > div.footer-region.cities-left > li > a[title="Search New York Pros"]', 'click')
+        segcall_info = {
+            'main_field': 'description',
+            'main_value': 'Top Cities link in footer',
+            'segment_params': [
+                ('description', 'Top Cities link in footer'),
+                ('activityLocation', 'Visitor : SP Profile'),
+                ('userId',),
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # Photo Galleries Top Cities Houston
+    def test_leafPageSegmentTopCitiesHouston(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/houston/plumbing.htm?CacheBuster', 'div.footer-region.cities-left > li > a[title="Search Houston Pros"]', 'click')
+        segcall_info = {
+            'main_field': 'description',
+            'main_value': 'Top Cities link in footer',
+            'segment_params': [
+                ('description', 'Top Cities link in footer'),
+                ('activityLocation', 'Visitor : SP Profile'),
+                ('userId',),
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # Photo Galleries Top Cities Chicago
+    def test_leafPageSegmentTopCitiesChicago(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/chicago/plumbing.htm?CacheBuster', 'div.footer-region.cities-left > li > a[title="Search Chicago Pros"]', 'click')
+        segcall_info = {
+            'main_field': 'description',
+            'main_value': 'Top Cities link in footer',
+            'segment_params': [
+                ('description', 'Top Cities link in footer'),
+                ('activityLocation', 'Visitor : SP Profile'),
+                ('userId',),
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # Photo Galleries Top Cities Indianapolis
+    def test_leafPageSegmentTopCitiesIndianapolis(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/in/indianapolis/absolute-restoration-llc-reviews-9039535.htm?CacheBuster', 'div.footer-region.cities-left > li > a[title="Search Indianapolis Pros"]', 'click')
+        segcall_info = {
+            'main_field': 'description',
+            'main_value': 'Top Cities link in footer',
+            'segment_params': [
+                ('description', 'Top Cities link in footer'),
+                ('activityLocation', 'Visitor : SP Profile'),
+                ('marketId', '1'),
+                ('userId',),
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # Photo Galleries Top Cities Boston
+    def test_leafPageSegmentTopCitiesBoston(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/boston/plumbing.htm?CacheBuster', 'div.footer-region.cities-left > li > a[title="Search Boston Pros"]', 'click')
+        segcall_info = {
+            'main_field': 'description',
+            'main_value': 'Top Cities link in footer',
+            'segment_params': [
+                ('description', 'Top Cities link in footer'),
+                ('activityLocation', 'Visitor : SP Profile'),
+                ('userId',),
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # Photo Galleries Top Cities Atlanta
+    def test_leafPageSegmentTopCitiesAtlanta(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/atlanta/plumbing.htm?CacheBuster', 'div.footer-region.cities-left > li > a[title="Search Atlanta Pros"]', 'click')
+        segcall_info = {
+            'main_field': 'description',
+            'main_value': 'Top Cities link in footer',
+            'segment_params': [
+                ('description', 'Top Cities link in footer'),
+                ('activityLocation', 'Visitor : SP Profile'),
+                ('userId',),
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # Photo Galleries Top Cities Cincinnati
+    def test_leafPageSegmentTopCitiesCincinnati(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/cincinnati/plumbing.htm?CacheBuster', 'div.footer-region.cities-left > li > a[title="Search Cincinnati Pros"]', 'click')
+        segcall_info = {
+            'main_field': 'description',
+            'main_value': 'Top Cities link in footer',
+            'segment_params': [
+                ('description', 'Top Cities link in footer'),
+                ('activityLocation', 'Visitor : SP Profile'),
+                ('userId',),
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # Photo Galleries Top Cities Los Angeles
+    def test_leafPageSegmentTopCitiesLosAngeles(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/los-angeles/plumbing.htm?CacheBuster', 'div.footer-region.cities-right > li > a[title="Search Los Angeles Pros"]', 'click')
+        segcall_info = {
+            'main_field': 'description',
+            'main_value': 'Top Cities link in footer',
+            'segment_params': [
+                ('description', 'Top Cities link in footer'),
+                ('activityLocation', 'Visitor : SP Profile'),
+                ('userId',),
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # Photo Galleries Top Cities Dallas
+    def test_leafPageSegmentTopCitiesDallas(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/dallas/plumbing.htm?CacheBuster', 'div.footer-region.cities-right > li > a[title="Search Dallas Pros"]', 'click')
+        segcall_info = {
+            'main_field': 'description',
+            'main_value': 'Top Cities link in footer',
+            'segment_params': [
+                ('description', 'Top Cities link in footer'),
+                ('activityLocation', 'Visitor : SP Profile'),
+                ('userId',),
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # Photo Galleries Top Cities Pittsburgh
+    def test_leafPageSegmentTopCitiesPittsburgh(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/pittsburgh/plumbing.htm?CacheBuster', 'div.footer-region.cities-right > li > a[title="Search Pittsburgh Pros"]', 'click')
+        segcall_info = {
+            'main_field': 'description',
+            'main_value': 'Top Cities link in footer',
+            'segment_params': [
+                ('description', 'Top Cities link in footer'),
+                ('activityLocation', 'Visitor : SP Profile'),
+                ('userId',),
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # Photo Galleries Top Cities Minneapolis
+    def test_leafPageSegmentTopCitiesMinneapolis(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/minneapolis/plumbing.htm?CacheBuster', 'div.footer-region.cities-right > li > a[title="Search Minneapolis Pros"]', 'click')
+        segcall_info = {
+            'main_field': 'description',
+            'main_value': 'Top Cities link in footer',
+            'segment_params': [
+                ('description', 'Top Cities link in footer'),
+                ('activityLocation', 'Visitor : SP Profile'),
+                ('userId',),
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # Photo Galleries Top Cities Las Vegas
+    def test_leafPageSegmentTopCitiesLasVegas(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/las-vegas/plumbing.htm?CacheBuster', 'div.footer-region.cities-right > li > a[title="Search Las Vegas Pros"]', 'click')
+        segcall_info = {
+            'main_field': 'description',
+            'main_value': 'Top Cities link in footer',
+            'segment_params': [
+                ('description', 'Top Cities link in footer'),
+                ('activityLocation', 'Visitor : SP Profile'),
+                ('userId',),
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # Photo Galleries Top Cities San Antonio
+    def test_leafPageSegmentTopCitiesSanAntonio(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/san-antonio/plumbing.htm?CacheBuster', 'div.footer-region.cities-right > li > a[title="Search San Antonio Pros"]', 'click')
+        segcall_info = {
+            'main_field': 'description',
+            'main_value': 'Top Cities link in footer',
+            'segment_params': [
+                ('description', 'Top Cities link in footer'),
+                ('activityLocation', 'Visitor : SP Profile'),
+                ('userId',),
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # Photo Galleries Top Cities Tampa
+    def test_leafPageSegmentTopCitiesTampa(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/tampa/plumbing.htm?CacheBuster', 'div.footer-region.cities-right > li > a[title="Search Tampa Pros"]', 'click')
+        segcall_info = {
+            'main_field': 'description',
+            'main_value': 'Top Cities link in footer',
+            'segment_params': [
+                ('description', 'Top Cities link in footer'),
+                ('activityLocation', 'Visitor : SP Profile'),
+                ('userId',),
+
             ]
         }
 
