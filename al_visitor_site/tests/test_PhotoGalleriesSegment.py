@@ -452,3 +452,8 @@ class PhotoGalleriesSegmentTestCase(SeleniumTestCase):
         }
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+
+
+
+

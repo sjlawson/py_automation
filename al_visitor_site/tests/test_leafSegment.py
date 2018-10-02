@@ -671,7 +671,7 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
-    # Leaf Page Top Cities Las Vegas
+    # Photo Galleries Top Cities Las Vegas
     def test_leafPageSegmentTopCitiesLasVegas(self):
         if not self.client:
             return 0
