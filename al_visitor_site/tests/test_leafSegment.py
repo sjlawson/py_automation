@@ -104,10 +104,10 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
                 ('path', '/companylist/us/ky/louisville/lock-doctor-llc-reviews-6314008.htm'),
                 ('referrer',),
                 ('search', '?CacheBuster'),
-                ('srCtaDisplayed', False),
-                ('srCtaVersion',),
+                ('srCtaDisplayed', True),
+                ('srCtaVersion', 'v2'),
                 ('title', 'Lock Doctor LLC Reviews - Louisville, KY | Angie\'s List'),
-                ('url',),
+                ('url', 'https://www.angieslist.com/companylist/us/ky/louisville/lock-doctor-llc-reviews-6314008.htm?CacheBuster'),
                 ('userId',),
                 ('userType', 'Visitor - New'),
                 ('visitorPageCategory', 'DOORS'),
@@ -457,11 +457,11 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
 ## Footer Segment Events - 
 
     # test segment call on clicking the Join link in the footer
-    def test_photoGalleriesFooterJoinClick(self):
+    def test_leafPageSegmentFooterJoinClick(self):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/new-york-tristate-area/plumbing.htm?CacheBuster', '#footer-join', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/in/indianapolis/absolute-restoration-llc-reviews-9039535.htm?CacheBuster', '#footer-join', 'click')
         segcall_info = {
             'main_field': 'activityLocation',
             'main_value': 'Visitor : SP Profile',
@@ -478,7 +478,7 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/new-york-tristate-area/plumbing.htm?CacheBuster', 'div.top-cities > ul > div.footer-region.cities-left > li > a[title="Search New York Pros"]', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/in/indianapolis/absolute-restoration-llc-reviews-9039535.htm?CacheBuster', 'div.top-cities > ul > div.footer-region.cities-left > li > a[title="Search New York Plumbers Pros"]', 'click')
         segcall_info = {
             'main_field': 'description',
             'main_value': 'Top Cities link in footer',
@@ -496,7 +496,7 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/houston/plumbing.htm?CacheBuster', 'div.footer-region.cities-left > li > a[title="Search Houston Pros"]', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/in/indianapolis/absolute-restoration-llc-reviews-9039535.htm?CacheBuster', 'div.top-cities > ul > div.footer-region.cities-left > li > a[title="Search Houston Plumbers Pros"]', 'click')
         segcall_info = {
             'main_field': 'description',
             'main_value': 'Top Cities link in footer',
@@ -514,7 +514,7 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/chicago/plumbing.htm?CacheBuster', 'div.footer-region.cities-left > li > a[title="Search Chicago Pros"]', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/in/indianapolis/absolute-restoration-llc-reviews-9039535.htm?CacheBuster', 'div.top-cities > ul > div.footer-region.cities-left > li > a[title="Search Chicago Plumbers Pros"]', 'click')
         segcall_info = {
             'main_field': 'description',
             'main_value': 'Top Cities link in footer',
@@ -550,7 +550,7 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/boston/plumbing.htm?CacheBuster', 'div.footer-region.cities-left > li > a[title="Search Boston Pros"]', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/in/indianapolis/absolute-restoration-llc-reviews-9039535.htm?CacheBuster', 'div.top-cities > ul > div.footer-region.cities-left > li > a[title="Search Boston Plumbers Pros"]', 'click')
         segcall_info = {
             'main_field': 'description',
             'main_value': 'Top Cities link in footer',
@@ -568,7 +568,7 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/atlanta/plumbing.htm?CacheBuster', 'div.footer-region.cities-left > li > a[title="Search Atlanta Pros"]', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/in/indianapolis/absolute-restoration-llc-reviews-9039535.htm?CacheBuster', 'div.top-cities > ul > div.footer-region.cities-left > li > a[title="Search Atlanta Plumbers Pros"]', 'click')
         segcall_info = {
             'main_field': 'description',
             'main_value': 'Top Cities link in footer',
@@ -586,7 +586,7 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/cincinnati/plumbing.htm?CacheBuster', 'div.footer-region.cities-left > li > a[title="Search Cincinnati Pros"]', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/in/indianapolis/absolute-restoration-llc-reviews-9039535.htm?CacheBuster', 'div.top-cities > ul > div.footer-region.cities-left > li > a[title="Search Cincinnati Plumbers Pros"]', 'click')
         segcall_info = {
             'main_field': 'description',
             'main_value': 'Top Cities link in footer',
@@ -604,7 +604,7 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/los-angeles/plumbing.htm?CacheBuster', 'div.footer-region.cities-right > li > a[title="Search Los Angeles Pros"]', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/in/indianapolis/absolute-restoration-llc-reviews-9039535.htm?CacheBuster', 'div.top-cities > ul > div.footer-region.cities-right > li > a[title="Search Los Angeles Plumbers Pros"]', 'click')
         segcall_info = {
             'main_field': 'description',
             'main_value': 'Top Cities link in footer',
@@ -622,7 +622,7 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/dallas/plumbing.htm?CacheBuster', 'div.footer-region.cities-right > li > a[title="Search Dallas Pros"]', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/in/indianapolis/absolute-restoration-llc-reviews-9039535.htm?CacheBuster', 'div.top-cities > ul > div.footer-region.cities-right > li > a[title="Search Dallas Plumbers Pros"]', 'click')
         segcall_info = {
             'main_field': 'description',
             'main_value': 'Top Cities link in footer',
@@ -640,7 +640,7 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/pittsburgh/plumbing.htm?CacheBuster', 'div.footer-region.cities-right > li > a[title="Search Pittsburgh Pros"]', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/in/indianapolis/absolute-restoration-llc-reviews-9039535.htm?CacheBuster', 'div.top-cities > ul > div.footer-region.cities-right > li > a[title="Search Pittsburgh Plumbers Pros"]', 'click')
         segcall_info = {
             'main_field': 'description',
             'main_value': 'Top Cities link in footer',
@@ -658,7 +658,7 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/minneapolis/plumbing.htm?CacheBuster', 'div.footer-region.cities-right > li > a[title="Search Minneapolis Pros"]', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/in/indianapolis/absolute-restoration-llc-reviews-9039535.htm?CacheBuster', 'div.top-cities > ul > div.footer-region.cities-right > li > a[title="Search Minneapolis Plumbers Pros"]', 'click')
         segcall_info = {
             'main_field': 'description',
             'main_value': 'Top Cities link in footer',
@@ -676,7 +676,7 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/las-vegas/plumbing.htm?CacheBuster', 'div.footer-region.cities-right > li > a[title="Search Las Vegas Pros"]', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/in/indianapolis/absolute-restoration-llc-reviews-9039535.htm?CacheBuster', 'div.top-cities > ul > div.footer-region.cities-right > li > a[title="Search Las Vegas Plumbers Pros"]', 'click')
         segcall_info = {
             'main_field': 'description',
             'main_value': 'Top Cities link in footer',
@@ -694,7 +694,7 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/san-antonio/plumbing.htm?CacheBuster', 'div.footer-region.cities-right > li > a[title="Search San Antonio Pros"]', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/in/indianapolis/absolute-restoration-llc-reviews-9039535.htm?CacheBuster', 'div.top-cities > ul > div.footer-region.cities-right > li > a[title="Search San Antonio Plumbers Pros"]', 'click')
         segcall_info = {
             'main_field': 'description',
             'main_value': 'Top Cities link in footer',
@@ -712,7 +712,7 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/tampa/plumbing.htm?CacheBuster', 'div.footer-region.cities-right > li > a[title="Search Tampa Pros"]', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/in/indianapolis/absolute-restoration-llc-reviews-9039535.htm?CacheBuster', 'div.top-cities > ul > div.footer-region.cities-right > li > a[title="Search Tampa Plumbers Pros"]', 'click')
         segcall_info = {
             'main_field': 'description',
             'main_value': 'Top Cities link in footer',
