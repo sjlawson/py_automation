@@ -29,7 +29,6 @@ class NearMeThunderballPageSegmentTestCase(SeleniumTestCase):
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
-    ### Header Tests ###
 
 
     #  AL Header link on NearMe - Tball
@@ -201,7 +200,7 @@ class NearMeThunderballPageSegmentTestCase(SeleniumTestCase):
             'segment_params': [
                 ('activityLocation', 'Visitor : Near Me'),
                 ('description', 'IP lookup failed : input zip code'),
-                ('pathName', '/nearme/landscaping'),
+                ('pathName', '/nearme/landscaping/'),
                 ('postalCode', '90210')
             ]
         }
@@ -210,7 +209,7 @@ class NearMeThunderballPageSegmentTestCase(SeleniumTestCase):
 
 
     # Near Me Read More Review Card Tball Place #1
-    def test_nearMeLandscapingReadMoreLinkV1Tball(self):
+"""     def test_nearMeLandscapingReadMoreLinkV1Tball(self):
         if not self.client:
             return 0
         prep_actions = [
@@ -235,4 +234,4 @@ class NearMeThunderballPageSegmentTestCase(SeleniumTestCase):
             ]
         }
 
-        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info) """
