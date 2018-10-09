@@ -29,7 +29,7 @@ class NearMeThunderballPageSegmentTestCase(SeleniumTestCase):
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
-
+    ### Header Tests ###
 
     #  AL Header link on NearMe - Tball
     def test_nearMeLandscapingHeaderAlLinkTball(self):
@@ -208,30 +208,177 @@ class NearMeThunderballPageSegmentTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info) 
 
 
-    # Near Me Read More Review Card Tball Place #1
-"""     def test_nearMeLandscapingReadMoreLinkV1Tball(self):
+    #  Near Me Major Markets Albany Tball
+    def test_nearMeLandscapingMajorMarketsAlbanyTball(self):
         if not self.client:
             return 0
-        prep_actions = [
-            {
-                'action_element': '#review-card-review-expand-1',
-                'action_list': [
-                    ('click',)
-                ]
-            }
-        ]
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping/','#review-card-review-collapse-1', 'click', False, prep_actions)
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping/', '#major-market-link-Albany', 'click')
+
         segcall_info = {
             'main_field': 'description',
-            'main_value': 'Review Collapsed',
+            'main_value': 'Major Market Clicked',
             'segment_params': [
+                ('description', 'Major Market Clicked'),
                 ('activityLocation', 'Visitor : Near Me'),
-                ('description', 'Review Collapsed'),
+                ('cityClicked', 'https://www.angieslist.com/companylist/albany/'),
                 ('keywordSearched', '/nearme/landscaping/'),
                 ('pathName', '/nearme/landscaping/'),
-                ('rankId', '0'),
-                ('reviewId', '1')
             ]
         }
 
-        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info) """
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+
+    #  Near Me Major Markets Austin Tball
+    def test_nearMeLandscapingMajorMarketsAustinTball(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping/', '#major-market-link-Austin', 'click')
+
+        segcall_info = {
+            'main_field': 'description',
+            'main_value': 'Major Market Clicked',
+            'segment_params': [
+                ('description', 'Major Market Clicked'),
+                ('activityLocation', 'Visitor : Near Me'),
+                ('cityClicked', 'https://www.angieslist.com/companylist/austin/'),
+                ('keywordSearched', '/nearme/landscaping/'),
+                ('pathName', '/nearme/landscaping/'),
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+
+    #  Near Me Major Markets Charlotte Tball
+    def test_nearMeLandscapingMajorMarketsCharlotteTball(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping/', '#major-market-link-Charlotte', 'click')
+
+        segcall_info = {
+            'main_field': 'description',
+            'main_value': 'Major Market Clicked',
+            'segment_params': [
+                ('description', 'Major Market Clicked'),
+                ('activityLocation', 'Visitor : Near Me'),
+                ('cityClicked', 'https://www.angieslist.com/companylist/charlotte/'),
+                ('keywordSearched', '/nearme/landscaping/'),
+                ('pathName', '/nearme/landscaping/'),
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+
+    #  Near Me Major Markets Detroit Tball
+    def test_nearMeLandscapingMajorMarketsDetroitTball(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping/', '#major-market-link-Detroit', 'click')
+
+        segcall_info = {
+            'main_field': 'description',
+            'main_value': 'Major Market Clicked',
+            'segment_params': [
+                ('description', 'Major Market Clicked'),
+                ('activityLocation', 'Visitor : Near Me'),
+                ('cityClicked', 'https://www.angieslist.com/companylist/detroit/'),
+                ('keywordSearched', '/nearme/landscaping/'),
+                ('pathName', '/nearme/landscaping/'),
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+
+    #  Near Me Major Markets Greensboro Tball
+    def test_nearMeLandscapingMajorMarketsGreensboroTball(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping/', '#major-market-link-Greensboro', 'click')
+
+        segcall_info = {
+            'main_field': 'description',
+            'main_value': 'Major Market Clicked',
+            'segment_params': [
+                ('description', 'Major Market Clicked'),
+                ('activityLocation', 'Visitor : Near Me'),
+                ('cityClicked', 'https://www.angieslist.com/companylist/greensboro/'),
+                ('keywordSearched', '/nearme/landscaping/'),
+                ('pathName', '/nearme/landscaping/'),
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+
+    #  Near Me Major Markets Louisville Tball
+    def test_nearMeLandscapingMajorMarketsLouisvilleTball(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping/', '#major-market-link-Louisville', 'click')
+
+        segcall_info = {
+            'main_field': 'description',
+            'main_value': 'Major Market Clicked',
+            'segment_params': [
+                ('description', 'Major Market Clicked'),
+                ('activityLocation', 'Visitor : Near Me'),
+                ('cityClicked', 'https://www.angieslist.com/companylist/louisville/'),
+                ('keywordSearched', '/nearme/landscaping/'),
+                ('pathName', '/nearme/landscaping/'),
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+
+    #  Near Me Major Markets Phoenix Tball
+    def test_nearMeLandscapingMajorMarketsLPhoenixeTball(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping/', '#major-market-link-Phoenix', 'click')
+
+        segcall_info = {
+            'main_field': 'description',
+            'main_value': 'Major Market Clicked',
+            'segment_params': [
+                ('description', 'Major Market Clicked'),
+                ('activityLocation', 'Visitor : Near Me'),
+                ('cityClicked', 'https://www.angieslist.com/companylist/phoenix/'),
+                ('keywordSearched', '/nearme/landscaping/'),
+                ('pathName', '/nearme/landscaping/'),
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+
+    #  Near Me Major Markets Seattle Tball
+    def test_nearMeLandscapingMajorMarketsSeattleTball(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping/', '#major-market-link-Seattle', 'click')
+
+        segcall_info = {
+            'main_field': 'description',
+            'main_value': 'Major Market Clicked',
+            'segment_params': [
+                ('description', 'Major Market Clicked'),
+                ('activityLocation', 'Visitor : Near Me'),
+                ('cityClicked', 'https://www.angieslist.com/companylist/seattle/'),
+                ('keywordSearched', '/nearme/landscaping/'),
+                ('pathName', '/nearme/landscaping/'),
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
