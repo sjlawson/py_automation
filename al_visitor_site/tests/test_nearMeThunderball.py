@@ -74,9 +74,9 @@ class NearMeThunderballPageSegmentTestCase(SeleniumTestCase):
         collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping/', '#header--hiw-link', 'click')
         segcall_info = {
             'main_field': 'description',
-            'main_value': 'How It Works link in header',
+            'main_value': 'Near Me Landscaping link in header',
             'segment_params': [
-                ('description', 'How It Works link in header'),
+                ('description', 'Near Me Landscaping link in header'),
                 # ('activityLocation', 'Visitor : Near Me'),
             ]
         }
@@ -378,6 +378,246 @@ class NearMeThunderballPageSegmentTestCase(SeleniumTestCase):
                 ('cityClicked', 'https://www.angieslist.com/companylist/seattle/'),
                 ('keywordSearched', '/nearme/landscaping/'),
                 ('pathName', '/nearme/landscaping/'),
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+
+
+    # Near Me Landscaping Top Cities NYC Tball
+    def test_nearMeLandscapingTopCitiesNYCTball(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping/', 'div.top-cities.row > ul.list-inline > li > a[title="Search New York Pros"]', 'click')
+        segcall_info = {
+            'main_field': 'activityLocation',
+            'main_value': 'Visitor App : Near Me',
+            'segment_params': [
+                ('description', 'Top Cities link in footer'),
+                ('activityLocation', 'Visitor App : Near Me')
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # Near Me Landscaping Top Cities Houston Tball
+    def test_nearMeLandscapingTopCitiesHoustonTball(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping/', 'div.top-cities.row > ul.list-inline > li > a[title="Search Houston Pros"]', 'click')
+        segcall_info = {
+            'main_field': 'description',
+            'main_value': 'Top Cities link in footer',
+            'segment_params': [
+                ('description', 'Top Cities link in footer'),
+                ('activityLocation', 'Visitor App : Near Me')
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # Near Me Landscaping Top Cities Chicago Tball
+    def test_nearMeLandscapingTopCitiesChicagoTball(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping/', 'div.top-cities.row > ul.list-inline > li > a[title="Search Chicago Pros"]', 'click')
+        segcall_info = {
+            'main_field': 'description',
+            'main_value': 'Top Cities link in footer',
+            'segment_params': [
+                ('description', 'Top Cities link in footer'),
+                ('activityLocation', 'Visitor App : Near Me')
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # Near Me Landscaping Top Cities Indianapolis Tball
+    def test_nearMeLandscapingTopCitiesIndianapolisTball(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping/', 'div.top-cities.row > ul.list-inline > li > a[title="Search Indianapolis Pros"]', 'click')
+        segcall_info = {
+            'main_field': 'description',
+            'main_value': 'Top Cities link in footer',
+            'segment_params': [
+                ('description', 'Top Cities link in footer'),
+                ('activityLocation', 'Visitor App : Near Me')
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # Near Me Landscaping Top Cities Boston Tball
+    def test_nearMeLandscapingTopCitiesBostonTball(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping/', 'div.top-cities.row > ul.list-inline > li > a[title="Search Boston Pros"]', 'click')
+        segcall_info = {
+            'main_field': 'description',
+            'main_value': 'Top Cities link in footer',
+            'segment_params': [
+                ('description', 'Top Cities link in footer'),
+                ('activityLocation', 'Visitor App : Near Me')
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # Near Me Landscaping Top Cities Atlanta Tball
+    def test_nearMeLandscapingTopCitiesAtlantaTball(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping/', 'div.top-cities.row > ul.list-inline > li > a[title="Search Atlanta Pros"]', 'click')
+        segcall_info = {
+            'main_field': 'activityLocation',
+            'main_value': 'Visitor App : Near Me',
+            'segment_params': [
+                ('description', 'Top Cities link in footer'),
+                ('activityLocation', 'Visitor App : Near Me')
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # Near Me Landscaping Top Cities Cincinnati Tball
+    def test_nearMeLandscapingTopCitiesCincinnatiTball(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping/', 'div.top-cities.row > ul.list-inline > li > a[title="Search Cincinnati Pros"]', 'click')
+        segcall_info = {
+            'main_field': 'description',
+            'main_value': 'Top Cities link in footer',
+            'segment_params': [
+                ('description', 'Top Cities link in footer'),
+                ('activityLocation', 'Visitor App : Near Me')
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # Near Me Landscaping Top Cities Los Angeles Tball
+    def test_nearMeLandscapingTopCitiesLosAngelesTball(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping/', 'div.top-cities.row > ul.list-inline > li > a[title="Search Los Angeles Pros"]', 'click')
+        segcall_info = {
+            'main_field': 'description',
+            'main_value': 'Top Cities link in footer',
+            'segment_params': [
+                ('description', 'Top Cities link in footer'),
+                ('activityLocation', 'Visitor App : Near Me')
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # Near Me Landscaping Top Cities Dallas Tball
+    def test_nearMeLandscapingTopCitiesDallasTball(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping/', 'div.top-cities.row > ul.list-inline > li > a[title="Search Dallas Pros"]', 'click')
+        segcall_info = {
+            'main_field': 'description',
+            'main_value': 'Top Cities link in footer',
+            'segment_params': [
+                ('description', 'Top Cities link in footer'),
+                ('activityLocation', 'Visitor App : Near Me')
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # Near Me Landscaping Top Cities Pittsburgh Tball
+    def test_nearMeLandscapingTopCitiesPittsburghTball(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping/', 'div.top-cities.row > ul.list-inline > li > a[title="Search Pittsburgh Pros"]', 'click')
+        segcall_info = {
+            'main_field': 'description',
+            'main_value': 'Top Cities link in footer',
+            'segment_params': [
+                ('description', 'Top Cities link in footer'),
+                ('activityLocation', 'Visitor App : Near Me')
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # Near Me Landscaping Top Cities Minneapolis Tball
+    def test_nearMeLandscapingTopCitiesMinneapolisTball(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping/', 'div.top-cities.row > ul.list-inline > li > a[title="Search Minneapolis Pros"]', 'click')
+        segcall_info = {
+            'main_field': 'description',
+            'main_value': 'Top Cities link in footer',
+            'segment_params': [
+                ('description', 'Top Cities link in footer'),
+                ('activityLocation', 'Visitor App : Near Me')
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # Near Me Landscaping Top Cities Las Vegas Tball
+    def test_nearMeLandscapingTopCitiesLasVegasTball(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping/', 'div.top-cities.row > ul.list-inline > li > a[title="Search Las Vegas Pros"]', 'click')
+        segcall_info = {
+            'main_field': 'description',
+            'main_value': 'Top Cities link in footer',
+            'segment_params': [
+                ('description', 'Top Cities link in footer'),
+                ('activityLocation', 'Visitor App : Near Me')
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # Near Me Landscaping Top Cities San Antonio Tball
+    def test_nearMeLandscapingTopCitiesSanAntonioTball(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping/', 'div.top-cities.row > ul.list-inline > li > a[title="Search San Antonio Pros"]', 'click')
+        segcall_info = {
+            'main_field': 'description',
+            'main_value': 'Top Cities link in footer',
+            'segment_params': [
+                ('description', 'Top Cities link in footer'),
+                ('activityLocation', 'Visitor App : Near Me')
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # Near Me Landscaping Top Cities Tampa Tball
+    def test_nearMeLandscapingTopCitiesTampaTball(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping/', 'div.container > div.top-cities.row > ul.list-inline > li > a[title="Search Tampa Pros"]', 'click')
+        segcall_info = {
+            'main_field': 'description',
+            'main_value': 'Top Cities link in footer',
+            'segment_params': [
+                ('description', 'Top Cities link in footer'),
+                ('activityLocation', 'Visitor App : Near Me')
             ]
         }
 
