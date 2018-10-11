@@ -1,5 +1,6 @@
 from common.SeleniumTestCase import SeleniumTestCase
 from common.SegmentTestHelper import SegmentTestHelper
+from selenium.webdriver.support.ui import WebDriverWait
 
 class NearMeThunderballPageSegmentTestCase(SeleniumTestCase):
 
@@ -607,18 +608,23 @@ class NearMeThunderballPageSegmentTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # Near Me Landscaping Top Cities Tampa Tball
-    def test_nearMeLandscapingTopCitiesTampaTball(self):
+    def test_nearMeLandscapingTopCitiesTampaTball123(self):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping/', 'div.container > div.top-cities.row > ul.list-inline > li > a[title="Search Tampa Pros"]', 'click')
+        wait = WebDriverWait(self.client, 20)
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping/', '#footer--top-cities-tampa', 'click')
         segcall_info = {
-            'main_field': 'description',
-            'main_value': 'Top Cities link in footer',
+            'main_field': 'activityLocation',
+            'main_value': 'Visitor App : Near Me',
             'segment_params': [
-                ('description', 'Top Cities link in footer'),
-                ('activityLocation', 'Visitor App : Near Me')
+              #  ('description', 'Top Cities link in footer'),
+               # ('activityLocation', 'Visitor App : Near Me')
             ]
         }
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+
+         # 'div.top-cities.row > ul.list-inline > li > a[title="Search Tampa Pros"]'
