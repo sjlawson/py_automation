@@ -71,12 +71,14 @@ class NearMeThunderballPageSegmentTestCase(SeleniumTestCase):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping/', '#header--hiw-link', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping/', '#header--hiw-link a', 'click')
         segcall_info = {
             'main_field': 'description',
-            'main_value': 'Near Me Landscaping link in header',
+            'main_value': 'How It Works link in header',
+            # 'main_value': 'Near Me Landscaping link in header',
             'segment_params': [
-                ('description', 'Near Me Landscaping link in header'),
+                ('description', 'How It Works link in header'),
+                # ('description', 'Near Me Landscaping link in header'),
                 # ('activityLocation', 'Visitor : Near Me'),
             ]
         }
@@ -107,7 +109,6 @@ class NearMeThunderballPageSegmentTestCase(SeleniumTestCase):
             return 0
 
         collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping/', '#header--faq-link', 'click')
-
         segcall_info = {
             'main_field': 'description',
             'main_value': 'FAQ link in header',
@@ -126,7 +127,6 @@ class NearMeThunderballPageSegmentTestCase(SeleniumTestCase):
             return 0
 
         collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping/', '#header--in-the-press-link', 'click')
-
         segcall_info = {
             'main_field': 'description',
             'main_value': 'In the Press link in header',
@@ -145,7 +145,6 @@ class NearMeThunderballPageSegmentTestCase(SeleniumTestCase):
             return 0
 
         collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping/', '#header--articles-link', 'click')
-
         segcall_info = {
             'main_field': 'description',
             'main_value': 'Solution Center link in header',
@@ -163,7 +162,6 @@ class NearMeThunderballPageSegmentTestCase(SeleniumTestCase):
             return 0
 
         collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping/', '#header--business-owners-link', 'click')
-
         segcall_info = {
             'main_field': 'description',
             'main_value': 'Business Owners link in header',
@@ -205,7 +203,7 @@ class NearMeThunderballPageSegmentTestCase(SeleniumTestCase):
             ]
         }
 
-        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info) 
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
 
     #  Near Me Major Markets Albany Tball
@@ -324,7 +322,6 @@ class NearMeThunderballPageSegmentTestCase(SeleniumTestCase):
             return 0
 
         collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping/', '#major-market-link-Louisville', 'click')
-
         segcall_info = {
             'main_field': 'description',
             'main_value': 'Major Market Clicked',
@@ -346,7 +343,6 @@ class NearMeThunderballPageSegmentTestCase(SeleniumTestCase):
             return 0
 
         collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping/', '#major-market-link-Phoenix', 'click')
-
         segcall_info = {
             'main_field': 'description',
             'main_value': 'Major Market Clicked',
@@ -368,7 +364,6 @@ class NearMeThunderballPageSegmentTestCase(SeleniumTestCase):
             return 0
 
         collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping/', '#major-market-link-Seattle', 'click')
-
         segcall_info = {
             'main_field': 'description',
             'main_value': 'Major Market Clicked',
@@ -390,7 +385,7 @@ class NearMeThunderballPageSegmentTestCase(SeleniumTestCase):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping/', 'div.top-cities.row > ul.list-inline > li > a[title="Search New York Pros"]', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping/', 'div.top-cities.row > ul.list-inline > li > a[title="Search New York Pros"]', 'click', dbl_action=True)
         segcall_info = {
             'main_field': 'activityLocation',
             'main_value': 'Visitor App : Near Me',
@@ -407,7 +402,7 @@ class NearMeThunderballPageSegmentTestCase(SeleniumTestCase):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping/', 'div.top-cities.row > ul.list-inline > li > a[title="Search Houston Pros"]', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping/', 'div.top-cities.row > ul.list-inline > li > a[title="Search Houston Pros"]', 'click', dbl_action=True)
         segcall_info = {
             'main_field': 'description',
             'main_value': 'Top Cities link in footer',
@@ -424,7 +419,7 @@ class NearMeThunderballPageSegmentTestCase(SeleniumTestCase):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping/', 'div.top-cities.row > ul.list-inline > li > a[title="Search Chicago Pros"]', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping/', 'div.top-cities.row > ul.list-inline > li > a[title="Search Chicago Pros"]', 'click', dbl_action=True)
         segcall_info = {
             'main_field': 'description',
             'main_value': 'Top Cities link in footer',
@@ -441,7 +436,7 @@ class NearMeThunderballPageSegmentTestCase(SeleniumTestCase):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping/', 'div.top-cities.row > ul.list-inline > li > a[title="Search Indianapolis Pros"]', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping/', 'div.top-cities.row > ul.list-inline > li > a[title="Search Indianapolis Pros"]', 'click', dbl_action=True)
         segcall_info = {
             'main_field': 'description',
             'main_value': 'Top Cities link in footer',
@@ -458,7 +453,7 @@ class NearMeThunderballPageSegmentTestCase(SeleniumTestCase):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping/', 'div.top-cities.row > ul.list-inline > li > a[title="Search Boston Pros"]', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping/', 'div.top-cities.row > ul.list-inline > li > a[title="Search Boston Pros"]', 'click', dbl_action=True)
         segcall_info = {
             'main_field': 'description',
             'main_value': 'Top Cities link in footer',
@@ -475,7 +470,7 @@ class NearMeThunderballPageSegmentTestCase(SeleniumTestCase):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping/', 'div.top-cities.row > ul.list-inline > li > a[title="Search Atlanta Pros"]', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping/', 'div.top-cities.row > ul.list-inline > li > a[title="Search Atlanta Pros"]', 'click', dbl_action=True)
         segcall_info = {
             'main_field': 'activityLocation',
             'main_value': 'Visitor App : Near Me',
@@ -492,7 +487,7 @@ class NearMeThunderballPageSegmentTestCase(SeleniumTestCase):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping/', 'div.top-cities.row > ul.list-inline > li > a[title="Search Cincinnati Pros"]', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping/', 'div.top-cities.row > ul.list-inline > li > a[title="Search Cincinnati Pros"]', 'click', dbl_action=True)
         segcall_info = {
             'main_field': 'description',
             'main_value': 'Top Cities link in footer',
@@ -509,7 +504,7 @@ class NearMeThunderballPageSegmentTestCase(SeleniumTestCase):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping/', 'div.top-cities.row > ul.list-inline > li > a[title="Search Los Angeles Pros"]', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping/', 'div.top-cities.row > ul.list-inline > li > a[title="Search Los Angeles Pros"]', 'click', dbl_action=True)
         segcall_info = {
             'main_field': 'description',
             'main_value': 'Top Cities link in footer',
@@ -526,7 +521,7 @@ class NearMeThunderballPageSegmentTestCase(SeleniumTestCase):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping/', 'div.top-cities.row > ul.list-inline > li > a[title="Search Dallas Pros"]', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping/', 'div.top-cities.row > ul.list-inline > li > a[title="Search Dallas Pros"]', 'click', dbl_action=True)
         segcall_info = {
             'main_field': 'description',
             'main_value': 'Top Cities link in footer',
@@ -543,7 +538,7 @@ class NearMeThunderballPageSegmentTestCase(SeleniumTestCase):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping/', 'div.top-cities.row > ul.list-inline > li > a[title="Search Pittsburgh Pros"]', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping/', 'div.top-cities.row > ul.list-inline > li > a[title="Search Pittsburgh Pros"]', 'click', dbl_action=True)
         segcall_info = {
             'main_field': 'description',
             'main_value': 'Top Cities link in footer',
@@ -560,7 +555,7 @@ class NearMeThunderballPageSegmentTestCase(SeleniumTestCase):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping/', 'div.top-cities.row > ul.list-inline > li > a[title="Search Minneapolis Pros"]', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping/', 'div.top-cities.row > ul.list-inline > li > a[title="Search Minneapolis Pros"]', 'click', dbl_action=True)
         segcall_info = {
             'main_field': 'description',
             'main_value': 'Top Cities link in footer',
@@ -577,7 +572,7 @@ class NearMeThunderballPageSegmentTestCase(SeleniumTestCase):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping/', 'div.top-cities.row > ul.list-inline > li > a[title="Search Las Vegas Pros"]', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping/', 'div.top-cities.row > ul.list-inline > li > a[title="Search Las Vegas Pros"]', 'click', dbl_action=True)
         segcall_info = {
             'main_field': 'description',
             'main_value': 'Top Cities link in footer',
@@ -594,7 +589,7 @@ class NearMeThunderballPageSegmentTestCase(SeleniumTestCase):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping/', 'div.top-cities.row > ul.list-inline > li > a[title="Search San Antonio Pros"]', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping/', 'div.top-cities.row > ul.list-inline > li > a[title="Search San Antonio Pros"]', 'click', dbl_action=True)
         segcall_info = {
             'main_field': 'description',
             'main_value': 'Top Cities link in footer',
@@ -610,8 +605,8 @@ class NearMeThunderballPageSegmentTestCase(SeleniumTestCase):
     def test_nearMeLandscapingTopCitiesTampaTball(self):
         if not self.client:
             return 0
-
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping/', 'div.container > div.top-cities.row > ul.list-inline > li > a[title="Search Tampa Pros"]', 'click')
+        # div.container > div.top-cities.row > ul.list-inline > li > a[title="Search Tampa Pros"]
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/nearme/landscaping/', '#footer--top-cities-tampa', dbl_action=True)
         segcall_info = {
             'main_field': 'description',
             'main_value': 'Top Cities link in footer',

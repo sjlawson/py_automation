@@ -16,7 +16,7 @@ class SegmentTestHelper():
     # @param action - must match with ActionChains events found here:
     #               -- http://selenium-python.readthedocs.io/api.html#module-selenium.webdriver.common.action_chains
     # @optionalParam wait_for_pageload - defaults to True. Set to False if not needed
-    def gather_segment_requests_for_url(test_case, path, target='page', action_name='click', wait_for_pageload=True, prep_actions=None):
+    def gather_segment_requests_for_url(test_case, path, target='page', action_name='click', wait_for_pageload=True, prep_actions=None, dbl_action=False):
         wait = WebDriverWait(test_case.client, 15)
         collect_seg = []
         tries = 0
@@ -45,13 +45,24 @@ class SegmentTestHelper():
                     action_chain = ActionChains(test_case.client).move_to_element(target_element)
                     try:
                         action_method = getattr(action_chain, action_name)
-                    except AttributeError:
+                    except AttributeError as e:
                         raise NotImplementedError("Class ActionChains does not implement %s" % action_name)
+
                     old_page = test_case.client.find_element_by_tag_name('html')
-                    action_method().perform()
+
+                    try:
+                        if dbl_action:
+                            action_method().click().perform()
+                        else:
+                            action_method().perform()
+
+                    except Exception as e:
+                        print("EXCEPTION")
+                        print(e)
 
                     # not relevant if action is page
                     if wait_for_pageload:
+                        time.sleep(2)
                         with test_case.wait_for_new_page_load(old_page, timeout=10):
                             print('New page loaded')
                 else:
@@ -109,6 +120,6 @@ class SegmentTestHelper():
             test_case.assertTrue(main_field_exists)
         except AssertionError as e:
             e.args += (('Segment call "%s: %s" is MISSING' % (segcall_info['main_field'], segcall_info['main_value'])),)
-            test_case.test_result = 'fail' 
+            test_case.test_result = 'fail'
             raise
         test_case.test_result = 'pass'
