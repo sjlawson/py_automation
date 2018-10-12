@@ -98,34 +98,46 @@ def suites(*args):
     elif selected_test == count + 1:
         xmlrunner.XMLTestRunner(verbosity=2, output='reports').run(tests)
 
-@manager.command
-def test_h1TitleCanonical(*args):
-    """Legacy command - just runs the htTitleCanonical test suite"""
-    args += ('',)
-    print("Starting Python Flask Selenium Test Framework")
-    print("Visitor site: ", os.environ['VISITOR_SITE_URL'])
-    tests = unittest.TestLoader().discover('al_visitor_site/tests', pattern='test_h1TitleCanonical.py')
-    xmlrunner.XMLTestRunner(verbosity=2, output='reports').run(tests)
-
 
 @manager.command
 def runtest(*args):
+    """Runs a single test from a test file"""
+    try:
+        if len(args[0]) and len(args[0][1]):
+            suiteconf = applications['appsuites'][args[0][0]]
+            os.environ['BASE_URL'] = suiteconf['base_url']
+            print("Starting Python Flask Selenium Test Framework")
+            print("Test environment: %s" % args[0][0])
+            print("Base URL: ", suiteconf['base_url'])
+            suite = args[0][1]
+            testname = args[0][2]
+            print("Running test, %s in suite %s" % (testname, suite))
+            tests = unittest.TestLoader().loadTestsFromName(args[0][0] + '.tests.test_' + suite + '.' + suite + '.' + testname)
+            xmlrunner.XMLTestRunner(verbosity=2, output='reports').run(tests)
+    except IndexError:
+        print("Usage: manage.py runtest <env_name> <test_class> <test_name>")
+        print("Example: manage.py runtest al_visitor_site AA404 test_aa404")
+
+
+@manager.command
+def runtestsuite(*args):
     """runs a test suite - if file name is test_thisIsATest.py, use thisIsATest
     command syntax is: manage.py envname testname
     """
-    if len(args[0]) and len(args[0][1]):
-        suiteconf = applications['appsuites'][args[0][0]]
-        os.environ['BASE_URL'] = suiteconf['base_url']
-        print("Starting Python Flask Selenium Test Framework")
-        print("Test environment: %s" % args[0][0])
-        print("Base URL: ", suiteconf['base_url'])
-        print("Running test, %s" % args[0][1])
-        test_suite_name = args[0][1].replace('test_', '').replace('.py', '')
-        tests = unittest.TestLoader().discover(('%s/tests' % args[0][0]), pattern='test_' + test_suite_name + '.py')
-        xmlrunner.XMLTestRunner(verbosity=2, output='reports').run(tests)
-
-    else:
-        print("No test selected")
+    try:
+        if len(args[0]) and len(args[0][1]):
+            suiteconf = applications['appsuites'][args[0][0]]
+            os.environ['BASE_URL'] = suiteconf['base_url']
+            print("Starting Python Flask Selenium Test Framework")
+            print("Test environment: %s" % args[0][0])
+            print("Base URL: ", suiteconf['base_url'])
+            print("Running test, %s" % args[0][1])
+            test_suite_name = args[0][1].replace('test_', '').replace('.py', '')
+            tests = unittest.TestLoader().discover(('%s/tests' % args[0][0]), pattern='test_' + test_suite_name + '.py')
+            xmlrunner.XMLTestRunner(verbosity=2, output='reports').run(tests)
+    except IndexError:
+        print("Usage: manage.py runtestsuite <env_name> <test_class>")
+        print("example: manage.py runtestsuite al_visitor_site AA404")
 
 if __name__ == '__main__':
     Command.capture_all_args = True
