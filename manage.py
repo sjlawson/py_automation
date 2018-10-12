@@ -110,13 +110,12 @@ def runtest(*args):
             print("Test environment: %s" % args[0][0])
             print("Base URL: ", suiteconf['base_url'])
             suite = args[0][1]
-            testname = args[0][2]
-            print("Running test, %s in suite %s" % (testname, suite))
-            tests = unittest.TestLoader().loadTestsFromName(args[0][0] + '.tests.test_' + suite + '.' + suite + '.' + testname)
+            print("Running test, %s" % suite)
+            tests = unittest.TestLoader().loadTestsFromName(args[0][0] + '.tests.' + args[0][1])
             xmlrunner.XMLTestRunner(verbosity=2, output='reports').run(tests)
     except IndexError:
-        print("Usage: manage.py runtest <env_name> <test_class> <test_name>")
-        print("Example: manage.py runtest al_visitor_site AA404 test_aa404")
+        print("Usage: manage.py runtest <env_name> <test_file_basename>.<test_class>.<test_name>")
+        print("Example: manage.py runtest al_visitor_site test_AA404.AA404.test_aa404")
 
 
 @manager.command
