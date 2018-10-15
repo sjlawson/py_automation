@@ -241,7 +241,7 @@ class CompanyListTestCase(SeleniumTestCase):
             ]
         }
 
-        SegmentTeYastHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # Company List Top Cities Chicago
     def companyListTopCitiesLinkChicago(self):
@@ -1080,8 +1080,41 @@ class CompanyListTopCityTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
 
+    def test_companyListTopCity_topCities(self):
+        if not self.client:
+            return 0
+
+        self.companyListTopCityTopCitiesNYC()
+        self.client.back()
+        self.companyListTopCityTopCitiesHouston()
+        self.client.back()
+        self.companyListTopCityTopCitiesChicago()
+        self.client.back()
+        self.companyListTopCityTopCitiesIndianapolis()
+        self.client.back()
+        self.companyListTopCityTopCitiesBoston()
+        self.client.back()
+        self.companyListTopCityTopCitiesAtlanta()
+        self.client.back()
+        self.companyListTopCityTopCitiesCincinnati()
+        self.client.back()
+        self.companyListTopCityTopCitiesLosAngeles()
+        self.client.back()
+        self.companyListTopCityTopCitiesDallas()
+        self.client.back()
+        self.companyListTopCityTopCitiesPittsburgh()
+        self.client.back()
+        self.companyListTopCityTopCitiesMinneapolis()
+        self.client.back()
+        self.companyListTopCityTopCitiesLasVegas()
+        self.client.back()
+        self.companyListTopCityTopCitiesSanAntonio()
+        self.client.back()
+        self.companyListTopCityTopCitiesTampa()
+
+
     # Company List Top City Top Cities NYC
-    def test_companyListTopCityTopCitiesNYC(self):
+    def companyListTopCityTopCitiesNYC(self):
         if not self.client:
             return 0
 
@@ -1099,7 +1132,7 @@ class CompanyListTopCityTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # Company List Top City Top Cities Houston
-    def test_companyListTopCityTopCitiesHouston(self):
+    def companyListTopCityTopCitiesHouston(self):
         if not self.client:
             return 0
 
@@ -1117,7 +1150,7 @@ class CompanyListTopCityTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # Company List Top City Top Cities Chicago
-    def test_companyListTopCityTopCitiesChicago(self):
+    def companyListTopCityTopCitiesChicago(self):
         if not self.client:
             return 0
 
@@ -1135,7 +1168,7 @@ class CompanyListTopCityTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # Company List Top City Top Cities Indianapolis
-    def test_companyListTopCityTopCitiesIndianapolis(self):
+    def companyListTopCityTopCitiesIndianapolis(self):
         if not self.client:
             return 0
 
@@ -1153,7 +1186,7 @@ class CompanyListTopCityTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # Company List Top City Top Cities Boston
-    def test_companyListTopCityTopCitiesBoston(self):
+    def companyListTopCityTopCitiesBoston(self):
         if not self.client:
             return 0
 
@@ -1171,7 +1204,7 @@ class CompanyListTopCityTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # Company List Top City Top Cities Atlanta
-    def test_companyListTopCityTopCitiesAtlanta(self):
+    def companyListTopCityTopCitiesAtlanta(self):
         if not self.client:
             return 0
 
@@ -1189,7 +1222,7 @@ class CompanyListTopCityTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # Company List Top City Top Cities Cincinnati
-    def test_companyListTopCityTopCitiesCincinnati(self):
+    def companyListTopCityTopCitiesCincinnati(self):
         if not self.client:
             return 0
 
@@ -1207,7 +1240,7 @@ class CompanyListTopCityTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # Company List Top City Top Cities Los Angeles
-    def test_companyListTopCityTopCitiesLosAngeles(self):
+    def companyListTopCityTopCitiesLosAngeles(self):
         if not self.client:
             return 0
 
@@ -1225,7 +1258,7 @@ class CompanyListTopCityTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # Company List Top City Top Cities Dallas
-    def test_companyListTopCityTopCitiesDallas(self):
+    def companyListTopCityTopCitiesDallas(self):
         if not self.client:
             return 0
 
@@ -1243,7 +1276,7 @@ class CompanyListTopCityTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # Company List Top City Top Cities Pittsburgh
-    def test_companyListTopCityTopCitiesPittsburgh(self):
+    def companyListTopCityTopCitiesPittsburgh(self):
         if not self.client:
             return 0
 
@@ -1261,7 +1294,7 @@ class CompanyListTopCityTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # Company List Top City Top Cities Minneapolis
-    def test_companyListTopCityTopCitiesMinneapolis(self):
+    def companyListTopCityTopCitiesMinneapolis(self):
         if not self.client:
             return 0
 
@@ -1279,7 +1312,7 @@ class CompanyListTopCityTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # Company List Top City Top Cities Las Vegas
-    def test_companyListTopCityTopCitiesLasVegas(self):
+    def companyListTopCityTopCitiesLasVegas(self):
         if not self.client:
             return 0
 
@@ -1297,7 +1330,7 @@ class CompanyListTopCityTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # Company List Top City Top Cities San Antonio
-    def test_companyListTopCityTopCitiesSanAntonio(self):
+    def companyListTopCityTopCitiesSanAntonio(self):
         if not self.client:
             return 0
 
@@ -1314,8 +1347,8 @@ class CompanyListTopCityTestCase(SeleniumTestCase):
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
-    # Comapny List Top Cities Tampa
-    def test_companyListTopCityTopCitiesTampa(self):
+    # Company List Top Cities Tampa
+    def companyListTopCityTopCitiesTampa(self):
         if not self.client:
             return 0
 
@@ -1528,8 +1561,42 @@ class CompanyListRegularCityTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
 
+    def test_companyListRegularCity_topCities(self):
+        if not self.client:
+            return 0
+
+        self.companyListRegularCityTopCitiesNYC()
+        self.client.back()
+        self.companyListRegularCityTopCitiesHouston()
+        self.client.back()
+        self.companyListRegularCityTopCitiesChicago()
+        self.client.back()
+        self.companyListRegularCityTopCitiesIndianapolis()
+        self.client.back()
+        self.companyListRegularCityTopCitiesBoston()
+        self.client.back()
+        self.companyListRegularCityTopCitiesAtlanta()
+        self.client.back()
+        self.companyListRegularCityTopCitiesCincinnati()
+        self.client.back()
+        self.companyListRegularCityTopCitiesLosAngeles()
+        self.client.back()
+        self.companyListRegularCityTopCitiesDallas()
+        self.client.back()
+        self.companyListRegularCityTopCitiesPittsburgh()
+        self.client.back()
+        self.companyListRegularCityTopCitiesMinneapolis()
+        self.client.back()
+        self.companyListRegularCityTopCitiesLasVegas()
+        self.client.back()
+        self.companyListRegularCityTopCitiesSanAntonio()
+        self.client.back()
+        self.companyListRegularCityTopCitiesTampa()
+
+
+
     # Company List Regular City Top Cities NYC
-    def test_companyListRegularCityTopCitiesNYC(self):
+    def companyListRegularCityTopCitiesNYC(self):
         if not self.client:
             return 0
 
@@ -1547,7 +1614,7 @@ class CompanyListRegularCityTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # Company List Regular City Top Cities Houston
-    def test_companyListRegularCityTopCitiesHouston(self):
+    def companyListRegularCityTopCitiesHouston(self):
         if not self.client:
             return 0
 
@@ -1565,7 +1632,7 @@ class CompanyListRegularCityTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # Company List Regular City Top Cities Chicago
-    def test_companyListRegularCityTopCitiesChicago(self):
+    def companyListRegularCityTopCitiesChicago(self):
         if not self.client:
             return 0
 
@@ -1583,7 +1650,7 @@ class CompanyListRegularCityTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # Company List Regular City Top Cities Indianapolis
-    def test_companyListRegularCityTopCitiesIndianapolis(self):
+    def companyListRegularCityTopCitiesIndianapolis(self):
         if not self.client:
             return 0
 
@@ -1601,7 +1668,7 @@ class CompanyListRegularCityTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # Company List Regular City Top Cities Boston
-    def test_companyListRegularCityTopCitiesBoston(self):
+    def companyListRegularCityTopCitiesBoston(self):
         if not self.client:
             return 0
 
@@ -1619,7 +1686,7 @@ class CompanyListRegularCityTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # Company List Regular City Top Cities Atlanta
-    def test_companyListRegularCityTopCitiesAtlanta(self):
+    def companyListRegularCityTopCitiesAtlanta(self):
         if not self.client:
             return 0
 
@@ -1637,7 +1704,7 @@ class CompanyListRegularCityTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # Company List Regular City Top Cities Cincinnati
-    def test_companyListRegularCityTopCitiesCincinnati(self):
+    def companyListRegularCityTopCitiesCincinnati(self):
         if not self.client:
             return 0
 
@@ -1655,7 +1722,7 @@ class CompanyListRegularCityTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # Company List Regular City Top Cities Los Angeles
-    def test_companyListRegularCityTopCitiesLosAngeles(self):
+    def companyListRegularCityTopCitiesLosAngeles(self):
         if not self.client:
             return 0
 
@@ -1673,7 +1740,7 @@ class CompanyListRegularCityTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # Company List Regular City Top Cities Dallas
-    def test_companyListRegularCityTopCitiesDallas(self):
+    def companyListRegularCityTopCitiesDallas(self):
         if not self.client:
             return 0
 
@@ -1691,7 +1758,7 @@ class CompanyListRegularCityTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # Company List Regular City Top Cities Pittsburgh
-    def test_companyListRegularCityTopCitiesPittsburgh(self):
+    def companyListRegularCityTopCitiesPittsburgh(self):
         if not self.client:
             return 0
 
@@ -1709,7 +1776,7 @@ class CompanyListRegularCityTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # Company List Regular City Top Cities Minneapolis
-    def test_companyListRegularCityTopCitiesMinneapolis(self):
+    def companyListRegularCityTopCitiesMinneapolis(self):
         if not self.client:
             return 0
 
@@ -1727,7 +1794,7 @@ class CompanyListRegularCityTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # Company List Regular City Top Cities Las Vegas
-    def test_companyListRegularCityTopCitiesLasVegas(self):
+    def companyListRegularCityTopCitiesLasVegas(self):
         if not self.client:
             return 0
 
@@ -1745,7 +1812,7 @@ class CompanyListRegularCityTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # Company List Regular City Top Cities San Antonio
-    def test_companyListRegularCityTopCitiesSanAntonio(self):
+    def companyListRegularCityTopCitiesSanAntonio(self):
         if not self.client:
             return 0
 
@@ -1763,7 +1830,7 @@ class CompanyListRegularCityTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # Company List Top Cities Tampa
-    def test_companyListRegularCityTopCitiesTampa(self):
+    def companyListRegularCityTopCitiesTampa(self):
         if not self.client:
             return 0
 
@@ -1961,8 +2028,44 @@ class CompanyListStatePageTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
 
+
+    def test_companyListState_topCities(self):
+        if not self.client:
+            return 0
+
+        self.companyListStateTopCitiesNYC()
+        self.client.back()
+        self.companyListStateTopCitiesHouston()
+        self.client.back()
+        self.companyListStateTopCitiesChicago()
+        self.client.back()
+        self.companyListStateTopCitiesIndianapolis()
+        self.client.back()
+        self.companyListStateTopCitiesBoston()
+        self.client.back()
+        self.companyListStateTopCitiesAtlanta()
+        self.client.back()
+        self.companyListStateTopCitiesCincinnati()
+        self.client.back()
+        self.companyListStateTopCitiesLosAngeles()
+        self.client.back()
+        self.companyListStateTopCitiesDallas()
+        self.client.back()
+        self.companyListStateTopCitiesPittsburgh()
+        self.client.back()
+        self.companyListStateTopCitiesMinneapolis()
+        self.client.back()
+        self.companyListStateTopCitiesLasVegas()
+        self.client.back()
+        self.companyListStateTopCitiesSanAntonio()
+        self.client.back()
+        self.companyListStateTopCitiesTampa()
+
+
+
+
     # Company List Regular City Top Cities NYC
-    def test_companyListStateTopCitiesNYC(self):
+    def companyListStateTopCitiesNYC(self):
         if not self.client:
             return 0
 
@@ -1980,7 +2083,7 @@ class CompanyListStatePageTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # Company List Regular City Top Cities Houston
-    def test_companyListStateTopCitiesHouston(self):
+    def companyListStateTopCitiesHouston(self):
         if not self.client:
             return 0
 
@@ -1998,7 +2101,7 @@ class CompanyListStatePageTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # Company List Regular City Top Cities Chicago
-    def test_companyListStateTopCitiesChicago(self):
+    def companyListStateTopCitiesChicago(self):
         if not self.client:
             return 0
 
@@ -2016,7 +2119,7 @@ class CompanyListStatePageTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # Company List Regular City Top Cities Indianapolis
-    def test_companyListStateTopCitiesIndianapolis(self):
+    def companyListStateTopCitiesIndianapolis(self):
         if not self.client:
             return 0
 
@@ -2034,7 +2137,7 @@ class CompanyListStatePageTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # Company List Regular City Top Cities Boston
-    def test_companyListStateTopCitiesBoston(self):
+    def companyListStateTopCitiesBoston(self):
         if not self.client:
             return 0
 
@@ -2052,7 +2155,7 @@ class CompanyListStatePageTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # Company List Regular City Top Cities Atlanta
-    def test_companyListStateTopCitiesAtlanta(self):
+    def companyListStateTopCitiesAtlanta(self):
         if not self.client:
             return 0
 
@@ -2070,7 +2173,7 @@ class CompanyListStatePageTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # Company List Regular City Top Cities Cincinnati
-    def test_companyListStateTopCitiesCincinnati(self):
+    def companyListStateTopCitiesCincinnati(self):
         if not self.client:
             return 0
 
@@ -2088,7 +2191,7 @@ class CompanyListStatePageTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # Company List Regular City Top Cities Los Angeles
-    def test_companyListStateTopCitiesLosAngeles(self):
+    def companyListStateTopCitiesLosAngeles(self):
         if not self.client:
             return 0
 
@@ -2106,7 +2209,7 @@ class CompanyListStatePageTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # Company List Regular City Top Cities Dallas
-    def test_companyListStateTopCitiesDallas(self):
+    def companyListStateTopCitiesDallas(self):
         if not self.client:
             return 0
 
@@ -2124,7 +2227,7 @@ class CompanyListStatePageTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # Company List Regular City Top Cities Pittsburgh
-    def test_companyListStateTopCitiesPittsburgh(self):
+    def companyListStateTopCitiesPittsburgh(self):
         if not self.client:
             return 0
 
@@ -2142,7 +2245,7 @@ class CompanyListStatePageTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # Company List Regular City Top Cities Minneapolis
-    def test_companyListStateTopCitiesMinneapolis(self):
+    def companyListStateTopCitiesMinneapolis(self):
         if not self.client:
             return 0
 
@@ -2160,7 +2263,7 @@ class CompanyListStatePageTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # Company List Regular City Top Cities Las Vegas
-    def test_companyListStateTopCitiesLasVegas(self):
+    def companyListStateTopCitiesLasVegas(self):
         if not self.client:
             return 0
 
@@ -2178,7 +2281,7 @@ class CompanyListStatePageTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # Company List Regular City Top Cities San Antonio
-    def test_companyListStateTopCitiesSanAntonio(self):
+    def companyListStateTopCitiesSanAntonio(self):
         if not self.client:
             return 0
 
@@ -2196,7 +2299,7 @@ class CompanyListStatePageTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # Comapny List Top Cities Tampa
-    def test_companyListStateTopCitiesTampa(self):
+    def companyListStateTopCitiesTampa(self):
         if not self.client:
             return 0
 
