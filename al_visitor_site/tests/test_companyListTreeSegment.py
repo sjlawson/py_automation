@@ -2,8 +2,7 @@ from common.SeleniumTestCase import SeleniumTestCase
 from common.SegmentTestHelper import SegmentTestHelper
 
 ##### Company List Page ####
-class CompanyListTestCase(SeleniumTestCase):
-
+class CompanyListTestCase(SeleniumTestCase):   
 
     # Company List Page Load
     def test_companyListSegmentPagecall(self):
@@ -176,9 +175,40 @@ class CompanyListTestCase(SeleniumTestCase):
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
+    def test_companyList_topCities(self):
+        if not self.client:
+            return 0
+
+        self.companyListTopCitiesLinkNYC()
+        self.client.back()
+        self.companyListTopCitiesLinkHouston()
+        self.client.back()
+        self.companyListTopCitiesLinkChicago()
+        self.client.back()
+        self.companyListTopCitiesLinkIndianapolis()
+        self.client.back()
+        self.companyListTopCitiesLinkBoston()
+        self.client.back()
+        self.companyListTopCitiesLinkAtlanta()
+        self.client.back()
+        self.companyListTopCitiesLinkCincinnati()
+        self.client.back()
+        self.companyListTopCitiesLinkLosAngeles()
+        self.client.back()
+        self.companyListTopCitiesLinkDallas()
+        self.client.back()
+        self.companyListTopCitiesLinkPittsburgh()
+        self.client.back()
+        self.companyListTopCitiesLinkMinneapolis()
+        self.client.back()
+        self.companyListTopCitiesLinkLasVegas()
+        self.client.back()
+        self.companyListTopCitiesLinkSanAntonio()
+        self.client.back()
+        self.companyListTopCitiesLinkTampa()
 
     # Company List Top Cities NYC
-    def test_companyListTopCitiesLinkNYC(self):
+    def companyListTopCitiesLinkNYC(self):
         if not self.client:
             return 0
 
@@ -196,7 +226,7 @@ class CompanyListTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # Company List Top Cities Houston
-    def test_companyListTopCitiesLinkHouston(self):
+    def companyListTopCitiesLinkHouston(self):
         if not self.client:
             return 0
 
@@ -211,10 +241,10 @@ class CompanyListTestCase(SeleniumTestCase):
             ]
         }
 
-        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+        SegmentTeYastHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # Company List Top Cities Chicago
-    def test_companyListTopCitiesLinkChicago(self):
+    def companyListTopCitiesLinkChicago(self):
         if not self.client:
             return 0
 
@@ -232,7 +262,7 @@ class CompanyListTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # Company List Top Cities Indianapolis
-    def test_companyListTopCitiesLinkIndianapolis(self):
+    def companyListTopCitiesLinkIndianapolis(self):
         if not self.client:
             return 0
 
@@ -250,7 +280,7 @@ class CompanyListTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # Company List Top Cities Boston
-    def test_companyListTopCitiesLinkBoston(self):
+    def companyListTopCitiesLinkBoston(self):
         if not self.client:
             return 0
 
@@ -268,7 +298,7 @@ class CompanyListTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # Company List Top Cities Atlanta
-    def test_companyListTopCitiesLinkAtlanta(self):
+    def companyListTopCitiesLinkAtlanta(self):
         if not self.client:
             return 0
 
@@ -286,7 +316,7 @@ class CompanyListTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # Company List Top Cities Cincinnati
-    def test_companyListTopCitiesLinkCincinnati(self):
+    def companyListTopCitiesLinkCincinnati(self):
         if not self.client:
             return 0
 
@@ -304,11 +334,11 @@ class CompanyListTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # Company List Top Cities Los Angeles
-    def test_companyListTopCitiesLinkLosAngeles(self):
+    def companyListTopCitiesLinkLosAngeles(self):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/?bustA1', 'div.region.region-footer > div.top-cities > ul > div.footer-region.cities-right > li > a[title="Search Los Angeles Pros"]', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/?bustA1', 'div.top-cities > ul > div.footer-region.cities-right > li > a[title="Search Los Angeles Pros"]', 'click')
         segcall_info = {
             'main_field': 'description',
             'main_value': 'Top Cities link in footer',
@@ -322,7 +352,7 @@ class CompanyListTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # Company List Top Cities Dallas
-    def test_companyListTopCitiesLinkDallas(self):
+    def companyListTopCitiesLinkDallas(self):
         if not self.client:
             return 0
 
@@ -340,7 +370,7 @@ class CompanyListTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # Company List Top Cities Pittsburgh
-    def test_companyListTopCitiesLinkPittsburgh(self):
+    def companyListTopCitiesLinkPittsburgh(self):
         if not self.client:
             return 0
 
@@ -358,7 +388,7 @@ class CompanyListTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # Company List Top Cities Minneapolis
-    def test_companyListTopCitiesLinkMinneapolis(self):
+    def companyListTopCitiesLinkMinneapolis(self):
         if not self.client:
             return 0
 
@@ -376,7 +406,7 @@ class CompanyListTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # Company List Top Cities Las Vegas
-    def test_companyListTopCitiesLinkLasVegas(self):
+    def companyListTopCitiesLinkLasVegas(self):
         if not self.client:
             return 0
 
@@ -394,7 +424,7 @@ class CompanyListTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # Company List Top Cities San Antonio
-    def test_companyListTopCitiesLinkSanAntonio(self):
+    def companyListTopCitiesLinkSanAntonio(self):
         if not self.client:
             return 0
 
@@ -412,7 +442,7 @@ class CompanyListTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # Comapny List Top Cities Tampa
-    def test_companyListTopCitiesLinkTampa(self):
+    def companyListTopCitiesLinkTampa(self):
         if not self.client:
             return 0
 
@@ -432,9 +462,10 @@ class CompanyListTestCase(SeleniumTestCase):
 
 
 
-    ### Company List - catNoGeo ###
-class CompanyListCatNoGeoTestCase(SeleniumTestCase):
 
+    ###### Company List - catNoGeo ######
+class CompanyListCatNoGeoTestCase(SeleniumTestCase):
+    
 
     # test segment call on clicking the join link in company list header
     def test_companyListCatNoGeoSegmentJoin(self):
@@ -578,12 +609,45 @@ class CompanyListCatNoGeoTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
 
-    # CatNoGeo Top Cities NYC
-    def test_companyListCatNoGeoTopCitiesNYC(self):
+    def test_companyListCatNoGeo_topCities(self):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/home-inspection.htm?bustARhyme', 'div.footer-region.cities-left > li > a[title="Search New York Pros"]', 'click')
+        self.companyListCatNoGeoTopCitiesNYC()
+        self.client.back()
+        self.companyListCatNoGeoTopCitiesHouston()
+        self.client.back()
+        self.companyListCatNoGeoTopCitiesChicago()
+        self.client.back()
+        self.companyListCatNoGeoTopCitiesIndianapolis()
+        self.client.back()
+        self.companyListCatNoGeoTopCitiesBoston()
+        self.client.back()
+        self.companyListCatNoGeoTopCitiesAtlanta()
+        self.client.back()
+        self.companyListCatNoGeoTopCitiesCincinnati()
+        self.client.back()
+        self.companyListCatNoGeoTopCitiesLosAngeles()
+        self.client.back()
+        self.companyListCatNoGeoTopCitiesDallas()
+        self.client.back()
+        self.companyListCatNoGeoTopCitiesPittsburgh()
+        self.client.back()
+        self.companyListCatNoGeoTopCitiesMinneapolis()
+        self.client.back()
+        self.companyListCatNoGeoTopCitiesLasVegas()
+        self.client.back()
+        self.companyListCatNoGeoTopCitiesSanAntonio()
+        self.client.back()
+        self.companyListCatNoGeoTopCitiesTampa()
+
+
+    # CatNoGeo Top Cities NYC
+    def companyListCatNoGeoTopCitiesNYC(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/home-inspection.htm?bustARhyme', 'div.footer-region.cities-left > li > a[title="Search New York Home Inspectors Pros"]', 'click')
         segcall_info = {
             'main_field': 'description',
             'main_value': 'Top Cities link in footer',
@@ -597,11 +661,11 @@ class CompanyListCatNoGeoTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # CatNoGeo Top Cities Houston
-    def test_companyListCatNoGeoTopCitiesHouston(self):
+    def companyListCatNoGeoTopCitiesHouston(self):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/home-inspection.htm?bustARhyme', 'div.footer-region.cities-left > li > a[title="Search Houston Pros"]', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/home-inspection.htm?bustARhyme', 'div.footer-region.cities-left > li > a[title="Search Houston Home Inspectors Pros"]', 'click')
         segcall_info = {
             'main_field': 'description',
             'main_value': 'Top Cities link in footer',
@@ -615,11 +679,11 @@ class CompanyListCatNoGeoTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # CatNoGeo Top Cities Chicago
-    def test_companyListCatNoGeoTopCitiesChicago(self):
+    def companyListCatNoGeoTopCitiesChicago(self):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/home-inspection.htm?bustARhyme', 'div.footer-region.cities-left > li > a[title="Search Chicago Pros"]', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/home-inspection.htm?bustARhyme', 'div.footer-region.cities-left > li > a[title="Search Chicago Home Inspectors Pros"]', 'click')
         segcall_info = {
             'main_field': 'description',
             'main_value': 'Top Cities link in footer',
@@ -633,11 +697,11 @@ class CompanyListCatNoGeoTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # CatNoGeo Top Cities Indianapolis
-    def test_companyListCatNoGeoTopCitiesIndianapolis(self):
+    def companyListCatNoGeoTopCitiesIndianapolis(self):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/home-inspection.htm?bustARhyme', 'div.footer-region.cities-left > li > a[title="Search Indianapolis Pros"]', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/home-inspection.htm?bustARhyme', 'div.footer-region.cities-left > li > a[title="Search Indianapolis Home Inspectors Pros"]', 'click')
         segcall_info = {
             'main_field': 'description',
             'main_value': 'Top Cities link in footer',
@@ -651,11 +715,11 @@ class CompanyListCatNoGeoTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # CatNoGeo Top Cities Boston
-    def test_companyListCatNoGeoTopCitiesBoston(self):
+    def companyListCatNoGeoTopCitiesBoston(self):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/home-inspection.htm?bustARhyme', 'div.footer-region.cities-left > li > a[title="Search Boston Pros"]', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/home-inspection.htm?bustARhyme', 'div.footer-region.cities-left > li > a[title="Search Boston Home Inspectors Pros"]', 'click')
         segcall_info = {
             'main_field': 'description',
             'main_value': 'Top Cities link in footer',
@@ -669,11 +733,11 @@ class CompanyListCatNoGeoTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # CatNoGeo Top Cities Atlanta
-    def test_companyListCatNoGeoTopCitiesAtlanta(self):
+    def companyListCatNoGeoTopCitiesAtlanta(self):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/home-inspection.htm?bustARhyme', 'div.footer-region.cities-left > li > a[title="Search Atlanta Pros"]', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/home-inspection.htm?bustARhyme', 'div.footer-region.cities-left > li > a[title="Search Atlanta Home Inspectors Pros"]', 'click')
         segcall_info = {
             'main_field': 'description',
             'main_value': 'Top Cities link in footer',
@@ -687,11 +751,11 @@ class CompanyListCatNoGeoTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # CatNoGeo Top Cities Cincinnati
-    def test_companyListCatNoGeoTopCitiesCincinnati(self):
+    def companyListCatNoGeoTopCitiesCincinnati(self):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/home-inspection.htm?bustARhyme', 'div.top-cities > ul > div.footer-region.cities-left > li > a[title="Search Cincinnati Pros"]', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/home-inspection.htm?bustARhyme', 'div.top-cities > ul > div.footer-region.cities-left > li > a[title="Search Cincinnati Home Inspectors Pros"]', 'click')
         segcall_info = {
             'main_field': 'activityLocation',
             'main_value': 'Visitor : CatNoGeo',
@@ -705,11 +769,11 @@ class CompanyListCatNoGeoTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # CatNoGeo Top Cities Los Angeles
-    def test_companyListCatNoGeoTopCitiesLosAngeles(self):
+    def companyListCatNoGeoTopCitiesLosAngeles(self):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/home-inspection.htm?bustARhyme', 'div.top-cities > ul > div.footer-region.cities-left > li > a[title="Search Los Angeles Pros"]', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/home-inspection.htm?bustARhyme', 'div.top-cities > ul > div.footer-region.cities-right > li > a[title="Search Los Angeles Home Inspectors Pros"]', 'click')
         segcall_info = {
             'main_field': 'description',
             'main_value': 'Top Cities link in footer',
@@ -723,11 +787,11 @@ class CompanyListCatNoGeoTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # CatNoGeo Top Cities Dallas
-    def test_companyListCatNoGeoTopCitiesDallas(self):
+    def companyListCatNoGeoTopCitiesDallas(self):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/home-inspection.htm?bustARhyme', 'div.footer-region.cities-right > li > a[title="Search Dallas Pros"]', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/home-inspection.htm?bustARhyme', 'div.footer-region.cities-right > li > a[title="Search Dallas Home Inspectors Pros"]', 'click')
         segcall_info = {
             'main_field': 'description',
             'main_value': 'Top Cities link in footer',
@@ -741,11 +805,11 @@ class CompanyListCatNoGeoTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # CatNoGeo Top Cities Pittsburgh
-    def test_companyListCatNoGeoTopCitiesPittsburgh(self):
+    def companyListCatNoGeoTopCitiesPittsburgh(self):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/home-inspection.htm?bustARhyme', 'div.footer-region.cities-right > li > a[title="Search Pittsburgh Pros"]', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/home-inspection.htm?bustARhyme', 'div.footer-region.cities-right > li > a[title="Search Pittsburgh Home Inspectors Pros"]', 'click')
         segcall_info = {
             'main_field': 'description',
             'main_value': 'Top Cities link in footer',
@@ -759,11 +823,11 @@ class CompanyListCatNoGeoTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # CatNoGeo Top Cities Minneapolis
-    def test_companyListCatNoGeoTopCitiesMinneapolis(self):
+    def companyListCatNoGeoTopCitiesMinneapolis(self):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/home-inspection.htm?bustARhyme', 'div.footer-region.cities-right > li > a[title="Search Minneapolis Pros"]', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/home-inspection.htm?bustARhyme', 'div.footer-region.cities-right > li > a[title="Search Minneapolis Home Inspectors Pros"]', 'click')
         segcall_info = {
             'main_field': 'description',
             'main_value': 'Top Cities link in footer',
@@ -777,11 +841,11 @@ class CompanyListCatNoGeoTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # CatNoGeo Top Cities Las Vegas
-    def test_companyListCatNoGeoTopCitiesLasVegas(self):
+    def companyListCatNoGeoTopCitiesLasVegas(self):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/home-inspection.htm?bustARhyme', 'div.footer-region.cities-right > li > a[title="Search Las Vegas Pros"]', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/home-inspection.htm?bustARhyme', 'div.footer-region.cities-right > li > a[title="Search Las Vegas Home Inspectors Pros"]', 'click')
         segcall_info = {
             'main_field': 'description',
             'main_value': 'Top Cities link in footer',
@@ -795,11 +859,11 @@ class CompanyListCatNoGeoTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # CatNoGeo Top Cities San Antonio
-    def test_companyListCatNoGeoTopCitiesSanAntonio(self):
+    def companyListCatNoGeoTopCitiesSanAntonio(self):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/home-inspection.htm?bustARhyme', 'div.footer-region.cities-right > li > a[title="Search San Antonio Pros"]', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/home-inspection.htm?bustARhyme', 'div.footer-region.cities-right > li > a[title="Search San Antonio Home Inspectors Pros"]', 'click')
         segcall_info = {
             'main_field': 'description',
             'main_value': 'Top Cities link in footer',
@@ -813,11 +877,11 @@ class CompanyListCatNoGeoTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # CatNotGeo Top Cities Tampa
-    def test_companyListCatNoGeoTopCitiesTampa(self):
+    def companyListCatNoGeoTopCitiesTampa(self):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/home-inspection.htm?bustARhyme', 'div.footer-region.cities-right > li > a[title="Search Tampa Pros"]', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/home-inspection.htm?bustARhyme', 'div.footer-region.cities-right > li > a[title="Search Tampa Home Inspectors Pros"]', 'click')
         segcall_info = {
             'main_field': 'description',
             'main_value': 'Top Cities link in footer',
@@ -1469,7 +1533,7 @@ class CompanyListRegularCityTestCase(SeleniumTestCase):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/in/fishers/flooring.htm?bustA3', 'div.footer-region.cities-left > li > a[title="Search New York Pros"]', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/in/fishers/flooring.htm?bustA3', 'div.footer-region.cities-left > li > a[title="Search New York Flooring Installers Pros"]', 'click')
         segcall_info = {
             'main_field': 'description',
             'main_value': 'Top Cities link in footer',
@@ -1487,7 +1551,7 @@ class CompanyListRegularCityTestCase(SeleniumTestCase):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/in/fishers/flooring.htm?bustA3', 'div.footer-region.cities-left > li > a[title="Search Houston Pros"]', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/in/fishers/flooring.htm?bustA3', 'div.footer-region.cities-left > li > a[title="Search Houston Flooring Installers Pros"]', 'click')
         segcall_info = {
             'main_field': 'description',
             'main_value': 'Top Cities link in footer',
@@ -1505,7 +1569,7 @@ class CompanyListRegularCityTestCase(SeleniumTestCase):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/in/fishers/flooring.htm?bustA3', 'div.footer-region.cities-left > li > a[title="Search Chicago Pros"]', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/in/fishers/flooring.htm?bustA3', 'div.footer-region.cities-left > li > a[title="Search Chicago Flooring Installers Pros"]', 'click')
         segcall_info = {
             'main_field': 'description',
             'main_value': 'Top Cities link in footer',
@@ -1595,7 +1659,7 @@ class CompanyListRegularCityTestCase(SeleniumTestCase):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/in/fishers/flooring.htm?bustA3', 'div.top-cities > ul > div.footer-region.cities-left > li > a[title="Search Los Angeles Flooring Installers Pros"]', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/in/fishers/flooring.htm?bustA3', 'div.top-cities > ul > div.footer-region.cities-right > li > a[title="Search Los Angeles Flooring Installers Pros"]', 'click')
         segcall_info = {
             'main_field': 'description',
             'main_value': 'Top Cities link in footer',
@@ -1649,7 +1713,7 @@ class CompanyListRegularCityTestCase(SeleniumTestCase):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/in/fishers/flooring.htm?bustA3', 'div.footer-region.cities-right > li > a[title="Search Minneapolis Pros"]', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/in/fishers/flooring.htm?bustA3', 'div.footer-region.cities-right > li > a[title="Search Minneapolis Flooring Installers Pros"]', 'click')
         segcall_info = {
             'main_field': 'description',
             'main_value': 'Top Cities link in footer',
@@ -1667,7 +1731,7 @@ class CompanyListRegularCityTestCase(SeleniumTestCase):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/in/fishers/flooring.htm?bustA3', 'div.footer-region.cities-right > li > a[title="Search Las Vegas Pros"]', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/in/fishers/flooring.htm?bustA3', 'div.footer-region.cities-right > li > a[title="Search Las Vegas Flooring Installers Pros"]', 'click')
         segcall_info = {
             'main_field': 'description',
             'main_value': 'Top Cities link in footer',
