@@ -290,7 +290,7 @@ class CompanyListTestCase(SeleniumTestCase):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/?bustA1', 'div.region.region-footer > div.top-cities > ul > div.footer-region.cities-left > li > a[title="Search Cincinnati Pros"]', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/?bustA1', 'div.top-cities > ul > div.footer-region.cities-left > li > a[title="Search Cincinnati Pros"]', 'click')
         segcall_info = {
             'main_field': 'activityLocation',
             'main_value': 'Visitor : Directory',
@@ -1523,7 +1523,7 @@ class CompanyListRegularCityTestCase(SeleniumTestCase):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/in/fishers/flooring.htm?bustA3', 'div.footer-region.cities-left > li > a[title="Search Indianapolis Pros"]', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/in/fishers/flooring.htm?bustA3', 'div.footer-region.cities-left > li > a[title="Search Indianapolis Flooring Installers Pros"]', 'click')
         segcall_info = {
             'main_field': 'description',
             'main_value': 'Top Cities link in footer',
@@ -1541,7 +1541,7 @@ class CompanyListRegularCityTestCase(SeleniumTestCase):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/in/fishers/flooring.htm?bustA3', 'div.footer-region.cities-left > li > a[title="Search Boston Pros"]', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/in/fishers/flooring.htm?bustA3', 'div.footer-region.cities-left > li > a[title="Search Boston Flooring Installers Pros"]', 'click')
         segcall_info = {
             'main_field': 'description',
             'main_value': 'Top Cities link in footer',
@@ -1559,7 +1559,7 @@ class CompanyListRegularCityTestCase(SeleniumTestCase):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/in/fishers/flooring.htm?bustA3', 'div.footer-region.cities-left > li > a[title="Search Atlanta Pros"]', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/in/fishers/flooring.htm?bustA3', 'div.footer-region.cities-left > li > a[title="Search Atlanta Flooring Installers Pros"]', 'click')
         segcall_info = {
             'main_field': 'description',
             'main_value': 'Top Cities link in footer',
@@ -1577,7 +1577,7 @@ class CompanyListRegularCityTestCase(SeleniumTestCase):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/in/fishers/flooring.htm?bustA3', 'div.top-cities > ul > div.footer-region.cities-left > li > a[title="Search Cincinnati Pros"]', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/in/fishers/flooring.htm?bustA3', 'div.top-cities > ul > div.footer-region.cities-left > li > a[title="Search Cincinnati Flooring Installers Pros"]', 'click')
         segcall_info = {
             'main_field': 'activityLocation',
             'main_value': 'Visitor : Geocat',
@@ -1595,7 +1595,7 @@ class CompanyListRegularCityTestCase(SeleniumTestCase):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/in/fishers/flooring.htm?bustA3', 'div.top-cities > ul > div.footer-region.cities-left > li > a[title="Search Los Angeles Pros"]', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/in/fishers/flooring.htm?bustA3', 'div.top-cities > ul > div.footer-region.cities-left > li > a[title="Search Los Angeles Flooring Installers Pros"]', 'click')
         segcall_info = {
             'main_field': 'description',
             'main_value': 'Top Cities link in footer',
@@ -1613,7 +1613,7 @@ class CompanyListRegularCityTestCase(SeleniumTestCase):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/in/fishers/flooring.htm?bustA3', 'div.footer-region.cities-right > li > a[title="Search Dallas Pros"]', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/in/fishers/flooring.htm?bustA3', 'div.footer-region.cities-right > li > a[title="Search Dallas Flooring Installers Pros"]', 'click')
         segcall_info = {
             'main_field': 'description',
             'main_value': 'Top Cities link in footer',
@@ -1631,7 +1631,7 @@ class CompanyListRegularCityTestCase(SeleniumTestCase):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/in/fishers/flooring.htm?bustA3', 'div.footer-region.cities-right > li > a[title="Search Pittsburgh Pros"]', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/in/fishers/flooring.htm?bustA3', 'div.footer-region.cities-right > li > a[title="Search Pittsburgh Flooring Installers Pros"]', 'click')
         segcall_info = {
             'main_field': 'description',
             'main_value': 'Top Cities link in footer',
@@ -1685,7 +1685,7 @@ class CompanyListRegularCityTestCase(SeleniumTestCase):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/in/fishers/flooring.htm?bustA3', 'div.footer-region.cities-right > li > a[title="Search San Antonio Pros"]', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/in/fishers/flooring.htm?bustA3', 'div.footer-region.cities-right > li > a[title="Search San Antonio Flooring Installers Pros"]', 'click')
         segcall_info = {
             'main_field': 'description',
             'main_value': 'Top Cities link in footer',
@@ -1698,12 +1698,12 @@ class CompanyListRegularCityTestCase(SeleniumTestCase):
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
-    # Comapny List Top Cities Tampa
+    # Company List Top Cities Tampa
     def test_companyListRegularCityTopCitiesTampa(self):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/in/fishers/flooring.htm?bustA3', 'div.footer-region.cities-right > li > a[title="Search Tampa Pros"]', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/in/fishers/flooring.htm?bustA3', 'div.footer-region.cities-right > li > a[title="Search Tampa Flooring Installers Pros"]', 'click')
         segcall_info = {
             'main_field': 'description',
             'main_value': 'Top Cities link in footer',
@@ -2028,7 +2028,7 @@ class CompanyListStatePageTestCase(SeleniumTestCase):
         if not self.client:
             return 0
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/mi/?ASd', 'div.top-cities > ul > div.footer-region.cities-left > li > a[title="Search Los Angeles Pros"]', 'click')
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/mi/?ASd', 'div.top-cities > ul > div.footer-region.cities-right > li > a[title="Search Los Angeles Pros"]', 'click')
         segcall_info = {
             'main_field': 'description',
             'main_value': 'Top Cities link in footer',
