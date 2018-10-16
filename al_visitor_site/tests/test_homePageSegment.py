@@ -3,23 +3,6 @@ from common.SegmentTestHelper import SegmentTestHelper
 
 class HomepageSegmentTestCase(SeleniumTestCase):
 
-    # test segment call on clicking the join link in home page header
-    def test_homePageSegmentJoin(self):
-        if not self.client:
-            return 0
-
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/', '#header-join', 'click')
-        segcall_info = {
-            'main_field': 'activityLocation',
-            'main_value': 'Visitor : Home',
-            'segment_params': [
-                ('description', 'Join link in header'),
-            ]
-        }
-
-        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
-
-
     # basic page call test
     def test_homePageSegmentPagecall(self):
         # quit if browser didn't load
@@ -46,8 +29,38 @@ class HomepageSegmentTestCase(SeleniumTestCase):
 
 
 
+    def test_homePageDrupal_Header(self):
+        if not self.client:
+            return 0
+
+        self.homePageSegmentJoin()
+        self.client.back()
+        self.homePageSegmentHeroJoinCta()
+        self.client.back()
+        self.homePagefindProsCTA()
+        self.client.back()
+        self.headerJoinCTA()
+
+
+    # test segment call on clicking the join link in home page header
+    def homePageSegmentJoin(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/', '#header-join', 'click')
+        segcall_info = {
+            'main_field': 'activityLocation',
+            'main_value': 'Visitor : Home',
+            'segment_params': [
+                ('description', 'Join link in header'),
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+
     # SR Hero Join CTA
-    def test_homePageSegmentHeroJoinCta(self):
+    def homePageSegmentHeroJoinCta(self):
         # quit if browser didn't load
         if not self.client:
             return 0
@@ -68,7 +81,7 @@ class HomepageSegmentTestCase(SeleniumTestCase):
 
 
     # SR ha-lead-submit-v2
-    def test_findProsCTA(self):
+    def homePagefindProsCTA(self):
         # quit if browser didn't load
         if not self.client:
             return 0
@@ -91,30 +104,8 @@ class HomepageSegmentTestCase(SeleniumTestCase):
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
-
-    # Footer Join
-    def test_footerJoinCTAHomepage(self):
-        # quit if browser didn't load
-        if not self.client:
-            return 0
-
-        # req'd params: current test case (self), relative path to triggering page, target element, and the triggering action
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/', '#footer-join', 'click')
-
-        segcall_info = {
-            'main_field': 'activityLocation',
-            'main_value': 'Visitor : Home',
-            'segment_params': [
-                ('description', 'Join button in footer'),
-                ('userId',),
-            ]
-        }
-
-        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
-
-
     # Header Join
-    def test_headerJoinCTA(self):
+    def headerJoinCTA(self):
         # quit if browser didn't load
         if not self.client:
             return 0
@@ -134,8 +125,55 @@ class HomepageSegmentTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
 
+
+ 
+    #### Body ####
+
+
+    def test_homePageDrupal_Body(self):
+        if not self.client:
+            return 0
+
+        self.plumbingPopularServiceQuickLinkHomePage()
+        self.client.back()
+        self.plumbingPopularServiceQuickLinkV2Homepage()
+        self.client.back()
+        self.roofingPopularServiceQuickLink()
+        self.client.back()
+        self.roofingPopularServiceQuickLinkV2Homepage()
+        self.client.back()
+        self.heatACPopularServiceQuickLink()
+        self.client.back()
+        self.hvacPopularServiceQuickLinkV2()
+        self.client.back()
+        self.electricalPopularServiceQuickLink()
+        self.client.back()
+        self.electricalPopularServiceQuickLinkV2()
+        self.client.back()
+        self.landscapingPopularServiceQuickLink()
+        self.client.back()
+        self.landscapingPopularServiceQuickLinkV2()
+        self.client.back()
+        self.housecleaningPopularServiceQuickLink()
+        self.client.back()
+        self.housecleaningPopularServiceQuickLinkV2()
+        self.client.back()
+        self.housecleaningPopularServiceQuickLink()
+        self.client.back()
+        self.housecleaningPopularServiceQuickLinkV2()
+        self.client.back()
+        self.paintingPopularServiceQuickLink()
+        self.client.back()
+        self.paintingPopularServiceQuickLinkV2()
+        self.client.back()
+        self.homePageSegmentSRCTAwithTacos()
+        self.client.back()
+        self.homePageSegmentSrCtaWithCat()
+
+
+
     # SR Plumbing Popular Service Quick Links Text
-    def test_plumbingPopularServiceQuickLink(self):
+    def plumbingPopularServiceQuickLinkHomePage(self):
         # quit if browser didn't load
         if not self.client:
             return 0
@@ -160,7 +198,7 @@ class HomepageSegmentTestCase(SeleniumTestCase):
 
 
     # SR Plumbing Popular Service Quick Links Image
-    def test_plumbingPopularServiceQuickLinkV2(self):
+    def plumbingPopularServiceQuickLinkV2Homepage(self):
         # quit if browser didn't load
         if not self.client:
             return 0
@@ -185,7 +223,7 @@ class HomepageSegmentTestCase(SeleniumTestCase):
 
 
     # SR Roofing Popular Service Quick Links Text
-    def test_roofingPopularServiceQuickLink(self):
+    def roofingPopularServiceQuickLink(self):
         # quit if browser didn't load
         if not self.client:
             return 0
@@ -210,7 +248,7 @@ class HomepageSegmentTestCase(SeleniumTestCase):
 
 
     # SR Roofing Popular Service Quick Links Image
-    def test_roofingPopularServiceQuickLinkV2(self):
+    def roofingPopularServiceQuickLinkV2Homepage(self):
         # quit if browser didn't load
         if not self.client:
             return 0
@@ -234,7 +272,7 @@ class HomepageSegmentTestCase(SeleniumTestCase):
 
 
     # SR HVAC Popular Service Quick Links Text
-    def test_heatacPopularServiceQuickLink(self):
+    def heatACPopularServiceQuickLink(self):
         # quit if browser didn't load
         if not self.client:
             return 0
@@ -259,7 +297,7 @@ class HomepageSegmentTestCase(SeleniumTestCase):
 
 
     # SR HVAC Popular Service Quick Links Image
-    def test_hvacPopularServiceQuickLinkV2(self):
+    def hvacPopularServiceQuickLinkV2(self):
         # quit if browser didn't load
         if not self.client:
             return 0
@@ -283,7 +321,7 @@ class HomepageSegmentTestCase(SeleniumTestCase):
 
 
     # SR Electrical Popular Service Quick Links Text
-    def test_electricalPopularServiceQuickLink(self):
+    def electricalPopularServiceQuickLink(self):
         # quit if browser didn't load
         if not self.client:
             return 0
@@ -308,7 +346,7 @@ class HomepageSegmentTestCase(SeleniumTestCase):
 
 
     # SR Electrical Popular Service Quick Links Image
-    def test_electricalPopularServiceQuickLinkV2(self):
+    def electricalPopularServiceQuickLinkV2(self):
         # quit if browser didn't load
         if not self.client:
             return 0
@@ -332,7 +370,7 @@ class HomepageSegmentTestCase(SeleniumTestCase):
 
 
     # SR Landscaping Popular Service Quick Links Text
-    def test_landscapingPopularServiceQuickLink(self):
+    def landscapingPopularServiceQuickLink(self):
         # quit if browser didn't load
         if not self.client:
             return 0
@@ -357,7 +395,7 @@ class HomepageSegmentTestCase(SeleniumTestCase):
 
 
     # SR Landscaping Popular Service Quick Links Image
-    def test_landscapingPopularServiceQuickLinkV2(self):
+    def landscapingPopularServiceQuickLinkV2(self):
         # quit if browser didn't load
         if not self.client:
             return 0
@@ -381,7 +419,7 @@ class HomepageSegmentTestCase(SeleniumTestCase):
 
 
     # SR Housecleaning Popular Service Quick Links Text
-    def test_housecleaningPopularServiceQuickLink(self):
+    def housecleaningPopularServiceQuickLink(self):
         # quit if browser didn't load
         if not self.client:
             return 0
@@ -406,7 +444,7 @@ class HomepageSegmentTestCase(SeleniumTestCase):
 
 
     # SR Housecleaning Popular Service Quick Links Image
-    def test_housecleaningPopularServiceQuickLinkV2(self):
+    def housecleaningPopularServiceQuickLinkV2(self):
         # quit if browser didn't load
         if not self.client:
             return 0
@@ -431,7 +469,7 @@ class HomepageSegmentTestCase(SeleniumTestCase):
 
 
     # SR Remodeling Popular Service Quick Links Text
-    def test_housecleaningPopularServiceQuickLink(self):
+    def housecleaningPopularServiceQuickLink(self):
         # quit if browser didn't load
         if not self.client:
             return 0
@@ -456,7 +494,7 @@ class HomepageSegmentTestCase(SeleniumTestCase):
 
 
     # SR Remodeling Popular Service Quick Links Image
-    def test_housecleaningPopularServiceQuickLinkV2(self):
+    def housecleaningPopularServiceQuickLinkV2(self):
         # quit if browser didn't load
         if not self.client:
             return 0
@@ -481,7 +519,7 @@ class HomepageSegmentTestCase(SeleniumTestCase):
 
 
     # SR Painting Popular Service Quick Links Text
-    def test_paintingPopularServiceQuickLink(self):
+    def paintingPopularServiceQuickLink(self):
         # quit if browser didn't load
         if not self.client:
             return 0
@@ -506,7 +544,7 @@ class HomepageSegmentTestCase(SeleniumTestCase):
 
 
     # SR Painting Popular Service Quick Links Image
-    def test_paintingPopularServiceQuickLinkV2(self):
+    def paintingPopularServiceQuickLinkV2(self):
         # quit if browser didn't load
         if not self.client:
             return 0
@@ -528,12 +566,8 @@ class HomepageSegmentTestCase(SeleniumTestCase):
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
-
-
-
-
     # Homepage SR Flow Negative Testing Scenerio
-    def test_homePageSegmentSRCTAwithTacos(self):
+    def homePageSegmentSRCTAwithTacos(self):
         if not self.client:
             return 0
         prep_actions = [
@@ -562,7 +596,7 @@ class HomepageSegmentTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # Homepage SR Flow - Plumbing
-    def test_homePageSegmentSrCtaWithCat(self):
+    def homePageSegmentSrCtaWithCat(self):
         if not self.client:
             return 0
         prep_actions = [
@@ -592,10 +626,11 @@ class HomepageSegmentTestCase(SeleniumTestCase):
 
 
 
-    def test_companyListState_topCities(self):
+    def test_homePage_Footer(self):
         if not self.client:
             return 0
-
+        self.homePagefooterJoinCTA()
+        self.client.back()
         self.homePageTopCitiesNYC()
         self.client.back()
         self.homePageTopCitiesHouston()
@@ -624,6 +659,29 @@ class HomepageSegmentTestCase(SeleniumTestCase):
         self.client.back()
         self.homePageTopCitiesTampa()
 
+
+
+
+    #### Footer Tests ####
+
+    def homePagefooterJoinCTA(self):
+        # quit if browser didn't load
+        if not self.client:
+            return 0
+
+        # req'd params: current test case (self), relative path to triggering page, target element, and the triggering action
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/', '#footer-join', 'click')
+
+        segcall_info = {
+            'main_field': 'activityLocation',
+            'main_value': 'Visitor : Home',
+            'segment_params': [
+                ('description', 'Join button in footer'),
+                ('userId',),
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
 
     # Homepage Top Cities NYC
