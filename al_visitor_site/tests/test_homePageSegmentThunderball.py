@@ -406,7 +406,7 @@ class HomepageTballSegmentTestCase(SeleniumTestCase):
 
 
 
-    def test_homePageTBall_TopCity(self):
+    def test_homePageTBall_Footer(self):
         if not self.client:
             return 0
 
