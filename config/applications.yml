@@ -1,8 +1,8 @@
 # application suites should be listed by directory name and base_url
 appsuites:
   al_visitor_site:
-     base_url: https://visitorstg.angieslist.com
-     #base_url: https://visitor-app-stage5.plat.angieslist.com
+     #base_url: https://visitorstg.angieslist.com
+      base_url: https://visitor-app-stage5.plat.angieslist.com
   al_member_site:
       base_url: https://tampa-stage4.plat.angieslist.com/app/reviews
   al_office_site:
