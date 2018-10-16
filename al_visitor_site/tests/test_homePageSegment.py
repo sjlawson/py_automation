@@ -160,7 +160,7 @@ class HomepageSegmentTestCase(SeleniumTestCase):
         self.client.back()
         self.housecleaningPopularServiceQuickLink()
         self.client.back()
-        self.housecleaningPopularServiceQuickLinkV2()
+        self.remodelingPopularServiceQuickLinkV2()
         self.client.back()
         self.paintingPopularServiceQuickLink()
         self.client.back()
@@ -494,7 +494,7 @@ class HomepageSegmentTestCase(SeleniumTestCase):
 
 
     # SR Remodeling Popular Service Quick Links Image
-    def housecleaningPopularServiceQuickLinkV2(self):
+    def remodelingPopularServiceQuickLinkV2(self):
         # quit if browser didn't load
         if not self.client:
             return 0
