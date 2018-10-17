@@ -5,6 +5,22 @@ class HowItWorksThunderballPageSegmentTestCase(SeleniumTestCase):
 
     # test segment call on clicking the join link in the header - Thunderball version
 
+    def test_howItWorksPageCall(self):
+        """Test Segment Page call sent from HIW page"""
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/how-it-works.htm')
+        segcall_info = {
+            'main_field': 'name',
+            'main_value': 'Visitor : How It Works',
+            'segment_params': [
+                ('title', "How Does Angie's List Work | Angie's List"),
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
     #  AL Header link on HIW - Tball
     def test_howItWorksHeaderAlLinkTball(self):
         if not self.client:
