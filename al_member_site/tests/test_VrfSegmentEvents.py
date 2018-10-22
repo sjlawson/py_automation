@@ -3,7 +3,7 @@ from common.SegmentTestHelper import SegmentTestHelper
 
 
 ##### Visitor Review Form ####
-class TestChooseFile(SeleniumTestCase):
+class VrfSegmentEvents(SeleniumTestCase):
 
 
 ## test segment call on clicking Choose File on VRF
@@ -29,8 +29,7 @@ class TestChooseFile(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
 
-##### Visitor Review Form ####
-class TestItemClickApproxCostOfService(SeleniumTestCase):
+
 
 
 ## Item Clicked Segment Event - Approximate Cost of Service ##
@@ -57,8 +56,7 @@ class TestItemClickApproxCostOfService(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
 
-##### Visitor Review Form ####
-class TestItemClickApproxDateOfService(SeleniumTestCase):
+
 
 
 ## Item Clicked Segment Event - Approximate Date of Service ##
@@ -85,8 +83,7 @@ class TestItemClickApproxDateOfService(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
 
-##### Visitor Review Form ####
-class TestItemClickHireAgainNo(SeleniumTestCase):
+
 
 
 ## test segment call on clicking no on Would you hire again? on VRF
@@ -113,8 +110,7 @@ class TestItemClickHireAgainNo(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
 
-##### Visitor Review Form ####
-class TestItemClickHireAgainYes(SeleniumTestCase):
+
 
 
 ## test segment call on clicking yes on Would you hire again? on VRF
@@ -143,8 +139,7 @@ class TestItemClickHireAgainYes(SeleniumTestCase):
 
 
 
-##### Visitor Review Form ####
-class TestHowDidItGo(SeleniumTestCase):
+
 
 
 ## Item Clicked Segment Event - How Did It Go? ##
@@ -172,8 +167,7 @@ class TestHowDidItGo(SeleniumTestCase):
 
 
 
-##### Visitor Review Form ####
-class TestItemClickWorkDone(SeleniumTestCase):
+
 
 
 ## Item Clicked Segment Event - What work did you need done? ##
@@ -200,8 +194,7 @@ class TestItemClickWorkDone(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
 
-##### Visitor Review Form ####
-class testWorkCompleteSegmentNo(SeleniumTestCase):
+
 
 
 ## Work Performed Yes Segment Event ##
@@ -231,8 +224,7 @@ class testWorkCompleteSegmentNo(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
 
-##### Visitor Review Form ####
-class TestWorkCompleteSegmentYes(SeleniumTestCase):
+
 
 
 ## Work Performed Yes Segment Event ##
