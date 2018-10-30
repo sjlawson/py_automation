@@ -21,8 +21,22 @@ class HowItWorksThunderballPageSegmentTestCase(SeleniumTestCase):
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
-    #  AL Header link on HIW - Tball
-    def test_howItWorksHeaderAlLinkTball(self):
+
+    #### HEADER TESTS ####
+
+
+    def test_howItWorksTBall_Header(self):
+        if not self.client:
+            return 0
+
+        self.howItWorksHeaderAlLinkTball()
+        self.client.back()
+        self.howItWorksTballHeaderJoinClick()
+        self.client.back()
+        self.howItWorksTballHeaderLinkClick()
+
+
+    def howItWorksHeaderAlLinkTball(self):
         if not self.client:
             return 0
 
@@ -39,7 +53,7 @@ class HowItWorksThunderballPageSegmentTestCase(SeleniumTestCase):
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
-    def test_howItWorksTballHeaderJoinClick(self):
+    def howItWorksTballHeaderJoinClick(self):
         if not self.client:
             return 0
 
@@ -56,7 +70,7 @@ class HowItWorksThunderballPageSegmentTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # test segment call on clicking the HIW link in the header
-    def test_howItWorksTballHeaderLinkClick(self):
+    def howItWorksTballHeaderLinkClick(self):
         if not self.client:
             return 0
 

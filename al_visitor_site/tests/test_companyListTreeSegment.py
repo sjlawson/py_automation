@@ -2062,8 +2062,6 @@ class CompanyListStatePageTestCase(SeleniumTestCase):
         self.companyListStateTopCitiesTampa()
 
 
-
-
     # Company List Regular City Top Cities NYC
     def companyListStateTopCitiesNYC(self):
         if not self.client:
