@@ -7,4 +7,3 @@ appsuites:
       base_url: https://tampa-stage4.plat.angieslist.com/app/reviews
   al_office_site:
       base_url: https://office-stage4.plat.angieslist.com
-
