@@ -110,10 +110,10 @@ class SegmentTestHelper():
                 print('Segment call %s exists on page' % segcall_info['main_field'])
                 for seg_check in segcall_info['segment_params']:
                     if len(seg_check) > 1:
-                        test_case.assertEqual(seg_call[seg_check[0]], seg_check[1])
+                        test_case.assertEqual(seg_call[seg_check[0]], seg_check[1], 'expected: %s | actual: %s' % (seg_call[seg_check[0]], seg_check[1]))
                         print("Segment call detected. %s | %s" % (seg_check[0], seg_call[seg_check[0]]))
                     else:
-                        test_case.assertTrue(seg_check[0] in seg_call)
+                        test_case.assertTrue(seg_check[0] in seg_call, 'Expected segment property %s is missing' % seg_check[0])
                         print("Segment property %s exists" % seg_check[0])
 
         try:
