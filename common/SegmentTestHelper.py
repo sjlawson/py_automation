@@ -9,6 +9,20 @@ from selenium.webdriver.common.action_chains import ActionChains
 
 class SegmentTestHelper():
 
+    def collect_segment_requests_on_page(context):
+        wait = WebDriverWait(context.browser, 15)
+        collect_seg = []
+        perf_logs = context.browser.get_log('performance')
+        for perflog in perf_logs:
+            perf_msgs = json.loads(perflog['message'])
+            if 'request' in perf_msgs['message']['params'] and 'postData' in perf_msgs['message']['params']['request']\
+               and perf_msgs['message']['params']['request']['postData'] is not None and 'properties' in perf_msgs['message']['params']['request']['postData']:
+                props_string = json.loads(perf_msgs['message']['params']['request']['postData'])['properties']
+                if props_string is not None:
+                    collect_seg.append(props_string)
+
+        return collect_seg
+
     ##
     # @param test_case - passed as 'self' from the calling test case method
     # @param path - relative page path, must have leading /

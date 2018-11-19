@@ -1,5 +1,6 @@
 from behave import fixture, use_fixture
 from selenium import webdriver
+from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 import yaml, os
 
 if os.path.exists('.env'):
@@ -17,7 +18,17 @@ if 'VISITOR_SITE_URL' not in os.environ:
 @fixture
 def selenium_browser_chrome(context):
     # -- HINT: @behave.fixture is similar to @contextlib.contextmanager
-    context.browser = webdriver.Chrome()
+    method_name = 'chrome'
+    d = getattr(DesiredCapabilities, method_name.upper())
+    d['loggingPrefs'] = { 'browser':'ALL','driver': 'ALL','performance': 'ALL'}
+    ch_profile = webdriver.ChromeOptions()
+    ch_profile.perfLoggingPrefs = {'enableNetwork': True, 'traceCategories': 'performance, devtools.network'}
+    ch_profile.add_argument('incognito')
+    ch_profile.add_argument('disable-extensions')
+    # ch_profile.add_argument('auto-open-devtools-for-tabs')
+    ch_profile.add_argument('disable-browser-side-navigation')
+
+    context.browser = webdriver.Chrome(desired_capabilities=d, chrome_options=ch_profile)
     yield context.browser
     # -- CLEANUP-FIXTURE PART:
     context.browser.quit()
@@ -30,6 +41,7 @@ def before_all(context):
 
     context.suiteconf = 'al_visitor_site'
     os.environ['BASE_URL'] = applications['appsuites'][context.suiteconf]['base_url']
+    context.baseurl = os.environ['BASE_URL']
 
     print("Starting Python Flask Selenium Test Framework")
     print("Test environment: %s" % context.suiteconf)
