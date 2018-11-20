@@ -17,6 +17,7 @@ if 'VISITOR_SITE_URL' not in os.environ:
 
 @fixture
 def selenium_browser_chrome(context):
+    """ yields context browser, also adds common interface for browser performance logs (network) with browserlog() method """
     # -- HINT: @behave.fixture is similar to @contextlib.contextmanager
     method_name = 'chrome'
     d = getattr(DesiredCapabilities, method_name.upper())
@@ -29,9 +30,11 @@ def selenium_browser_chrome(context):
     ch_profile.add_argument('disable-browser-side-navigation')
 
     context.browser = webdriver.Chrome(desired_capabilities=d, chrome_options=ch_profile)
+    context.browserlog = lambda : context.browser.get_log('performance')
     yield context.browser
     # -- CLEANUP-FIXTURE PART:
     context.browser.quit()
+
 
 def before_all(context):
     # use_fixture(wsgi_server, context, port=8000)
@@ -46,7 +49,3 @@ def before_all(context):
     print("Starting Python Flask Selenium Test Framework")
     print("Test environment: %s" % context.suiteconf)
     print("Base URL: ", os.environ['BASE_URL'])
-
-
-    # def before_feature(context, feature):
-#     model.init(environment='test')
