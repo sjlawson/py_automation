@@ -31,6 +31,7 @@ def selenium_browser_chrome(context):
 
     context.browser = webdriver.Chrome(desired_capabilities=d, chrome_options=ch_profile)
     context.browserlog = lambda : context.browser.get_log('performance')
+    context.browser.implicitly_wait(20)
     yield context.browser
     # -- CLEANUP-FIXTURE PART:
     context.browser.quit()

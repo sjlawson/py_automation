@@ -11,7 +11,7 @@ import unittest, time
     # '.tests.test_companyListTreeSegment.CompanyListTestCase.test_companyListSegmentPagecall')
     #     xmlrunner.XMLTestRunner(verbosity=2, output='reports').run(tests)
 
-@given('user is on the companylist page')
+@given('user is on a page that sends a segment pagecall')
 def step_impl(context):
     context.url = context.baseurl + context.text
     context.browser.get(context.url)

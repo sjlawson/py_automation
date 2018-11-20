@@ -12,6 +12,16 @@ class SegmentTestHelper():
     def collect_segment_requests_on_page(context):
         """A paired-down method for simply gathering segment requests from browser log"""
         wait = WebDriverWait(context.browser, 15)
+        wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, 'div.footer')))
+        time.sleep(3)
+
+        return SegmentTestHelper.get_browser_segmentlogs(context, 0)
+
+    def get_browser_segmentlogs(context, count):
+        count += 1
+        if count > 10:
+            return []
+        time.sleep(1)
         collect_seg = []
         perf_logs = context.browserlog()
         for perflog in perf_logs:
@@ -22,11 +32,13 @@ class SegmentTestHelper():
                 props_string = json.loads(perf_msgs['message']['params']['request']['postData'])['properties']
                 if props_string is not None:
                     collect_seg.append(props_string)
+        if not collect_seg:
+            return SegmentTestHelper.get_browser_segmentlogs(context, count)
 
         return collect_seg
 
     def assert_segment_call_exists(context):
-        time.sleep(4) # if a page takes longer than 4 seconds, it's bad
+        # time.sleep(4) # if a page takes longer than 4 seconds, it's bad
         seg_calls = SegmentTestHelper.collect_segment_requests_on_page(context)
         expected_prop_name = context.table[0]['unique_field']
         expected_prop_value = context.table[0]['unique_value']
@@ -46,7 +58,14 @@ class SegmentTestHelper():
 
     def assert_segment_call_props(context):
         for row in context.table:
-            if row['prop_value']:
+            if row['prop_value'].lower() == 'true' or row['prop_value'].lower() == 'false':
+                try:
+                    assert bool(context.seg_props[row['prop_key']]) == bool(html.unescape(row['prop_value'].capitalize()))
+                except AssertionError:
+                    raise AssertionError('%s expected %s, found %s' % (row['prop_key'], \
+                                                                       row['prop_value'], \
+                                                                       context.seg_props[row['prop_key']]))
+            elif row['prop_value']:
                 try:
                     assert context.seg_props[row['prop_key']] == html.unescape(row['prop_value'])
                 except AssertionError:
