@@ -79,6 +79,25 @@ class SegmentTestHelper():
                     raise AssertionError('%s not found in segment properties' % row['prop_key'])
 
 
+    def do_actions(client, actions):
+        """
+        Performs a list of actions on the webdriver client
+        http://selenium-python.readthedocs.io/api.html#module-selenium.webdriver.common.action_chains
+        actions is a list of dicts: [{'action_method':'method_name','action_params':['param1','param2','param3'...] },]
+        """
+        wait = WebDriverWait(client, 10)
+        for action in actions:
+            # action_element = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, action['action_element'])))
+            action_chain = ActionChains(client) #.move_to_element(action_element)
+            for action in actions:
+                try:
+                    p_action_method = getattr(action_chain, action['action_method'])
+                    p_action_method(*action['action_params'])
+                except AttributeError:
+                    raise NotImplementedError("ActionChains does not implement %s" % action['action_method'])
+
+            action_chain.perform()
+
     ##
     # @param test_case - passed as 'self' from the calling test case method
     # @param path - relative page path, must have leading /
