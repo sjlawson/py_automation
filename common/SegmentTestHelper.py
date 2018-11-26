@@ -47,7 +47,7 @@ class SegmentTestHelper():
             if expected_prop_name in seg_props:
                 if seg_props[expected_prop_name] == expected_prop_value:
                     context.seg_props = seg_props
-                    print("%s == %s" % (seg_props[expected_prop_name], expected_prop_value))
+                    # print("%s == %s" % (seg_props[expected_prop_name], expected_prop_value))
                     prop_exists = True
 
         try:
@@ -88,15 +88,20 @@ class SegmentTestHelper():
         wait = WebDriverWait(client, 10)
         for action in actions:
             # action_element = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, action['action_element'])))
-            action_chain = ActionChains(client) #.move_to_element(action_element)
-            for action in actions:
-                try:
-                    p_action_method = getattr(action_chain, action['action_method'])
-                    p_action_method(*action['action_params'])
-                except AttributeError:
-                    raise NotImplementedError("ActionChains does not implement %s" % action['action_method'])
+            if action['action_params']:
+                for i in range(0, len(action['action_params'])):
+                    if action['action_params'][i] and (action['action_params'][i][0] == '#' or action['action_params'][i][0] == '.'):
+                        action['action_params'][i] = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR,action['action_params'][i])))
 
-            action_chain.perform()
+        action_chain = ActionChains(client)
+        for action in actions:
+            try:
+                p_action_method = getattr(action_chain, action['action_method'])
+                p_action_method(*action['action_params'])
+            except AttributeError:
+                raise NotImplementedError("ActionChains does not implement %s" % action['action_method'])
+
+        action_chain.perform()
 
     ##
     # @param test_case - passed as 'self' from the calling test case method

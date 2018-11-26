@@ -3,9 +3,9 @@ Feature:
   # Scenario: Making a gherkin passthru for existing test
   #   Then passthru for unittest step3
 
-  @regression
+  @visitorSegment
   Scenario: testing segment pagecall on homepage
-    Given user is on a page that sends a segment pagecall
+    Given user is on a visitor site page
     """
     /
     """

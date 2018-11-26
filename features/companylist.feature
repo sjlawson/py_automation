@@ -1,8 +1,8 @@
 Feature: 
 
-  @regression
+  @visitorSegment
   Scenario: testing segment pagecall on companylist page
-    Given user is on a page that sends a segment pagecall
+    Given user is on a visitor site page
     """
     /companylist
     """
