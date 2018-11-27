@@ -1,15 +1,7 @@
 from behave import *
-# from xmlrunner import xmlrunner
 from common.SegmentTestHelper import SegmentTestHelper
-# from SegmentTestHelper import collect_segment_requests_on_page, assert_segment_call_exists, assert_segment_call_props
 import unittest, time
 
-
-# @then('passthru for unittest step3')
-# def step_impl(context):
-    #     tests = unittest.TestLoader().loadTestsFromName(context.suiteconf + \
-    # '.tests.test_companyListTreeSegment.CompanyListTestCase.test_companyListSegmentPagecall')
-    #     xmlrunner.XMLTestRunner(verbosity=2, output='reports').run(tests)
 
 @given('user is on a visitor site page')
 def step_impl(context):

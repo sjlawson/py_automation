@@ -1,4 +1,7 @@
+import behave
 from behave import fixture, use_fixture
+from reporters import junit
+from reporters.junit import JUnitReporter
 from selenium import webdriver
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 import yaml, os
@@ -38,6 +41,12 @@ def selenium_browser_chrome(context):
 
 
 def before_all(context):
+    # context.userdata = None
+    # context.paths = ['reports']
+    # context.base_dir = './'
+    # context.junit_directory = 'reports'
+    junit_reporter = JUnitReporter(context.config)
+    context.config.reporters.append(junit_reporter)
     # use_fixture(wsgi_server, context, port=8000)
     use_fixture(selenium_browser_chrome, context)
     with open("config/applications.yml", "r") as stream:

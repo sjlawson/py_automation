@@ -1,7 +1,8 @@
 Feature: 
 
-  # Scenario: Making a gherkin passthru for existing test
-  #   Then passthru for unittest step3
+  @legacy
+  Scenario: Making a gherkin passthru for existing test
+    Then passthru for unittest step3
 
   @visitorSegment
   Scenario: testing segment pagecall on homepage
