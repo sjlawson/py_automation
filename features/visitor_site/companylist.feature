@@ -1,6 +1,6 @@
+@visitorSegmentExample
 Feature: 
 
-  @visitorSegment
   Scenario: testing segment pagecall on companylist page
     Given user is on a visitor site page
     """

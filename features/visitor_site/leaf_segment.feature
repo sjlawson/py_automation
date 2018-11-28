@@ -1,6 +1,6 @@
+@visitorSegmentExample
 Feature: 
 
-  @visitorSegment
   Scenario: User fills zipcode on Leaf CTA
     Given user is on a visitor site page
     """

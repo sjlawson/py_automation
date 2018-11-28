@@ -50,12 +50,13 @@ def before_all(context):
     # use_fixture(wsgi_server, context, port=8000)
     use_fixture(selenium_browser_chrome, context)
     with open("config/applications.yml", "r") as stream:
-        applications = yaml.load(stream)
+        yamlconfig = yaml.load(stream)
+        context.appsuites = yamlconfig['appsuites']
+    #    print(applications)
+    #    context.suiteconf = 'al_visitor_site'
+    #    os.environ['BASE_URL'] = applications['appsuites'][context.suiteconf]['base_url']
+    #    context.baseurl = os.environ['BASE_URL']
 
-    context.suiteconf = 'al_visitor_site'
-    os.environ['BASE_URL'] = applications['appsuites'][context.suiteconf]['base_url']
-    context.baseurl = os.environ['BASE_URL']
-
-    print("Starting Python Flask Selenium Test Framework")
-    print("Test environment: %s" % context.suiteconf)
-    print("Base URL: ", os.environ['BASE_URL'])
+    print("Starting Python Selenium Test Framework")
+    #print("Test environment: %s" % context.suiteconf)
+    #print("Base URL: ", os.environ['BASE_URL'])

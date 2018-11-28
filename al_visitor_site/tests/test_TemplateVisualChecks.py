@@ -9,6 +9,9 @@ from selenium.webdriver.common.by import By
 class TemplateVisualChecks(SeleniumTestCase):
 
     def test_load_template_pages(self):
+        """STALE TEST: remove or comment the 'return True' to enable """
+        return True
+
         print("\nThis test cycles through all page templates, waits for input, and if there are problems, prompts for description. When complete, it shows a summary of failures with respective URLs.")
         with open('./al_visitor_site/resources/template_urls.txt' ,'r') as fp:
             urls = [line for line in fp.readlines()]

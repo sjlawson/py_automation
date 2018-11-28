@@ -1,10 +1,6 @@
 Feature: 
 
-  @legacy
-  Scenario: Making a gherkin passthru for existing test
-    Then passthru for unittest step3
-
-  @visitorSegment
+  @visitorSegmentExample
   Scenario: testing segment pagecall on homepage
     Given user is on a visitor site page
     """

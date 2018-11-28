@@ -12,7 +12,7 @@ class SegmentTestHelper():
     def collect_segment_requests_on_page(context):
         """A paired-down method for simply gathering segment requests from browser log"""
         wait = WebDriverWait(context.browser, 15)
-        wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, 'div.footer')))
+        wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, 'div')))
         time.sleep(3)
 
         return SegmentTestHelper.get_browser_segmentlogs(context, 0)

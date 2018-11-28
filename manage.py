@@ -40,6 +40,23 @@ def testall(*args):
     tests = unittest.TestLoader().discover('%s/tests' % args[0][0])
     xmlrunner.XMLTestRunner(verbosity=2, output='reports').run(tests)
 
+
+@manager.command
+def get_test_list(*args):
+    """generate a canonical list of all tests in an application suite"""
+    suiteconf = applications['appsuites'][args[0][0]]
+    print("Test environment: %s" % args[0][0])
+    tests = unittest.TestLoader().discover('%s/tests' % args[0][0])
+    print('[')
+    for group in tests:
+        for suite in group:
+            for test in suite:
+                test_row = str(test)
+                canonical = test_row[test_row.find("(")+1:test_row.find(")")] + '.' + test_row[:test_row.find("(")].strip()
+                print("'%s'," % canonical)
+
+    print("]")
+
 @manager.command
 def menu(*args):
     """Shows menu consisting of all individual tests"""

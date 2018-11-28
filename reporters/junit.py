@@ -268,7 +268,7 @@ class JUnitReporter(Reporter):
 
         tree = ElementTreeWithCDATA(suite)
         report_dirname = self.config.junit_directory
-        report_basename = u'TESTS-%s.xml' % feature_filename
+        report_basename = u'TESTS-%s.xml' % (feature_filename + '_' + datetime.now().strftime("%Y%m%d%H%m%S"))
         report_filename = os.path.join(report_dirname, report_basename)
         tree.write(codecs.open(report_filename, "wb"), "UTF-8")
 
