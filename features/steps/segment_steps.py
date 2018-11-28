@@ -1,6 +1,5 @@
-from behave import *
+from behave import given, then, when
 from common.SegmentTestHelper import SegmentTestHelper
-import unittest, time
 
 
 @given('user is on a visitor site page')

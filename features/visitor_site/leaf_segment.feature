@@ -23,6 +23,6 @@ Feature:
       | marketId               | 40                                |
       | userId                 |                                   |
       | userSelectedZipCode    | 27610                             |
-      | visitorPageCategory    | Rofing                            |
+      | visitorPageCategory    | Roofing                           |
       | visitorPageGeo         | RALEIGH/DURHAM                    |
       | visitorPageGeoCategory | RALEIGH/DURHAM - ROOFING          |

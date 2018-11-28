@@ -1,6 +1,6 @@
-import behave
+# import behave
 from behave import fixture, use_fixture
-from reporters import junit
+# from reporters import junit
 from reporters.junit import JUnitReporter
 from selenium import webdriver
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
