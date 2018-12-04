@@ -6,7 +6,7 @@ Feature:
     """
     /companylist/us/nc/raleigh/alpha-omega-construction-group-inc-reviews-8807061.htm
     """
-    When a user enters a zip code in a CTA form
+    When a user performs actions
       | action_method   | action_params   |
       | move_to_element | #ha-lead-zip    |
       | send_keys       | 27610           |
