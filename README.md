@@ -62,7 +62,10 @@ After py36 environment has been setup, all you need to do after that is:
 `source ./activate`  
 (while inside the al_py_automation directory)
 
-## Making new tests
+## For the newer Behavioural testing framework, see the features/README.md file
+You'll like it. It's better.
+
+## Making new tests (unit test style)
 If you are adding a test for a new application (e.g. The visitor site)
 1. Create a new directory in al_py_automation (e.g. al_py_automation/al_visitor_site)
 1. Create a new directory in your appsuite folder called 'tests'

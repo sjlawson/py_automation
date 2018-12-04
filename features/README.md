@@ -8,14 +8,14 @@ There are some sample segment tests in these folders that duplicate already-code
 Basic structure of a feature file:
 ```  
 Feature:  
-	@tags_are @useful @visitorSegment  
-	Scenatio: a test  
-	
-	Given user is on a visitor site page  
-	"""  
-	/url/to/page  
-	"""  
-	When a segment page call is sent for a unique field value pair  
+    @tags_are @useful @visitorSegment  
+    Scenatio: a test  
+
+    Given user is on a visitor site page  
+    """  
+    /url/to/page  
+    """  
+    When a segment page call is sent for a unique field value pair  
       | unique_field | unique_value   |
       | name         | Visitor : Home |
     Then the segment call contains parameters
