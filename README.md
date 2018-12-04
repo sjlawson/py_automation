@@ -121,7 +121,7 @@ If you are adding a test for a new application (e.g. The visitor site)
 Do the following, replacing `appname` with your application suite test directory
 
 this will run the tests in al_visitor_site/tests/test_h1TitleCanonical.py ->  
-`manage.py runtest al_visitor_site h1TitleCanonical`
+`manage.py runtest al_visitor_site test_h1TitleCanonical`
 
 ^^^ tells python to run `manage.py` which has all the testing commands. runtest tells it you want to run one test, al_visitor_site is the application test suite we want to run here, and h1TitleCanonical is the name portion of the test you want. This command runs all tests in the test_h1TitleCanonical.py file. 
 
