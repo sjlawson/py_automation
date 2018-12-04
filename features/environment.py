@@ -1,6 +1,4 @@
-# import behave
 from behave import fixture, use_fixture
-# from reporters import junit
 from reporters.junit import JUnitReporter
 from selenium import webdriver
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
@@ -41,10 +39,6 @@ def selenium_browser_chrome(context):
 
 
 def before_all(context):
-    # context.userdata = None
-    # context.paths = ['reports']
-    # context.base_dir = './'
-    # context.junit_directory = 'reports'
     junit_reporter = JUnitReporter(context.config)
     context.config.reporters.append(junit_reporter)
     # use_fixture(wsgi_server, context, port=8000)
@@ -52,11 +46,5 @@ def before_all(context):
     with open("config/applications.yml", "r") as stream:
         yamlconfig = yaml.load(stream)
         context.appsuites = yamlconfig['appsuites']
-    #    print(applications)
-    #    context.suiteconf = 'al_visitor_site'
-    #    os.environ['BASE_URL'] = applications['appsuites'][context.suiteconf]['base_url']
-    #    context.baseurl = os.environ['BASE_URL']
 
     print("Starting Python Selenium Test Framework")
-    #print("Test environment: %s" % context.suiteconf)
-    #print("Base URL: ", os.environ['BASE_URL'])

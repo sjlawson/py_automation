@@ -155,6 +155,12 @@ def runtestsuite(*args):
         print("Usage: manage.py runtestsuite <env_name> <test_class>")
         print("example: manage.py runtestsuite al_visitor_site AA404")
 
+@manager.command
+def geckodriver_install(*args):
+    from webdriverdownloader import GeckoDriverDownloader
+    gdd = GeckoDriverDownloader()
+    gdd.download_and_install()
+
 if __name__ == '__main__':
     Command.capture_all_args = True
     manager.run()
