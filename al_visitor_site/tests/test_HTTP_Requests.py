@@ -28,7 +28,7 @@ class FourOhFours(SeleniumTestCase):
         print("\n\n%s URL(s) tested" % count)
 
 
-    def test_sd3575_404(self):
+    def test_sd3579_404(self):
         bad_pages = [
         '/articles/indianapolis-exterminator-lists-top-5-worst-pest-infestations.htm',
         '/articles/angies-list-new-jersey-home-show-sweepstakes-rules.htm',
