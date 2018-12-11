@@ -1,4 +1,4 @@
-import re, json, time
+import json, time, html
 
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -8,6 +8,100 @@ from selenium.webdriver.common.action_chains import ActionChains
 
 
 class SegmentTestHelper():
+
+    def collect_segment_requests_on_page(context):
+        """A paired-down method for simply gathering segment requests from browser log"""
+        wait = WebDriverWait(context.browser, 15)
+        wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, 'div')))
+        time.sleep(3)
+
+        return SegmentTestHelper.get_browser_segmentlogs(context, 0)
+
+    def get_browser_segmentlogs(context, count):
+        count += 1
+        if count > 10:
+            return []
+        time.sleep(1)
+        collect_seg = []
+        perf_logs = context.browserlog()
+        for perflog in perf_logs:
+            perf_msgs = json.loads(perflog['message'])
+            if 'request' in perf_msgs['message']['params'] and 'postData' in perf_msgs['message']['params']['request']\
+               and perf_msgs['message']['params']['request']['postData'] is not None\
+               and 'properties' in perf_msgs['message']['params']['request']['postData']:
+                props_string = json.loads(perf_msgs['message']['params']['request']['postData'])['properties']
+                if props_string is not None:
+                    collect_seg.append(props_string)
+        if not collect_seg:
+            return SegmentTestHelper.get_browser_segmentlogs(context, count)
+
+        return collect_seg
+
+    def assert_segment_call_exists(context):
+        # time.sleep(4) # if a page takes longer than 4 seconds, it's bad
+        seg_calls = SegmentTestHelper.collect_segment_requests_on_page(context)
+        expected_prop_name = context.table[0]['unique_field']
+        expected_prop_value = context.table[0]['unique_value']
+        prop_exists = False
+        for seg_props in seg_calls:
+            if expected_prop_name in seg_props:
+                if seg_props[expected_prop_name] == expected_prop_value:
+                    context.seg_props = seg_props
+                    # print("%s == %s" % (seg_props[expected_prop_name], expected_prop_value))
+                    prop_exists = True
+
+        try:
+            assert prop_exists == True
+        except:
+            # caught to avoid false is not true response
+            raise AssertionError("%s not in segment properties" % expected_prop_name)
+
+    def assert_segment_call_props(context):
+        for row in context.table:
+            if row['prop_value'].lower() == 'true' or row['prop_value'].lower() == 'false':
+                try:
+                    assert bool(context.seg_props[row['prop_key']]) == bool(html.unescape(row['prop_value'].capitalize()))
+                except AssertionError:
+                    raise AssertionError('%s expected %s, found %s' % (row['prop_key'], \
+                                                                       row['prop_value'], \
+                                                                       context.seg_props[row['prop_key']]))
+            elif row['prop_value']:
+                try:
+                    assert context.seg_props[row['prop_key']] == html.unescape(row['prop_value'])
+                except AssertionError:
+                    raise AssertionError('%s expected %s, found %s' % (row['prop_key'], \
+                                                                       row['prop_value'], \
+                                                                       context.seg_props[row['prop_key']]))
+            else:
+                try:
+                    assert row['prop_key'] in context.seg_props
+                except AssertionError:
+                    raise AssertionError('%s not found in segment properties' % row['prop_key'])
+
+
+    def do_actions(client, actions):
+        """
+        Performs a list of actions on the webdriver client
+        http://selenium-python.readthedocs.io/api.html#module-selenium.webdriver.common.action_chains
+        actions is a list of dicts: [{'action_method':'method_name','action_params':['param1','param2','param3'...] },]
+        """
+        wait = WebDriverWait(client, 10)
+        for action in actions:
+            # action_element = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, action['action_element'])))
+            if action['action_params']:
+                for i in range(0, len(action['action_params'])):
+                    if action['action_params'][i] and (action['action_params'][i][0] == '#' or action['action_params'][i][0] == '.'):
+                        action['action_params'][i] = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR,action['action_params'][i])))
+
+        action_chain = ActionChains(client)
+        for action in actions:
+            try:
+                p_action_method = getattr(action_chain, action['action_method'])
+                p_action_method(*action['action_params'])
+            except AttributeError:
+                raise NotImplementedError("ActionChains does not implement %s" % action['action_method'])
+
+        action_chain.perform()
 
     ##
     # @param test_case - passed as 'self' from the calling test case method
@@ -110,10 +204,10 @@ class SegmentTestHelper():
                 print('Segment call %s exists on page' % segcall_info['main_field'])
                 for seg_check in segcall_info['segment_params']:
                     if len(seg_check) > 1:
-                        test_case.assertEqual(seg_call[seg_check[0]], seg_check[1])
+                        test_case.assertEqual(seg_call[seg_check[0]], seg_check[1], 'expected: %s | actual: %s' % (seg_call[seg_check[0]], seg_check[1]))
                         print("Segment call detected. %s | %s" % (seg_check[0], seg_call[seg_check[0]]))
                     else:
-                        test_case.assertTrue(seg_check[0] in seg_call)
+                        test_case.assertTrue(seg_check[0] in seg_call, 'Expected segment property %s is missing' % seg_check[0])
                         print("Segment property %s exists" % seg_check[0])
 
         try:
