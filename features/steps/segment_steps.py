@@ -40,6 +40,17 @@ def step_impl(context):
 def step_impl(context):
     SegmentTestHelper.do_actions(context.browser, get_action_list(context))
 
+@when('the page loads')
+def step_impl(context):
+    assert "Angie" in context.browser.title
+
+@then('the company logo is in the header')
+def step_impl(context):
+    elem = context.browser.find_element_by_id("al_logo")
+    # print(context.browser.__dict__)
+    assert "404 Page Not Found" not in context.browser.page_source
+    # assert 1 == 2
+
 def get_action_list(context):
     actions = []
     for row in context.table:
