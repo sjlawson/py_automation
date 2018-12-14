@@ -441,6 +441,30 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
         self.leafPageSegmentTopCitiesHouston()
         self.client.back()
         self.leafPageSegmentTopCitiesChicago()
+        self.client.back()
+        self.leafPageSegmentTopCitiesIndianapolis()
+        self.client.back()
+        self.leafPageSegmentTopCitiesBoston()
+        self.client.back()
+        self.leafPageSegmentTopCitiesAtlanta()
+        self.client.back()
+        self.leafPageSegmentTopCitiesCincinnati()
+        self.client.back()
+        self.leafPageSegmentTopCitiesLosAngeles()
+        self.client.back()
+        self.leafPageSegmentTopCitiesDallas()
+        self.client.back()
+        self.leafPageSegmentTopCitiesPittsburgh()
+        self.client.back()
+        self.leafPageSegmentTopCitiesMinneapolis()
+        self.client.back()
+        self.leafPageSegmentTopCitiesLasVegas()
+        self.client.back()
+        self.leafPageSegmentTopCitiesSanAntonio()
+        self.client.back()
+        self.leafPageSegmentTopCitiesTampa()
+        self.client.back()
+        self.footerJoinCTAnonAdvertiser()
 
     # Footer Join Leaf Page Advertiser
     def footerJoinCTAAdvertiser(self):
@@ -563,7 +587,7 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # Leaf Page - Footer - Top Cities Indianapolis
-    def test_leafPageSegmentTopCitiesIndianapolis(self):
+    def leafPageSegmentTopCitiesIndianapolis(self):
         if not self.client:
             return 0
 
@@ -581,7 +605,7 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # Leaf Page - Footer - Top Cities Boston
-    def test_leafPageSegmentTopCitiesBoston(self):
+    def leafPageSegmentTopCitiesBoston(self):
         if not self.client:
             return 0
 
@@ -599,7 +623,7 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # Leaf Page - Footer - Top Cities Atlanta
-    def test_leafPageSegmentTopCitiesAtlanta(self):
+    def leafPageSegmentTopCitiesAtlanta(self):
         if not self.client:
             return 0
 
@@ -617,7 +641,7 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # Leaf Page - Footer - Top Cities Cincinnati
-    def test_leafPageSegmentTopCitiesCincinnati(self):
+    def leafPageSegmentTopCitiesCincinnati(self):
         if not self.client:
             return 0
 
@@ -635,7 +659,7 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # Leaf Page - Footer - Top Cities Los Angeles
-    def test_leafPageSegmentTopCitiesLosAngeles(self):
+    def leafPageSegmentTopCitiesLosAngeles(self):
         if not self.client:
             return 0
 
@@ -653,7 +677,7 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # Leaf Page - Footer - Top Cities Dallas
-    def test_leafPageSegmentTopCitiesDallas(self):
+    def leafPageSegmentTopCitiesDallas(self):
         if not self.client:
             return 0
 
@@ -671,7 +695,7 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # Leaf Page - Footer - Top Cities Pittsburgh
-    def test_leafPageSegmentTopCitiesPittsburgh(self):
+    def leafPageSegmentTopCitiesPittsburgh(self):
         if not self.client:
             return 0
 
@@ -689,7 +713,7 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # Leaf Page - Footer - Top Cities Minneapolis
-    def test_leafPageSegmentTopCitiesMinneapolis(self):
+    def leafPageSegmentTopCitiesMinneapolis(self):
         if not self.client:
             return 0
 
@@ -707,7 +731,7 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # Leaf Page - Footer - Top Cities Las Vegas
-    def test_leafPageSegmentTopCitiesLasVegas(self):
+    def leafPageSegmentTopCitiesLasVegas(self):
         if not self.client:
             return 0
 
@@ -725,7 +749,7 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # Leaf Page - Footer - Top Cities San Antonio
-    def test_leafPageSegmentTopCitiesSanAntonio(self):
+    def leafPageSegmentTopCitiesSanAntonio(self):
         if not self.client:
             return 0
 
@@ -743,7 +767,7 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # Leaf Page - Footer - Top Cities Tampa
-    def test_leafPageSegmentTopCitiesTampa(self):
+    def leafPageSegmentTopCitiesTampa(self):
         if not self.client:
             return 0
 
@@ -762,7 +786,7 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # Footer Join Leaf Page NON Advertiser
-    def test_footerJoinCTAnonAdvertiser(self):
+    def footerJoinCTAnonAdvertiser(self):
         # quit if browser didn't load
         if not self.client:
             return 0
