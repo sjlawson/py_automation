@@ -121,8 +121,25 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
 
                 ###### Header Test Starts Here ######
 
+
+    def test_leafSegment_Header(self):
+        if not self.client:
+            return 0
+
+        self.SignInHeaderLeafAdvertiser()
+        self.client.back()
+        self.SignInHeaderLeafnewAdvertiser()
+        self.client.back()
+        self.SignInHeaderLeafnonAdvertiser()
+        self.client.back()
+        self.headerJoinCTAAdvertiser()
+        self.client.back()
+        self.headerJoinCTAnewAdvertiser()
+        self.client.back()
+        self.headerJoinCTAnonAdvertiser()
+
     # Sign In Header Leaf Page Advertiser
-    def test_SignInHeaderLeafAdvertiser(self):
+    def SignInHeaderLeafAdvertiser(self):
         # quit if browser didn't load
         if not self.client:
             return 0
@@ -146,7 +163,7 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # Header Sign In  Leaf Page New Advertiser
-    def test_SignInHeaderLeafnewAdvertiser(self):
+    def SignInHeaderLeafnewAdvertiser(self):
         # quit if browser didn't load
         if not self.client:
             return 0
@@ -170,7 +187,7 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # Header Sign In Leaf Page NON Advertiser
-    def test_SignInHeaderLeafnonAdvertiser(self):
+    def SignInHeaderLeafnonAdvertiser(self):
         # quit if browser didn't load
         if not self.client:
             return 0
@@ -194,7 +211,7 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # Header Join Leaf page Advertiser
-    def test_headerJoinCTAAdvertiser(self):
+    def headerJoinCTAAdvertiser(self):
         # quit if browser didn't load
         if not self.client:
             return 0
@@ -219,7 +236,7 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # Header Join Leaf page New Advertiser
-    def test_headerJoinCTAnewAdvertiser(self):
+    def headerJoinCTAnewAdvertiser(self):
         # quit if browser didn't load
         if not self.client:
             return 0
@@ -244,7 +261,7 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # Header Join Leaf page NON Advertiser
-    def test_headerJoinCTAnonAdvertiser(self):
+    def headerJoinCTAnonAdvertiser(self):
         # quit if browser didn't load
         if not self.client:
             return 0
