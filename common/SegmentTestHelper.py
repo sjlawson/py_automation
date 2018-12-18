@@ -1,4 +1,4 @@
-import json, time, html
+import json, time, html, requests
 
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -8,6 +8,12 @@ from selenium.webdriver.common.action_chains import ActionChains
 
 
 class SegmentTestHelper():
+
+    def request_mountebank():
+        r = requests.get("http://127.0.0.1:2525/imposters/3535")
+        content = json.loads(r._content)
+        content_body = json.loads(content['requests'][-1:][0]['body'])
+        print(content_body['properties'])
 
     def collect_segment_requests_on_page(context):
         """A paired-down method for simply gathering segment requests from browser log"""
@@ -38,6 +44,7 @@ class SegmentTestHelper():
         return collect_seg
 
     def assert_segment_call_exists(context):
+        # SegmentTestHelper.request_mountebank()
         # time.sleep(4) # if a page takes longer than 4 seconds, it's bad
         seg_calls = SegmentTestHelper.collect_segment_requests_on_page(context)
         expected_prop_name = context.table[0]['unique_field']
@@ -85,7 +92,7 @@ class SegmentTestHelper():
         http://selenium-python.readthedocs.io/api.html#module-selenium.webdriver.common.action_chains
         actions is a list of dicts: [{'action_method':'method_name','action_params':['param1','param2','param3'...] },]
         """
-        wait = WebDriverWait(client, 10)
+        wait = WebDriverWait(client, 20)
         for action in actions:
             # action_element = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, action['action_element'])))
             if action['action_params']:
