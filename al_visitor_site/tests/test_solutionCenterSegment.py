@@ -32,7 +32,7 @@ class SolutionCenterSegmentTestCase(SeleniumTestCase):
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
-
+                ##### Header Tests #####
 
     # test segment call on clicking the join link in the header
     def test_articlesHeaderJoinClick(self):
@@ -51,8 +51,6 @@ class SolutionCenterSegmentTestCase(SeleniumTestCase):
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
-
-
     # test segment call on clicking the HIW link in the header
     def test_articlesHIWHeaderLinkClick(self):
         if not self.client:
@@ -69,9 +67,6 @@ class SolutionCenterSegmentTestCase(SeleniumTestCase):
         }
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
-
-
-
 
     # test segment call on clicking the Sign In link in the header
     def test_articlesHeaderSignInClick(self):
@@ -90,7 +85,6 @@ class SolutionCenterSegmentTestCase(SeleniumTestCase):
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
-
     # test segment call on clicking the FAQ link in the header
     def test_articlesHeaderFAQClick(self):
         if not self.client:
@@ -107,7 +101,6 @@ class SolutionCenterSegmentTestCase(SeleniumTestCase):
         }
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
-
 
     # test segment call on clicking the Press link in the header
     def test_articlesHeaderITPClick(self):
@@ -126,7 +119,6 @@ class SolutionCenterSegmentTestCase(SeleniumTestCase):
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
-
     # test segment call on clicking the SC link in the header
     def test_articlesHeaderScClick(self):
         if not self.client:
@@ -143,7 +135,6 @@ class SolutionCenterSegmentTestCase(SeleniumTestCase):
         }
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
-
 
     # test segment call on clicking the BC link in the header
     def test_articlesHeaderScClick(self):
@@ -163,6 +154,8 @@ class SolutionCenterSegmentTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
 
+                ##### Footer Tests #####
+
     # test segment call on clicking the Join link in the footer
     def test_articlesFooterJoinClick(self):
         if not self.client:
@@ -179,8 +172,6 @@ class SolutionCenterSegmentTestCase(SeleniumTestCase):
         }
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
-
-
 
     # Solution Center Top Cities NYC
     def test_solutionCenterTopCitiesNYC(self):
