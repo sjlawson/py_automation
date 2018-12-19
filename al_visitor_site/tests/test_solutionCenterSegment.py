@@ -164,7 +164,7 @@ class SolutionCenterSegmentTestCase(SeleniumTestCase):
         collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/articles/?bustARhyme', '#footer-join', 'click')
         segcall_info = {
             'main_field': 'activityLocation',
-            'main_value': 'CNT : Articles List',
+            'main_value': 'CNT : Article Landing Page',
             'segment_params': [
                 ('description', 'Join button in footer'),
                 ('userId',),
@@ -184,7 +184,7 @@ class SolutionCenterSegmentTestCase(SeleniumTestCase):
             'main_value': 'Top Cities link in footer',
             'segment_params': [
                 ('description', 'Top Cities link in footer'),
-                ('activityLocation', 'CNT : Articles List'),
+                ('activityLocation', 'CNT : Article Landing Page'),
                 ('userId',),
             ]
         }
@@ -202,7 +202,7 @@ class SolutionCenterSegmentTestCase(SeleniumTestCase):
             'main_value': 'Top Cities link in footer',
             'segment_params': [
                 ('description', 'Top Cities link in footer'),
-                ('activityLocation', 'CNT : Articles List'),
+                ('activityLocation', 'CNT : Article Landing Page'),
                 ('userId',),
             ]
         }
@@ -220,7 +220,7 @@ class SolutionCenterSegmentTestCase(SeleniumTestCase):
             'main_value': 'Top Cities link in footer',
             'segment_params': [
                 ('description', 'Top Cities link in footer'),
-                ('activityLocation', 'CNT : Articles List'),
+                ('activityLocation', 'CNT : Article Landing Page'),
                 ('userId',),
             ]
         }
@@ -238,7 +238,7 @@ class SolutionCenterSegmentTestCase(SeleniumTestCase):
             'main_value': 'Top Cities link in footer',
             'segment_params': [
                 ('description', 'Top Cities link in footer'),
-                ('activityLocation', 'CNT : Articles List'),
+                ('activityLocation', 'CNT : Article Landing Page'),
                 ('userId',),
             ]
         }
@@ -256,7 +256,7 @@ class SolutionCenterSegmentTestCase(SeleniumTestCase):
             'main_value': 'Top Cities link in footer',
             'segment_params': [
                 ('description', 'Top Cities link in footer'),
-                ('activityLocation', 'CNT : Articles List'),
+                ('activityLocation', 'CNT : Article Landing Page'),
                 ('userId',),
             ]
         }
@@ -267,14 +267,14 @@ class SolutionCenterSegmentTestCase(SeleniumTestCase):
     def test_solutionCenterTopCitiesAtlanta(self):
         if not self.client:
             return 0
-
+                                                                                                            
         collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/articles/?bustARhyme', 'div.footer-region.cities-left > li > a[title="Search Atlanta Pros"]', 'click')
         segcall_info = {
             'main_field': 'description',
             'main_value': 'Top Cities link in footer',
             'segment_params': [
                 ('description', 'Top Cities link in footer'),
-                ('activityLocation', 'CNT : Articles List'),
+                ('activityLocation', 'CNT : Article Landing Page'),
                 ('userId',),
             ]
         }
@@ -289,10 +289,10 @@ class SolutionCenterSegmentTestCase(SeleniumTestCase):
         collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/articles/?bustARhyme', 'div.footer-region.cities-left > li > a[title="Search Cincinnati Pros"]', 'click')
         segcall_info = {
             'main_field': 'activityLocation',
-            'main_value': 'CNT : Articles List',
+            'main_value': 'CNT : Article Landing Page',
             'segment_params': [
                 ('description', 'Top Cities link in footer'),
-                ('activityLocation', 'CNT : Articles List'),
+                ('activityLocation', 'CNT : Article Landing Page'),
                 ('userId',),
             ]
         }
@@ -310,7 +310,7 @@ class SolutionCenterSegmentTestCase(SeleniumTestCase):
             'main_value': 'Top Cities link in footer',
             'segment_params': [
                 ('description', 'Top Cities link in footer'),
-                ('activityLocation', 'CNT : Articles List'),
+                ('activityLocation', 'CNT : Article Landing Page'),
                 ('userId',),
             ]
         }
@@ -328,7 +328,7 @@ class SolutionCenterSegmentTestCase(SeleniumTestCase):
             'main_value': 'Top Cities link in footer',
             'segment_params': [
                 ('description', 'Top Cities link in footer'),
-                ('activityLocation', 'CNT : Articles List'),
+                ('activityLocation', 'CNT : Article Landing Page'),
                 ('userId',),
             ]
         }
@@ -346,7 +346,7 @@ class SolutionCenterSegmentTestCase(SeleniumTestCase):
             'main_value': 'Top Cities link in footer',
             'segment_params': [
                 ('description', 'Top Cities link in footer'),
-                ('activityLocation', 'CNT : Articles List'),
+                ('activityLocation', 'CNT : Article Landing Page'),
                 ('userId',),
             ]
         }
@@ -364,7 +364,7 @@ class SolutionCenterSegmentTestCase(SeleniumTestCase):
             'main_value': 'Top Cities link in footer',
             'segment_params': [
                 ('description', 'Top Cities link in footer'),
-                ('activityLocation', 'CNT : Articles List'),
+                ('activityLocation', 'CNT : Article Landing Page'),
                 ('userId',),
             ]
         }
@@ -382,7 +382,7 @@ class SolutionCenterSegmentTestCase(SeleniumTestCase):
             'main_value': 'Top Cities link in footer',
             'segment_params': [
                 ('description', 'Top Cities link in footer'),
-                ('activityLocation', 'CNT : Articles List'),
+                ('activityLocation', 'CNT : Article Landing Page'),
                 ('userId',),
             ]
         }
@@ -400,7 +400,7 @@ class SolutionCenterSegmentTestCase(SeleniumTestCase):
             'main_value': 'Top Cities link in footer',
             'segment_params': [
                 ('description', 'Top Cities link in footer'),
-                ('activityLocation', 'CNT : Articles List'),
+                ('activityLocation', 'CNT : Article Landing Page'),
                 ('userId',),
             ]
         }
@@ -418,7 +418,7 @@ class SolutionCenterSegmentTestCase(SeleniumTestCase):
             'main_value': 'Top Cities link in footer',
             'segment_params': [
                 ('description', 'Top Cities link in footer'),
-                ('activityLocation', 'CNT : Articles List'),
+                ('activityLocation', 'CNT : Article Landing Page'),
                 ('userId',),
             ]
         }
