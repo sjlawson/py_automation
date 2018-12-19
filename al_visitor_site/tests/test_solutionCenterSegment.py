@@ -9,7 +9,7 @@ from common.SegmentTestHelper import SegmentTestHelper
 class SolutionCenterSegmentTestCase(SeleniumTestCase):
 
 
-    # Page Call
+    # Page Call - Landing Page
     def test_solutionCenterLandingPage_PageCall(self):
         # quit if browser didn't load
         if not self.client:
@@ -31,6 +31,55 @@ class SolutionCenterSegmentTestCase(SeleniumTestCase):
         }
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # Page Call - Classic with multiple cats - Article
+    def test_solutionCenterArticle_PageCall(self):
+        # quit if browser didn't load
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/articles/lead-paint-still-threat-it-shouldn%E2%80%99t-be.htm')
+
+        segcall_info = {
+            'main_field': 'name',
+            'main_value': 'CNT : Article',
+            'segment_params': [
+                ('name', 'CNT : Article'),
+                ('path', '/articles/lead-paint-still-threat-it-shouldn%E2%80%99t-be.htm'),
+                ('title', 'Lead Paint Is Still a Threat, But It Shouldn’t Be | Angie\'s List'),
+                ('visitorPageCategory', 'INTERIOR PAINTERS'),
+                ('userId',),
+                ('userType', 'Visitor - New'),
+                ('contentNodeId', '112756')
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # Page Call - Classic with multiple cats - Article
+    def test_solutionCenterStructuredArticle_PageCall(self):
+        # quit if browser didn't load
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/articles/interior-design-ideas-add-dimension.htm')
+
+        segcall_info = {
+            'main_field': 'name',
+            'main_value': 'CNT : Structured Content',
+            'segment_params': [
+                ('name', 'CNT : Structured Content'),
+                ('path', '/articles/interior-design-ideas-add-dimension.htm'),
+                ('title', 'Interior Design Ideas Add Dimension | Angie\'s List'),
+                ('visitorPageCategory', 'PAINTING - INTERIOR'),
+                ('userId',),
+                ('userType', 'Visitor - New'),
+                ('contentNodeId', '145946')
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
 
                 ##### Header Tests #####
 
