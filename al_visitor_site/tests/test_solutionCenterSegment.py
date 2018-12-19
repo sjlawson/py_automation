@@ -56,7 +56,7 @@ class SolutionCenterSegmentTestCase(SeleniumTestCase):
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
-    # Page Call - Classic with multiple cats - Article
+    # Page Call - Structured with SINGLE Cat - Article
     def test_solutionCenterStructuredArticle_PageCall(self):
         # quit if browser didn't load
         if not self.client:
@@ -75,6 +75,33 @@ class SolutionCenterSegmentTestCase(SeleniumTestCase):
                 ('userId',),
                 ('userType', 'Visitor - New'),
                 ('contentNodeId', '145946')
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # Page Call - Structured with multiple cats - Article
+    def test_solutionCenterStructuredMultiCatArticle_PageCall(self):
+        # quit if browser didn't load
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/articles/pros-and-cons-frameless-shower-doors.htm')
+
+        segcall_info = {
+            'main_field': 'name',
+            'main_value': 'CNT : Structured Content',
+            'segment_params': [
+                ('name', 'CNT : Structured Content'),
+                ('path', '/articles/pros-and-cons-frameless-shower-doors.htm'),
+                ('title', 'Pros and Cons of Frameless Shower Doors | Angie\'s List'),
+                ('visitorPageCategory', 'REMODELING - KITCHEN & BATHROOM'),
+                ('userId',),
+                ('userType', 'Visitor - New'),
+                ('contentNodeId', '152101'),
+                ('authorName', 'Kaley Belakovich'),
+                ('srCtaDisplayed', True),
+                ('srCtaVersion', 'v2')
             ]
         }
 
