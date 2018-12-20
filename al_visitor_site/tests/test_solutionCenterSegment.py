@@ -72,9 +72,13 @@ class SolutionCenterSegmentTestCase(SeleniumTestCase):
                 ('path', '/articles/interior-design-ideas-add-dimension.htm'),
                 ('title', 'Interior Design Ideas Add Dimension | Angie\'s List'),
                 ('visitorPageCategory', 'PAINTING - INTERIOR'),
+                ('visitorPageCategorySecondary','Painting - Interior'),
                 ('userId',),
                 ('userType', 'Visitor - New'),
-                ('contentNodeId', '145946')
+                ('contentNodeId', '145946'),
+                ('CategoryId',),
+                ('categoryIdSecondary', '294'),
+                ('micromoments',)
             ]
         }
 
@@ -101,7 +105,11 @@ class SolutionCenterSegmentTestCase(SeleniumTestCase):
                 ('contentNodeId', '152101'),
                 ('authorName', 'Kaley Belakovich'),
                 ('srCtaDisplayed', True),
-                ('srCtaVersion', 'v2')
+                ('srCtaVersion', 'v2'),
+                ('CategoryId', '291'),
+                ('categoryIdSecondary', '28'),
+                ('visitorPageCategorySecondary','Bathtub Refinishing & Liners'),
+                ('micromoments','ROI')
             ]
         }
 
