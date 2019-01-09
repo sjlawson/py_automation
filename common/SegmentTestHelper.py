@@ -1,19 +1,42 @@
-import json, time, html, requests
+import json, time, html, requests, sys, urllib3
 
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
-from selenium.common.exceptions import TimeoutException
+from selenium.common.exceptions import TimeoutException, NoSuchElementException
 from selenium.webdriver.common.action_chains import ActionChains
 
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 class SegmentTestHelper():
 
-    def request_mountebank():
-        r = requests.get("http://127.0.0.1:2525/imposters/3535")
-        content = json.loads(r._content)
-        content_body = json.loads(content['requests'][-1:][0]['body'])
-        print(content_body['properties'])
+    def request_mountebank(context, count):
+        """
+        This method is a 1:1 match to the output from get_browser_segmentlogs()
+        mb_host: url for mounteback
+        mbi_port: mountebank impostor port
+        """
+        count += 1
+        if count > 10:
+            return []
+        r = requests.get("http://%s:2525/imposters/%s" % (context.mb_host, context.mbi_port))
+        content_bodies = [json.loads(content_requests['body']) for content_requests in json.loads(r._content)['requests']]
+        segment_props = [ body['properties'] for body in content_bodies]
+        if not segment_props:
+            return SegmentTestHelper.request_mountebank(context, count)
+        # print("\n\nSegment Props: ", segment_props)
+        # print("\n\n")
+        return segment_props
+
+    def element_is_clickable(browser, selector):
+        print("\n")
+        wait = WebDriverWait(browser, 15)
+        element = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, selector)))
+        if element:
+            return True
+        else:
+            print("Element %s not found" % selector)
+            return False
 
     def collect_segment_requests_on_page(context):
         """A paired-down method for simply gathering segment requests from browser log"""
@@ -21,15 +44,16 @@ class SegmentTestHelper():
         wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, 'div')))
         time.sleep(3)
 
-        return SegmentTestHelper.get_browser_segmentlogs(context, 0)
+        return SegmentTestHelper.request_mountebank(context, 0)
+        #return SegmentTestHelper.get_browser_segmentlogs(context, 0)
 
     def get_browser_segmentlogs(context, count):
         count += 1
         if count > 10:
             return []
         time.sleep(1)
+        SegmentTestHelper.request_mountebank(context.mb_host, context.mbi_port)
         collect_seg = []
-        perf_logs = context.browserlog()
         for perflog in perf_logs:
             perf_msgs = json.loads(perflog['message'])
             if 'request' in perf_msgs['message']['params'] and 'postData' in perf_msgs['message']['params']['request']\
@@ -86,19 +110,48 @@ class SegmentTestHelper():
                     raise AssertionError('%s not found in segment properties' % row['prop_key'])
 
 
+    def get_webdriver_element(client, selector, tries):
+        tries += 1
+        if tries > 3:
+            raise NoSuchElementException("Element not found, identified by <%s>" % selector)
+
+        element = None
+        try:
+            if selector[:3] == 'id:':
+                print("Checking for element: %s" % selector[3:].strip())
+                element = client.find_element_by_id(selector[3:].strip())
+            elif selector[0] == '.' or selector[0] == '#':
+                element = client.find_element_by_css_selector(selector)
+            elif selector[:4] == 'css:':
+                element = client.find_element_by_css_selector(selector[4:].strip())
+            elif selector[:5] == 'name:':
+                element = client.find_element_by_name(selector[5:].strip())
+            else:
+                return selector
+        except NoSuchElementException as e:
+            time.sleep(1)
+            if tries < 4:
+                SegmentTestHelper.get_webdriver_element(client, selector, tries)
+
+        return element
+
     def do_actions(client, actions):
         """
         Performs a list of actions on the webdriver client
         http://selenium-python.readthedocs.io/api.html#module-selenium.webdriver.common.action_chains
         actions is a list of dicts: [{'action_method':'method_name','action_params':['param1','param2','param3'...] },]
+
+        In the case where an action param is an element, the string element identifier (best practise is to use ID),
+        the param must be mutated to an instance of a webdriver element
         """
         wait = WebDriverWait(client, 20)
         for action in actions:
-            # action_element = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, action['action_element'])))
+            wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, 'body > div')))
             if action['action_params']:
                 for i in range(0, len(action['action_params'])):
-                    if action['action_params'][i] and (action['action_params'][i][0] == '#' or action['action_params'][i][0] == '.'):
-                        action['action_params'][i] = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR,action['action_params'][i])))
+                    time.sleep(1)
+                    if action['action_params'][i]:
+                        action['action_params'][i] = SegmentTestHelper.get_webdriver_element(client=client, selector=action['action_params'][i], tries=0)
 
         action_chain = ActionChains(client)
         for action in actions:
@@ -106,7 +159,8 @@ class SegmentTestHelper():
                 p_action_method = getattr(action_chain, action['action_method'])
                 p_action_method(*action['action_params'])
             except AttributeError:
-                raise NotImplementedError("ActionChains does not implement %s" % action['action_method'])
+                print("\n\nERROR ON METHOD %s\n\n__" % str(action['action_method']))
+                raise NotImplementedError("ActionChains does not implement _%s_ with params _%s_" % (action['action_method'], action['action_params']))
 
         action_chain.perform()
 

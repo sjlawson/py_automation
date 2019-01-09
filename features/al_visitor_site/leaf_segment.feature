@@ -7,11 +7,11 @@ Feature:
     /companylist/us/nc/raleigh/alpha-omega-construction-group-inc-reviews-8807061.htm
     """
     When a user performs actions
-      | action_method   | action_params   |
-      | move_to_element | #ha-lead-zip    |
-      | send_keys       | 27610           |
-      | move_to_element | #ha-lead-submit |
-      | click           |                 |
+      | action_method   | action_params      |
+      | move_to_element | id: ha-lead-zip    |
+      | send_keys       | 27610              |
+      | move_to_element | id: ha-lead-submit |
+      | click           |                    |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value                      |
       | description  | Service Request Flow entry button |

@@ -37,6 +37,30 @@ Feature:
 - After the 'When' and 'Then' lines, there is a name/value table structure. This is a pre-built structure that should word for any segment call test
 - Note that above, an html encoding had to be used in the title `Angie's List | Join for FREE...` -- this is because the vertical bar is a reserved character in Gherkin. 
 
+### Features with simulated user actions
+Actions, or action chains, are commands that mimic the actions of a user on a webpage. They also usually have elements as parameters. 
+The following is an example:
+
+```  
+When a user performs actions
+      | action_method   | action_params                       |
+      | move_to_element | id: #ha-lead-zip                    |
+      | send_keys       | 27610                               |
+      | move_to_element | css: .user-form input.submit_button |
+      | click           |                                     |
+```
+_Things to notice_
+- the first row must have the headings, `action_method` and `action_params`
+- the content of the action_method column must be a valid Selenium action chain method
+  - See: https://selenium-python.readthedocs.io/api.html#module-selenium.webdriver.common.action_chains
+- If the action parameter (action_params) is an element on the page, it's best to include what type of element it is with a colon like this:
+  - id: #id-of-element
+  - css: div .css-class
+  - name: element-with-name-attribute
+- If the selector starts with # or '.', you can omit the type
+- Best practice is either name or id. Long CSS selectors should be last resort
+
+
 ### The main idea is to create re-usable step implementations so that, most of the time, all that's needed to make a new test is a feature file that conforms to an existing pattern
 If a new pattern is needed, a ticket will likely have to be created for Core Quality or an approved maintainer of `al_py_automation` to write the Python code for the new step implementation 
 

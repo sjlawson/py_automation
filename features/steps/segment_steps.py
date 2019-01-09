@@ -9,6 +9,14 @@ def step_impl(context):
     context.url = appsuite_url + context.text
     context.browser.get(context.url)
 
+@given('user is on a visitor site tball page')
+def step_impl(context):
+    appsuite_env = 'al_visitor_tball'
+    appsuite_url = context.appsuites[appsuite_env]['base_url']
+    context.url = appsuite_url + context.text
+    context.browser.get(context.url)
+
+
 @given('user is on a member site page')
 def step_impl(context):
     appsuite_env = 'al_member_site'
@@ -43,6 +51,16 @@ def step_impl(context):
 @when('the page loads')
 def step_impl(context):
     assert "Angie" in context.browser.title
+
+@then('the following element css selector is clickable')
+def step_impl(context):
+    assert SegmentTestHelper.element_is_clickable(context.browser, context.text) is True
+
+@then('the following element css selectors are clickable')
+def step_impl(context):
+    for row in context.table:
+        assert SegmentTestHelper.element_is_clickable(context.browser, row['selector']) is True
+
 
 @then('the company logo is in the header')
 def step_impl(context):

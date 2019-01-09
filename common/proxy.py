@@ -559,7 +559,7 @@ class TCP(object):
     retarget_port = None
     retarget_host = None
 
-    def __init__(self, hostname='127.0.0.1', port=8899, backlog=100, targethost='notfound', targetport=3131):
+    def __init__(self, hostname='127.0.0.1', port=4545, backlog=100, targethost='localhost', targetport=58111):
         self.retarget_port = int(targetport)
         self.retarget_host = targethost
         self.hostname = hostname
