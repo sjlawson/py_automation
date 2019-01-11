@@ -1,5 +1,6 @@
 from behave import given, then, when
 from common.SegmentTestHelper import SegmentTestHelper
+import time
 
 
 @given('user is on a visitor site page')
@@ -8,14 +9,16 @@ def step_impl(context):
     appsuite_url = context.appsuites[appsuite_env]['base_url']
     context.url = appsuite_url + context.text
     context.browser.get(context.url)
+    time.sleep(1)
 
 @given('user is on a visitor site tball page')
 def step_impl(context):
     appsuite_env = 'al_visitor_tball'
     appsuite_url = context.appsuites[appsuite_env]['base_url']
     context.url = appsuite_url + context.text
-    context.browser.get(context.url)
-
+    SegmentTestHelper.getTBallPage(context)
+    time.sleep(1)
+    # context.browser.get(context.url)
 
 @given('user is on a member site page')
 def step_impl(context):
@@ -23,6 +26,7 @@ def step_impl(context):
     appsuite_url = context.appsuites[appsuite_env]['base_url']
     context.url = appsuite_url + context.text
     context.browser.get(context.url)
+    time.sleep(1)
 
 @then('a segment track call is sent for a unique field value pair')
 def step_impl(context):

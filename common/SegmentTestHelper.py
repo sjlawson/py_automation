@@ -31,18 +31,20 @@ class SegmentTestHelper():
     def element_is_clickable(browser, selector):
         print("\n")
         wait = WebDriverWait(browser, 15)
-        element = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, selector)))
-        if element:
-            return True
-        else:
+        try:
+            element = SegmentTestHelper.get_webdriver_element(browser, selector, 0)
+        except NoSuchElementException:
             print("Element %s not found" % selector)
             return False
+        # element = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, selector)))
+        return True
+
 
     def collect_segment_requests_on_page(context):
         """A paired-down method for simply gathering segment requests from browser log"""
         wait = WebDriverWait(context.browser, 15)
         wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, 'div')))
-        time.sleep(3)
+        time.sleep(2)
 
         return SegmentTestHelper.request_mountebank(context, 0)
         #return SegmentTestHelper.get_browser_segmentlogs(context, 0)
@@ -51,7 +53,7 @@ class SegmentTestHelper():
         count += 1
         if count > 10:
             return []
-        time.sleep(1)
+        # time.sleep(1)
         SegmentTestHelper.request_mountebank(context.mb_host, context.mbi_port)
         collect_seg = []
         for perflog in perf_logs:
@@ -147,22 +149,23 @@ class SegmentTestHelper():
         wait = WebDriverWait(client, 20)
         for action in actions:
             wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, 'body > div')))
+            # time.sleep(1)
             if action['action_params']:
                 for i in range(0, len(action['action_params'])):
-                    time.sleep(1)
                     if action['action_params'][i]:
                         action['action_params'][i] = SegmentTestHelper.get_webdriver_element(client=client, selector=action['action_params'][i], tries=0)
 
-        action_chain = ActionChains(client)
+
         for action in actions:
+            action_chain = ActionChains(client)
             try:
                 p_action_method = getattr(action_chain, action['action_method'])
                 p_action_method(*action['action_params'])
+                action_chain.perform()
             except AttributeError:
                 print("\n\nERROR ON METHOD %s\n\n__" % str(action['action_method']))
                 raise NotImplementedError("ActionChains does not implement _%s_ with params _%s_" % (action['action_method'], action['action_params']))
 
-        action_chain.perform()
 
     ##
     # @param test_case - passed as 'self' from the calling test case method
@@ -278,3 +281,8 @@ class SegmentTestHelper():
             test_case.test_result = 'fail'
             raise
         test_case.test_result = 'pass'
+
+    def getTBallPage(context):
+        wait = WebDriverWait(context.browser, 15)
+        context.browser.get(context.url)
+        wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, '#app > div')))

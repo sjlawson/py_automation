@@ -6,7 +6,7 @@ from selenium.webdriver.common.proxy import Proxy as SeleniumProxy, ProxyType
 from multiprocessing import Process
 from browsermobproxy import Server
 from common.proxy import *
-import yaml, os, datetime, json, requests, time
+import yaml, os, datetime, json, requests
 
 if os.path.exists('.env'):
     print('Importing environment from .env...')
