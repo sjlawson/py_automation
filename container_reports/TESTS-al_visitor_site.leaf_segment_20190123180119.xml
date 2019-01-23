@@ -1,5 +1,0 @@
-<testsuite errors="0" failures="1" hostname="4d85a540986c" name="al_visitor_site.leaf_segment.al_visitor_site.leaf_segment" skipped="0" tests="1" time="20.892194" timestamp="2019-01-23T18:29:19.067525"><testcase classname="al_visitor_site.leaf_segment.al_visitor_site.leaf_segment" name="User fills zipcode on Leaf CTA" status="failed" time="20.892194"><failure message="description not in segment properties" type="AssertionError">
-<![CDATA[]]>
-</failure><system-out>
-<![CDATA[]]>
-</system-out></testcase></testsuite>

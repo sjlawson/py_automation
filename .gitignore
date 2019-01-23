@@ -5,6 +5,7 @@ py36/
 geckodriver.log
 .flycheck*
 reports/
+container_reports/*.xml
 .DS_Store
 .idea/*
 .vscode/*

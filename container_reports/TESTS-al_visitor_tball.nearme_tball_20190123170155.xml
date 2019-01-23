@@ -1,5 +1,0 @@
-<testsuite errors="0" failures="0" hostname="b9eb07204c01" name="al_visitor_tball.nearme_tball.al_visitor_tball.nearme_tball" skipped="2" tests="2" time="0.0" timestamp="2019-01-23T17:58:55.963425"><testcase classname="al_visitor_tball.nearme_tball.al_visitor_tball.nearme_tball" name="Clicking major market link on Near Me pages" status="untested" time="0"><skipped /><system-out>
-<![CDATA[]]>
-</system-out></testcase><testcase classname="al_visitor_tball.nearme_tball.al_visitor_tball.nearme_tball" name="Verify link element exists on Near Me pages" status="untested" time="0"><skipped /><system-out>
-<![CDATA[]]>
-</system-out></testcase></testsuite>

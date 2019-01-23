@@ -1,3 +1,0 @@
-<testsuite errors="0" failures="0" hostname="5b6df379b80b" name="al_visitor_site.homepage.al_visitor_site.homepage" skipped="0" tests="1" time="8.1171" timestamp="2019-01-23T18:43:48.405958"><testcase classname="al_visitor_site.homepage.al_visitor_site.homepage" name="testing segment pagecall on homepage" status="passed" time="8.1171"><system-out>
-<![CDATA[]]>
-</system-out></testcase></testsuite>
