@@ -1,0 +1,5 @@
+<testsuite errors="0" failures="1" hostname="7cc13243dc61" name="al_visitor_site.homepage.al_visitor_site.homepage" skipped="0" tests="1" time="8.015674" timestamp="2019-01-23T18:43:49.538437"><testcase classname="al_visitor_site.homepage.al_visitor_site.homepage" name="testing segment pagecall on homepage" status="failed" time="8.015674"><failure message="name not in segment properties" type="AssertionError">
+<![CDATA[]]>
+</failure><system-out>
+<![CDATA[]]>
+</system-out></testcase></testsuite>

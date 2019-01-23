@@ -1,0 +1,5 @@
+<testsuite errors="0" failures="0" hostname="a04f637e0856" name="al_member_site.vrfsegmentevents.al_member_site.vrfsegmentevents" skipped="2" tests="2" time="0.0" timestamp="2019-01-23T18:10:34.933122"><testcase classname="al_member_site.vrfsegmentevents.al_member_site.vrfsegmentevents" name="test segment call on clicking the Approximate Cost of Service field on VRF" status="untested" time="0"><skipped /><system-out>
+<![CDATA[]]>
+</system-out></testcase><testcase classname="al_member_site.vrfsegmentevents.al_member_site.vrfsegmentevents" name="test segment call on clicking Choose File on VRF" status="untested" time="0"><skipped /><system-out>
+<![CDATA[]]>
+</system-out></testcase></testsuite>

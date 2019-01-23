@@ -1,8 +1,13 @@
 #!./py36/bin/python
-import os, unittest
+import os
+import unittest
 import yaml
+import subprocess
+import time
+from multiprocessing import Process
 from xmlrunner import xmlrunner
 from flask_script import Manager, Shell, Command
+from common.proxy import *
 from app import create_app
 
 if os.path.exists('.env'):
@@ -160,6 +165,77 @@ def geckodriver_install(*args):
     from webdriverdownloader import GeckoDriverDownloader
     gdd = GeckoDriverDownloader()
     gdd.download_and_install()
+
+
+def proxy_start(proxy_host, proxy_port, mountebank_host, mountebank_port):
+    proxy = HTTP(hostname=proxy_host, port=proxy_port, targethost=mountebank_host, targetport=mountebank_port)
+    proxy.run()
+
+def start_mb():
+    subprocess.call('mb')
+
+def start_sc():
+    import platform
+    scdir = 'sc_' + platform.system()
+    cmd = './%s/bin/sc -u %s -k %s -p 127.0.0.1:4545 -T' %\
+        (scdir, os.environ['SAUCE_USERNAME'], os.environ['SAUCE_ACCESS_KEY'])
+    # popen = subprocess.Popen(cmd)
+    # popen.wait()
+    subprocess.call(cmd, shell=True)
+
+def start_cbt():
+    subprocess.call('cbt_tunnels --username %s --authkey %s --proxyIp 127.0.0.1 --proxyPort 4545' % (os.environ['CBT_USER'], os.environ['CBT_KEY']), shell=True)
+
+mb = None
+pyproxy = None
+sc = None
+cbt = None
+
+@manager.command
+def launch_framework(*args):
+    """
+    1. launch montebank
+    2. start proxy
+    3. start sauce connect (sc)
+    4. start cbt_tunnels
+    5. wait for the end of the world
+    """
+    global mb
+    global pyproxy
+    global sc
+    global cbt
+
+    proxy_host = 'localhost'
+    proxy_port = int(os.environ['PYPROXY_PORT'])
+    mb_host = os.environ['MB_HOST']
+    mbi_port = os.environ['MBI_PORT']
+    mb = Process(target=start_mb)
+    mb.start()
+
+    pyproxy = Process(target=proxy_start, args=[proxy_host, proxy_port, mb_host, mbi_port])
+    pyproxy.start()
+
+    time.sleep(1)
+    sc = Process(target=start_sc)
+    sc.start()
+
+    cbt = Process(target=start_cbt)
+    cbt.start()
+
+def shutdown(signal, frame):
+    if sc is not None:
+        sc.terminate()
+    if cbt is not None:
+        cbt.terminate()
+    if mb is not None:
+        mb.terminate()
+    if pyproxy is not None:
+        pyproxy.terminate()
+
+    exit(0)
+
+import signal
+signal.signal(signal.SIGINT, shutdown)
 
 if __name__ == '__main__':
     Command.capture_all_args = True

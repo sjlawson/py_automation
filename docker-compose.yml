@@ -1,0 +1,8 @@
+version: '2'
+services:
+  al_py_automation:
+    image: al_py_automation
+    build: .
+    volumes:
+      - ./container_reports:/al_py_automation/reports
+    
