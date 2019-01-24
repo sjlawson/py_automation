@@ -3,33 +3,21 @@ jobs:
   build:
     working_directory: ~/source/py_automation
     docker:
-      # - image: angieslist/circleci-node:8.11.1
-      - image: ubuntu:14.04
-        # auth:
-        #   username: $DOCKER_USERNAME
-        #   password: $DOCKER_AUTH
+      - image: angieslist/circleci-node:8.11.1
+        auth:
+           username: $DOCKER_USERNAME
+           password: $DOCKER_AUTH
     steps:
       - checkout
       - setup_remote_docker:
           reusable: true
       - run:
+          name: Install Docker Compose
           command: |
-            apt-get update
-            apt-get install -y curl
+            curl -L https://github.com/docker/compose/releases/download/1.23.2/docker-compose-`uname -s`-`uname -m` > ~/docker-compose
+            chmod +x ~/docker-compose
+            sudo mv ~/docker-compose /usr/local/bin/docker-compose
       - run:
-          name: Install Docker client
-          command: |
-            set -x
-            VER="17.03.0-ce"
-            curl -L -o /tmp/docker-$VER.tgz https://download.docker.com/linux/static/stable/x86_64/docker-$VER.tgz
-            tar -xz -C /tmp -f /tmp/docker-$VER.tgz
-            mv /tmp/docker/* /usr/bin
-      # - run:
-      #     name: Build Docker image
-      #     command:
-      #       docker build -t al_py_automation .
-      # - run:
-      #     name: Run the thing
-      #     command:
-      #       docker run al_py_automation
-          
+          name: Start container
+          command: docker-compose up -d
+            
