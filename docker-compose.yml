@@ -5,4 +5,11 @@ services:
     build: .
     volumes:
       - ./container_reports:/al_py_automation/reports
-    
+    environment:
+      - CBT_KEY
+      - CBT_USER
+      - MBI_PORT
+      - MB_HOST
+      - PYPROXY_PORT
+      - SAUCE_USERNAME
+      - SAUCE_ACCESS_KEY
