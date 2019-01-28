@@ -22,7 +22,9 @@ jobs:
             sudo mv ~/docker-compose /usr/local/bin/docker-compose
       - run:
           name: Build Docker image
-          command: docker-compose build
+          command: |
+            export DOCKER_HOST=127.0.0.1:2375
+            docker-compose build
       - run:
            name: Publish Docker image
            command: docker push angieslist/security:"${CIRCLE_BUILD_NUM}"
