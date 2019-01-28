@@ -1,7 +1,7 @@
 version: 2
 jobs:
   build:
-    working_directory: ~/source/py_automation
+    working_directory: ~/al_py_automation
     docker:
       - image: angieslist/circleci-node:8.11.1
         auth:
@@ -12,12 +12,21 @@ jobs:
       - setup_remote_docker:
           reusable: true
       - run:
+          name: Authenticate to DockerHub
+          command: 'docker login -u "$DOCKER_USERNAME" -p "$DOCKER_AUTH"'
+      - run:
           name: Install Docker Compose
           command: |
             curl -L https://github.com/docker/compose/releases/download/1.23.2/docker-compose-`uname -s`-`uname -m` > ~/docker-compose
             chmod +x ~/docker-compose
             sudo mv ~/docker-compose /usr/local/bin/docker-compose
       - run:
-          name: Start container
-          command: docker-compose up -d
+          name: Build Docker image
+          command: docker-compose build
+      - run:
+           name: Publish Docker image
+           command: docker push angieslist/security:"${CIRCLE_BUILD_NUM}"
+      # - run:
+      #     name: Start container
+      #     command: docker-compose up -d
             
