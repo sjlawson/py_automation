@@ -23,7 +23,7 @@ jobs:
       - run:
           name: Build Docker image
           command: |
-            docker build -t angieslist/al_py_automation:"${CIRCLE_BUILD_NUM}" build .
+            docker build -t angieslist/al_py_automation:"${CIRCLE_BUILD_NUM}" .
       - run:
            name: Publish Docker image
            command: docker push angieslist/al_py_automation:"${CIRCLE_BUILD_NUM}"
