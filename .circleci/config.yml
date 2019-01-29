@@ -14,20 +14,19 @@ jobs:
       - run:
           name: Authenticate to DockerHub
           command: 'docker login -u "$DOCKER_USERNAME" -p "$DOCKER_AUTH"'
-      - run:
-          name: Install Docker Compose
-          command: |
-            curl -L https://github.com/docker/compose/releases/download/1.23.2/docker-compose-`uname -s`-`uname -m` > ~/docker-compose
-            chmod +x ~/docker-compose
-            sudo mv ~/docker-compose /usr/local/bin/docker-compose
+      # - run:
+      #     name: Install Docker Compose
+      #     command: |
+      #       curl -L https://github.com/docker/compose/releases/download/1.23.2/docker-compose-`uname -s`-`uname -m` > ~/docker-compose
+      #       chmod +x ~/docker-compose
+      #       sudo mv ~/docker-compose /usr/local/bin/docker-compose
       - run:
           name: Build Docker image
           command: |
-            export DOCKER_HOST=127.0.0.1:2375
-            docker-compose build
+            docker build -t angieslist/al_py_automation:"${CIRCLE_BUILD_NUM}" build .
       - run:
            name: Publish Docker image
-           command: docker push angieslist/security:"${CIRCLE_BUILD_NUM}"
+           command: docker push angieslist/al_py_automation:"${CIRCLE_BUILD_NUM}"
       # - run:
       #     name: Start container
       #     command: docker-compose up -d
