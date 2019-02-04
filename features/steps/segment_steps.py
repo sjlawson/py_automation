@@ -2,6 +2,23 @@ from behave import given, then, when
 from common.SegmentTestHelper import SegmentTestHelper
 import time
 
+# segment_timeout_script = """jQuery(document).ready(function() {
+# var set_analytics_timeout = function() {
+# if (analytics) {
+#   analytics.timeout(600);
+# } else {
+# setTimeout(set_analytics_timeout, 1000);
+# }
+# set_analytics_timeout();
+# };
+# });
+# """
+
+# segment_timeout_script = """jQuery(document).ready(function() {analytics.timeout(10);});"""
+
+segment_timeout_script = """document.addEventListener('DOMContentLoaded', function(){
+    analytics.timeout(500);
+}, false);"""
 
 @given('user is on a visitor site page')
 def step_impl(context):
@@ -10,6 +27,7 @@ def step_impl(context):
     context.url = appsuite_url + context.text
     context.browser.get(context.url)
     time.sleep(1)
+    context.browser.execute_script(segment_timeout_script)
 
 @given('user is on a visitor site tball page')
 def step_impl(context):
@@ -18,7 +36,7 @@ def step_impl(context):
     context.url = appsuite_url + context.text
     SegmentTestHelper.getTBallPage(context)
     time.sleep(1)
-    # context.browser.get(context.url)
+    context.browser.execute_script(segment_timeout_script)
 
 @given('user is on a member site page')
 def step_impl(context):
@@ -27,6 +45,8 @@ def step_impl(context):
     context.url = appsuite_url + context.text
     context.browser.get(context.url)
     time.sleep(1)
+    context.browser.execute_script(segment_timeout_script)
+
 
 @then('a segment track call is sent for a unique field value pair')
 def step_impl(context):
