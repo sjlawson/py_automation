@@ -1,0 +1,28 @@
+@platformGateway
+Feature:
+  
+  Scenario: test member login is working as expected
+    Given user is on a member site page
+    """
+    /member/login
+    """
+    When a user performs actions
+    | action_method   | action_params               |
+    | move_to_element | #login--login-email         |
+    | click           |                             |
+    | send_keys       | joshua.king@homeadvisor.com |
+    | move_to_element | #login--login-password      |
+    | click           |                             |
+    | send_keys       | testtest                    |
+    | move_to_element | #login--login-button        |
+    | click           |                             |
+    Then the member landing page is loaded
+
+  Scenario: test member logout is working as expected
+    Given user is logged into the member site
+    When a user performs actions
+    | action_method   | action_params                                   |
+    | move_to_element | #header--user-flyout-icon                       |
+    | move_to_element | #header--user-flyout--menu-item--account-logout |
+    | click           |                                                 |
+    Then they are logged out

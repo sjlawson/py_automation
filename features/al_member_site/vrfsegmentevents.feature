@@ -4,7 +4,7 @@ Feature:
   Scenario: test segment call on clicking the Approximate Cost of Service field on VRF
     Given user is on a member site page
     """
-    /edit?serviceProviderId=10803144
+    /app/review/edit?serviceProviderId=10803144
     """
     When a user performs actions
     | action_method | action_params                  |
@@ -22,7 +22,7 @@ Feature:
   Scenario: test segment call on clicking Choose File on VRF
     Given user is on a member site page
     """
-    /edit?serviceProviderId=10803144
+    /app/review/edit?serviceProviderId=10803144
     """
     When a user performs actions
     | action_method | action_params              |
