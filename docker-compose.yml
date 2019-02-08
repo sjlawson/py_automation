@@ -1,7 +1,7 @@
 version: '2'
 services:
   al_py_automation:
-    image: angieslist/al_py_automation:${CIRCLE_BUILD_NUM}
+    image: angieslist/al_py_automation:default
     build: .
     volumes:
       - ./container_reports:/al_py_automation/reports
@@ -13,3 +13,4 @@ services:
       - PYPROXY_PORT
       - SAUCE_USERNAME
       - SAUCE_ACCESS_KEY
+
