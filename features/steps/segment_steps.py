@@ -16,6 +16,13 @@ def step_impl(context):
     context.url = appsuite_url + context.text
     context.browser.get(context.url)
 
+@given('user is on a member site review page')
+def step_impl(context):
+    appsuite_env = 'al_member_site'
+    appsuite_url = context.appsuites[appsuite_env]['base_url'] + '/app/reviews'
+    context.url = appsuite_url + context.text
+    context.browser.get(context.url)
+
 @then('a segment track call is sent for a unique field value pair')
 def step_impl(context):
     SegmentTestHelper.assert_segment_call_exists(context)
