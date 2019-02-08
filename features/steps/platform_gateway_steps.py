@@ -23,6 +23,6 @@ def step_impl(context):
 
 @then('they are logged out')
 def step_impl(context):
-    sign_in = context.browser.find_element(By.CLASS_NAME, 'login--header-text-signin')
+    sign_in = context.browser.find_element(By.ID, 'login--header-text-signin')
     assert bool(sign_in)
   
