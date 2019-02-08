@@ -5,8 +5,9 @@ from common.SegmentTestHelper import SegmentTestHelper
 
 @given('user is logged into the member site')
 def step_impl(context):
+    context.browser.delete_all_cookies()
     appsuite_env = 'al_member_site'
-    appsuite_url = context.appsuites[appsuite_env]['base_url']
+    appsuite_url = context.appsuites[appsuite_env]['base_url'] + '/member/login'
     context.browser.get(appsuite_url)
     username_box = context.browser.find_element(By.ID, 'login--login-email')
     ActionChains(context.browser).move_to_element(username_box).click().send_keys(context.appsuites[appsuite_env]['test_username']).perform()
