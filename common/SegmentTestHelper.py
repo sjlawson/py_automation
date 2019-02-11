@@ -24,8 +24,6 @@ class SegmentTestHelper():
         segment_props = [ body['properties'] for body in content_bodies]
         if not segment_props:
             return SegmentTestHelper.request_mountebank(context, count)
-        # print("\n\nSegment Props: ", segment_props)
-        # print("\n\n")
         return segment_props
 
     def element_is_clickable(browser, selector):
@@ -36,7 +34,6 @@ class SegmentTestHelper():
         except NoSuchElementException:
             print("Element %s not found" % selector)
             return False
-        # element = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, selector)))
         return True
 
 
