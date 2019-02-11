@@ -26,3 +26,9 @@ Feature:
     | move_to_element | #header--user-flyout--menu-item--account-logout |
     | click           |                                                 |
     Then they are logged out
+
+  Scenario: test new user login is working as expected
+    Given user is on the sign up page
+    When the user creates a new account
+    And the user enters geographic data
+    Then the member landing page is loaded
