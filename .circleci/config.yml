@@ -15,6 +15,7 @@ jobs:
           name: Authenticate to DockerHub
           command: 'docker login -u "$DOCKER_USERNAME" -p "$DOCKER_AUTH"'
       # # Uncomment to run container in CircleCI
+      # # For first release, keep this commented code
       # - run:
       #     name: Install Docker Compose
       #     command: |
