@@ -216,11 +216,13 @@ def launch_framework(*args):
     pyproxy.start()
 
     time.sleep(1)
-    sc = Process(target=start_sc)
-    sc.start()
+    if os.environ['SAUCE_USERNAME']:
+        sc = Process(target=start_sc)
+        sc.start()
 
-    cbt = Process(target=start_cbt)
-    cbt.start()
+    if os.environ['CBT_USER']:
+        cbt = Process(target=start_cbt)
+        cbt.start()
 
 def shutdown(signal, frame):
     if sc is not None:
