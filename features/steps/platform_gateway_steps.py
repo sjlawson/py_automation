@@ -29,7 +29,7 @@ def step_impl(context):
 @when('the user creates a new account')
 def step_impl(context):
     data_generator = Faker()
-    current_time = int(time.time_() * 10000)
+    current_time = int(time.time() * 10000)
     data_generator.random.seed(current_time)
     username_box = context.browser.find_element(By.ID, 'signup--signup-email')
     ActionChains(context.browser).move_to_element(username_box).click().send_keys(data_generator.email()).perform()
