@@ -16,12 +16,12 @@ jobs:
           command: 'docker login -u "$DOCKER_USERNAME" -p "$DOCKER_AUTH"'
       # # Uncomment to run container in CircleCI
       # # For first release, keep this commented code
-      # - run:
-      #     name: Install Docker Compose
-      #     command: |
-      #       curl -L https://github.com/docker/compose/releases/download/1.23.2/docker-compose-`uname -s`-`uname -m` > ~/docker-compose
-      #       chmod +x ~/docker-compose
-      #       sudo mv ~/docker-compose /usr/local/bin/docker-compose
+      - run:
+          name: Install Docker Compose
+          command: |
+            curl -L https://github.com/docker/compose/releases/download/1.23.2/docker-compose-`uname -s`-`uname -m` > ~/docker-compose
+            chmod +x ~/docker-compose
+            sudo mv ~/docker-compose /usr/local/bin/docker-compose
       - run:
           name: Build Docker image
           command: |
@@ -29,7 +29,9 @@ jobs:
       - run:
            name: Publish Docker image
            command: docker push angieslist/al_py_automation:"${CIRCLE_BUILD_NUM}"
-      # - run:
-      #     name: Start container
-      #     command: docker-compose up -d
-            
+      - run:
+          name: Start container
+          command: docker-compose up -d
+      - run:
+          name: Basic regression
+          command: ./behave_docker_test.sh py_automation_al_py_automation_1 cbt chrome tags visitorSegmentExample
