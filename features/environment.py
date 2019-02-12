@@ -13,7 +13,7 @@ if os.path.exists('.env'):
     for line in open('.env'):
         var = line.strip().split('=')
         listvals = var[1].split(',')
-        if len(var) == 2 and not os.environ[var[0]]:
+        if len(var) == 2 and var[0] not in os.environ:
             os.environ[var[0]] = var[1]
 
 if 'VISITOR_SITE_URL' not in os.environ:
