@@ -2,7 +2,7 @@
 Feature:
   
   Scenario: test segment call on clicking the Approximate Cost of Service field on VRF
-    Given user is on a member site page
+    Given user is on a member site review page
     """
     /edit?serviceProviderId=10803144
     """
@@ -20,7 +20,7 @@ Feature:
 
   
   Scenario: test segment call on clicking Choose File on VRF
-    Given user is on a member site page
+    Given user is on a member site review page
     """
     /edit?serviceProviderId=10803144
     """
