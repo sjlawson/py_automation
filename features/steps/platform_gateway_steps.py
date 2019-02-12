@@ -43,7 +43,7 @@ def step_impl(context):
 @when('the user enters geographic data')
 def step_impl(context):
     data_generator = Faker()
-    current_time = int(time.time_() * 10000)
+    current_time = int(time.time() * 10000)
     data_generator.random.seed(current_time)
     firstname_box = context.browser.find_element(By.ID, 'address-collection--first-name')
     ActionChains(context.browser).move_to_element(firstname_box).click().send_keys(data_generator.first_name()).perform()
