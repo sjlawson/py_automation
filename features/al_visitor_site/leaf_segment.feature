@@ -22,7 +22,7 @@ Feature:
       | description            | Service Request Flow entry button |
       | marketId               | 40                                |
       | userId                 |                                   |
-      | userSelectedZipCode    | 27610                             |
+      | userSelectedZipCode    | 2761                              |
       | visitorPageCategory    | Roofing                           |
       | visitorPageGeo         | RALEIGH/DURHAM                    |
       | visitorPageGeoCategory | RALEIGH/DURHAM - ROOFING          |
