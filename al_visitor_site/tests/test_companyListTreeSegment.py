@@ -21,6 +21,7 @@ class CompanyListTestCase(SeleniumTestCase):
                 ('atTestOffer',),
                 ('cid',),
                 ('atTestOffer',),
+                ('referrer',),
                 ('pageVersion', 'Lullabot Redesign'),
                 ('path', '/companylist/'),
                 ('search',),
@@ -917,6 +918,7 @@ class CompanyListTopCityTestCase(SeleniumTestCase):
                 ('cid',),
                 ('pageCity', 'Indianapolis, IN'),
                 ('pageVersion', 'Lullabot Redesign'),
+                ('referrer',),
                 ('path', '/companylist/indianapolis/'),
                 ('search',),
                 ('title', 'Indianapolis, Indiana Local Home Service Pros | Angie\'s List'),
@@ -1403,6 +1405,9 @@ class CompanyListRegularCityTestCase(SeleniumTestCase):
                 ('visitorPageCategory', 'FLOORING SALES/INSTALLATION/REPAIR'),
                 ('visitorPageGeo', 'FISHERS IN'),
                 ('visitorPageGeoCategory', 'FISHERS IN - FLOORING SALES/INSTALLATION/REPAIR'),
+                ('url',),
+                ('visitorPageVerticalId','7051'),
+                ('visitorPageVerticalName','Home Improvement'),
             ]
         }
 
@@ -1878,6 +1883,7 @@ class CompanyListStatePageTestCase(SeleniumTestCase):
                 ('userId',),
                 ('userType', 'Visitor - New'),
                 ('pageState', 'MI'),
+                ('referrer',),
             ]
         }
 
