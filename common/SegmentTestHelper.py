@@ -27,31 +27,33 @@ class SegmentTestHelper():
         return segment_props
 
     def element_is_clickable(browser, selector):
-        print("\n")
         wait = WebDriverWait(browser, 15)
         try:
             element = SegmentTestHelper.get_webdriver_element(browser, selector, 0)
         except NoSuchElementException:
-            print("Element %s not found" % selector)
+            print("\n\nElement %s not found\n" % selector)
             return False
         return True
 
 
     def collect_segment_requests_on_page(context):
-        """A paired-down method for simply gathering segment requests from browser log"""
+        """A paired-down method for simply gathering segment requests from browser log OR mountebank"""
         wait = WebDriverWait(context.browser, 15)
         wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, 'div')))
         time.sleep(2)
 
-        return SegmentTestHelper.request_mountebank(context, 0)
-        #return SegmentTestHelper.get_browser_segmentlogs(context, 0)
+        if context.noproxy:
+            return SegmentTestHelper.get_browser_segmentlogs(context, 0)
+        else:
+            return SegmentTestHelper.request_mountebank(context, 0)
 
     def get_browser_segmentlogs(context, count):
+        """For use with non-mountebank, non-proxy, non-tunnel tests that require the Chrome browserlog for segment calls"""
         count += 1
         if count > 10:
             return []
         # time.sleep(1)
-        SegmentTestHelper.request_mountebank(context.mb_host, context.mbi_port)
+        perf_logs = context.browserlog()
         collect_seg = []
         for perflog in perf_logs:
             perf_msgs = json.loads(perflog['message'])
@@ -68,7 +70,6 @@ class SegmentTestHelper():
 
     def assert_segment_call_exists(context):
         # SegmentTestHelper.request_mountebank()
-        # time.sleep(4) # if a page takes longer than 4 seconds, it's bad
         seg_calls = SegmentTestHelper.collect_segment_requests_on_page(context)
         expected_prop_name = context.table[0]['unique_field']
         expected_prop_value = context.table[0]['unique_value']
@@ -77,7 +78,6 @@ class SegmentTestHelper():
             if expected_prop_name in seg_props:
                 if seg_props[expected_prop_name] == expected_prop_value:
                     context.seg_props = seg_props
-                    # print("%s == %s" % (seg_props[expected_prop_name], expected_prop_value))
                     prop_exists = True
 
         try:

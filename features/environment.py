@@ -17,16 +17,25 @@ if os.path.exists('.env'):
             os.environ[var[0]] = var[1]
 
 if 'VISITOR_SITE_URL' not in os.environ:
-    os.environ['VISITOR_SITE_URL'] = 'http://angiesmr2stg.prod.acquia-sites.com'
+    os.environ['VISITOR_SITE_URL'] = 'https://visitorstg.angieslist.com'
+
 
 
 @fixture
 def chrome_performance_logs(context):
-    """ yields context browser, also adds common interface for browser performance logs (network) with browserlog() method """
+    """ yields context browser, also adds common interface for browser performance logs (network) with browserlog() method
+       Does NOT use Mountebank, proxies, or tunnels -- only Chrome performance logs
+    """
     # -- HINT: @behave.fixture is similar to @contextlib.contextmanager
     method_name = 'chrome'
     caps = getattr(DesiredCapabilities, method_name.upper())
-    caps = set_caps(caps, method_name)
+    caps['loggingPrefs'] = { 'performance': 'INFO'}
+    caps['name'] = 'cqtest_' + str(datetime.datetime.now())
+    caps['build'] = '1.0'
+    caps['browserName'] = 'chrome'
+    caps['screenResolution'] = '1366x768'
+    caps['record_network'] = 'true'
+
     ch_profile = webdriver.ChromeOptions()
     ch_profile.perfLoggingPrefs = {'enableNetwork': True, 'traceCategories': 'performance, devtools.network'}
     ch_profile.add_argument('incognito')
@@ -194,12 +203,15 @@ def create_mb_imposter(mb_host, mbi_port = None):
 
 def before_all(context):
     # setup mountebank imposter
+    fixture = os.environ.get('TESTENV','noproxy')
+
     proxy_host = 'localhost'
-    proxy_port = 4545
+    proxy_port = int(os.environ.get('PYPROXY_PORT', 4545))
     context.proxy_addr = '%s:%s' % (proxy_host, proxy_port)
-    context.mbi_port = 58111
-    context.mb_host = '127.0.0.1'
-    mountebank_port = create_mb_imposter(context.mb_host, context.mbi_port)
+    context.mbi_port = int(os.environ.get('MBI_PORT', 58111))
+    context.mb_host = os.environ.get('MB_HOST', '127.0.0.1')
+    if fixture != 'noproxy':
+        mountebank_port = create_mb_imposter(context.mb_host, context.mbi_port)
 
     ## setup proxy.py
     logging.basicConfig(level=logging.INFO,
@@ -213,18 +225,20 @@ def before_all(context):
     junit_reporter = JUnitReporter(context.config)
     context.config.reporters.append(junit_reporter)
 
-    fixture = os.environ.get('TESTENV','local')
     # use_fixture(selenium_browser_firefox, context)
     # use_fixture(selenium_browser_safari, context)
-
-    if fixture == 'local':
+    context.noproxy = False
+    if fixture == 'noproxy':
+        use_fixture(chrome_performance_logs, context)
+        context.noproxy = True
+    elif fixture == 'local':
         use_fixture(chrome_native, context)
     elif fixture == 'cbt':
         use_fixture(chrome_cbt, context)
     elif fixture == 'sauce':
         use_fixture(chrome_sauce, context)
     else:
-        use_fixture(selenium_browser_firefox, context)
+        use_fixture(chrome_native, context)
 
     with open("config/applications.yml", "r") as stream:
         yamlconfig = yaml.load(stream)
