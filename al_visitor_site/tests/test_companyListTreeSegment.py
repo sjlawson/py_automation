@@ -1,8 +1,8 @@
 from common.SeleniumTestCase import SeleniumTestCase
 from common.SegmentTestHelper import SegmentTestHelper
 
-##### Company List Page ####
-class CompanyListTestCase(SeleniumTestCase):   
+##### Company List Page #### THIS ENTIRE CLASS HAS BEEN CONVERTED TO GHERKIN - SEE: /feature/al_visitor_site/companylist.feature
+class CompanyListTestCase(SeleniumTestCase):
 
     # Company List Page Load
     def test_companyListSegmentPagecall(self):
@@ -141,7 +141,7 @@ class CompanyListTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # test segment call on clicking the BC link in the header
-    def test_companyListHeaderScClick(self):
+    def test_companyListHeaderBcClick(self):
         if not self.client:
             return 0
 
@@ -466,7 +466,7 @@ class CompanyListTestCase(SeleniumTestCase):
 
     ###### Company List - catNoGeo ######
 class CompanyListCatNoGeoTestCase(SeleniumTestCase):
-    
+
 
     # test segment call on clicking the join link in company list header
     def test_companyListCatNoGeoSegmentJoin(self):
@@ -574,7 +574,7 @@ class CompanyListCatNoGeoTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # test segment call on clicking the BC link in the header
-    def test_companyListCatNoGeoHeaderScClick(self):
+    def test_companyListCatNoGeoHeaderBcClick(self):
         if not self.client:
             return 0
 

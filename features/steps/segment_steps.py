@@ -47,6 +47,17 @@ def step_impl(context):
 def step_impl(context):
     SegmentTestHelper.do_actions(context.browser, get_action_list(context))
 
+@when('a user clicks on "{pageLink}"')
+def step_impl(context, pageLink):
+    actions = [
+        {
+            'action_method': 'click',
+            'action_params': [pageLink.strip()]
+        }
+    ]
+    SegmentTestHelper.do_actions(context.browser, actions)
+
+
 def get_action_list(context):
     actions = []
     for row in context.table:
