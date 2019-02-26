@@ -152,7 +152,6 @@ class SegmentTestHelper():
                     if action['action_params'][i]:
                         action['action_params'][i] = SegmentTestHelper.get_webdriver_element(client=client, selector=action['action_params'][i], tries=0)
 
-
         for action in actions:
             action_chain = ActionChains(client)
             try:
