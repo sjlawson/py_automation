@@ -44,7 +44,8 @@ If a new pattern is needed, a ticket will likely have to be created for Core Qua
 - command to run tests is `behave`, but just running `behave` will run ALL tests in ALL environments. 
 - you probably want to use tags to run groups of tests in one environment
   + For example, the above test has a tag, `@visitorSegment`. You can then run just this test (and all tests with that tag) with: `behave --tags=@visitorSegment`
-  + to run just one feature file, for example `al_visitor_site/homepage.feature`, the command is: `behave --include al_visitor_site/homepage` 
+  + For cleaner logs, you can append `--no-skipped` to avoid logging skipped tests, for example `behave --tags=@visitorSegment --no-skipped`.
+  + To run just one feature file, for example `al_visitor_site/homepage.feature`, the command is: `behave --include al_visitor_site/homepage`
 
 ## JUnit report output
 Reports are generated for each test and placed in the `al_py_automation/reports` directory
