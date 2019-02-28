@@ -4,6 +4,7 @@ import unittest
 import yaml
 import subprocess
 import time
+import signal
 from multiprocessing import Process
 from xmlrunner import xmlrunner
 from flask_script import Manager, Shell, Command
@@ -236,7 +237,6 @@ def shutdown(signal, frame):
 
     exit(0)
 
-import signal
 signal.signal(signal.SIGINT, shutdown)
 
 if __name__ == '__main__':
