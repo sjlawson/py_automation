@@ -36,8 +36,32 @@ class PhotoGalleriesSegmentTestCase(SeleniumTestCase):
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
+
+
+##### Header Tests #####
+
+
+    def test_photosDrupal_Header(self):
+        if not self.client:
+            return 0
+
+        self.photoGalleriesSegmentHeaderJoin()
+        self.client.back()
+        self.photoGalleriesHeaderLinkClick()
+        self.client.back()
+        self.photoGalleriesSignInHeader()
+        self.client.back()
+        self.photoGalleriesHeaderFAQClick()
+        self.client.back()
+        self.photoGalleriesHeaderITPClick()
+        self.client.back()
+        self.photoGalleriesHeaderScClick()
+        self.client.back()
+        self.photoGalleriesHeaderBusinesscenterClick()
+
+
     # Header Join Photo Galleries
-    def test_photoGalleriesSegmentHeaderJoin(self):
+    def photoGalleriesSegmentHeaderJoin(self):
         # quit if browser didn't load
         if not self.client:
             return 0
@@ -58,7 +82,7 @@ class PhotoGalleriesSegmentTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # test segment call on clicking the HIW link in the header
-    def test_photoGalleriesHeaderLinkClick(self):
+    def photoGalleriesHeaderLinkClick(self):
         if not self.client:
             return 0
 
@@ -75,7 +99,7 @@ class PhotoGalleriesSegmentTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # Sign In Header Photo Galleries
-    def test_photoGalleriesSignInHeader(self):
+    def photoGalleriesSignInHeader(self):
         # quit if browser didn't load
         if not self.client:
             return 0
@@ -95,7 +119,7 @@ class PhotoGalleriesSegmentTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # test segment call on clicking the FAQ link in the header
-    def test_photoGalleriesHeaderFAQClick(self):
+    def photoGalleriesHeaderFAQClick(self):
         if not self.client:
             return 0
 
@@ -112,7 +136,7 @@ class PhotoGalleriesSegmentTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # test segment call on clicking the Press link in the header
-    def test_photoGalleriesHeaderITPClick(self):
+    def photoGalleriesHeaderITPClick(self):
         if not self.client:
             return 0
 
@@ -129,7 +153,7 @@ class PhotoGalleriesSegmentTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # test segment call on clicking the SC link in the header
-    def test_photoGalleriesHeaderScClick(self):
+    def photoGalleriesHeaderScClick(self):
         if not self.client:
             return 0
 
@@ -146,7 +170,7 @@ class PhotoGalleriesSegmentTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # test segment call on clicking the BC link in the header
-    def test_photoGalleriesHeaderBusinesscenterClick(self):
+    def photoGalleriesHeaderBusinesscenterClick(self):
         if not self.client:
             return 0
 
@@ -162,10 +186,51 @@ class PhotoGalleriesSegmentTestCase(SeleniumTestCase):
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
-## Footer Segment Events - 
+##### Footer Events ##### 
+
+
+
+    def test_photosDrupal_Footer(self):
+        if not self.client:
+            return 0
+
+        self.photoGalleriesFooterJoinClick()
+        self.client.back()
+        self.photoGalleriesTopCitiesLinkNYC()
+        self.client.back()
+        self.photoGalleriesTopCitiesHouston()
+        self.client.back()
+        self.photoGalleriesTopCitiesChicago()
+        self.client.back()
+        self.photoGalleriesTopCitiesIndianapolis()
+        self.client.back()
+        self.photoGalleriesTopCitiesBoston()
+        self.client.back()
+        self.photoGalleriesTopCitiesAtlanta()
+        self.client.back()
+        self.photoGalleriesTopCitiesCincinnati()
+        self.client.back()
+        self.photoGalleriesTopCitiesLosAngeles()
+        self.client.back()
+        self.photoGalleriesTopCitiesDallas()
+        self.client.back()
+        self.photoGalleriesTopCitiesPittsburgh()
+        self.client.back()
+        self.photoGalleriesTopCitiesMinneapolis()
+        self.client.back()
+        self.photoGalleriesTopCitiesLasVegas()
+        self.client.back()
+        self.photoGalleriesTopCitiesSanAntonio()
+        self.client.back()
+        self.photoGalleriesTopCitiesTampa()
+        self.client.back()
+        self.photoGalleriesfooterJoinCTA()
+
+
+
 
     # test segment call on clicking the Join link in the footer
-    def test_photoGalleriesFooterJoinClick(self):
+    def photoGalleriesFooterJoinClick(self):
         if not self.client:
             return 0
 
@@ -182,7 +247,7 @@ class PhotoGalleriesSegmentTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # Photo Galleries Top Cities NYC
-    def test_photoGalleriesTopCitiesLinkNYC(self):
+    def photoGalleriesTopCitiesLinkNYC(self):
         if not self.client:
             return 0
 
@@ -200,7 +265,7 @@ class PhotoGalleriesSegmentTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # Photo Galleries Top Cities Houston
-    def test_photoGalleriesTopCitiesHouston(self):
+    def photoGalleriesTopCitiesHouston(self):
         if not self.client:
             return 0
 
@@ -218,7 +283,7 @@ class PhotoGalleriesSegmentTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # Photo Galleries Top Cities Chicago
-    def test_photoGalleriesTopCitiesChicago(self):
+    def photoGalleriesTopCitiesChicago(self):
         if not self.client:
             return 0
 
@@ -236,7 +301,7 @@ class PhotoGalleriesSegmentTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # Photo Galleries Top Cities Indianapolis
-    def test_photoGalleriesTopCitiesIndianapolis(self):
+    def photoGalleriesTopCitiesIndianapolis(self):
         if not self.client:
             return 0
 
@@ -254,7 +319,7 @@ class PhotoGalleriesSegmentTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # Photo Galleries Top Cities Boston
-    def test_photoGalleriesTopCitiesBoston(self):
+    def photoGalleriesTopCitiesBoston(self):
         if not self.client:
             return 0
 
@@ -272,7 +337,7 @@ class PhotoGalleriesSegmentTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # Photo Galleries Top Cities Atlanta
-    def test_photoGalleriesTopCitiesAtlanta(self):
+    def photoGalleriesTopCitiesAtlanta(self):
         if not self.client:
             return 0
 
@@ -290,7 +355,7 @@ class PhotoGalleriesSegmentTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # Photo Galleries Top Cities Cincinnati
-    def test_photoGalleriesTopCitiesCincinnati(self):
+    def photoGalleriesTopCitiesCincinnati(self):
         if not self.client:
             return 0
 
@@ -308,7 +373,7 @@ class PhotoGalleriesSegmentTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # Photo Galleries Top Cities Los Angeles
-    def test_photoGalleriesTopCitiesLosAngeles(self):
+    def photoGalleriesTopCitiesLosAngeles(self):
         if not self.client:
             return 0
 
@@ -326,7 +391,7 @@ class PhotoGalleriesSegmentTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # Photo Galleries Top Cities Dallas
-    def test_photoGalleriesTopCitiesDallas(self):
+    def photoGalleriesTopCitiesDallas(self):
         if not self.client:
             return 0
 
@@ -344,7 +409,7 @@ class PhotoGalleriesSegmentTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # Photo Galleries Top Cities Pittsburgh
-    def test_photoGalleriesTopCitiesPittsburgh(self):
+    def photoGalleriesTopCitiesPittsburgh(self):
         if not self.client:
             return 0
 
@@ -362,7 +427,7 @@ class PhotoGalleriesSegmentTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # Photo Galleries Top Cities Minneapolis
-    def test_photoGalleriesTopCitiesMinneapolis(self):
+    def photoGalleriesTopCitiesMinneapolis(self):
         if not self.client:
             return 0
 
@@ -380,7 +445,7 @@ class PhotoGalleriesSegmentTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # Photo Galleries Top Cities Las Vegas
-    def test_photoGalleriesTopCitiesLasVegas(self):
+    def photoGalleriesTopCitiesLasVegas(self):
         if not self.client:
             return 0
 
@@ -398,7 +463,7 @@ class PhotoGalleriesSegmentTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # Photo Galleries Top Cities San Antonio
-    def test_photoGalleriesTopCitiesSanAntonio(self):
+    def photoGalleriesTopCitiesSanAntonio(self):
         if not self.client:
             return 0
 
@@ -416,7 +481,7 @@ class PhotoGalleriesSegmentTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # Photo Galleries Top Cities Tampa
-    def test_photoGalleriesTopCitiesTampa(self):
+    def photoGalleriesTopCitiesTampa(self):
         if not self.client:
             return 0
 
@@ -434,7 +499,7 @@ class PhotoGalleriesSegmentTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # Footer Join
-    def test_photoGalleriesfooterJoinCTA(self):
+    def photoGalleriesfooterJoinCTA(self):
         # quit if browser didn't load
         if not self.client:
             return 0
@@ -452,8 +517,3 @@ class PhotoGalleriesSegmentTestCase(SeleniumTestCase):
         }
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
-
-
-
-
-
