@@ -72,7 +72,8 @@ def chrome_native(context):
 def chrome_cbt(context):
     desired_cap = {
         'platform': "Mac OS X 10.12",
-        'browserName': "chrome"
+        'browserName': "chrome",
+        'record_video': 'true',
     }
     username = os.environ['CBT_USER']
     access_key = os.environ['CBT_KEY']
@@ -111,7 +112,7 @@ def set_caps(caps, method_name):
     caps['browserName'] = method_name
     # caps['platform'] = test_client
     caps['screenResolution'] = '1366x768'
-    # caps['record_video'] = 'true'
+    caps['record_video'] = 'true'
     caps['record_network'] = 'true'
     caps['proxy'] = {
         "httpProxy":PROXY,
