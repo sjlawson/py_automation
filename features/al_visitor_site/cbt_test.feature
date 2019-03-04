@@ -1,6 +1,6 @@
 Feature:
 
-  @testHealthCheck
+  @testPageLoadExample
   Scenario: basic cbt homepage test
     Given user is on a visitor site page
     """

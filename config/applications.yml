@@ -7,8 +7,8 @@ appsuites:
       # base_url: https://visitor-app-stage5.plat.angieslist.com
       # base_url: http://visitor-app-stagefoxtrot.plat.angieslist.com
   al_visitor_tball:
-      # base_url: http://visitor-app-stagefoxtrot.plat.angieslist.com
-      base_url: http://visitor-app-stagegolf.plat.angieslist.com
+      # base_url: https://visitor-app-stagefoxtrot.plat.angieslist.com
+      base_url: https://visitor-app-stagegolf.plat.angieslist.com
   al_member_site:
       base_url: https://tampa-stage4.plat.angieslist.com
       test_username: joshua.king@homeadvisor.com
