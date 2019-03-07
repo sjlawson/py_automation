@@ -7,7 +7,7 @@ from common.SegmentTestHelper import SegmentTestHelper
 # Also tests that segment track call gets sent on click
 class LeafPageSegmentTestCase(SeleniumTestCase):
 
-    # basic leaf page call test for advertisers
+    # basic leaf page call test for Leaf Non-Advertiser HA crossover One-Column
     def test_leafPageSegmentPagecallAdvertisers(self):
         # quit if browser didn't load
         if not self.client:
@@ -107,7 +107,7 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
                 ('srCtaDisplayed', True),
                 ('srCtaVersion', 'v2'),
                 ('title', 'Lock Doctor LLC Reviews - Louisville, KY | Angie\'s List'),
-                ('url', 'https://www.angieslist.com/companylist/us/ky/louisville/lock-doctor-llc-reviews-6314008.htm?CacheBuster'),
+                ('url',),
                 ('userId',),
                 ('userType', 'Visitor - New'),
                 ('visitorPageCategory', 'DOORS'),
@@ -318,7 +318,7 @@ class LeafPageSegmentTestCase(SeleniumTestCase):
                 ('activityLocation', 'Visitor : SP Profile'),
                 ('categoryId', '112'),
                 ('description', 'Service Request Flow entry button'),
-                ('homeAdvisorCategoryId','10217'),
+                ('homeAdvisorCategoryId','12061'),
                 ('marketId', '15'),
                 ('userId',),
                 ('userSelectedZipCode',),
