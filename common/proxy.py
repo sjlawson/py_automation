@@ -398,8 +398,9 @@ class Proxy(threading.Thread):
         # we attempt to establish connection to destination server
         if self.request.state == HTTP_PARSER_STATE_COMPLETE:
             logger.debug('request parser is in state complete')
-            # if self.request.url.path[:len('api.segment.io')] == b'api.segment.io':
-            #     logger.info("DATA: %s" % str(data))
+            if b'segment' in self.request.url.path:
+                logger.info("DATA: %s" % str(data))
+                logger.info("URL PATH: %s" % self.request.url.path)
             if self.request.method == b'CONNECT':
                 host, port = self.request.url.path.split(COLON)
             elif self.request.url:

@@ -185,7 +185,7 @@ def start_sc():
     subprocess.call(cmd, shell=True)
 
 def start_cbt():
-    subprocess.call('cbt_tunnels --username %s --authkey %s --proxyIp 127.0.0.1 --proxyPort 4545' % (os.environ['CBT_USER'], os.environ['CBT_KEY']), shell=True)
+    subprocess.call('cbt_tunnels --username %s --authkey %s --proxyIp 127.0.0.1 --proxyPort 4545 --quiet' % (os.environ['CBT_USER'], os.environ['CBT_KEY']), shell=True)
 
 mb = None
 pyproxy = None

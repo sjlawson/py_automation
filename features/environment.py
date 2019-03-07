@@ -3,8 +3,7 @@ from reporters.junit import JUnitReporter
 from selenium import webdriver
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from selenium.webdriver.common.proxy import Proxy as SeleniumProxy, ProxyType
-from multiprocessing import Process
-from browsermobproxy import Server
+from unittest import TestCase
 from common.proxy import *
 import yaml, os, datetime, json, requests
 
@@ -64,31 +63,35 @@ def chrome_native(context):
     context.browser.quit()
 
 
-# @fixture
-# def generic_native(context):
-
-
 @fixture
-def chrome_cbt(context):
+def remote_cbt(context):
+    PROXY = os.environ.get('PROXY', '127.0.0.1:4545')
     desired_cap = {
-        'platform': "Mac OS X 10.12",
-        'browserName': "chrome",
+        'name': context.test_case.id() + ' ' + str(datetime.datetime.now()),
+        'platform': os.environ.get('PLATFORM', 'Mac OS X 10.12'),
+        'browserName': os.environ.get('BROWSERNAME', 'chrome'),
         'record_video': 'true',
+        'record_network': 'true',
     }
     username = os.environ['CBT_USER']
     access_key = os.environ['CBT_KEY']
+    context.test_case.api_session = requests.Session()
+    context.test_case.api_session.auth = (username, access_key)
     driver = webdriver.Remote(
         command_executor='https://{}:{}@hub.crossbrowsertesting.com/wd/hub'.format(username, access_key),
         desired_capabilities=desired_cap)
     context.browser = driver
     yield context.browser
     context.browser.quit()
+    context.test_case.api_session.put('https://crossbrowsertesting.com/api/v3/selenium/' + context.browser.session_id,
+                                      data={'action': 'set_score', 'score': context.test_case.test_result})
+    print("__browser session__\n", context.browser.session_id)
 
 
 @fixture
-def chrome_sauce(context):
+def remote_sauce(context):
     desired_cap = {
-        'platform': 'Mac OS X 10.12',
+        'platform': os.environ.get('PLATFORM', 'Mac OS X 10.12'),
         'browserName': os.environ.get('BROWSERNAME', 'chrome'),
         'version': 'latest',
         'extendedDebugging': True
@@ -115,16 +118,17 @@ def set_caps(caps, method_name):
     caps['record_video'] = 'true'
     caps['record_network'] = 'true'
     caps['proxy'] = {
-        "httpProxy":PROXY,
-        "ftpProxy":PROXY,
-        "sslProxy":PROXY,
+        "httpProxy": PROXY,
+        "ftpProxy": PROXY,
+        "sslProxy": PROXY,
         "noProxy": None,
-        "proxyType":"MANUAL",
-        "class":"org.openqa.selenium.Proxy",
-        "autodetect":False
+        "proxyType": "MANUAL",
+        "class": "org.openqa.selenium.Proxy",
+        "autodetect": False
     }
 
     return caps
+
 
 def selenium_browser_firefox(context):
     myProxy = context.proxy_addr
@@ -133,7 +137,6 @@ def selenium_browser_firefox(context):
     p.proxyType = ProxyType.MANUAL
     p.httpProxy = myProxy
     p.sslProxy = myProxy
-    import selenium
     p = SeleniumProxy({
         "proxy_type": {'ff_value': 1, 'string': 'MANUAL'},
         "httpProxy": myProxy,
@@ -164,16 +167,6 @@ def proxy_start(proxy_host, proxy_port, mountebank_host, mountebank_port):
     proxy.run()
 
 
-def bmp_start(bmi_port):
-    browsermob_path = os.environ.get('BROWSERMOB_PATH', './../browsermob-proxy/bin/browsermob-proxy')
-    browsermob_port = int(os.environ.get('BROWSERMOB_PORT', '9090'))
-    browsermob_host = os.environ.get('BROWSERMOB_HOST', '127.0.0.1')
-    server = Server(browsermob_path, {'host':browsermob_host,'port':browsermob_port})
-    server.remap("api.segment.io", "127.0.0.1:%s" % bmi_port);
-    server.start()
-    context.bmproxy = server.create_proxy()
-
-
 def create_mb_imposter(mb_host, mbi_port = None):
     """
     remove old imposter if port is specified, then re-create
@@ -202,32 +195,27 @@ def create_mb_imposter(mb_host, mbi_port = None):
 
     return int(response['port'])
 
+
 def before_all(context):
+    context.test_case = TestCase()
+    context.test_case.test_result = 'fail'
     # setup mountebank imposter
     fixture = os.environ.get('TESTENV','noproxy')
-
+    context.test_result = None
     proxy_host = 'localhost'
     proxy_port = int(os.environ.get('PYPROXY_PORT', 4545))
     context.proxy_addr = '%s:%s' % (proxy_host, proxy_port)
     context.mbi_port = int(os.environ.get('MBI_PORT', 58111))
     context.mb_host = os.environ.get('MB_HOST', '127.0.0.1')
     if fixture != 'noproxy':
-        mountebank_port = create_mb_imposter(context.mb_host, context.mbi_port)
+        create_mb_imposter(context.mb_host, context.mbi_port)
 
-    ## setup proxy.py
     logging.basicConfig(level=logging.INFO,
-                    format='%(asctime)s - %(levelname)s - %(funcName)s:%(lineno)d - %(message)s')
-    # context.pyproxy = Process(target=proxy_start, args=[proxy_host, proxy_port, context.mb_host, mountebank_port])
-    # context.pyproxy.start()
-
-    # or use browsermob_proxy instead
-    # bmp_start(bmi_port = mountebank_port)
+                        format='%(asctime)s - %(levelname)s - %(funcName)s:%(lineno)d - %(message)s')
 
     junit_reporter = JUnitReporter(context.config)
     context.config.reporters.append(junit_reporter)
 
-    # use_fixture(selenium_browser_firefox, context)
-    # use_fixture(selenium_browser_safari, context)
     context.noproxy = False
     if fixture == 'noproxy':
         use_fixture(chrome_performance_logs, context)
@@ -235,9 +223,9 @@ def before_all(context):
     elif fixture == 'local':
         use_fixture(chrome_native, context)
     elif fixture == 'cbt':
-        use_fixture(chrome_cbt, context)
+        use_fixture(remote_cbt, context)
     elif fixture == 'sauce':
-        use_fixture(chrome_sauce, context)
+        use_fixture(remote_sauce, context)
     else:
         use_fixture(chrome_native, context)
 
@@ -246,7 +234,3 @@ def before_all(context):
         context.appsuites = yamlconfig['appsuites']
 
     print("Starting Python Selenium Test Framework")
-
-# def after_all(context):
-    # context.pyproxy.terminate()
-    # context.bmproxy.stop()

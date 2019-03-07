@@ -8,6 +8,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
+
 class SegmentTestHelper():
 
     def request_mountebank(context, count):
@@ -20,9 +21,14 @@ class SegmentTestHelper():
         if count > 10:
             return []
         r = requests.get("http://%s:2525/imposters/%s" % (context.mb_host, context.mbi_port))
-        content_bodies = [json.loads(content_requests['body']) for content_requests in json.loads(r._content)['requests']]
+        request_content = json.loads(r.content)
+        if 'requests' not in request_content:
+            time.sleep(1)
+            return SegmentTestHelper.request_mountebank(context, count)
+        content_bodies = [json.loads(content_requests['body']) for content_requests in request_content['requests']]
         segment_props = [ body['properties'] for body in content_bodies]
         if not segment_props:
+            time.sleep(1)
             return SegmentTestHelper.request_mountebank(context, count)
         return segment_props
 
@@ -82,8 +88,10 @@ class SegmentTestHelper():
 
         try:
             assert prop_exists == True
+            context.test_case.test_result = 'pass'
         except:
             # caught to avoid false is not true response
+            context.test_case.test_result = 'fail'
             raise AssertionError("%s not in segment properties" % expected_prop_name)
 
     def assert_segment_call_props(context):
@@ -92,15 +100,17 @@ class SegmentTestHelper():
                 try:
                     assert bool(context.seg_props[row['prop_key']]) == bool(html.unescape(row['prop_value'].capitalize()))
                 except AssertionError:
-                    raise AssertionError('%s expected %s, found %s' % (row['prop_key'], \
-                                                                       row['prop_value'], \
+                    raise AssertionError('%s expected %s, found %s' % (row['prop_key'],
+                                                                       row['prop_value'],
                                                                        context.seg_props[row['prop_key']]))
             elif row['prop_value']:
                 try:
                     assert context.seg_props[row['prop_key']] == html.unescape(row['prop_value'])
+                    context.test_case.test_result = 'pass'
                 except AssertionError:
-                    raise AssertionError('%s expected %s, found %s' % (row['prop_key'], \
-                                                                       row['prop_value'], \
+                    context.test_case.test_result = 'fail'
+                    raise AssertionError('%s expected %s, found %s' % (row['prop_key'],
+                                                                       row['prop_value'],
                                                                        context.seg_props[row['prop_key']]))
             else:
                 try:
