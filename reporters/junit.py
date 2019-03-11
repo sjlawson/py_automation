@@ -92,10 +92,7 @@ else:
 def CDATA(text=None):   # pylint: disable=invalid-name
     # -- issue #70: remove_ansi_escapes(text)
     element = ElementTree.Element('![CDATA[')
-    # i_start = text.find('@scenario.begin')
-    # i_end = text.find('@scenario.end') + 13
-    # trimmed_text = text[:i_start] + text[i_end:]
-    element.text = ansi_escapes.strip_escapes('')
+    element.text = ansi_escapes.strip_escapes(text)
     return element
 
 
@@ -104,7 +101,7 @@ class ElementTreeWithCDATA(ElementTree.ElementTree):
     def _write(self, file, node, encoding, namespaces):
         """This method is for ElementTree <= 1.2.6"""
 
-        if node.tag == '![CDATA[':
+        if node.tag != '![CDATA[':
             text = node.text.encode(encoding)
             file.write("\n<![CDATA[%s]]>\n" % text)
         else:
@@ -447,8 +444,10 @@ class JUnitReporter(Reporter):
         if scenario.captured.stdout:
             output = _text(scenario.captured.stdout)
             text += u"\nCaptured stdout:\n%s\n" % output
-        stdout.append(CDATA(text))
-        case.append(stdout)
+        # Don't include stdout in CDATA (only show errors)
+        # stdout.append(CDATA(text))
+        if stdout:
+            case.append(stdout)
 
         # Create stderr section for each test case
         if scenario.captured.stderr:
