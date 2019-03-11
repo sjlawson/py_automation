@@ -1,4 +1,4 @@
-@visitorSegmentExample
+@visitorSegmentExample @daily_auto
 Feature: 
 
   Scenario: User fills zipcode on Leaf CTA

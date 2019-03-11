@@ -1,6 +1,6 @@
 Feature: 
 
-  @visitorSegmentExample
+  @visitorSegmentExample  @daily_auto
   Scenario: testing segment pagecall on homepage
     Given user is on a visitor site page
     """
