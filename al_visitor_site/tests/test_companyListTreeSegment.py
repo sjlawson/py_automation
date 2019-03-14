@@ -1,7 +1,7 @@
 from common.SeleniumTestCase import SeleniumTestCase
 from common.SegmentTestHelper import SegmentTestHelper
 
-##### Company List Page #### THIS ENTIRE CLASS HAS BEEN CONVERTED TO GHERKIN - SEE: /feature/al_visitor_site/companylist.feature
+##### Company List Page #### THIS ENTIRE CLASS HAS BEEN CONVERTED TO GHERKIN - SEE: /feature/al_visitor_site/companylist_page.feature
 class CompanyListTestCase(SeleniumTestCase):
 
     # Company List Page Load
@@ -1043,7 +1043,7 @@ class CompanyListTopCityTestCase(SeleniumTestCase):
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
     # test segment call on clicking the BC link in the header
-    def test_companyListTopCityHeaderScClick(self):
+    def test_companyListTopCityHeaderBcClick(self):
         if not self.client:
             return 0
 

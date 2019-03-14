@@ -24,5 +24,5 @@ Feature:
       | userId                 |                                   |
       | userSelectedZipCode    | 27610                             |
       | visitorPageCategory    | Roofing                           |
-      | visitorPageGeo         | RALEIGH/DURHAM                    |
-      | visitorPageGeoCategory | RALEIGH/DURHAM - ROOFING          |
+      | visitorPageGeo         | RALEIGH                    |
+      | visitorPageGeoCategory | RALEIGH - ROOFING          |
