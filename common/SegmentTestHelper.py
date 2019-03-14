@@ -1,29 +1,66 @@
-import json, time, html
+import json, time, html, requests, sys, urllib3
 
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
-from selenium.common.exceptions import TimeoutException
+from selenium.common.exceptions import TimeoutException, NoSuchElementException
 from selenium.webdriver.common.action_chains import ActionChains
+
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 
 class SegmentTestHelper():
 
-    def collect_segment_requests_on_page(context):
-        """A paired-down method for simply gathering segment requests from browser log"""
-        wait = WebDriverWait(context.browser, 15)
-        wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, 'div')))
-        time.sleep(3)
-
-        return SegmentTestHelper.get_browser_segmentlogs(context, 0)
-
-    def get_browser_segmentlogs(context, count):
+    def request_mountebank(context, count):
+        """
+        This method is a 1:1 match to the output from get_browser_segmentlogs()
+        mb_host: url for mounteback
+        mbi_port: mountebank impostor port
+        """
         count += 1
         if count > 10:
             return []
-        time.sleep(1)
-        collect_seg = []
+        r = requests.get("http://%s:2525/imposters/%s" % (context.mb_host, context.mbi_port))
+        request_content = json.loads(r.content)
+        if 'requests' not in request_content:
+            time.sleep(1)
+            return SegmentTestHelper.request_mountebank(context, count)
+        content_bodies = [json.loads(content_requests['body']) for content_requests in request_content['requests']]
+        segment_props = [ body['properties'] for body in content_bodies]
+        if not segment_props:
+            time.sleep(1)
+            return SegmentTestHelper.request_mountebank(context, count)
+        return segment_props
+
+    def element_is_clickable(browser, selector):
+        wait = WebDriverWait(browser, 15)
+        try:
+            element = SegmentTestHelper.get_webdriver_element(browser, selector, 0)
+        except NoSuchElementException:
+            print("\n\nElement %s not found\n" % selector)
+            return False
+        return True
+
+
+    def collect_segment_requests_on_page(context):
+        """A paired-down method for simply gathering segment requests from browser log OR mountebank"""
+        wait = WebDriverWait(context.browser, 15)
+        wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, 'div')))
+        time.sleep(2)
+
+        if context.noproxy:
+            return SegmentTestHelper.get_browser_segmentlogs(context, 0)
+        else:
+            return SegmentTestHelper.request_mountebank(context, 0)
+
+    def get_browser_segmentlogs(context, count):
+        """For use with non-mountebank, non-proxy, non-tunnel tests that require the Chrome browserlog for segment calls"""
+        count += 1
+        if count > 10:
+            return []
+        # time.sleep(1)
         perf_logs = context.browserlog()
+        collect_seg = []
         for perflog in perf_logs:
             perf_msgs = json.loads(perflog['message'])
             if 'request' in perf_msgs['message']['params'] and 'postData' in perf_msgs['message']['params']['request']\
@@ -38,7 +75,7 @@ class SegmentTestHelper():
         return collect_seg
 
     def assert_segment_call_exists(context):
-        # time.sleep(4) # if a page takes longer than 4 seconds, it's bad
+        # SegmentTestHelper.request_mountebank()
         seg_calls = SegmentTestHelper.collect_segment_requests_on_page(context)
         expected_prop_name = context.table[0]['unique_field']
         expected_prop_value = context.table[0]['unique_value']
@@ -47,13 +84,14 @@ class SegmentTestHelper():
             if expected_prop_name in seg_props:
                 if seg_props[expected_prop_name] == expected_prop_value:
                     context.seg_props = seg_props
-                    # print("%s == %s" % (seg_props[expected_prop_name], expected_prop_value))
                     prop_exists = True
 
         try:
             assert prop_exists == True
+            context.test_case.test_result = 'pass'
         except:
             # caught to avoid false is not true response
+            context.test_case.test_result = 'fail'
             raise AssertionError("%s not in segment properties" % expected_prop_name)
 
     def assert_segment_call_props(context):
@@ -62,15 +100,17 @@ class SegmentTestHelper():
                 try:
                     assert bool(context.seg_props[row['prop_key']]) == bool(html.unescape(row['prop_value'].capitalize()))
                 except AssertionError:
-                    raise AssertionError('%s expected %s, found %s' % (row['prop_key'], \
-                                                                       row['prop_value'], \
+                    raise AssertionError('%s expected %s, found %s' % (row['prop_key'],
+                                                                       row['prop_value'],
                                                                        context.seg_props[row['prop_key']]))
             elif row['prop_value']:
                 try:
                     assert context.seg_props[row['prop_key']] == html.unescape(row['prop_value'])
+                    context.test_case.test_result = 'pass'
                 except AssertionError:
-                    raise AssertionError('%s expected %s, found %s' % (row['prop_key'], \
-                                                                       row['prop_value'], \
+                    context.test_case.test_result = 'fail'
+                    raise AssertionError('%s expected %s, found %s' % (row['prop_key'],
+                                                                       row['prop_value'],
                                                                        context.seg_props[row['prop_key']]))
             else:
                 try:
@@ -79,28 +119,59 @@ class SegmentTestHelper():
                     raise AssertionError('%s not found in segment properties' % row['prop_key'])
 
 
+    def get_webdriver_element(client, selector, tries):
+        tries += 1
+        if tries > 3:
+            raise NoSuchElementException("Element not found, identified by <%s>" % selector)
+
+        element = None
+        try:
+            if selector[:3] == 'id:':
+                print("Checking for element: %s" % selector[3:].strip())
+                element = client.find_element_by_id(selector[3:].strip())
+            elif selector[0] == '.' or selector[0] == '#':
+                element = client.find_element_by_css_selector(selector)
+            elif selector[:4] == 'css:':
+                element = client.find_element_by_css_selector(selector[4:].strip())
+            elif selector[:5] == 'name:':
+                element = client.find_element_by_name(selector[5:].strip())
+            else:
+                return selector
+        except NoSuchElementException as e:
+            time.sleep(1)
+            if tries < 4:
+                SegmentTestHelper.get_webdriver_element(client, selector, tries)
+
+        return element
+
     def do_actions(client, actions):
         """
         Performs a list of actions on the webdriver client
         http://selenium-python.readthedocs.io/api.html#module-selenium.webdriver.common.action_chains
         actions is a list of dicts: [{'action_method':'method_name','action_params':['param1','param2','param3'...] },]
+
+        In the case where an action param is an element, the string element identifier (best practise is to use ID),
+        the param must be mutated to an instance of a webdriver element
         """
-        wait = WebDriverWait(client, 10)
+        wait = WebDriverWait(client, 20)
         for action in actions:
+            wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, 'body > div')))
+            # time.sleep(1)
             if action['action_params']:
                 for i in range(0, len(action['action_params'])):
-                    if action['action_params'][i] and (action['action_params'][i][0] == '#' or action['action_params'][i][0] == '.'):
-                        action['action_params'][i] = client.find_element_by_css_selector(action['action_params'][i])
+                    if action['action_params'][i]:
+                        action['action_params'][i] = SegmentTestHelper.get_webdriver_element(client=client, selector=action['action_params'][i], tries=0)
 
-        action_chain = ActionChains(client)
         for action in actions:
+            action_chain = ActionChains(client)
             try:
                 p_action_method = getattr(action_chain, action['action_method'])
                 p_action_method(*action['action_params'])
+                action_chain.perform()
             except AttributeError:
-                raise NotImplementedError("ActionChains does not implement %s" % action['action_method'])
+                print("\n\nERROR ON METHOD %s\n\n__" % str(action['action_method']))
+                raise NotImplementedError("ActionChains does not implement _%s_ with params _%s_" % (action['action_method'], action['action_params']))
 
-        action_chain.perform()
 
     ##
     # @param test_case - passed as 'self' from the calling test case method
@@ -216,3 +287,8 @@ class SegmentTestHelper():
             test_case.test_result = 'fail'
             raise
         test_case.test_result = 'pass'
+
+    def getTBallPage(context):
+        wait = WebDriverWait(context.browser, 15)
+        context.browser.get(context.url)
+        wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, '#app > div')))
