@@ -1,25 +1,26 @@
 Feature:
 
-  Scenario: testing segment pagecall on topcity page
-    Given user is on a visitor topcity page
+  Scenario: testing segment pagecall on state page
+    Given user is on a visitor state page
     When a segment page call is sent for a unique field value pair
       | unique_field | unique_value        |
-      | name         | Visitor : US : City |
+      | name         | Visitor : US : State |
     Then the segment call contains parameters
-      | prop_key    | prop_value                                                        |
-      | name        | Visitor : US : City                                               |
-      | atTestOffer |                                                                   |
-      | cid         |                                                                   |
-      | pageVersion | Lullabot Redesign                                                 |
-      | path        | /companylist/indianapolis/                                        |
-      | search      |                                                                   |
-      | userId      |                                                                   |
-      | userType    | Visitor - New                                                     |
-      | title       | Indianapolis, Indiana Local Home Service Pros &vert; Angie's List |
+      | prop_key    | prop_value                                           |
+      | name        | Visitor : US : State                                 |
+      | atTestOffer |                                                      |
+      | cid         |                                                      |
+      | pageVersion | Lullabot Redesign                                    |
+      | path        | /companylist/us/mi/                                  |
+      | search      |                                                      |
+      | userId      |                                                      |
+      | userType    | Visitor - New                                        |
+      | title       | Search Home Services in Michigan &vert; Angie's List |
+      | pageState   | MI                                                   |
+      | referrer    |                                                      |
 
-
-    Scenario: segment call on clicking the join link in topcity header
-      Given user is on a visitor topcity page
+   Scenario: segment call on clicking the join link in state header
+      Given user is on a visitor state page
       When a user performs actions
       | action_method | action_params |
       | click         | #header-join  |
@@ -27,15 +28,14 @@ Feature:
       | unique_field | unique_value        |
       | description  | Join link in header |
       And the segment call contains parameters
-      | prop_key         | prop_value          |
-      | activityLocation | Visitor : US : City |
-      | description      | Join link in header |
-      | userId           |                     |
-      | visitorPageGeo   | INDIANAPOLIS        |
+      | prop_key         | prop_value           |
+      | activityLocation | Visitor : US : State |
+      | description      | Join link in header  |
+      | userId           |                      |
 
 
-    Scenario: segment call on clicking the HIW link in topcity header
-      Given user is on a visitor topcity page
+    Scenario: segment call on clicking the HIW link in state header
+      Given user is on a visitor state page
       When a user performs actions
       | action_method | action_params       |
       | click         | .btnHiw |
@@ -45,13 +45,12 @@ Feature:
       And the segment call contains parameters
       | prop_key         | prop_value                  |
       | description      | How it Works link in header |
-      | activityLocation | Visitor : US : City         |
+      | activityLocation | Visitor : US : State        |
       | userId           |                             |
-      | visitorPageGeo   | INDIANAPOLIS                |
 
     
-    Scenario: segment call on clicking the Sign In link in topcity header
-      Given user is on a visitor topcity page
+    Scenario: segment call on clicking the Sign In link in state header
+      Given user is on a visitor state page
       When a user performs actions
       | action_method | action_params   |
       | click         | #header-sign-in |
@@ -61,13 +60,11 @@ Feature:
       And the segment call contains parameters
       | prop_key         | prop_value             |
       | description      | Sign In link in header |
-      | activityLocation | Visitor : US : City    |
+      | activityLocation | Visitor : US : State   |
       | userId           |                        |
-      | visitorPageGeo   | INDIANAPOLIS           |
 
- 
-    Scenario: segment call on clicking the FAQ link in topcity header
-      Given user is on a visitor topcity page
+   Scenario: segment call on clicking the FAQ link in state header
+      Given user is on a visitor state page
       When a user performs actions
       | action_method | action_params   |
       | click         | #faq |
@@ -75,15 +72,14 @@ Feature:
       | unique_field | unique_value           |
       | description  | FAQ link in header |
       And the segment call contains parameters
-      | prop_key         | prop_value          |
-      | description      | FAQ link in header  |
-      | activityLocation | Visitor : US : City |
-      | userId           |                     |
-      | visitorPageGeo   | INDIANAPOLIS        |
+      | prop_key         | prop_value           |
+      | description      | FAQ link in header   |
+      | activityLocation | Visitor : US : State |
+      | userId           |                      |
 
 
-    Scenario: segment call on clicking the Press link in topcity header
-      Given user is on a visitor topcity page
+    Scenario: segment call on clicking the Press link in state header
+      Given user is on a visitor state page
       When a user performs actions
       | action_method | action_params |
       | click         | #press        |
@@ -93,13 +89,12 @@ Feature:
       And the segment call contains parameters
       | prop_key         | prop_value                  |
       | description      | In the Press link in header |
-      | activityLocation | Visitor : US : City         |
+      | activityLocation | Visitor : US : State        |
       | userId           |                             |
-      | visitorPageGeo   | INDIANAPOLIS                |
 
 
-    Scenario: segment call on clicking the SC link in topcity header
-      Given user is on a visitor topcity page
+    Scenario: segment call on clicking the SC link in state header
+      Given user is on a visitor state page
       When a user performs actions
       | action_method | action_params |
       | click         | #articles     |
@@ -109,13 +104,12 @@ Feature:
       And the segment call contains parameters
       | prop_key         | prop_value                     |
       | description      | Solution Center link in header |
-      | activityLocation | Visitor : US : City            |
+      | activityLocation | Visitor : US : State           |
       | userId           |                                |
-      | visitorPageGeo   | INDIANAPOLIS                   |
 
 
-    Scenario: segment call on clicking the BC link in topcity header
-      Given user is on a visitor topcity page
+    Scenario: segment call on clicking the BC link in state header
+      Given user is on a visitor state page
       When a user performs actions
       | action_method | action_params       |
       | click         | #nav_business_owner |
@@ -125,13 +119,12 @@ Feature:
       And the segment call contains parameters
       | prop_key         | prop_value                     |
       | description      | Business Owners link in header |
-      | activityLocation | Visitor : US : City            |
+      | activityLocation | Visitor : US : State           |
       | userId           |                                |
-      | visitorPageGeo   | INDIANAPOLIS                   |
 
 
-    Scenario: segment call on clicking the Join link in topcity footer
-      Given user is on a visitor topcity page
+    Scenario: segment call on clicking the Join link in state footer
+      Given user is on a visitor state page
       When a user performs actions
       | action_method | action_params |
       | click         | #footer-join  |
@@ -141,14 +134,12 @@ Feature:
       And the segment call contains parameters
       | prop_key         | prop_value            |
       | description      | Join button in footer |
-      | activityLocation | Visitor : US : City   |
+      | activityLocation | Visitor : US : State  |
       | userId           |                       |
-      | visitorPageGeo   | INDIANAPOLIS          |
 
-      
-    @companylistTopCities
-    Scenario Outline: companylist topcity page top cities
-        Given user is on a visitor topcity page
+
+    Scenario Outline: companylist state page top cities
+        Given user is on a visitor state page
         When a user clicks on "<pageLink>"
         Then a segment track call is sent for a unique field value pair
         | unique_field | unique_value              |
@@ -156,7 +147,7 @@ Feature:
         And the segment call contains parameters
         | prop_key         | prop_value                |
         | description      | Top Cities link in footer |
-        | activityLocation | Visitor : Directory       |
+        | activityLocation | Visitor : US : State      |
         | userId           |                           |
       Examples: pageLink
       | pageLink                                                                                    |
@@ -174,6 +165,5 @@ Feature:
       | .top-cities > ul > div.footer-region.cities-right > li > a[title="Search Las Vegas Pros"]   |
       | .footer-region.cities-right > li > a[title="Search San Antonio Pros"]                       |
       | .footer-region.cities-right > li > a[title="Search Tampa Pros"                              |
-
-
   
+      

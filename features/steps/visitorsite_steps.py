@@ -45,3 +45,23 @@ def step_impl(context):
     context.browser.get(context.url)
     time.sleep(1)
     context.browser.execute_script(segment_timeout_script)
+
+
+@given('user is on a visitor city page')
+def step_impl(context):
+    appsuite_env = 'al_visitor_site'
+    appsuite_url = context.appsuites[appsuite_env]['base_url']
+    context.url = appsuite_url + '/companylist/us/in/fishers/flooring.htm?bustA32'
+    context.browser.get(context.url)
+    time.sleep(1)
+    context.browser.execute_script(segment_timeout_script)
+
+
+@given('user is on a visitor state page')
+def step_impl(context):
+    appsuite_env = 'al_visitor_site'
+    appsuite_url = context.appsuites[appsuite_env]['base_url']
+    context.url = appsuite_url + '/companylist/us/mi/?bustSDF'
+    context.browser.get(context.url)
+    time.sleep(1)
+    context.browser.execute_script(segment_timeout_script)
