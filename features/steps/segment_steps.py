@@ -65,7 +65,7 @@ def step_impl(context, pageLink):
             'action_params': [pageLink.strip()]
         }
     ]
-    SegmentTestHelper.do_actions(context.browser, actions)
+    SegmentTestHelper.do_actions(context.browser, actions, 10)
 
 
 @when('the page loads')
@@ -96,7 +96,7 @@ def get_action_list(context):
         actions.append(
             {
                 'action_method': row['action_method'],
-                'action_params': list(map(lambda action_params: action_params.strip() , row['action_params'].split(',')))
+                'action_params': list(map(lambda action_params: action_params.strip(), row['action_params'].split(',')))
             }
         )
 
