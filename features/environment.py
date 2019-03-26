@@ -193,19 +193,23 @@ def create_mb_imposter(mb_host, mbi_port = None):
     return int(response['port'])
 
 
+def before_scenario(context, scenario):
+    """Clear impostor between scenarios to prevent data conflicts"""
+    if context.fixture != 'noproxy':
+        create_mb_imposter(context.mb_host, context.mbi_port)
+
+
 def before_all(context):
     context.test_case = TestCase()
     context.test_case.test_result = 'fail'
     # setup mountebank imposter
-    fixture = os.environ.get('TESTENV','noproxy')
+    context.fixture = os.environ.get('TESTENV','noproxy')
     context.test_result = None
     proxy_host = 'localhost'
     proxy_port = int(os.environ.get('PYPROXY_PORT', 4545))
     context.proxy_addr = '%s:%s' % (proxy_host, proxy_port)
     context.mbi_port = int(os.environ.get('MBI_PORT', 58111))
     context.mb_host = os.environ.get('MB_HOST', '127.0.0.1')
-    if fixture != 'noproxy':
-        create_mb_imposter(context.mb_host, context.mbi_port)
 
     logging.basicConfig(level=logging.INFO,
                         format='%(asctime)s - %(levelname)s - %(funcName)s:%(lineno)d - %(message)s')
@@ -214,14 +218,14 @@ def before_all(context):
     context.config.reporters.append(junit_reporter)
 
     context.noproxy = False
-    if fixture == 'noproxy':
+    if context.fixture == 'noproxy':
         use_fixture(chrome_performance_logs, context)
         context.noproxy = True
-    elif fixture == 'local':
+    elif context.fixture == 'local':
         use_fixture(chrome_native, context)
-    elif fixture == 'cbt':
+    elif context.fixture == 'cbt':
         use_fixture(remote_cbt, context)
-    elif fixture == 'sauce':
+    elif context.fixture == 'sauce':
         use_fixture(remote_sauce, context)
     else:
         use_fixture(chrome_native, context)

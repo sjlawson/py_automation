@@ -1,3 +1,4 @@
+@companylistTree
 Feature:
 
   Scenario: testing segment pagecall on city page

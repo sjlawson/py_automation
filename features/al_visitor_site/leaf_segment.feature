@@ -1,10 +1,10 @@
-@visitorSegmentExample @daily_auto
+@leafPages @daily_auto
 Feature: 
 
   ## basic leaf page call test for Leaf Non-Advertiser HA crossover One-Column
   ## test_leafPageSegmentPagecallAdvertisers (L11)
   Scenario: segment page call for non-advertise HA crossover one column
-    Given a user is on a visitor site page
+    Given user is on a visitor site page
     """
     /companylist/us/ga/atlanta/aaa-plumbing-heating-and-air-conditioning-reviews-101241.htm?CacheBuster
     """
@@ -22,7 +22,7 @@ Feature:
       | pageVersion            | Lullabot Redesign                                                                       |
       | path                   | /companylist/us/ga/atlanta/aaa-plumbing-heating-and-air-conditioning-reviews-101241.htm |
       | referrer               |                                                                                         |
-      | search                 | '?CacheBuster                                                                           |
+      | search                 | ?CacheBuster                                                                           |
       | srCtaDisplayed         | True                                                                                    |
       | srCtaVersion           | v2                                                                                      |
       | title                  | AAA Plumbing Heating & Air Conditioning Reviews - Atlanta, GA &vert; Angie's List       |
@@ -37,7 +37,7 @@ Feature:
   ## basic leaf page call test for new advertisers
   ## test_leafPageSegmentPagecallNewAdvertisers (L48)
   Scenario: segment page call for new advertiser leaf page
-    Given a user is on a visitor site page
+    Given user is on a visitor site page
     """
     /companylist/us/xx/memphis/all-about-u-heating-and-air-reviews-8499678.htm?CacheBuster
     """
@@ -53,9 +53,9 @@ Feature:
       | marketId               |                                                                   |
       | name                   | Visitor : SP Profile                                              |
       | pageVersion            | Lullabot Redesign                                                 |
-      | path                   | /companylist/us/ky/louisville/lock-doctor-llc-reviews-6314008.htm |
+      | path                   | /companylist/us/tn/memphis/all-about-u-heating-and-air-reviews-8499678.htm |
       | referrer               |                                                                   |
-      | search                 | '?CacheBuster                                                     |
+      | search                 | ?CacheBuster                                                      |
       | srCtaDisplayed         | True                                                              |
       | srCtaVersion           | v2                                                                |
       | title                  | All about u heating & air Reviews - Memphis, &vert; Angie's List  |
@@ -70,7 +70,7 @@ Feature:
   ## basic leaf page call test for non-advertisers
   ## test_leafPageSegmentPagecallNonAdvertisers (L85)
   Scenario: segment page call for non advertiser leaf page
-    Given a user is on a visitor site page
+    Given user is on a visitor site page
     """
     /companylist/us/ky/louisville/lock-doctor-llc-reviews-6314008.htm?CacheBuster
     """
@@ -88,7 +88,7 @@ Feature:
       | pageVersion            | Lullabot Redesign                                                 |
       | path                   | /companylist/us/ky/louisville/lock-doctor-llc-reviews-6314008.htm |
       | referrer               |                                                                   |
-      | search                 | '?CacheBuster                                                     |
+      | search                 | ?CacheBuster                                                      |
       | srCtaDisplayed         | True                                                              |
       | srCtaVersion           | v2                                                                |
       | title                  | Lock Doctor LLC Reviews - Louisville, KY &vert; Angie's List      |
@@ -143,8 +143,8 @@ Feature:
       | marketId               | 31                                 |
       | userId                 |                                    |
       | visitorPageCategory    | Landscaping                        |
-      | visitorPageGeo         | MIAMI/FT. LAUDERDALE               |
-      | visitorPageGeoCategory | MIAMI/FT. LAUDERDALE - LANDSCAPING |
+      | visitorPageGeo         | MIAMI                              |
+      | visitorPageGeoCategory | MIAMI - LANDSCAPING                |
 
   
   ## Header Sign In Leaf Page NON Advertiser (L189)
@@ -292,8 +292,8 @@ Feature:
       | userId                 |                                   |
       | userSelectedZipCode    |                                   |
       | visitorPageCategory    | Painting - Interior               |
-      | visitorPageGeo         | TWIN CITIES                       |
-      | visitorPageGeoCategory | TWIN CITIES - PAINTING - INTERIOR |
+      | visitorPageGeo         | MINNEAPOLIS                       |
+      | visitorPageGeoCategory | MINNEAPOLIS - PAINTING - INTERIOR |
       | homeAdvisorCategoryId  | 10381                             |
       
   
