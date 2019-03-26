@@ -231,3 +231,10 @@ def before_all(context):
         context.appsuites = yamlconfig['appsuites']
 
     print("Starting Python Selenium Test Framework")
+
+
+def after_all(context):
+    with open('reports/test-results.xml', 'r+') as f:
+        content = f.read()
+        f.seek(0, 0)
+        f.write('<testsuites>' + '\n' + content + '\n' + '</testsuites>')

@@ -1,6 +1,6 @@
 Feature:
 
-  @visitorSegmentExample
+  @daily_auto
   Scenario: testing segment pagecall on companylist page
     Given user is on a visitor site page
     """
@@ -21,7 +21,7 @@ Feature:
       | userType    | Visitor - New                                                      |
       | title       | Search Real Local Reviews, Home Services Guide &vert; Angie's List |
 
-
+    @daily_auto
     Scenario: segment call on clicking the join link in company list header
       Given user is on a visitor site page
       """

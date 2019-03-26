@@ -1,4 +1,4 @@
-@visitorSegmentExample
+@visitorSegmentExample @daily_auto
 Feature: 
 
   ## basic leaf page call test for Leaf Non-Advertiser HA crossover One-Column
