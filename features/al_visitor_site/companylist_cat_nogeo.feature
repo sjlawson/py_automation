@@ -141,7 +141,7 @@ Feature:
     | activityLocation | Visitor : CatNoGeo        |
     | userId           |                           |
     Examples: pageLink
-    | pageLink                                                                                    |
+    | pageLink                                                                                                    |
     | .footer-region.cities-left > li > a[title="Search New York Home Inspectors Pros"]                           |
     | .footer-region.cities-left > li > a[title="Search Houston Home Inspectors Pros"]                            |
     | .footer-region.cities-left > li > a[title="Search Chicago Home Inspectors Pros"]                            |
@@ -155,4 +155,4 @@ Feature:
     | .top-cities > ul > div.footer-region.cities-right > li > a[title="Search Minneapolis Home Inspectors Pros"] |
     | .top-cities > ul > div.footer-region.cities-right > li > a[title="Search Las Vegas Home Inspectors Pros"]   |
     | .footer-region.cities-right > li > a[title="Search San Antonio Home Inspectors Pros"]                       |
-    | .footer-region.cities-right > li > a[title="Search Tampa Home Inspectors Pros"                              |
+    | .footer-region.cities-right > li > a[title="Search Tampa Home Inspectors Pros"]                             |

@@ -173,7 +173,7 @@ Feature:
       | .top-cities > ul > div.footer-region.cities-right > li > a[title="Search Minneapolis Pros"] |
       | .top-cities > ul > div.footer-region.cities-right > li > a[title="Search Las Vegas Pros"]   |
       | .footer-region.cities-right > li > a[title="Search San Antonio Pros"]                       |
-      | .footer-region.cities-right > li > a[title="Search Tampa Pros"                              |
+      | .footer-region.cities-right > li > a[title="Search Tampa Pros"]                             |
 
 
   

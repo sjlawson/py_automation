@@ -42,7 +42,6 @@ def chrome_performance_logs(context):
     ch_profile.add_argument('auto-open-devtools-for-tabs')
     context.browser = webdriver.Chrome(desired_capabilities=caps, chrome_options=ch_profile)
     context.browserlog = lambda : context.browser.get_log('performance')
-    context.browser.implicitly_wait(30)
     yield context.browser
     # -- CLEANUP-FIXTURE PART:
     context.browser.quit()
@@ -57,7 +56,6 @@ def chrome_native(context):
     ch_profile.add_argument('disable-extensions')
     ch_profile.add_argument('--proxy-server=%s' % caps['proxy']['httpProxy'])
     context.browser = webdriver.Chrome(desired_capabilities=caps, chrome_options=ch_profile)
-    context.browser.implicitly_wait(30)
     yield context.browser
     # -- CLEANUP-FIXTURE PART:
     context.browser.quit()
@@ -147,7 +145,6 @@ def selenium_browser_firefox(context):
 
     p.add_to_capabilities(caps)
     context.browser = webdriver.Firefox(capabilities=caps)
-    context.browser.implicitly_wait(20)
 
     yield context.browser
     context.browser.quit()

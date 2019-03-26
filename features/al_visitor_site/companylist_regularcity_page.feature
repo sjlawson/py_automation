@@ -183,5 +183,5 @@ Feature:
       | .top-cities > ul > div.footer-region.cities-right > li > a[title="Search Minneapolis Flooring Installers Pros"] |
       | .top-cities > ul > div.footer-region.cities-right > li > a[title="Search Las Vegas Flooring Installers Pros"]   |
       | .footer-region.cities-right > li > a[title="Search San Antonio Flooring Installers Pros"]                       |
-      | .footer-region.cities-right > li > a[title="Search Tampa Flooring Installers Pros"                              |
+      | .footer-region.cities-right > li > a[title="Search Tampa Flooring Installers Pros"]                             |
 

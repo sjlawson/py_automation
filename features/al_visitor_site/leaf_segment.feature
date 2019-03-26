@@ -461,21 +461,19 @@ Feature:
       | activityLocation | Visitor : Directory       |
       | userId           |                           |
     Examples: pageLink
-      | pageLink                                                                                    |
-      | .footer-region.cities-left > li > a[title="Search New York Pros"]                           |
-      | .footer-region.cities-left > li > a[title="Search Houston Pros"]                            |
-      | .footer-region.cities-left > li > a[title="Search Chicago Pros"]                            |
-      | .footer-region.cities-left > li > a[title="Search Indianapolis Pros"]                       |
-      | .footer-region.cities-left > li > a[title="Search Boston Pros"]                             |
-      | .footer-region.cities-left > li > a[title="Search Atlanta Pros"]                            |
-      | .top-cities > ul > div.footer-region.cities-left > li > a[title="Search Cincinnati Pros"]   |
-      | .top-cities > ul > div.footer-region.cities-right > li > a[title="Search Los Angeles Pros"] |
-      | .footer-region.cities-right > li > a[title="Search Dallas Pros"]                            |
-      | .footer-region.cities-right > li > a[title="Search Pittsburgh Pros"]                        |
-      | .top-cities > ul > div.footer-region.cities-right > li > a[title="Search Minneapolis Pros"] |
-      | .top-cities > ul > div.footer-region.cities-right > li > a[title="Search Las Vegas Pros"]   |
-      | .footer-region.cities-right > li > a[title="Search San Antonio Pros"]                       |
-      | .footer-region.cities-right > li > a[title="Search Tampa Pros"                              |
-
-
+      | pageLink                                                                                             |
+      | .footer-region.cities-left > li > a[title="Search New York Plumbers Pros"]                           |
+      | .footer-region.cities-left > li > a[title="Search Houston Plumbers Pros"]                            |
+      | .footer-region.cities-left > li > a[title="Search Chicago Plumbers Pros"]                            |
+      | .footer-region.cities-left > li > a[title="Search Indianapolis Plumbers Pros"]                       |
+      | .footer-region.cities-left > li > a[title="Search Boston Plumbers Pros"]                             |
+      | .footer-region.cities-left > li > a[title="Search Atlanta Plumbers Pros"]                            |
+      | .top-cities > ul > div.footer-region.cities-left > li > a[title="Search Cincinnati Plumbers Pros"]   |
+      | .top-cities > ul > div.footer-region.cities-right > li > a[title="Search Los Angeles Plumbers Pros"] |
+      | .footer-region.cities-right > li > a[title="Search Dallas Plumbers Pros"]                            |
+      | .footer-region.cities-right > li > a[title="Search Pittsburgh Plumbers Pros"]                        |
+      | .top-cities > ul > div.footer-region.cities-right > li > a[title="Search Minneapolis Plumbers Pros"] |
+      | .top-cities > ul > div.footer-region.cities-right > li > a[title="Search Las Vegas Plumbers Pros"]   |
+      | .footer-region.cities-right > li > a[title="Search San Antonio Plumbers Pros"]                       |
+      | .footer-region.cities-right > li > a[title="Search Tampa Plumbers Pros"]                             |
 
