@@ -119,7 +119,6 @@ class SegmentTestHelper():
                     raise AssertionError('%s not found in segment properties' % row['prop_key'])
 
     def get_webdriver_element(client, selector, tries):
-        print("\nRecursion... %s \n" % tries)
         wait = WebDriverWait(client, 5)
         if tries > 2:
             raise NoSuchElementException("Element not found, identified by <%s>" % selector)
@@ -147,10 +146,6 @@ class SegmentTestHelper():
                 element = SegmentTestHelper.get_webdriver_element(client, selector, tries + 1)
             else:
                 raise NoSuchElementException("Element not found, identified by <%s>" % selector)
-        # except NoSuchElementException as e:
-        #     if tries < 3:
-        #         time.sleep(1)
-        #         element = SegmentTestHelper.get_webdriver_element(client, selector, tries + 1)
 
         return element
 

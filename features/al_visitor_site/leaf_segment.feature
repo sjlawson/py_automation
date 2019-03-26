@@ -436,14 +436,14 @@ Feature:
       | unique_field | unique_value          |
       | description  | Join button in footer |
     And the segment call contains parameters
-      | prop_key               | prop_value                 |
-      | activityLocation       | Visitor : SP Profile       |
-      | description            | Join button in footer      |
-      | marketId               | 6                          |
-      | userId                 |                            |
-      | visitorPageCategory    | Heating & A/C              |
-      | visitorPageGeo         | CINCINNATI                 |
-      | visitorPageGeoCategory | CINCINNATI - HEATING & A/C |
+      | prop_key               | prop_value             |
+      | activityLocation       | Visitor : SP Profile   |
+      | description            | Join button in footer  |
+      | marketId               | 6                      |
+      | userId                 |                        |
+      | visitorPageCategory    | Heating & A/C          |
+      | visitorPageGeo         | CLEVES                 |
+      | visitorPageGeoCategory | CLEVES - HEATING & A/C |
 
   @leafTopCities
   Scenario Outline: leaf page top cities
@@ -458,7 +458,7 @@ Feature:
     And the segment call contains parameters
       | prop_key         | prop_value                |
       | description      | Top Cities link in footer |
-      | activityLocation | Visitor : Directory       |
+      | activityLocation | Visitor : SP Profile      |
       | userId           |                           |
     Examples: pageLink
       | pageLink                                                                                             |
