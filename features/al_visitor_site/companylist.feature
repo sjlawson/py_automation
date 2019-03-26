@@ -1,4 +1,4 @@
-@visitorSegmentExample
+@visitorSegmentExample @daily_auto
 Feature: 
 
   Scenario: testing segment pagecall on companylist page
