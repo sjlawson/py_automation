@@ -2,7 +2,7 @@
 Feature:
 
   ## companyListCatNoGeoSegmentJoin
-  Scenario: join button on cat no geo page
+  Scenario: join button on CatNoGeo page
     Given user is on a visitor site catnogeo page
     When a user performs actions
     | action_method | action_params |
@@ -97,7 +97,7 @@ Feature:
 
 
   ## test_companyListCatNoGeoHeaderBcClick
-  Scenario: segment call on clicking the BC link in the header
+  Scenario: segment call on clicking the BC link in CatNoGeo header
     Given user is on a visitor site catnogeo page
     When a user performs actions
     | action_method | action_params       |
