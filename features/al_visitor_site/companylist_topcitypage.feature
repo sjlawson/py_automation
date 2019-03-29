@@ -157,7 +157,7 @@ Feature:
         And the segment call contains parameters
         | prop_key         | prop_value                |
         | description      | Top Cities link in footer |
-        | activityLocation | Visitor : Directory       |
+        | activityLocation | Visitor : US : City       |
         | userId           |                           |
       Examples: pageLink
       | pageLink                                                                                    |
