@@ -65,3 +65,16 @@ def step_impl(context):
     context.browser.get(context.url)
     time.sleep(1)
     context.browser.execute_script(segment_timeout_script)
+
+
+@then('the title of link with id "{link_id}" is "{linktitle}"')
+def step_impl(context, link_id, linktitle):
+    selector = "id: %s" % link_id
+    element = SegmentTestHelper.get_webdriver_element(context.browser, selector, 0)
+    actual = element.get_attribute('title')
+    try:
+        assert actual == linktitle
+        context.test_case.test_result = 'pass'
+    except AssertionError as ae:
+        context.test_case.test_result = 'fail'
+        raise AssertionError('Expecting title, %s, for link_id %s, got %s' % (linktitle, link_id, actual))
