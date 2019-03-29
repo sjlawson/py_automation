@@ -129,7 +129,7 @@ Feature:
 
 
   ## test_companyListCatNoGeo_topCities
-  @topcities
+  @topcities @catnogeo_topcities
   Scenario Outline: companylist CatNoGeo top cities
     Given user is on a visitor site catnogeo page
     When a user clicks on "<pageLink>"
