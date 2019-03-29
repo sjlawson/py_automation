@@ -130,7 +130,7 @@ Feature:
 
   ## test_companyListCatNoGeo_topCities
   @topcities
-  Scenario Outline: companylist top cities
+  Scenario Outline: companylist CatNoGeo top cities
     Given user is on a visitor site catnogeo page
     When a user clicks on "<pageLink>"
     Then a segment track call is sent for a unique field value pair

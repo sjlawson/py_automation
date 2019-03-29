@@ -167,7 +167,7 @@ Feature:
     | userId           |                       |
 
   @companylistTopCities @daily_auto
-  Scenario Outline: companylist top cities
+  Scenario Outline: companylist Directory top cities
       Given user is on a visitor site page
       """
       /companylist/?bustA12345
