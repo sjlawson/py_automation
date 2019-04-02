@@ -4,7 +4,6 @@ from time import sleep
 import _thread
 import requests
 import datetime
-import pymysql
 from selenium import webdriver
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
@@ -21,7 +20,6 @@ class SeleniumTestCase(unittest.TestCase):
     base_url = os.environ.get('BASE_URL', 'http://wwwstg.angieslist.com')
     visitor_site_url = base_url # legacy setting
     legacy_url=os.environ.get('LEGACY_URL', 'http://qatools.angieslist.com')
-    match_site_url=os.environ.get('MATCH_SITE_URL', 'http://match-stage.angieslist.com')
     browser_clients = os.environ.get('BROWSER_CLIENTS', 'Chrome').split(',')
     test_browser = int(os.environ.get('TEST_BROWSER', 0))
     test_client = os.environ.get('TEST_CLIENT', 'Mac OSX 10.10')
@@ -35,12 +33,6 @@ class SeleniumTestCase(unittest.TestCase):
     cbt_flag = True if int(os.environ.get('CBT_FLAG', 1)) else False
     char_key = None
     caps = {}
-    mysql_flag = True if int(os.environ.get('MYSQL_FLAG', 1)) else False
-    mysql_url = os.environ.get('MYSQL_URL', 'mysqlserver-stageNFR.angieslist.com')
-    mysql_user = os.environ.get('MYSQL_USER', 'Deployment')
-    mysql_password = os.environ.get('MYSQL_PASSWORD', 'Deployment-pw1')
-    mysql_db = os.environ.get('MYSQL_DB', '')
-    mysql_connection = None
 
     def setUp(self):
         method_name = self.browser_clients[self.test_browser]
@@ -63,14 +55,6 @@ class SeleniumTestCase(unittest.TestCase):
             self.caps['record_video'] = 'true'
             self.caps['record_network'] = 'true'
             self.caps['loggingPrefs'] = {'performance': 'INFO'}
-
-        if self.mysql_flag:
-            self.mysql_connection = pymysql.connect(host=self.mysql_url,
-                                                    user=self.mysql_user,
-                                                    password=self.mysql_password,
-                                                    db=self.mysql_db,
-                                                    charset='utf8mb4',
-                                                    cursorclass=pymysql.cursors.DictCursor)
         try:
             client_method = getattr(webdriver, method_name)
         except AttributeError:
@@ -140,8 +124,6 @@ class SeleniumTestCase(unittest.TestCase):
             self.client.quit()
             self.api_session.put('https://crossbrowsertesting.com/api/v3/selenium/' + self.client.session_id,
                                  data={'action':'set_score', 'score':self.test_result})
-        if self.mysql_flag:
-            self.mysql_connection.close()
 
     def isElementPresent(self, cssSelector):
         try:
@@ -185,19 +167,6 @@ class SeleniumTestCase(unittest.TestCase):
 
     def keypress(self):
         self.char_key = self.getch()
-
-    def mysql(self, query="select * from AngiesList.t_Session;", string_array=None):
-
-        if self.mysql_flag:
-            try:
-                with self.mysql_connection.cursor() as cursor:
-                    cursor.execute(query, string_array)
-                    result = cursor.fetchall()
-            except:
-                self.fail("MySQL Query has fialed to execute for query: " + query)
-            return result
-        else:
-            self.fail("Unable to execute query, because MySQL Flag (.env) is unassigned or set to 0.")
 
     # Helper method to use after an event triggers a new page load
     # @param old_page - client.find_element_by_tag_name('html') grabbed BEFORE new page call
