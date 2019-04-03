@@ -3,12 +3,6 @@ from common.SegmentTestHelper import SegmentTestHelper
 import time
 
 
-segment_timeout_script = """document.addEventListener('DOMContentLoaded', function(){
-    analytics.timeout(500);
-}, false);"""
-
-
-
 @given('user is on a member site page')
 def step_impl(context):
     appsuite_env = 'al_member_site'
@@ -16,7 +10,6 @@ def step_impl(context):
     context.url = appsuite_url + context.text
     context.browser.get(context.url)
     time.sleep(1)
-    context.browser.execute_script(segment_timeout_script)
 
 
 @given('user is on a member site review page')

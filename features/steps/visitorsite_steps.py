@@ -10,7 +10,6 @@ def step_impl(context):
     context.url = appsuite_url + context.text
     context.browser.get(context.url)
     time.sleep(1)
-    context.browser.execute_script(segment_timeout_script)
 
 
 @given('user is on a visitor site tball page')
@@ -20,7 +19,6 @@ def step_impl(context):
     context.url = appsuite_url + context.text
     SegmentTestHelper.getTBallPage(context)
     time.sleep(1)
-    context.browser.execute_script(segment_timeout_script)
 
 
 @given('user is on a visitor site catnogeo page')
@@ -30,7 +28,6 @@ def step_impl(context):
     context.url = appsuite_url + '/companylist/home-inspection.htm?bustARhymeZ'
     context.browser.get(context.url)
     time.sleep(1)
-    context.browser.execute_script(segment_timeout_script)
 
 
 @given('user is on a visitor topcity page')
@@ -40,7 +37,6 @@ def step_impl(context):
     context.url = appsuite_url + '/companylist/indianapolis/?bustA2'
     context.browser.get(context.url)
     time.sleep(1)
-    context.browser.execute_script(segment_timeout_script)
 
 
 @given('user is on a visitor city page')
@@ -50,7 +46,6 @@ def step_impl(context):
     context.url = appsuite_url + '/companylist/us/in/fishers/flooring.htm?bustA32'
     context.browser.get(context.url)
     time.sleep(1)
-    context.browser.execute_script(segment_timeout_script)
 
 
 @given('user is on a visitor state page')
@@ -60,7 +55,6 @@ def step_impl(context):
     context.url = appsuite_url + '/companylist/us/mi/?bustSDF'
     context.browser.get(context.url)
     time.sleep(1)
-    context.browser.execute_script(segment_timeout_script)
 
 
 @then('the title of link with id "{link_id}" is "{linktitle}"')
