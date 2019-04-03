@@ -2,15 +2,25 @@ from common.SeleniumTestCase import SeleniumTestCase
 from common.SegmentTestHelper import SegmentTestHelper
 
 ##### Company List Page ####
-class CompanyListTestCase(SeleniumTestCase):   
+class CompanyListTestCase(SeleniumTestCase):
 
-    # Company List Page Load
-    def test_companyListSegmentPagecall(self):
-        # quit if browser didn't load
+    def test_companyListPagecall(self):
         if not self.client:
             return 0
 
-        # req'd params: current test case (self), relative path to triggering page, target element, and the triggering action
+        self.companyListSegmentPagecall()
+        self.client.back()
+        self.companyListSegmentPagecallReturnUser()
+
+
+
+
+
+    # Company List Page Load
+    def companyListSegmentPagecall(self):
+        if not self.client:
+            return 0
+
         collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/?bustA1')
 
         segcall_info = {
@@ -32,6 +42,37 @@ class CompanyListTestCase(SeleniumTestCase):
         }
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # Company List Page Load - Returning User
+    def companyListSegmentPagecallReturnUser(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/?bustA1')
+
+        segcall_info = {
+            'main_field': 'name',
+            'main_value': 'Visitor : Directory',
+            'segment_params': [
+                ('name', 'Visitor : Directory'),
+                ('atTestOffer',),
+                ('cid',),
+                ('atTestOffer',),
+                ('referrer',),
+                ('pageVersion', 'Lullabot Redesign'),
+                ('path', '/companylist/'),
+                ('search',),
+                ('title', 'Search Real Local Reviews, Home Services Guide | Angie\'s List'),
+                ('userId',),
+                ('userType', 'Visitor - Returning'),
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+
+
+
 
 ## Header Segment Events - Company List ##
 
@@ -466,7 +507,7 @@ class CompanyListTestCase(SeleniumTestCase):
 
     ###### Company List - catNoGeo ######
 class CompanyListCatNoGeoTestCase(SeleniumTestCase):
-    
+
 
     # test segment call on clicking the join link in company list header
     def test_companyListCatNoGeoSegmentJoin(self):
@@ -900,10 +941,17 @@ class CompanyListCatNoGeoTestCase(SeleniumTestCase):
 #### Top City ####
 class CompanyListTopCityTestCase(SeleniumTestCase):
 
+    def test_companyListTopCityPagecall(self):
+        if not self.client:
+            return 0
+
+        self.companyListTopCitySegmentPagecall()
+        self.client.back()
+        self.companyListTopCitySegmentPagecallUserReturn()
+
 
     # Company List Top City Page Load
-    def test_companyListTopCitySegmentPagecall(self):
-        # quit if browser didn't load
+    def companyListTopCitySegmentPagecall(self):
         if not self.client:
             return 0
 
@@ -928,6 +976,35 @@ class CompanyListTopCityTestCase(SeleniumTestCase):
         }
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # Company List Top City Page Load - Retrun User
+    def companyListTopCitySegmentPagecallUserReturn(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/indianapolis/?bustA2')
+
+        segcall_info = {
+            'main_field': 'name',
+            'main_value': 'Visitor : US : City',
+            'segment_params': [
+                ('name', 'Visitor : US : City'),
+                ('atTestOffer',),
+                ('cid',),
+                ('pageCity', 'Indianapolis, IN'),
+                ('pageVersion', 'Lullabot Redesign'),
+                ('referrer',),
+                ('path', '/companylist/indianapolis/'),
+                ('search',),
+                ('title', 'Indianapolis, Indiana Local Home Service Pros | Angie\'s List'),
+                ('userId',),
+                ('userType', 'Visitor - Returning'),
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+
 
 ## Header Segment Events - Company List ##
 
@@ -1374,10 +1451,17 @@ class CompanyListTopCityTestCase(SeleniumTestCase):
 
 class CompanyListRegularCityTestCase(SeleniumTestCase):
 
+    def test_companyListRegularCityPagecall(self):
+        if not self.client:
+            return 0
+
+        self.companyListRegCitySegmentPagecall()
+        self.client.back()
+        self.companyListRegCitySegmentPagecallReturnUser()
+
 
     # Company List Regular City Page Load
-    def test_companyListRegCitySegmentPagecall(self):
-        # quit if browser didn't load
+    def companyListRegCitySegmentPagecall(self):
         if not self.client:
             return 0
 
@@ -1396,6 +1480,43 @@ class CompanyListRegularCityTestCase(SeleniumTestCase):
                 ('title', 'Top 10 Best Fishers IN Flooring Installers | Angie\'s List'),
                 ('userId',),
                 ('userType', 'Visitor - New'),
+                ('categoryId', '63'),
+                ('homeAdvisorCategoryId', '12032'),
+                ('marketId', '1'),
+                ('seoTestName',),
+                ('srCtaDisplayed', True),
+                ('srCtaVersion', 'v2'),
+                ('visitorPageCategory', 'FLOORING SALES/INSTALLATION/REPAIR'),
+                ('visitorPageGeo', 'FISHERS IN'),
+                ('visitorPageGeoCategory', 'FISHERS IN - FLOORING SALES/INSTALLATION/REPAIR'),
+                ('url',),
+                ('visitorPageVerticalId','7051'),
+                ('visitorPageVerticalName','Home Improvement'),
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # Company List Regular City Page Load
+    def companyListRegCitySegmentPagecallReturnUser(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/in/fishers/flooring.htm?bustA3')
+
+        segcall_info = {
+            'main_field': 'pageVersion',
+            'main_value': 'GeoCat Tampa Redesign',
+            'segment_params': [
+                ('name', 'Visitor : Geocat'),
+                ('atTestOffer',),
+                ('cid',),
+                ('pageVersion', 'GeoCat Tampa Redesign'),
+                ('path', '/companylist/us/in/fishers/flooring.htm'),
+                ('search',),
+                ('title', 'Top 10 Best Fishers IN Flooring Installers | Angie\'s List'),
+                ('userId',),
+                ('userType', 'Visitor - Returning'),
                 ('categoryId', '63'),
                 ('homeAdvisorCategoryId', '12032'),
                 ('marketId', '1'),
@@ -1860,10 +1981,17 @@ class CompanyListRegularCityTestCase(SeleniumTestCase):
 
 class CompanyListStatePageTestCase(SeleniumTestCase):
 
+    def test_companyListStatePagecall(self):
+        if not self.client:
+            return 0
+
+        self.companyListStateSegmentPagecall()
+        self.client.back()
+        self.companyListStateSegmentPagecallReturnUser()
+
 
     # Company List Regular City Page Load
-    def test_companyListStateSegmentPagecall(self):
-        # quit if browser didn't load
+    def companyListStateSegmentPagecall(self):
         if not self.client:
             return 0
 
@@ -1888,6 +2016,34 @@ class CompanyListStatePageTestCase(SeleniumTestCase):
         }
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
+    # Company List Regular City Page Load - Retun User
+    def companyListStateSegmentPagecallReturnUser(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/companylist/us/mi/?ASd')
+
+        segcall_info = {
+            'main_field': 'pageVersion',
+            'main_value': 'Lullabot Redesign',
+            'segment_params': [
+                ('name', 'Visitor : US : State'),
+                ('atTestOffer',),
+                ('cid',),
+                ('pageVersion', 'Lullabot Redesign'),
+                ('path', '/companylist/us/mi/'),
+                ('search',),
+                ('title', 'Search Home Services in Michigan | Angie\'s List'),
+                ('userId',),
+                ('userType', 'Visitor - Returning'),
+                ('pageState', 'MI'),
+                ('referrer',),
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
+
 
 
 ## Header Segment Events - Company List ##
