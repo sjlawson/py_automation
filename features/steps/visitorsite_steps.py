@@ -3,15 +3,6 @@ from common.SegmentTestHelper import SegmentTestHelper
 import time
 
 
-# segment_timeout_script = """document.addEventListener('DOMContentLoaded', function(){
-#     analytics.timeout(1000);
-#     console.log("timeout set");
-# }, false);"""
-
-segment_timeout_script = """
-    analytics.timeout(1000);
-    console.log("timeout set");"""
-
 @given('user is on a visitor site page')
 def step_impl(context):
     appsuite_env = 'al_visitor_site'
