@@ -12,6 +12,7 @@ Feature:
     Examples:
       | link_id                     | linktitle            |
       | footer--top-cities-new-york | Search New York Pros |
+
        ## this step will:
        # 1. take the link name to find the element
        # 2. assert that the title of the element = linktitle passed to the step 
