@@ -3,13 +3,20 @@ from common.SegmentTestHelper import SegmentTestHelper
 
 class HomepageSegmentTestCase(SeleniumTestCase):
 
-    # basic page call test
-    def test_homePageSegmentPagecall(self):
-        # quit if browser didn't load
+    def test_homePageDrupalPagecall(self):
         if not self.client:
             return 0
 
-        # req'd params: current test case (self), relative path to triggering page, target element, and the triggering action
+        self.homePageSegmentPagecall()
+        self.client.back()
+        self.homePageSegmentPageCallReturn()
+
+
+    # basic page call test
+    def homePageSegmentPagecall(self):
+        if not self.client:
+            return 0
+
         collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/?CacheBuster')
 
         segcall_info = {
@@ -27,6 +34,27 @@ class HomepageSegmentTestCase(SeleniumTestCase):
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
+    # basic page call test for returning user
+    def homePageSegmentPageCallReturn(self):
+        if not self.client:
+            return 0
+
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/?CacheBuster')
+
+        segcall_info = {
+            'main_field': 'name',
+            'main_value': 'Visitor : Home',
+            'segment_params': [
+                ('name', 'Visitor : Home'),
+                ('title', 'Angie\'s List | Join for FREE to see 10 Million Verified Reviews'),
+                ('srCtaDisplayed', True),
+                ('srCtaVersion', 'v2.1'),
+                ('userId',),
+                ('userType', 'Visitor - Returning'),
+            ]
+        }
+
+        SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
 
     def test_homePageDrupal_Header(self):
@@ -126,7 +154,7 @@ class HomepageSegmentTestCase(SeleniumTestCase):
 
 
 
- 
+
     #### Body ####
 
 
