@@ -1,7 +1,6 @@
 Feature:
 
-  @newthing
-  Scenario Outline: Footer Top City SEO Title Check
+  Scenario Outline: Thunderball Footer Top City SEO Title Check
       Given user is on a visitor site tball page
       """
       /nearme/
