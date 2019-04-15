@@ -108,7 +108,7 @@ Feature:
 ##### Body Tests #####
 
 
-@homePageSegmentHeroJoinCta @daily_auto @daily_homepage_regression
+@homePageBodySegmentHeroJoinCta @daily_auto @daily_homepage_regression
 
   Scenario: User clicks on hero Join button on Drupal Homepage
     Given user is on a visitor site page
