@@ -2,7 +2,7 @@ Feature:
 
 ##### Header Tests #####
 
-  @homePageSegmentPagecall  @daily_auto @daily_homepage_regression
+  @homePageSegmentPagecall @daily_auto @daily_homepage_regression
   Scenario: Segment pagecall when homepage loads
     Given user is on a visitor site page
     """
