@@ -24,7 +24,7 @@ Feature:
       | srCtaVersion   | v2.1                                                                  |
 
   @homePageSegmentPageCallReturn
-  Scenario: Segment pagecall when homepage loads
+  Scenario: Segment pagecall on homepage when a user returns to our site
     Given user is on a visitor site page
     """
     /
@@ -46,7 +46,7 @@ Feature:
 
 @homePageSegmentHeaderJoinNow @daily_auto @daily_homepage_regression
 
-  Scenario: User clicks on Hero Join button in the header on the Drupal Homepage
+  Scenario: User clicks on Header Join button on the Drupal Homepage
     Given user is on a visitor site page
     """
     /
@@ -66,7 +66,7 @@ Feature:
 
 @homePageSegmentHeaderSignIn @daily_auto @daily_homepage_regression
 
-  Scenario: User clicks on Hero Join button in the header on the Drupal Homepage
+  Scenario: User clicks on Header Sign In button on the Drupal Homepage
     Given user is on a visitor site page
     """
     /
@@ -86,7 +86,7 @@ Feature:
 
 @homePageSegmentHeaderBuisnessCenter @daily_auto @daily_homepage_regression
 
-  Scenario: User clicks on Hero Join button in the header on the Drupal Homepage
+  Scenario: User clicks on the Business Center button in the header on the Drupal Homepage
     Given user is on a visitor site page
     """
     /
@@ -103,6 +103,9 @@ Feature:
       | activityLocation       | Visitor : Home                    |
       | description            | Business Owners link in header    |
       | userId                 |                                   |
+
+
+##### Body Tests #####
 
 
 @homePageSegmentHeroJoinCta @daily_auto @daily_homepage_regression
@@ -124,10 +127,6 @@ Feature:
       | activityLocation       | Visitor : Home                    |
       | description            | Join link in hero image           |
       | userId                 |                                   |
-
-
-##### Body Tests #####
-
 
 
 ##### Footer Tests #####
