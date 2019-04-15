@@ -123,7 +123,7 @@ class SeleniumTestCase(unittest.TestCase):
         if self.cbt_flag:
             self.client.quit()
             self.api_session.put('https://crossbrowsertesting.com/api/v3/selenium/' + self.client.session_id,
-                data={'action':'set_score', 'score':self.test_result})
+                                 data={'action':'set_score', 'score':self.test_result})
 
     def isElementPresent(self, cssSelector):
         try:
