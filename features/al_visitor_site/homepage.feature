@@ -149,3 +149,22 @@ Feature:
 
 
 ##### Footer Tests #####
+
+@homePageFooterSegmentJoinForFree @daily_auto @daily_homepage_regression
+  Scenario: User clicks on Popular Service icon for Plumbing on Drupal Homepage
+    Given user is on a visitor site page
+    """
+    /
+    """
+    When a user performs actions
+      | action_method   | action_params      |
+      | move_to_element | id: footer--join-for-free  |
+      | click           |                    |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value       |
+      | activityLocation | Visitor : Home |
+    And the segment call contains parameters
+      | prop_key               | prop_value                        |
+      | activityLocation       | Visitor : Home                    |
+      | description            | Join For Free link in footer      |
+      | userId                 |                                   |
