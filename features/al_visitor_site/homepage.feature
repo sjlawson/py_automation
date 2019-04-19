@@ -529,3 +529,41 @@ Feature:
       | activityLocation       | Visitor : Home             |
       | description            | YouTube icon in footer     |
       | userId                 |                            |
+
+  @homePageFooterSegmentTermsOfUse @daily_auto @daily_homepage_regression @footer
+  Scenario: User clicks on the footer TermsOfUse icon on Drupal Homepage
+    Given user is on a visitor site page
+    """
+    /
+    """
+    When a user performs actions
+      | action_method   | action_params    |
+      | move_to_element | id: footer--terms |
+      | click           |                  |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value       |
+      | activityLocation | Visitor : Home |
+    And the segment call contains parameters
+      | prop_key               | prop_value                 |
+      | activityLocation       | Visitor : Home             |
+      | description            | Terms of Use link in footer     |
+      | userId                 |                            |
+
+  @homePageFooterSegmentPrivacyPolicy @daily_auto @daily_homepage_regression @footer
+  Scenario: User clicks on the footer Privacy Policy icon on Drupal Homepage
+    Given user is on a visitor site page
+    """
+    /
+    """
+    When a user performs actions
+      | action_method   | action_params    |
+      | move_to_element | id: footer--privacy-policy |
+      | click           |                  |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value       |
+      | activityLocation | Visitor : Home |
+    And the segment call contains parameters
+      | prop_key               | prop_value                 |
+      | activityLocation       | Visitor : Home             |
+      | description            | Privacy Policy link in footer     |
+      | userId                 |                            |
