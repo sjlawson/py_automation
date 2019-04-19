@@ -1,7 +1,9 @@
 Feature:
 
-  @homePageSegmentPagecall  @daily_auto
-  Scenario: testing segment pagecall on homepage
+##### Header Tests #####
+
+  @homePageSegmentPagecall @daily_auto @daily_homepage_regression
+  Scenario: Segment pagecall when homepage loads
     Given user is on a visitor site page
     """
     /
@@ -22,7 +24,7 @@ Feature:
       | srCtaVersion   | v2.1                                                                  |
 
   @homePageSegmentPageCallReturn
-  Scenario: testing segment pagecall on homepage
+  Scenario: Segment pagecall on homepage when a user returns to our site
     Given user is on a visitor site page
     """
     /
@@ -42,9 +44,69 @@ Feature:
       | title          | Angie's List &vert; Join for FREE to see 10 Million Verified Reviews  |
       | srCtaVersion   | v2.1                                                                  |
 
-@homePageSegmentHeroJoinCta
+  @homePageSegmentHeaderJoinNow @daily_auto @daily_homepage_regression @header_regression
+  Scenario: User clicks on Header Join button on the Drupal Homepage
+    Given user is on a visitor site page
+    """
+    /
+    """
+    When a user performs actions
+      | action_method   | action_params      |
+      | move_to_element | id: header-join    |
+      | click           |                    |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value       |
+      | activityLocation | Visitor : Home |
+    And the segment call contains parameters
+      | prop_key               | prop_value                        |
+      | activityLocation       | Visitor : Home                    |
+      | description            | Join link in header               |
+      | userId                 |                                   |
 
-  Scenario: User clicks on hero Join button on homepage
+  @homePageSegmentHeaderSignIn @daily_auto @daily_homepage_regression @header_regression
+  Scenario: User clicks on Header Sign In button on the Drupal Homepage
+    Given user is on a visitor site page
+    """
+    /
+    """
+    When a user performs actions
+      | action_method   | action_params      |
+      | move_to_element | id: header-sign-in |
+      | click           |                    |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value       |
+      | activityLocation | Visitor : Home |
+    And the segment call contains parameters
+      | prop_key               | prop_value                        |
+      | activityLocation       | Visitor : Home                    |
+      | description            | Sign In link in header            |
+      | userId                 |                                   |
+
+  @homePageSegmentHeaderBuisnessCenter @daily_auto @daily_homepage_regression @header_regression
+  Scenario: User clicks on the Business Center button in the header on the Drupal Homepage
+    Given user is on a visitor site page
+    """
+    /
+    """
+    When a user performs actions
+      | action_method   | action_params       |
+      | move_to_element | id: business-center |
+      | click           |                     |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value       |
+      | activityLocation | Visitor : Home |
+    And the segment call contains parameters
+      | prop_key               | prop_value                        |
+      | activityLocation       | Visitor : Home                    |
+      | description            | Business Owners link in header    |
+      | userId                 |                                   |
+
+
+##### Body Tests #####
+
+
+  @homePageBodySegmentHeroJoinCta @daily_auto @daily_homepage_regression
+  Scenario: User clicks on hero Join button on Drupal Homepage
     Given user is on a visitor site page
     """
     /
@@ -60,4 +122,49 @@ Feature:
       | prop_key               | prop_value                        |
       | activityLocation       | Visitor : Home                    |
       | description            | Join link in hero image           |
+      | userId                 |                                   |
+
+
+  @homePageBodySegmentPlumbingPopularServiceQuickLink @daily_auto @daily_homepage_regression
+  Scenario: User clicks on Popular Service icon for Plumbing on Drupal Homepage
+    Given user is on a visitor site page
+    """
+    /
+    """
+    When a user performs actions
+      | action_method   | action_params      |
+      | move_to_element | id: ha-lead-ps-plumbing      |
+      | click           |                    |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value       |
+      | activityLocation | Visitor : Home |
+    And the segment call contains parameters
+      | prop_key               | prop_value                        |
+      | activityLocation       | Visitor : Home                    |
+      | description            | Popular Services icon             |
+      | categoryId             | 107                               |
+      | categorySelected       | Plumbing                          |
+      | homeAdvisorCategoryId  | 10216                             |
+      | userId                 |                                   |
+
+
+##### Footer Tests #####
+
+  @homePageFooterSegmentJoinForFree @daily_auto @daily_homepage_regression
+  Scenario: User clicks on Popular Service icon for Plumbing on Drupal Homepage
+    Given user is on a visitor site page
+    """
+    /
+    """
+    When a user performs actions
+      | action_method   | action_params      |
+      | move_to_element | id: footer--join-for-free  |
+      | click           |                    |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value       |
+      | activityLocation | Visitor : Home |
+    And the segment call contains parameters
+      | prop_key               | prop_value                        |
+      | activityLocation       | Visitor : Home                    |
+      | description            | Join For Free link in footer      |
       | userId                 |                                   |
