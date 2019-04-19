@@ -396,3 +396,136 @@ Feature:
       | activityLocation       | Visitor : Home             |
       | description            | Contact Us link in footer  |
       | userId                 |                            |
+
+  @homePageFooterSegmentJoin @daily_auto @daily_homepage_regression @footer
+  Scenario: User clicks on the footer-right Join icon on Drupal Homepage
+    Given user is on a visitor site page
+    """
+    /
+    """
+    When a user performs actions
+      | action_method   | action_params    |
+      | move_to_element | id: footer-join  |
+      | click           |                  |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value       |
+      | activityLocation | Visitor : Home |
+    And the segment call contains parameters
+      | prop_key               | prop_value                 |
+      | activityLocation       | Visitor : Home             |
+      | description            | Join button in footer      |
+      | userId                 |                            |
+
+  @homePageFooterSegmentiOS @daily_auto @daily_homepage_regression @footer
+  Scenario: User clicks on the footer-right iOS App icon on Drupal Homepage
+    Given user is on a visitor site page
+    """
+    /
+    """
+    When a user performs actions
+      | action_method   | action_params    |
+      | move_to_element | id: footer--app-store  |
+      | click           |                  |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value       |
+      | activityLocation | Visitor : Home |
+    And the segment call contains parameters
+      | prop_key               | prop_value                 |
+      | activityLocation       | Visitor : Home             |
+      | description            | App Store badge in footer  |
+      | userId                 |                            |
+
+  @homePageFooterSegmentGoogle @daily_auto @daily_homepage_regression @footer
+  Scenario: User clicks on the footer-right Google App icon on Drupal Homepage
+    Given user is on a visitor site page
+    """
+    /
+    """
+    When a user performs actions
+      | action_method   | action_params    |
+      | move_to_element | id: footer--google-play  |
+      | click           |                  |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value       |
+      | activityLocation | Visitor : Home |
+    And the segment call contains parameters
+      | prop_key               | prop_value                 |
+      | activityLocation       | Visitor : Home             |
+      | description            | Google Play badge in footer  |
+      | userId                 |                            |
+
+  @homePageFooterSegmentTwitter @daily_auto @daily_homepage_regression @footer
+  Scenario: User clicks on the footer-right Twitter icon on Drupal Homepage
+    Given user is on a visitor site page
+    """
+    /
+    """
+    When a user performs actions
+      | action_method   | action_params    |
+      | move_to_element | id: footer--twitter  |
+      | click           |                  |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value       |
+      | activityLocation | Visitor : Home |
+    And the segment call contains parameters
+      | prop_key               | prop_value                 |
+      | activityLocation       | Visitor : Home             |
+      | description            | Twitter icon in footer     |
+      | userId                 |                            |
+
+  @homePageFooterSegmentFaceBook @daily_auto @daily_homepage_regression @footer
+  Scenario: User clicks on the footer-right Facebook icon on Drupal Homepage
+    Given user is on a visitor site page
+    """
+    /
+    """
+    When a user performs actions
+      | action_method   | action_params    |
+      | move_to_element | id: footer--facebook  |
+      | click           |                  |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value       |
+      | activityLocation | Visitor : Home |
+    And the segment call contains parameters
+      | prop_key               | prop_value                 |
+      | activityLocation       | Visitor : Home             |
+      | description            | Facebook icon in footer    |
+      | userId                 |                            |
+
+  @homePageFooterSegmentPinterest @daily_auto @daily_homepage_regression @footer
+  Scenario: User clicks on the footer-right Pinterest icon on Drupal Homepage
+    Given user is on a visitor site page
+    """
+    /
+    """
+    When a user performs actions
+      | action_method   | action_params    |
+      | move_to_element | id: footer--pinterest  |
+      | click           |                  |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value       |
+      | activityLocation | Visitor : Home |
+    And the segment call contains parameters
+      | prop_key               | prop_value                 |
+      | activityLocation       | Visitor : Home             |
+      | description            | Pinterest icon in footer   |
+      | userId                 |                            |
+
+  @homePageFooterSegmentYouTube @daily_auto @daily_homepage_regression @footer
+  Scenario: User clicks on the footer-right YouTube icon on Drupal Homepage
+    Given user is on a visitor site page
+    """
+    /
+    """
+    When a user performs actions
+      | action_method   | action_params    |
+      | move_to_element | id: footer--youtube  |
+      | click           |                  |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value       |
+      | activityLocation | Visitor : Home |
+    And the segment call contains parameters
+      | prop_key               | prop_value                 |
+      | activityLocation       | Visitor : Home             |
+      | description            | YouTube icon in footer     |
+      | userId                 |                            |
