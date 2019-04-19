@@ -44,7 +44,7 @@ Feature:
       | title          | Angie's List &vert; Join for FREE to see 10 Million Verified Reviews  |
       | srCtaVersion   | v2.1                                                                  |
 
-@homePageSegmentHeaderJoinNow @daily_auto @daily_homepage_regression @header_regression
+  @homePageSegmentHeaderJoinNow @daily_auto @daily_homepage_regression @header_regression
   Scenario: User clicks on Header Join button on the Drupal Homepage
     Given user is on a visitor site page
     """
@@ -63,7 +63,7 @@ Feature:
       | description            | Join link in header               |
       | userId                 |                                   |
 
-@homePageSegmentHeaderSignIn @daily_auto @daily_homepage_regression @header_regression
+  @homePageSegmentHeaderSignIn @daily_auto @daily_homepage_regression @header_regression
   Scenario: User clicks on Header Sign In button on the Drupal Homepage
     Given user is on a visitor site page
     """
@@ -82,7 +82,7 @@ Feature:
       | description            | Sign In link in header            |
       | userId                 |                                   |
 
-@homePageSegmentHeaderBuisnessCenter @daily_auto @daily_homepage_regression @header_regression
+  @homePageSegmentHeaderBuisnessCenter @daily_auto @daily_homepage_regression @header_regression
   Scenario: User clicks on the Business Center button in the header on the Drupal Homepage
     Given user is on a visitor site page
     """
@@ -105,7 +105,7 @@ Feature:
 ##### Body Tests #####
 
 
-@homePageBodySegmentHeroJoinCta @daily_auto @daily_homepage_regression
+  @homePageBodySegmentHeroJoinCta @daily_auto @daily_homepage_regression
   Scenario: User clicks on hero Join button on Drupal Homepage
     Given user is on a visitor site page
     """
@@ -125,7 +125,7 @@ Feature:
       | userId                 |                                   |
 
 
-@homePageBodySegmentPlumbingPopularServiceQuickLink @daily_auto @daily_homepage_regression
+  @homePageBodySegmentPlumbingPopularServiceQuickLink @daily_auto @daily_homepage_regression
   Scenario: User clicks on Popular Service icon for Plumbing on Drupal Homepage
     Given user is on a visitor site page
     """
@@ -150,7 +150,7 @@ Feature:
 
 ##### Footer Tests #####
 
-@homePageFooterSegmentJoinForFree @daily_auto @daily_homepage_regression
+  @homePageFooterSegmentJoinForFree @daily_auto @daily_homepage_regression
   Scenario: User clicks on Popular Service icon for Plumbing on Drupal Homepage
     Given user is on a visitor site page
     """
