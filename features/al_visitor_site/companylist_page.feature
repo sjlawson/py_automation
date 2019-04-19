@@ -19,7 +19,7 @@ Feature:
       | path        | /companylist/                                                      |
       | search      |                                                                    |
       | userId      |                                                                    |
-      | userType    | Visitor - New                                                      |
+      | userType    |                                                                    |
       | title       | Search Real Local Reviews, Home Services Guide &vert; Angie's List |
 
   @daily_auto
@@ -183,18 +183,18 @@ Feature:
       | userId           |                           |
     Examples: pageLink
     | pageLink                                                                                    |
-    | .footer-region.cities-left > li > a[title="Search New York Pros"]                           |
-    | .footer-region.cities-left > li > a[title="Search Houston Pros"]                            |
-    | .footer-region.cities-left > li > a[title="Search Chicago Pros"]                            |
-    | .footer-region.cities-left > li > a[title="Search Indianapolis Pros"]                       |
-    | .footer-region.cities-left > li > a[title="Search Boston Pros"]                             |
-    | .footer-region.cities-left > li > a[title="Search Atlanta Pros"]                            |
-    | .top-cities > ul > div.footer-region.cities-left > li > a[title="Search Cincinnati Pros"]   |
-    | .top-cities > ul > div.footer-region.cities-right > li > a[title="Search Los Angeles Pros"] |
-    | .footer-region.cities-right > li > a[title="Search Dallas Pros"]                            |
-    | .footer-region.cities-right > li > a[title="Search Pittsburgh Pros"]                        |
-    | .top-cities > ul > div.footer-region.cities-right > li > a[title="Search Minneapolis Pros"] |
-    | .top-cities > ul > div.footer-region.cities-right > li > a[title="Search Las Vegas Pros"]   |
-    | .footer-region.cities-right > li > a[title="Search San Antonio Pros"]                       |
-    | .footer-region.cities-right > li > a[title="Search Tampa Pros"]                             |
+    | .footer-region.cities-left > li > a[title="Search for New York Pros"]                           |
+    | .footer-region.cities-left > li > a[title="Search for Houston Pros"]                            |
+    | .footer-region.cities-left > li > a[title="Search for Chicago Pros"]                            |
+    | .footer-region.cities-left > li > a[title="Search for Indianapolis Pros"]                       |
+    | .footer-region.cities-left > li > a[title="Search for Boston Pros"]                             |
+    | .footer-region.cities-left > li > a[title="Search for Atlanta Pros"]                            |
+    | .top-cities > ul > div.footer-region.cities-left > li > a[title="Search for Cincinnati Pros"]   |
+    | .top-cities > ul > div.footer-region.cities-right > li > a[title="Search for Los Angeles Pros"] |
+    | .footer-region.cities-right > li > a[title="Search for Dallas Pros"]                            |
+    | .footer-region.cities-right > li > a[title="Search for Pittsburgh Pros"]                        |
+    | .top-cities > ul > div.footer-region.cities-right > li > a[title="Search for Minneapolis Pros"] |
+    | .top-cities > ul > div.footer-region.cities-right > li > a[title="Search for Las Vegas Pros"]   |
+    | .footer-region.cities-right > li > a[title="Search for San Antonio Pros"]                       |
+    | .footer-region.cities-right > li > a[title="Search for Tampa Pros"]                             |
 

@@ -142,18 +142,18 @@ Feature:
     | activityLocation | Visitor : CatNoGeo        |
     | userId           |                           |
     Examples: pageLink
-    | pageLink                                                                                                    |
-    | .footer-region.cities-left > li > a[title="Search New York Home Inspectors Pros"]                           |
-    | .footer-region.cities-left > li > a[title="Search Houston Home Inspectors Pros"]                            |
-    | .footer-region.cities-left > li > a[title="Search Chicago Home Inspectors Pros"]                            |
-    | .footer-region.cities-left > li > a[title="Search Indianapolis Home Inspectors Pros"]                       |
-    | .footer-region.cities-left > li > a[title="Search Boston Home Inspectors Pros"]                             |
-    | .footer-region.cities-left > li > a[title="Search Atlanta Home Inspectors Pros"]                            |
-    | .top-cities > ul > div.footer-region.cities-left > li > a[title="Search Cincinnati Home Inspectors Pros"]   |
-    | .top-cities > ul > div.footer-region.cities-right > li > a[title="Search Los Angeles Home Inspectors Pros"] |
-    | .footer-region.cities-right > li > a[title="Search Dallas Home Inspectors Pros"]                            |
-    | .footer-region.cities-right > li > a[title="Search Pittsburgh Home Inspectors Pros"]                        |
-    | .top-cities > ul > div.footer-region.cities-right > li > a[title="Search Minneapolis Home Inspectors Pros"] |
-    | .top-cities > ul > div.footer-region.cities-right > li > a[title="Search Las Vegas Home Inspectors Pros"]   |
-    | .footer-region.cities-right > li > a[title="Search San Antonio Home Inspectors Pros"]                       |
-    | .footer-region.cities-right > li > a[title="Search Tampa Home Inspectors Pros"]                             |
+    | pageLink                                                                                                   |
+    | .footer-region.cities-left > li > a[title="Search for New York Home Inspectors"]                           |
+    | .footer-region.cities-left > li > a[title="Search for Houston Home Inspectors"]                            |
+    | .footer-region.cities-left > li > a[title="Search for Chicago Home Inspectors"]                            |
+    | .footer-region.cities-left > li > a[title="Search for Indianapolis Home Inspectors"]                       |
+    | .footer-region.cities-left > li > a[title="Search for Boston Home Inspectors"]                             |
+    | .footer-region.cities-left > li > a[title="Search for Atlanta Home Inspectors"]                            |
+    | .top-cities > ul > div.footer-region.cities-left > li > a[title="Search for Cincinnati Home Inspectors"]   |
+    | .top-cities > ul > div.footer-region.cities-right > li > a[title="Search for Los Angeles Home Inspectors"] |
+    | .footer-region.cities-right > li > a[title="Search for Dallas Home Inspectors"]                            |
+    | .footer-region.cities-right > li > a[title="Search for Pittsburgh Home Inspectors"]                        |
+    | .top-cities > ul > div.footer-region.cities-right > li > a[title="Search for Minneapolis Home Inspectors"] |
+    | .top-cities > ul > div.footer-region.cities-right > li > a[title="Search for Las Vegas Home Inspectors"]   |
+    | .footer-region.cities-right > li > a[title="Search for San Antonio Home Inspectors"]                       |
+    | .footer-region.cities-right > li > a[title="Search for Tampa Home Inspectors"]                             |

@@ -7,27 +7,27 @@ Feature:
       | unique_field | unique_value        |
       | name         | Visitor : Geocat |
     Then the segment call contains parameters
-      | prop_key                | prop_value                                                      |
-      | name                    | Visitor : Geocat                                                |
-      | atTestOffer             |                                                                 |
-      | cid                     |                                                                 |
-      | pageVersion             | GeoCat Tampa Redesign                                           |
-      | path                    | /companylist/us/in/fishers/flooring.htm                         |
-      | search                  |                                                                 |
-      | userId                  |                                                                 |
-      | userType                | Visitor - New                                                   |
-      | title                   | Top 10 Best Fishers IN Flooring Installers &vert; Angie's List  |
-      | categoryId              | 63                                                              |
-      | homeAdvisorCategoryId   | 12032                                                           |
-      | marketId                | 1                                                               |
-      | srCtaDisplayed          | True                                                            |
-      | srCtaVersion            | v2                                                              |
-      | visitorPageCategory     | FLOORING SALES/INSTALLATION/REPAIR                              |
-      | visitorPageGeo          | FISHERS IN                                                      |
-      | visitorPageGeoCategory  | FISHERS IN - FLOORING SALES/INSTALLATION/REPAIR                 |
-      | url                     |                                                                 |
-      | visitorPageVerticalId   | 7051                                                            |
-      | visitorPageVerticalName | Home Improvement                                                |
+      | prop_key                | prop_value                                                     |
+      | name                    | Visitor : US : City                                            |
+      | atTestOffer             |                                                                |
+      | cid                     |                                                                |
+      | pageVersion             | GeoCat Tampa Redesign                                          |
+      | path                    | /companylist/us/in/fishers/flooring.htm                        |
+      | search                  |                                                                |
+      | userId                  |                                                                |
+      | userType                |                                                                |
+      | title                   | Top 10 Best Fishers IN Flooring Installers &vert; Angie's List |
+      | categoryId              | 63                                                             |
+      | homeAdvisorCategoryId   | 12032                                                          |
+      | marketId                | 1                                                              |
+      | srCtaDisplayed          | True                                                           |
+      | srCtaVersion            | v2                                                             |
+      | visitorPageCategory     | FLOORING SALES/INSTALLATION/REPAIR                             |
+      | visitorPageGeo          | FISHERS IN                                                     |
+      | visitorPageGeoCategory  | FISHERS IN - FLOORING SALES/INSTALLATION/REPAIR                |
+      | url                     |                                                                |
+      | visitorPageVerticalId   | 7051                                                           |
+      | visitorPageVerticalName | Home Improvement                                               |
 
 
     Scenario: segment call on clicking the join link in city header
@@ -57,7 +57,7 @@ Feature:
       And the segment call contains parameters
       | prop_key         | prop_value                  |
       | description      | How it Works link in header |
-      | activityLocation | Visitor : Geocat            |
+      | activityLocation | Visitor : US : City         |
       | userId           |                             |
       | visitorPageGeo   | FISHERS IN                  |
 
@@ -73,7 +73,7 @@ Feature:
       And the segment call contains parameters
       | prop_key         | prop_value             |
       | description      | Sign In link in header |
-      | activityLocation | Visitor : Geocat       |
+      | activityLocation | Visitor : US : City    |
       | userId           |                        |
       | visitorPageGeo   | FISHERS IN             |
 
@@ -87,11 +87,11 @@ Feature:
       | unique_field | unique_value           |
       | description  | FAQ link in header |
       And the segment call contains parameters
-      | prop_key         | prop_value         |
-      | description      | FAQ link in header |
-      | activityLocation | Visitor : Geocat   |
-      | userId           |                    |
-      | visitorPageGeo   | FISHERS IN         |
+      | prop_key         | prop_value          |
+      | description      | FAQ link in header  |
+      | activityLocation | Visitor : US : City |
+      | userId           |                     |
+      | visitorPageGeo   | FISHERS IN          |
 
 
     Scenario: segment call on clicking the Press link in city header
@@ -105,7 +105,7 @@ Feature:
       And the segment call contains parameters
       | prop_key         | prop_value                  |
       | description      | In the Press link in header |
-      | activityLocation | Visitor : Geocat            |
+      | activityLocation | Visitor : US : City         |
       | userId           |                             |
       | visitorPageGeo   | FISHERS IN                  |
 
@@ -121,7 +121,7 @@ Feature:
       And the segment call contains parameters
       | prop_key         | prop_value                     |
       | description      | Solution Center link in header |
-      | activityLocation | Visitor : Geocat               |
+      | activityLocation | Visitor : US : City            |
       | userId           |                                |
       | visitorPageGeo   | FISHERS IN                     |
  
@@ -137,7 +137,7 @@ Feature:
       And the segment call contains parameters
       | prop_key         | prop_value                     |
       | description      | Business Owners link in header |
-      | activityLocation | Visitor : Geocat               |
+      | activityLocation | Visitor : US : City            |
       | userId           |                                |
       | visitorPageGeo   | FISHERS IN                     |
 
@@ -153,7 +153,7 @@ Feature:
       And the segment call contains parameters
       | prop_key         | prop_value            |
       | description      | Join button in footer |
-      | activityLocation | Visitor : Geocat      |
+      | activityLocation | Visitor : US : City   |
       | userId           |                       |
       | visitorPageGeo   | FISHERS IN            |
 
@@ -167,22 +167,22 @@ Feature:
         And the segment call contains parameters
         | prop_key         | prop_value                |
         | description      | Top Cities link in footer |
-        | activityLocation | Visitor : Geocat          |
+        | activityLocation | Visitor : US : City       |
         | userId           |                           |
       Examples: pageLink
       | pageLink                                                                                                        |
-      | .footer-region.cities-left > li > a[title="Search New York Flooring Installers Pros"]                           |
-      | .footer-region.cities-left > li > a[title="Search Houston Flooring Installers Pros"]                            |
-      | .footer-region.cities-left > li > a[title="Search Chicago Flooring Installers Pros"]                            |
-      | .footer-region.cities-left > li > a[title="Search Indianapolis Flooring Installers Pros"]                       |
-      | .footer-region.cities-left > li > a[title="Search Boston Flooring Installers Pros"]                             |
-      | .footer-region.cities-left > li > a[title="Search Atlanta Flooring Installers Pros"]                            |
-      | .top-cities > ul > div.footer-region.cities-left > li > a[title="Search Cincinnati Flooring Installers Pros"]   |
-      | .top-cities > ul > div.footer-region.cities-right > li > a[title="Search Los Angeles Flooring Installers Pros"] |
-      | .footer-region.cities-right > li > a[title="Search Dallas Flooring Installers Pros"]                            |
-      | .footer-region.cities-right > li > a[title="Search Pittsburgh Flooring Installers Pros"]                        |
-      | .top-cities > ul > div.footer-region.cities-right > li > a[title="Search Minneapolis Flooring Installers Pros"] |
-      | .top-cities > ul > div.footer-region.cities-right > li > a[title="Search Las Vegas Flooring Installers Pros"]   |
-      | .footer-region.cities-right > li > a[title="Search San Antonio Flooring Installers Pros"]                       |
-      | .footer-region.cities-right > li > a[title="Search Tampa Flooring Installers Pros"]                             |
+      | .footer-region.cities-left > li > a[title="Search for New York Pros"]                           |
+      | .footer-region.cities-left > li > a[title="Search for Houston Pros"]                            |
+      | .footer-region.cities-left > li > a[title="Search for Chicago Pros"]                            |
+      | .footer-region.cities-left > li > a[title="Search for Indianapolis Pros"]                       |
+      | .footer-region.cities-left > li > a[title="Search for Boston Pros"]                             |
+      | .footer-region.cities-left > li > a[title="Search for Atlanta Pros"]                            |
+      | .top-cities > ul > div.footer-region.cities-left > li > a[title="Search for Cincinnati Pros"]   |
+      | .top-cities > ul > div.footer-region.cities-right > li > a[title="Search for Los Angeles Pros"] |
+      | .footer-region.cities-right > li > a[title="Search for Dallas Pros"]                            |
+      | .footer-region.cities-right > li > a[title="Search for Pittsburgh Pros"]                        |
+      | .top-cities > ul > div.footer-region.cities-right > li > a[title="Search for Minneapolis Pros"] |
+      | .top-cities > ul > div.footer-region.cities-right > li > a[title="Search for Las Vegas Pros"]   |
+      | .footer-region.cities-right > li > a[title="Search for San Antonio Pros"]                       |
+      | .footer-region.cities-right > li > a[title="Search for Tampa Pros"]                             |
 
