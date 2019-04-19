@@ -150,8 +150,8 @@ Feature:
 
 ##### Footer Tests #####
 
-  @homePageFooterSegmentJoinForFree @daily_auto @daily_homepage_regression
-  Scenario: User clicks on Popular Service icon for Plumbing on Drupal Homepage
+  @homePageFooterSegmentJoinForFree @daily_auto @daily_homepage_regression @footer
+  Scenario: User clicks on the footer-left Join For Free icon on Drupal Homepage
     Given user is on a visitor site page
     """
     /
@@ -168,3 +168,231 @@ Feature:
       | activityLocation       | Visitor : Home                    |
       | description            | Join For Free link in footer      |
       | userId                 |                                   |
+
+  @homePageFooterSegmentCompanyList @daily_auto @daily_homepage_regression @footer
+  Scenario: User clicks on the footer-left Company List icon on Drupal Homepage
+    Given user is on a visitor site page
+    """
+    /
+    """
+    When a user performs actions
+      | action_method   | action_params      |
+      | move_to_element | id: footer--find-local-business  |
+      | click           |                    |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value       |
+      | activityLocation | Visitor : Home |
+    And the segment call contains parameters
+      | prop_key               | prop_value                        |
+      | activityLocation       | Visitor : Home                    |
+      | description            | Find Local Businesses link in footer      |
+      | userId                 |                                   |
+
+  @homePageFooterSegmentNearMe @daily_auto @daily_homepage_regression @footer
+  Scenario: User clicks on the footer-left Near Me icon on Drupal Homepage
+    Given user is on a visitor site page
+    """
+    /
+    """
+    When a user performs actions
+      | action_method   | action_params      |
+      | move_to_element | id: footer--nearme |
+      | click           |                    |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value       |
+      | activityLocation | Visitor : Home |
+    And the segment call contains parameters
+      | prop_key               | prop_value                        |
+      | activityLocation       | Visitor : Home                    |
+      | description            | Services Near Me link in footer   |
+      | userId                 |                                   |
+
+  @homePageFooterSegmentHowItWorks @daily_auto @daily_homepage_regression @footer
+  Scenario: User clicks on the footer-left How It Works icon on Drupal Homepage
+    Given user is on a visitor site page
+    """
+    /
+    """
+    When a user performs actions
+      | action_method   | action_params      |
+      | move_to_element | id: footer--how-it-works |
+      | click           |                    |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value       |
+      | activityLocation | Visitor : Home |
+    And the segment call contains parameters
+      | prop_key               | prop_value                        |
+      | activityLocation       | Visitor : Home                    |
+      | description            | How It Works link in footer       |
+      | userId                 |                                   |
+
+  @homePageFooterSegmentSolutionCenter @daily_auto @daily_homepage_regression @footer
+  Scenario: User clicks on the footer-left Solution Center icon on Drupal Homepage
+    Given user is on a visitor site page
+    """
+    /
+    """
+    When a user performs actions
+      | action_method   | action_params      |
+      | move_to_element | id: footer--solution-center |
+      | click           |                    |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value       |
+      | activityLocation | Visitor : Home |
+    And the segment call contains parameters
+      | prop_key               | prop_value                        |
+      | activityLocation       | Visitor : Home                    |
+      | description            | Solution Center link in footer    |
+      | userId                 |                                   |
+
+  @homePageFooterSegmentPhotoGalleries @daily_auto @daily_homepage_regression @footer
+  Scenario: User clicks on the footer-left Photos icon on Drupal Homepage
+    Given user is on a visitor site page
+    """
+    /
+    """
+    When a user performs actions
+      | action_method   | action_params      |
+      | move_to_element | id: footer--photo-galleries |
+      | click           |                    |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value       |
+      | activityLocation | Visitor : Home |
+    And the segment call contains parameters
+      | prop_key               | prop_value                        |
+      | activityLocation       | Visitor : Home                    |
+      | description            | Photo Galleries link in footer    |
+      | userId                 |                                   |
+
+  @homePageFooterSegmentVideos @daily_auto @daily_homepage_regression @footer
+  Scenario: User clicks on the footer-left Videos icon on Drupal Homepage
+    Given user is on a visitor site page
+    """
+    /
+    """
+    When a user performs actions
+      | action_method   | action_params      |
+      | move_to_element | id: footer--video  |
+      | click           |                    |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value       |
+      | activityLocation | Visitor : Home |
+    And the segment call contains parameters
+      | prop_key               | prop_value                        |
+      | activityLocation       | Visitor : Home                    |
+      | description            | Videos link in footer             |
+      | userId                 |                                   |
+
+  @homePageFooterSegmentAnswers @daily_auto @daily_homepage_regression @footer
+  Scenario: User clicks on the footer-left Answers icon on Drupal Homepage
+    Given user is on a visitor site page
+    """
+    /
+    """
+    When a user performs actions
+      | action_method   | action_params       |
+      | move_to_element | id: footer--answers |
+      | click           |                     |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value       |
+      | activityLocation | Visitor : Home |
+    And the segment call contains parameters
+      | prop_key               | prop_value                        |
+      | activityLocation       | Visitor : Home                    |
+      | description            | Answers link in footer            |
+      | userId                 |                                   |
+
+  @homePageFooterSegmentBusinessOwners @daily_auto @daily_homepage_regression @footer
+  Scenario: User clicks on the footer-left Business Owners icon on Drupal Homepage
+    Given user is on a visitor site page
+    """
+    /
+    """
+    When a user performs actions
+      | action_method   | action_params       |
+      | move_to_element | id: footer--business-owners |
+      | click           |                     |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value       |
+      | activityLocation | Visitor : Home |
+    And the segment call contains parameters
+      | prop_key               | prop_value                         |
+      | activityLocation       | Visitor : Home                     |
+      | description            | For Business Owners link in footer |
+      | userId                 |                                    |
+
+  @homePageFooterSegmentInvestorRelations @daily_auto @daily_homepage_regression @footer
+  Scenario: User clicks on the footer-left Investor Relations icon on Drupal Homepage
+    Given user is on a visitor site page
+    """
+    /
+    """
+    When a user performs actions
+      | action_method   | action_params        |
+      | move_to_element | id: footer--investor |
+      | click           |                      |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value       |
+      | activityLocation | Visitor : Home |
+    And the segment call contains parameters
+      | prop_key               | prop_value                         |
+      | activityLocation       | Visitor : Home                     |
+      | description            | Investor Relations link in footer  |
+      | userId                 |                                    |
+
+  @homePageFooterSegmentAboutUs @daily_auto @daily_homepage_regression @footer
+  Scenario: User clicks on the footer-left About Us icon on Drupal Homepage
+    Given user is on a visitor site page
+    """
+    /
+    """
+    When a user performs actions
+      | action_method   | action_params           |
+      | move_to_element | id: footer--about-angie |
+      | click           |                         |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value       |
+      | activityLocation | Visitor : Home |
+    And the segment call contains parameters
+      | prop_key               | prop_value                         |
+      | activityLocation       | Visitor : Home                     |
+      | description            | About Angie’s List link in footer  |
+      | userId                 |                                    |
+
+  @homePageFooterSegmentCareers @daily_auto @daily_homepage_regression @footer
+  Scenario: User clicks on the footer-left Careers icon on Drupal Homepage
+    Given user is on a visitor site page
+    """
+    /
+    """
+    When a user performs actions
+      | action_method   | action_params           |
+      | move_to_element | id: footer--careers     |
+      | click           |                         |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value       |
+      | activityLocation | Visitor : Home |
+    And the segment call contains parameters
+      | prop_key               | prop_value                 |
+      | activityLocation       | Visitor : Home             |
+      | description            | Careers link in footer     |
+      | userId                 |                            |
+
+  @homePageFooterSegmentContactUs @daily_auto @daily_homepage_regression @footer
+  Scenario: User clicks on the footer-left Contact Us icon on Drupal Homepage
+    Given user is on a visitor site page
+    """
+    /
+    """
+    When a user performs actions
+      | action_method   | action_params           |
+      | move_to_element | id: footer--contact-us  |
+      | click           |                         |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value       |
+      | activityLocation | Visitor : Home |
+    And the segment call contains parameters
+      | prop_key               | prop_value                 |
+      | activityLocation       | Visitor : Home             |
+      | description            | Contact Us link in footer  |
+      | userId                 |                            |
