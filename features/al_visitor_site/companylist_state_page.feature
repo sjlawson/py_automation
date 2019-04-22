@@ -138,7 +138,7 @@ Feature:
       | activityLocation | Visitor : US : State  |
       | userId           |                       |
 
-
+  @topcities
   Scenario Outline: companylist state page top cities
       Given user is on a visitor state page
       When a user clicks on "<pageLink>"
@@ -151,20 +151,20 @@ Feature:
         | activityLocation | Visitor : US : State      |
         | userId           |                           |
     Examples: pageLink
-      | pageLink                                                                                    |
-      | .footer-region.cities-left > li > a[title="Search for New York Pros"]                           |
-      | .footer-region.cities-left > li > a[title="Search for Houston Pros"]                            |
-      | .footer-region.cities-left > li > a[title="Search for Chicago Pros"]                            |
-      | .footer-region.cities-left > li > a[title="Search for Indianapolis Pros"]                       |
-      | .footer-region.cities-left > li > a[title="Search for Boston Pros"]                             |
-      | .footer-region.cities-left > li > a[title="Search for Atlanta Pros"]                            |
-      | .top-cities > ul > div.footer-region.cities-left > li > a[title="Search for Cincinnati Pros"]   |
-      | .top-cities > ul > div.footer-region.cities-right > li > a[title="Search for Los Angeles Pros"] |
-      | .footer-region.cities-right > li > a[title="Search for Dallas Pros"]                            |
-      | .footer-region.cities-right > li > a[title="Search for Pittsburgh Pros"]                        |
-      | .top-cities > ul > div.footer-region.cities-right > li > a[title="Search for Minneapolis Pros"] |
-      | .top-cities > ul > div.footer-region.cities-right > li > a[title="Search for Las Vegas Pros"]   |
-      | .footer-region.cities-right > li > a[title="Search for San Antonio Pros"]                       |
-      | .footer-region.cities-right > li > a[title="Search for Tampa Pros"]                             |
+      | pageLink                           |
+      | id: footer-top-cities-new-york     |
+      | id: footer-top-cities-houston      |
+      | id: footer-top-cities-chicago      |
+      | id: footer-top-cities-indianapolis |
+      | id: footer-top-cities-boston       |
+      | id: footer-top-cities-atlanta      |
+      | id: footer-top-cities-cincinnati   |
+      | id: footer-top-cities-los-angeles  |
+      | id: footer-top-cities-dallas       |
+      | id: footer-top-cities-pittsburgh   |
+      | id: footer-top-cities-minneapolis  |
+      | id: footer-top-cities-las-vegas    |
+      | id: footer-top-cities-san-antonio  |
+      | id: footer-top-cities-tampa-bay    |
   
       

@@ -142,18 +142,18 @@ Feature:
     | activityLocation | Visitor : CatNoGeo        |
     | userId           |                           |
     Examples: pageLink
-    | pageLink                                                                                                   |
-    | .footer-region.cities-left > li > a[title="Search for New York Home Inspectors"]                           |
-    | .footer-region.cities-left > li > a[title="Search for Houston Home Inspectors"]                            |
-    | .footer-region.cities-left > li > a[title="Search for Chicago Home Inspectors"]                            |
-    | .footer-region.cities-left > li > a[title="Search for Indianapolis Home Inspectors"]                       |
-    | .footer-region.cities-left > li > a[title="Search for Boston Home Inspectors"]                             |
-    | .footer-region.cities-left > li > a[title="Search for Atlanta Home Inspectors"]                            |
-    | .top-cities > ul > div.footer-region.cities-left > li > a[title="Search for Cincinnati Home Inspectors"]   |
-    | .top-cities > ul > div.footer-region.cities-right > li > a[title="Search for Los Angeles Home Inspectors"] |
-    | .footer-region.cities-right > li > a[title="Search for Dallas Home Inspectors"]                            |
-    | .footer-region.cities-right > li > a[title="Search for Pittsburgh Home Inspectors"]                        |
-    | .top-cities > ul > div.footer-region.cities-right > li > a[title="Search for Minneapolis Home Inspectors"] |
-    | .top-cities > ul > div.footer-region.cities-right > li > a[title="Search for Las Vegas Home Inspectors"]   |
-    | .footer-region.cities-right > li > a[title="Search for San Antonio Home Inspectors"]                       |
-    | .footer-region.cities-right > li > a[title="Search for Tampa Home Inspectors"]                             |
+    | pageLink                           |
+    | id: footer-top-cities-new-york     |
+    | id: footer-top-cities-houston      |
+    | id: footer-top-cities-chicago      |
+    | id: footer-top-cities-indianapolis |
+    | id: footer-top-cities-boston       |
+    | id: footer-top-cities-atlanta      |
+    | id: footer-top-cities-cincinnati   |
+    | id: footer-top-cities-los-angeles  |
+    | id: footer-top-cities-dallas       |
+    | id: footer-top-cities-pittsburgh   |
+    | id: footer-top-cities-minneapolis  |
+    | id: footer-top-cities-las-vegas    |
+    | id: footer-top-cities-san-antonio  |
+    | id: footer-top-cities-tampa-bay    |
