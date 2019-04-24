@@ -5,7 +5,7 @@ Feature:
     Given user is on a visitor city page
     When a segment page call is sent for a unique field value pair
       | unique_field | unique_value        |
-      | name         | Visitor : Geocat |
+      | name         | Visitor : US : City |
     Then the segment call contains parameters
       | prop_key                | prop_value                                                     |
       | name                    | Visitor : US : City                                            |
@@ -40,7 +40,7 @@ Feature:
       | description  | Join link in header |
       And the segment call contains parameters
       | prop_key         | prop_value          |
-      | activityLocation | Visitor : Geocat    |
+      | activityLocation | Visitor : US : City |
       | description      | Join link in header |
       | userId           |                     |
       | visitorPageGeo   | FISHERS IN          |
@@ -77,7 +77,7 @@ Feature:
       | userId           |                        |
       | visitorPageGeo   | FISHERS IN             |
 
- 
+
     Scenario: segment call on clicking the FAQ link in city header
       Given user is on a visitor city page
       When a user performs actions
@@ -124,7 +124,7 @@ Feature:
       | activityLocation | Visitor : US : City            |
       | userId           |                                |
       | visitorPageGeo   | FISHERS IN                     |
- 
+
 
     Scenario: segment call on clicking the BC link in city header
       Given user is on a visitor city page

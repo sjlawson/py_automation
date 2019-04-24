@@ -5,7 +5,7 @@ Feature:
     Given user is on a visitor state page
     When a segment page call is sent for a unique field value pair
       | unique_field | unique_value        |
-      | name         | Visitor : US : State |
+      | name         | Visitor : US : State|
     Then the segment call contains parameters
       | prop_key    | prop_value                                           |
       | name        | Visitor : US : State                                 |
@@ -49,7 +49,7 @@ Feature:
       | activityLocation | Visitor : US : State        |
       | userId           |                             |
 
-  
+
   Scenario: segment call on clicking the Sign In link in state header
     Given user is on a visitor state page
     When a user performs actions
@@ -166,5 +166,5 @@ Feature:
       | id: footer-top-cities-las-vegas    |
       | id: footer-top-cities-san-antonio  |
       | id: footer-top-cities-tampa-bay    |
-  
-      
+
+
