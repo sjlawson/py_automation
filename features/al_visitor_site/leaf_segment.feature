@@ -1,5 +1,5 @@
 @leafPages @daily_auto
-Feature: 
+Feature:
 
   ## basic leaf page call test for Leaf Non-Advertiser HA crossover One-Column
   ## test_leafPageSegmentPagecallAdvertisers (L11)
@@ -33,7 +33,7 @@ Feature:
       | visitorPageGeo         | ATLANTA                                                                                 |
       | visitorPageGeoCategory | ATLANTA - PLUMBING                                                                      |
 
-  
+
   ## basic leaf page call test for new advertisers
   ## test_leafPageSegmentPagecallNewAdvertisers (L48)
   Scenario: segment page call for new advertiser leaf page
@@ -65,7 +65,7 @@ Feature:
       | visitorPageCategory    | HEATING & A/C                                                     |
       | visitorPageGeo         | MEMPHIS                                                           |
       | visitorPageGeoCategory | MEMPHIS - HEATING & A/C                                           |
-  
+
 
   ## basic leaf page call test for non-advertisers
   ## test_leafPageSegmentPagecallNonAdvertisers (L85)
@@ -99,7 +99,7 @@ Feature:
       | visitorPageGeo         | LOUISVILLE                                                        |
       | visitorPageGeoCategory | LOUISVILLE - DOORS                                                |
 
-  
+
   ## Sign In Header Leaf Page Advertiser
   ## SignInHeaderLeafAdvertiser (L142)
   Scenario: user clicks header sign-in on advertiser
@@ -122,7 +122,7 @@ Feature:
       | visitorPageCategory    | Concrete - Pouring & Repair             |
       | visitorPageGeo         | LAS VEGAS                               |
       | visitorPageGeoCategory | LAS VEGAS - CONCRETE - POURING & REPAIR |
-  
+
   ## Header Sign In  Leaf Page New Advertiser
   ## SignInHeaderLeafnewAdvertiser (L165)
   Scenario: user clicks header sign-in on new advertiser
@@ -146,7 +146,7 @@ Feature:
       | visitorPageGeo         | MIAMI                              |
       | visitorPageGeoCategory | MIAMI - LANDSCAPING                |
 
-  
+
   ## Header Sign In Leaf Page NON Advertiser (L189)
   ## SignInHeaderLeafnonAdvertiser
   Scenario: user clicks header sign-in on non advertiser
@@ -169,8 +169,8 @@ Feature:
       | visitorPageCategory    | Real Estate Agents             |
       | visitorPageGeo         | MILWAUKEE                      |
       | visitorPageGeoCategory | MILWAUKEE - REAL ESTATE AGENTS |
-  
-  
+
+
   ## Header Join Leaf page Advertiser
   ## headerJoinCTAAdvertiser (L214)
   Scenario: user clicks header join on advertiser
@@ -194,7 +194,7 @@ Feature:
       | visitorPageGeo         | NASHVILLE            |
       | visitorPageGeoCategory | NASHVILLE - PLUMBING |
 
-  
+
   ## Header Join Leaf page New Advertiser (L239)
   ## headerJoinCTAnewAdvertiser
   Scenario: user clicks header join on new advertiser
@@ -218,7 +218,7 @@ Feature:
       | visitorPageGeo         | ALBANY               |
       | visitorPageGeoCategory | ALBANY - HANDYMEN    |
 
-  
+
   # Header Join Leaf page NON Advertiser (L264)
   # def headerJoinCTAnonAdvertiser
   Scenario: user clicks join on non advertiser
@@ -242,7 +242,7 @@ Feature:
       | visitorPageGeo         | LOUISVILLE                |
       | visitorPageGeoCategory | LOUISVILLE - AUTO SERVICE |
 
-      
+
   # line 308
   ## leafPageSegmentCTAwithoutZIP
   ## Body - SR ha-lead-submit-v2 w/o postal code Leaf Page Advertiser
@@ -269,7 +269,7 @@ Feature:
       | visitorPageGeo         | HOUSTON                           |
       | visitorPageGeoCategory | HOUSTON - ROOFING                 |
       | homeAdvisorCategoryId  | 12061                             |
-  
+
   ## line 334
   ## leafPageSegmentCTAwithoutZIPAdvertiser
   Scenario: SR ha-lead-submit-v2 w/o postal code Leaf Page New Advertiser
@@ -295,8 +295,8 @@ Feature:
       | visitorPageGeo         | MINNEAPOLIS                       |
       | visitorPageGeoCategory | MINNEAPOLIS - PAINTING - INTERIOR |
       | homeAdvisorCategoryId  | 10381                             |
-      
-  
+
+
   ## leafPageSegmentCTAwithZIPAdvertiser (L359)
   Scenario: User fills zipcode on Leaf CTA
     Given user is on a visitor site page
@@ -461,19 +461,18 @@ Feature:
       | activityLocation | Visitor : SP Profile      |
       | userId           |                           |
     Examples: pageLink
-      | pageLink                                                                                             |
-      | .footer-region.cities-left > li > a[title="Search for New York Plumbers Pros"]                           |
-      | .footer-region.cities-left > li > a[title="Search for Houston Plumbers Pros"]                            |
-      | .footer-region.cities-left > li > a[title="Search for Chicago Plumbers Pros"]                            |
-      | .footer-region.cities-left > li > a[title="Search for Indianapolis Plumbers Pros"]                       |
-      | .footer-region.cities-left > li > a[title="Search for Boston Plumbers Pros"]                             |
-      | .footer-region.cities-left > li > a[title="Search for Atlanta Plumbers Pros"]                            |
-      | .top-cities > ul > div.footer-region.cities-left > li > a[title="Search for Cincinnati Plumbers Pros"]   |
-      | .top-cities > ul > div.footer-region.cities-right > li > a[title="Search for Los Angeles Plumbers Pros"] |
-      | .footer-region.cities-right > li > a[title="Search for Dallas Plumbers Pros"]                            |
-      | .footer-region.cities-right > li > a[title="Search for Pittsburgh Plumbers Pros"]                        |
-      | .top-cities > ul > div.footer-region.cities-right > li > a[title="Search for Minneapolis Plumbers Pros"] |
-      | .top-cities > ul > div.footer-region.cities-right > li > a[title="Search for Las Vegas Plumbers Pros"]   |
-      | .footer-region.cities-right > li > a[title="Search for San Antonio Plumbers Pros"]                       |
-      | .footer-region.cities-right > li > a[title="Search for Tampa Plumbers Pros"]                             |
-
+    | pageLink                           |
+    | id: footer-top-cities-new-york     |
+    | id: footer-top-cities-houston      |
+    | id: footer-top-cities-chicago      |
+    | id: footer-top-cities-indianapolis |
+    | id: footer-top-cities-boston       |
+    | id: footer-top-cities-atlanta      |
+    | id: footer-top-cities-cincinnati   |
+    | id: footer-top-cities-los-angeles  |
+    | id: footer-top-cities-dallas       |
+    | id: footer-top-cities-pittsburgh   |
+    | id: footer-top-cities-minneapolis  |
+    | id: footer-top-cities-las-vegas    |
+    | id: footer-top-cities-san-antonio  |
+    | id: footer-top-cities-tampa-bay    |
