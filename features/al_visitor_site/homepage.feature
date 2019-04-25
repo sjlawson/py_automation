@@ -62,6 +62,10 @@ Feature:
       | activityLocation       | Visitor : Home                    |
       | description            | Join link in header               |
       | userId                 |                                   |
+    And the landing URL contains
+  Examples: landingLink
+    | pageLink                       |
+    | url: angieslist.com/login      |
 
   @homePageSegmentHeaderSignIn @daily_auto @daily_homepage_regression @header_regression
   Scenario: User clicks on Header Sign In button on the Drupal Homepage
