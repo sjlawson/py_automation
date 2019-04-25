@@ -405,7 +405,7 @@ Feature:
     """
     When a user performs actions
       | action_method   | action_params      |
-      | move_to_element | id: footer-top-cities-tampa  |
+      | move_to_element | id: footer-top-cities-tampa-bay  |
       | click           |                    |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
