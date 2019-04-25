@@ -58,14 +58,12 @@ Feature:
       | unique_field | unique_value       |
       | activityLocation | Visitor : Home |
     And the segment call contains parameters
-      | prop_key               | prop_value                        |
-      | activityLocation       | Visitor : Home                    |
-      | description            | Join link in header               |
-      | userId                 |                                   |
-    And the landing URL contains
-  Examples: landingLink
-    | pageLink                       |
-    | url: angieslist.com/login      |
+      | prop_key         | prop_value          |
+      | activityLocation | Visitor : Home      |
+      | description      | Join link in header |
+      | userId           |                     |
+    And we wait "5" seconds for the next page to load
+    And the landing URL contains "angieslist.com/app/signup"
 
   @homePageSegmentHeaderSignIn @daily_auto @daily_homepage_regression @header_regression
   Scenario: User clicks on Header Sign In button on the Drupal Homepage
