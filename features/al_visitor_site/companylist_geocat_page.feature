@@ -23,6 +23,7 @@ Feature:
     When a user performs actions
     | action_method   | action_params   |
     | move_to_element | #ha-lead-zip    |
+    | click           | #ha-lead-zip    |
     | send_keys       | 90068           |
     | click           | #ha-lead-submit |
     Then a segment track call is sent for a unique field value pair
