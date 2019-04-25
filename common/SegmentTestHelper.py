@@ -118,33 +118,38 @@ class SegmentTestHelper():
                 except AssertionError:
                     raise AssertionError('%s not found in segment properties' % row['prop_key'])
 
-
     def get_webdriver_element(client, selector, tries):
-        tries += 1
-        if tries > 3:
+        wait = WebDriverWait(client, 5)
+        if tries > 2:
             raise NoSuchElementException("Element not found, identified by <%s>" % selector)
 
         element = None
         try:
             if selector[:3] == 'id:':
                 print("Checking for element: %s" % selector[3:].strip())
-                element = client.find_element_by_id(selector[3:].strip())
+                #element = client.find_element_by_id(selector[3:].strip())
+                element = wait.until(EC.presence_of_element_located((By.ID, selector[3:].strip())))
             elif selector[0] == '.' or selector[0] == '#':
-                element = client.find_element_by_css_selector(selector)
+                #element = client.find_element_by_css_selector(selector)
+                element = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, selector)))
             elif selector[:4] == 'css:':
-                element = client.find_element_by_css_selector(selector[4:].strip())
+                #element = client.find_element_by_css_selector(selector[4:].strip())
+                element = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, selector[4:].strip())))
             elif selector[:5] == 'name:':
-                element = client.find_element_by_name(selector[5:].strip())
+                #element = client.find_element_by_name(selector[5:].strip())
+                element = wait.until(EC.presence_of_element_located((By.NAME, selector[5:].strip())))
             else:
                 return selector
-        except NoSuchElementException as e:
-            time.sleep(1)
-            if tries < 4:
-                SegmentTestHelper.get_webdriver_element(client, selector, tries)
+        except TimeoutException as e:
+            if tries < 2:
+                time.sleep(1)
+                element = SegmentTestHelper.get_webdriver_element(client, selector, tries + 1)
+            else:
+                raise NoSuchElementException("Element not found, identified by <%s>" % selector)
 
         return element
 
-    def do_actions(client, actions):
+    def do_actions(client, actions, timeout=20):
         """
         Performs a list of actions on the webdriver client
         http://selenium-python.readthedocs.io/api.html#module-selenium.webdriver.common.action_chains
@@ -153,14 +158,15 @@ class SegmentTestHelper():
         In the case where an action param is an element, the string element identifier (best practise is to use ID),
         the param must be mutated to an instance of a webdriver element
         """
-        wait = WebDriverWait(client, 20)
+        wait = WebDriverWait(client, timeout)
         for action in actions:
             wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, 'body > div')))
             # time.sleep(1)
             if action['action_params']:
                 for i in range(0, len(action['action_params'])):
                     if action['action_params'][i]:
-                        action['action_params'][i] = SegmentTestHelper.get_webdriver_element(client=client, selector=action['action_params'][i], tries=0)
+                        print("Looking for element...")
+                        action['action_params'][i] = SegmentTestHelper.get_webdriver_element(client=client, selector=action['action_params'][i], tries=1)
 
         for action in actions:
             action_chain = ActionChains(client)
@@ -171,6 +177,7 @@ class SegmentTestHelper():
             except AttributeError:
                 print("\n\nERROR ON METHOD %s\n\n__" % str(action['action_method']))
                 raise NotImplementedError("ActionChains does not implement _%s_ with params _%s_" % (action['action_method'], action['action_params']))
+
 
 
     ##
