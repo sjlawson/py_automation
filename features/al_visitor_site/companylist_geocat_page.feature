@@ -1,4 +1,4 @@
-@CompanyListTrees
+@CompanyListTree
 Feature:
 
   ## companyListGeoCatSegmentSRCTA
