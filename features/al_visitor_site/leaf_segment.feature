@@ -39,7 +39,7 @@ Feature:
   Scenario: segment page call for new advertiser leaf page
     Given user is on a visitor site page
     """
-    /companylist/us/xx/memphis/all-about-u-heating-and-air-reviews-8499678.htm?CacheBuster
+    /companylist/us/tn/memphis/all-about-u-heating-and-air-reviews-8499678.htm
     """
     When a segment page call is sent for a unique field value pair
       | unique_field | unique_value         |
