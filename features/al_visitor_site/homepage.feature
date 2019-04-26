@@ -278,7 +278,7 @@ Feature:
       | categorySelected       | Housecleaning                     |
       | homeAdvisorCategoryId  |                                   |
       | userId                 |                                   |
-    And we wait "3" seconds for the next page to load
+    And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/category.Cleaning-Maid-Services.12014.html?entry_point_id=32949645"  
   
   
@@ -303,7 +303,7 @@ Feature:
       | categorySelected       | Remodeling                        |
       | homeAdvisorCategoryId  |                                   |
       | userId                 |                                   |
-    And we wait "3" seconds for the next page to load
+    And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/category.Additions-Remodeling.12001.html?entry_point_id=32949645"
 
 
@@ -328,7 +328,7 @@ Feature:
       | categorySelected       | Painting                     |
       | homeAdvisorCategoryId  |                                   |
       | userId                 |                                   |
-    And we wait "3" seconds for the next page to load
+    And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/category.Interior-Painting-or-Staining.10381.html?entry_point_id=32949645"
 
 
