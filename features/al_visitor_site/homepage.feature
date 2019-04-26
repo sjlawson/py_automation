@@ -125,7 +125,7 @@ Feature:
       | activityLocation       | Visitor : Home                    |
       | description            | Interior menu category link in header    |
       | userId                 |                                   |
-    And we wait "2" seconds for the next page to load
+    And we wait "1" seconds for the next page to load
     And the landing URL contains "/companylist/appliance-repair.htm"
 
   @homePageSegmentHeaderInteriorCarpetCleaning @daily_auto @daily_homepage_regression @header_regression
@@ -146,7 +146,7 @@ Feature:
       | activityLocation       | Visitor : Home                    |
       | description            | Interior menu category link in header    |
       | userId                 |                                   |
-    And we wait "2" seconds for the next page to load
+    And we wait "1" seconds for the next page to load
     And the landing URL contains "/companylist/carpet-cleaning.htm"
 
   @homePageSegmentHeaderInteriorContractors @daily_auto @daily_homepage_regression @header_regression
@@ -167,7 +167,7 @@ Feature:
       | activityLocation       | Visitor : Home                    |
       | description            | Interior menu category link in header    |
       | userId                 |                                   |
-    And we wait "2" seconds for the next page to load
+    And we wait "1" seconds for the next page to load
     And the landing URL contains "/companylist/contractor.htm"
 
   @homePageSegmentHeaderInteriorDrywall @daily_auto @daily_homepage_regression @header_regression
@@ -188,7 +188,7 @@ Feature:
       | activityLocation       | Visitor : Home                    |
       | description            | Interior menu category link in header    |
       | userId                 |                                   |
-    And we wait "2" seconds for the next page to load
+    And we wait "1" seconds for the next page to load
     And the landing URL contains "/companylist/drywall.htm"
 
   @homePageSegmentHeaderInteriorElectrical @daily_auto @daily_homepage_regression @header_regression
@@ -209,7 +209,7 @@ Feature:
       | activityLocation       | Visitor : Home                    |
       | description            | Interior menu category link in header    |
       | userId                 |                                   |
-    And we wait "2" seconds for the next page to load
+    And we wait "1" seconds for the next page to load
     And the landing URL contains "/companylist/electrical.htm"
 
   @homePageSegmentHeaderInteriorFlooring @daily_auto @daily_homepage_regression @header_regression
@@ -230,7 +230,7 @@ Feature:
       | activityLocation       | Visitor : Home                    |
       | description            | Interior menu category link in header    |
       | userId                 |                                   |
-    And we wait "2" seconds for the next page to load
+    And we wait "1" seconds for the next page to load
     And the landing URL contains "/companylist/flooring.htm"
 
   @homePageSegmentHeaderInteriorHVAC @daily_auto @daily_homepage_regression @header_regression
@@ -251,7 +251,7 @@ Feature:
       | activityLocation       | Visitor : Home                    |
       | description            | Interior menu category link in header    |
       | userId                 |                                   |
-    And we wait "2" seconds for the next page to load
+    And we wait "1" seconds for the next page to load
     And the landing URL contains "/companylist/hvac.htm"
 
   @homePageSegmentHeaderInteriorHouseCleaning @daily_auto @daily_homepage_regression @header_regression
@@ -272,7 +272,7 @@ Feature:
       | activityLocation       | Visitor : Home                    |
       | description            | Interior menu category link in header    |
       | userId                 |                                   |
-    And we wait "2" seconds for the next page to load
+    And we wait "1" seconds for the next page to load
     And the landing URL contains "/companylist/house-cleaning.htm"
 
   @homePageSegmentHeaderInteriorPainting @daily_auto @daily_homepage_regression @header_regression
@@ -293,7 +293,7 @@ Feature:
       | activityLocation       | Visitor : Home                    |
       | description            | Interior menu category link in header    |
       | userId                 |                                   |
-    And we wait "2" seconds for the next page to load
+    And we wait "1" seconds for the next page to load
     And the landing URL contains "/companylist/interior-painting.htm"
 
   @homePageSegmentHeaderInteriorPlumbing @daily_auto @daily_homepage_regression @header_regression
@@ -314,7 +314,7 @@ Feature:
       | activityLocation       | Visitor : Home                    |
       | description            | Interior menu category link in header    |
       | userId                 |                                   |
-    And we wait "2" seconds for the next page to load
+    And we wait "1" seconds for the next page to load
     And the landing URL contains "/companylist/plumbing.htm"
 
   @homePageSegmentHeaderInteriorRemodeling @daily_auto @daily_homepage_regression @header_regression
@@ -335,7 +335,7 @@ Feature:
       | activityLocation       | Visitor : Home                    |
       | description            | Interior menu category link in header    |
       | userId                 |                                   |
-    And we wait "2" seconds for the next page to load
+    And we wait "1" seconds for the next page to load
     And the landing URL contains "/companylist/kitchen-and-bath-remodeling.htm"
 
   @homePageSegmentHeaderInteriorViewAll @daily_auto @daily_homepage_regression @header_regression
@@ -356,7 +356,7 @@ Feature:
       | activityLocation       | Visitor : Home                    |
       | description            | Interior menu view all categories link in header    |
       | userId                 |                                   |
-    And we wait "2" seconds for the next page to load
+    And we wait "1" seconds for the next page to load
     And the landing URL contains "/companylist/"
 
   @homePageSegmentHeaderExteriorConcreteRepair @daily_auto @daily_homepage_regression @header_regression
@@ -732,7 +732,7 @@ Feature:
       | activityLocation       | Visitor : Home                 |
       | description            | Top Cities link in footer      |
       | userId                 |                                |
-    And we wait "2" seconds for the next page to load
+    And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/new-york-tristate-area/"
 
 
@@ -754,7 +754,7 @@ Feature:
       | activityLocation       | Visitor : Home                 |
       | description            | Top Cities link in footer      |
       | userId                 |                                |
-    And we wait "2" seconds for the next page to load
+    And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/houston/"
 
 
@@ -776,7 +776,7 @@ Feature:
       | activityLocation       | Visitor : Home                 |
       | description            | Top Cities link in footer      |
       | userId                 |                                |
-    And we wait "2" seconds for the next page to load
+    And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/chicago/"
 
 
@@ -798,7 +798,7 @@ Feature:
       | activityLocation       | Visitor : Home                 |
       | description            | Top Cities link in footer      |
       | userId                 |                                |
-    And we wait "2" seconds for the next page to load
+    And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/indianapolis/"
 
 
@@ -820,7 +820,7 @@ Feature:
       | activityLocation       | Visitor : Home                 |
       | description            | Top Cities link in footer      |
       | userId                 |                                |
-    And we wait "2" seconds for the next page to load
+    And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/boston/"
 
   @homePageFooterSegmentTopCity @daily_auto @daily_homepage_regression @footer
@@ -841,7 +841,7 @@ Feature:
       | activityLocation       | Visitor : Home                 |
       | description            | Top Cities link in footer      |
       | userId                 |                                |
-    And we wait "2" seconds for the next page to load
+    And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/atlanta/"
 
   @homePageFooterSegmentTopCity @daily_auto @daily_homepage_regression @footer
@@ -862,7 +862,7 @@ Feature:
       | activityLocation       | Visitor : Home                 |
       | description            | Top Cities link in footer      |
       | userId                 |                                |
-    And we wait "2" seconds for the next page to load
+    And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/cincinnati/"
 
   @homePageFooterSegmentTopCity @daily_auto @daily_homepage_regression @footer
@@ -883,7 +883,7 @@ Feature:
       | activityLocation       | Visitor : Home                 |
       | description            | Top Cities link in footer      |
       | userId                 |                                |
-    And we wait "2" seconds for the next page to load
+    And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/los-angeles/"
 
   @homePageFooterSegmentTopCity @daily_auto @daily_homepage_regression @footer
@@ -904,7 +904,7 @@ Feature:
       | activityLocation       | Visitor : Home                 |
       | description            | Top Cities link in footer      |
       | userId                 |                                |
-    And we wait "2" seconds for the next page to load
+    And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/dallas/"
 
   @homePageFooterSegmentTopCity @daily_auto @daily_homepage_regression @footer
@@ -925,7 +925,7 @@ Feature:
       | activityLocation       | Visitor : Home                 |
       | description            | Top Cities link in footer      |
       | userId                 |                                |
-    And we wait "2" seconds for the next page to load
+    And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/pittsburgh/"
 
   @homePageFooterSegmentTopCity @daily_auto @daily_homepage_regression @footer
@@ -946,7 +946,7 @@ Feature:
       | activityLocation       | Visitor : Home                 |
       | description            | Top Cities link in footer      |
       | userId                 |                                |
-    And we wait "2" seconds for the next page to load
+    And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/minneapolis/"
 
   @homePageFooterSegmentTopCity @daily_auto @daily_homepage_regression @footer
@@ -967,7 +967,7 @@ Feature:
       | activityLocation       | Visitor : Home                 |
       | description            | Top Cities link in footer      |
       | userId                 |                                |
-    And we wait "2" seconds for the next page to load
+    And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/las-vegas/"
 
   @homePageFooterSegmentTopCity @daily_auto @daily_homepage_regression @footer
@@ -988,7 +988,7 @@ Feature:
       | activityLocation       | Visitor : Home                 |
       | description            | Top Cities link in footer      |
       | userId                 |                                |
-    And we wait "2" seconds for the next page to load
+    And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/san-antonio/"
 
   @homePageFooterSegmentTopCity @daily_auto @daily_homepage_regression @footer
@@ -1009,7 +1009,7 @@ Feature:
       | activityLocation       | Visitor : Home                 |
       | description            | Top Cities link in footer      |
       | userId                 |                                |
-    And we wait "2" seconds for the next page to load
+    And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/tampa-bay/"
 
   @homePageFooterSegmentJoinForFree @daily_auto @daily_homepage_regression @footer
@@ -1030,7 +1030,7 @@ Feature:
       | activityLocation       | Visitor : Home                    |
       | description            | Join For Free link in footer      |
       | userId                 |                                   |
-    And we wait "2" seconds for the next page to load
+    And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/app/signup/"
 
   @homePageFooterSegmentCompanyList @daily_auto @daily_homepage_regression @footer
@@ -1051,7 +1051,7 @@ Feature:
       | activityLocation       | Visitor : Home                    |
       | description            | Find Local Businesses link in footer      |
       | userId                 |                                   |
-    And we wait "2" seconds for the next page to load
+    And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/"
 
   @homePageFooterSegmentNearMe @daily_auto @daily_homepage_regression @footer
@@ -1072,7 +1072,7 @@ Feature:
       | activityLocation       | Visitor : Home                    |
       | description            | Services Near Me link in footer   |
       | userId                 |                                   |
-    And we wait "2" seconds for the next page to load
+    And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/nearme/"
 
   @homePageFooterSegmentHowItWorks @daily_auto @daily_homepage_regression @footer
@@ -1093,7 +1093,7 @@ Feature:
       | activityLocation       | Visitor : Home                    |
       | description            | How It Works link in footer       |
       | userId                 |                                   |
-    And we wait "2" seconds for the next page to load
+    And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/how-it-works.htm"
 
   @homePageFooterSegmentSolutionCenter @daily_auto @daily_homepage_regression @footer
@@ -1135,7 +1135,7 @@ Feature:
       | activityLocation       | Visitor : Home                    |
       | description            | Photo Galleries link in footer    |
       | userId                 |                                   |
-    And we wait "2" seconds for the next page to load
+    And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/photos/"
 
   @homePageFooterSegmentVideos @daily_auto @daily_homepage_regression @footer
@@ -1156,7 +1156,7 @@ Feature:
       | activityLocation       | Visitor : Home                    |
       | description            | Videos link in footer             |
       | userId                 |                                   |
-    And we wait "2" seconds for the next page to load
+    And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/videos/"
 
   @homePageFooterSegmentAnswers @daily_auto @daily_homepage_regression @footer
@@ -1177,7 +1177,7 @@ Feature:
       | activityLocation       | Visitor : Home                    |
       | description            | Answers link in footer            |
       | userId                 |                                   |
-    And we wait "2" seconds for the next page to load
+    And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com"
 
   @homePageFooterSegmentBusinessOwners @daily_auto @daily_homepage_regression @footer
@@ -1198,7 +1198,7 @@ Feature:
       | activityLocation       | Visitor : Home                     |
       | description            | For Business Owners link in footer |
       | userId                 |                                    |
-    And we wait "2" seconds for the next page to load
+    And we wait "1" seconds for the next page to load
     And the landing URL contains "angieslistbusinesscenter.com/"
 
   @homePageFooterSegmentInvestorRelations @daily_auto @daily_homepage_regression @footer
@@ -1238,7 +1238,7 @@ Feature:
       | activityLocation       | Visitor : Home                     |
       | description            | About Angie’s List link in footer  |
       | userId                 |                                    |
-    And we wait "2" seconds for the next page to load
+    And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/aboutus.htm"
 
   @homePageFooterSegmentCareers @daily_auto @daily_homepage_regression @footer
@@ -1278,7 +1278,7 @@ Feature:
       | activityLocation       | Visitor : Home       |
       | description            | FAQs link in footer  |
       | userId                 |                      |
-    And we wait "2" seconds for the next page to load
+    And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/faq/"
 
 
@@ -1300,7 +1300,7 @@ Feature:
       | activityLocation       | Visitor : Home             |
       | description            | Contact Us link in footer  |
       | userId                 |                            |
-    And we wait "2" seconds for the next page to load
+    And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/member/login"
 
   @homePageFooterSegmentJoin @daily_auto @daily_homepage_regression @footer
@@ -1321,7 +1321,7 @@ Feature:
       | activityLocation       | Visitor : Home             |
       | description            | Join button in footer      |
       | userId                 |                            |
-    And we wait "2" seconds for the next page to load
+    And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/app/signup"
 
   @homePageFooterSegmentiOS @daily_auto @daily_homepage_regression @footer
