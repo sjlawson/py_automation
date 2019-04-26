@@ -2,6 +2,8 @@ from behave import given, then, when
 from common.SegmentTestHelper import SegmentTestHelper
 import time
 
+if os.environ['BASEURL_OVERRIDE']:
+            context.appsuites['al_visitor_site']['base_url'] = os.environ['BASEURL_OVERRIDE']
 
 @given('user is on a visitor site page')
 def step_impl(context):
