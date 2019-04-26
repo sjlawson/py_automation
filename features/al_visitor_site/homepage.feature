@@ -611,8 +611,8 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/window-treatments.htm"
 
-  @homePageSegmentHeaderExteriorWindows @daily_auto @daily_homepage_regression @header_regression
-  Scenario: User hovers then clicks on Windows in the header on the Drupal Homepage
+  @homePageSegmentHeaderExteriorViewAll @daily_auto @daily_homepage_regression @header_regression
+  Scenario: User hovers then clicks on View All in the header on the Drupal Homepage
     Given user is on a visitor site page
     """
     /
