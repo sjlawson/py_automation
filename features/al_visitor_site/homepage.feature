@@ -62,7 +62,7 @@ Feature:
       | activityLocation | Visitor : Home      |
       | description      | Join link in header |
       | userId           |                     |
-    And we wait "3" seconds for the next page to load
+    And we wait "2" seconds for the next page to load
     And the landing URL contains ".angieslist.com/app/signup"
 
   @homePageSegmentHeaderSignIn @daily_auto @daily_homepage_regression @header_regression
@@ -83,7 +83,7 @@ Feature:
       | activityLocation       | Visitor : Home                    |
       | description            | Sign In link in header            |
       | userId                 |                                   |
-    And we wait "3" seconds for the next page to load
+    And we wait "2" seconds for the next page to load
     And the landing URL contains ".angieslist.com/member/login"
 
   @homePageSegmentHeaderBuisnessCenter @daily_auto @daily_homepage_regression @header_regression
@@ -104,7 +104,7 @@ Feature:
       | activityLocation       | Visitor : Home                    |
       | description            | Business Owners link in header    |
       | userId                 |                                   |
-    And we wait "5" seconds for the next page to load
+    And we wait "2" seconds for the next page to load
     And the landing URL contains "angieslistbusinesscenter.com"
 
   @homePageSegmentHeaderInteriorApplianceRepair @daily_auto @daily_homepage_regression @header_regression
@@ -126,7 +126,7 @@ Feature:
       | description            | Interior menu category link in header    |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains "/companylist/appliance-repair.htm"
+    And the landing URL contains ".angieslist.com/companylist/appliance-repair.htm"
 
   @homePageSegmentHeaderInteriorCarpetCleaning @daily_auto @daily_homepage_regression @header_regression
   Scenario: User hovers then clicks on Carpet Cleaning in the header on the Drupal Homepage
@@ -147,7 +147,7 @@ Feature:
       | description            | Interior menu category link in header    |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains "/companylist/carpet-cleaning.htm"
+    And the landing URL contains ".angieslist.com/companylist/carpet-cleaning.htm"
 
   @homePageSegmentHeaderInteriorContractors @daily_auto @daily_homepage_regression @header_regression
   Scenario: User hovers then clicks on Contractors in the header on the Drupal Homepage
@@ -168,7 +168,7 @@ Feature:
       | description            | Interior menu category link in header    |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains "/companylist/contractor.htm"
+    And the landing URL contains ".angieslist.com/companylist/contractor.htm"
 
   @homePageSegmentHeaderInteriorDrywall @daily_auto @daily_homepage_regression @header_regression
   Scenario: User hovers then clicks on Drywall in the header on the Drupal Homepage
@@ -189,7 +189,7 @@ Feature:
       | description            | Interior menu category link in header    |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains "/companylist/drywall.htm"
+    And the landing URL contains ".angieslist.com/companylist/drywall.htm"
 
   @homePageSegmentHeaderInteriorElectrical @daily_auto @daily_homepage_regression @header_regression
   Scenario: User hovers then clicks on Electrical in the header on the Drupal Homepage
@@ -210,7 +210,7 @@ Feature:
       | description            | Interior menu category link in header    |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains "/companylist/electrical.htm"
+    And the landing URL contains ".angieslist.com/companylist/electrical.htm"
 
   @homePageSegmentHeaderInteriorFlooring @daily_auto @daily_homepage_regression @header_regression
   Scenario: User hovers then clicks on Flooring in the header on the Drupal Homepage
@@ -231,7 +231,7 @@ Feature:
       | description            | Interior menu category link in header    |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains "/companylist/flooring.htm"
+    And the landing URL contains ".angieslist.com/companylist/flooring.htm"
 
   @homePageSegmentHeaderInteriorHVAC @daily_auto @daily_homepage_regression @header_regression
   Scenario: User hovers then clicks on Heating & Cooling in the header on the Drupal Homepage
@@ -252,7 +252,7 @@ Feature:
       | description            | Interior menu category link in header    |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains "/companylist/hvac.htm"
+    And the landing URL contains ".angieslist.com/companylist/hvac.htm"
 
   @homePageSegmentHeaderInteriorHouseCleaning @daily_auto @daily_homepage_regression @header_regression
   Scenario: User hovers then clicks on House Cleaning in the header on the Drupal Homepage
@@ -273,7 +273,7 @@ Feature:
       | description            | Interior menu category link in header    |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains "/companylist/house-cleaning.htm"
+    And the landing URL contains ".angieslist.com/companylist/house-cleaning.htm"
 
   @homePageSegmentHeaderInteriorPainting @daily_auto @daily_homepage_regression @header_regression
   Scenario: User hovers then clicks on Interior Painting in the header on the Drupal Homepage
@@ -294,7 +294,7 @@ Feature:
       | description            | Interior menu category link in header    |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains "/companylist/interior-painting.htm"
+    And the landing URL contains ".angieslist.com/companylist/interior-painting.htm"
 
   @homePageSegmentHeaderInteriorPlumbing @daily_auto @daily_homepage_regression @header_regression
   Scenario: User hovers then clicks on Plumbing in the header on the Drupal Homepage
@@ -315,7 +315,7 @@ Feature:
       | description            | Interior menu category link in header    |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains "/companylist/plumbing.htm"
+    And the landing URL contains ".angieslist.com/companylist/plumbing.htm"
 
   @homePageSegmentHeaderInteriorRemodeling @daily_auto @daily_homepage_regression @header_regression
   Scenario: User hovers then clicks on Remodeling in the header on the Drupal Homepage
@@ -336,7 +336,7 @@ Feature:
       | description            | Interior menu category link in header    |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains "/companylist/kitchen-and-bath-remodeling.htm"
+    And the landing URL contains ".angieslist.com/companylist/kitchen-and-bath-remodeling.htm"
 
   @homePageSegmentHeaderInteriorViewAll @daily_auto @daily_homepage_regression @header_regression
   Scenario: User hovers then clicks on View All Categories in the header on the Drupal Homepage
@@ -357,7 +357,7 @@ Feature:
       | description            | Interior menu view all categories link in header    |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains "/companylist/"
+    And the landing URL contains ".angieslist.com/companylist/"
 
   @homePageSegmentHeaderExteriorConcreteRepair @daily_auto @daily_homepage_regression @header_regression
   Scenario: User hovers then clicks on Concrete Repair in the header on the Drupal Homepage
@@ -378,7 +378,7 @@ Feature:
       | description            | Exterior menu category link in header  |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains "/companylist/concrete-repair.htm"
+    And the landing URL contains ".angieslist.com/companylist/concrete-repair.htm"
 
   @homePageSegmentHeaderExteriorDoors @daily_auto @daily_homepage_regression @header_regression
   Scenario: User hovers then clicks on Doors in the header on the Drupal Homepage
@@ -399,7 +399,7 @@ Feature:
       | description            | Exterior menu category link in header  |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains "/companylist/doors.htm"
+    And the landing URL contains ".angieslist.com/companylist/doors.htm"
 
   @homePageSegmentHeaderExteriorDriveways @daily_auto @daily_homepage_regression @header_regression
   Scenario: User hovers then clicks on Driveways in the header on the Drupal Homepage
@@ -420,7 +420,7 @@ Feature:
       | description            | Exterior menu category link in header  |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains "/companylist/driveways.htm"
+    And the landing URL contains ".angieslist.com/companylist/driveways.htm"
 
   @homePageSegmentHeaderExteriorPainting @daily_auto @daily_homepage_regression @header_regression
   Scenario: User hovers then clicks on Exterior Painting in the header on the Drupal Homepage
@@ -441,7 +441,7 @@ Feature:
       | description            | Exterior menu category link in header  |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains "/companylist/exterior-painting.htm"
+    And the landing URL contains ".angieslist.com/companylist/exterior-painting.htm"
 
   @homePageSegmentHeaderExteriorPainting @daily_auto @daily_homepage_regression @header_regression
   Scenario: User hovers then clicks on Garage Doors in the header on the Drupal Homepage
@@ -462,7 +462,7 @@ Feature:
       | description            | Exterior menu category link in header  |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains "/companylist/garage-doors.htm"
+    And the landing URL contains ".angieslist.com/companylist/garage-doors.htm"
 
   @homePageSegmentHeaderExteriorGutterCleaning @daily_auto @daily_homepage_regression @header_regression
   Scenario: User hovers then clicks on Gutter Cleaning in the header on the Drupal Homepage
@@ -483,7 +483,7 @@ Feature:
       | description            | Exterior menu category link in header  |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains "/companylist/gutter-cleaning.htm"
+    And the landing URL contains ".angieslist.com/companylist/gutter-cleaning.htm"
 
   @homePageSegmentHeaderExteriorGutterRepair @daily_auto @daily_homepage_regression @header_regression
   Scenario: User hovers then clicks on Gutter Repair in the header on the Drupal Homepage
