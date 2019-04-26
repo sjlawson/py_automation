@@ -1,8 +1,7 @@
 # application suites should be listed by directory name and base_url
 appsuites:
   al_visitor_site:
-      base_url: http://visitordev2.angieslist.com
-      # base_url: http://visitordev3.angieslist.com
+      base_url: http://visitordev3.angieslist.com
       # base_url: http://angieslist.local
       # base_url: https://wwwstg.angieslist.com
   al_visitor_tball:
