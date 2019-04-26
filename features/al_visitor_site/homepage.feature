@@ -111,7 +111,7 @@ Feature:
 ##### Body Tests #####
 
 
-  @homePageBodySegmentHeroJoinCta @daily_auto @daily_homepage_regression
+  @homePageBodySegmentHeroJoinCta @daily_auto @daily_homepage_regression @body_regression
   Scenario: User clicks on hero Join button on Drupal Homepage
     Given user is on a visitor site page
     """
@@ -133,7 +133,7 @@ Feature:
     And the landing URL contains ".angieslist.com/app/signup"
 
 
-  @homePageBodySegmentPlumbingPopularServiceQuickLink @daily_auto @daily_homepage_regression
+  @homePageBodySegmentPlumbingPopularServiceQuickLink @daily_auto @daily_homepage_regression @body_regression
   Scenario: User clicks on Popular Service icon for Plumbing on Drupal Homepage
     Given user is on a visitor site page
     """
@@ -150,12 +150,187 @@ Feature:
       | prop_key               | prop_value                        |
       | activityLocation       | Visitor : Home                    |
       | description            | Popular Services icon             |
-      | categoryId             | 107                               |
+      | categoryId             |                                   |
       | categorySelected       | Plumbing                          |
-      | homeAdvisorCategoryId  | 10216                             |
+      | homeAdvisorCategoryId  |                                   |
       | userId                 |                                   |
     And we wait "3" seconds for the next page to load
     And the landing URL contains ".angieslist.com/category.Plumbing.10216.html?entry_point_id=32949645"
+
+
+  @homePageBodySegmentRoofingPopularServiceQuickLink @daily_auto @daily_homepage_regression @body_regression
+  Scenario: User clicks on Popular Service icon for Roofing on Drupal Homepage
+    Given user is on a visitor site page
+    """
+    /
+    """
+    When a user performs actions
+      | action_method   | action_params      |
+      | move_to_element | id: ha-lead-ps-roofing      |
+      | click           |                    |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value       |
+      | activityLocation | Visitor : Home |
+    And the segment call contains parameters
+      | prop_key               | prop_value                        |
+      | activityLocation       | Visitor : Home                    |
+      | description            | Popular Services icon             |
+      | categoryId             |                                   |
+      | categorySelected       | Roofing                           |
+      | homeAdvisorCategoryId  |                                   |
+      | userId                 |                                   |
+    And we wait "3" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/category.Roofing-Siding-Gutters.10217.html?entry_point_id=32949645"
+
+  @homePageBodySegmentHeatingCoolingPopularServiceQuickLink @daily_auto @daily_homepage_regression @body_regression
+  Scenario: User clicks on Popular Service icon for HeatingCooling on Drupal Homepage
+    Given user is on a visitor site page
+    """
+    /
+    """
+    When a user performs actions
+      | action_method   | action_params      |
+      | move_to_element | id: ha-lead-ps-heating      |
+      | click           |                    |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value       |
+      | activityLocation | Visitor : Home |
+    And the segment call contains parameters
+      | prop_key               | prop_value                        |
+      | activityLocation       | Visitor : Home                    |
+      | description            | Popular Services icon             |
+      | categoryId             |                                   |
+      | categorySelected       | Heating & A/C                     |
+      | homeAdvisorCategoryId  |                                   |
+      | userId                 |                                   |
+    And we wait "3" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/category.Heating-Cooling.10211.html?entry_point_id=32949645"
+
+
+  @homePageBodySegmentElectricalPopularServiceQuickLink @daily_auto @daily_homepage_regression @body_regression
+  Scenario: User clicks on Popular Service icon for Electrical on Drupal Homepage
+    Given user is on a visitor site page
+    """
+    /
+    """
+    When a user performs actions
+      | action_method   | action_params      |
+      | move_to_element | id: ha-lead-ps-electrical      |
+      | click           |                    |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value       |
+      | activityLocation | Visitor : Home |
+    And the segment call contains parameters
+      | prop_key               | prop_value                        |
+      | activityLocation       | Visitor : Home                    |
+      | description            | Popular Services icon             |
+      | categoryId             |                                   |
+      | categorySelected       | Electrical                        |
+      | homeAdvisorCategoryId  |                                   |
+      | userId                 |                                   |
+    And we wait "3" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/category.Electrical.12026.html?entry_point_id=32949645"
+
+
+  @homePageBodySegmentLandscapingPopularServiceQuickLink @daily_auto @daily_homepage_regression @body_regression
+  Scenario: User clicks on Popular Service icon for Landscaping on Drupal Homepage
+    Given user is on a visitor site page
+    """
+    /
+    """
+    When a user performs actions
+      | action_method   | action_params      |
+      | move_to_element | id: ha-lead-ps-landscaping      |
+      | click           |                    |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value       |
+      | activityLocation | Visitor : Home |
+    And the segment call contains parameters
+      | prop_key               | prop_value                        |
+      | activityLocation       | Visitor : Home                    |
+      | description            | Popular Services icon             |
+      | categoryId             |                                   |
+      | categorySelected       | Landscaping                       |
+      | homeAdvisorCategoryId  |                                   |
+      | userId                 |                                   |
+    And we wait "3" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/category.Landscaping.12046.html?entry_point_id=32949645"
+
+
+@homePageBodySegmentHouseCleaningPopularServiceQuickLink @daily_auto @daily_homepage_regression @body_regression
+  Scenario: User clicks on Popular Service icon for House Cleaning on Drupal Homepage
+    Given user is on a visitor site page
+    """
+    /
+    """
+    When a user performs actions
+      | action_method   | action_params      |
+      | move_to_element | id: ha-lead-ps-housecleaning      |
+      | click           |                    |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value       |
+      | activityLocation | Visitor : Home |
+    And the segment call contains parameters
+      | prop_key               | prop_value                        |
+      | activityLocation       | Visitor : Home                    |
+      | description            | Popular Services icon             |
+      | categoryId             |                                   |
+      | categorySelected       | Housecleaning                     |
+      | homeAdvisorCategoryId  |                                   |
+      | userId                 |                                   |
+    And we wait "3" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/category.Cleaning-Maid-Services.12014.html?entry_point_id=32949645"  
+  
+  
+  @homePageBodySegmentRemodelingPopularServiceQuickLink @daily_auto @daily_homepage_regression @body_regression
+  Scenario: User clicks on Popular Service icon for Remodeling on Drupal Homepage
+    Given user is on a visitor site page
+    """
+    /
+    """
+    When a user performs actions
+      | action_method   | action_params      |
+      | move_to_element | id: ha-lead-ps-remodeling      |
+      | click           |                    |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value       |
+      | activityLocation | Visitor : Home |
+    And the segment call contains parameters
+      | prop_key               | prop_value                        |
+      | activityLocation       | Visitor : Home                    |
+      | description            | Popular Services icon             |
+      | categoryId             |                                   |
+      | categorySelected       | Remodeling                        |
+      | homeAdvisorCategoryId  |                                   |
+      | userId                 |                                   |
+    And we wait "3" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/category.Additions-Remodeling.12001.html?entry_point_id=32949645"
+
+
+@homePageBodySegmentPaintingPopularServiceQuickLink @daily_auto @daily_homepage_regression @body_regression
+  Scenario: User clicks on Popular Service icon for Painting on Drupal Homepage
+    Given user is on a visitor site page
+    """
+    /
+    """
+    When a user performs actions
+      | action_method   | action_params      |
+      | move_to_element | id: ha-lead-ps-painting      |
+      | click           |                    |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value       |
+      | activityLocation | Visitor : Home |
+    And the segment call contains parameters
+      | prop_key               | prop_value                        |
+      | activityLocation       | Visitor : Home                    |
+      | description            | Popular Services icon             |
+      | categoryId             |                                   |
+      | categorySelected       | Painting                     |
+      | homeAdvisorCategoryId  |                                   |
+      | userId                 |                                   |
+    And we wait "3" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/category.Interior-Painting-or-Staining.10381.html?entry_point_id=32949645"
+
 
 
 ##### Footer Tests #####
