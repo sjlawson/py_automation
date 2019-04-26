@@ -861,7 +861,7 @@ Feature:
       | description            | Lawn & Garden menu category link in header  |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/tree-services.htm"
+    And the landing URL contains ".angieslist.com/companylist/tree-service.htm"
 
   @homePageSegmentHeaderLawnViewAll @daily_auto @daily_homepage_regression @header_regression
   Scenario: User hovers then clicks on View All in the header on the Drupal Homepage
