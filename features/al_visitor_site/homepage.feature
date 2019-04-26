@@ -62,7 +62,7 @@ Feature:
       | activityLocation | Visitor : Home      |
       | description      | Join link in header |
       | userId           |                     |
-    And we wait "2" seconds for the next page to load
+    And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/app/signup"
 
   @homePageSegmentHeaderSignIn @daily_auto @daily_homepage_regression @header_regression
@@ -83,7 +83,7 @@ Feature:
       | activityLocation       | Visitor : Home                    |
       | description            | Sign In link in header            |
       | userId                 |                                   |
-    And we wait "2" seconds for the next page to load
+    And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/member/login"
 
   @homePageSegmentHeaderBuisnessCenter @daily_auto @daily_homepage_regression @header_regression
@@ -104,7 +104,7 @@ Feature:
       | activityLocation       | Visitor : Home                    |
       | description            | Business Owners link in header    |
       | userId                 |                                   |
-    And we wait "2" seconds for the next page to load
+    And we wait "1" seconds for the next page to load
     And the landing URL contains "angieslistbusinesscenter.com"
 
   @homePageSegmentHeaderInteriorApplianceRepair @daily_auto @daily_homepage_regression @header_regression
