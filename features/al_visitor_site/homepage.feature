@@ -380,6 +380,283 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains "/companylist/concrete-repair.htm"
 
+  @homePageSegmentHeaderExteriorDoors @daily_auto @daily_homepage_regression @header_regression
+  Scenario: User hovers then clicks on Doors in the header on the Drupal Homepage
+    Given user is on a visitor site page
+    """
+    /
+    """
+    When a user performs actions
+      | action_method   | action_params       |
+      | move_to_element | #secondary-nav > ul > li:nth-child(2) > label > span |
+      | click           | #secondary-nav > ul > li:nth-child(2) > div > ul > li:nth-child(2) > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value       |
+      | activityLocation | Visitor : Home |
+    And the segment call contains parameters
+      | prop_key               | prop_value                        |
+      | activityLocation       | Visitor : Home                    |
+      | description            | Exterior menu category link in header  |
+      | userId                 |                                   |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains "/companylist/doors.htm"
+
+  @homePageSegmentHeaderExteriorDriveways @daily_auto @daily_homepage_regression @header_regression
+  Scenario: User hovers then clicks on Driveways in the header on the Drupal Homepage
+    Given user is on a visitor site page
+    """
+    /
+    """
+    When a user performs actions
+      | action_method   | action_params       |
+      | move_to_element | #secondary-nav > ul > li:nth-child(2) > label > span |
+      | click           | #secondary-nav > ul > li:nth-child(2) > div > ul > li:nth-child(3) > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value       |
+      | activityLocation | Visitor : Home |
+    And the segment call contains parameters
+      | prop_key               | prop_value                        |
+      | activityLocation       | Visitor : Home                    |
+      | description            | Exterior menu category link in header  |
+      | userId                 |                                   |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains "/companylist/driveways.htm"
+
+  @homePageSegmentHeaderExteriorPainting @daily_auto @daily_homepage_regression @header_regression
+  Scenario: User hovers then clicks on Exterior Painting in the header on the Drupal Homepage
+    Given user is on a visitor site page
+    """
+    /
+    """
+    When a user performs actions
+      | action_method   | action_params       |
+      | move_to_element | #secondary-nav > ul > li:nth-child(2) > label > span |
+      | click           | #secondary-nav > ul > li:nth-child(2) > div > ul > li:nth-child(4) > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value       |
+      | activityLocation | Visitor : Home |
+    And the segment call contains parameters
+      | prop_key               | prop_value                        |
+      | activityLocation       | Visitor : Home                    |
+      | description            | Exterior menu category link in header  |
+      | userId                 |                                   |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains "/companylist/exterior-painting.htm"
+
+  @homePageSegmentHeaderExteriorPainting @daily_auto @daily_homepage_regression @header_regression
+  Scenario: User hovers then clicks on Garage Doors in the header on the Drupal Homepage
+    Given user is on a visitor site page
+    """
+    /
+    """
+    When a user performs actions
+      | action_method   | action_params       |
+      | move_to_element | #secondary-nav > ul > li:nth-child(2) > label > span |
+      | click           | #secondary-nav > ul > li:nth-child(2) > div > ul > li:nth-child(5) > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value       |
+      | activityLocation | Visitor : Home |
+    And the segment call contains parameters
+      | prop_key               | prop_value                        |
+      | activityLocation       | Visitor : Home                    |
+      | description            | Exterior menu category link in header  |
+      | userId                 |                                   |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains "/companylist/garage-doors.htm"
+
+  @homePageSegmentHeaderExteriorGutterCleaning @daily_auto @daily_homepage_regression @header_regression
+  Scenario: User hovers then clicks on Gutter Cleaning in the header on the Drupal Homepage
+    Given user is on a visitor site page
+    """
+    /
+    """
+    When a user performs actions
+      | action_method   | action_params       |
+      | move_to_element | #secondary-nav > ul > li:nth-child(2) > label > span |
+      | click           | #secondary-nav > ul > li:nth-child(2) > div > ul > li:nth-child(6) > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value       |
+      | activityLocation | Visitor : Home |
+    And the segment call contains parameters
+      | prop_key               | prop_value                        |
+      | activityLocation       | Visitor : Home                    |
+      | description            | Exterior menu category link in header  |
+      | userId                 |                                   |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains "/companylist/gutter-cleaning.htm"
+
+  @homePageSegmentHeaderExteriorGutterRepair @daily_auto @daily_homepage_regression @header_regression
+  Scenario: User hovers then clicks on Gutter Repair in the header on the Drupal Homepage
+    Given user is on a visitor site page
+    """
+    /
+    """
+    When a user performs actions
+      | action_method   | action_params       |
+      | move_to_element | #secondary-nav > ul > li:nth-child(2) > label > span |
+      | click           | #secondary-nav > ul > li:nth-child(2) > div > ul > li:nth-child(7) > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value       |
+      | activityLocation | Visitor : Home |
+    And the segment call contains parameters
+      | prop_key               | prop_value                        |
+      | activityLocation       | Visitor : Home                    |
+      | description            | Exterior menu category link in header  |
+      | userId                 |                                   |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/gutter-repair-replacement.htm"
+
+  @homePageSegmentHeaderExteriorHomeBuilders @daily_auto @daily_homepage_regression @header_regression
+  Scenario: User hovers then clicks on Home Builders in the header on the Drupal Homepage
+    Given user is on a visitor site page
+    """
+    /
+    """
+    When a user performs actions
+      | action_method   | action_params       |
+      | move_to_element | #secondary-nav > ul > li:nth-child(2) > label > span |
+      | click           | #secondary-nav > ul > li:nth-child(2) > div > ul > li:nth-child(8) > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value       |
+      | activityLocation | Visitor : Home |
+    And the segment call contains parameters
+      | prop_key               | prop_value                        |
+      | activityLocation       | Visitor : Home                    |
+      | description            | Exterior menu category link in header  |
+      | userId                 |                                   |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/home-builders.htm"
+
+  @homePageSegmentHeaderExteriorMasonry @daily_auto @daily_homepage_regression @header_regression
+  Scenario: User hovers then clicks on Masonry in the header on the Drupal Homepage
+    Given user is on a visitor site page
+    """
+    /
+    """
+    When a user performs actions
+      | action_method   | action_params       |
+      | move_to_element | #secondary-nav > ul > li:nth-child(2) > label > span |
+      | click           | #secondary-nav > ul > li:nth-child(2) > div > ul > li:nth-child(9) > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value       |
+      | activityLocation | Visitor : Home |
+    And the segment call contains parameters
+      | prop_key               | prop_value                        |
+      | activityLocation       | Visitor : Home                    |
+      | description            | Exterior menu category link in header  |
+      | userId                 |                                   |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/masonry.htm"
+
+  @homePageSegmentHeaderExteriorRoofing @daily_auto @daily_homepage_regression @header_regression
+  Scenario: User hovers then clicks on Roofing in the header on the Drupal Homepage
+    Given user is on a visitor site page
+    """
+    /
+    """
+    When a user performs actions
+      | action_method   | action_params       |
+      | move_to_element | #secondary-nav > ul > li:nth-child(2) > label > span |
+      | click           | #secondary-nav > ul > li:nth-child(2) > div > ul > li:nth-child(10) > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value       |
+      | activityLocation | Visitor : Home |
+    And the segment call contains parameters
+      | prop_key               | prop_value                        |
+      | activityLocation       | Visitor : Home                    |
+      | description            | Exterior menu category link in header  |
+      | userId                 |                                   |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/roofing.htm"
+
+  @homePageSegmentHeaderExteriorSiding @daily_auto @daily_homepage_regression @header_regression
+  Scenario: User hovers then clicks on Siding in the header on the Drupal Homepage
+    Given user is on a visitor site page
+    """
+    /
+    """
+    When a user performs actions
+      | action_method   | action_params       |
+      | move_to_element | #secondary-nav > ul > li:nth-child(2) > label > span |
+      | click           | #secondary-nav > ul > li:nth-child(2) > div > ul > li:nth-child(11) > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value       |
+      | activityLocation | Visitor : Home |
+    And the segment call contains parameters
+      | prop_key               | prop_value                        |
+      | activityLocation       | Visitor : Home                    |
+      | description            | Exterior menu category link in header  |
+      | userId                 |                                   |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/siding.htm"
+
+  @homePageSegmentHeaderExteriorWindows @daily_auto @daily_homepage_regression @header_regression
+  Scenario: User hovers then clicks on Windows in the header on the Drupal Homepage
+    Given user is on a visitor site page
+    """
+    /
+    """
+    When a user performs actions
+      | action_method   | action_params       |
+      | move_to_element | #secondary-nav > ul > li:nth-child(2) > label > span |
+      | click           | #secondary-nav > ul > li:nth-child(2) > div > ul > li:nth-child(12) > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value       |
+      | activityLocation | Visitor : Home |
+    And the segment call contains parameters
+      | prop_key               | prop_value                        |
+      | activityLocation       | Visitor : Home                    |
+      | description            | Exterior menu category link in header  |
+      | userId                 |                                   |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/window-treatments.htm"
+
+  @homePageSegmentHeaderExteriorWindows @daily_auto @daily_homepage_regression @header_regression
+  Scenario: User hovers then clicks on Windows in the header on the Drupal Homepage
+    Given user is on a visitor site page
+    """
+    /
+    """
+    When a user performs actions
+      | action_method   | action_params       |
+      | move_to_element | #secondary-nav > ul > li:nth-child(2) > label > span |
+      | click           | #secondary-nav > ul > li:nth-child(2) > div > div > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value       |
+      | activityLocation | Visitor : Home |
+    And the segment call contains parameters
+      | prop_key               | prop_value                        |
+      | activityLocation       | Visitor : Home                    |
+      | description            | Exterior menu view all categories link in header  |
+      | userId                 |                                   |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1198,3 +1475,4 @@ Feature:
       | activityLocation       | Visitor : Home             |
       | description            | Privacy Policy link in footer     |
       | userId                 |                            |
+
