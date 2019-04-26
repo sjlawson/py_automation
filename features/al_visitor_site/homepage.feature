@@ -359,6 +359,29 @@ Feature:
     And we wait "2" seconds for the next page to load
     And the landing URL contains "/companylist/"
 
+  @homePageSegmentHeaderExteriorConcreteRepair @daily_auto @daily_homepage_regression @header_regression
+  Scenario: User hovers then clicks on Concrete Repair in the header on the Drupal Homepage
+    Given user is on a visitor site page
+    """
+    /
+    """
+    When a user performs actions
+      | action_method   | action_params       |
+      | move_to_element | #secondary-nav > ul > li:nth-child(2) > label > span |
+      | click           | #secondary-nav > ul > li:nth-child(2) > div > ul > li:nth-child(1) > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value       |
+      | activityLocation | Visitor : Home |
+    And the segment call contains parameters
+      | prop_key               | prop_value                        |
+      | activityLocation       | Visitor : Home                    |
+      | description            | Exterior menu category link in header  |
+      | userId                 |                                   |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains "/companylist/concrete-repair.htm"
+
+
+
 
 
 
