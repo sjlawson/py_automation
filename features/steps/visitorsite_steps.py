@@ -68,3 +68,17 @@ def step_impl(context, link_id, linktitle):
     except AssertionError as ae:
         context.test_case.test_result = 'fail'
         raise AssertionError('Expecting title, %s, for link_id %s, got %s' % (linktitle, link_id, actual))
+
+@then('we wait "{seconds}" seconds for the next page to load')
+def step_impl(context, seconds):
+    time.sleep(int(seconds))
+
+@then('the landing URL contains "{url}"')
+def step_impl(context, url):
+    current_url = context.browser.current_url
+    try:
+        assert url in current_url
+        context.test_case.test_result = 'pass'
+    except AssertionError as ae:
+        context.test_case.test_result = 'fail'
+        raise AssertionError('Did not find %s in %s' % (url, current_url))

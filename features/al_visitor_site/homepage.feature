@@ -2,7 +2,7 @@ Feature:
 
 ##### Header Tests #####
 
-  @homePageSegmentPagecall @daily_auto @daily_homepage_regression
+  @homePageSegmentPagecall @daily_auto @daily_homepage_regression @header_regression
   Scenario: Segment pagecall when homepage loads
     Given user is on a visitor site page
     """
@@ -58,10 +58,12 @@ Feature:
       | unique_field | unique_value       |
       | activityLocation | Visitor : Home |
     And the segment call contains parameters
-      | prop_key               | prop_value                        |
-      | activityLocation       | Visitor : Home                    |
-      | description            | Join link in header               |
-      | userId                 |                                   |
+      | prop_key         | prop_value          |
+      | activityLocation | Visitor : Home      |
+      | description      | Join link in header |
+      | userId           |                     |
+    And we wait "3" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/app/signup"
 
   @homePageSegmentHeaderSignIn @daily_auto @daily_homepage_regression @header_regression
   Scenario: User clicks on Header Sign In button on the Drupal Homepage
@@ -81,6 +83,8 @@ Feature:
       | activityLocation       | Visitor : Home                    |
       | description            | Sign In link in header            |
       | userId                 |                                   |
+    And we wait "3" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/member/login"
 
   @homePageSegmentHeaderBuisnessCenter @daily_auto @daily_homepage_regression @header_regression
   Scenario: User clicks on the Business Center button in the header on the Drupal Homepage
@@ -100,6 +104,8 @@ Feature:
       | activityLocation       | Visitor : Home                    |
       | description            | Business Owners link in header    |
       | userId                 |                                   |
+    And we wait "5" seconds for the next page to load
+    And the landing URL contains "angieslistbusinesscenter.com"
 
 
 ##### Body Tests #####
@@ -123,6 +129,8 @@ Feature:
       | activityLocation       | Visitor : Home                    |
       | description            | Join link in hero image           |
       | userId                 |                                   |
+    And we wait "3" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/app/signup"
 
 
   @homePageBodySegmentPlumbingPopularServiceQuickLink @daily_auto @daily_homepage_regression
@@ -146,6 +154,8 @@ Feature:
       | categorySelected       | Plumbing                          |
       | homeAdvisorCategoryId  | 10216                             |
       | userId                 |                                   |
+    And we wait "3" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/category.Plumbing.10216.html?entry_point_id=32949645"
 
 
 ##### Footer Tests #####
@@ -168,6 +178,9 @@ Feature:
       | activityLocation       | Visitor : Home                 |
       | description            | Top Cities link in footer      |
       | userId                 |                                |
+    And we wait "2" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/new-york-tristate-area/"
+
 
   @homePageFooterSegmentTopCity @daily_auto @daily_homepage_regression @footer
   Scenario: User clicks on the footer Houston top city link on Drupal Homepage
@@ -187,6 +200,9 @@ Feature:
       | activityLocation       | Visitor : Home                 |
       | description            | Top Cities link in footer      |
       | userId                 |                                |
+    And we wait "2" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/houston/"
+
 
   @homePageFooterSegmentTopCity @daily_auto @daily_homepage_regression @footer
   Scenario: User clicks on the footer Chicago top city link on Drupal Homepage
@@ -206,6 +222,9 @@ Feature:
       | activityLocation       | Visitor : Home                 |
       | description            | Top Cities link in footer      |
       | userId                 |                                |
+    And we wait "2" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/chicago/"
+
 
   @homePageFooterSegmentTopCity @daily_auto @daily_homepage_regression @footer
   Scenario: User clicks on the footer Indianapolis top city link on Drupal Homepage
@@ -225,6 +244,9 @@ Feature:
       | activityLocation       | Visitor : Home                 |
       | description            | Top Cities link in footer      |
       | userId                 |                                |
+    And we wait "2" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/indianapolis/"
+
 
   @homePageFooterSegmentTopCity @daily_auto @daily_homepage_regression @footer
   Scenario: User clicks on the footer Boston top city link on Drupal Homepage
@@ -244,6 +266,8 @@ Feature:
       | activityLocation       | Visitor : Home                 |
       | description            | Top Cities link in footer      |
       | userId                 |                                |
+    And we wait "2" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/boston/"
 
   @homePageFooterSegmentTopCity @daily_auto @daily_homepage_regression @footer
   Scenario: User clicks on the footer Atlanta top city link on Drupal Homepage
@@ -263,6 +287,8 @@ Feature:
       | activityLocation       | Visitor : Home                 |
       | description            | Top Cities link in footer      |
       | userId                 |                                |
+    And we wait "2" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/atlanta/"
 
   @homePageFooterSegmentTopCity @daily_auto @daily_homepage_regression @footer
   Scenario: User clicks on the footer Cincinnati top city link on Drupal Homepage
@@ -282,6 +308,8 @@ Feature:
       | activityLocation       | Visitor : Home                 |
       | description            | Top Cities link in footer      |
       | userId                 |                                |
+    And we wait "2" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/cincinnati/"
 
   @homePageFooterSegmentTopCity @daily_auto @daily_homepage_regression @footer
   Scenario: User clicks on the footer Los Angeles top city link on Drupal Homepage
@@ -301,6 +329,8 @@ Feature:
       | activityLocation       | Visitor : Home                 |
       | description            | Top Cities link in footer      |
       | userId                 |                                |
+    And we wait "2" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/los-angeles/"
 
   @homePageFooterSegmentTopCity @daily_auto @daily_homepage_regression @footer
   Scenario: User clicks on the footer Dallas top city link on Drupal Homepage
@@ -320,6 +350,8 @@ Feature:
       | activityLocation       | Visitor : Home                 |
       | description            | Top Cities link in footer      |
       | userId                 |                                |
+    And we wait "2" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/dallas/"
 
   @homePageFooterSegmentTopCity @daily_auto @daily_homepage_regression @footer
   Scenario: User clicks on the footer Pittsburgh top city link on Drupal Homepage
@@ -339,6 +371,8 @@ Feature:
       | activityLocation       | Visitor : Home                 |
       | description            | Top Cities link in footer      |
       | userId                 |                                |
+    And we wait "2" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/pittsburgh/"
 
   @homePageFooterSegmentTopCity @daily_auto @daily_homepage_regression @footer
   Scenario: User clicks on the footer Minneapolis top city link on Drupal Homepage
@@ -358,6 +392,8 @@ Feature:
       | activityLocation       | Visitor : Home                 |
       | description            | Top Cities link in footer      |
       | userId                 |                                |
+    And we wait "2" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/minneapolis/"
 
   @homePageFooterSegmentTopCity @daily_auto @daily_homepage_regression @footer
   Scenario: User clicks on the footer Las Vegas top city link on Drupal Homepage
@@ -377,6 +413,8 @@ Feature:
       | activityLocation       | Visitor : Home                 |
       | description            | Top Cities link in footer      |
       | userId                 |                                |
+    And we wait "2" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/las-vegas/"
 
   @homePageFooterSegmentTopCity @daily_auto @daily_homepage_regression @footer
   Scenario: User clicks on the footer San Antonio top city link on Drupal Homepage
@@ -396,6 +434,8 @@ Feature:
       | activityLocation       | Visitor : Home                 |
       | description            | Top Cities link in footer      |
       | userId                 |                                |
+    And we wait "2" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/san-antonio/"
 
   @homePageFooterSegmentTopCity @daily_auto @daily_homepage_regression @footer
   Scenario: User clicks on the footer Tampa top city link on Drupal Homepage
@@ -415,7 +455,8 @@ Feature:
       | activityLocation       | Visitor : Home                 |
       | description            | Top Cities link in footer      |
       | userId                 |                                |
-
+    And we wait "2" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/tampa-bay/"
 
   @homePageFooterSegmentJoinForFree @daily_auto @daily_homepage_regression @footer
   Scenario: User clicks on the footer-left Join For Free icon on Drupal Homepage
@@ -435,6 +476,8 @@ Feature:
       | activityLocation       | Visitor : Home                    |
       | description            | Join For Free link in footer      |
       | userId                 |                                   |
+    And we wait "2" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/app/signup/"
 
   @homePageFooterSegmentCompanyList @daily_auto @daily_homepage_regression @footer
   Scenario: User clicks on the footer-left Company List icon on Drupal Homepage
@@ -454,6 +497,8 @@ Feature:
       | activityLocation       | Visitor : Home                    |
       | description            | Find Local Businesses link in footer      |
       | userId                 |                                   |
+    And we wait "2" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/"
 
   @homePageFooterSegmentNearMe @daily_auto @daily_homepage_regression @footer
   Scenario: User clicks on the footer-left Near Me icon on Drupal Homepage
@@ -473,6 +518,8 @@ Feature:
       | activityLocation       | Visitor : Home                    |
       | description            | Services Near Me link in footer   |
       | userId                 |                                   |
+    And we wait "2" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/nearme/"
 
   @homePageFooterSegmentHowItWorks @daily_auto @daily_homepage_regression @footer
   Scenario: User clicks on the footer-left How It Works icon on Drupal Homepage
@@ -492,6 +539,8 @@ Feature:
       | activityLocation       | Visitor : Home                    |
       | description            | How It Works link in footer       |
       | userId                 |                                   |
+    And we wait "2" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/how-it-works.htm"
 
   @homePageFooterSegmentSolutionCenter @daily_auto @daily_homepage_regression @footer
   Scenario: User clicks on the footer-left Solution Center icon on Drupal Homepage
@@ -511,6 +560,8 @@ Feature:
       | activityLocation       | Visitor : Home                    |
       | description            | Solution Center link in footer    |
       | userId                 |                                   |
+    And we wait "4" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/articles/"
 
   @homePageFooterSegmentPhotoGalleries @daily_auto @daily_homepage_regression @footer
   Scenario: User clicks on the footer-left Photos icon on Drupal Homepage
@@ -530,6 +581,8 @@ Feature:
       | activityLocation       | Visitor : Home                    |
       | description            | Photo Galleries link in footer    |
       | userId                 |                                   |
+    And we wait "2" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/photos/"
 
   @homePageFooterSegmentVideos @daily_auto @daily_homepage_regression @footer
   Scenario: User clicks on the footer-left Videos icon on Drupal Homepage
@@ -549,6 +602,8 @@ Feature:
       | activityLocation       | Visitor : Home                    |
       | description            | Videos link in footer             |
       | userId                 |                                   |
+    And we wait "2" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/videos/"
 
   @homePageFooterSegmentAnswers @daily_auto @daily_homepage_regression @footer
   Scenario: User clicks on the footer-left Answers icon on Drupal Homepage
@@ -568,6 +623,8 @@ Feature:
       | activityLocation       | Visitor : Home                    |
       | description            | Answers link in footer            |
       | userId                 |                                   |
+    And we wait "2" seconds for the next page to load
+    And the landing URL contains ".angieslist.com"
 
   @homePageFooterSegmentBusinessOwners @daily_auto @daily_homepage_regression @footer
   Scenario: User clicks on the footer-left Business Owners icon on Drupal Homepage
@@ -587,6 +644,8 @@ Feature:
       | activityLocation       | Visitor : Home                     |
       | description            | For Business Owners link in footer |
       | userId                 |                                    |
+    And we wait "2" seconds for the next page to load
+    And the landing URL contains "angieslistbusinesscenter.com/"
 
   @homePageFooterSegmentInvestorRelations @daily_auto @daily_homepage_regression @footer
   Scenario: User clicks on the footer-left Investor Relations icon on Drupal Homepage
@@ -625,6 +684,8 @@ Feature:
       | activityLocation       | Visitor : Home                     |
       | description            | About Angie’s List link in footer  |
       | userId                 |                                    |
+    And we wait "2" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/aboutus.htm"
 
   @homePageFooterSegmentCareers @daily_auto @daily_homepage_regression @footer
   Scenario: User clicks on the footer-left Careers icon on Drupal Homepage
@@ -645,6 +706,28 @@ Feature:
       | description            | Careers link in footer     |
       | userId                 |                            |
 
+  @homePageFooterSegmentFAQ @daily_auto @daily_homepage_regression @footer
+  Scenario: User clicks on the footer-left FAQ icon on Drupal Homepage
+    Given user is on a visitor site page
+    """
+    /
+    """
+    When a user performs actions
+      | action_method   | action_params       |
+      | move_to_element | id: footer--faqs    |
+      | click           |                     |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value       |
+      | activityLocation | Visitor : Home |
+    And the segment call contains parameters
+      | prop_key               | prop_value           |
+      | activityLocation       | Visitor : Home       |
+      | description            | FAQs link in footer  |
+      | userId                 |                      |
+    And we wait "2" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/faq/"
+
+
   @homePageFooterSegmentContactUs @daily_auto @daily_homepage_regression @footer
   Scenario: User clicks on the footer-left Contact Us icon on Drupal Homepage
     Given user is on a visitor site page
@@ -663,6 +746,8 @@ Feature:
       | activityLocation       | Visitor : Home             |
       | description            | Contact Us link in footer  |
       | userId                 |                            |
+    And we wait "2" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/member/login"
 
   @homePageFooterSegmentJoin @daily_auto @daily_homepage_regression @footer
   Scenario: User clicks on the footer-right Join icon on Drupal Homepage
@@ -682,6 +767,8 @@ Feature:
       | activityLocation       | Visitor : Home             |
       | description            | Join button in footer      |
       | userId                 |                            |
+    And we wait "2" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/app/signup"
 
   @homePageFooterSegmentiOS @daily_auto @daily_homepage_regression @footer
   Scenario: User clicks on the footer-right iOS App icon on Drupal Homepage
