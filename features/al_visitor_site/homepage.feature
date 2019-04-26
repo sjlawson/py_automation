@@ -129,7 +129,7 @@ Feature:
       | activityLocation       | Visitor : Home                    |
       | description            | Join link in hero image           |
       | userId                 |                                   |
-    And we wait "3" seconds for the next page to load
+    And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/app/signup"
 
 
@@ -154,7 +154,7 @@ Feature:
       | categorySelected       | Plumbing                          |
       | homeAdvisorCategoryId  |                                   |
       | userId                 |                                   |
-    And we wait "3" seconds for the next page to load
+    And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/category.Plumbing.10216.html?entry_point_id=32949645"
 
 
@@ -179,7 +179,7 @@ Feature:
       | categorySelected       | Roofing                           |
       | homeAdvisorCategoryId  |                                   |
       | userId                 |                                   |
-    And we wait "3" seconds for the next page to load
+    And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/category.Roofing-Siding-Gutters.10217.html?entry_point_id=32949645"
 
   @homePageBodySegmentHeatingCoolingPopularServiceQuickLink @daily_auto @daily_homepage_regression @body_regression
@@ -203,7 +203,7 @@ Feature:
       | categorySelected       | Heating & A/C                     |
       | homeAdvisorCategoryId  |                                   |
       | userId                 |                                   |
-    And we wait "3" seconds for the next page to load
+    And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/category.Heating-Cooling.10211.html?entry_point_id=32949645"
 
 
@@ -228,7 +228,7 @@ Feature:
       | categorySelected       | Electrical                        |
       | homeAdvisorCategoryId  |                                   |
       | userId                 |                                   |
-    And we wait "3" seconds for the next page to load
+    And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/category.Electrical.12026.html?entry_point_id=32949645"
 
 
@@ -253,7 +253,7 @@ Feature:
       | categorySelected       | Landscaping                       |
       | homeAdvisorCategoryId  |                                   |
       | userId                 |                                   |
-    And we wait "3" seconds for the next page to load
+    And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/category.Landscaping.12046.html?entry_point_id=32949645"
 
 
