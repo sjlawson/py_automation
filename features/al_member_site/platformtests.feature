@@ -2,10 +2,7 @@
 Feature:
   
   Scenario: test member login is working as expected
-    Given user is on a member site page
-    """
-    /member/login
-    """
+    Given user is on the member login page
     When a user performs actions
     | action_method   | action_params               |
     | move_to_element | #login--login-email         |
@@ -31,4 +28,11 @@ Feature:
     Given user is on the sign up page
     When the user creates a new account
     And the user enters geographic data
+    Then the member landing page is loaded
+  
+  Scenario: test user challenge is working as expected
+    Given user is on the sign up page
+    When the user creates a new account
+    And the user enters geographic data
+    And the user sends "25" messages
     Then the member landing page is loaded
