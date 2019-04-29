@@ -1,33 +1,33 @@
 Feature:
 
-  @catNoGeoPage
+  @catNoGeoPageCall
   Scenario: Segment pagecall when CatNoGeo loads
     Given user is on a visitor site catnogeo page
     When a segment page call is sent for a unique field value pair
       | unique_field | unique_value   |
       | name         | Visitor : CatNoGeo |
     Then the segment call contains parameters
-      | prop_key       | prop_value                                                     |
-      | name           | Visitor : CatNoGeo                                             |
-      | atTestOffer    |                                                                |
-      | cid            |                                                                |
-      | path           | /companylist/plumbing.htm                                      |
-      | userId         |                                                                |
-      | userType       | Visitor - New                                                  |
-      | title          | Local Plumbers - Find a Top-Rated Plumber on Angie's List      |
-
-
-
-
-
-
+      | prop_key              | prop_value                                                 |
+      | atTestOffer           |                                                            |
+      | categoryId            |                                                            |
+      | cid                   |                                                            |
+      | homeAdvisorCategoryId |                                                            |
+      | name                  | Visitor : CatNoGeo                                         |
+      | pageVersion           | Lullabot Redesign                                          |
+      | path                  | /companylist/plumbing.htm                                  |
+      | referrer              |                                                            |
+      | search                |                                                            |
+      | title                 | Local Plumbers - Find a Top-Rated Plumber on Angie's List  |
+      | url                   |                                                            |
+      | userId                |                                                            |
+      | userType              | Visitor - New                                              |
+      | visitorPageCategory   | PLUMBING                                                   |
 
 
 ##### Header Tests #####
 
-
-  ## companyListCatNoGeoSegmentJoin
-  Scenario: join button on CatNoGeo page
+  @headerJoinCatNoGeo
+  Scenario: The Join button is clicked on CatNoGeo(Plumbing) page
     Given user is on a visitor site catnogeo page
     When a user performs actions
     | action_method | action_params |
@@ -36,10 +36,60 @@ Feature:
     | unique_field | unique_value        |
     | description  | Join link in header |
     And the segment call contains parameters
-    | prop_key         | prop_value          |
-    | description      | Join link in header |
-    | activityLocation | Visitor : CatNoGeo  |
-    | userId           |                     |
+    | prop_key            | prop_value          |
+    | description         | Join link in header |
+    | activityLocation    | Visitor : CatNoGeo  |
+    | userId              |                     |
+    | visitorPageCategory | Plumbing            |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/app/signup"
+
+  @headerSignInCatNoGeo
+  Scenario: The Sign In link is clicked on the CatNoGeo(Plumbing) header
+    Given user is on a visitor site catnogeo page
+    When a user performs actions
+    | action_method | action_params   |
+    | click         | #header-sign-in |
+    Then a segment track call is sent for a unique field value pair
+    | unique_field | unique_value           |
+    | description  | Sign In link in header |
+    And the segment call contains parameters
+    | prop_key         | prop_value             |
+    | description      | Sign In link in header |
+    | activityLocation | Visitor : CatNoGeo     |
+    | userId           |                        |
+    | visitorPageCategory | Plumbing            |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/member"
+
+  @headerBCCatNoGeo
+  Scenario: The Business Center link is clicked on the CatNoGeo(Plumbing) header
+    Given user is on a visitor site catnogeo page
+    When a user performs actions
+    | action_method | action_params       |
+    | click         | id: business-center |
+    Then a segment track call is sent for a unique field value pair
+    | unique_field | unique_value                   |
+    | description  | Business Owners link in header |
+    And the segment call contains parameters
+    | prop_key         | prop_value                     |
+    | description      | Business Owners link in header |
+    | activityLocation | Visitor : CatNoGeo             |
+    | userId           |                                |
+    | visitorPageCategory | Plumbing            |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslistbusinesscenter.com"
+
+
+
+
+
+
+
+
+
+
+
 
 
   ## test_companyListCatNoGeoHeaderLinkClick
@@ -57,23 +107,6 @@ Feature:
     | activityLocation | Visitor : CatNoGeo          |
     | userId           |                             |
 
-
-  ## test_companyListCatNoGeoHeaderSignInClick
-  Scenario: segment call on clicking the Sign In link in CatNoGeo header
-    Given user is on a visitor site catnogeo page
-    When a user performs actions
-    | action_method | action_params   |
-    | click         | #header-sign-in |
-    Then a segment track call is sent for a unique field value pair
-    | unique_field | unique_value           |
-    | description  | Sign In link in header |
-    And the segment call contains parameters
-    | prop_key         | prop_value             |
-    | description      | Sign In link in header |
-    | activityLocation | Visitor : CatNoGeo     |
-    | userId           |                        |
-
-
   ## test_companyListCatNoGeoHeaderFAQClick
   Scenario: segment call on clicking the FAQ link in CatNoGeo header
     Given user is on a visitor site catnogeo page
@@ -89,52 +122,14 @@ Feature:
     | activityLocation | Visitor : CatNoGeo |
     | userId           |                    |
 
-  ## test_companyListCatNoGeoHeaderITPClick
-  Scenario: segment call on clicking the Press link in CatNoGeo header
-    Given user is on a visitor site catnogeo page
-    When a user performs actions
-    | action_method | action_params |
-    | click         | #press        |
-    Then a segment track call is sent for a unique field value pair
-    | unique_field | unique_value                |
-    | description  | In the Press link in header |
-    And the segment call contains parameters
-    | prop_key         | prop_value                  |
-    | description      | In the Press link in header |
-    | activityLocation | Visitor : CatNoGeo          |
-    | userId           |                             |
 
 
-  ## test_companyListCatNoGeoHeaderScClick
-  Scenario: segment call on clicking the SC link in CatNoGeo header
-    Given user is on a visitor site catnogeo page
-    When a user performs actions
-    | action_method | action_params |
-    | click         | #articles     |
-    Then a segment track call is sent for a unique field value pair
-    | unique_field | unique_value                   |
-    | description  | Solution Center link in header |
-    And the segment call contains parameters
-    | prop_key         | prop_value                     |
-    | description      | Solution Center link in header |
-    | activityLocation | Visitor : CatNoGeo             |
-    | userId           |                                |
 
 
-  ## test_companyListCatNoGeoHeaderBcClick
-  Scenario: segment call on clicking the BC link in CatNoGeo header
-    Given user is on a visitor site catnogeo page
-    When a user performs actions
-    | action_method | action_params       |
-    | click         | #nav_business_owner |
-    Then a segment track call is sent for a unique field value pair
-    | unique_field | unique_value                   |
-    | description  | Business Owners link in header |
-    And the segment call contains parameters
-    | prop_key         | prop_value                     |
-    | description      | Business Owners link in header |
-    | activityLocation | Visitor : CatNoGeo             |
-    | userId           |                                |
+
+
+
+
 
 
 
