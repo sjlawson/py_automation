@@ -1,4 +1,4 @@
-@platformGateway
+@platform
 Feature:
   
   Scenario: test member login is working as expected
@@ -30,9 +30,10 @@ Feature:
     And the user enters geographic data
     Then the member landing page is loaded
   
+  @todo
   Scenario: test user challenge is working as expected
     Given user is on the sign up page
     When the user creates a new account
     And the user enters geographic data
     And the user sends "25" messages
-    Then the member landing page is loaded
+    Then the user receives a recaptcha challenge

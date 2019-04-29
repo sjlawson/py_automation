@@ -90,7 +90,7 @@ def step_impl(context, message_count):
     ActionChains(context.browser).move_to_element(search_hover).perform()
     search_plumbing = context.browser.find_element(By.ID, 'header--sub-nav-plumbing')
     ActionChains(context.browser).move_to_element(search_plumbing).click().perform()
-    context.wait.until(EC.presence_of_element_located((By.ID, 'searchTerm')))
+    context.wait.until(EC.visibility_of_element_located((By.ID, 'searchTerm')))
     search_click_modal = context.browser.find_element(By.ID, 'searchTerm')
     ActionChains(context.browser).move_to_element(search_click_modal).click().perform()
     context.wait.until(EC.presence_of_element_located((By.XPATH, "//ul[@id='spsearch--results-list']//li[1]//a[contains(@id,'spsearch--result-')]")))
@@ -99,13 +99,11 @@ def step_impl(context, message_count):
     context.wait.until(EC.visibility_of_element_located((By.ID, 'message-pro-button')))
     message_pro = context.browser.find_element(By.ID, 'message-pro-button')
     ActionChains(context.browser).move_to_element(message_pro).click().perform()
-    context.wait.until(EC.visibility_of_element_located((By.ID, 'send-message-button')))
-    textbox = context.browser.find_element(By.ID, 'message')
-    ActionChains(context.browser).move_to_element(textbox).click().send_keys('first message').perform()
-    send_message = context.browser.find_element(By.ID, 'send-message-button')
-    ActionChains(context.browser).move_to_element(send_message).click().perform()
-
+    context.wait.until(EC.visibility_of_element_located((By.CLASS_NAME, 'modal-title')))
+    ActionChains(context.browser).send_keys('first message').perform()
+    context.browser.execute_script("document.getElementById('send-message-button').click();")
     context.wait.until(EC.invisibility_of_element_located((By.ID, 'send-message-button')))
+    time.sleep(3)
     view_messages_button = context.browser.find_element(By.ID, 'main-menu--view-messages-icon')
     ActionChains(context.browser).move_to_element(view_messages_button).click().perform()
 
@@ -117,7 +115,6 @@ def step_impl(context, message_count):
         send_button = context.browser.find_element(By.ID, 'send-message-button')
         ActionChains(context.browser).move_to_element(send_button).click().perform()
         time.sleep(1)
-
 
 @then('the member landing page is loaded')
 def step_impl(context):
@@ -131,3 +128,7 @@ def step_impl(context):
     sign_in = context.browser.find_element(By.ID, 'login--header-text-signin')
     assert bool(sign_in)
   
+@then('the user receives a recaptcha challenge')
+def step_impl(context):
+    #todo when implemented
+    temp = 1
