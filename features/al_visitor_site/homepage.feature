@@ -117,7 +117,7 @@ Feature:
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(1) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(1) > div > ul > li:nth-child(1) > a |
+      | click           | #secondary-nav > ul > li:nth-child(1) > div > ul > a:nth-child(1) > li |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : Home |
@@ -138,7 +138,7 @@ Feature:
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(1) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(1) > div > ul > li:nth-child(2) > a |
+      | click           | #secondary-nav > ul > li:nth-child(1) > div > ul > a:nth-child(2) > li |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : Home |
@@ -159,7 +159,7 @@ Feature:
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(1) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(1) > div > ul > li:nth-child(3) > a |
+      | click           | #secondary-nav > ul > li:nth-child(1) > div > ul > a:nth-child(3) > li |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : Home |
@@ -180,7 +180,7 @@ Feature:
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(1) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(1) > div > ul > li:nth-child(4) > a |
+      | click           | #secondary-nav > ul > li:nth-child(1) > div > ul > a:nth-child(4) > li |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : Home |
@@ -201,7 +201,7 @@ Feature:
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(1) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(1) > div > ul > li:nth-child(5) > a |
+      | click           | #secondary-nav > ul > li:nth-child(1) > div > ul > a:nth-child(5) > li |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : Home |
@@ -222,7 +222,7 @@ Feature:
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(1) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(1) > div > ul > li:nth-child(6) > a |
+      | click           | #secondary-nav > ul > li:nth-child(1) > div > ul > a:nth-child(6) > li |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : Home |
@@ -243,7 +243,7 @@ Feature:
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(1) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(1) > div > ul > li:nth-child(7) > a |
+      | click           | #secondary-nav > ul > li:nth-child(1) > div > ul > a:nth-child(7) > li |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : Home |
@@ -264,7 +264,7 @@ Feature:
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(1) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(1) > div > ul > li:nth-child(8) > a |
+      | click           | #secondary-nav > ul > li:nth-child(1) > div > ul > a:nth-child(8) > li |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : Home |
@@ -285,7 +285,7 @@ Feature:
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(1) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(1) > div > ul > li:nth-child(9) > a |
+      | click           | #secondary-nav > ul > li:nth-child(1) > div > ul > a:nth-child(9) > li |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : Home |
@@ -306,7 +306,7 @@ Feature:
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(1) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(1) > div > ul > li:nth-child(10) > a |
+      | click           | #secondary-nav > ul > li:nth-child(1) > div > ul > a:nth-child(10) > li |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : Home |
@@ -327,7 +327,7 @@ Feature:
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(1) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(1) > div > ul > li:nth-child(11) > a |
+      | click           | #secondary-nav > ul > li:nth-child(1) > div > ul > a:nth-child(11) > li |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : Home |
@@ -369,7 +369,7 @@ Feature:
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(2) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(2) > div > ul > li:nth-child(1) > a |
+      | click           | #secondary-nav > ul > li:nth-child(2) > div > ul > a:nth-child(1) > li |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : Home |
@@ -390,7 +390,7 @@ Feature:
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(2) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(2) > div > ul > li:nth-child(2) > a |
+      | click           | #secondary-nav > ul > li:nth-child(2) > div > ul > a:nth-child(2) > li |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : Home |
@@ -411,7 +411,7 @@ Feature:
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(2) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(2) > div > ul > li:nth-child(3) > a |
+      | click           | #secondary-nav > ul > li:nth-child(2) > div > ul > a:nth-child(3) > li |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : Home |
@@ -432,7 +432,7 @@ Feature:
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(2) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(2) > div > ul > li:nth-child(4) > a |
+      | click           | #secondary-nav > ul > li:nth-child(2) > div > ul > a:nth-child(4) > li |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : Home |
@@ -453,7 +453,7 @@ Feature:
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(2) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(2) > div > ul > li:nth-child(5) > a |
+      | click           | #secondary-nav > ul > li:nth-child(2) > div > ul > a:nth-child(5) > li |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : Home |
@@ -474,7 +474,7 @@ Feature:
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(2) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(2) > div > ul > li:nth-child(6) > a |
+      | click           | #secondary-nav > ul > li:nth-child(2) > div > ul > a:nth-child(6) > li |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : Home |
@@ -495,7 +495,7 @@ Feature:
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(2) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(2) > div > ul > li:nth-child(7) > a |
+      | click           | #secondary-nav > ul > li:nth-child(2) > div > ul > a:nth-child(7) > li |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : Home |
@@ -516,7 +516,7 @@ Feature:
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(2) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(2) > div > ul > li:nth-child(8) > a |
+      | click           | #secondary-nav > ul > li:nth-child(2) > div > ul > a:nth-child(8) > li |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : Home |
@@ -537,7 +537,7 @@ Feature:
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(2) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(2) > div > ul > li:nth-child(9) > a |
+      | click           | #secondary-nav > ul > li:nth-child(2) > div > ul > a:nth-child(9) > li |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : Home |
@@ -558,7 +558,7 @@ Feature:
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(2) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(2) > div > ul > li:nth-child(10) > a |
+      | click           | #secondary-nav > ul > li:nth-child(2) > div > ul > a:nth-child(10) > li |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : Home |
@@ -579,7 +579,7 @@ Feature:
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(2) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(2) > div > ul > li:nth-child(11) > a |
+      | click           | #secondary-nav > ul > li:nth-child(2) > div > ul > a:nth-child(11) > li |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : Home |
@@ -600,7 +600,7 @@ Feature:
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(2) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(2) > div > ul > li:nth-child(12) > a |
+      | click           | #secondary-nav > ul > li:nth-child(2) > div > ul > a:nth-child(12) > li |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : Home |
@@ -642,7 +642,7 @@ Feature:
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(3) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(3) > div > ul > li:nth-child(1) > a |
+      | click           | #secondary-nav > ul > li:nth-child(3) > div > ul > a:nth-child(1) > li |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : Home |
@@ -663,7 +663,7 @@ Feature:
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(3) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(3) > div > ul > li:nth-child(2) > a |
+      | click           | #secondary-nav > ul > li:nth-child(3) > div > ul > a:nth-child(2) > li |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : Home |
@@ -684,7 +684,7 @@ Feature:
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(3) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(3) > div > ul > li:nth-child(3) > a |
+      | click           | #secondary-nav > ul > li:nth-child(3) > div > ul > a:nth-child(3) > li |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : Home |
@@ -705,7 +705,7 @@ Feature:
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(3) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(3) > div > ul > li:nth-child(4) > a |
+      | click           | #secondary-nav > ul > li:nth-child(3) > div > ul > a:nth-child(4) > li |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : Home |
@@ -726,7 +726,7 @@ Feature:
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(3) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(3) > div > ul > li:nth-child(5) > a |
+      | click           | #secondary-nav > ul > li:nth-child(3) > div > ul > a:nth-child(5) > li |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : Home |
@@ -747,7 +747,7 @@ Feature:
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(3) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(3) > div > ul > li:nth-child(6) > a |
+      | click           | #secondary-nav > ul > li:nth-child(3) > div > ul > a:nth-child(6) > li |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : Home |
@@ -768,7 +768,7 @@ Feature:
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(3) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(3) > div > ul > li:nth-child(7) > a |
+      | click           | #secondary-nav > ul > li:nth-child(3) > div > ul > a:nth-child(7) > li |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : Home |
@@ -789,7 +789,7 @@ Feature:
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(3) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(3) > div > ul > li:nth-child(8) > a |
+      | click           | #secondary-nav > ul > li:nth-child(3) > div > ul > a:nth-child(8) > li |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : Home |
@@ -810,7 +810,7 @@ Feature:
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(3) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(3) > div > ul > li:nth-child(9) > a |
+      | click           | #secondary-nav > ul > li:nth-child(3) > div > ul > a:nth-child(9) > li |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : Home |
@@ -831,7 +831,7 @@ Feature:
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(3) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(3) > div > ul > li:nth-child(10) > a |
+      | click           | #secondary-nav > ul > li:nth-child(3) > div > ul > a:nth-child(10) > li |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : Home |
@@ -852,7 +852,7 @@ Feature:
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(3) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(3) > div > ul > li:nth-child(11) > a |
+      | click           | #secondary-nav > ul > li:nth-child(3) > div > ul > a:nth-child(11) > li |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : Home |
@@ -894,7 +894,7 @@ Feature:
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(4) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(4) > div > ul > li:nth-child(1) > a |
+      | click           | #secondary-nav > ul > li:nth-child(4) > div > ul > a:nth-child(1) > li |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : Home |
@@ -915,7 +915,7 @@ Feature:
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(4) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(4) > div > ul > li:nth-child(2) > a |
+      | click           | #secondary-nav > ul > li:nth-child(4) > div > ul > a:nth-child(2) > li |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : Home |
@@ -937,7 +937,7 @@ Feature:
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(4) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(4) > div > ul > li:nth-child(3) > a |
+      | click           | #secondary-nav > ul > li:nth-child(4) > div > ul > a:nth-child(3) > li |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : Home |
@@ -958,7 +958,7 @@ Feature:
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(4) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(4) > div > ul > li:nth-child(4) > a |
+      | click           | #secondary-nav > ul > li:nth-child(4) > div > ul > a:nth-child(4) > li |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : Home |
@@ -979,7 +979,7 @@ Feature:
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(4) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(4) > div > ul > li:nth-child(5) > a |
+      | click           | #secondary-nav > ul > li:nth-child(4) > div > ul > a:nth-child(5) > li |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : Home |
@@ -1000,7 +1000,7 @@ Feature:
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(4) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(4) > div > ul > li:nth-child(6) > a |
+      | click           | #secondary-nav > ul > li:nth-child(4) > div > ul > a:nth-child(6) > li |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : Home |
@@ -1021,7 +1021,7 @@ Feature:
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(4) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(4) > div > ul > li:nth-child(7) > a |
+      | click           | #secondary-nav > ul > li:nth-child(4) > div > ul > a:nth-child(7) > li |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : Home |
@@ -1042,7 +1042,7 @@ Feature:
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(4) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(4) > div > ul > li:nth-child(8) > a |
+      | click           | #secondary-nav > ul > li:nth-child(4) > div > ul > a:nth-child(8) > li |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : Home |
@@ -1063,7 +1063,7 @@ Feature:
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(4) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(4) > div > ul > li:nth-child(9) > a |
+      | click           | #secondary-nav > ul > li:nth-child(4) > div > ul > a:nth-child(9) > li |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : Home |
@@ -1126,7 +1126,7 @@ Feature:
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(5) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > li:nth-child(1) > a |
+      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > a:nth-child(1) > li |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : Home |
@@ -1147,7 +1147,7 @@ Feature:
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(5) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > li:nth-child(2) > a |
+      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > a:nth-child(2) > li |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : Home |
@@ -1168,7 +1168,7 @@ Feature:
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(5) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > li:nth-child(3) > a |
+      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > a:nth-child(3) > li |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : Home |
@@ -1189,7 +1189,7 @@ Feature:
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(5) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > li:nth-child(4) > a |
+      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > a:nth-child(4) > li |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : Home |
@@ -1210,7 +1210,7 @@ Feature:
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(5) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > li:nth-child(5) > a |
+      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > a:nth-child(5) > li |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : Home |
@@ -1231,7 +1231,7 @@ Feature:
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(5) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > li:nth-child(6) > a |
+      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > a:nth-child(6) > li |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : Home |
@@ -1252,7 +1252,7 @@ Feature:
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(5) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > li:nth-child(7) > a |
+      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > a:nth-child(7) > li |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : Home |
@@ -1273,7 +1273,7 @@ Feature:
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(5) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > li:nth-child(8) > a |
+      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > a:nth-child(8) > li |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : Home |
@@ -1294,7 +1294,7 @@ Feature:
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(5) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > li:nth-child(9) > a |
+      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > a:nth-child(9) > li |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : Home |
@@ -1315,7 +1315,7 @@ Feature:
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(5) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > li:nth-child(10) > a |
+      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > a:nth-child(10) > li |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : Home |
@@ -1336,7 +1336,7 @@ Feature:
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(5) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > li:nth-child(11) > a |
+      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > a:nth-child(11) > li |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : Home |
@@ -1357,7 +1357,7 @@ Feature:
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(5) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > li:nth-child(12) > a |
+      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > a:nth-child(12) > li |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : Home |
@@ -1378,7 +1378,7 @@ Feature:
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(5) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > li:nth-child(13) > a |
+      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > a:nth-child(13) > li |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : Home |
@@ -1399,7 +1399,7 @@ Feature:
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(5) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > li:nth-child(14) > a |
+      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > a:nth-child(14) > li |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : Home |
@@ -1420,7 +1420,7 @@ Feature:
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(5) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > li:nth-child(15) > a |
+      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > a:nth-child(15) > li |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : Home |
@@ -1441,7 +1441,7 @@ Feature:
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(5) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > li:nth-child(16) > a |
+      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > a:nth-child(16) > li |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : Home |
@@ -1462,7 +1462,7 @@ Feature:
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(5) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > li:nth-child(17) > a |
+      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > a:nth-child(17) > li |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : Home |
@@ -1483,7 +1483,7 @@ Feature:
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(5) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > li:nth-child(18) > a |
+      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > a:nth-child(18) > li |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : Home |
@@ -1504,7 +1504,7 @@ Feature:
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(5) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > li:nth-child(19) > a |
+      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > a:nth-child(19) > li |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : Home |
@@ -1525,7 +1525,7 @@ Feature:
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(5) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > li:nth-child(20) > a |
+      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > a:nth-child(20) > li |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : Home |
@@ -1546,7 +1546,7 @@ Feature:
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(5) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > li:nth-child(21) > a |
+      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > a:nth-child(21) > li |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : Home |
@@ -1567,7 +1567,7 @@ Feature:
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(5) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > li:nth-child(22) > a |
+      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > a:nth-child(22) > li |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : Home |
@@ -1588,7 +1588,7 @@ Feature:
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(5) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > li:nth-child(23) > a |
+      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > a:nth-child(23) > li |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : Home |
@@ -1609,7 +1609,7 @@ Feature:
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(5) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > li:nth-child(24) > a |
+      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > a:nth-child(24) > li |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : Home |
@@ -1630,7 +1630,7 @@ Feature:
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(5) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > li:nth-child(25) > a |
+      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > a:nth-child(25) > li |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : Home |
@@ -1642,19 +1642,26 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/waste-management/"
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+  @homePageSegmentHeaderArticlesAdviceMore @daily_auto @daily_homepage_regression @header_regression
+  Scenario: User hovers then clicks on View All in the header(Advice) on the Drupal Homepage
+    Given user is on a visitor site page
+    """
+    /
+    """
+    When a user performs actions
+      | action_method   | action_params       |
+      | move_to_element | #secondary-nav > ul > li:nth-child(5) > label > span |
+      | click           | #secondary-nav > ul > li:nth-child(5) > div > div > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value       |
+      | activityLocation | Visitor : Home |
+    And the segment call contains parameters
+      | prop_key               | prop_value                      |
+      | activityLocation       | Visitor : Home                  |
+      | description            | Articles & Advice menu view all articles link in header  |
+      | userId                 |                                 |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/articles/"
 
 
 ##### Body Tests #####
