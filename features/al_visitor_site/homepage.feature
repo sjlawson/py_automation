@@ -133,6 +133,32 @@ Feature:
     And the landing URL contains ".angieslist.com/app/signup"
 
 
+  @homePageBodySegmentFindProsNoText @daily_auto @daily_homepage_regression @body_regression
+  Scenario: User clicks on hero Find Pros CTA (No Text) button on Drupal Homepage
+    Given user is on a visitor site page
+    """
+    /
+    """
+    When a user performs actions
+      | action_method   | action_params      |
+      | move_to_element | id: ha-lead-submit-v2      |
+      | click           |                    |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value       |
+      | activityLocation | Visitor : Home |
+    And the segment call contains parameters
+      | prop_key               | prop_value                        |
+      | activityLocation       | Visitor : Home                    |
+      | categoryId             |                                   |
+      | categorySelected       |                                   |
+      | description            | Find Pros button in hero image - to SR path           |
+      | homeAdvisorCategoryId	 |                                   |
+      | manualTextInput	       |                                   |
+      | userId                 |                                   |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains "match-stage.angieslist.com"
+  
+
   @homePageBodySegmentPlumbingPopularServiceQuickLink @daily_auto @daily_homepage_regression @body_regression
   Scenario: User clicks on Popular Service icon for Plumbing on Drupal Homepage
     Given user is on a visitor site page
