@@ -1,7 +1,5 @@
 Feature:
 
-##### Header Tests #####
-
   @homePageSegmentPagecall @daily_auto @daily_homepage_regression @header_regression
   Scenario: Segment pagecall when homepage loads
     Given user is on a visitor site page
@@ -43,6 +41,9 @@ Feature:
       | userType       | Visitor - Returning                                                   |
       | title          | Angie's List &vert; Join for FREE to see 10 Million Verified Reviews  |
       | srCtaVersion   | v2.1                                                                  |
+
+
+##### Header Tests #####
 
   @homePageSegmentHeaderJoinNow @daily_auto @daily_homepage_regression @header_regression
   Scenario: User clicks on Header Join button on the Drupal Homepage

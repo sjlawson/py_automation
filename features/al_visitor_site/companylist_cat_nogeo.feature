@@ -1,5 +1,30 @@
-@companylistTree
 Feature:
+
+  @catNoGeoPage
+  Scenario: Segment pagecall when CatNoGeo loads
+    Given user is on a visitor site catnogeo page
+    When a segment page call is sent for a unique field value pair
+      | unique_field | unique_value   |
+      | name         | Visitor : CatNoGeo |
+    Then the segment call contains parameters
+      | prop_key       | prop_value                                                     |
+      | name           | Visitor : CatNoGeo                                             |
+      | atTestOffer    |                                                                |
+      | cid            |                                                                |
+      | path           | /companylist/plumbing.htm                                      |
+      | userId         |                                                                |
+      | userType       | Visitor - New                                                  |
+      | title          | Local Plumbers - Find a Top-Rated Plumber on Angie's List      |
+
+
+
+
+
+
+
+
+##### Header Tests #####
+
 
   ## companyListCatNoGeoSegmentJoin
   Scenario: join button on CatNoGeo page
@@ -19,7 +44,7 @@ Feature:
 
   ## test_companyListCatNoGeoHeaderLinkClick
   Scenario: segment call on clicking the HIW link in CatNoGeo header
-    Given user is on a visitor site catnogeo page    
+    Given user is on a visitor site catnogeo page
     When a user performs actions
     | action_method | action_params |
     | click         | .btnHiw       |
@@ -35,7 +60,7 @@ Feature:
 
   ## test_companyListCatNoGeoHeaderSignInClick
   Scenario: segment call on clicking the Sign In link in CatNoGeo header
-    Given user is on a visitor site catnogeo page    
+    Given user is on a visitor site catnogeo page
     When a user performs actions
     | action_method | action_params   |
     | click         | #header-sign-in |
@@ -47,7 +72,7 @@ Feature:
     | description      | Sign In link in header |
     | activityLocation | Visitor : CatNoGeo     |
     | userId           |                        |
-  
+
 
   ## test_companyListCatNoGeoHeaderFAQClick
   Scenario: segment call on clicking the FAQ link in CatNoGeo header
@@ -110,6 +135,17 @@ Feature:
     | description      | Business Owners link in header |
     | activityLocation | Visitor : CatNoGeo             |
     | userId           |                                |
+
+
+
+
+##### Body Tests #####
+
+
+
+
+
+##### Footer Tests #####
 
 
   ## test_companyListCatNoGeoFooterJoinClick
