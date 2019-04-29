@@ -209,9 +209,6 @@ Feature:
   @catNoGeoSegmentHeaderInteriorHouseCleaning @daily_auto @header_regression
   Scenario: User hovers then clicks on House Cleaning in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
-
-
-
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(1) > label > span |
@@ -230,9 +227,6 @@ Feature:
   @catNoGeoSegmentHeaderInteriorPainting @daily_auto @header_regression
   Scenario: User hovers then clicks on Interior Painting in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
-
-
-
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(1) > label > span |
@@ -251,9 +245,6 @@ Feature:
   @catNoGeoSegmentHeaderInteriorPlumbing @daily_auto @header_regression
   Scenario: User hovers then clicks on Plumbing in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
-
-
-
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(1) > label > span |
@@ -272,9 +263,6 @@ Feature:
   @catNoGeoSegmentHeaderInteriorRemodeling @daily_auto @header_regression
   Scenario: User hovers then clicks on Remodeling in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
-
-
-
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(1) > label > span |
@@ -293,9 +281,6 @@ Feature:
   @catNoGeoSegmentHeaderInteriorViewAll @daily_auto @header_regression
   Scenario: User hovers then clicks on View All Categories in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
-
-
-
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(1) > label > span |
@@ -314,9 +299,6 @@ Feature:
   @catNoGeoSegmentHeaderExteriorConcreteRepair @daily_auto @header_regression
   Scenario: User hovers then clicks on Concrete Repair in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
-
-
-
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(2) > label > span |
@@ -335,9 +317,6 @@ Feature:
   @catNoGeoSegmentHeaderExteriorDoors @daily_auto @header_regression
   Scenario: User hovers then clicks on Doors in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
-
-
-
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(2) > label > span |
@@ -356,9 +335,6 @@ Feature:
   @catNoGeoSegmentHeaderExteriorDriveways @daily_auto @header_regression
   Scenario: User hovers then clicks on Driveways in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
-
-
-
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(2) > label > span |
@@ -377,9 +353,6 @@ Feature:
   @catNoGeoSegmentHeaderExteriorPainting @daily_auto @header_regression
   Scenario: User hovers then clicks on Exterior Painting in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
-
-
-
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(2) > label > span |
@@ -398,9 +371,6 @@ Feature:
   @catNoGeoSegmentHeaderExteriorPainting @daily_auto @header_regression
   Scenario: User hovers then clicks on Garage Doors in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
-
-
-
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(2) > label > span |
@@ -419,9 +389,6 @@ Feature:
   @catNoGeoSegmentHeaderExteriorGutterCleaning @daily_auto @header_regression
   Scenario: User hovers then clicks on Gutter Cleaning in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
-
-
-
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(2) > label > span |
@@ -440,9 +407,6 @@ Feature:
   @catNoGeoSegmentHeaderExteriorGutterRepair @daily_auto @header_regression
   Scenario: User hovers then clicks on Gutter Repair in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
-
-
-
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(2) > label > span |
@@ -461,9 +425,6 @@ Feature:
   @catNoGeoSegmentHeaderExteriorHomeBuilders @daily_auto @header_regression
   Scenario: User hovers then clicks on Home Builders in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
-
-
-
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(2) > label > span |
@@ -482,9 +443,6 @@ Feature:
   @catNoGeoSegmentHeaderExteriorMasonry @daily_auto @header_regression
   Scenario: User hovers then clicks on Masonry in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
-
-
-
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(2) > label > span |
@@ -503,9 +461,6 @@ Feature:
   @catNoGeoSegmentHeaderExteriorRoofing @daily_auto @header_regression
   Scenario: User hovers then clicks on Roofing in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
-
-
-
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(2) > label > span |
@@ -524,9 +479,6 @@ Feature:
   @catNoGeoSegmentHeaderExteriorSiding @daily_auto @header_regression
   Scenario: User hovers then clicks on Siding in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
-
-
-
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(2) > label > span |
@@ -545,9 +497,6 @@ Feature:
   @catNoGeoSegmentHeaderExteriorWindows @daily_auto @header_regression
   Scenario: User hovers then clicks on Windows in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
-
-
-
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(2) > label > span |
@@ -566,9 +515,6 @@ Feature:
   @catNoGeoSegmentHeaderExteriorViewAll @daily_auto @header_regression
   Scenario: User hovers then clicks on View All in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
-
-
-
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(2) > label > span |
@@ -587,9 +533,6 @@ Feature:
   @catNoGeoSegmentHeaderLawnGardenDecks @daily_auto @header_regression
   Scenario: User hovers then clicks on Decks in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
-
-
-
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(3) > label > span |
@@ -608,9 +551,6 @@ Feature:
   @catNoGeoSegmentHeaderLawnGardenFencing @daily_auto @header_regression
   Scenario: User hovers then clicks on Fencing in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
-
-
-
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(3) > label > span |
@@ -629,9 +569,6 @@ Feature:
   @catNoGeoSegmentHeaderLawnLandSurveying @daily_auto @header_regression
   Scenario: User hovers then clicks on Land Surveying in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
-
-
-
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(3) > label > span |
@@ -650,9 +587,6 @@ Feature:
   @catNoGeoSegmentHeaderLawnLandscaping @daily_auto @header_regression
   Scenario: User hovers then clicks on Landscaping in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
-
-
-
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(3) > label > span |
@@ -671,9 +605,6 @@ Feature:
   @catNoGeoSegmentHeaderLawnYard @daily_auto @header_regression
   Scenario: User hovers then clicks on Lawn & Yard in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
-
-
-
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(3) > label > span |
@@ -692,9 +623,6 @@ Feature:
   @catNoGeoSegmentHeaderLawnIrrigation @daily_auto @header_regression
   Scenario: User hovers then clicks on Lawn Irrigation in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
-
-
-
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(3) > label > span |
@@ -713,9 +641,6 @@ Feature:
   @catNoGeoSegmentHeaderLawnMowerRepair @daily_auto @header_regression
   Scenario: User hovers then clicks on Lawn Mower Repair in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
-
-
-
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(3) > label > span |
@@ -734,9 +659,6 @@ Feature:
   @catNoGeoSegmentHeaderLawnLeafRemoval @daily_auto @header_regression
   Scenario: User hovers then clicks on Leaf Removal in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
-
-
-
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(3) > label > span |
@@ -755,9 +677,6 @@ Feature:
   @catNoGeoSegmentHeaderLawnPatios @daily_auto @header_regression
   Scenario: User hovers then clicks on Patios in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
-
-
-
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(3) > label > span |
@@ -776,9 +695,6 @@ Feature:
   @catNoGeoSegmentHeaderLawnPatios @daily_auto @header_regression
   Scenario: User hovers then clicks on Shed Builders in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
-
-
-
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(3) > label > span |
@@ -797,9 +713,6 @@ Feature:
   @catNoGeoSegmentHeaderLawnTreeSvc @daily_auto @header_regression
   Scenario: User hovers then clicks on Tree Service in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
-
-
-
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(3) > label > span |
@@ -818,9 +731,6 @@ Feature:
   @catNoGeoSegmentHeaderLawnViewAll @daily_auto @header_regression
   Scenario: User hovers then clicks on View All in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
-
-
-
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(3) > label > span |
@@ -839,9 +749,6 @@ Feature:
   @catNoGeoSegmentHeaderMoreBasement @daily_auto @header_regression
   Scenario: User hovers then clicks on Basement Waterproofing in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
-
-
-
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(4) > label > span |
@@ -860,9 +767,6 @@ Feature:
   @catNoGeoSegmentHeaderMoreDogGrooming @daily_auto @header_regression
   Scenario: User hovers then clicks on Dog Grooming in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
-
-
-
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(4) > label > span |
@@ -882,9 +786,6 @@ Feature:
   @catNoGeoSegmentHeaderMoreHandymen @daily_auto @header_regression
   Scenario: User hovers then clicks on Handymen in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
-
-
-
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(4) > label > span |
@@ -903,9 +804,6 @@ Feature:
   @catNoGeoSegmentHeaderMoreJunk @daily_auto @header_regression
   Scenario: User hovers then clicks on Junk Hauling in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
-
-
-
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(4) > label > span |
@@ -924,9 +822,6 @@ Feature:
   @catNoGeoSegmentHeaderMoreLocksmiths @daily_auto @header_regression
   Scenario: User hovers then clicks on Locksmiths in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
-
-
-
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(4) > label > span |
@@ -945,9 +840,6 @@ Feature:
   @catNoGeoSegmentHeaderMoreMoving @daily_auto @header_regression
   Scenario: User hovers then clicks on Moving Companies in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
-
-
-
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(4) > label > span |
@@ -966,9 +858,6 @@ Feature:
   @catNoGeoSegmentHeaderMorePests @daily_auto @header_regression
   Scenario: User hovers then clicks on Pest Control Companies in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
-
-
-
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(4) > label > span |
@@ -1059,9 +948,6 @@ Feature:
   @catNoGeoSegmentHeaderArticlesAdviceAppliances @daily_auto @header_regression
   Scenario: User hovers then clicks on Appliances in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
-
-
-
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(5) > label > span |
@@ -1080,9 +966,6 @@ Feature:
   @catNoGeoSegmentHeaderArticlesAdviceBaseFound @daily_auto @header_regression
   Scenario: User hovers then clicks on Basements & Foundations in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
-
-
-
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(5) > label > span |
@@ -1101,9 +984,6 @@ Feature:
   @catNoGeoSegmentHeaderArticlesAdviceBathRemod @daily_auto @header_regression
   Scenario: User hovers then clicks on Bathroom Remodel in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
-
-
-
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(5) > label > span |
@@ -1122,9 +1002,6 @@ Feature:
   @catNoGeoSegmentHeaderArticlesAdviceChimney @daily_auto @header_regression
   Scenario: User hovers then clicks on Chimneys & Fireplaces in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
-
-
-
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(5) > label > span |
@@ -1143,9 +1020,6 @@ Feature:
   @catNoGeoSegmentHeaderArticlesAdviceCleaning @daily_auto @header_regression
   Scenario: User hovers then clicks on Cleaning in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
-
-
-
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(5) > label > span |
@@ -1164,9 +1038,6 @@ Feature:
   @catNoGeoSegmentHeaderArticlesAdviceContractors @daily_auto @header_regression
   Scenario: User hovers then clicks on Contractors in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
-
-
-
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(5) > label > span |
@@ -1185,9 +1056,6 @@ Feature:
   @catNoGeoSegmentHeaderArticlesAdviceElectrical @daily_auto @header_regression
   Scenario: User hovers then clicks on Electrical in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
-
-
-
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(5) > label > span |
@@ -1206,9 +1074,6 @@ Feature:
   @catNoGeoSegmentHeaderArticlesAdviceFlooring @daily_auto @header_regression
   Scenario: User hovers then clicks on Flooring in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
-
-
-
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(5) > label > span |
@@ -1227,9 +1092,6 @@ Feature:
   @catNoGeoSegmentHeaderArticlesAdviceGarageDrive @daily_auto @header_regression
   Scenario: User hovers then clicks on Garages & Driveways in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
-
-
-
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(5) > label > span |
@@ -1248,9 +1110,6 @@ Feature:
   @catNoGeoSegmentHeaderArticlesAdviceHVAC @daily_auto @header_regression
   Scenario: User hovers then clicks on Heating & Cooling in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
-
-
-
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(5) > label > span |
@@ -1269,9 +1128,6 @@ Feature:
   @catNoGeoSegmentHeaderArticlesAdviceHomeConstruction @daily_auto @header_regression
   Scenario: User hovers then clicks on Home Construction in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
-
-
-
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(5) > label > span |
@@ -1290,9 +1146,6 @@ Feature:
   @catNoGeoSegmentHeaderArticlesAdviceHomeExterior @daily_auto @header_regression
   Scenario: User hovers then clicks on Home Exteriors in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
-
-
-
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(5) > label > span |
@@ -1311,9 +1164,6 @@ Feature:
   @catNoGeoSegmentHeaderArticlesAdviceHomeInterior @daily_auto @header_regression
   Scenario: User hovers then clicks on Home Interior in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
-
-
-
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(5) > label > span |
@@ -1332,9 +1182,6 @@ Feature:
   @catNoGeoSegmentHeaderArticlesAdviceHomeSecurity @daily_auto @header_regression
   Scenario: User hovers then clicks on Home Security in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
-
-
-
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(5) > label > span |
@@ -1353,9 +1200,6 @@ Feature:
   @catNoGeoSegmentHeaderArticlesAdviceKitchenRemod @daily_auto @header_regression
   Scenario: User hovers then clicks on Kitchen Remodeling in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
-
-
-
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(5) > label > span |
@@ -1374,9 +1218,6 @@ Feature:
   @catNoGeoSegmentHeaderArticlesAdviceLandscaping @daily_auto @header_regression
   Scenario: User hovers then clicks on Landscaping in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
-
-
-
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(5) > label > span |
@@ -1395,9 +1236,6 @@ Feature:
   @catNoGeoSegmentHeaderArticlesAdviceLighting @daily_auto @header_regression
   Scenario: User hovers then clicks on Lighting in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
-
-
-
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(5) > label > span |
@@ -1416,9 +1254,6 @@ Feature:
   @catNoGeoSegmentHeaderArticlesAdviceMoving @daily_auto @header_regression
   Scenario: User hovers then clicks on Moving in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
-
-
-
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(5) > label > span |
@@ -1437,9 +1272,6 @@ Feature:
   @catNoGeoSegmentHeaderArticlesAdviceOutdoorLiving @daily_auto @header_regression
   Scenario: User hovers then clicks on Outdoor Living in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
-
-
-
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(5) > label > span |
@@ -1458,9 +1290,6 @@ Feature:
   @catNoGeoSegmentHeaderArticlesAdvicePests @daily_auto @header_regression
   Scenario: User hovers then clicks on Pests in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
-
-
-
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(5) > label > span |
@@ -1479,9 +1308,6 @@ Feature:
   @catNoGeoSegmentHeaderArticlesAdvicePlumbing @daily_auto @header_regression
   Scenario: User hovers then clicks on Plumbing in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
-
-
-
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(5) > label > span |
@@ -1500,9 +1326,6 @@ Feature:
   @catNoGeoSegmentHeaderArticlesAdviceRemodeling @daily_auto @header_regression
   Scenario: User hovers then clicks on Remodeling in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
-
-
-
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(5) > label > span |
@@ -1521,9 +1344,6 @@ Feature:
   @catNoGeoSegmentHeaderArticlesAdviceRoofing @daily_auto @header_regression
   Scenario: User hovers then clicks on Roofing in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
-
-
-
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(5) > label > span |
@@ -1542,9 +1362,6 @@ Feature:
   @catNoGeoSegmentHeaderArticlesAdviceStoreageOrg @daily_auto @header_regression
   Scenario: User hovers then clicks on Storage & Organization in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
-
-
-
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(5) > label > span |
