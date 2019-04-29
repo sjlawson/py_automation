@@ -43,7 +43,7 @@ def step_impl(context):
 def step_impl(context):
     appsuite_env = 'al_visitor_site'
     appsuite_url = context.appsuites[appsuite_env]['base_url']
-    context.url = appsuite_url + '/companylist/indianapolis/?bustA2'
+    context.url = appsuite_url + '/companylist/indianapolis/'
     context.browser.get(context.url)
     time.sleep(1)
 
@@ -52,7 +52,7 @@ def step_impl(context):
 def step_impl(context):
     appsuite_env = 'al_visitor_site'
     appsuite_url = context.appsuites[appsuite_env]['base_url']
-    context.url = appsuite_url + '/companylist/us/in/fishers?bustA32'
+    context.url = appsuite_url + '/companylist/us/in/fishers/'
     context.browser.get(context.url)
     time.sleep(1)
 
@@ -61,7 +61,7 @@ def step_impl(context):
 def step_impl(context):
     appsuite_env = 'al_visitor_site'
     appsuite_url = context.appsuites[appsuite_env]['base_url']
-    context.url = appsuite_url + '/companylist/us/mi/?bustSDF'
+    context.url = appsuite_url + '/companylist/us/mi/'
     context.browser.get(context.url)
     time.sleep(1)
 
