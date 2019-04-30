@@ -80,7 +80,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains "angieslistbusinesscenter.com"
 
-  @catNoGeoHeaderInteriorApplianceRepair @daily_auto @header_regression @catNoGeoDaily @catNoGeoDaily
+  @catNoGeoHeaderInteriorApplianceRepair @daily_auto @header_regression @catNoGeoDaily
   Scenario: User hovers then clicks on Appliance Repair in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
@@ -99,7 +99,7 @@ Feature:
     And the landing URL contains ".angieslist.com/companylist/appliance-repair.htm"
 
 
-  @catNoGeoSegmentHeaderInteriorCarpetCleaning @daily_auto @header_regression @catNoGeoDaily @catNoGeoDaily
+  @catNoGeoSegmentHeaderInteriorCarpetCleaning @daily_auto @header_regression @catNoGeoDaily
   Scenario: User hovers then clicks on Carpet Cleaning in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
@@ -117,7 +117,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/carpet-cleaning.htm"
 
-  @catNoGeoSegmentHeaderInteriorContractors @daily_auto @header_regression @catNoGeoDaily @catNoGeoDaily
+  @catNoGeoSegmentHeaderInteriorContractors @daily_auto @header_regression @catNoGeoDaily
   Scenario: User hovers then clicks on Contractors in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
@@ -135,7 +135,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/contractor.htm"
 
-  @catNoGeoSegmentHeaderInteriorDrywall @daily_auto @header_regression @catNoGeoDaily @catNoGeoDaily
+  @catNoGeoSegmentHeaderInteriorDrywall @daily_auto @header_regression @catNoGeoDaily
   Scenario: User hovers then clicks on Drywall in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
@@ -153,7 +153,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/drywall.htm"
 
-  @catNoGeoSegmentHeaderInteriorElectrical @daily_auto @header_regression @catNoGeoDaily @catNoGeoDaily
+  @catNoGeoSegmentHeaderInteriorElectrical @daily_auto @header_regression @catNoGeoDaily
   Scenario: User hovers then clicks on Electrical in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
@@ -171,7 +171,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/electrical.htm"
 
-  @catNoGeoSegmentHeaderInteriorFlooring @daily_auto @header_regression @catNoGeoDaily @catNoGeoDaily
+  @catNoGeoSegmentHeaderInteriorFlooring @daily_auto @header_regression @catNoGeoDaily
   Scenario: User hovers then clicks on Flooring in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
@@ -189,7 +189,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/flooring.htm"
 
-  @catNoGeoSegmentHeaderInteriorHVAC @daily_auto @header_regression @catNoGeoDaily @catNoGeoDaily
+  @catNoGeoSegmentHeaderInteriorHVAC @daily_auto @header_regression @catNoGeoDaily
   Scenario: User hovers then clicks on Heating & Cooling in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
@@ -207,7 +207,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/hvac.htm"
 
-  @catNoGeoSegmentHeaderInteriorHouseCleaning @daily_auto @header_regression @catNoGeoDaily @catNoGeoDaily
+  @catNoGeoSegmentHeaderInteriorHouseCleaning @daily_auto @header_regression @catNoGeoDaily
   Scenario: User hovers then clicks on House Cleaning in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
@@ -225,7 +225,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/house-cleaning.htm"
 
-  @catNoGeoSegmentHeaderInteriorPainting @daily_auto @header_regression @catNoGeoDaily @catNoGeoDaily
+  @catNoGeoSegmentHeaderInteriorPainting @daily_auto @header_regression @catNoGeoDaily
   Scenario: User hovers then clicks on Interior Painting in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
@@ -243,7 +243,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/interior-painting.htm"
 
-  @catNoGeoSegmentHeaderInteriorPlumbing @daily_auto @header_regression @catNoGeoDaily @catNoGeoDaily
+  @catNoGeoSegmentHeaderInteriorPlumbing @daily_auto @header_regression @catNoGeoDaily
   Scenario: User hovers then clicks on Plumbing in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
@@ -261,7 +261,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/plumbing.htm"
 
-  @catNoGeoSegmentHeaderInteriorRemodeling @daily_auto @header_regression @catNoGeoDaily @catNoGeoDaily
+  @catNoGeoSegmentHeaderInteriorRemodeling @daily_auto @header_regression @catNoGeoDaily
   Scenario: User hovers then clicks on Remodeling in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
@@ -279,7 +279,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/kitchen-and-bath-remodeling.htm"
 
-  @catNoGeoSegmentHeaderInteriorViewAll @daily_auto @header_regression @catNoGeoDaily @catNoGeoDaily
+  @catNoGeoSegmentHeaderInteriorViewAll @daily_auto @header_regression @catNoGeoDaily
   Scenario: User hovers then clicks on View All Categories in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
@@ -297,7 +297,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/"
 
-  @catNoGeoSegmentHeaderExteriorConcreteRepair @daily_auto @header_regression @catNoGeoDaily @catNoGeoDaily
+  @catNoGeoSegmentHeaderExteriorConcreteRepair @daily_auto @header_regression @catNoGeoDaily
   Scenario: User hovers then clicks on Concrete Repair in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
@@ -315,7 +315,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/concrete-repair.htm"
 
-  @catNoGeoSegmentHeaderExteriorDoors @daily_auto @header_regression @catNoGeoDaily @catNoGeoDaily
+  @catNoGeoSegmentHeaderExteriorDoors @daily_auto @header_regression @catNoGeoDaily
   Scenario: User hovers then clicks on Doors in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
@@ -333,7 +333,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/doors.htm"
 
-  @catNoGeoSegmentHeaderExteriorDriveways @daily_auto @header_regression @catNoGeoDaily @catNoGeoDaily
+  @catNoGeoSegmentHeaderExteriorDriveways @daily_auto @header_regression @catNoGeoDaily
   Scenario: User hovers then clicks on Driveways in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
@@ -351,7 +351,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/driveways.htm"
 
-  @catNoGeoSegmentHeaderExteriorPainting @daily_auto @header_regression @catNoGeoDaily @catNoGeoDaily
+  @catNoGeoSegmentHeaderExteriorPainting @daily_auto @header_regression @catNoGeoDaily
   Scenario: User hovers then clicks on Exterior Painting in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
@@ -369,7 +369,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/exterior-painting.htm"
 
-  @catNoGeoSegmentHeaderExteriorPainting @daily_auto @header_regression @catNoGeoDaily @catNoGeoDaily
+  @catNoGeoSegmentHeaderExteriorPainting @daily_auto @header_regression @catNoGeoDaily
   Scenario: User hovers then clicks on Garage Doors in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
@@ -387,7 +387,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/garage-doors.htm"
 
-  @catNoGeoSegmentHeaderExteriorGutterCleaning @daily_auto @header_regression @catNoGeoDaily @catNoGeoDaily
+  @catNoGeoSegmentHeaderExteriorGutterCleaning @daily_auto @header_regression @catNoGeoDaily
   Scenario: User hovers then clicks on Gutter Cleaning in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
@@ -405,7 +405,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/gutter-cleaning.htm"
 
-  @catNoGeoSegmentHeaderExteriorGutterRepair @daily_auto @header_regression @catNoGeoDaily @catNoGeoDaily
+  @catNoGeoSegmentHeaderExteriorGutterRepair @daily_auto @header_regression @catNoGeoDaily
   Scenario: User hovers then clicks on Gutter Repair in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
@@ -423,7 +423,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/gutter-repair-replacement.htm"
 
-  @catNoGeoSegmentHeaderExteriorHomeBuilders @daily_auto @header_regression @catNoGeoDaily @catNoGeoDaily
+  @catNoGeoSegmentHeaderExteriorHomeBuilders @daily_auto @header_regression @catNoGeoDaily
   Scenario: User hovers then clicks on Home Builders in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
