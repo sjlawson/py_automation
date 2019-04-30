@@ -1507,25 +1507,24 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains "angieslistbusinesscenter.com"
 
-  @catNoGeoSegHeadInteriorDrywallMobile @mobileOnlyRegression
-  Scenario: User clicks hamburger(Mobile) then clicks on Drywall link in the header on the Drupal CatNoGeo
+  @catNoGeoSegHeadNearMeMobile @mobileOnlyRegression
+  Scenario: User clicks hamburger(Mobile) then clicks on NearMe link in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
       | action_method   | action_params       |
-      | move_to_element | #al_show_menu |
-      | click           | #al_show_menu |
-      | click           | #mobile-navigation > div > ul.side-toggle-list.mobi-list > li:nth-child(1) |
-      | click           | #mobile-navigation > div > ul.side-toggle-list.mobi-list > ul.show.active > a:nth-child(5) > li |
+      | move_to_element | #al_show_menu > a > i |
+      | click           | #al_show_menu > a > i |
+      | click           | #mobile-navigation > div > ul:nth-child(3) > li > a |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : CatNoGeo |
     And the segment call contains parameters
       | prop_key               | prop_value               |
       | activityLocation       | Visitor : CatNoGeo       |
-      | description            | Interior menu category link in header   |
+      | description            | Near Me link in mobile header   |
       | userId                 |                          |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/drywall.htm"
+    And the landing URL contains ".angieslist.com/nearme/"
 
 
 
