@@ -1,27 +1,36 @@
+@companyTree
 Feature:
 
   @geoCatPageCall @geoCatDaily @companyTreeDaily
-  Scenario: Segment pagecall when CatNoGeo loads
-    Given user is on a visitor site catnogeo page
+  Scenario: Segment pagecall when GeoCat(Denver Plumbing) loads
+    Given user is on a visitor site geocat page
     When a segment page call is sent for a unique field value pair
       | unique_field | unique_value   |
-      | name         | Visitor : CatNoGeo |
+      | pageVersion         | GeoCat Tampa Redesign |
     Then the segment call contains parameters
       | prop_key              | prop_value                                                 |
       | atTestOffer           |                                                            |
-      | categoryId            |                                                            |
+      | categoryId            | 112                                                        |
       | cid                   |                                                            |
-      | homeAdvisorCategoryId |                                                            |
-      | name                  | Visitor : CatNoGeo                                         |
-      | pageVersion           | Lullabot Redesign                                          |
-      | path                  | /companylist/plumbing.htm                                  |
+      | homeAdvisorCategoryId | 12061                                                      |
+      | marketId              | 27                                                         |
+      | name                  | Visitor : Geocat                                           |
+      | pageVersion           | GeoCat Tampa Redesign                                      |
+      | path                  | /companylist/denver/roofing.htm                            |
       | referrer              |                                                            |
       | search                |                                                            |
-      | title                 | Local Plumbers - Find a Top-Rated Plumber on Angie's List  |
+      | seoTestName           |                                                            |
+      | srCtaDisplayed        | true                                                       |
+      | srCtaVersion          | v2                                                         |
+      | title                 | Top 10 Best Denver CO Roofing Contractors &vert; Angie's List   |
       | url                   |                                                            |
       | userId                |                                                            |
       | userType              | Visitor - New                                              |
-      | visitorPageCategory   | PLUMBING                                                   |
+      | visitorPageCategory   | ROOFING                                                    |
+      | visitorPageGeo        | DENVER                                                     |
+      | visitorPageGeoCategory  | DENVER - ROOFING                                         |
+      | visitorPageVerticalId   | 7051                                                     |
+      | visitorPageVerticalName | Home Improvement                                         |
 
 
 

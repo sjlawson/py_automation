@@ -1,3 +1,4 @@
+@companyTree
 Feature:
 
   @catNoGeoPageCall @catNoGeoDaily
