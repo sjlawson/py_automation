@@ -34,7 +34,7 @@ def step_impl(context):
     username_box = context.browser.find_element(By.ID, 'signup--signup-email')
     ActionChains(context.browser).move_to_element(username_box).click().send_keys(data_generator.email()).perform()
     password_box = context.browser.find_element(By.ID, 'signup--signup-password')
-    ActionChains(context.browser).move_to_element(password_box).click().send_keys('testtest').perform()
+    ActionChains(context.browser).move_to_element(password_box).click().send_keys('testtest1234').perform()
     membership_checkbox = context.browser.find_element(By.ID, 'signup--signup-membership-agreement')
     ActionChains(context.browser).move_to_element(membership_checkbox).click().perform()
     submit_button = context.browser.find_element(By.ID, 'signup--signup-continue')
