@@ -1,8 +1,7 @@
-@CompanyListTree
 Feature:
 
-  ## companyListGeoCatSegmentSRCTA
-  Scenario: SR CTA button click on GeoCat page
+  @geoCatSegmentSRNoZip @daily_auto
+  Scenario: User is on a GeoCat Page and selects the SR flow without any postal code.
     Given user is on a visitor site geocat page
     When a user performs actions
     | action_method | action_params   |
@@ -15,9 +14,10 @@ Feature:
     | description      | Service Request Flow entry button |
     | activityLocation | Visitor : Geocat  |
     | userId           |                   |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/category.Roofing-Siding-Gutters.10217.html?entry_point_id=32723378&postalCode="
 
-
-  ## companyListGeoCatSegmentSRCTAwithZIP
+  @geoCatSegmentSRWithZip @daily_auto
   Scenario: SR CTA button click on GeoCat page
     Given user is on a visitor site geocat page
     When a user performs actions
@@ -34,3 +34,5 @@ Feature:
     | description      | Service Request Flow entry button |
     | activityLocation | Visitor : Geocat  |
     | userId           |                   |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/category.Roofing-Siding-Gutters.10217.html?entry_point_id=32723378&postalCode=90068"
