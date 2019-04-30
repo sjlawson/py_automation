@@ -133,7 +133,7 @@ Feature:
     And the landing URL contains ".angieslist.com/app/signup"
 
 
-  @homePageBodySegmentFindProsNoText @daily_auto @daily_homepage_regression @body_regression
+  @homePageBodySegmentHeroSRCTAFindProsNoText @daily_auto @daily_homepage_regression @body_regression
   Scenario: User clicks on hero Find Pros CTA (No Text) button on Drupal Homepage
     Given user is on a visitor site page
     """
@@ -156,10 +156,9 @@ Feature:
       | manualTextInput	       |                                   |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains "match-stage.angieslist.com"
 
 
-  @homePageBodySegmentFindProsDropdown @daily_auto @daily_homepage_regression @body_regression
+  @homePageBodySegmentHeroSRCTAFindProsDropdown @daily_auto @daily_homepage_regression @body_regression
   Scenario: User clicks on hero Find Pros CTA (Dropdown) button on Drupal Homepage
     Given user is on a visitor site page
     """
@@ -185,10 +184,9 @@ Feature:
       | manualTextInput	       |                                   |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
-    # And the landing URL contains "/category.Plumbing.10216.html?entry_point_id=32949645" 
 
 
-  @homePageBodySegmentFindPros @daily_auto @daily_homepage_regression @body_regression
+  @homePageBodySegmentSRCTAFindProsEnter @daily_auto @daily_homepage_regression @body_regression
   Scenario: User clicks on hero Find Pros CTA button on Drupal Homepage
     Given user is on a visitor site page
     """
@@ -214,7 +212,6 @@ Feature:
       | manualTextInput	       |                                   |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
-    # And the landing URL contains "category.Plumbing.10216.html?entry_point_id=32949645" 
 
 
   @homePageBodySegmentPlumbingPopularServiceQuickLink @daily_auto @daily_homepage_regression @body_regression
