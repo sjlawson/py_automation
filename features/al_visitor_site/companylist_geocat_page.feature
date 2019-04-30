@@ -34,7 +34,7 @@ Feature:
 ##### Header Tests #####
 
 
-  @headerJoinGeoCat @geoCatDaily
+  @headerJoinGeoCat @geoCatDaily @companyTreeDaily
   Scenario: The Join button is clicked on GeoCat(Denver Roofing) page
     Given user is on a visitor site geocat page
     When a user performs actions
@@ -52,7 +52,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/app/signup"
 
-  @headerSignInGeoCat @geoCatDaily
+  @headerSignInGeoCat @geoCatDaily @companyTreeDaily
   Scenario: The Sign In link is clicked on the GeoCat(Denver Roofing) header
     Given user is on a visitor site geocat page
     When a user performs actions
@@ -70,7 +70,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/member"
 
-  @headerBcGeoCat @geoCatDaily
+  @headerBcGeoCat @geoCatDaily @companyTreeDaily
   Scenario: The Business Center link is clicked on the GeoCat(Denver Roofing) header
     Given user is on a visitor site geocat page
     When a user performs actions

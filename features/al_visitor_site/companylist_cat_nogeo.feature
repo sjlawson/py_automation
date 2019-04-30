@@ -1,6 +1,6 @@
 Feature:
 
-  @catNoGeoPageCall @catNoGeoDaily
+  @catNoGeoPageCall @catNoGeoDaily @companyTreeDaily
   Scenario: Segment pagecall when CatNoGeo loads
     Given user is on a visitor site catnogeo page
     When a segment page call is sent for a unique field value pair
@@ -26,7 +26,7 @@ Feature:
 
 ##### Header Tests #####
 
-  @headerJoinCatNoGeo @catNoGeoDaily
+  @headerJoinCatNoGeo @catNoGeoDaily @companyTreeDaily
   Scenario: The Join button is clicked on CatNoGeo(Plumbing) page
     Given user is on a visitor site catnogeo page
     When a user performs actions
@@ -44,7 +44,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/app/signup"
 
-  @headerSignInCatNoGeo @catNoGeoDaily
+  @headerSignInCatNoGeo @catNoGeoDaily @companyTreeDaily
   Scenario: The Sign In link is clicked on the CatNoGeo(Plumbing) header
     Given user is on a visitor site catnogeo page
     When a user performs actions
@@ -60,7 +60,7 @@ Feature:
     | userId           |                        |
     | visitorPageCategory | Plumbing            |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/member"
+    And the landing URL contains ".angieslist.com/member/login"
 
   @headerBcCatNoGeo @catNoGeoDaily
   Scenario: The Business Center link is clicked on the CatNoGeo(Plumbing) header
@@ -1530,7 +1530,7 @@ Feature:
 ##### Body Tests #####
 
 
-
+## Needs to be filled in ##
 
 
 ##### Footer Tests #####

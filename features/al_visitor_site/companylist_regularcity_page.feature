@@ -1,36 +1,29 @@
-@companylistTree
 Feature:
-
-  Scenario: testing segment pagecall on city page
+  @cityPageCall @companyTreeDaily
+  Scenario: City Page(Fishers Indiana) Pageload
     Given user is on a visitor city page
     When a segment page call is sent for a unique field value pair
       | unique_field | unique_value        |
       | name         | Visitor : US : City |
     Then the segment call contains parameters
       | prop_key                | prop_value                                                     |
-      | name                    | Visitor : US : City                                            |
       | atTestOffer             |                                                                |
       | cid                     |                                                                |
-      | pageVersion             | GeoCat Tampa Redesign                                          |
-      | path                    | /companylist/us/in/fishers/flooring.htm                        |
+      | name                    | Visitor : US : City                                            |
+      | pageCity                | Fishers, IN                                                    |
+      | pageVersion             | Lullabot Redesign                                              |
+      | path                    | /companylist/us/in/fishers/                                    |
+      | referrer                |                                                                |
       | search                  |                                                                |
-      | userId                  |                                                                |
-      | userType                |                                                                |
-      | title                   | Top 10 Best Fishers IN Flooring Installers &vert; Angie's List |
-      | categoryId              | 63                                                             |
-      | homeAdvisorCategoryId   | 12032                                                          |
-      | marketId                | 1                                                              |
-      | srCtaDisplayed          | True                                                           |
-      | srCtaVersion            | v2                                                             |
-      | visitorPageCategory     | FLOORING SALES/INSTALLATION/REPAIR                             |
-      | visitorPageGeo          | FISHERS IN                                                     |
-      | visitorPageGeoCategory  | FISHERS IN - FLOORING SALES/INSTALLATION/REPAIR                |
+      | title                   | Fishers, Indiana Local Home Service Pros &vert; Angie's List   |
       | url                     |                                                                |
-      | visitorPageVerticalId   | 7051                                                           |
-      | visitorPageVerticalName | Home Improvement                                               |
+      | userType                |                                                                |
+      | userId                  |                                                                |
 
 
-    Scenario: segment call on clicking the join link in city header
+##### Header Tests #####
+    @headerJoinRegCityPage @companyTreeDaily
+    Scenario: City Page(Fishers Indiana) clicking the join link in the header
       Given user is on a visitor city page
       When a user performs actions
       | action_method | action_params |
@@ -44,25 +37,11 @@ Feature:
       | description      | Join link in header |
       | userId           |                     |
       | visitorPageGeo   | FISHERS IN          |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/app/signup"
 
-
-    Scenario: segment call on clicking the HIW link in city header
-      Given user is on a visitor city page
-      When a user performs actions
-      | action_method | action_params       |
-      | click         | .btnHiw |
-      Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value                |
-      | description  | How it Works link in header |
-      And the segment call contains parameters
-      | prop_key         | prop_value                  |
-      | description      | How it Works link in header |
-      | activityLocation | Visitor : US : City         |
-      | userId           |                             |
-      | visitorPageGeo   | FISHERS IN                  |
-
-
-    Scenario: segment call on clicking the Sign In link in city header
+    @headerSignInRegCityPage @companyTreeDaily
+    Scenario: City Page(Fishers Indiana) clicking the Sign In link in the header
       Given user is on a visitor city page
       When a user performs actions
       | action_method | action_params   |
@@ -76,61 +55,15 @@ Feature:
       | activityLocation | Visitor : US : City    |
       | userId           |                        |
       | visitorPageGeo   | FISHERS IN             |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/member/login"
 
-
-    Scenario: segment call on clicking the FAQ link in city header
-      Given user is on a visitor city page
-      When a user performs actions
-      | action_method | action_params   |
-      | click         | #faq |
-      Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value           |
-      | description  | FAQ link in header |
-      And the segment call contains parameters
-      | prop_key         | prop_value          |
-      | description      | FAQ link in header  |
-      | activityLocation | Visitor : US : City |
-      | userId           |                     |
-      | visitorPageGeo   | FISHERS IN          |
-
-
-    Scenario: segment call on clicking the Press link in city header
-      Given user is on a visitor city page
-      When a user performs actions
-      | action_method | action_params |
-      | click         | #press        |
-      Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value                |
-      | description  | In the Press link in header |
-      And the segment call contains parameters
-      | prop_key         | prop_value                  |
-      | description      | In the Press link in header |
-      | activityLocation | Visitor : US : City         |
-      | userId           |                             |
-      | visitorPageGeo   | FISHERS IN                  |
-
-
-    Scenario: segment call on clicking the SC link in city header
-      Given user is on a visitor city page
-      When a user performs actions
-      | action_method | action_params |
-      | click         | #articles     |
-      Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value                    |
-      | description  | Solution Center link in header  |
-      And the segment call contains parameters
-      | prop_key         | prop_value                     |
-      | description      | Solution Center link in header |
-      | activityLocation | Visitor : US : City            |
-      | userId           |                                |
-      | visitorPageGeo   | FISHERS IN                     |
-
-
-    Scenario: segment call on clicking the BC link in city header
+    @headerBusinessOwnersRegCityPage @companyTreeDaily
+    Scenario: City Page(Fishers Indiana) clicking the Business Owners link in the header
       Given user is on a visitor city page
       When a user performs actions
       | action_method | action_params       |
-      | click         | #nav_business_owner |
+      | click         | #business-center    |
       Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value                   |
       | description  | Business Owners link in header |
@@ -139,23 +72,35 @@ Feature:
       | description      | Business Owners link in header |
       | activityLocation | Visitor : US : City            |
       | userId           |                                |
-      | visitorPageGeo   | FISHERS IN                     |
 
-
-    Scenario: segment call on clicking the Join link in city footer
+    @regCityPageInteriorDrywall @companyTreeDaily
+    Scenario: City Page(Fishers Indiana) clicking the Interior - Drywall link in the header
       Given user is on a visitor city page
       When a user performs actions
-      | action_method | action_params |
-      | click         | #footer-join  |
+      | action_method   | action_params       |
+      | move_to_element | #secondary-nav > ul > li:nth-child(2) > label > span |
+      | click           | #secondary-nav > ul > li:nth-child(2) > label > span |
+      | move_to_element | #secondary-nav > ul > li:nth-child(2) > div > ul > a:nth-child(1) > li |
+      | click           | #secondary-nav > ul > li:nth-child(2) > div > ul > a:nth-child(1) > li |
       Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value          |
-      | description  | Join button in footer |
+      | unique_field | unique_value                   |
+      | description  | Exterior menu category link in header |
       And the segment call contains parameters
-      | prop_key         | prop_value            |
-      | description      | Join button in footer |
-      | activityLocation | Visitor : US : City   |
-      | userId           |                       |
-      | visitorPageGeo   | FISHERS IN            |
+      | prop_key         | prop_value                     |
+      | description      | Exterior menu category link in header |
+      | activityLocation | Visitor : US : City            |
+      | userId           |   |
+
+
+
+##### Body Test #####
+
+
+
+
+
+##### Footer Test #####
+
 
     @topcities
     Scenario Outline: companylist city page cities
@@ -185,3 +130,19 @@ Feature:
       | id: footer-top-cities-las-vegas    |
       | id: footer-top-cities-san-antonio  |
       | id: footer-top-cities-tampa-bay    |
+
+
+    Scenario: segment call on clicking the Join link in city footer
+      Given user is on a visitor city page
+      When a user performs actions
+      | action_method | action_params |
+      | click         | #footer-join  |
+      Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value          |
+      | description  | Join button in footer |
+      And the segment call contains parameters
+      | prop_key         | prop_value            |
+      | description      | Join button in footer |
+      | activityLocation | Visitor : US : City   |
+      | userId           |                       |
+      | visitorPageGeo   | FISHERS IN            |
