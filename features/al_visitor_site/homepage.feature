@@ -156,7 +156,7 @@ Feature:
       | manualTextInput	       |                                   |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
-
+    And the landing URL contains "match-stage.angieslist.com"
 
   @homePageBodySegmentHeroSRCTAFindProsDropdown @daily_auto @daily_homepage_regression @body_regression
   Scenario: User clicks on hero Find Pros CTA (Dropdown) button on Drupal Homepage
@@ -184,7 +184,7 @@ Feature:
       | manualTextInput	       |                                   |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
-
+    # And the landing URL contains "match-stage.angieslist.com/category.Plumbing.10216.html?entry_point_id=32949645"
 
   @homePageBodySegmentSRCTAFindProsEnter @daily_auto @daily_homepage_regression @body_regression
   Scenario: User clicks on hero Find Pros CTA button on Drupal Homepage
@@ -212,6 +212,7 @@ Feature:
       | manualTextInput	       |                                   |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
+    # And the landing URL contains "match-stage.angieslist.com/category.Plumbing.10216.html?entry_point_id=32949645"
 
 
   @homePageBodySegmentPlumbingPopularServiceQuickLink @daily_auto @daily_homepage_regression @body_regression
