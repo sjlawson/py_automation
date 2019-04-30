@@ -116,6 +116,50 @@ def step_impl(context, message_count):
         ActionChains(context.browser).move_to_element(send_button).click().perform()
         time.sleep(1)
 
+@when('the user views "{number_views:d}" profiles')
+def step_impl(context, number_views):
+    search_toplevel = ['house', 'yard', 'health']
+    profiles_viewed = 0
+    for search_parent_category in search_toplevel:
+        search_hover = context.browser.find_element(By.ID, 'sub-nav-tab-header-' + str(search_parent_category))
+        ActionChains(context.browser).move_to_element(search_hover).perform()
+        search_child_categories = context.browser.find_elements(By.XPATH, "//a[contains(@id, 'header--sub-nav')]")
+        child_list = []
+        for child_category_result in search_child_categories:
+            child_list.append(child_category_result.get_attribute('id'))
+        for this_category_id in child_list:
+            search_hover = context.browser.find_element(By.ID, 'sub-nav-tab-header-' + str(search_parent_category))
+            ActionChains(context.browser).move_to_element(search_hover).perform()
+            context.wait.until(EC.visibility_of_element_located((By.ID, this_category_id)))
+            category_element = context.browser.find_element(By.ID, this_category_id)
+            ActionChains(context.browser).click(category_element).perform()
+            context.wait.until(EC.visibility_of_element_located((By.ID, 'searchTerm')))
+            search_click_modal = context.browser.find_element(By.ID, 'searchTerm')
+            ActionChains(context.browser).move_to_element(search_click_modal).click().perform()
+            context.wait.until(EC.presence_of_element_located((By.XPATH, "//ul[@id='spsearch--results-list']")))
+            pagination_list = context.browser.find_elements(By.XPATH, "//a[contains(@id,'spsearch--panel-pagination-page')]")
+            max_pages = 1
+            if len(pagination_list) > 1:
+                last_page_element = pagination_list[-2]
+                max_pages = int(last_page_element.text)
+            search_url = context.browser.current_url
+            for pagination_loop in range(max_pages):
+                context.browser.get(search_url + '&page=' + str(pagination_loop))
+                context.wait.until(EC.presence_of_element_located((By.XPATH, "//ul[@id='spsearch--results-list']")))
+                page_results = context.browser.find_elements(By.XPATH, "//a[contains(@id,'spsearch--result-')]")
+                profile_urls = []
+                for sp_result in page_results:
+                    profile_urls.append(sp_result.get_attribute('href'))
+                for this_url in profile_urls:
+                    if (profiles_viewed >= number_views):
+                        return
+                    context.browser.get(this_url)
+                    context.wait.until(EC.visibility_of_element_located((By.ID, 'category-info')))
+                    profiles_viewed += 1
+
+
+
+
 @then('the member landing page is loaded')
 def step_impl(context):
     context.wait.until(EC.presence_of_element_located((By.CLASS_NAME, 'search-panel_welcome-msg')))
