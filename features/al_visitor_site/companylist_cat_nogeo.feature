@@ -1527,37 +1527,6 @@ Feature:
     And the landing URL contains ".angieslist.com/nearme/"
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ##### Body Tests #####
 
 
