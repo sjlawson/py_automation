@@ -1,4 +1,3 @@
-@companyTree
 Feature:
 
   @geoCatPageCall @geoCatDaily @companyTreeDaily
@@ -106,13 +105,77 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/appliance-repair.htm"
 
+  @geoCatHeaderInteriorHouseCleaning @daily_auto @header_regression @geoCatDaily
+  Scenario: User hovers then clicks on House Cleaning in the header on the Drupal GeoCat(Denver Roofing)
+    Given user is on a visitor site geocat page
+    When a user performs actions
+      | action_method   | action_params       |
+      | move_to_element | #secondary-nav > ul > li:nth-child(1) > label > span |
+      | click           | #secondary-nav > ul > li:nth-child(1) > div > ul > a:nth-child(8) > li |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value           |
+      | activityLocation | Visitor : Geocat   |
+    And the segment call contains parameters
+      | prop_key               | prop_value                            |
+      | activityLocation       | Visitor : Geocat                      |
+      | description            | Interior menu category link in header |
+      | userId                 |                                       |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/house-cleaning.htm"
 
+  @geoCatHeaderExteriorPainting @daily_auto @header_regression @geoCatDaily
+  Scenario: User hovers then clicks on Exterior Painting in the header on the Drupal GeoCat(Denver Roofing)
+    Given user is on a visitor site geocat page
+    When a user performs actions
+      | action_method   | action_params       |
+      | move_to_element | #secondary-nav > ul > li:nth-child(2) > label > span |
+      | click           | #secondary-nav > ul > li:nth-child(2) > div > ul > a:nth-child(4) > li |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value           |
+      | activityLocation | Visitor : Geocat   |
+    And the segment call contains parameters
+      | prop_key               | prop_value                            |
+      | activityLocation       | Visitor : Geocat                      |
+      | description            | Exterior menu category link in header |
+      | userId                 |                                       |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/exterior-painting.htm"
 
+  @geoCatHeaderExteriorViewAllCats @daily_auto @header_regression @geoCatDaily
+  Scenario: User hovers then clicks on Exterior View All in the header on the Drupal GeoCat(Denver Roofing)
+    Given user is on a visitor site geocat page
+    When a user performs actions
+      | action_method   | action_params       |
+      | move_to_element | #secondary-nav > ul > li:nth-child(2) > label > span |
+      | click           | #secondary-nav > ul > li:nth-child(2) > div > div > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value           |
+      | activityLocation | Visitor : Geocat   |
+    And the segment call contains parameters
+      | prop_key               | prop_value                            |
+      | activityLocation       | Visitor : Geocat                      |
+      | description            | Exterior menu view all categories link in header |
+      | userId                 |                                       |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/"
 
-
-
-
-
+  @geoCatHeaderMoreNearMe @daily_auto @header_regression @geoCatDaily
+  Scenario: User hovers then clicks on More NearMe in the header on the Drupal GeoCat(Denver Roofing)
+    Given user is on a visitor site geocat page
+    When a user performs actions
+      | action_method   | action_params       |
+      | move_to_element | #secondary-nav > ul > li:nth-child(4) > label > span |
+      | click           | #secondary-nav > ul > li:nth-child(4) > div > div:nth-child(5) > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value           |
+      | activityLocation | Visitor : Geocat   |
+    And the segment call contains parameters
+      | prop_key               | prop_value                       |
+      | activityLocation       | Visitor : Geocat                 |
+      | description            | Near Me link in desktop header   |
+      | userId                 |                                  |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/nearme/"
 
 
 ##### Body Tests #####
