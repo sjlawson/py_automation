@@ -156,7 +156,8 @@ Feature:
       | manualTextInput	       |                                   |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains "match-stage.angieslist.com"
+    And the landing URL contains "match"
+
 
   @homePageBodySegmentHeroSRCTAFindProsDropdown @daily_auto @daily_homepage_regression @body_regression
   Scenario: User clicks on hero Find Pros CTA (Dropdown) button on Drupal Homepage
@@ -166,10 +167,13 @@ Feature:
     """
     When a user performs actions
       | action_method   | action_params      |
-      | move_to_element | id: edit-category-2      |
+      | move_to_element | #edit-category-2   |
       | click           |                    |
       | send_keys       | Plumbing           |
-      | move_to_element | id: ha-lead-submit-v2      |
+    Then we wait "1" seconds for the next page to load
+    When a user performs actions  bp
+      | action_method   | action_params      |
+      | move_to_element | .home-category-select-2 > div > div:nth-child(1) |
       | click           |                    |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
@@ -181,10 +185,41 @@ Feature:
       | categorySelected       |                                   |
       | description            | Find Pros button in hero image - to SR path           |
       | homeAdvisorCategoryId	 |                                   |
-      | manualTextInput	       |                                   |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
-    # And the landing URL contains "match-stage.angieslist.com/category.Plumbing.10216.html?entry_point_id=32949645"
+    And the landing URL contains "angieslist.com/category.Plumbing.10216.html?entry_point_id=32949645"
+
+
+  @homePageBodySegmentSRCTAFindProsButton @daily_auto @daily_homepage_regression @body_regression
+  Scenario: User clicks on hero Find Pros CTA button on Drupal Homepage
+    Given user is on a visitor site page
+    """
+    /
+    """
+    When a user performs actions
+      | action_method   | action_params      |
+      | move_to_element | #edit-category-2   |
+      | click           |                    |
+      | send_keys       | Plumbing           |
+    Then we wait "1" seconds for the next page to load
+    When a user performs actions  
+      | action_method   | action_params      |
+      | move_to_element |     |
+      | click           |                    |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value       |
+      | activityLocation | Visitor : Home |
+    And the segment call contains parameters
+      | prop_key               | prop_value                        |
+      | activityLocation       | Visitor : Home                    |
+      | categoryId             |                                   |
+      | categorySelected       |                                   |
+      | description            | Find Pros button in hero image - to SR path           |
+      | homeAdvisorCategoryId	 |                                   |
+      | userId                 |                                   |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains "angieslist.com/category.Plumbing.10216.html?entry_point_id=32949645"
+
 
   @homePageBodySegmentSRCTAFindProsEnter @daily_auto @daily_homepage_regression @body_regression
   Scenario: User clicks on hero Find Pros CTA button on Drupal Homepage
@@ -194,11 +229,13 @@ Feature:
     """
     When a user performs actions
       | action_method   | action_params      |
-      | move_to_element | id: edit-category-2      |
+      | move_to_element | #edit-category-2   |
       | click           |                    |
-      | send_keys       | Plumbing           |
-      | move_to_element | id: ha-lead-submit-v2      |
-      | click           |                    |
+      | send_keys       | plumbing           |
+    Then we wait "1" seconds for the next page to load
+    When a user performs actions  
+      | action_method    | action_params      |
+      |          |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : Home |
@@ -209,10 +246,9 @@ Feature:
       | categorySelected       |                                   |
       | description            | Find Pros button in hero image - to SR path           |
       | homeAdvisorCategoryId	 |                                   |
-      | manualTextInput	       |                                   |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
-    # And the landing URL contains "match-stage.angieslist.com/category.Plumbing.10216.html?entry_point_id=32949645"
+    And the landing URL contains "angieslist.com/category.Plumbing.10216.html?entry_point_id=32949645"
 
 
   @homePageBodySegmentPlumbingPopularServiceQuickLink @daily_auto @daily_homepage_regression @body_regression
