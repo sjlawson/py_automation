@@ -113,7 +113,7 @@ Feature:
 
 ##### New Header Tests(Not In Master) #####
 
-  @homePageSegmentHeaderInteriorApplianceRepair @daily_autoNotInMasterYet @daily_homepage_regressionNotInMasterYet @header_regressionNotInMasterYet
+  @homePageSegmentHeaderInteriorApplianceRepair
   Scenario: User hovers then clicks on Appliance Repair in the header on the Drupal Homepage
     Given user is on a visitor site page
     """
@@ -134,7 +134,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/appliance-repair.htm"
 
-  @homePageSegmentHeaderInteriorCarpetCleaning @daily_autoNotInMasterYet @daily_homepage_regressionNotInMasterYet @header_regressionNotInMasterYet
+  @homePageSegmentHeaderInteriorCarpetCleaning
   Scenario: User hovers then clicks on Carpet Cleaning in the header on the Drupal Homepage
     Given user is on a visitor site page
     """
@@ -155,7 +155,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/carpet-cleaning.htm"
 
-  @homePageSegmentHeaderInteriorContractors @daily_autoNotInMasterYet @daily_homepage_regressionNotInMasterYet @header_regressionNotInMasterYet
+  @homePageSegmentHeaderInteriorContractors
   Scenario: User hovers then clicks on Contractors in the header on the Drupal Homepage
     Given user is on a visitor site page
     """
@@ -176,7 +176,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/contractor.htm"
 
-  @homePageSegmentHeaderInteriorDrywall @daily_autoNotInMasterYet @daily_homepage_regressionNotInMasterYet @header_regressionNotInMasterYet
+  @homePageSegmentHeaderInteriorDrywall
   Scenario: User hovers then clicks on Drywall in the header on the Drupal Homepage
     Given user is on a visitor site page
     """
@@ -197,7 +197,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/drywall.htm"
 
-  @homePageSegmentHeaderInteriorElectrical @daily_autoNotInMasterYet @daily_homepage_regressionNotInMasterYet @header_regressionNotInMasterYet
+  @homePageSegmentHeaderInteriorElectrical
   Scenario: User hovers then clicks on Electrical in the header on the Drupal Homepage
     Given user is on a visitor site page
     """
@@ -218,7 +218,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/electrical.htm"
 
-  @homePageSegmentHeaderInteriorFlooring @daily_autoNotInMasterYet @daily_homepage_regressionNotInMasterYet @header_regressionNotInMasterYet
+  @homePageSegmentHeaderInteriorFlooring
   Scenario: User hovers then clicks on Flooring in the header on the Drupal Homepage
     Given user is on a visitor site page
     """
@@ -239,7 +239,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/flooring.htm"
 
-  @homePageSegmentHeaderInteriorHVAC @daily_autoNotInMasterYet @daily_homepage_regressionNotInMasterYet @header_regressionNotInMasterYet
+  @homePageSegmentHeaderInteriorHVAC
   Scenario: User hovers then clicks on Heating & Cooling in the header on the Drupal Homepage
     Given user is on a visitor site page
     """
@@ -260,7 +260,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/hvac.htm"
 
-  @homePageSegmentHeaderInteriorHouseCleaning @daily_autoNotInMasterYet @daily_homepage_regressionNotInMasterYet @header_regressionNotInMasterYet
+  @homePageSegmentHeaderInteriorHouseCleaning
   Scenario: User hovers then clicks on House Cleaning in the header on the Drupal Homepage
     Given user is on a visitor site page
     """
@@ -281,7 +281,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/house-cleaning.htm"
 
-  @homePageSegmentHeaderInteriorPainting @daily_autoNotInMasterYet @daily_homepage_regressionNotInMasterYet @header_regressionNotInMasterYet
+  @homePageSegmentHeaderInteriorPainting
   Scenario: User hovers then clicks on Interior Painting in the header on the Drupal Homepage
     Given user is on a visitor site page
     """
@@ -302,7 +302,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/interior-painting.htm"
 
-  @homePageSegmentHeaderInteriorPlumbing @daily_autoNotInMasterYet @daily_homepage_regressionNotInMasterYet @header_regressionNotInMasterYet
+  @homePageSegmentHeaderInteriorPlumbing
   Scenario: User hovers then clicks on Plumbing in the header on the Drupal Homepage
     Given user is on a visitor site page
     """
@@ -323,7 +323,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/plumbing.htm"
 
-  @homePageSegmentHeaderInteriorRemodeling @daily_autoNotInMasterYet @daily_homepage_regressionNotInMasterYet @header_regressionNotInMasterYet
+  @homePageSegmentHeaderInteriorRemodeling
   Scenario: User hovers then clicks on Remodeling in the header on the Drupal Homepage
     Given user is on a visitor site page
     """
@@ -344,7 +344,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/kitchen-and-bath-remodeling.htm"
 
-  @homePageSegmentHeaderInteriorViewAll @daily_autoNotInMasterYet @daily_homepage_regressionNotInMasterYet @header_regressionNotInMasterYet
+  @homePageSegmentHeaderInteriorViewAll
   Scenario: User hovers then clicks on View All Categories in the header on the Drupal Homepage
     Given user is on a visitor site page
     """
@@ -365,7 +365,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/"
 
-  @homePageSegmentHeaderExteriorConcreteRepair @daily_autoNotInMasterYet @daily_homepage_regressionNotInMasterYet @header_regressionNotInMasterYet
+  @homePageSegmentHeaderExteriorConcreteRepair
   Scenario: User hovers then clicks on Concrete Repair in the header on the Drupal Homepage
     Given user is on a visitor site page
     """
@@ -386,7 +386,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/concrete-repair.htm"
 
-  @homePageSegmentHeaderExteriorDoors @daily_autoNotInMasterYet @daily_homepage_regressionNotInMasterYet @header_regressionNotInMasterYet
+  @homePageSegmentHeaderExteriorDoors
   Scenario: User hovers then clicks on Doors in the header on the Drupal Homepage
     Given user is on a visitor site page
     """
@@ -407,7 +407,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/doors.htm"
 
-  @homePageSegmentHeaderExteriorDriveways @daily_autoNotInMasterYet @daily_homepage_regressionNotInMasterYet @header_regressionNotInMasterYet
+  @homePageSegmentHeaderExteriorDriveways
   Scenario: User hovers then clicks on Driveways in the header on the Drupal Homepage
     Given user is on a visitor site page
     """
@@ -428,7 +428,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/driveways.htm"
 
-  @homePageSegmentHeaderExteriorPainting @daily_autoNotInMasterYet @daily_homepage_regressionNotInMasterYet @header_regressionNotInMasterYet
+  @homePageSegmentHeaderExteriorPainting
   Scenario: User hovers then clicks on Exterior Painting in the header on the Drupal Homepage
     Given user is on a visitor site page
     """
@@ -449,7 +449,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/exterior-painting.htm"
 
-  @homePageSegmentHeaderExteriorPainting @daily_autoNotInMasterYet @daily_homepage_regressionNotInMasterYet @header_regressionNotInMasterYet
+  @homePageSegmentHeaderExteriorPainting
   Scenario: User hovers then clicks on Garage Doors in the header on the Drupal Homepage
     Given user is on a visitor site page
     """
@@ -470,7 +470,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/garage-doors.htm"
 
-  @homePageSegmentHeaderExteriorGutterCleaning @daily_autoNotInMasterYet @daily_homepage_regressionNotInMasterYet @header_regressionNotInMasterYet
+  @homePageSegmentHeaderExteriorGutterCleaning
   Scenario: User hovers then clicks on Gutter Cleaning in the header on the Drupal Homepage
     Given user is on a visitor site page
     """
@@ -491,7 +491,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/gutter-cleaning.htm"
 
-  @homePageSegmentHeaderExteriorGutterRepair @daily_autoNotInMasterYet @daily_homepage_regressionNotInMasterYet @header_regressionNotInMasterYet
+  @homePageSegmentHeaderExteriorGutterRepair
   Scenario: User hovers then clicks on Gutter Repair in the header on the Drupal Homepage
     Given user is on a visitor site page
     """
@@ -512,7 +512,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/gutter-repair-replacement.htm"
 
-  @homePageSegmentHeaderExteriorHomeBuilders @daily_autoNotInMasterYet @daily_homepage_regressionNotInMasterYet @header_regressionNotInMasterYet
+  @homePageSegmentHeaderExteriorHomeBuilders
   Scenario: User hovers then clicks on Home Builders in the header on the Drupal Homepage
     Given user is on a visitor site page
     """
@@ -533,7 +533,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/home-builders.htm"
 
-  @homePageSegmentHeaderExteriorMasonry @daily_autoNotInMasterYet @daily_homepage_regressionNotInMasterYet @header_regressionNotInMasterYet
+  @homePageSegmentHeaderExteriorMasonry
   Scenario: User hovers then clicks on Masonry in the header on the Drupal Homepage
     Given user is on a visitor site page
     """
@@ -554,7 +554,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/masonry.htm"
 
-  @homePageSegmentHeaderExteriorRoofing @daily_autoNotInMasterYet @daily_homepage_regressionNotInMasterYet @header_regressionNotInMasterYet
+  @homePageSegmentHeaderExteriorRoofing
   Scenario: User hovers then clicks on Roofing in the header on the Drupal Homepage
     Given user is on a visitor site page
     """
@@ -575,7 +575,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/roofing.htm"
 
-  @homePageSegmentHeaderExteriorSiding @daily_autoNotInMasterYet @daily_homepage_regressionNotInMasterYet @header_regressionNotInMasterYet
+  @homePageSegmentHeaderExteriorSiding
   Scenario: User hovers then clicks on Siding in the header on the Drupal Homepage
     Given user is on a visitor site page
     """
@@ -596,7 +596,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/siding.htm"
 
-  @homePageSegmentHeaderExteriorWindows @daily_autoNotInMasterYet @daily_homepage_regressionNotInMasterYet @header_regressionNotInMasterYet
+  @homePageSegmentHeaderExteriorWindows
   Scenario: User hovers then clicks on Windows in the header on the Drupal Homepage
     Given user is on a visitor site page
     """
@@ -617,7 +617,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/window-treatments.htm"
 
-  @homePageSegmentHeaderExteriorViewAll @daily_autoNotInMasterYet @daily_homepage_regressionNotInMasterYet @header_regressionNotInMasterYet
+  @homePageSegmentHeaderExteriorViewAll
   Scenario: User hovers then clicks on View All in the header on the Drupal Homepage
     Given user is on a visitor site page
     """
@@ -638,7 +638,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/"
 
-  @homePageSegmentHeaderLawnGardenDecks @daily_autoNotInMasterYet @daily_homepage_regressionNotInMasterYet @header_regressionNotInMasterYet
+  @homePageSegmentHeaderLawnGardenDecks
   Scenario: User hovers then clicks on Decks in the header on the Drupal Homepage
     Given user is on a visitor site page
     """
@@ -659,7 +659,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/decks-and-porches.htm"
 
-  @homePageSegmentHeaderLawnGardenFencing @daily_autoNotInMasterYet @daily_homepage_regressionNotInMasterYet @header_regressionNotInMasterYet
+  @homePageSegmentHeaderLawnGardenFencing
   Scenario: User hovers then clicks on Fencing in the header on the Drupal Homepage
     Given user is on a visitor site page
     """
@@ -680,7 +680,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/fencing.htm"
 
-  @homePageSegmentHeaderLawnLandSurveying @daily_autoNotInMasterYet @daily_homepage_regressionNotInMasterYet @header_regressionNotInMasterYet
+  @homePageSegmentHeaderLawnLandSurveying
   Scenario: User hovers then clicks on Land Surveying in the header on the Drupal Homepage
     Given user is on a visitor site page
     """
@@ -701,7 +701,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/land-surveying.htm"
 
-  @homePageSegmentHeaderLawnLandscaping @daily_autoNotInMasterYet @daily_homepage_regressionNotInMasterYet @header_regressionNotInMasterYet
+  @homePageSegmentHeaderLawnLandscaping
   Scenario: User hovers then clicks on Landscaping in the header on the Drupal Homepage
     Given user is on a visitor site page
     """
@@ -722,7 +722,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/landscaping.htm"
 
-  @homePageSegmentHeaderLawnYard @daily_autoNotInMasterYet @daily_homepage_regressionNotInMasterYet @header_regressionNotInMasterYet
+  @homePageSegmentHeaderLawnYard
   Scenario: User hovers then clicks on Lawn & Yard in the header on the Drupal Homepage
     Given user is on a visitor site page
     """
@@ -743,7 +743,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/lawn-and-yard-work.htm"
 
-  @homePageSegmentHeaderLawnIrrigation @daily_autoNotInMasterYet @daily_homepage_regressionNotInMasterYet @header_regressionNotInMasterYet
+  @homePageSegmentHeaderLawnIrrigation
   Scenario: User hovers then clicks on Lawn Irrigation in the header on the Drupal Homepage
     Given user is on a visitor site page
     """
@@ -764,7 +764,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/lawn-irrigation.htm"
 
-  @homePageSegmentHeaderLawnMowerRepair @daily_autoNotInMasterYet @daily_homepage_regressionNotInMasterYet @header_regressionNotInMasterYet
+  @homePageSegmentHeaderLawnMowerRepair
   Scenario: User hovers then clicks on Lawn Mower Repair in the header on the Drupal Homepage
     Given user is on a visitor site page
     """
@@ -785,7 +785,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/lawn-mower-repair.htm"
 
-  @homePageSegmentHeaderLawnLeafRemoval @daily_autoNotInMasterYet @daily_homepage_regressionNotInMasterYet @header_regressionNotInMasterYet
+  @homePageSegmentHeaderLawnLeafRemoval
   Scenario: User hovers then clicks on Leaf Removal in the header on the Drupal Homepage
     Given user is on a visitor site page
     """
@@ -806,7 +806,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/leaf-removal.htm"
 
-  @homePageSegmentHeaderLawnPatios @daily_autoNotInMasterYet @daily_homepage_regressionNotInMasterYet @header_regressionNotInMasterYet
+  @homePageSegmentHeaderLawnPatios
   Scenario: User hovers then clicks on Patios in the header on the Drupal Homepage
     Given user is on a visitor site page
     """
@@ -827,7 +827,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/sunroom-and-patio-remodeling.htm"
 
-  @homePageSegmentHeaderLawnPatios @daily_autoNotInMasterYet @daily_homepage_regressionNotInMasterYet @header_regressionNotInMasterYet
+  @homePageSegmentHeaderLawnPatios
   Scenario: User hovers then clicks on Shed Builders in the header on the Drupal Homepage
     Given user is on a visitor site page
     """
@@ -848,7 +848,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/garage-builders.htm"
 
-  @homePageSegmentHeaderLawnTreeSvc @daily_autoNotInMasterYet @daily_homepage_regressionNotInMasterYet @header_regressionNotInMasterYet
+  @homePageSegmentHeaderLawnTreeSvc
   Scenario: User hovers then clicks on Tree Service in the header on the Drupal Homepage
     Given user is on a visitor site page
     """
@@ -869,7 +869,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/tree-service.htm"
 
-  @homePageSegmentHeaderLawnViewAll @daily_autoNotInMasterYet @daily_homepage_regressionNotInMasterYet @header_regressionNotInMasterYet
+  @homePageSegmentHeaderLawnViewAll
   Scenario: User hovers then clicks on View All in the header on the Drupal Homepage
     Given user is on a visitor site page
     """
@@ -890,7 +890,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/"
 
-  @homePageSegmentHeaderMoreBasement @daily_autoNotInMasterYet @daily_homepage_regressionNotInMasterYet @header_regressionNotInMasterYet
+  @homePageSegmentHeaderMoreBasement
   Scenario: User hovers then clicks on Basement Waterproofing in the header on the Drupal Homepage
     Given user is on a visitor site page
     """
@@ -911,7 +911,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/basement-waterproofing.htm"
 
-  @homePageSegmentHeaderMoreDogGrooming @daily_autoNotInMasterYet @daily_homepage_regressionNotInMasterYet @header_regressionNotInMasterYet
+  @homePageSegmentHeaderMoreDogGrooming
   Scenario: User hovers then clicks on Dog Grooming in the header on the Drupal Homepage
     Given user is on a visitor site page
     """
@@ -933,7 +933,7 @@ Feature:
     And the landing URL contains ".angieslist.com/companylist/pet-grooming.htm"
 
 
-  @homePageSegmentHeaderMoreHandymen @daily_autoNotInMasterYet @daily_homepage_regressionNotInMasterYet @header_regressionNotInMasterYet
+  @homePageSegmentHeaderMoreHandymen
   Scenario: User hovers then clicks on Handymen in the header on the Drupal Homepage
     Given user is on a visitor site page
     """
@@ -954,7 +954,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/handyman-service.htm"
 
-  @homePageSegmentHeaderMoreJunk @daily_autoNotInMasterYet @daily_homepage_regressionNotInMasterYet @header_regressionNotInMasterYet
+  @homePageSegmentHeaderMoreJunk
   Scenario: User hovers then clicks on Junk Hauling in the header on the Drupal Homepage
     Given user is on a visitor site page
     """
@@ -975,7 +975,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/hauling.htm"
 
-  @homePageSegmentHeaderMoreLocksmiths @daily_autoNotInMasterYet @daily_homepage_regressionNotInMasterYet @header_regressionNotInMasterYet
+  @homePageSegmentHeaderMoreLocksmiths
   Scenario: User hovers then clicks on Locksmiths in the header on the Drupal Homepage
     Given user is on a visitor site page
     """
@@ -996,7 +996,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/locksmiths.htm"
 
-  @homePageSegmentHeaderMoreMoving @daily_autoNotInMasterYet @daily_homepage_regressionNotInMasterYet @header_regressionNotInMasterYet
+  @homePageSegmentHeaderMoreMoving
   Scenario: User hovers then clicks on Moving Companies in the header on the Drupal Homepage
     Given user is on a visitor site page
     """
@@ -1017,7 +1017,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/moving.htm"
 
-  @homePageSegmentHeaderMorePests @daily_autoNotInMasterYet @daily_homepage_regressionNotInMasterYet @header_regressionNotInMasterYet
+  @homePageSegmentHeaderMorePests
   Scenario: User hovers then clicks on Pest Control Companies in the header on the Drupal Homepage
     Given user is on a visitor site page
     """
@@ -1038,7 +1038,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/pest-control.htm"
 
-  @homePageSegmentHeaderMorePressureWashing @daily_autoNotInMasterYet @daily_homepage_regressionNotInMasterYet @header_regressionNotInMasterYet
+  @homePageSegmentHeaderMorePressureWashing
   Scenario: User hovers then clicks on Pressure Washing Companies in the header on the Drupal Homepage
     Given user is on a visitor site page
     """
@@ -1059,7 +1059,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/pressure-washing.htm"
 
-  @homePageSegmentHeaderMoreSeptic @daily_autoNotInMasterYet @daily_homepage_regressionNotInMasterYet @header_regressionNotInMasterYet
+  @homePageSegmentHeaderMoreSeptic
   Scenario: User hovers then clicks on Septic Tanks Companies in the header on the Drupal Homepage
     Given user is on a visitor site page
     """
@@ -1080,7 +1080,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/septic-tank.htm"
 
-  @homePageSegmentHeaderMoreViewAllCat @daily_autoNotInMasterYet @daily_homepage_regressionNotInMasterYet @header_regressionNotInMasterYet
+  @homePageSegmentHeaderMoreViewAllCat
   Scenario: User hovers then clicks on View All Cats in the header on the Drupal Homepage
     Given user is on a visitor site page
     """
@@ -1101,7 +1101,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/"
 
-  @homePageSegmentHeaderMoreNearMe @daily_autoNotInMasterYet @daily_homepage_regressionNotInMasterYet @header_regressionNotInMasterYet
+  @homePageSegmentHeaderMoreNearMe
   Scenario: User hovers then clicks on Near Me in the header on the Drupal Homepage
     Given user is on a visitor site page
     """
@@ -1122,7 +1122,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/nearme/"
 
-  @homePageSegmentHeaderArticlesAdviceAppliances @daily_autoNotInMasterYet @daily_homepage_regressionNotInMasterYet @header_regressionNotInMasterYet
+  @homePageSegmentHeaderArticlesAdviceAppliances
   Scenario: User hovers then clicks on Appliances in the header on the Drupal Homepage
     Given user is on a visitor site page
     """
@@ -1143,7 +1143,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/appliances/"
 
-  @homePageSegmentHeaderArticlesAdviceBaseFound @daily_autoNotInMasterYet @daily_homepage_regressionNotInMasterYet @header_regressionNotInMasterYet
+  @homePageSegmentHeaderArticlesAdviceBaseFound
   Scenario: User hovers then clicks on Basements & Foundations in the header on the Drupal Homepage
     Given user is on a visitor site page
     """
@@ -1164,7 +1164,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/basements-and-foundations/"
 
-  @homePageSegmentHeaderArticlesAdviceBathRemod @daily_autoNotInMasterYet @daily_homepage_regressionNotInMasterYet @header_regressionNotInMasterYet
+  @homePageSegmentHeaderArticlesAdviceBathRemod
   Scenario: User hovers then clicks on Bathroom Remodel in the header on the Drupal Homepage
     Given user is on a visitor site page
     """
@@ -1185,7 +1185,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/bathroom-remodel/"
 
-  @homePageSegmentHeaderArticlesAdviceChimney @daily_autoNotInMasterYet @daily_homepage_regressionNotInMasterYet @header_regressionNotInMasterYet
+  @homePageSegmentHeaderArticlesAdviceChimney
   Scenario: User hovers then clicks on Chimneys & Fireplaces in the header on the Drupal Homepage
     Given user is on a visitor site page
     """
@@ -1206,7 +1206,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/chimneys-fireplaces/"
 
-  @homePageSegmentHeaderArticlesAdviceCleaning @daily_autoNotInMasterYet @daily_homepage_regressionNotInMasterYet @header_regressionNotInMasterYet
+  @homePageSegmentHeaderArticlesAdviceCleaning
   Scenario: User hovers then clicks on Cleaning in the header on the Drupal Homepage
     Given user is on a visitor site page
     """
@@ -1227,7 +1227,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/cleaning/"
 
-  @homePageSegmentHeaderArticlesAdviceContractors @daily_autoNotInMasterYet @daily_homepage_regressionNotInMasterYet @header_regressionNotInMasterYet
+  @homePageSegmentHeaderArticlesAdviceContractors
   Scenario: User hovers then clicks on Contractors in the header on the Drupal Homepage
     Given user is on a visitor site page
     """
@@ -1248,7 +1248,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/contractors/"
 
-  @homePageSegmentHeaderArticlesAdviceElectrical @daily_autoNotInMasterYet @daily_homepage_regressionNotInMasterYet @header_regressionNotInMasterYet
+  @homePageSegmentHeaderArticlesAdviceElectrical
   Scenario: User hovers then clicks on Electrical in the header on the Drupal Homepage
     Given user is on a visitor site page
     """
@@ -1269,7 +1269,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/electrical/"
 
-  @homePageSegmentHeaderArticlesAdviceFlooring @daily_autoNotInMasterYet @daily_homepage_regressionNotInMasterYet @header_regressionNotInMasterYet
+  @homePageSegmentHeaderArticlesAdviceFlooring
   Scenario: User hovers then clicks on Flooring in the header on the Drupal Homepage
     Given user is on a visitor site page
     """
@@ -1290,7 +1290,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/flooring/"
 
-  @homePageSegmentHeaderArticlesAdviceGarageDrive @daily_autoNotInMasterYet @daily_homepage_regressionNotInMasterYet @header_regressionNotInMasterYet
+  @homePageSegmentHeaderArticlesAdviceGarageDrive
   Scenario: User hovers then clicks on Garages & Driveways in the header on the Drupal Homepage
     Given user is on a visitor site page
     """
@@ -1311,7 +1311,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/garages-and-driveways/"
 
-  @homePageSegmentHeaderArticlesAdviceHVAC @daily_autoNotInMasterYet @daily_homepage_regressionNotInMasterYet @header_regressionNotInMasterYet
+  @homePageSegmentHeaderArticlesAdviceHVAC
   Scenario: User hovers then clicks on Heating & Cooling in the header on the Drupal Homepage
     Given user is on a visitor site page
     """
@@ -1332,7 +1332,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/hvac/"
 
-  @homePageSegmentHeaderArticlesAdviceHomeConstruction @daily_autoNotInMasterYet @daily_homepage_regressionNotInMasterYet @header_regressionNotInMasterYet
+  @homePageSegmentHeaderArticlesAdviceHomeConstruction
   Scenario: User hovers then clicks on Home Construction in the header on the Drupal Homepage
     Given user is on a visitor site page
     """
@@ -1353,7 +1353,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/home-construction-design/"
 
-  @homePageSegmentHeaderArticlesAdviceHomeExterior @daily_autoNotInMasterYet @daily_homepage_regressionNotInMasterYet @header_regressionNotInMasterYet
+  @homePageSegmentHeaderArticlesAdviceHomeExterior
   Scenario: User hovers then clicks on Home Exteriors in the header on the Drupal Homepage
     Given user is on a visitor site page
     """
@@ -1374,7 +1374,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/home-exteriors/"
 
-  @homePageSegmentHeaderArticlesAdviceHomeInterior @daily_autoNotInMasterYet @daily_homepage_regressionNotInMasterYet @header_regressionNotInMasterYet
+  @homePageSegmentHeaderArticlesAdviceHomeInterior
   Scenario: User hovers then clicks on Home Interior in the header on the Drupal Homepage
     Given user is on a visitor site page
     """
@@ -1395,7 +1395,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/home-interiors/"
 
-  @homePageSegmentHeaderArticlesAdviceHomeSecurity @daily_autoNotInMasterYet @daily_homepage_regressionNotInMasterYet @header_regressionNotInMasterYet
+  @homePageSegmentHeaderArticlesAdviceHomeSecurity
   Scenario: User hovers then clicks on Home Security in the header on the Drupal Homepage
     Given user is on a visitor site page
     """
@@ -1416,7 +1416,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/home-security-systems/"
 
-  @homePageSegmentHeaderArticlesAdviceKitchenRemod @daily_autoNotInMasterYet @daily_homepage_regressionNotInMasterYet @header_regressionNotInMasterYet
+  @homePageSegmentHeaderArticlesAdviceKitchenRemod
   Scenario: User hovers then clicks on Kitchen Remodeling in the header on the Drupal Homepage
     Given user is on a visitor site page
     """
@@ -1437,7 +1437,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/kitchen-remodeling/"
 
-  @homePageSegmentHeaderArticlesAdviceLandscaping @daily_autoNotInMasterYet @daily_homepage_regressionNotInMasterYet @header_regressionNotInMasterYet
+  @homePageSegmentHeaderArticlesAdviceLandscaping
   Scenario: User hovers then clicks on Landscaping in the header on the Drupal Homepage
     Given user is on a visitor site page
     """
@@ -1458,7 +1458,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/landscaping-lawn-care/"
 
-  @homePageSegmentHeaderArticlesAdviceLighting @daily_autoNotInMasterYet @daily_homepage_regressionNotInMasterYet @header_regressionNotInMasterYet
+  @homePageSegmentHeaderArticlesAdviceLighting
   Scenario: User hovers then clicks on Lighting in the header on the Drupal Homepage
     Given user is on a visitor site page
     """
@@ -1479,7 +1479,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/lights/"
 
-  @homePageSegmentHeaderArticlesAdviceMoving @daily_autoNotInMasterYet @daily_homepage_regressionNotInMasterYet @header_regressionNotInMasterYet
+  @homePageSegmentHeaderArticlesAdviceMoving
   Scenario: User hovers then clicks on Moving in the header on the Drupal Homepage
     Given user is on a visitor site page
     """
@@ -1500,7 +1500,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/movers/"
 
-  @homePageSegmentHeaderArticlesAdviceOutdoorLiving @daily_autoNotInMasterYet @daily_homepage_regressionNotInMasterYet @header_regressionNotInMasterYet
+  @homePageSegmentHeaderArticlesAdviceOutdoorLiving
   Scenario: User hovers then clicks on Outdoor Living in the header on the Drupal Homepage
     Given user is on a visitor site page
     """
@@ -1521,7 +1521,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/outdoor-living/"
 
-  @homePageSegmentHeaderArticlesAdvicePests @daily_autoNotInMasterYet @daily_homepage_regressionNotInMasterYet @header_regressionNotInMasterYet
+  @homePageSegmentHeaderArticlesAdvicePests
   Scenario: User hovers then clicks on Pests in the header on the Drupal Homepage
     Given user is on a visitor site page
     """
@@ -1542,7 +1542,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/household-pest-control/"
 
-  @homePageSegmentHeaderArticlesAdvicePlumbing @daily_autoNotInMasterYet @daily_homepage_regressionNotInMasterYet @header_regressionNotInMasterYet
+  @homePageSegmentHeaderArticlesAdvicePlumbing
   Scenario: User hovers then clicks on Plumbing in the header on the Drupal Homepage
     Given user is on a visitor site page
     """
@@ -1563,7 +1563,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/plumbing/"
 
-  @homePageSegmentHeaderArticlesAdviceRemodeling @daily_autoNotInMasterYet @daily_homepage_regressionNotInMasterYet @header_regressionNotInMasterYet
+  @homePageSegmentHeaderArticlesAdviceRemodeling
   Scenario: User hovers then clicks on Remodeling in the header on the Drupal Homepage
     Given user is on a visitor site page
     """
@@ -1584,7 +1584,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/remodeling/"
 
-  @homePageSegmentHeaderArticlesAdviceRoofing @daily_autoNotInMasterYet @daily_homepage_regressionNotInMasterYet @header_regressionNotInMasterYet
+  @homePageSegmentHeaderArticlesAdviceRoofing
   Scenario: User hovers then clicks on Roofing in the header on the Drupal Homepage
     Given user is on a visitor site page
     """
@@ -1605,7 +1605,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/roofing/"
 
-  @homePageSegmentHeaderArticlesAdviceStoreageOrg @daily_autoNotInMasterYet @daily_homepage_regressionNotInMasterYet @header_regressionNotInMasterYet
+  @homePageSegmentHeaderArticlesAdviceStoreageOrg
   Scenario: User hovers then clicks on Storage & Organization in the header on the Drupal Homepage
     Given user is on a visitor site page
     """
@@ -1626,7 +1626,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/storage-organization/"
 
-  @homePageSegmentHeaderArticlesAdviceWasteManagement @daily_autoNotInMasterYet @daily_homepage_regressionNotInMasterYet @header_regressionNotInMasterYet
+  @homePageSegmentHeaderArticlesAdviceWasteManagement
   Scenario: User hovers then clicks on Waste Management in the header on the Drupal Homepage
     Given user is on a visitor site page
     """
@@ -1647,7 +1647,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/waste-management/"
 
-  @homePageSegmentHeaderArticlesAdviceMore @daily_autoNotInMasterYet @daily_homepage_regressionNotInMasterYet @header_regressionNotInMasterYet
+  @homePageSegmentHeaderArticlesAdviceMore
   Scenario: User hovers then clicks on View All in the header(Advice) on the Drupal Homepage
     Given user is on a visitor site page
     """
