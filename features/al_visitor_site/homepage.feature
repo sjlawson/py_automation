@@ -233,8 +233,7 @@ Feature:
       | click           |                    |
       | send_keys       | plumbing           |
     Then we wait "1" seconds for the next page to load
-    When a user performs actions  
-      | action_method    | action_params      |
+    Then press the "ENTER" key while "#edit-category-2" is in focus
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : Home |
