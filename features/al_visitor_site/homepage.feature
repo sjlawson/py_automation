@@ -171,7 +171,7 @@ Feature:
       | click           |                    |
       | send_keys       | Plumbing           |
     Then we wait "1" seconds for the next page to load
-    When a user performs actions  bp
+    When a user performs actions
       | action_method   | action_params      |
       | move_to_element | .home-category-select-2 > div > div:nth-child(1) |
       | click           |                    |
@@ -235,7 +235,6 @@ Feature:
     Then we wait "1" seconds for the next page to load
     When a user performs actions  
       | action_method    | action_params      |
-      |          |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : Home |
