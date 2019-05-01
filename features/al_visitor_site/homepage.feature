@@ -204,7 +204,7 @@ Feature:
     Then we wait "1" seconds for the next page to load
     When a user performs actions  
       | action_method   | action_params      |
-      | move_to_element |     |
+      | move_to_element | id: ha-lead-submit-v2  |
       | click           |                    |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
