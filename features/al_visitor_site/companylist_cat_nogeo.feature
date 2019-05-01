@@ -26,7 +26,7 @@ Feature:
 
 ##### Header Tests #####
 
-  @headerJoinCatNoGeo @catNoGeoDaily @companyTreeDaily
+  @headerJoinCatNoGeo @catNoGeoDaily @companyTreeDaily @headerDailyRegression @catNoGeoDaily
   Scenario: The Join button is clicked on CatNoGeo(Plumbing) page
     Given user is on a visitor site catnogeo page
     When a user performs actions
@@ -44,7 +44,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/app/signup"
 
-  @headerSignInCatNoGeo @catNoGeoDaily @companyTreeDaily
+  @headerSignInCatNoGeo @catNoGeoDaily @companyTreeDaily @headerDailyRegression @catNoGeoDaily
   Scenario: The Sign In link is clicked on the CatNoGeo(Plumbing) header
     Given user is on a visitor site catnogeo page
     When a user performs actions
@@ -62,7 +62,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/member/login"
 
-  @headerBcCatNoGeo @catNoGeoDaily
+  @headerBcCatNoGeo @catNoGeoDaily @companyTreeDaily @headerDailyRegression @catNoGeoDaily
   Scenario: The Business Center link is clicked on the CatNoGeo(Plumbing) header
     Given user is on a visitor site catnogeo page
     When a user performs actions
@@ -79,13 +79,13 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains "angieslistbusinesscenter.com"
 
-  @catNoGeoHeaderInteriorApplianceRepair @daily_auto @header_regression @catNoGeoDaily
+  @catNoGeoHeaderInteriorApplianceRepair @companyTreeDaily @headerDailyRegression @catNoGeoDaily
   Scenario: User hovers then clicks on Appliance Repair in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
       | action_method   | action_params       |
-      | move_to_element | #secondary-nav > ul > li:nth-child(1) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(1) > div > ul > a:nth-child(1) > li |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(1) > label |
+      | click           | css: #secondary-nav > ul > li:nth-child(1) > div > ul > li:nth-child(1) > a |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value           |
       | activityLocation | Visitor : CatNoGeo |
@@ -98,13 +98,13 @@ Feature:
     And the landing URL contains ".angieslist.com/companylist/appliance-repair.htm"
 
 
-  @catNoGeoSegmentHeaderInteriorCarpetCleaning @daily_auto @header_regression @catNoGeoDaily
+  @catNoGeoSegmentHeaderInteriorCarpetCleaning @companyTreeDaily @headerDailyRegression @catNoGeoDaily
   Scenario: User hovers then clicks on Carpet Cleaning in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
       | action_method   | action_params       |
-      | move_to_element | #secondary-nav > ul > li:nth-child(1) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(1) > div > ul > a:nth-child(2) > li |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(1) > label |
+      | click           | css: #secondary-nav > ul > li:nth-child(1) > div > ul > li:nth-child(2) > a |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : CatNoGeo |
@@ -116,13 +116,13 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/carpet-cleaning.htm"
 
-  @catNoGeoSegmentHeaderInteriorContractors @daily_auto @header_regression @catNoGeoDaily
+  @catNoGeoSegmentHeaderInteriorContractors @companyTreeDaily @headerDailyRegression @catNoGeoDaily
   Scenario: User hovers then clicks on Contractors in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
       | action_method   | action_params       |
-      | move_to_element | #secondary-nav > ul > li:nth-child(1) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(1) > div > ul > a:nth-child(3) > li |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(1) > label |
+      | click           | css: #secondary-nav > ul > li:nth-child(1) > div > ul > li:nth-child(3) > a |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : CatNoGeo |
@@ -134,13 +134,13 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/contractor.htm"
 
-  @catNoGeoSegmentHeaderInteriorDrywall @daily_auto @header_regression @catNoGeoDaily
+  @catNoGeoSegmentHeaderInteriorDrywall @companyTreeDaily @headerDailyRegression @catNoGeoDaily
   Scenario: User hovers then clicks on Drywall in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
       | action_method   | action_params       |
-      | move_to_element | #secondary-nav > ul > li:nth-child(1) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(1) > div > ul > a:nth-child(4) > li |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(1) > label |
+      | click           | css: #secondary-nav > ul > li:nth-child(1) > div > ul > li:nth-child(4) > a |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : CatNoGeo |
@@ -152,13 +152,13 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/drywall.htm"
 
-  @catNoGeoSegmentHeaderInteriorElectrical @daily_auto @header_regression @catNoGeoDaily
+  @catNoGeoSegmentHeaderInteriorElectrical @companyTreeDaily @headerDailyRegression @catNoGeoDaily
   Scenario: User hovers then clicks on Electrical in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
       | action_method   | action_params       |
-      | move_to_element | #secondary-nav > ul > li:nth-child(1) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(1) > div > ul > a:nth-child(5) > li |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(1) > label |
+      | click           | css: #secondary-nav > ul > li:nth-child(1) > div > ul > li:nth-child(5) > a |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : CatNoGeo |
@@ -170,13 +170,13 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/electrical.htm"
 
-  @catNoGeoSegmentHeaderInteriorFlooring @daily_auto @header_regression @catNoGeoDaily
+  @catNoGeoSegmentHeaderInteriorFlooring @companyTreeDaily @headerDailyRegression @catNoGeoDaily
   Scenario: User hovers then clicks on Flooring in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
       | action_method   | action_params       |
-      | move_to_element | #secondary-nav > ul > li:nth-child(1) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(1) > div > ul > a:nth-child(6) > li |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(1) > label |
+      | click           | css: #secondary-nav > ul > li:nth-child(1) > div > ul > li:nth-child(6) > a |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : CatNoGeo |
@@ -188,13 +188,13 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/flooring.htm"
 
-  @catNoGeoSegmentHeaderInteriorHVAC @daily_auto @header_regression @catNoGeoDaily
+  @catNoGeoSegmentHeaderInteriorHVAC @companyTreeDaily @headerDailyRegression @catNoGeoDaily
   Scenario: User hovers then clicks on Heating & Cooling in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
       | action_method   | action_params       |
-      | move_to_element | #secondary-nav > ul > li:nth-child(1) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(1) > div > ul > a:nth-child(7) > li |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(1) > label |
+      | click           | css: #secondary-nav > ul > li:nth-child(1) > div > ul > li:nth-child(7) > a |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : CatNoGeo |
@@ -206,13 +206,13 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/hvac.htm"
 
-  @catNoGeoSegmentHeaderInteriorHouseCleaning @daily_auto @header_regression @catNoGeoDaily
+  @catNoGeoSegmentHeaderInteriorHouseCleaning @companyTreeDaily @headerDailyRegression @catNoGeoDaily
   Scenario: User hovers then clicks on House Cleaning in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
       | action_method   | action_params       |
-      | move_to_element | #secondary-nav > ul > li:nth-child(1) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(1) > div > ul > a:nth-child(8) > li |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(1) > label |
+      | click           | css: #secondary-nav > ul > li:nth-child(1) > div > ul > li:nth-child(8) > a |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : CatNoGeo |
@@ -224,13 +224,13 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/house-cleaning.htm"
 
-  @catNoGeoSegmentHeaderInteriorPainting @daily_auto @header_regression @catNoGeoDaily
+  @catNoGeoSegmentHeaderInteriorPainting @companyTreeDaily @headerDailyRegression @catNoGeoDaily
   Scenario: User hovers then clicks on Interior Painting in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
       | action_method   | action_params       |
-      | move_to_element | #secondary-nav > ul > li:nth-child(1) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(1) > div > ul > a:nth-child(9) > li |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(1) > label |
+      | click           | css: #secondary-nav > ul > li:nth-child(1) > div > ul > li:nth-child(9) > a |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : CatNoGeo |
@@ -242,13 +242,13 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/interior-painting.htm"
 
-  @catNoGeoSegmentHeaderInteriorPlumbing @daily_auto @header_regression @catNoGeoDaily
+  @catNoGeoSegmentHeaderInteriorPlumbing @companyTreeDaily @headerDailyRegression @catNoGeoDaily
   Scenario: User hovers then clicks on Plumbing in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
       | action_method   | action_params       |
-      | move_to_element | #secondary-nav > ul > li:nth-child(1) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(1) > div > ul > a:nth-child(10) > li |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(1) > label |
+      | click           | css: #secondary-nav > ul > li:nth-child(1) > div > ul > li:nth-child(10) > a |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : CatNoGeo |
@@ -260,13 +260,13 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/plumbing.htm"
 
-  @catNoGeoSegmentHeaderInteriorRemodeling @daily_auto @header_regression @catNoGeoDaily
+  @catNoGeoSegmentHeaderInteriorRemodeling @companyTreeDaily @headerDailyRegression @catNoGeoDaily
   Scenario: User hovers then clicks on Remodeling in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
       | action_method   | action_params       |
-      | move_to_element | #secondary-nav > ul > li:nth-child(1) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(1) > div > ul > a:nth-child(11) > li |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(1) > label |
+      | click           | css: #secondary-nav > ul > li:nth-child(1) > div > ul > li:nth-child(11) > a |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : CatNoGeo |
@@ -278,13 +278,13 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/kitchen-and-bath-remodeling.htm"
 
-  @catNoGeoSegmentHeaderInteriorViewAll @daily_auto @header_regression @catNoGeoDaily
+  @catNoGeoSegmentHeaderInteriorViewAll @companyTreeDaily @headerDailyRegression @catNoGeoDaily
   Scenario: User hovers then clicks on View All Categories in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
       | action_method   | action_params       |
-      | move_to_element | #secondary-nav > ul > li:nth-child(1) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(1) > div > div > a |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(1) > label |
+      | click           | css: #secondary-nav > ul > li:nth-child(1) > div > div > a |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : CatNoGeo |
@@ -296,13 +296,13 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/"
 
-  @catNoGeoSegmentHeaderExteriorConcreteRepair @daily_auto @header_regression @catNoGeoDaily
+  @catNoGeoSegmentHeaderExteriorConcreteRepair
   Scenario: User hovers then clicks on Concrete Repair in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(2) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(2) > div > ul > a:nth-child(1) > li |
+      | click           | #secondary-nav > ul > li:nth-child(2) > div > ul > a:nth-child(1) > a |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : CatNoGeo |
@@ -314,13 +314,13 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/concrete-repair.htm"
 
-  @catNoGeoSegmentHeaderExteriorDoors @daily_auto @header_regression @catNoGeoDaily
+  @catNoGeoSegmentHeaderExteriorDoors
   Scenario: User hovers then clicks on Doors in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(2) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(2) > div > ul > a:nth-child(2) > li |
+      | click           | #secondary-nav > ul > li:nth-child(2) > div > ul > a:nth-child(2) > a |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : CatNoGeo |
@@ -332,13 +332,13 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/doors.htm"
 
-  @catNoGeoSegmentHeaderExteriorDriveways @daily_auto @header_regression @catNoGeoDaily
+  @catNoGeoSegmentHeaderExteriorDriveways
   Scenario: User hovers then clicks on Driveways in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(2) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(2) > div > ul > a:nth-child(3) > li |
+      | click           | #secondary-nav > ul > li:nth-child(2) > div > ul > a:nth-child(3) > a |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : CatNoGeo |
@@ -350,13 +350,13 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/driveways.htm"
 
-  @catNoGeoSegmentHeaderExteriorPainting @daily_auto @header_regression @catNoGeoDaily
+  @catNoGeoSegmentHeaderExteriorPainting
   Scenario: User hovers then clicks on Exterior Painting in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(2) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(2) > div > ul > a:nth-child(4) > li |
+      | click           | #secondary-nav > ul > li:nth-child(2) > div > ul > a:nth-child(4) > a |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : CatNoGeo |
@@ -368,13 +368,13 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/exterior-painting.htm"
 
-  @catNoGeoSegmentHeaderExteriorPainting @daily_auto @header_regression @catNoGeoDaily
+  @catNoGeoSegmentHeaderExteriorPainting
   Scenario: User hovers then clicks on Garage Doors in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(2) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(2) > div > ul > a:nth-child(5) > li |
+      | click           | #secondary-nav > ul > li:nth-child(2) > div > ul > a:nth-child(5) > a |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : CatNoGeo |
@@ -386,13 +386,13 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/garage-doors.htm"
 
-  @catNoGeoSegmentHeaderExteriorGutterCleaning @daily_auto @header_regression @catNoGeoDaily
+  @catNoGeoSegmentHeaderExteriorGutterCleaning
   Scenario: User hovers then clicks on Gutter Cleaning in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(2) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(2) > div > ul > a:nth-child(6) > li |
+      | click           | #secondary-nav > ul > li:nth-child(2) > div > ul > a:nth-child(6) > a |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : CatNoGeo |
@@ -404,13 +404,13 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/gutter-cleaning.htm"
 
-  @catNoGeoSegmentHeaderExteriorGutterRepair @daily_auto @header_regression @catNoGeoDaily
+  @catNoGeoSegmentHeaderExteriorGutterRepair
   Scenario: User hovers then clicks on Gutter Repair in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(2) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(2) > div > ul > a:nth-child(7) > li |
+      | click           | #secondary-nav > ul > li:nth-child(2) > div > ul > a:nth-child(7) > a |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : CatNoGeo |
@@ -422,13 +422,13 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/gutter-repair-replacement.htm"
 
-  @catNoGeoSegmentHeaderExteriorHomeBuilders @daily_auto @header_regression @catNoGeoDaily
+  @catNoGeoSegmentHeaderExteriorHomeBuilders
   Scenario: User hovers then clicks on Home Builders in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(2) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(2) > div > ul > a:nth-child(8) > li |
+      | click           | #secondary-nav > ul > li:nth-child(2) > div > ul > a:nth-child(8) > a |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : CatNoGeo |
@@ -439,14 +439,14 @@ Feature:
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/home-builders.htm"
- @catNoGeoDaily
-  @catNoGeoSegmentHeaderExteriorMasonry @daily_auto @header_regression @catNoGeoDaily
+
+  @catNoGeoSegmentHeaderExteriorMasonry
   Scenario: User hovers then clicks on Masonry in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
       | action_method   | action_params       |
-      | move_to_element | #secondary-nav > ul > li:nth-child(2) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(2) > div > ul > a:nth-child(9) > li |
+      | move_to_element | #secondary-nav > ul > li:nth-child(2) > label |
+      | click           | #secondary-nav > ul > li:nth-child(2) > div > ul > li:nth-child(9) > a |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : CatNoGeo |
@@ -458,13 +458,13 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/masonry.htm"
 
-  @catNoGeoSegmentHeaderExteriorRoofing @daily_auto @header_regression @catNoGeoDaily
+  @catNoGeoSegmentHeaderExteriorRoofing
   Scenario: User hovers then clicks on Roofing in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(2) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(2) > div > ul > a:nth-child(10) > li |
+      | click           | #secondary-nav > ul > li:nth-child(2) > div > ul > a:nth-child(10) > a |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : CatNoGeo |
@@ -476,13 +476,13 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/roofing.htm"
 
-  @catNoGeoSegmentHeaderExteriorSiding @daily_auto @header_regression @catNoGeoDaily
+  @catNoGeoSegmentHeaderExteriorSiding
   Scenario: User hovers then clicks on Siding in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(2) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(2) > div > ul > a:nth-child(11) > li |
+      | click           | #secondary-nav > ul > li:nth-child(2) > div > ul > a:nth-child(11) > a |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : CatNoGeo |
@@ -494,13 +494,13 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/siding.htm"
 
-  @catNoGeoSegmentHeaderExteriorWindows @daily_auto @header_regression @catNoGeoDaily
+  @catNoGeoSegmentHeaderExteriorWindows
   Scenario: User hovers then clicks on Windows in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(2) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(2) > div > ul > a:nth-child(12) > li |
+      | click           | #secondary-nav > ul > li:nth-child(2) > div > ul > a:nth-child(12) > a |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : CatNoGeo |
@@ -512,7 +512,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/window-treatments.htm"
 
-  @catNoGeoSegmentHeaderExteriorViewAll @daily_auto @header_regression @catNoGeoDaily
+  @catNoGeoSegmentHeaderExteriorViewAll
   Scenario: User hovers then clicks on View All in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
@@ -530,13 +530,13 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/"
 
-  @catNoGeoSegmentHeaderLawnGardenDecks @daily_auto @header_regression @catNoGeoDaily
+  @catNoGeoSegmentHeaderLawnGardenDecks
   Scenario: User hovers then clicks on Decks in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(3) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(3) > div > ul > a:nth-child(1) > li |
+      | click           | #secondary-nav > ul > li:nth-child(3) > div > ul > a:nth-child(1) > a |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : CatNoGeo |
@@ -548,13 +548,13 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/decks-and-porches.htm"
 
-  @catNoGeoSegmentHeaderLawnGardenFencing @daily_auto @header_regression @catNoGeoDaily
+  @catNoGeoSegmentHeaderLawnGardenFencing
   Scenario: User hovers then clicks on Fencing in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(3) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(3) > div > ul > a:nth-child(2) > li |
+      | click           | #secondary-nav > ul > li:nth-child(3) > div > ul > a:nth-child(2) > a |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : CatNoGeo |
@@ -566,13 +566,13 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/fencing.htm"
 
-  @catNoGeoSegmentHeaderLawnLandSurveying @daily_auto @header_regression @catNoGeoDaily
+  @catNoGeoSegmentHeaderLawnLandSurveying
   Scenario: User hovers then clicks on Land Surveying in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(3) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(3) > div > ul > a:nth-child(3) > li |
+      | click           | #secondary-nav > ul > li:nth-child(3) > div > ul > a:nth-child(3) > a |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : CatNoGeo |
@@ -584,13 +584,13 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/land-surveying.htm"
 
-  @catNoGeoSegmentHeaderLawnLandscaping @daily_auto @header_regression @catNoGeoDaily
+  @catNoGeoSegmentHeaderLawnLandscaping
   Scenario: User hovers then clicks on Landscaping in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(3) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(3) > div > ul > a:nth-child(4) > li |
+      | click           | #secondary-nav > ul > li:nth-child(3) > div > ul > a:nth-child(4) > a |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : CatNoGeo |
@@ -602,13 +602,13 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/landscaping.htm"
 
-  @catNoGeoSegmentHeaderLawnYard @daily_auto @header_regression @catNoGeoDaily
+  @catNoGeoSegmentHeaderLawnYard
   Scenario: User hovers then clicks on Lawn & Yard in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(3) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(3) > div > ul > a:nth-child(5) > li |
+      | click           | #secondary-nav > ul > li:nth-child(3) > div > ul > a:nth-child(5) > a |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : CatNoGeo |
@@ -620,13 +620,13 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/lawn-and-yard-work.htm"
 
-  @catNoGeoSegmentHeaderLawnIrrigation @daily_auto @header_regression @catNoGeoDaily
+  @catNoGeoSegmentHeaderLawnIrrigation
   Scenario: User hovers then clicks on Lawn Irrigation in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(3) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(3) > div > ul > a:nth-child(6) > li |
+      | click           | #secondary-nav > ul > li:nth-child(3) > div > ul > a:nth-child(6) > a |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : CatNoGeo |
@@ -638,13 +638,13 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/lawn-irrigation.htm"
 
-  @catNoGeoSegmentHeaderLawnMowerRepair @daily_auto @header_regression @catNoGeoDaily
+  @catNoGeoSegmentHeaderLawnMowerRepair
   Scenario: User hovers then clicks on Lawn Mower Repair in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(3) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(3) > div > ul > a:nth-child(7) > li |
+      | click           | #secondary-nav > ul > li:nth-child(3) > div > ul > a:nth-child(7) > a |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : CatNoGeo |
@@ -656,13 +656,13 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/lawn-mower-repair.htm"
 
-  @catNoGeoSegmentHeaderLawnLeafRemoval @daily_auto @header_regression @catNoGeoDaily
+  @catNoGeoSegmentHeaderLawnLeafRemoval
   Scenario: User hovers then clicks on Leaf Removal in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(3) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(3) > div > ul > a:nth-child(8) > li |
+      | click           | #secondary-nav > ul > li:nth-child(3) > div > ul > a:nth-child(8) > a |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : CatNoGeo |
@@ -674,13 +674,13 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/leaf-removal.htm"
 
-  @catNoGeoSegmentHeaderLawnPatios @daily_auto @header_regression @catNoGeoDaily
+  @catNoGeoSegmentHeaderLawnPatios
   Scenario: User hovers then clicks on Patios in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(3) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(3) > div > ul > a:nth-child(9) > li |
+      | click           | #secondary-nav > ul > li:nth-child(3) > div > ul > a:nth-child(9) > a |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : CatNoGeo |
@@ -692,13 +692,13 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/sunroom-and-patio-remodeling.htm"
 
-  @catNoGeoSegmentHeaderLawnPatios @daily_auto @header_regression @catNoGeoDaily
+  @catNoGeoSegmentHeaderLawnPatios
   Scenario: User hovers then clicks on Shed Builders in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(3) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(3) > div > ul > a:nth-child(10) > li |
+      | click           | #secondary-nav > ul > li:nth-child(3) > div > ul > a:nth-child(10) > a |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : CatNoGeo |
@@ -710,13 +710,13 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/garage-builders.htm"
 
-  @catNoGeoSegmentHeaderLawnTreeSvc @daily_auto @header_regression @catNoGeoDaily
+  @catNoGeoSegmentHeaderLawnTreeSvc
   Scenario: User hovers then clicks on Tree Service in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(3) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(3) > div > ul > a:nth-child(11) > li |
+      | click           | #secondary-nav > ul > li:nth-child(3) > div > ul > a:nth-child(11) > a |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : CatNoGeo |
@@ -728,7 +728,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/tree-service.htm"
 
-  @catNoGeoSegmentHeaderLawnViewAll @daily_auto @header_regression @catNoGeoDaily
+  @catNoGeoSegmentHeaderLawnViewAll
   Scenario: User hovers then clicks on View All in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
@@ -746,13 +746,13 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/"
 
-  @catNoGeoSegmentHeaderMoreBasement @daily_auto @header_regression @catNoGeoDaily
+  @catNoGeoSegmentHeaderMoreBasement
   Scenario: User hovers then clicks on Basement Waterproofing in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(4) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(4) > div > ul > a:nth-child(1) > li |
+      | click           | #secondary-nav > ul > li:nth-child(4) > div > ul > a:nth-child(1) > a |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : CatNoGeo |
@@ -764,13 +764,13 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/basement-waterproofing.htm"
 
-  @catNoGeoSegmentHeaderMoreDogGrooming @daily_auto @header_regression @catNoGeoDaily
+  @catNoGeoSegmentHeaderMoreDogGrooming
   Scenario: User hovers then clicks on Dog Grooming in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(4) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(4) > div > ul > a:nth-child(2) > li |
+      | click           | #secondary-nav > ul > li:nth-child(4) > div > ul > a:nth-child(2) > a |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : CatNoGeo |
@@ -783,13 +783,13 @@ Feature:
     And the landing URL contains ".angieslist.com/companylist/pet-grooming.htm"
 
 
-  @catNoGeoSegmentHeaderMoreHandymen @daily_auto @header_regression @catNoGeoDaily
+  @catNoGeoSegmentHeaderMoreHandymen
   Scenario: User hovers then clicks on Handymen in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(4) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(4) > div > ul > a:nth-child(3) > li |
+      | click           | #secondary-nav > ul > li:nth-child(4) > div > ul > a:nth-child(3) > a |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : CatNoGeo |
@@ -801,13 +801,13 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/handyman-service.htm"
 
-  @catNoGeoSegmentHeaderMoreJunk @daily_auto @header_regression @catNoGeoDaily
+  @catNoGeoSegmentHeaderMoreJunk
   Scenario: User hovers then clicks on Junk Hauling in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(4) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(4) > div > ul > a:nth-child(4) > li |
+      | click           | #secondary-nav > ul > li:nth-child(4) > div > ul > a:nth-child(4) > a |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : CatNoGeo |
@@ -819,13 +819,13 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/hauling.htm"
 
-  @catNoGeoSegmentHeaderMoreLocksmiths @daily_auto @header_regression @catNoGeoDaily
+  @catNoGeoSegmentHeaderMoreLocksmiths
   Scenario: User hovers then clicks on Locksmiths in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(4) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(4) > div > ul > a:nth-child(5) > li |
+      | click           | #secondary-nav > ul > li:nth-child(4) > div > ul > a:nth-child(5) > a |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : CatNoGeo |
@@ -837,13 +837,13 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/locksmiths.htm"
 
-  @catNoGeoSegmentHeaderMoreMoving @daily_auto @header_regression @catNoGeoDaily
+  @catNoGeoSegmentHeaderMoreMoving
   Scenario: User hovers then clicks on Moving Companies in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(4) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(4) > div > ul > a:nth-child(6) > li |
+      | click           | #secondary-nav > ul > li:nth-child(4) > div > ul > a:nth-child(6) > a |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : CatNoGeo |
@@ -855,13 +855,13 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/moving.htm"
 
-  @catNoGeoSegmentHeaderMorePests @daily_auto @header_regression @catNoGeoDaily
+  @catNoGeoSegmentHeaderMorePests
   Scenario: User hovers then clicks on Pest Control Companies in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(4) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(4) > div > ul > a:nth-child(7) > li |
+      | click           | #secondary-nav > ul > li:nth-child(4) > div > ul > a:nth-child(7) > a |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : CatNoGeo |
@@ -873,13 +873,13 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/pest-control.htm"
 
-  @catNoGeoSegmentHeaderMorePressureWashing @daily_auto @header_regression @catNoGeoDaily
+  @catNoGeoSegmentHeaderMorePressureWashing
   Scenario: User hovers then clicks on Pressure Washing Companies in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(4) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(4) > div > ul > a:nth-child(8) > li |
+      | click           | #secondary-nav > ul > li:nth-child(4) > div > ul > a:nth-child(8) > a |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : CatNoGeo |
@@ -891,13 +891,13 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/pressure-washing.htm"
 
-  @catNoGeoSegmentHeaderMoreSeptic @daily_auto @header_regression @catNoGeoDaily
+  @catNoGeoSegmentHeaderMoreSeptic
   Scenario: User hovers then clicks on Septic Tanks Companies in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(4) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(4) > div > ul > a:nth-child(9) > li |
+      | click           | #secondary-nav > ul > li:nth-child(4) > div > ul > a:nth-child(9) > a |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : CatNoGeo |
@@ -909,13 +909,13 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/septic-tank.htm"
 
-  @catNoGeoSegmentHeaderMoreViewAllCat @daily_auto @header_regression @catNoGeoDaily
+  @catNoGeoSegmentHeaderMoreViewAllCat
   Scenario: User hovers then clicks on View All Cats in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(4) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(4) > div > div:nth-child(3) > a |
+      | click           | #secondary-nav > ul > li:nth-child(4) > div > div:nth-child(3)> li |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : CatNoGeo |
@@ -927,13 +927,13 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/"
 
-  @catNoGeoSegmentHeaderMoreNearMe @daily_auto @header_regression @catNoGeoDaily
+  @catNoGeoSegmentHeaderMoreNearMe
   Scenario: User hovers then clicks on Near Me in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(4) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(4) > div > div:nth-child(5) > a |
+      | click           | #secondary-nav > ul > li:nth-child(4) > div > div:nth-child(5)> li |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : CatNoGeo |
@@ -945,13 +945,13 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/nearme/"
 
-  @catNoGeoSegmentHeaderArticlesAdviceAppliances @daily_auto @header_regression @catNoGeoDaily
+  @catNoGeoSegmentHeaderArticlesAdviceAppliances
   Scenario: User hovers then clicks on Appliances in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(5) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > a:nth-child(1) > li |
+      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > a:nth-child(1) > a |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : CatNoGeo |
@@ -963,13 +963,13 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/appliances/"
 
-  @catNoGeoSegmentHeaderArticlesAdviceBaseFound @daily_auto @header_regression @catNoGeoDaily
+  @catNoGeoSegmentHeaderArticlesAdviceBaseFound
   Scenario: User hovers then clicks on Basements & Foundations in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(5) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > a:nth-child(2) > li |
+      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > a:nth-child(2) > a |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : CatNoGeo |
@@ -981,13 +981,13 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/basements-and-foundations/"
 
-  @catNoGeoSegmentHeaderArticlesAdviceBathRemod @daily_auto @header_regression @catNoGeoDaily
+  @catNoGeoSegmentHeaderArticlesAdviceBathRemod
   Scenario: User hovers then clicks on Bathroom Remodel in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(5) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > a:nth-child(3) > li |
+      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > a:nth-child(3) > a |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : CatNoGeo |
@@ -999,13 +999,13 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/bathroom-remodel/"
 
-  @catNoGeoSegmentHeaderArticlesAdviceChimney @daily_auto @header_regression @catNoGeoDaily
+  @catNoGeoSegmentHeaderArticlesAdviceChimney
   Scenario: User hovers then clicks on Chimneys & Fireplaces in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(5) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > a:nth-child(4) > li |
+      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > a:nth-child(4) > a |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : CatNoGeo |
@@ -1017,13 +1017,13 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/chimneys-fireplaces/"
 
-  @catNoGeoSegmentHeaderArticlesAdviceCleaning @daily_auto @header_regression @catNoGeoDaily
+  @catNoGeoSegmentHeaderArticlesAdviceCleaning
   Scenario: User hovers then clicks on Cleaning in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(5) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > a:nth-child(5) > li |
+      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > a:nth-child(5) > a |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : CatNoGeo |
@@ -1035,13 +1035,13 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/cleaning/"
 
-  @catNoGeoSegmentHeaderArticlesAdviceContractors @daily_auto @header_regression @catNoGeoDaily
+  @catNoGeoSegmentHeaderArticlesAdviceContractors
   Scenario: User hovers then clicks on Contractors in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(5) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > a:nth-child(6) > li |
+      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > a:nth-child(6) > a |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : CatNoGeo |
@@ -1053,13 +1053,13 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/contractors/"
 
-  @catNoGeoSegmentHeaderArticlesAdviceElectrical @daily_auto @header_regression @catNoGeoDaily
+  @catNoGeoSegmentHeaderArticlesAdviceElectrical
   Scenario: User hovers then clicks on Electrical in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(5) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > a:nth-child(7) > li |
+      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > a:nth-child(7) > a |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : CatNoGeo |
@@ -1071,13 +1071,13 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/electrical/"
 
-  @catNoGeoSegmentHeaderArticlesAdviceFlooring @daily_auto @header_regression @catNoGeoDaily
+  @catNoGeoSegmentHeaderArticlesAdviceFlooring
   Scenario: User hovers then clicks on Flooring in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(5) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > a:nth-child(8) > li |
+      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > a:nth-child(8) > a |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : CatNoGeo |
@@ -1089,13 +1089,13 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/flooring/"
 
-  @catNoGeoSegmentHeaderArticlesAdviceGarageDrive @daily_auto @header_regression @catNoGeoDaily
+  @catNoGeoSegmentHeaderArticlesAdviceGarageDrive
   Scenario: User hovers then clicks on Garages & Driveways in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(5) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > a:nth-child(9) > li |
+      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > a:nth-child(9) > a |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : CatNoGeo |
@@ -1107,13 +1107,13 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/garages-and-driveways/"
 
-  @catNoGeoSegmentHeaderArticlesAdviceHVAC @daily_auto @header_regression @catNoGeoDaily
+  @catNoGeoSegmentHeaderArticlesAdviceHVAC
   Scenario: User hovers then clicks on Heating & Cooling in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(5) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > a:nth-child(10) > li |
+      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > a:nth-child(10) > a |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : CatNoGeo |
@@ -1125,13 +1125,13 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/hvac/"
 
-  @catNoGeoSegmentHeaderArticlesAdviceHomeConstruction @daily_auto @header_regression @catNoGeoDaily
+  @catNoGeoSegmentHeaderArticlesAdviceHomeConstruction
   Scenario: User hovers then clicks on Home Construction in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(5) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > a:nth-child(11) > li |
+      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > a:nth-child(11) > a |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : CatNoGeo |
@@ -1143,13 +1143,13 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/home-construction-design/"
 
-  @catNoGeoSegmentHeaderArticlesAdviceHomeExterior @daily_auto @header_regression @catNoGeoDaily
+  @catNoGeoSegmentHeaderArticlesAdviceHomeExterior
   Scenario: User hovers then clicks on Home Exteriors in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(5) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > a:nth-child(12) > li |
+      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > a:nth-child(12) > a |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : CatNoGeo |
@@ -1161,13 +1161,13 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/home-exteriors/"
 
-  @catNoGeoSegmentHeaderArticlesAdviceHomeInterior @daily_auto @header_regression @catNoGeoDaily
+  @catNoGeoSegmentHeaderArticlesAdviceHomeInterior
   Scenario: User hovers then clicks on Home Interior in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(5) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > a:nth-child(13) > li |
+      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > a:nth-child(13) > a |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : CatNoGeo |
@@ -1179,13 +1179,13 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/home-interiors/"
 
-  @catNoGeoSegmentHeaderArticlesAdviceHomeSecurity @daily_auto @header_regression @catNoGeoDaily
+  @catNoGeoSegmentHeaderArticlesAdviceHomeSecurity
   Scenario: User hovers then clicks on Home Security in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(5) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > a:nth-child(14) > li |
+      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > a:nth-child(14) > a |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : CatNoGeo |
@@ -1197,13 +1197,13 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/home-security-systems/"
 
-  @catNoGeoSegmentHeaderArticlesAdviceKitchenRemod @daily_auto @header_regression @catNoGeoDaily
+  @catNoGeoSegmentHeaderArticlesAdviceKitchenRemod
   Scenario: User hovers then clicks on Kitchen Remodeling in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(5) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > a:nth-child(15) > li |
+      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > a:nth-child(15) > a |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : CatNoGeo |
@@ -1215,13 +1215,13 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/kitchen-remodeling/"
 
-  @catNoGeoSegmentHeaderArticlesAdviceLandscaping @daily_auto @header_regression @catNoGeoDaily
+  @catNoGeoSegmentHeaderArticlesAdviceLandscaping
   Scenario: User hovers then clicks on Landscaping in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(5) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > a:nth-child(16) > li |
+      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > a:nth-child(16) > a |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : CatNoGeo |
@@ -1233,13 +1233,13 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/landscaping-lawn-care/"
 
-  @catNoGeoSegmentHeaderArticlesAdviceLighting @daily_auto @header_regression @catNoGeoDaily
+  @catNoGeoSegmentHeaderArticlesAdviceLighting
   Scenario: User hovers then clicks on Lighting in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(5) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > a:nth-child(17) > li |
+      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > a:nth-child(17) > a |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : CatNoGeo |
@@ -1251,13 +1251,13 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/lights/"
 
-  @catNoGeoSegmentHeaderArticlesAdviceMoving @daily_auto @header_regression @catNoGeoDaily
+  @catNoGeoSegmentHeaderArticlesAdviceMoving
   Scenario: User hovers then clicks on Moving in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(5) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > a:nth-child(18) > li |
+      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > a:nth-child(18) > a |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : CatNoGeo |
@@ -1269,13 +1269,13 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/movers/"
 
-  @catNoGeoSegmentHeaderArticlesAdviceOutdoorLiving @daily_auto @header_regression @catNoGeoDaily
+  @catNoGeoSegmentHeaderArticlesAdviceOutdoorLiving
   Scenario: User hovers then clicks on Outdoor Living in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(5) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > a:nth-child(19) > li |
+      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > a:nth-child(19) > a |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : CatNoGeo |
@@ -1287,13 +1287,13 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/outdoor-living/"
 
-  @catNoGeoSegmentHeaderArticlesAdvicePests @daily_auto @header_regression @catNoGeoDaily
+  @catNoGeoSegmentHeaderArticlesAdvicePests
   Scenario: User hovers then clicks on Pests in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(5) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > a:nth-child(20) > li |
+      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > a:nth-child(20) > a |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : CatNoGeo |
@@ -1305,13 +1305,13 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/household-pest-control/"
 
-  @catNoGeoSegmentHeaderArticlesAdvicePlumbing @daily_auto @header_regression @catNoGeoDaily
+  @catNoGeoSegmentHeaderArticlesAdvicePlumbing
   Scenario: User hovers then clicks on Plumbing in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(5) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > a:nth-child(21) > li |
+      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > a:nth-child(21) > a |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : CatNoGeo |
@@ -1323,13 +1323,13 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/plumbing/"
 
-  @catNoGeoSegmentHeaderArticlesAdviceRemodeling @daily_auto @header_regression @catNoGeoDaily
+  @catNoGeoSegmentHeaderArticlesAdviceRemodeling
   Scenario: User hovers then clicks on Remodeling in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(5) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > a:nth-child(22) > li |
+      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > a:nth-child(22) > a |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : CatNoGeo |
@@ -1341,13 +1341,13 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/remodeling/"
 
-  @catNoGeoSegmentHeaderArticlesAdviceRoofing @daily_auto @header_regression @catNoGeoDaily
+  @catNoGeoSegmentHeaderArticlesAdviceRoofing
   Scenario: User hovers then clicks on Roofing in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(5) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > a:nth-child(23) > li |
+      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > a:nth-child(23) > a |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : CatNoGeo |
@@ -1359,13 +1359,13 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/roofing/"
 
-  @catNoGeoSegmentHeaderArticlesAdviceStoreageOrg @daily_auto @header_regression @catNoGeoDaily
+  @catNoGeoSegmentHeaderArticlesAdviceStoreageOrg
   Scenario: User hovers then clicks on Storage & Organization in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(5) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > a:nth-child(24) > li |
+      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > a:nth-child(24) > a |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : CatNoGeo |
@@ -1377,13 +1377,13 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/storage-organization/"
 
-  @catNoGeoSegmentHeaderArticlesAdviceWasteManagement @daily_auto @header_regression @catNoGeoDaily
+  @catNoGeoSegmentHeaderArticlesAdviceWasteManagement
   Scenario: User hovers then clicks on Waste Management in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | #secondary-nav > ul > li:nth-child(5) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > a:nth-child(25) > li |
+      | click           | #secondary-nav > ul > li:nth-child(5) > div > ul > a:nth-child(25) > a |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : CatNoGeo |
@@ -1395,7 +1395,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/waste-management/"
 
-  @catNoGeoSegmentHeaderArticlesAdviceMore @daily_auto @header_regression @catNoGeoDaily
+  @catNoGeoSegmentHeaderArticlesAdviceMore
   Scenario: User hovers then clicks on View All in the header(Advice) in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
@@ -1457,7 +1457,7 @@ Feature:
       | action_method   | action_params       |
       | move_to_element | #al_show_menu > a > i |
       | click           | #al_show_menu > a > i |
-      | click           | #mobile-navigation > div > ul.col-50-50 > li:nth-child(1) > a |
+      | click           | #mobile-navigation > div > ul.col-50-50 > li:nth-child(1)> li |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : CatNoGeo |
@@ -1476,7 +1476,7 @@ Feature:
       | action_method   | action_params       |
       | move_to_element | #al_show_menu > a > i |
       | click           | #al_show_menu > a > i |
-      | click           | #mobile-navigation > div > ul.col-50-50 > li:nth-child(2) > a |
+      | click           | #mobile-navigation > div > ul.col-50-50 > li:nth-child(2)> li |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : CatNoGeo |
@@ -1495,7 +1495,7 @@ Feature:
       | action_method   | action_params       |
       | move_to_element | #al_show_menu > a > i |
       | click           | #al_show_menu > a > i |
-      | click           | #mobile-navigation > div > ul:nth-child(4) > li > a |
+      | click           | #mobile-navigation > div > ul:nth-child(4) > a > a |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : CatNoGeo |
@@ -1514,7 +1514,7 @@ Feature:
       | action_method   | action_params       |
       | move_to_element | #al_show_menu > a > i |
       | click           | #al_show_menu > a > i |
-      | click           | #mobile-navigation > div > ul:nth-child(3) > li > a |
+      | click           | #mobile-navigation > div > ul:nth-child(3) > a > a |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : CatNoGeo |
@@ -1530,7 +1530,16 @@ Feature:
 ##### Body Tests #####
 
 
+
+
+
+
 ## Needs to be filled in ##
+
+
+
+
+
 
 
 ##### Footer Tests #####
