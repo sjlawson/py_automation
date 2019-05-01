@@ -23,9 +23,9 @@ Feature:
 ##### Header Tests #####
 
 
-    @headerJoinStatePage @companyTreeDaily @headerDailyRegression
+    @headerJoinStatePage @companyTreeDaily @headerDailyRegression @statePage
     Scenario: State Page clicking the join link in the header
-      Given user is on a visitor city page
+    Given user is on a visitor state page
       When a user performs actions
       | action_method | action_params |
       | click         | #header-join  |
@@ -37,13 +37,12 @@ Feature:
       | activityLocation | Visitor : US : State |
       | description      | Join link in header |
       | userId           |                     |
-      | visitorPageGeo   | FISHERS IN          |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/app/signup"
 
-    @headerSignInStatePage @companyTreeDaily @headerDailyRegression
+    @headerSignInStatePage @companyTreeDaily @headerDailyRegression @statePage
     Scenario: State Page clicking the Sign In link in the header
-      Given user is on a visitor city page
+    Given user is on a visitor state page
       When a user performs actions
       | action_method | action_params   |
       | click         | #header-sign-in |
@@ -55,13 +54,12 @@ Feature:
       | description      | Sign In link in header |
       | activityLocation | Visitor : US : State    |
       | userId           |                        |
-      | visitorPageGeo   | FISHERS IN             |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/member/login"
 
-    @headerBusinessOwnersStatePage @companyTreeDaily @headerDailyRegression
+    @headerBusinessOwnersStatePage @companyTreeDaily @headerDailyRegression @statePage
     Scenario: State Page clicking the Business Owners link in the header
-      Given user is on a visitor city page
+    Given user is on a visitor state page
       When a user performs actions
       | action_method | action_params       |
       | click         | #business-center    |
@@ -74,9 +72,9 @@ Feature:
       | activityLocation | Visitor : US : State            |
       | userId           |                                |
 
-    @StatePageInteriorDrywall @companyTreeDaily @headerDailyRegression
+    @StatePageInteriorDrywall @companyTreeDaily @headerDailyRegression @statePage
     Scenario: State Page clicking the Interior - Plumbing link in the header
-      Given user is on a visitor city page
+    Given user is on a visitor state page
       When a user performs actions
       | action_method   | action_params       |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(1) > label |
@@ -87,10 +85,10 @@ Feature:
     And the segment call contains parameters
       | prop_key               | prop_value                       |
       | activityLocation       | Visitor : US : State              |
-      | description            | Near Me link in desktop header   |
+      | description            | Interior menu category link in header   |
       | userId                 |                                  |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/nearme/"
+    And the landing URL contains ".angieslist.com/companylist/plumbing.htm"
 
 
 ##### Body Test #####
