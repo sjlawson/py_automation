@@ -54,7 +54,14 @@ def step_impl(context):
     ActionChains(context.browser).move_to_element(membership_checkbox).click().perform()
     submit_button = context.browser.find_element(By.ID, 'signup--signup-continue')
     ActionChains(context.browser).move_to_element(submit_button).click().perform()
-    context.wait.until(EC.presence_of_element_located((By.ID, 'address-collection--first-name')))
+
+    agreement_present = context.browser.find_elements(By.ID, 'legal--accept')
+    if len(agreement_present) > 0:
+        agree_button = context.browser.find_element(By.ID, 'legal--accept')
+        ActionChains(context.browser).move_to_element(agree_button).click().perform()
+        context.wait.until(EC.presence_of_element_located((By.ID, 'address-collection--first-name')))
+    else:
+        context.wait.until(EC.presence_of_element_located((By.ID, 'address-collection--first-name')))
 
 @when('the user enters geographic data')
 def step_impl(context):
@@ -121,14 +128,17 @@ def step_impl(context, number_views):
     search_toplevel = ['house', 'yard', 'health']
     profiles_viewed = 0
     for search_parent_category in search_toplevel:
-        search_hover = context.browser.find_element(By.ID, 'sub-nav-tab-header-' + str(search_parent_category))
+        top_level_locator = 'sub-nav-tab-header-' + str(search_parent_category)
+        search_hover = context.browser.find_element(By.ID, top_level_locator)
         ActionChains(context.browser).move_to_element(search_hover).perform()
-        search_child_categories = context.browser.find_elements(By.XPATH, "//a[contains(@id, 'header--sub-nav')]")
+        search_child_categories = context.browser.find_elements(By.XPATH, "//div[@id='{}']//a[contains(@id, 'header--sub-nav')]".format(top_level_locator))
+        print('sub-nav-tab-header-' + str(search_parent_category))
         child_list = []
         for child_category_result in search_child_categories:
             child_list.append(child_category_result.get_attribute('id'))
         for this_category_id in child_list:
-            search_hover = context.browser.find_element(By.ID, 'sub-nav-tab-header-' + str(search_parent_category))
+            print(this_category_id)
+            search_hover = context.browser.find_element(By.ID, top_level_locator)
             ActionChains(context.browser).move_to_element(search_hover).perform()
             context.wait.until(EC.visibility_of_element_located((By.ID, this_category_id)))
             category_element = context.browser.find_element(By.ID, this_category_id)
@@ -157,8 +167,56 @@ def step_impl(context, number_views):
                     context.wait.until(EC.visibility_of_element_located((By.ID, 'category-info')))
                     profiles_viewed += 1
 
-
-
+@when('the user creates "{number_leads:d}" leads')
+def step_impl(context, number_leads):
+    leads_created = 0
+    deals_button = context.browser.find_element(By.ID, 'right-subnav--shop-offers')
+    ActionChains(context.browser).move_to_element(deals_button).click().perform()
+    context.wait.until(EC.visibility_of_element_located((By.LINK_TEXT, 'Shop All Deals')))
+    pages_list = context.browser.find_elements(By.XPATH, "//a[contains(@id, 'pagination-page-45')]")
+    max_pages = 1
+    if len(pages_list) > 1:
+        last_page_element = pages_list[-2]
+        max_pages = int(last_page_element.text)
+    search_url = context.browser.current_url
+    for pagination_loop in range(max_pages):
+        context.browser.get(search_url + '?page=' + str(pagination_loop))
+        context.wait.until(EC.presence_of_element_located((By.CLASS_NAME, 'popular-offers-container')))
+        page_deals_list = context.browser.find_elements(By.XPATH, "//a[contains(@id, 'enhanced-offer-card-')]")
+        deals_to_claim = []
+        for deal in page_deals_list:
+            deals_to_claim.append(deal.get_attribute('href'))
+        for this_url in deals_to_claim:
+            if (leads_created >= number_leads):
+                return
+            print(this_url)
+            context.browser.get(this_url)
+            context.wait.until(EC.visibility_of_element_located((By.XPATH, "//button[text()='Claim This Deal']")))
+            claim_button = context.browser.find_element(By.XPATH, "//button[text()='Claim This Deal']")
+            ActionChains(context.browser).move_to_element(claim_button).click().perform()
+            context.wait.until(EC.presence_of_element_located((By.NAME, 'projectDetails')))
+            project_textarea = context.browser.find_element(By.NAME, 'projectDetails')
+            ActionChains(context.browser).move_to_element(project_textarea).click().send_keys('I really need a new thing done to my house.  Help me obiwan, you\'re my only hope').perform()
+            context.wait.until(EC.presence_of_element_located((By.ID, 'offer-redemption-next-1')))
+            next_first = context.browser.find_element(By.ID, 'offer-redemption-next-1')
+            ActionChains(context.browser).move_to_element(next_first).click().perform()
+            context.wait.until(EC.visibility_of_element_located((By.CLASS_NAME, 'field-radio-label')))
+            time_box = context.browser.find_element(By.XPATH, "//label[@for='timing-control-ImFlexible']")
+            ActionChains(context.browser).move_to_element(time_box).click().perform()
+            context.wait.until(EC.visibility_of_element_located((By.ID, 'offer-redemption-next-2')))
+            next_second = context.browser.find_element(By.ID, 'offer-redemption-next-2')
+            ActionChains(context.browser).move_to_element(next_second).click().perform()
+            context.wait.until(EC.visibility_of_element_located((By.CLASS_NAME, 'control-label')))
+            phone_1 = context.browser.find_element(By.NAME, 'part1')
+            ActionChains(context.browser).move_to_element(phone_1).click().send_keys('544').perform()
+            phone_2 = context.browser.find_element(By.NAME, 'part2')
+            ActionChains(context.browser).move_to_element(phone_2).click().send_keys('701').perform()
+            phone_3 = context.browser.find_element(By.NAME, 'part3')
+            ActionChains(context.browser).move_to_element(phone_3).click().send_keys('3334').perform()
+            final_button = context.browser.find_element(By.ID, 'offer-redemption-next-3')
+            ActionChains(context.browser).move_to_element(final_button).click().perform()
+            context.wait.until(EC.visibility_of_element_located((By.ID, 'offer-redemption-see-offers')))
+            leads_created += 1
 
 @then('the member landing page is loaded')
 def step_impl(context):

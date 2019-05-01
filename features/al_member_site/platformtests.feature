@@ -37,7 +37,6 @@ Feature:
     And the user sends "25" messages
     Then the user receives a recaptcha challenge
 
-  @todo
   Scenario: test user challenge from leads is working as expected
     Given user is on the sign up page
     When the user creates a new account
@@ -49,5 +48,5 @@ Feature:
     Given user is on the sign up page
     When the user creates a new account
     And the user enters geographic data
-    And the user views "100" profiles
+    And the user views "50" profiles
     Then the user receives a recaptcha challenge
