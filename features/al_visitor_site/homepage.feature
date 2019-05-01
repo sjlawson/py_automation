@@ -42,8 +42,7 @@ Feature:
       | title          | Angie's List &vert; Join for FREE to see 10 Million Verified Reviews  |
       | srCtaVersion   | v2.1                                                                  |
 
-
-##### Header Tests #####
+##### Current Header #####
 
   @homePageSegmentHeaderJoinNow @daily_auto @daily_homepage_regression @header_regression
   Scenario: User clicks on Header Join button on the Drupal Homepage
@@ -107,6 +106,12 @@ Feature:
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
     And the landing URL contains "angieslistbusinesscenter.com"
+
+
+
+
+
+##### New Header Tests(Not In Master) #####
 
   @homePageSegmentHeaderInteriorApplianceRepair @daily_autoNotInMasterYet @daily_homepage_regressionNotInMasterYet @header_regressionNotInMasterYet
   Scenario: User hovers then clicks on Appliance Repair in the header on the Drupal Homepage
