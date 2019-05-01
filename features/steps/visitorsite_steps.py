@@ -21,6 +21,15 @@ def step_impl(context):
     time.sleep(1)
 
 
+@given('user is on the visitor site comnpanylist page')
+def step_impl(context):
+    appsuite_env = 'al_visitor_site'
+    appsuite_url = context.appsuites[appsuite_env]['base_url']
+    context.url = appsuite_url + '/companylist/'
+    context.browser.get(context.url)
+    time.sleep(1)
+
+
 @given('user is on a visitor site catnogeo page')
 def step_impl(context):
     appsuite_env = 'al_visitor_site'
@@ -29,13 +38,6 @@ def step_impl(context):
     context.browser.get(context.url)
     time.sleep(1)
 
-@given('user is on the visitor site comnpanylist page')
-def step_impl(context):
-    appsuite_env = 'al_visitor_site'
-    appsuite_url = context.appsuites[appsuite_env]['base_url']
-    context.url = appsuite_url + '/companylist/'
-    context.browser.get(context.url)
-    time.sleep(1)
 
 @given('user is on a visitor site geocat page')
 def step_impl(context):
@@ -71,6 +73,16 @@ def step_impl(context):
     context.url = appsuite_url + '/companylist/us/mi/'
     context.browser.get(context.url)
     time.sleep(1)
+
+
+@given('user is on the visitor site photos page')
+def step_impl(context):
+    appsuite_env = 'al_visitor_site'
+    appsuite_url = context.appsuites[appsuite_env]['base_url']
+    context.url = appsuite_url + '/photos/'
+    context.browser.get(context.url)
+    time.sleep(2)
+
 
 
 @then('the title of link with id "{link_id}" is "{linktitle}"')
