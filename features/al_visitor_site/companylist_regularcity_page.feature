@@ -22,6 +22,8 @@ Feature:
 
 
 ##### Header Tests #####
+
+
     @headerJoinRegCityPage @companyTreeDaily @headerDailyRegression
     Scenario: City Page(Fishers Indiana) clicking the join link in the header
       Given user is on a visitor city page
@@ -73,7 +75,7 @@ Feature:
       | activityLocation | Visitor : US : City            |
       | userId           |                                |
 
-    @regCityPageInteriorDrywall @companyTreeDaily @headerDailyRegression
+    @regCityPageInteriorPlumbing @companyTreeDaily @headerDailyRegression
     Scenario: City Page(Fishers Indiana) clicking the Interior - Plumbing link in the header
       Given user is on a visitor city page
       When a user performs actions
@@ -86,10 +88,10 @@ Feature:
     And the segment call contains parameters
       | prop_key               | prop_value                       |
       | activityLocation       | Visitor : US : City              |
-      | description            | Near Me link in desktop header   |
+      | description            | Interior menu category link in header   |
       | userId                 |                                  |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/nearme/"
+    And the landing URL contains ".angieslist.com/companylist/plumbing.htm"
 
 
 ##### Body Test #####

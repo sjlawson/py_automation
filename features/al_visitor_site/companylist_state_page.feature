@@ -1,4 +1,3 @@
-@companylistTree
 Feature:
 
   Scenario: testing segment pagecall on state page
@@ -20,108 +19,86 @@ Feature:
       | pageState   | MI                                                   |
       | referrer    |                                                      |
 
-  Scenario: segment call on clicking the join link in state header
-    Given user is on a visitor state page
-    When a user performs actions
+
+##### Header Tests #####
+
+
+    @headerJoinStatePage @companyTreeDaily @headerDailyRegression
+    Scenario: State Page clicking the join link in the header
+      Given user is on a visitor city page
+      When a user performs actions
       | action_method | action_params |
       | click         | #header-join  |
-    Then a segment track call is sent for a unique field value pair
+      Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value        |
       | description  | Join link in header |
-    And the segment call contains parameters
-      | prop_key         | prop_value           |
+      And the segment call contains parameters
+      | prop_key         | prop_value          |
       | activityLocation | Visitor : US : State |
-      | description      | Join link in header  |
-      | userId           |                      |
+      | description      | Join link in header |
+      | userId           |                     |
+      | visitorPageGeo   | FISHERS IN          |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/app/signup"
 
-
-  Scenario: segment call on clicking the HIW link in state header
-    Given user is on a visitor state page
-    When a user performs actions
-      | action_method | action_params       |
-      | click         | .btnHiw |
-    Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value                |
-      | description  | How it Works link in header |
-    And the segment call contains parameters
-      | prop_key         | prop_value                  |
-      | description      | How it Works link in header |
-      | activityLocation | Visitor : US : State        |
-      | userId           |                             |
-
-
-  Scenario: segment call on clicking the Sign In link in state header
-    Given user is on a visitor state page
-    When a user performs actions
+    @headerSignInStatePage @companyTreeDaily @headerDailyRegression
+    Scenario: State Page clicking the Sign In link in the header
+      Given user is on a visitor city page
+      When a user performs actions
       | action_method | action_params   |
       | click         | #header-sign-in |
-    Then a segment track call is sent for a unique field value pair
+      Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value           |
       | description  | Sign In link in header |
-    And the segment call contains parameters
+      And the segment call contains parameters
       | prop_key         | prop_value             |
       | description      | Sign In link in header |
-      | activityLocation | Visitor : US : State   |
+      | activityLocation | Visitor : US : State    |
       | userId           |                        |
+      | visitorPageGeo   | FISHERS IN             |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/member/login"
 
-  Scenario: segment call on clicking the FAQ link in state header
-    Given user is on a visitor state page
-    When a user performs actions
-      | action_method | action_params   |
-      | click         | #faq |
-    Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value           |
-      | description  | FAQ link in header |
-    And the segment call contains parameters
-      | prop_key         | prop_value           |
-      | description      | FAQ link in header   |
-      | activityLocation | Visitor : US : State |
-      | userId           |                      |
-
-
-  Scenario: segment call on clicking the Press link in state header
-    Given user is on a visitor state page
-    When a user performs actions
-      | action_method | action_params |
-      | click         | #press        |
-    Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value                |
-      | description  | In the Press link in header |
-    And the segment call contains parameters
-      | prop_key         | prop_value                  |
-      | description      | In the Press link in header |
-      | activityLocation | Visitor : US : State        |
-      | userId           |                             |
-
-
-  Scenario: segment call on clicking the SC link in state header
-    Given user is on a visitor state page
-    When a user performs actions
-      | action_method | action_params |
-      | click         | #articles     |
-    Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value                    |
-      | description  | Solution Center link in header  |
-    And the segment call contains parameters
-      | prop_key         | prop_value                     |
-      | description      | Solution Center link in header |
-      | activityLocation | Visitor : US : State           |
-      | userId           |                                |
-
-
-  Scenario: segment call on clicking the BC link in state header
-    Given user is on a visitor state page
-    When a user performs actions
+    @headerBusinessOwnersStatePage @companyTreeDaily @headerDailyRegression
+    Scenario: State Page clicking the Business Owners link in the header
+      Given user is on a visitor city page
+      When a user performs actions
       | action_method | action_params       |
-      | click         | #nav_business_owner |
-    Then a segment track call is sent for a unique field value pair
+      | click         | #business-center    |
+      Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value                   |
       | description  | Business Owners link in header |
-    And the segment call contains parameters
+      And the segment call contains parameters
       | prop_key         | prop_value                     |
       | description      | Business Owners link in header |
-      | activityLocation | Visitor : US : State           |
+      | activityLocation | Visitor : US : State            |
       | userId           |                                |
+
+    @StatePageInteriorDrywall @companyTreeDaily @headerDailyRegression
+    Scenario: State Page clicking the Interior - Plumbing link in the header
+      Given user is on a visitor city page
+      When a user performs actions
+      | action_method   | action_params       |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(1) > label |
+      | click           | css: #secondary-nav > ul > li:nth-child(1) > div > ul > li:nth-child(10) > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value           |
+      | activityLocation | Visitor : US : State   |
+    And the segment call contains parameters
+      | prop_key               | prop_value                       |
+      | activityLocation       | Visitor : US : State              |
+      | description            | Near Me link in desktop header   |
+      | userId                 |                                  |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/nearme/"
+
+
+##### Body Test #####
+
+
+
+
+##### Footer Test #####
 
 
   Scenario: segment call on clicking the Join link in state footer

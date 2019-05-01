@@ -82,8 +82,8 @@ Feature:
     Given user is on a visitor site geocat page
     When a user performs actions
       | action_method   | action_params       |
-      | move_to_element | css: #secondary-nav > ul > li:nth-child(3) > label |
-      | click           | css: #secondary-nav > ul > li:nth-child(3) > div > ul > li:nth-child(8) > a |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(4) > label |
+      | click           | css: #secondary-nav > ul > li:nth-child(4) > div > div:nth-child(5) > a |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value           |
       | activityLocation | Visitor : Geocat   |
