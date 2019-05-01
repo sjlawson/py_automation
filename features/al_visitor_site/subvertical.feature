@@ -1,76 +1,80 @@
-@photos
 Feature:
 
-  @photosPageCall
-  Scenario: Segment pagecall when the photos page loads
-    Given user is on the visitor site photos page
+  @subverticalPageCall
+  Scenario: Segment pagecall when the subvertical page loads
+    Given user is on the visitor site subvertical page
     When a segment page call is sent for a unique field value pair
       | unique_field | unique_value   |
-      | name         | CNT : Photo Landing Page |
+      | name         | CNT : Subvertical |
     Then the segment call contains parameters
       | prop_key              | prop_value                             |
       | atTestOffer           |                                        |
       | cid |                                                          |
-      | name | CNT : Photo Landing Page                                |
-      | path | /photos/                                                |
+      | contentNodeId |                                                |
+      | name | CNT : Subvertical                                       |
+      | path | /lights/                                                |
       | referrer |                                                     |
       | search |                                                       |
-      | title | Home Inspiration and Design Center &vert; Angie's List |
+      | subverticalName |                                              |
+      | title | Lighting &vert; Angie's List                           |
       | url |                                                          |
       | userId |                                                       |
       | userType | Visitor - New                                       |
+      | visitorPageCategory|                                           |
+
+
 
 ##### Header Tests #####
 
-  @photosPageHeaderJoinClick @headerDailyRegression
-  Scenario: User clicks on Header Join button on the Drupal photos page
-    Given user is on the visitor site photos page
+  @subverticalPageHeaderJoinClick @headerDailyRegression
+  Scenario: User clicks on Header Join button on the Drupal subvertical page
+    Given user is on the visitor site subvertical page
     When a user performs actions
       | action_method   | action_params      |
       | move_to_element | id: header-join    |
       | click           |                    |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
-      | activityLocation | CNT : Photo Landing Page |
+      | activityLocation | CNT : Subvertical |
     And the segment call contains parameters
       | prop_key         | prop_value          |
-      | activityLocation | CNT : Photo Landing Page |
+      | activityLocation | CNT : Subvertical |
       | description      | Join link in header |
       | userId           |                     |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/app/signup"
 
-  @photosPageHeaderSignInClick @headerDailyRegression
-  Scenario: User clicks on Header Sign In button on the Drupal photos page
-    Given user is on the visitor site photos page
+  @subverticalPageHeaderSignInClick @headerDailyRegression
+  Scenario: User clicks on Header Sign In button on the Drupal subvertical page
+    Given user is on the visitor site subvertical page
     When a user performs actions
       | action_method   | action_params      |
       | move_to_element | id: header-sign-in |
       | click           |                    |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
-      | activityLocation | CNT : Photo Landing Page |
+      | activityLocation | CNT : Subvertical |
     And the segment call contains parameters
       | prop_key               | prop_value                        |
-      | activityLocation       | CNT : Photo Landing Page          |
+      | activityLocation       | CNT : Subvertical          |
       | description            | Sign In link in header            |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/member/login"
 
-  @photosPageHeaderBusinessOwners @headerDailyRegression
-  Scenario: User clicks on the Business Owners button in the header on the Drupal photos page
-    Given user is on the visitor site photos page
+  @subverticalPageHeaderBusinessOwners @headerDailyRegression
+  Scenario: User clicks on the Business Owners button in the header on the Drupal subvertical page
+    Given user is on the visitor site subvertical page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | id: business-center |
       | click           |                     |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
-      | activityLocation | CNT : Photo Landing Page |
+      | activityLocation | CNT : Subvertical |
     And the segment call contains parameters
       | prop_key               | prop_value                        |
-      | activityLocation       | CNT : Photo Landing Page          |
+      | activityLocation       | CNT : Subvertical          |
       | description            | Business Owners link in header    |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load

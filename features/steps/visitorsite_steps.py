@@ -84,6 +84,14 @@ def step_impl(context):
     time.sleep(2)
 
 
+@given('user is on the visitor site subvertical page')
+def step_impl(context):
+    appsuite_env = 'al_visitor_site'
+    appsuite_url = context.appsuites[appsuite_env]['base_url']
+    context.url = appsuite_url + '/lights/'
+    context.browser.get(context.url)
+    time.sleep(1)
+
 
 @then('the title of link with id "{link_id}" is "{linktitle}"')
 def step_impl(context, link_id, linktitle):
