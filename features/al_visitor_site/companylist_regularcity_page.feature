@@ -22,7 +22,7 @@ Feature:
 
 
 ##### Header Tests #####
-    @headerJoinRegCityPage @companyTreeDaily
+    @headerJoinRegCityPage @companyTreeDaily @headerDailyRegression
     Scenario: City Page(Fishers Indiana) clicking the join link in the header
       Given user is on a visitor city page
       When a user performs actions
@@ -40,7 +40,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/app/signup"
 
-    @headerSignInRegCityPage @companyTreeDaily
+    @headerSignInRegCityPage @companyTreeDaily @headerDailyRegression
     Scenario: City Page(Fishers Indiana) clicking the Sign In link in the header
       Given user is on a visitor city page
       When a user performs actions
@@ -58,7 +58,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/member/login"
 
-    @headerBusinessOwnersRegCityPage @companyTreeDaily
+    @headerBusinessOwnersRegCityPage @companyTreeDaily @headerDailyRegression
     Scenario: City Page(Fishers Indiana) clicking the Business Owners link in the header
       Given user is on a visitor city page
       When a user performs actions
@@ -73,24 +73,23 @@ Feature:
       | activityLocation | Visitor : US : City            |
       | userId           |                                |
 
-    @regCityPageInteriorDrywall @companyTreeDaily
-    Scenario: City Page(Fishers Indiana) clicking the Interior - Drywall link in the header
+    @regCityPageInteriorDrywall @companyTreeDaily @headerDailyRegression
+    Scenario: City Page(Fishers Indiana) clicking the Interior - Plumbing link in the header
       Given user is on a visitor city page
       When a user performs actions
       | action_method   | action_params       |
-      | move_to_element | #secondary-nav > ul > li:nth-child(2) > label > span |
-      | click           | #secondary-nav > ul > li:nth-child(2) > label > span |
-      | move_to_element | #secondary-nav > ul > li:nth-child(2) > div > ul > a:nth-child(1) > li |
-      | click           | #secondary-nav > ul > li:nth-child(2) > div > ul > a:nth-child(1) > li |
-      Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value                   |
-      | description  | Exterior menu category link in header |
-      And the segment call contains parameters
-      | prop_key         | prop_value                     |
-      | description      | Exterior menu category link in header |
-      | activityLocation | Visitor : US : City            |
-      | userId           |   |
-
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(1) > label |
+      | click           | css: #secondary-nav > ul > li:nth-child(1) > div > ul > li:nth-child(10) > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value           |
+      | activityLocation | Visitor : US : City   |
+    And the segment call contains parameters
+      | prop_key               | prop_value                       |
+      | activityLocation       | Visitor : US : City              |
+      | description            | Near Me link in desktop header   |
+      | userId                 |                                  |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/nearme/"
 
 
 ##### Body Test #####
