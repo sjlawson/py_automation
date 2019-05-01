@@ -15,10 +15,7 @@ if os.path.exists('.env'):
         if len(var) == 2 and var[0] not in os.environ:
             os.environ[var[0]] = var[1]
     if 'BASEURL_OVERRIDE' not in os.environ or os.environ['BASEURL_OVERRIDE'] == 'none':
-        os.environ['BASEURL_OVERRIDE'] = False
-
-if 'VISITOR_SITE_URL' not in os.environ:
-    os.environ['VISITOR_SITE_URL'] = 'https://visitorstg.angieslist.com'
+        os.environ['BASEURL_OVERRIDE'] = ''
 
 
 @fixture
@@ -234,6 +231,11 @@ def before_all(context):
     with open("config/applications.yml", "r") as stream:
         yamlconfig = yaml.load(stream)
         context.appsuites = yamlconfig['appsuites']
+
+    # if override is set, it's set for ALL because it's meant for specific runs. Scheduled jobs should not use this.
+    if os.environ['BASEURL_OVERRIDE']:
+        for key in context.appsuites.keys():
+            context.appsuites[key]['base_url'] = os.environ['BASEURL_OVERRIDE']
 
     print("Starting Python Selenium Test Framework")
 
