@@ -1,3 +1,4 @@
+@catNoGeo
 Feature:
 
   @catNoGeoPageCallSrOverlap @catNoGeoDaily @companyTreeDaily
@@ -53,7 +54,7 @@ Feature:
 
   ## companyListCatNoGeoSegmentJoin
   Scenario: join button on CatNoGeo page
-    Given user is on a visitor site catnogeo page
+    Given user is on a visitor site catnogeo page that is an SR overlap category
     When a user performs actions
     | action_method | action_params |
     | click         | #header-join  |
@@ -71,7 +72,7 @@ Feature:
 
   ## test_companyListCatNoGeoHeaderLinkClick
   Scenario: segment call on clicking the HIW link in CatNoGeo header
-    Given user is on a visitor site catnogeo page
+    Given user is on a visitor site catnogeo page that is an SR overlap category
     When a user performs actions
     | action_method | action_params |
     | click         | .btnHiw       |
@@ -87,7 +88,7 @@ Feature:
 
   ## test_companyListCatNoGeoHeaderSignInClick
   Scenario: segment call on clicking the Sign In link in CatNoGeo header
-    Given user is on a visitor site catnogeo page
+    Given user is on a visitor site catnogeo page that is an SR overlap category
     When a user performs actions
     | action_method | action_params   |
     | click         | #header-sign-in |
@@ -105,7 +106,7 @@ Feature:
 
   ## test_companyListCatNoGeoHeaderFAQClick
   Scenario: segment call on clicking the FAQ link in CatNoGeo header
-    Given user is on a visitor site catnogeo page
+    Given user is on a visitor site catnogeo page that is an SR overlap category
     When a user performs actions
     | action_method | action_params   |
     | click         | #faq |
@@ -120,7 +121,7 @@ Feature:
 
   ## test_companyListCatNoGeoHeaderITPClick
   Scenario: segment call on clicking the Press link in CatNoGeo header
-    Given user is on a visitor site catnogeo page
+    Given user is on a visitor site catnogeo page that is an SR overlap category
     When a user performs actions
     | action_method | action_params |
     | click         | #press        |
@@ -136,7 +137,7 @@ Feature:
 
   ## test_companyListCatNoGeoHeaderScClick
   Scenario: segment call on clicking the SC link in CatNoGeo header
-    Given user is on a visitor site catnogeo page
+    Given user is on a visitor site catnogeo page that is an SR overlap category
     When a user performs actions
     | action_method | action_params |
     | click         | #articles     |
@@ -152,7 +153,7 @@ Feature:
 
   ## test_companyListCatNoGeoHeaderBcClick
   Scenario: segment call on clicking the BC link in CatNoGeo header
-    Given user is on a visitor site catnogeo page
+    Given user is on a visitor site catnogeo page that is an SR overlap category
     When a user performs actions
     | action_method | action_params       |
     | click         | #nav_business_owner |
@@ -174,7 +175,7 @@ Feature:
 
   @catNoGeoBodyHeroSrCtaFindProsNoZip @catNoGeoBodyRegression
   Scenario: User clicks on hero Find Pros CTA (No Zip) button on the Drupal CatNoGeo Page
-    Given user is on a visitor site catnogeo page
+    Given user is on a visitor site catnogeo page that is an SR overlap category
     When a user performs actions
       | action_method   | action_params         |
       | move_to_element | id: ha-lead-submit    |
@@ -195,7 +196,7 @@ Feature:
 
   @catNoGeoBodyHeroSrCtaFindProsWithZip
   Scenario: User clicks on hero Find Pros CTA (With Zip) button on the Drupal CatNoGeo Page
-    Given user is on a visitor site catnogeo page
+    Given user is on a visitor site catnogeo page that is an SR overlap category
     When a user performs actions
       | action_method   | action_params      |
       | move_to_element | #ha-lead-zip       |
@@ -220,32 +221,28 @@ Feature:
     And the landing URL contains ".angieslist.com/category.Home-Inspection.12041.html?entry_point_id=33880173&postalCode=49726"
 
 
-  @homePageBodySegmentSRCTAFindProsEnter @daily_auto @daily_homepage_regression @body_regression
+  @catNoGeoBodySegmentSrCtaFindProsEnter
   Scenario: User clicks on hero Find Pros CTA button on Drupal Homepage
-    Given user is on a visitor site page
-    """
-    /
-    """
+    Given user is on a visitor site catnogeo page that is an SR overlap category
     When a user performs actions
       | action_method   | action_params      |
-      | move_to_element | #edit-category-2   |
+      | move_to_element | #ha-lead-zip   |
       | click           |                    |
-      | send_keys       | plumbing           |
+      | send_keys       | 49726           |
     Then we wait "1" seconds for the next page to load
-    Then press the "ENTER" key while "#edit-category-2" is in focus
+    Then press the "ENTER" key while "#ha-lead-zip" is in focus
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
-      | activityLocation | Visitor : Home |
+      | unique_field | unique_value                  |
+      | activityLocation | Visitor : CatNoGeo        |
     And the segment call contains parameters
       | prop_key               | prop_value                        |
-      | activityLocation       | Visitor : Home                    |
-      | categoryId             |                                   |
-      | categorySelected       |                                   |
-      | description            | Find Pros button in hero image - to SR path           |
-      | homeAdvisorCategoryId	 |                                   |
+      | activityLocation       | Visitor : CatNoGeo                |
+      | description            | Service Request Flow entry button |
       | userId                 |                                   |
-    And we wait "1" seconds for the next page to load
-    And the landing URL contains "angieslist.com/category.Plumbing.10216.html?entry_point_id=32949645"
+      | userSelectedZipCode    | 49726                             |
+      | visitorPageCategory    | Home Inspection                   |
+    And we wait "2" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/category.Home-Inspection.12041.html?entry_point_id=33880173&postalCode=49726"
 
 
 
@@ -266,7 +263,7 @@ Feature:
 
   ## test_companyListCatNoGeoFooterJoinClick
   Scenario: segment call on clicking the Join link in CatNoGeo footer
-    Given user is on a visitor site catnogeo page
+    Given user is on a visitor site catnogeo page that is an SR overlap category
     When a user performs actions
     | action_method | action_params |
     | click         | #footer-join  |
@@ -283,7 +280,7 @@ Feature:
   ## test_companyListCatNoGeo_topCities
   @topcities @catnogeo_topcities
   Scenario Outline: companylist CatNoGeo top cities
-    Given user is on a visitor site catnogeo page
+    Given user is on a visitor site catnogeo page that is an SR overlap category
     When a user clicks on "<pageLink>"
     Then a segment track call is sent for a unique field value pair
     | unique_field | unique_value              |
