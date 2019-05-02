@@ -64,7 +64,7 @@ def remote_cbt(context):
     PROXY = os.environ.get('PROXY', '127.0.0.1:4545')
     desired_cap = {
         'name': context.test_case.id() + ' ' + str(datetime.datetime.now()),
-        'platform': os.environ.get('PLATFORM', 'Mac OS X 10.12'),
+        'platform': os.environ.get('OS_PLATFORM', 'Mac OS X 10.12'),
         'browserName': os.environ.get('BROWSERNAME', 'chrome'),
         'record_video': 'true',
         'record_network': 'true',
@@ -87,7 +87,7 @@ def remote_cbt(context):
 @fixture
 def remote_sauce(context):
     desired_cap = {
-        'platform': os.environ.get('PLATFORM', 'Mac OS X 10.12'),
+        'platform': os.environ.get('OS_PLATFORM', 'Mac OS X 10.12'),
         'browserName': os.environ.get('BROWSERNAME', 'chrome'),
         'version': 'latest',
         'extendedDebugging': True
@@ -104,7 +104,7 @@ def remote_sauce(context):
 
 def set_caps(caps, method_name):
     PROXY = os.environ.get('PROXY', '127.0.0.1:4545')
-    test_client = os.environ.get('TEST_CLIENT', 'Mac OSX 10.12')
+    test_client = os.environ.get('OS_PLATFORM', 'Mac OSX 10.12')
     caps['loggingPrefs'] = { 'performance': 'INFO'}
     caps['name'] = 'cqtest_' + str(datetime.datetime.now())
     caps['build'] = '1.0'
