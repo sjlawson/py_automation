@@ -1,5 +1,55 @@
-@companylistTree
 Feature:
+
+  @catNoGeoPageCallSrOverlap @catNoGeoDaily @companyTreeDaily
+  Scenario: a user lands the CatNoGeo page that is an SR overlap category
+    Given user is on a visitor site catnogeo page that is an SR overlap category
+    When a segment page call is sent for a unique field value pair
+      | unique_field | unique_value       |
+      | name         | Visitor : CatNoGeo |
+    Then the segment call contains parameters
+      | prop_key              | prop_value                                                               |
+      | atTestOffer           |                                                                          |
+      | categoryId            | 79                                                                       |
+      | cid                   |                                                                          |
+      | homeAdvisorCategoryId | 12041                                                                    |
+      | name                  | Visitor : CatNoGeo                                                       |
+      | pageVersion           | Lullabot Redesign                                                        |
+      | path                  | /companylist/home-inspection.htm                                         |
+      | referrer              |                                                                          |
+      | search                |                                                                          |
+      | srCtaDisplayed        | true                                                                     |
+      | title                 | Local Home Inspectors - Find a Top-Rated Home Inspector on Angie's List  |
+      | url                   |                                                                          |
+      | userId                |                                                                          |
+      | userType              | Visitor - New                                                            |
+      | visitorPageCategory   | HOME INSPECTION                                                          |
+
+  @catNoGeoPageCallNoSrOverlap @catNoGeoDaily @companyTreeDaily
+  Scenario: a user lands the CatNoGeo page that is not an SR overlap category
+    Given user is on a visitor site catnogeo page that is not an SR overlap category
+    When a segment page call is sent for a unique field value pair
+      | unique_field | unique_value       |
+      | name         | Visitor : CatNoGeo |
+    Then the segment call contains parameters
+      | prop_key              | prop_value                                                        |
+      | atTestOffer           |                                                                   |
+      | categoryId            | 102                                                               |
+      | cid                   |                                                                   |
+      | homeAdvisorCategoryId |                                                                   |
+      | name                  | Visitor : CatNoGeo                                                |
+      | pageVersion           | Lullabot Redesign                                                 |
+      | path                  | /companylist/pet-care.htm                                         |
+      | referrer              |                                                                   |
+      | search                |                                                                   |
+      | srCtaDisplayed        |                                                                   |
+      | title                 | Local Pet Sitters - Find a Top-Rated Pet Service on Angie's List  |
+      | url                   |                                                                   |
+      | userId                |                                                                   |
+      | userType              | Visitor - New                                                     |
+      | visitorPageCategory   | ANIMAL & HOUSE SITTING |
+
+
+##### Header Tests #####
 
   ## companyListCatNoGeoSegmentJoin
   Scenario: join button on CatNoGeo page
@@ -15,11 +65,13 @@ Feature:
     | description      | Join link in header |
     | activityLocation | Visitor : CatNoGeo  |
     | userId           |                     |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/app/signup"
 
 
   ## test_companyListCatNoGeoHeaderLinkClick
   Scenario: segment call on clicking the HIW link in CatNoGeo header
-    Given user is on a visitor site catnogeo page    
+    Given user is on a visitor site catnogeo page
     When a user performs actions
     | action_method | action_params |
     | click         | .btnHiw       |
@@ -35,7 +87,7 @@ Feature:
 
   ## test_companyListCatNoGeoHeaderSignInClick
   Scenario: segment call on clicking the Sign In link in CatNoGeo header
-    Given user is on a visitor site catnogeo page    
+    Given user is on a visitor site catnogeo page
     When a user performs actions
     | action_method | action_params   |
     | click         | #header-sign-in |
@@ -47,7 +99,9 @@ Feature:
     | description      | Sign In link in header |
     | activityLocation | Visitor : CatNoGeo     |
     | userId           |                        |
-  
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/member/login"
+
 
   ## test_companyListCatNoGeoHeaderFAQClick
   Scenario: segment call on clicking the FAQ link in CatNoGeo header
@@ -110,6 +164,104 @@ Feature:
     | description      | Business Owners link in header |
     | activityLocation | Visitor : CatNoGeo             |
     | userId           |                                |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains "angieslistbusinesscenter.com"
+
+
+
+##### Body Tests #####
+
+
+  @catNoGeoBodyHeroSrCtaFindProsNoZip @catNoGeoBodyRegression
+  Scenario: User clicks on hero Find Pros CTA (No Zip) button on the Drupal CatNoGeo Page
+    Given user is on a visitor site catnogeo page
+    When a user performs actions
+      | action_method   | action_params         |
+      | move_to_element | id: ha-lead-submit    |
+      | click           |                       |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value           |
+      | activityLocation | Visitor : CatNoGeo |
+    And the segment call contains parameters
+      | prop_key               | prop_value                                  |
+      | activityLocation       | Visitor : CatNoGeo                          |
+      | description            | Service Request Flow entry button           |
+      | userId	               |                                             |
+      | userSelectedZipCode	   |                                             |
+      | visitorPageCategory    |                                             |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/category.Home-Inspection.12041.html?entry_point_id=33880173&postalCode="
+
+
+  @catNoGeoBodyHeroSrCtaFindProsWithZip
+  Scenario: User clicks on hero Find Pros CTA (With Zip) button on the Drupal CatNoGeo Page
+    Given user is on a visitor site catnogeo page
+    When a user performs actions
+      | action_method   | action_params      |
+      | move_to_element | #ha-lead-zip       |
+      | click           |                    |
+      | send_keys       | 49726              |
+    Then we wait "1" seconds for the next page to load
+    When a user performs actions
+      | action_method   | action_params       |
+      | move_to_element | #ha-lead-submit     |
+      | click           |                     |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value                  |
+      | activityLocation | Visitor : CatNoGeo        |
+    And the segment call contains parameters
+      | prop_key               | prop_value                        |
+      | activityLocation       | Visitor : CatNoGeo                |
+      | description            | Service Request Flow entry button |
+      | userId                 |                                   |
+      | userSelectedZipCode    | 49726                             |
+      | visitorPageCategory    | Home Inspection                   |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/category.Home-Inspection.12041.html?entry_point_id=33880173&postalCode=49726"
+
+
+  @homePageBodySegmentSRCTAFindProsEnter @daily_auto @daily_homepage_regression @body_regression
+  Scenario: User clicks on hero Find Pros CTA button on Drupal Homepage
+    Given user is on a visitor site page
+    """
+    /
+    """
+    When a user performs actions
+      | action_method   | action_params      |
+      | move_to_element | #edit-category-2   |
+      | click           |                    |
+      | send_keys       | plumbing           |
+    Then we wait "1" seconds for the next page to load
+    Then press the "ENTER" key while "#edit-category-2" is in focus
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value       |
+      | activityLocation | Visitor : Home |
+    And the segment call contains parameters
+      | prop_key               | prop_value                        |
+      | activityLocation       | Visitor : Home                    |
+      | categoryId             |                                   |
+      | categorySelected       |                                   |
+      | description            | Find Pros button in hero image - to SR path           |
+      | homeAdvisorCategoryId	 |                                   |
+      | userId                 |                                   |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains "angieslist.com/category.Plumbing.10216.html?entry_point_id=32949645"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
   ## test_companyListCatNoGeoFooterJoinClick
