@@ -52,8 +52,7 @@ Feature:
 
 ##### Header Tests #####
 
-  ## companyListCatNoGeoSegmentJoin
-  Scenario: join button on CatNoGeo page
+  Scenario: join button on CatNoGeo page that is an SR overlap category
     Given user is on a visitor site catnogeo page that is an SR overlap category
     When a user performs actions
     | action_method | action_params |
@@ -69,9 +68,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/app/signup"
 
-
-  ## test_companyListCatNoGeoHeaderLinkClick
-  Scenario: segment call on clicking the HIW link in CatNoGeo header
+  Scenario: segment call on clicking the HIW link in CatNoGeo header that is an SR overlap category
     Given user is on a visitor site catnogeo page that is an SR overlap category
     When a user performs actions
     | action_method | action_params |
@@ -85,9 +82,7 @@ Feature:
     | activityLocation | Visitor : CatNoGeo          |
     | userId           |                             |
 
-
-  ## test_companyListCatNoGeoHeaderSignInClick
-  Scenario: segment call on clicking the Sign In link in CatNoGeo header
+  Scenario: segment call on clicking the Sign In link in CatNoGeo header that is an SR overlap category
     Given user is on a visitor site catnogeo page that is an SR overlap category
     When a user performs actions
     | action_method | action_params   |
@@ -103,9 +98,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/member/login"
 
-
-  ## test_companyListCatNoGeoHeaderFAQClick
-  Scenario: segment call on clicking the FAQ link in CatNoGeo header
+  Scenario: segment call on clicking the FAQ link in CatNoGeo header that is an SR overlap category
     Given user is on a visitor site catnogeo page that is an SR overlap category
     When a user performs actions
     | action_method | action_params   |
@@ -119,8 +112,7 @@ Feature:
     | activityLocation | Visitor : CatNoGeo |
     | userId           |                    |
 
-  ## test_companyListCatNoGeoHeaderITPClick
-  Scenario: segment call on clicking the Press link in CatNoGeo header
+  Scenario: segment call on clicking the Press link in CatNoGeo header that is an SR overlap category
     Given user is on a visitor site catnogeo page that is an SR overlap category
     When a user performs actions
     | action_method | action_params |
@@ -134,9 +126,7 @@ Feature:
     | activityLocation | Visitor : CatNoGeo          |
     | userId           |                             |
 
-
-  ## test_companyListCatNoGeoHeaderScClick
-  Scenario: segment call on clicking the SC link in CatNoGeo header
+  Scenario: segment call on clicking the SC link in CatNoGeo header that is an SR overlap category
     Given user is on a visitor site catnogeo page that is an SR overlap category
     When a user performs actions
     | action_method | action_params |
@@ -150,9 +140,7 @@ Feature:
     | activityLocation | Visitor : CatNoGeo             |
     | userId           |                                |
 
-
-  ## test_companyListCatNoGeoHeaderBcClick
-  Scenario: segment call on clicking the BC link in CatNoGeo header
+  Scenario: segment call on clicking the BC link in CatNoGeo header that is an SR overlap category
     Given user is on a visitor site catnogeo page that is an SR overlap category
     When a user performs actions
     | action_method | action_params       |
@@ -167,6 +155,113 @@ Feature:
     | userId           |                                |
     And we wait "1" seconds for the next page to load
     And the landing URL contains "angieslistbusinesscenter.com"
+
+  Scenario: join button on CatNoGeo page that is not an SR overlap category
+    Given user is on a visitor site catnogeo page that is not an SR overlap category
+    When a user performs actions
+    | action_method | action_params |
+    | click         | #header-join  |
+    Then a segment track call is sent for a unique field value pair
+    | unique_field | unique_value        |
+    | description  | Join link in header |
+    And the segment call contains parameters
+    | prop_key         | prop_value          |
+    | description      | Join link in header |
+    | activityLocation | Visitor : CatNoGeo  |
+    | userId           |                     |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/app/signup"
+
+  Scenario: segment call on clicking the HIW link in CatNoGeo header that is not an SR overlap category
+    Given user is on a visitor site catnogeo page that is not an SR overlap category
+    When a user performs actions
+    | action_method | action_params |
+    | click         | .btnHiw       |
+    Then a segment track call is sent for a unique field value pair
+    | unique_field | unique_value                |
+    | description  | How it Works link in header |
+    And the segment call contains parameters
+    | prop_key         | prop_value                  |
+    | description      | How it Works link in header |
+    | activityLocation | Visitor : CatNoGeo          |
+    | userId           |                             |
+
+  Scenario: segment call on clicking the Sign In link in CatNoGeo header that is an SR overlap category
+    Given user is on a visitor site catnogeo page that is not an SR overlap category
+    When a user performs actions
+    | action_method | action_params   |
+    | click         | #header-sign-in |
+    Then a segment track call is sent for a unique field value pair
+    | unique_field | unique_value           |
+    | description  | Sign In link in header |
+    And the segment call contains parameters
+    | prop_key         | prop_value             |
+    | description      | Sign In link in header |
+    | activityLocation | Visitor : CatNoGeo     |
+    | userId           |                        |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/member/login"
+
+  Scenario: segment call on clicking the FAQ link in CatNoGeo header that is not an SR overlap category
+    Given user is on a visitor site catnogeo page that is not an SR overlap category
+    When a user performs actions
+    | action_method | action_params   |
+    | click         | #faq |
+    Then a segment track call is sent for a unique field value pair
+    | unique_field | unique_value           |
+    | description  | FAQ link in header |
+    And the segment call contains parameters
+    | prop_key         | prop_value         |
+    | description      | FAQ link in header |
+    | activityLocation | Visitor : CatNoGeo |
+    | userId           |                    |
+
+  Scenario: segment call on clicking the Press link in CatNoGeo header that is not an SR overlap category
+    Given user is on a visitor site catnogeo page that is not an SR overlap category
+    When a user performs actions
+    | action_method | action_params |
+    | click         | #press        |
+    Then a segment track call is sent for a unique field value pair
+    | unique_field | unique_value                |
+    | description  | In the Press link in header |
+    And the segment call contains parameters
+    | prop_key         | prop_value                  |
+    | description      | In the Press link in header |
+    | activityLocation | Visitor : CatNoGeo          |
+    | userId           |                             |
+
+  Scenario: segment call on clicking the SC link in CatNoGeo header that is not an SR overlap category
+    Given user is on a visitor site catnogeo page that is not an SR overlap category
+    When a user performs actions
+    | action_method | action_params |
+    | click         | #articles     |
+    Then a segment track call is sent for a unique field value pair
+    | unique_field | unique_value                   |
+    | description  | Solution Center link in header |
+    And the segment call contains parameters
+    | prop_key         | prop_value                     |
+    | description      | Solution Center link in header |
+    | activityLocation | Visitor : CatNoGeo             |
+    | userId           |                                |
+
+  Scenario: segment call on clicking the BC link in CatNoGeo header that is not an SR overlap category
+    Given user is on a visitor site catnogeo page that is not an SR overlap category
+    When a user performs actions
+    | action_method | action_params       |
+    | click         | #nav_business_owner |
+    Then a segment track call is sent for a unique field value pair
+    | unique_field | unique_value                   |
+    | description  | Business Owners link in header |
+    And the segment call contains parameters
+    | prop_key         | prop_value                     |
+    | description      | Business Owners link in header |
+    | activityLocation | Visitor : CatNoGeo             |
+    | userId           |                                |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains "angieslistbusinesscenter.com"
+
+
+
 
 
 
@@ -190,7 +285,7 @@ Feature:
       | userId	               |                                             |
       | userSelectedZipCode	   |                                             |
       | visitorPageCategory    |                                             |
-    And we wait "1" seconds for the next page to load
+    And we wait "2" seconds for the next page to load
     And the landing URL contains ".angieslist.com/category.Home-Inspection.12041.html?entry_point_id=33880173&postalCode="
 
 
@@ -217,7 +312,7 @@ Feature:
       | userId                 |                                   |
       | userSelectedZipCode    | 49726                             |
       | visitorPageCategory    | Home Inspection                   |
-    And we wait "1" seconds for the next page to load
+    And we wait "2" seconds for the next page to load
     And the landing URL contains ".angieslist.com/category.Home-Inspection.12041.html?entry_point_id=33880173&postalCode=49726"
 
 
