@@ -39,6 +39,7 @@ def chrome_performance_logs(context):
     ch_profile.perfLoggingPrefs = {'enableNetwork': True, 'traceCategories': 'performance, devtools.network'}
     ch_profile.add_argument('incognito')
     ch_profile.add_argument('disable-extensions')
+    ch_profile.add_argument("--window-size=1600,1200")
     # ch_profile.add_argument('auto-open-devtools-for-tabs')
     # mobile_emulation = { "deviceName": "iPhone X" }
     # ch_profile.add_experimental_option("mobileEmulation", mobile_emulation)
