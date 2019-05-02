@@ -1,6 +1,6 @@
 Feature:
 
-  @geoTaslChicagoKeypadPageCall @geoTaskRegression
+  @geoTaskChicagoKeypadPageCall @geoTaskRegression
   Scenario: Segment pagecall when the GeoTask install-keypad-lock page loads
     Given user is on a visitor site tball page
     """
@@ -33,7 +33,7 @@ Feature:
 
 ##### Header Tests #####
 
-  @nearMeFurnaceRepairHeaderJoinClick @geoTaskRegression
+  @geoTaskChicagoKeypadHeaderJoinClick @geoTaskRegression
   Scenario: Clicking the Join button in the header
     Given user is on a visitor site tball page
     """
@@ -54,7 +54,7 @@ Feature:
     And the landing URL contains ".angieslist.com/app/signup"
 
 
-  @nearMeFurnaceRepairHeaderHowItWorksClick @geoTaskRegression
+  @geoTaskChicagoKeypadHeaderHowItWorksClick @geoTaskRegression
   Scenario: Clicking the How It Works button in the header
     Given user is on a visitor site tball page
     """
@@ -75,7 +75,7 @@ Feature:
     And the landing URL contains ".angieslist.com/how-it-works.htm"
 
 
-  @geoTaslFurnaceRepairHeaderSignInClick @geoTaskRegression
+  @geoTaskFurnaceRepairHeaderSignInClick @geoTaskRegression
   Scenario: Clicking the Sign In button in the header
     Given user is on a visitor site tball page
     """
