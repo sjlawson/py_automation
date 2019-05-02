@@ -21,6 +21,15 @@ def step_impl(context):
     time.sleep(1)
 
 
+@given('user is on a visitor site tball nearme landing page')
+def step_impl(context):
+    appsuite_env = 'al_visitor_tball'
+    appsuite_url = context.appsuites[appsuite_env]['base_url']
+    context.url = appsuite_url + '/nearme/'
+    SegmentTestHelper.getTBallPage(context)
+    time.sleep(1)
+
+
 @given('user is on the visitor site comnpanylist page')
 def step_impl(context):
     appsuite_env = 'al_visitor_site'
