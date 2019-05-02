@@ -33,32 +33,32 @@ Feature:
 
 ##### Header Tests #####
 
-  @nearMeFurnaceRepairHeaderJoinClick @nearMeRegression
+  @nearMeFurnaceRepairHeaderJoinClick @geoTaskRegression
   Scenario: Clicking the Join button in the header
     Given user is on a visitor site tball page
     """
-    /nearme/furnace-repair/?postalCode=90210
+    /companylist/t/chicago/install-keypad-lock.htm
     """
     When a user performs actions
-     | action_method   | action_params                |
+     | action_method   | action_params                    |
      | move_to_element | id: header--join-for-free-button |
-     | click           |                              |
+     | click           |                                  |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value         |
       | description  | Join link in header  |
     And the segment call contains parameters
-      | prop_key         | prop_value           |
-      | description      | Join link in header  |
-      | activityLocation | Visitor : Geo Task    |
+      | prop_key         | prop_value                |
+      | description      | Join link in header       |
+      | activityLocation | Visitor App : Geo Task    |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/app/signup"
 
 
-  @nearMeFurnaceRepairHeaderHowItWorksClick @nearMeRegression
+  @nearMeFurnaceRepairHeaderHowItWorksClick @geoTaskRegression
   Scenario: Clicking the How It Works button in the header
     Given user is on a visitor site tball page
     """
-    /nearme/furnace-repair/?postalCode=90210
+    /companylist/t/chicago/install-keypad-lock.htm
     """
     When a user performs actions
      | action_method   | action_params                |
@@ -70,16 +70,16 @@ Feature:
     And the segment call contains parameters
       | prop_key         | prop_value                   |
       | description      | How It Works link in header  |
-      | activityLocation | Visitor : Geo Task            |
+      | activityLocation | Visitor App : Geo Task       |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/how-it-works.htm"
 
 
-  @nearMeFurnaceRepairHeaderSignInClick @nearMeRegression
+  @geoTaslFurnaceRepairHeaderSignInClick @geoTaskRegression
   Scenario: Clicking the Sign In button in the header
     Given user is on a visitor site tball page
     """
-    /nearme/furnace-repair/?postalCode=90210
+    /companylist/t/chicago/install-keypad-lock.htm
     """
     When a user performs actions
      | action_method   | action_params                |
@@ -91,7 +91,7 @@ Feature:
     And the segment call contains parameters
       | prop_key         | prop_value                   |
       | description      | Sign In link in header       |
-      | activityLocation | Visitor : Geo Task            |
+      | activityLocation | Visitor App : Geo Task       |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/member/login"
 
