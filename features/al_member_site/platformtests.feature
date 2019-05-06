@@ -10,7 +10,7 @@ Feature:
     | send_keys       | joshua.king@homeadvisor.com |
     | move_to_element | #login--login-password      |
     | click           |                             |
-    | send_keys       | testtest                    |
+    | send_keys       | testtest1234                |
     | move_to_element | #login--login-button        |
     | click           |                             |
     Then the member landing page is loaded
@@ -34,19 +34,19 @@ Feature:
     Given user is on the sign up page
     When the user creates a new account
     And the user enters geographic data
-    And the user sends "25" messages
+    And the user sends "10" messages
     Then the user receives a recaptcha challenge
 
   Scenario: test user challenge from leads is working as expected
     Given user is on the sign up page
     When the user creates a new account
     And the user enters geographic data
-    And the user creates "25" leads
+    And the user creates "10" leads
     Then the user receives a recaptcha challenge
-
+  @todo
   Scenario: test user challenge from profile views is working as expected
     Given user is on the sign up page
     When the user creates a new account
     And the user enters geographic data
-    And the user views "25" profiles
+    And the user views "10" profiles
     Then the user receives a recaptcha challenge

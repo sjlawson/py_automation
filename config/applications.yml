@@ -10,8 +10,8 @@ appsuites:
       # base_url: https://visitor-app-stage5.plat.angieslist.com
       base_url: https://visitor-app-stagegolf.plat.angieslist.com
   al_member_site:
-      base_url: https://tampa-stagelima.plat.angieslist.com
+      base_url: https://tampa-stage5.plat.angieslist.com
       test_username: joshua.king@homeadvisor.com
-      test_password: testtest
+      test_password: testtest1234
   al_office_site:
-      base_url: https://office-stagelima.plat.angieslist.com
+      base_url: https://office-stage5.plat.angieslist.com
