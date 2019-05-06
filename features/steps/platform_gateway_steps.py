@@ -173,7 +173,7 @@ def step_impl(context, number_leads):
     deals_button = context.browser.find_element(By.ID, 'right-subnav--shop-offers')
     ActionChains(context.browser).move_to_element(deals_button).click().perform()
     context.wait.until(EC.visibility_of_element_located((By.LINK_TEXT, 'Shop All Deals')))
-    pages_list = context.browser.find_elements(By.XPATH, "//a[contains(@id, 'pagination-page-45')]")
+    pages_list = context.browser.find_elements(By.XPATH, "//a[contains(@id, 'pagination-page-')]")
     max_pages = 1
     if len(pages_list) > 1:
         last_page_element = pages_list[-2]

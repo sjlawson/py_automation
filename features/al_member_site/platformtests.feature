@@ -48,5 +48,5 @@ Feature:
     Given user is on the sign up page
     When the user creates a new account
     And the user enters geographic data
-    And the user views "50" profiles
+    And the user views "25" profiles
     Then the user receives a recaptcha challenge
