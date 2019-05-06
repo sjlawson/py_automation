@@ -19,6 +19,22 @@ if 'VISITOR_SITE_URL' not in os.environ:
     os.environ['VISITOR_SITE_URL'] = 'https://visitorstg.angieslist.com'
 
 
+@fixture
+def chrome_headless(context):
+    caps = DesiredCapabilities.CHROME
+    caps['loggingPrefs'] = { 'performance': 'INFO'}
+    caps = set_proxy(caps)
+    ch_profile = webdriver.ChromeOptions()
+    ch_profile.perfLoggingPrefs = {'enableNetwork': True, 'traceCategories': 'performance, devtools.network'}
+    ch_profile.add_argument('incognito')
+    ch_profile.add_argument('disable-extensions')
+    ch_profile.add_argument('--headless')
+    ch_profile.add_argument('--proxy-server=%s' % caps['proxy']['httpProxy'])
+    context.browser = webdriver.Chrome(desired_capabilities=caps, chrome_options=ch_profile)
+    context.browserlog = lambda : context.browser.get_log('performance')
+    yield context.browser
+    # -- CLEANUP-FIXTURE PART:
+    context.browser.quit()
 
 @fixture
 def chrome_performance_logs(context):
@@ -40,6 +56,7 @@ def chrome_performance_logs(context):
     ch_profile.add_argument('incognito')
     ch_profile.add_argument('disable-extensions')
     ch_profile.add_argument('auto-open-devtools-for-tabs')
+    ch_profile.add_argument('--headless')
     context.browser = webdriver.Chrome(desired_capabilities=caps, chrome_options=ch_profile)
     context.browserlog = lambda : context.browser.get_log('performance')
     yield context.browser
@@ -104,17 +121,8 @@ def remote_sauce(context):
     context.browser.quit()
 
 
-def set_caps(caps, method_name):
+def set_proxy(caps):
     PROXY = os.environ.get('PROXY', '127.0.0.1:4545')
-    test_client = os.environ.get('TEST_CLIENT', 'Mac OSX 10.12')
-    caps['loggingPrefs'] = { 'performance': 'INFO'}
-    caps['name'] = 'cqtest_' + str(datetime.datetime.now())
-    caps['build'] = '1.0'
-    caps['browserName'] = method_name
-    # caps['platform'] = test_client
-    caps['screenResolution'] = '1366x768'
-    caps['record_video'] = 'true'
-    caps['record_network'] = 'true'
     caps['proxy'] = {
         "httpProxy": PROXY,
         "ftpProxy": PROXY,
@@ -124,6 +132,20 @@ def set_caps(caps, method_name):
         "class": "org.openqa.selenium.Proxy",
         "autodetect": False
     }
+
+    return caps
+
+
+def set_caps(caps, method_name):
+    test_client = os.environ.get('TEST_CLIENT', 'Mac OSX 10.12')
+    caps['loggingPrefs'] = { 'performance': 'INFO'}
+    caps['name'] = 'cqtest_' + str(datetime.datetime.now())
+    caps['build'] = '1.0'
+    caps['browserName'] = method_name
+    caps['screenResolution'] = '1366x768'
+    caps['record_video'] = 'true'
+    caps['record_network'] = 'true'
+    caps = set_proxy(caps)
 
     return caps
 
@@ -221,6 +243,8 @@ def before_all(context):
     if context.fixture == 'noproxy':
         use_fixture(chrome_performance_logs, context)
         context.noproxy = True
+    elif context.fixture == 'headless':
+        use_fixture(chrome_headless, context)
     elif context.fixture == 'local':
         use_fixture(chrome_native, context)
     elif context.fixture == 'cbt':
