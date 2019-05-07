@@ -1,34 +1,59 @@
+@catNoGeo
 Feature:
 
-  @catNoGeoPageCall @catNoGeoDaily @companyTreeDaily
-  Scenario: Segment pagecall when CatNoGeo loads
-    Given user is on a visitor site catnogeo page
+  @catNoGeoPageCallSrOverlap @catNoGeoDaily @companyTreeDaily
+  Scenario: a user lands the CatNoGeo page that is an SR overlap category
+    Given user is on a visitor site catnogeo page that is an SR overlap category
     When a segment page call is sent for a unique field value pair
-      | unique_field | unique_value   |
+      | unique_field | unique_value       |
       | name         | Visitor : CatNoGeo |
     Then the segment call contains parameters
-      | prop_key              | prop_value                                                 |
-      | atTestOffer           |                                                            |
-      | categoryId            |                                                            |
-      | cid                   |                                                            |
-      | homeAdvisorCategoryId |                                                            |
-      | name                  | Visitor : CatNoGeo                                         |
-      | pageVersion           | Lullabot Redesign                                          |
-      | path                  | /companylist/plumbing.htm                                  |
-      | referrer              |                                                            |
-      | search                |                                                            |
-      | title                 | Local Plumbers - Find a Top-Rated Plumber on Angie's List  |
-      | url                   |                                                            |
-      | userId                |                                                            |
-      | userType              | Visitor - New                                              |
-      | visitorPageCategory   | PLUMBING                                                   |
+      | prop_key              | prop_value                                                               |
+      | atTestOffer           |                                                                          |
+      | categoryId            | 79                                                                       |
+      | cid                   |                                                                          |
+      | homeAdvisorCategoryId | 12041                                                                    |
+      | name                  | Visitor : CatNoGeo                                                       |
+      | pageVersion           | Lullabot Redesign                                                        |
+      | path                  | /companylist/home-inspection.htm                                         |
+      | referrer              |                                                                          |
+      | search                |                                                                          |
+      | srCtaDisplayed        | true                                                                     |
+      | title                 | Local Home Inspectors - Find a Top-Rated Home Inspector on Angie's List  |
+      | url                   |                                                                          |
+      | userId                |                                                                          |
+      | userType              | Visitor - New                                                            |
+      | visitorPageCategory   | HOME INSPECTION                                                          |
+
+  @catNoGeoPageCallNoSrOverlap @catNoGeoDaily @companyTreeDaily
+  Scenario: a user lands the CatNoGeo page that is not an SR overlap category
+    Given user is on a visitor site catnogeo page that is not an SR overlap category
+    When a segment page call is sent for a unique field value pair
+      | unique_field | unique_value       |
+      | name         | Visitor : CatNoGeo |
+    Then the segment call contains parameters
+      | prop_key              | prop_value                                                        |
+      | atTestOffer           |                                                                   |
+      | categoryId            | 102                                                               |
+      | cid                   |                                                                   |
+      | homeAdvisorCategoryId |                                                                   |
+      | name                  | Visitor : CatNoGeo                                                |
+      | pageVersion           | Lullabot Redesign                                                 |
+      | path                  | /companylist/pet-care.htm                                         |
+      | referrer              |                                                                   |
+      | search                |                                                                   |
+      | srCtaDisplayed        |                                                                   |
+      | title                 | Local Pet Sitters - Find a Top-Rated Pet Service on Angie's List  |
+      | url                   |                                                                   |
+      | userId                |                                                                   |
+      | userType              | Visitor - New                                                     |
+      | visitorPageCategory   | ANIMAL & HOUSE SITTING |
 
 
 ##### Header Tests #####
 
-  @headerJoinCatNoGeo @catNoGeoDaily @companyTreeDaily @headerDailyRegression @catNoGeoDaily
-  Scenario: The Join button is clicked on CatNoGeo(Plumbing) page
-    Given user is on a visitor site catnogeo page
+  Scenario: join button on CatNoGeo page that is an SR overlap category
+    Given user is on a visitor site catnogeo page that is an SR overlap category
     When a user performs actions
     | action_method | action_params |
     | click         | #header-join  |
@@ -1547,7 +1572,7 @@ Feature:
 
   ## test_companyListCatNoGeoFooterJoinClick
   Scenario: segment call on clicking the Join link in CatNoGeo footer
-    Given user is on a visitor site catnogeo page
+    Given user is on a visitor site catnogeo page that is an SR overlap category
     When a user performs actions
     | action_method | action_params |
     | click         | #footer-join  |
@@ -1564,7 +1589,7 @@ Feature:
   ## test_companyListCatNoGeo_topCities
   @topcities @catnogeo_topcities
   Scenario Outline: companylist CatNoGeo top cities
-    Given user is on a visitor site catnogeo page
+    Given user is on a visitor site catnogeo page that is an SR overlap category
     When a user clicks on "<pageLink>"
     Then a segment track call is sent for a unique field value pair
     | unique_field | unique_value              |
