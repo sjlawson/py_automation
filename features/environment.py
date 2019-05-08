@@ -32,6 +32,7 @@ def chrome_headless(context):
     ch_profile.add_argument('--headless')
     ch_profile.add_argument('--no-sandbox')
     ch_profile.add_argument('--disable-dev-shm-usage')
+    ch_profile.add_argument('--shm-size=2g')
     ch_profile.add_argument('--proxy-server=%s' % caps['proxy']['httpProxy'])
     display = Display(visible=0, size=(800, 800))
     display.start()
