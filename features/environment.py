@@ -36,7 +36,7 @@ def chrome_headless(context):
     ch_profile.add_argument('--proxy-server=%s' % caps['proxy']['httpProxy'])
     display = Display(visible=0, size=(800, 800))
     display.start()
-    context.browser = webdriver.Chrome(desired_capabilities=caps, chrome_options=ch_profile)
+    context.browser = webdriver.Chrome(desired_capabilities=caps, chrome_options=ch_profile, service_args=["--verbose", "--log-path=./qc1.log"])
     context.browserlog = lambda : context.browser.get_log('performance')
     yield context.browser
     # -- CLEANUP-FIXTURE PART:
