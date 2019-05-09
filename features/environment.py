@@ -238,7 +238,7 @@ def before_all(context):
     context.proxy_addr = '%s:%s' % (proxy_host, proxy_port)
     context.mbi_port = int(os.environ.get('MBI_PORT', 58111))
     context.mb_host = os.environ.get('MB_HOST', '127.0.0.1')
-
+    browsername = os.environ.get('BROWSERNAME', 'chrome')
     logging.basicConfig(level=logging.INFO,
                         format='%(asctime)s - %(levelname)s - %(funcName)s:%(lineno)d - %(message)s')
 
@@ -249,8 +249,10 @@ def before_all(context):
     if context.fixture == 'noproxy':
         use_fixture(chrome_performance_logs, context)
         context.noproxy = True
-    elif context.fixture == 'headless':
+    elif context.fixture == 'headless' and browsername == 'chrome':
         use_fixture(chrome_headless, context)
+    elif context.fixture == 'headless' and browsername == 'firefox':
+        use_fixture(selenium_browser_firefox, context)
     elif context.fixture == 'local':
         use_fixture(chrome_native, context)
     elif context.fixture == 'cbt':

@@ -18,8 +18,7 @@ RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh
 
 ENV NODE_PATH $NVM_DIR/versions/node/v$NODE_VERSION/lib/node_modules
 ENV PATH      $NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH
-
+RUN python manage.py geckodriver_install
 RUN npm install -g mountebank
 RUN npm install -g cbt_tunnels
 CMD ["python", "manage.py", "launch_framework"]
-# CMD ["tail", "-f", "/dev/null"]	
