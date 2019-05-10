@@ -14,5 +14,5 @@ services:
       - PYPROXY_PORT
       - SAUCE_USERNAME
       - SAUCE_ACCESS_KEY
-      - BASEURL_OVERRIDE=https://wwwstg.angieslist.com
+      - BASEURL_OVERRIDE="https://wwwstg.angieslist.com"
 
