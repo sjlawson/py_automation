@@ -21,7 +21,7 @@ jobs:
             chmod +x ~/docker-compose
             sudo mv ~/docker-compose /usr/local/bin/docker-compose
       - run: |
-          export BASEURL_OVERRIDE="https://wwwstg.angieslist.com"
+          echo 'export BASEURL_OVERRIDE=https://wwwstg.angieslist.com' >> $BASH_ENV
       - run:
           name: Build Docker image
           command: |
