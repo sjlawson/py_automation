@@ -35,4 +35,4 @@ jobs:
       - run: sleep 10
       - run:
           name: Running circle-tag tests
-          command: ./behave_docker_test.sh al_py_automation_al_py_automation_1 headless chrome tags circle
+          command: ./behave_docker_test.sh al_py_automation_al_py_automation_1 cbt chrome tags circle
