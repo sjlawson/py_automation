@@ -15,10 +15,8 @@ if os.path.exists('.env'):
         listvals = var[1].split(',')
         if len(var) == 2 and var[0] not in os.environ:
             os.environ[var[0]] = var[1]
-
-if 'VISITOR_SITE_URL' not in os.environ:
-    os.environ['VISITOR_SITE_URL'] = 'https://visitorstg.angieslist.com'
-
+    if 'BASEURL_OVERRIDE' not in os.environ or os.environ['BASEURL_OVERRIDE'] == 'none':
+        os.environ['BASEURL_OVERRIDE'] = ''
 
 @fixture
 def chrome_headless(context):
@@ -89,7 +87,7 @@ def remote_cbt(context):
     PROXY = os.environ.get('PROXY', '127.0.0.1:4545')
     desired_cap = {
         'name': context.test_case.id() + ' ' + str(datetime.datetime.now()),
-        'platform': os.environ.get('PLATFORM', 'Mac OS X 10.12'),
+        'platform': os.environ.get('OS_PLATFORM', 'Mac OS X 10.12'),
         'browserName': os.environ.get('BROWSERNAME', 'chrome'),
         'record_video': 'true',
         'record_network': 'true',
@@ -112,7 +110,7 @@ def remote_cbt(context):
 @fixture
 def remote_sauce(context):
     desired_cap = {
-        'platform': os.environ.get('PLATFORM', 'Mac OS X 10.12'),
+        'platform': os.environ.get('OS_PLATFORM', 'Mac OS X 10.12'),
         'browserName': os.environ.get('BROWSERNAME', 'chrome'),
         'version': 'latest',
         'extendedDebugging': True
@@ -129,6 +127,15 @@ def remote_sauce(context):
 
 def set_proxy(caps):
     PROXY = os.environ.get('PROXY', '127.0.0.1:4545')
+    test_client = os.environ.get('OS_PLATFORM', 'Mac OSX 10.12')
+    caps['loggingPrefs'] = { 'performance': 'INFO'}
+    caps['name'] = 'cqtest_' + str(datetime.datetime.now())
+    caps['build'] = '1.0'
+    caps['browserName'] = method_name
+    # caps['platform'] = test_client
+    caps['screenResolution'] = '1366x768'
+    caps['record_video'] = 'true'
+    caps['record_network'] = 'true'
     caps['proxy'] = {
         "httpProxy": PROXY,
         "ftpProxy": PROXY,
@@ -265,6 +272,11 @@ def before_all(context):
     with open("config/applications.yml", "r") as stream:
         yamlconfig = yaml.load(stream)
         context.appsuites = yamlconfig['appsuites']
+
+    # if override is set, it's set for ALL because it's meant for specific runs. Scheduled jobs should not use this.
+    if os.environ['BASEURL_OVERRIDE']:
+        for key in context.appsuites.keys():
+            context.appsuites[key]['base_url'] = os.environ['BASEURL_OVERRIDE']
 
     print("Starting Python Selenium Test Framework")
 
