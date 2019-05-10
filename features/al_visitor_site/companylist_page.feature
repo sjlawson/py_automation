@@ -23,7 +23,7 @@ Feature:
 
 ##### Header Tests #####
 
-  @companyListPageHeaderJoinClick @companyTreeDaily @headerDailyRegression
+  @companyListPageHeaderJoinClick @companyTreeDaily @companyListHeaderRegression
   Scenario: User clicks on Header Join button on the Drupal CompanyList page
     Given user is on the visitor site comnpanylist page
     When a user performs actions
@@ -41,7 +41,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/app/signup"
 
-  @companyListPageHeaderSignInClick @companyTreeDaily @headerDailyRegression
+  @companyListPageHeaderSignInClick @companyTreeDaily @companyListHeaderRegression
   Scenario: User clicks on Header Sign In button on the Drupal CompanyList page
     Given user is on the visitor site comnpanylist page
     When a user performs actions
@@ -59,7 +59,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/member/login"
 
-  @companyListPageHeaderBusinessOwners @companyTreeDaily @headerDailyRegression
+  @companyListPageHeaderBusinessOwners @companyTreeDaily @companyListHeaderRegression
   Scenario: User clicks on the Business Owners button in the header on the Drupal Homepage
     Given user is on the visitor site comnpanylist page
     When a user performs actions
@@ -77,23 +77,23 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains "angieslistbusinesscenter.com"
 
-  @companyListPageMoreNearMe @companyTreeDaily @headerDailyRegression @geoCatDaily
+  @companyListPageMoreJunk @companyTreeDaily @companyListHeaderRegression @geoCatDaily
   Scenario: User hovers then clicks on More NearMe in the header on the Drupal GeoCat(Denver Roofing)
-    Given user is on a visitor site geocat page
+    Given user is on the visitor site comnpanylist page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(4) > label |
-      | click           | css: #secondary-nav > ul > li:nth-child(4) > div > div:nth-child(5) > a |
+      | click           | css: #more-toggle > ul > li:nth-child(4) > a |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value           |
-      | activityLocation | Visitor : Geocat   |
+      | activityLocation | Visitor : Directory   |
     And the segment call contains parameters
       | prop_key               | prop_value                       |
-      | activityLocation       | Visitor : Geocat                 |
-      | description            | Near Me link in desktop header   |
+      | activityLocation       | Visitor : Directory                 |
+      | description            | More menu category link in header   |
       | userId                 |                                  |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/nearme/"
+    And the landing URL contains ".angieslist.com/companylist/hauling.htm"
 
 
 
