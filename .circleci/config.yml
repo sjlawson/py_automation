@@ -4,7 +4,6 @@ jobs:
     working_directory: ~/al_py_automation
     docker:
       - image: circleci/python:3.7.2
-      # - image: angieslist/circleci-node:8.11.1
         auth:
            username: $DOCKER_USERNAME
            password: $DOCKER_AUTH
@@ -48,7 +47,5 @@ jobs:
       - run:
           name: Running circle-tag tests
           command: |
-            ./behave_tags headless chrome circle
-      # - run:
-      #     name: Running circle-tag tests
-      #     command: ./behave_docker_test.sh al_py_automation_al_py_automation_1 cbt chrome tags circle
+            cd /home/circleci/al_py_automation            
+            ./behave_tags.sh headless chrome circle
