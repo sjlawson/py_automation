@@ -33,7 +33,7 @@ Feature:
 
 ##### Header Tests #####
 
-  @geoTaskChicagoKeypadHeaderJoinClick @geoTaskRegression
+  @geoTaskChicagoKeypadHeaderJoinClick @geoTaskRegression @tballHeaderRegression
   Scenario: Clicking the Join button in the header
     Given user is on a visitor site tball page
     """
@@ -54,7 +54,7 @@ Feature:
     And the landing URL contains ".angieslist.com/app/signup"
 
 
-  @geoTaskChicagoKeypadHeaderBusinessOwnersClick @geoTaskRegression
+  @geoTaskChicagoKeypadHeaderBusinessOwnersClick @geoTaskRegression @tballHeaderRegression
   Scenario: Clicking the Business Owners button in the header
     Given user is on a visitor site tball page
     """
@@ -75,7 +75,7 @@ Feature:
     And the landing URL contains "angieslistbusinesscenter.com/"
 
 
-  @geoTaskFurnaceRepairHeaderSignInClick @geoTaskRegression
+  @geoTaskHeaderSignInClick @geoTaskRegression @tballHeaderRegression
   Scenario: Clicking the Sign In button in the header
     Given user is on a visitor site tball page
     """
@@ -96,7 +96,7 @@ Feature:
     And the landing URL contains ".angieslist.com/member/login"
 
   @geoTaskInteriorApplianceRepairClick @geoTaskRegression @tballHeaderRegression
-  Scenario: User hovers then clicks on Appliance Repair - Interior in the header on the Visitor How It Works page
+  Scenario: User hovers then clicks on Appliance Repair - Interior in the header on the Visitor GeoTask Page
     Given user is on a visitor site tball page
     """
     /companylist/t/indianapolis/install-keypad-lock.htm
@@ -115,33 +115,8 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/appliance-repair.htm"
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   @geoTaskInteriorHeatingCoolingClick @geoTaskRegression @tballHeaderRegression
-  Scenario: User hovers then clicks on Heating Cooling - Interior in the header on the Visitor How It Works page
+  Scenario: User hovers then clicks on Heating Cooling - Interior in the header on the Visitor GeoTask Page
     Given user is on a visitor site tball page
     """
     /companylist/t/indianapolis/install-keypad-lock.htm
@@ -161,7 +136,7 @@ Feature:
     And the landing URL contains ".angieslist.com/companylist/hvac.htm"
 
   @geoTaskInteriorViewAllClick @geoTaskRegression @tballHeaderRegression
-  Scenario: User hovers then clicks on View All - Interior in the header on the Visitor How It Works page
+  Scenario: User hovers then clicks on View All - Interior in the header on the Visitor GeoTask Page
     Given user is on a visitor site tball page
     """
     /companylist/t/indianapolis/install-keypad-lock.htm
@@ -181,7 +156,7 @@ Feature:
     And the landing URL contains ".angieslist.com/companylist/"
 
   @geoTaskExteriorMasonryClick @geoTaskRegression @tballHeaderRegression
-  Scenario: User hovers then clicks on Masonry - Exterior in the header on the Visitor How It Works page
+  Scenario: User hovers then clicks on Masonry - Exterior in the header on the Visitor GeoTask Page
     Given user is on a visitor site tball page
     """
     /companylist/t/indianapolis/install-keypad-lock.htm
@@ -201,7 +176,7 @@ Feature:
     And the landing URL contains ".angieslist.com/companylist/masonry.htm"
 
   @geoTaskExteriorViewAllClick @geoTaskRegression @tballHeaderRegression
-  Scenario: User hovers then clicks on View All - Exterior in the header on the Visitor How It Works page
+  Scenario: User hovers then clicks on View All - Exterior in the header on the Visitor GeoTask Page
     Given user is on a visitor site tball page
     """
     /companylist/t/indianapolis/install-keypad-lock.htm
@@ -221,7 +196,7 @@ Feature:
     And the landing URL contains ".angieslist.com/companylist/"
 
   @geoTaskLawnIrrigationClick @geoTaskRegression @tballHeaderRegression
-  Scenario: User hovers then clicks on Lawn Irrigation - Lawn in the header on the Visitor How It Works page
+  Scenario: User hovers then clicks on Lawn Irrigation - Lawn in the header on the Visitor GeoTask Page
     Given user is on a visitor site tball page
     """
     /companylist/t/indianapolis/install-keypad-lock.htm
@@ -241,7 +216,7 @@ Feature:
     And the landing URL contains ".angieslist.com/companylist/lawn-irrigation.htm"
 
   @geoTaskLawnViewAllClick @geoTaskRegression @tballHeaderRegression
-  Scenario: User hovers then clicks on View All - Lawn in the header on the Visitor How It Works page
+  Scenario: User hovers then clicks on View All - Lawn in the header on the Visitor GeoTask Page
     Given user is on a visitor site tball page
     """
     /companylist/t/indianapolis/install-keypad-lock.htm
@@ -261,7 +236,7 @@ Feature:
     And the landing URL contains ".angieslist.com/companylist/"
 
   @geoTaskMoreJunkClick @geoTaskRegression @tballHeaderRegression
-  Scenario: User hovers then clicks on Junk Hauling - More in the header on the Visitor How It Works page
+  Scenario: User hovers then clicks on Junk Hauling - More in the header on the Visitor GeoTask Page
     Given user is on a visitor site tball page
     """
     /companylist/t/indianapolis/install-keypad-lock.htm
@@ -281,7 +256,7 @@ Feature:
     And the landing URL contains ".angieslist.com/companylist/hauling.htm"
 
   @geoTaskMoreNearMeClick @geoTaskRegression @tballHeaderRegression
-  Scenario: User hovers then clicks on Near Me - More in the header on the Visitor How It Works page
+  Scenario: User hovers then clicks on Near Me - More in the header on the Visitor GeoTask Page
     Given user is on a visitor site tball page
     """
     /companylist/t/indianapolis/install-keypad-lock.htm
@@ -301,7 +276,7 @@ Feature:
     And the landing URL contains ".angieslist.com/nearme/"
 
   @geoTaskMoreViewAllClick @geoTaskRegression @tballHeaderRegression
-  Scenario: User hovers then clicks on View All - More in the header on the Visitor How It Works page
+  Scenario: User hovers then clicks on View All - More in the header on the Visitor GeoTask Page
     Given user is on a visitor site tball page
     """
     /companylist/t/indianapolis/install-keypad-lock.htm
@@ -322,7 +297,7 @@ Feature:
 
 
   @geoTaskArticlesOutdoorLivingClick @geoTaskRegression @tballHeaderRegression
-  Scenario: User hovers then clicks on Outdoor Living - More in the header on the Visitor How It Works page
+  Scenario: User hovers then clicks on Outdoor Living - More in the header on the Visitor GeoTask Page
     Given user is on a visitor site tball page
     """
     /companylist/t/indianapolis/install-keypad-lock.htm
@@ -342,7 +317,7 @@ Feature:
     And the landing URL contains ".angieslist.com/outdoor-living/"
 
   @geoTaskArticlesViewAllClick @geoTaskRegression @tballHeaderRegression
-  Scenario: User hovers then clicks on View All - More in the header on the Visitor How It Works page
+  Scenario: User hovers then clicks on View All - More in the header on the Visitor GeoTask Page
     Given user is on a visitor site tball page
     """
     /companylist/t/indianapolis/install-keypad-lock.htm
