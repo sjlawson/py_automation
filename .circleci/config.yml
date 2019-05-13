@@ -18,7 +18,7 @@ jobs:
       - run: |
           echo 'export BASEURL_OVERRIDE=https://wwwstg.angieslist.com' >> $BASH_ENV
           echo 'export NVM_DIR=/home/circleci/.nvm' >> $BASH_ENV
-          echo 'exort NODE_VERSION=8.11.1' >> $BASH_ENV
+          echo 'export NODE_VERSION=8.11.1' >> $BASH_ENV
       - run:
           name: Build Docker image
           command: |
