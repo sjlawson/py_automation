@@ -24,7 +24,7 @@ Feature:
 ##### Header Tests #####
 
 
-    @headerJoinRegCityPage @companyTreeDaily @headerDailyRegression
+    @headerJoinRegCityPage @newHeader
     Scenario: City Page(Fishers Indiana) clicking the join link in the header
       Given user is on a visitor city page
       When a user performs actions
@@ -42,7 +42,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/app/signup"
 
-    @headerSignInRegCityPage @companyTreeDaily @headerDailyRegression
+    @headerSignInRegCityPage @newHeader
     Scenario: City Page(Fishers Indiana) clicking the Sign In link in the header
       Given user is on a visitor city page
       When a user performs actions
@@ -60,7 +60,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/member/login"
 
-    @headerBusinessOwnersRegCityPage @companyTreeDaily @headerDailyRegression
+    @headerBusinessOwnersRegCityPage @newHeader
     Scenario: City Page(Fishers Indiana) clicking the Business Owners link in the header
       Given user is on a visitor city page
       When a user performs actions
@@ -74,8 +74,10 @@ Feature:
       | description      | Business Owners link in header |
       | activityLocation | Visitor : US : City            |
       | userId           |                                |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains "angieslistbusinesscenter.com"
 
-    @regCityPageInteriorPlumbing @companyTreeDaily @headerDailyRegression
+    @regCityPageInteriorPlumbing @newHeader
     Scenario: City Page(Fishers Indiana) clicking the Interior - Plumbing link in the header
       Given user is on a visitor city page
       When a user performs actions

@@ -23,7 +23,7 @@ Feature:
 
 ##### Header Tests #####
 
-  @companyListPageHeaderJoinClick @newHeaderC
+  @companyListPageHeaderJoinClick @newHeader
   Scenario: User clicks on Header Join button on the Drupal CompanyList page
     Given user is on the visitor site comnpanylist page
     When a user performs actions
@@ -41,7 +41,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/app/signup"
 
-  @companyListPageHeaderSignInClick @newHeaderC
+  @companyListPageHeaderSignInClick @newHeader
   Scenario: User clicks on Header Sign In button on the Drupal CompanyList page
     Given user is on the visitor site comnpanylist page
     When a user performs actions
@@ -59,7 +59,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/member/login"
 
-  @companyListPageHeaderBusinessOwners @newHeaderC
+  @companyListPageHeaderBusinessOwners @newHeader
   Scenario: User clicks on the Business Owners button in the header on the Drupal CompanyList page
     Given user is on the visitor site comnpanylist page
     When a user performs actions
@@ -77,7 +77,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains "angieslistbusinesscenter.com"
 
-  @companyListPageMoreJunk @newHeaderC
+  @companyListPageMoreJunk @newHeader
   Scenario: User hovers then clicks on More NearMe in the header on the Drupal CompanyList Page
     Given user is on the visitor site comnpanylist page
     When a user performs actions
