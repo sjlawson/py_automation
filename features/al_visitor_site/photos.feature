@@ -22,7 +22,7 @@ Feature:
 
 ##### Header Tests #####
 
-  @photosPageHeaderJoinClick @headerDailyRegression
+  @photosPageHeaderJoinClick @newHeader
   Scenario: User clicks on Header Join button on the Drupal photos page
     Given user is on the visitor site photos page
     When a user performs actions
@@ -40,7 +40,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/app/signup"
 
-  @photosPageHeaderSignInClick @headerDailyRegression
+  @photosPageHeaderSignInClick @newHeader
   Scenario: User clicks on Header Sign In button on the Drupal photos page
     Given user is on the visitor site photos page
     When a user performs actions
@@ -58,7 +58,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/member/login"
 
-  @photosPageHeaderBusinessOwners @headerDailyRegression
+  @photosPageHeaderBusinessOwners @newHeader
   Scenario: User clicks on the Business Owners button in the header on the Drupal photos page
     Given user is on the visitor site photos page
     When a user performs actions
