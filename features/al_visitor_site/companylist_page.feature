@@ -1,7 +1,7 @@
 Feature:
 
   @companyListPageCall @companyTreeDaily
-  Scenario: Segment pagecall when CatNoGeo loads
+  Scenario: Segment pagecall when companylist page loads
     Given user is on the visitor site comnpanylist page
     When a segment page call is sent for a unique field value pair
       | unique_field | unique_value   |
@@ -23,7 +23,7 @@ Feature:
 
 ##### Header Tests #####
 
-  @companyListPageHeaderJoinClick @companyTreeDaily @companyListHeaderRegression
+  @companyListPageHeaderJoinClick @newHeaderC
   Scenario: User clicks on Header Join button on the Drupal CompanyList page
     Given user is on the visitor site comnpanylist page
     When a user performs actions
@@ -41,7 +41,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/app/signup"
 
-  @companyListPageHeaderSignInClick @companyTreeDaily @companyListHeaderRegression
+  @companyListPageHeaderSignInClick @newHeaderC
   Scenario: User clicks on Header Sign In button on the Drupal CompanyList page
     Given user is on the visitor site comnpanylist page
     When a user performs actions
@@ -59,8 +59,8 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/member/login"
 
-  @companyListPageHeaderBusinessOwners @companyTreeDaily @companyListHeaderRegression
-  Scenario: User clicks on the Business Owners button in the header on the Drupal Homepage
+  @companyListPageHeaderBusinessOwners @newHeaderC
+  Scenario: User clicks on the Business Owners button in the header on the Drupal CompanyList page
     Given user is on the visitor site comnpanylist page
     When a user performs actions
       | action_method   | action_params       |
@@ -77,8 +77,8 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains "angieslistbusinesscenter.com"
 
-  @companyListPageMoreJunk @companyTreeDaily @companyListHeaderRegression @geoCatDaily
-  Scenario: User hovers then clicks on More NearMe in the header on the Drupal GeoCat(Denver Roofing)
+  @companyListPageMoreJunk @newHeaderC
+  Scenario: User hovers then clicks on More NearMe in the header on the Drupal CompanyList Page
     Given user is on the visitor site comnpanylist page
     When a user performs actions
       | action_method   | action_params       |
@@ -95,6 +95,23 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/hauling.htm"
 
+  @companyListPageLawnTreeService
+  Scenario: User hovers then clicks on Tree Service - More in the header on the Drupal CompanyList Page
+    Given user is on a visitor site geocat page
+    When a user performs actions
+      | action_method   | action_params       |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(1) > label |
+      | click           | css: #secondary-nav > ul > li:nth-child(1) > div > ul > li:nth-child(1) > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value           |
+      | activityLocation | Visitor : Geocat   |
+    And the segment call contains parameters
+      | prop_key               | prop_value                            |
+      | activityLocation       | Visitor : Geocat                      |
+      | description            | Interior menu category link in header |
+      | userId                 |                                       |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/appliance-repair.htm"
 
 
 
