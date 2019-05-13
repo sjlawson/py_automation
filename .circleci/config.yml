@@ -41,7 +41,7 @@ jobs:
             nvm use default
             npm install -g mountebank
             npm install -g cbt_tunnels
-            cd al_py_automation
+            cd /home/circleci/al_py_automation
             sudo pip install -r requirements.txt
             python manage.py launch_framework &
       - run: sleep 10
