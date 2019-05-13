@@ -90,7 +90,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains "angieslistbusinesscenter.com/"
 
-  @geoTaskInteriorApplianceRepairClick @nearMeRegression @tballHeaderRegression
+  @nearMeInteriorApplianceRepairClick @nearMeRegression @tballHeaderRegression
   Scenario: User hovers then clicks on Appliance Repair - Interior in the header on the Visitor Near Me Furnace Repair Page
     Given user is on a visitor site tball page
     """
@@ -110,7 +110,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/appliance-repair.htm"
 
-  @geoTaskInteriorHeatingCoolingClick @nearMeRegression @tballHeaderRegression
+  @nearMeInteriorHeatingCoolingClick @nearMeRegression @tballHeaderRegression
   Scenario: User hovers then clicks on Heating Cooling - Interior in the header on the Visitor Near Me Furnace Repair Page
     Given user is on a visitor site tball page
     """
@@ -130,7 +130,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/hvac.htm"
 
-  @geoTaskInteriorViewAllClick @nearMeRegression @tballHeaderRegression
+  @nearMeInteriorViewAllClick @nearMeRegression @tballHeaderRegression
   Scenario: User hovers then clicks on View All - Interior in the header on the Visitor Near Me Furnace Repair Page
     Given user is on a visitor site tball page
     """
@@ -150,7 +150,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/"
 
-  @geoTaskExteriorMasonryClick @nearMeRegression @tballHeaderRegression
+  @nearMeExteriorMasonryClick @nearMeRegression @tballHeaderRegression
   Scenario: User hovers then clicks on Masonry - Exterior in the header on the Visitor Near Me Furnace Repair Page
     Given user is on a visitor site tball page
     """
@@ -170,7 +170,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/masonry.htm"
 
-  @geoTaskExteriorViewAllClick @nearMeRegression @tballHeaderRegression
+  @nearMeExteriorViewAllClick @nearMeRegression @tballHeaderRegression
   Scenario: User hovers then clicks on View All - Exterior in the header on the Visitor Near Me Furnace Repair Page
     Given user is on a visitor site tball page
     """
@@ -190,7 +190,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/"
 
-  @geoTaskLawnIrrigationClick @nearMeRegression @tballHeaderRegression
+  @nearMeLawnIrrigationClick @nearMeRegression @tballHeaderRegression
   Scenario: User hovers then clicks on Lawn Irrigation - Lawn in the header on the Visitor Near Me Furnace Repair Page
     Given user is on a visitor site tball page
     """
@@ -210,7 +210,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/lawn-irrigation.htm"
 
-  @geoTaskLawnViewAllClick @nearMeRegression @tballHeaderRegression
+  @nearMeLawnViewAllClick @nearMeRegression @tballHeaderRegression
   Scenario: User hovers then clicks on View All - Lawn in the header on the Visitor Near Me Furnace Repair Page
     Given user is on a visitor site tball page
     """
@@ -230,7 +230,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/"
 
-  @geoTaskMoreJunkClick @nearMeRegression @tballHeaderRegression
+  @nearMeMoreJunkClick @nearMeRegression @tballHeaderRegression
   Scenario: User hovers then clicks on Junk Hauling - More in the header on the Visitor Near Me Furnace Repair Page
     Given user is on a visitor site tball page
     """
@@ -250,7 +250,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/hauling.htm"
 
-  @geoTaskMoreNearMeClick @nearMeRegression @tballHeaderRegression
+  @nearMeMoreNearMeClick @nearMeRegression @tballHeaderRegression
   Scenario: User hovers then clicks on Near Me - More in the header on the Visitor Near Me Furnace Repair Page
     Given user is on a visitor site tball page
     """
@@ -270,7 +270,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/nearme/"
 
-  @geoTaskMoreViewAllClick @nearMeRegression @tballHeaderRegression
+  @nearMeMoreViewAllClick @nearMeRegression @tballHeaderRegression
   Scenario: User hovers then clicks on View All - More in the header on the Visitor Near Me Furnace Repair Page
     Given user is on a visitor site tball page
     """
@@ -291,7 +291,7 @@ Feature:
     And the landing URL contains ".angieslist.com/companylist/"
 
 
-  @geoTaskArticlesOutdoorLivingClick @nearMeRegression @tballHeaderRegression
+  @nearMeArticlesOutdoorLivingClick @nearMeRegression @tballHeaderRegression
   Scenario: User hovers then clicks on Outdoor Living - More in the header on the Visitor Near Me Furnace Repair Page
     Given user is on a visitor site tball page
     """
@@ -311,7 +311,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/outdoor-living/"
 
-  @geoTaskArticlesViewAllClick @nearMeRegression @tballHeaderRegression
+  @nearMeArticlesViewAllClick @nearMeRegression @tballHeaderRegression
   Scenario: User hovers then clicks on View All - More in the header on the Visitor Near Me Furnace Repair Page
     Given user is on a visitor site tball page
     """
@@ -342,7 +342,7 @@ Feature:
 
 
 
-  @nearmeClick @nearMeRegression
+  @nearMeClick @nearMeRegression
   Scenario: Clicking major market link on Near Me pages
     Given user is on a visitor site tball page
     """
