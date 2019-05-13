@@ -465,7 +465,7 @@ Feature:
     And the segment call contains parameters
       | prop_key               | prop_value                      |
       | activityLocation       | Visitor : How it Works          |
-      | description            | Services Near Me link in header |
+      | description            | Near Me link in mobile header   |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/nearme/"
 
@@ -551,24 +551,23 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/gutter-cleaning.htm"
 
-
-
-
-
-
-
-
-
-  @howItWorksExteriorViewAllClick @howItWorkskMobileRegression
-  Scenario: User hovers then clicks on View All - Exterior in the header on the Visitor How It Works page
+  @howItWorksMobileExteriorViewAllClick @howItWorkskMobileRegression
+  Scenario: User clicks on Mobile View All - Exterior in the header on the Visitor How It Works page
     Given user is on a visitor site tball page
     """
     /how-it-works.htm
     """
     When a user performs actions
-      | action_method   | action_params                                    |
-      | move_to_element | css: #header--dynamic--exterior-link             |
-      | click           | css: #header--dynamic--exterior-viewAllCats-link |
+     | action_method   | action_params               |
+     | move_to_element | css: #al_show_menu > div    |
+     | click           |                             |
+    Then we wait "1" seconds for the next page to load
+    When a user performs actions
+      | action_method   | action_params                                                                 |
+      | move_to_element | css: #al_topnav > li > div.panel-group > div:nth-child(2) > div.panel-heading |
+      | click           |                                                                               |
+      | move_to_element | css: #header--dynamic--mobile-exterior-viewAllCats-link |
+      | click           |                                                         |
     Then a segment track call is sent for a unique field value pair
       | unique_field     | unique_value           |
       | activityLocation | Visitor : How it Works |
@@ -579,36 +578,50 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/"
 
-  @howItWorksLawnIrrigationClick @howItWorkskMobileRegression
-  Scenario: User hovers then clicks on Lawn Irrigation - Lawn in the header on the Visitor How It Works page
+  @howItWorksMobileLawnDecksClick @howItWorkskMobileRegression
+  Scenario: User clicks on the Mobile Decks - Lawn in the header on the Visitor How It Works page
     Given user is on a visitor site tball page
     """
     /how-it-works.htm
     """
     When a user performs actions
-      | action_method   | action_params                                   |
-      | move_to_element | css: #header--dynamic--lawn-link                |
-      | click           | css: #header--dynamic--lawn-link-LawnIrrigation |
+     | action_method   | action_params               |
+     | move_to_element | css: #al_show_menu > div    |
+     | click           |                             |
+    Then we wait "1" seconds for the next page to load
+    When a user performs actions
+      | action_method   | action_params                                                                 |
+      | move_to_element | css: #al_topnav > li > div.panel-group > div:nth-child(3) > div.panel-heading |
+      | click           |                                                                               |
+      | move_to_element | css: #header--dynamic--mobile-lawn-link-Decks                                 |
+      | click           |                                                                               |
     Then a segment track call is sent for a unique field value pair
       | unique_field     | unique_value           |
       | activityLocation | Visitor : How it Works |
     And the segment call contains parameters
       | prop_key               | prop_value                                            |
       | activityLocation       | Visitor : How it Works                                |
-      | description            | Lawn & Garden menu category link in header |
+      | description            | Lawn & Garden menu category link in header            |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/lawn-irrigation.htm"
+    And the landing URL contains ".angieslist.com/companylist/decks-and-porches.htm"
 
-  @howItWorksLawnViewAllClick @howItWorkskMobileRegression
-  Scenario: User hovers then clicks on View All - Lawn in the header on the Visitor How It Works page
+  @howItWorksMobileLawnViewAllClick @howItWorkskMobileRegression
+  Scenario: User clicks on View All - Lawn in the Mobile header on the Visitor How It Works page
     Given user is on a visitor site tball page
     """
     /how-it-works.htm
     """
     When a user performs actions
-      | action_method   | action_params                                |
-      | move_to_element | css: #header--dynamic--lawn-link             |
-      | click           | css: #header--dynamic--lawn-viewAllCats-link |
+     | action_method   | action_params               |
+     | move_to_element | css: #al_show_menu > div    |
+     | click           |                             |
+    Then we wait "1" seconds for the next page to load
+    When a user performs actions
+      | action_method   | action_params                                                                 |
+      | move_to_element | css: #al_topnav > li > div.panel-group > div:nth-child(3) > div.panel-heading |
+      | click           |                                                                               |
+      | move_to_element | css: #header--dynamic--mobile-lawn-viewAllCats-link                           |
+      | click           |                                                                               |
     Then a segment track call is sent for a unique field value pair
       | unique_field     | unique_value           |
       | activityLocation | Visitor : How it Works |
@@ -619,16 +632,23 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/"
 
-  @howItWorksMoreJunkClick @howItWorkskMobileRegression
-  Scenario: User hovers then clicks on Junk Hauling - More in the header on the Visitor How It Works page
+  @howItWorksMobileMoreJunkClick @howItWorkskMobileRegression
+  Scenario: User clicks on Junk Hauling - More in the Mobile header on the Visitor How It Works page
     Given user is on a visitor site tball page
     """
     /how-it-works.htm
     """
     When a user performs actions
-      | action_method   | action_params                           |
-      | move_to_element | css: #header--dynamic--more-link        |
-      | click           | css: #header--dynamic--more-link-JunkHauling |
+     | action_method   | action_params               |
+     | move_to_element | css: #al_show_menu > div    |
+     | click           |                             |
+    Then we wait "1" seconds for the next page to load
+    When a user performs actions
+      | action_method   | action_params                                                                 |
+      | move_to_element | css: #al_topnav > li > div.panel-group > div:nth-child(4) > div.panel-heading |
+      | click           |                                                                               |
+      | move_to_element | css: #header--dynamic--mobile-more-link-JunkHauling                           |
+      | click           |                                                                               |
     Then a segment track call is sent for a unique field value pair
       | unique_field     | unique_value           |
       | activityLocation | Visitor : How it Works |
@@ -639,57 +659,52 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/hauling.htm"
 
-  @howItWorksMoreNearMeClick @howItWorkskMobileRegression
-  Scenario: User hovers then clicks on Near Me - More in the header on the Visitor How It Works page
+  @howItWorksMoreViewAllNearMeClick @howItWorkskMobileRegression
+  Scenario: User clicks on View All Cats - More in the header on the Visitor How It Works page
     Given user is on a visitor site tball page
     """
     /how-it-works.htm
     """
     When a user performs actions
-      | action_method   | action_params                           |
-      | move_to_element | css: #header--dynamic--more-link        |
-      | click           | css: #header--dynamic--more-nearMe-link |
+     | action_method   | action_params               |
+     | move_to_element | css: #al_show_menu > div    |
+     | click           |                             |
+    Then we wait "1" seconds for the next page to load
+    When a user performs actions
+      | action_method   | action_params                                                                 |
+      | move_to_element | css: #al_topnav > li > div.panel-group > div:nth-child(4) > div.panel-heading |
+      | click           |                                                                               |
+      | move_to_element | css: #header--dynamic--mobile-more-viewAllCats-link                           |
+      | click           |                                                                               |
     Then a segment track call is sent for a unique field value pair
       | unique_field     | unique_value           |
       | activityLocation | Visitor : How it Works |
     And the segment call contains parameters
       | prop_key               | prop_value                     |
       | activityLocation       | Visitor : How it Works         |
-      | description            | Near Me link in desktop header |
-    And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/nearme/"
-
-  @howItWorksMoreViewAllClick @howItWorkskMobileRegression
-  Scenario: User hovers then clicks on View All - More in the header on the Visitor How It Works page
-    Given user is on a visitor site tball page
-    """
-    /how-it-works.htm
-    """
-    When a user performs actions
-      | action_method   | action_params                                |
-      | move_to_element | css: #header--dynamic--more-link             |
-      | click           | css: #header--dynamic--more-viewAllCats-link |
-    Then a segment track call is sent for a unique field value pair
-      | unique_field     | unique_value           |
-      | activityLocation | Visitor : How it Works |
-    And the segment call contains parameters
-      | prop_key               | prop_value                                   |
-      | activityLocation       | Visitor : How it Works                       |
       | description            | More menu view all categories link in header |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/"
 
 
-  @howItWorksArticlesOutdoorLivingClick @howItWorkskMobileRegression
-  Scenario: User hovers then clicks on Outdoor Living - More in the header on the Visitor How It Works page
+
+  @howItWorksMobileArticlesCleaningClick @howItWorkskMobileRegression
+  Scenario: User clicks on Cleaning - More in the Mobile header on the Visitor How It Works page
     Given user is on a visitor site tball page
     """
     /how-it-works.htm
     """
     When a user performs actions
-      | action_method   | action_params                                      |
-      | move_to_element | css: #header--dynamic--articles-link               |
-      | click           | css: #header--dynamic--articles-link-OutdoorLiving |
+     | action_method   | action_params               |
+     | move_to_element | css: #al_show_menu > div    |
+     | click           |                             |
+    Then we wait "1" seconds for the next page to load
+    When a user performs actions
+      | action_method   | action_params                                                                 |
+      | move_to_element | css: #al_topnav > li > div.panel-group > div:nth-child(5) > div.panel-heading |
+      | click           |                                                                               |
+      | move_to_element | css: #header--dynamic--mobile-articles-link-Cleaning                          |
+      | click           |                                                                               |
     Then a segment track call is sent for a unique field value pair
       | unique_field     | unique_value           |
       | activityLocation | Visitor : How it Works |
@@ -698,18 +713,25 @@ Feature:
       | activityLocation       | Visitor : How it Works                        |
       | description            | Articles & Advice menu article link in header |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/outdoor-living/"
+    And the landing URL contains ".angieslist.com/cleaning/"
 
-  @howItWorksArticlesViewAllClick @howItWorkskMobileRegression
-  Scenario: User hovers then clicks on View All - More in the header on the Visitor How It Works page
+  @howItWorksMobileArticlesViewAllClick @howItWorkskMobileRegression
+  Scenario: User clicks on View All Articles in the Mobile header on the Visitor How It Works page
     Given user is on a visitor site tball page
     """
     /how-it-works.htm
     """
     When a user performs actions
-      | action_method   | action_params                                        |
-      | move_to_element | css: #header--dynamic--articles-link                 |
-      | click           | css: #header--dynamic--articles-viewAllArticles-link |
+     | action_method   | action_params               |
+     | move_to_element | css: #al_show_menu > div    |
+     | click           |                             |
+    Then we wait "1" seconds for the next page to load
+    When a user performs actions
+      | action_method   | action_params                                                                 |
+      | move_to_element | css: #al_topnav > li > div.panel-group > div:nth-child(5) > div.panel-heading |
+      | click           |                                                                               |
+      | move_to_element | css: #header--dynamic--mobile-articles-viewAllArticles-link                   |
+      | click           |                                                                               |
     Then a segment track call is sent for a unique field value pair
       | unique_field     | unique_value           |
       | activityLocation | Visitor : How it Works |
