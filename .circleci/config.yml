@@ -17,6 +17,8 @@ jobs:
           command: 'docker login -u "$DOCKER_USERNAME" -p "$DOCKER_AUTH"'
       - run: |
           echo 'export BASEURL_OVERRIDE=https://wwwstg.angieslist.com' >> $BASH_ENV
+          echo 'export NVM_DIR=/home/circleci/.nvm' >> $BASH_ENV
+          echo 'exort NODE_VERSION=8.11.1' >> $BASH_ENV
       - run:
           name: Build Docker image
           command: |
@@ -26,7 +28,27 @@ jobs:
           command: |
             docker push angieslist/al_py_automation:"${CIRCLE_BUILD_NUM}"
             docker push angieslist/al_py_automation:latest
+      - run:
+          name: Install dependencies and launch framework
+          command: |
+            sudo apt-get update
+            sudo apt-get install -y chromedriver
+            sudo apt-get install -y xvfb
+            curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
+            . $NVM_DIR/nvm.sh
+            nvm install $NODE_VERSION
+            nvm alias default $NODE_VERSION
+            nvm use default
+            npm install -g mountebank
+            npm install -g cbt_tunnels
+            cd al_py_automation
+            sudo pip install -r requirements.txt
+            python manage.py launch_framework &
       - run: sleep 10
+      - run:
+          name: Running circle-tag tests
+          command: |
+            ./behave_tags headless chrome circle
       # - run:
       #     name: Running circle-tag tests
       #     command: ./behave_docker_test.sh al_py_automation_al_py_automation_1 cbt chrome tags circle

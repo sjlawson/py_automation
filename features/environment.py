@@ -128,15 +128,6 @@ def remote_sauce(context):
 
 def set_proxy(caps):
     PROXY = os.environ.get('PROXY', '127.0.0.1:4545')
-    test_client = os.environ.get('OS_PLATFORM', 'Mac OSX 10.12')
-    caps['loggingPrefs'] = { 'performance': 'INFO'}
-    caps['name'] = 'cqtest_' + str(datetime.datetime.now())
-    caps['build'] = '1.0'
-    caps['browserName'] = method_name
-    # caps['platform'] = test_client
-    caps['screenResolution'] = '1366x768'
-    caps['record_video'] = 'true'
-    caps['record_network'] = 'true'
     caps['proxy'] = {
         "httpProxy": PROXY,
         "ftpProxy": PROXY,
