@@ -24,20 +24,20 @@ def step_impl(context):
     time.sleep(1)
 
 
-@given('user is on a visitor site catnogeo page that is an SR overlap category')
+@given('user is on the visitor site comnpanylist page')
 def step_impl(context):
     appsuite_env = 'al_visitor_site'
     appsuite_url = context.appsuites[appsuite_env]['base_url']
-    context.url = appsuite_url + '/companylist/home-inspection.htm'
+    context.url = appsuite_url + '/companylist/'
     context.browser.get(context.url)
     time.sleep(1)
 
 
-@given('user is on a visitor site catnogeo page that is not an SR overlap category')
+@given('user is on a visitor site catnogeo page')
 def step_impl(context):
     appsuite_env = 'al_visitor_site'
     appsuite_url = context.appsuites[appsuite_env]['base_url']
-    context.url = appsuite_url + '/companylist/pet-care.htm'
+    context.url = appsuite_url + '/companylist/drywall.htm'
     context.browser.get(context.url)
     time.sleep(1)
 
@@ -55,7 +55,7 @@ def step_impl(context):
 def step_impl(context):
     appsuite_env = 'al_visitor_site'
     appsuite_url = context.appsuites[appsuite_env]['base_url']
-    context.url = appsuite_url + '/companylist/indianapolis/?bustA2'
+    context.url = appsuite_url + '/companylist/indianapolis/'
     context.browser.get(context.url)
     time.sleep(1)
 
@@ -64,7 +64,7 @@ def step_impl(context):
 def step_impl(context):
     appsuite_env = 'al_visitor_site'
     appsuite_url = context.appsuites[appsuite_env]['base_url']
-    context.url = appsuite_url + '/companylist/us/in/fishers?bustA32'
+    context.url = appsuite_url + '/companylist/us/in/fishers/'
     context.browser.get(context.url)
     time.sleep(1)
 
@@ -73,7 +73,25 @@ def step_impl(context):
 def step_impl(context):
     appsuite_env = 'al_visitor_site'
     appsuite_url = context.appsuites[appsuite_env]['base_url']
-    context.url = appsuite_url + '/companylist/us/mi/?bustSDF'
+    context.url = appsuite_url + '/companylist/us/mi/'
+    context.browser.get(context.url)
+    time.sleep(1)
+
+
+@given('user is on the visitor site photos page')
+def step_impl(context):
+    appsuite_env = 'al_visitor_site'
+    appsuite_url = context.appsuites[appsuite_env]['base_url']
+    context.url = appsuite_url + '/photos/'
+    context.browser.get(context.url)
+    time.sleep(2)
+
+
+@given('user is on the visitor site subvertical page')
+def step_impl(context):
+    appsuite_env = 'al_visitor_site'
+    appsuite_url = context.appsuites[appsuite_env]['base_url']
+    context.url = appsuite_url + '/lights/'
     context.browser.get(context.url)
     time.sleep(1)
 
