@@ -22,7 +22,7 @@ Feature:
 
 ##### Header Tests #####
 
-  @howItWorksHeaderJoinClick @howItWorkskRegression
+  @howItWorksHeaderJoinClick @howItWorkskRegression @tballHeaderRegression
   Scenario: Clicking the Join button in the header
     Given user is on a visitor site tball page
     """
@@ -43,7 +43,7 @@ Feature:
     And the landing URL contains ".angieslist.com/app/signup"
 
 
-  @howItWorksHeaderBusinessOwnersClick @howItWorkskRegression
+  @howItWorksHeaderBusinessOwnersClick @howItWorkskRegression @tballHeaderRegression
   Scenario: Clicking the Business Owners button in the header
     Given user is on a visitor site tball page
     """
@@ -64,7 +64,7 @@ Feature:
     And the landing URL contains "angieslistbusinesscenter.com/"
 
 
-  @howItWorksInteriorFurnaceRepairHeaderClick @howItWorkskRegression
+  @howItWorksSignInHeaderClick @howItWorkskRegression @tballHeaderRegression
   Scenario: Clicking the Sign In button in the header
     Given user is on a visitor site tball page
     """
@@ -84,7 +84,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/member/login"
 
-  @howItWorksInteriorApplianceRepairClick @howItWorkskRegression
+  @howItWorksInteriorApplianceRepairClick @howItWorkskRegression @tballHeaderRegression
   Scenario: User hovers then clicks on Appliance Repair - Interior in the header on the Visitor How It Works page
     Given user is on a visitor site tball page
     """
@@ -104,7 +104,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/appliance-repair.htm"
 
-  @howItWorksInteriorHeatingCoolingClick @howItWorkskRegression
+  @howItWorksInteriorHeatingCoolingClick @howItWorkskRegression @tballHeaderRegression
   Scenario: User hovers then clicks on Heating Cooling - Interior in the header on the Visitor How It Works page
     Given user is on a visitor site tball page
     """
@@ -124,7 +124,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/hvac.htm"
 
-  @howItWorksInteriorViewAllClick @howItWorkskRegression
+  @howItWorksInteriorViewAllClick @howItWorkskRegression @tballHeaderRegression
   Scenario: User hovers then clicks on View All - Interior in the header on the Visitor How It Works page
     Given user is on a visitor site tball page
     """
@@ -144,7 +144,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/"
 
-  @howItWorksExteriorMasonryClick @howItWorkskRegression
+  @howItWorksExteriorMasonryClick @howItWorkskRegression @tballHeaderRegression
   Scenario: User hovers then clicks on Masonry - Exterior in the header on the Visitor How It Works page
     Given user is on a visitor site tball page
     """
@@ -164,7 +164,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/masonry.htm"
 
-  @howItWorksExteriorViewAllClick @howItWorkskRegression
+  @howItWorksExteriorViewAllClick @howItWorkskRegression @tballHeaderRegression
   Scenario: User hovers then clicks on View All - Exterior in the header on the Visitor How It Works page
     Given user is on a visitor site tball page
     """
@@ -184,7 +184,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/"
 
-  @howItWorksLawnIrrigationClick @howItWorkskRegression
+  @howItWorksLawnIrrigationClick @howItWorkskRegression @tballHeaderRegression
   Scenario: User hovers then clicks on Lawn Irrigation - Lawn in the header on the Visitor How It Works page
     Given user is on a visitor site tball page
     """
@@ -204,7 +204,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/lawn-irrigation.htm"
 
-  @howItWorksLawnViewAllClick @howItWorkskRegression
+  @howItWorksLawnViewAllClick @howItWorkskRegression @tballHeaderRegression
   Scenario: User hovers then clicks on View All - Lawn in the header on the Visitor How It Works page
     Given user is on a visitor site tball page
     """
@@ -224,7 +224,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/"
 
-  @howItWorksMoreJunkClick @howItWorkskRegression
+  @howItWorksMoreJunkClick @howItWorkskRegression @tballHeaderRegression
   Scenario: User hovers then clicks on Junk Hauling - More in the header on the Visitor How It Works page
     Given user is on a visitor site tball page
     """
@@ -244,7 +244,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/hauling.htm"
 
-  @howItWorksMoreNearMeClick @howItWorkskRegression
+  @howItWorksMoreNearMeClick @howItWorkskRegression @tballHeaderRegression
   Scenario: User hovers then clicks on Near Me - More in the header on the Visitor How It Works page
     Given user is on a visitor site tball page
     """
@@ -264,7 +264,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/nearme/"
 
-  @howItWorksMoreViewAllClick @howItWorkskRegression
+  @howItWorksMoreViewAllClick @howItWorkskRegression @tballHeaderRegression
   Scenario: User hovers then clicks on View All - More in the header on the Visitor How It Works page
     Given user is on a visitor site tball page
     """
@@ -285,7 +285,7 @@ Feature:
     And the landing URL contains ".angieslist.com/companylist/"
 
 
-  @howItWorksArticlesOutdoorLivingClick @howItWorkskRegression
+  @howItWorksArticlesOutdoorLivingClick @howItWorkskRegression @tballHeaderRegression
   Scenario: User hovers then clicks on Outdoor Living - More in the header on the Visitor How It Works page
     Given user is on a visitor site tball page
     """
@@ -305,7 +305,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/outdoor-living/"
 
-  @howItWorksArticlesViewAllClick @howItWorkskRegression
+  @howItWorksArticlesViewAllClick @howItWorkskRegression @tballHeaderRegression
   Scenario: User hovers then clicks on View All - More in the header on the Visitor How It Works page
     Given user is on a visitor site tball page
     """

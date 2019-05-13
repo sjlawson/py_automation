@@ -41,8 +41,8 @@ def chrome_performance_logs(context):
     ch_profile.add_argument('disable-extensions')
     ch_profile.add_argument("--window-size=1600,1200")
     # ch_profile.add_argument('auto-open-devtools-for-tabs')
-    mobile_emulation = { "deviceName": "iPhone X" }
-    ch_profile.add_experimental_option("mobileEmulation", mobile_emulation)
+    # mobile_emulation = { "deviceName": "iPhone X" }
+    # ch_profile.add_experimental_option("mobileEmulation", mobile_emulation)
     context.browser = webdriver.Chrome(desired_capabilities=caps, chrome_options=ch_profile)
     context.browserlog = lambda : context.browser.get_log('performance')
     yield context.browser
