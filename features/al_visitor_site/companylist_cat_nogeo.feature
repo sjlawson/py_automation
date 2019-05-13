@@ -719,7 +719,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/sunroom-and-patio-remodeling.htm"
 
-  @catNoGeoSegmentHeaderLawnPatios @newHeader
+  @catNoGeoSegmentHeaderGaragePatios @newHeader
   Scenario: User hovers then clicks on Shed Builders in the header on the Drupal CatNoGeo
     Given user is on a visitor site catnogeo page
     When a user performs actions
