@@ -325,6 +325,14 @@ Feature:
       | visitorPageGeoCategory | RALEIGH - ROOFING                 |
 
 
+
+
+
+
+
+
+
+
   ## Body - SR ha-lead-submit-v2 with postal code Leaf Page New Advertiser
   ## leafPageSegmentCTAwithZIPNewAdvertiser (L391)
   Scenario: User fills zipcode on Leaf CTA New Advertiser
