@@ -3,7 +3,8 @@ jobs:
   build:
     working_directory: ~/al_py_automation
     docker:
-      - image: angieslist/circleci-node:8.11.1
+      - image: circleci/python:3.7.2
+      # - image: angieslist/circleci-node:8.11.1
         auth:
            username: $DOCKER_USERNAME
            password: $DOCKER_AUTH
@@ -14,12 +15,6 @@ jobs:
       - run:
           name: Authenticate to DockerHub
           command: 'docker login -u "$DOCKER_USERNAME" -p "$DOCKER_AUTH"'
-      - run:
-          name: Install Docker Compose
-          command: |
-            curl -L https://github.com/docker/compose/releases/download/1.23.2/docker-compose-`uname -s`-`uname -m` > ~/docker-compose
-            chmod +x ~/docker-compose
-            sudo mv ~/docker-compose /usr/local/bin/docker-compose
       - run: |
           echo 'export BASEURL_OVERRIDE=https://wwwstg.angieslist.com' >> $BASH_ENV
       - run:
@@ -31,10 +26,7 @@ jobs:
           command: |
             docker push angieslist/al_py_automation:"${CIRCLE_BUILD_NUM}"
             docker push angieslist/al_py_automation:latest
-      - run:
-          name: Start container
-          command: docker-compose up -d
       - run: sleep 10
-      - run:
-          name: Running circle-tag tests
-          command: ./behave_docker_test.sh al_py_automation_al_py_automation_1 cbt chrome tags circle
+      # - run:
+      #     name: Running circle-tag tests
+      #     command: ./behave_docker_test.sh al_py_automation_al_py_automation_1 cbt chrome tags circle
