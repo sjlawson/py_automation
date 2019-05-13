@@ -1,6 +1,6 @@
 Feature:
 
-  @geoCatPageCall @geoCatDaily @companyTreeDaily @headerDailyRegression
+  @geoCatPageCall
   Scenario: Segment pagecall when GeoCat(Denver Roofing) loads
     Given user is on a visitor site geocat page
     When a segment page call is sent for a unique field value pair
@@ -34,7 +34,7 @@ Feature:
 ##### Header Tests #####
 
 
-  @headerJoinGeoCat @geoCatDaily @companyTreeDaily @headerDailyRegression
+  @headerJoinGeoCat @newHeader
   Scenario: The Join button is clicked on GeoCat(Denver Roofing) page
     Given user is on a visitor site geocat page
     When a user performs actions
@@ -52,7 +52,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/app/signup"
 
-  @headerSignInGeoCat @geoCatDaily @companyTreeDaily @headerDailyRegression
+  @headerSignInGeoCat @newHeader
   Scenario: The Sign In link is clicked on the GeoCat(Denver Roofing) header
     Given user is on a visitor site geocat page
     When a user performs actions
@@ -70,7 +70,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/member"
 
-  @headerBcGeoCat @geoCatDaily @companyTreeDaily @headerDailyRegression
+  @headerBcGeoCat @newHeader
   Scenario: The Business Center link is clicked on the GeoCat(Denver Roofing) header
     Given user is on a visitor site geocat page
     When a user performs actions
@@ -87,7 +87,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains "angieslistbusinesscenter.com"
 
-  @geoCatHeaderInteriorApplianceRepair @companyTreeDaily @headerDailyRegression @geoCatDaily
+  @geoCatHeaderInteriorApplianceRepair @newHeader
   Scenario: User hovers then clicks on Appliance Repair in the header on the Drupal GeoCat(Denver Roofing)
     Given user is on a visitor site geocat page
     When a user performs actions
@@ -105,7 +105,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/appliance-repair.htm"
 
-  @geoCatHeaderInteriorHouseCleaning @companyTreeDaily @headerDailyRegression @geoCatDaily
+  @geoCatHeaderInteriorHouseCleaning @newHeader
   Scenario: User hovers then clicks on House Cleaning in the header on the Drupal GeoCat(Denver Roofing)
     Given user is on a visitor site geocat page
     When a user performs actions
@@ -123,7 +123,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/house-cleaning.htm"
 
-  @geoCatHeaderExteriorPainting @companyTreeDaily @headerDailyRegression @geoCatDaily
+  @geoCatHeaderExteriorPainting @newHeader
   Scenario: User hovers then clicks on Exterior Painting in the header on the Drupal GeoCat(Denver Roofing)
     Given user is on a visitor site geocat page
     When a user performs actions
@@ -141,7 +141,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/exterior-painting.htm"
 
-  @geoCatHeaderExteriorViewAllCats @companyTreeDaily @headerDailyRegression @geoCatDaily
+  @geoCatHeaderExteriorViewAllCats @newHeader
   Scenario: User hovers then clicks on Exterior View All in the header on the Drupal GeoCat(Denver Roofing)
     Given user is on a visitor site geocat page
     When a user performs actions
@@ -159,13 +159,13 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/"
 
-  @geoCatHeaderMoreNearMe @companyTreeDaily @headerDailyRegression @geoCatDaily
+  @geoCatHeaderMoreNearMe @newHeader
   Scenario: User hovers then clicks on More NearMe in the header on the Drupal GeoCat(Denver Roofing)
     Given user is on a visitor site geocat page
     When a user performs actions
       | action_method   | action_params       |
-      | move_to_element | css: #secondary-nav > ul > li:nth-child(4) > label > span |
-      | click           | css: #secondary-nav > ul > li:nth-child(4) > div > div:nth-child(5) > a |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(4) > label |
+      | click           | css: #more-toggle > div:nth-child(3) > a |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value           |
       | activityLocation | Visitor : Geocat   |
