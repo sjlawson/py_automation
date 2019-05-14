@@ -34,7 +34,8 @@ jobs:
       - run:
           name: Run subset of tests
           command: |
-          ./behave_docker_test.sh al_py_automation_al_py_automation_1 headless chrome tags header_regression
+            ./behave_docker_test.sh al_py_automation_al_py_automation_1 headless chrome tags header_regression
+
       # - run:
       #     name: Install dependencies and launch framework
       #     command: |
