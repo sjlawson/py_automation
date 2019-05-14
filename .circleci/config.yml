@@ -40,6 +40,7 @@ jobs:
             nvm use default
             npm install -g mountebank
             npm install -g cbt_tunnels
+            echo 'export PATH=/home/circleci/.nvm/versions/node/v8.11.1:$PATH' >> $BASH_ENV
             cd /home/circleci/al_py_automation
             sudo pip install -r requirements.txt
       - run:
