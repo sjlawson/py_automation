@@ -51,7 +51,6 @@ jobs:
           command: |
             cd /home/circleci
             source .bashrc
-            mb
             cd /home/circleci/al_py_automation
             python manage.py launch_framework &
             sleep 1
