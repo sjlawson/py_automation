@@ -1,7 +1,10 @@
 from behave import given, then, when
 from common.SegmentTestHelper import SegmentTestHelper
-import time
+import time, os
 
+if 'BASEURL_OVERRIDE' in os.environ and os.environ['BASEURL_OVERRIDE']:
+            # context.appsuites['al_visitor_site']['base_url'] = os.environ['BASEURL_OVERRIDE']
+            visitor_baseurl = os.environ['BASEURL_OVERRIDE']
 
 @given('user is on a visitor site page')
 def step_impl(context):
@@ -43,7 +46,7 @@ def step_impl(context):
 def step_impl(context):
     appsuite_env = 'al_visitor_site'
     appsuite_url = context.appsuites[appsuite_env]['base_url']
-    context.url = appsuite_url + '/companylist/plumbing.htm'
+    context.url = appsuite_url + '/companylist/drywall.htm'
     context.browser.get(context.url)
     time.sleep(1)
 

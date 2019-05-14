@@ -1,5 +1,5 @@
 Feature:
-
+  @statePageCall
   Scenario: testing segment pagecall on state page
     Given user is on a visitor state page
     When a segment page call is sent for a unique field value pair
@@ -23,7 +23,7 @@ Feature:
 ##### Header Tests #####
 
 
-    @headerJoinStatePage @companyTreeDaily @headerDailyRegression @statePage
+    @headerJoinStatePage @newHeader
     Scenario: State Page clicking the join link in the header
     Given user is on a visitor state page
       When a user performs actions
@@ -40,7 +40,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/app/signup"
 
-    @headerSignInStatePage @companyTreeDaily @headerDailyRegression @statePage
+    @headerSignInStatePage @newHeader
     Scenario: State Page clicking the Sign In link in the header
     Given user is on a visitor state page
       When a user performs actions
@@ -57,7 +57,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/member/login"
 
-    @headerBusinessOwnersStatePage @companyTreeDaily @headerDailyRegression @statePage
+    @headerBusinessOwnersStatePage @newHeader
     Scenario: State Page clicking the Business Owners link in the header
     Given user is on a visitor state page
       When a user performs actions
@@ -71,8 +71,10 @@ Feature:
       | description      | Business Owners link in header |
       | activityLocation | Visitor : US : State            |
       | userId           |                                |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains "angieslistbusinesscenter.com"
 
-    @StatePageInteriorDrywall @companyTreeDaily @headerDailyRegression @statePage
+    @StatePageInteriorDrywall @newHeader
     Scenario: State Page clicking the Interior - Plumbing link in the header
     Given user is on a visitor state page
       When a user performs actions

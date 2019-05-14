@@ -25,7 +25,7 @@ Feature:
 
 ##### Header Tests #####
 
-  @subverticalPageHeaderJoinClick @headerDailyRegression @subverticalHeader
+  @subverticalPageHeaderJoinClick @newHeader
   Scenario: User clicks on Header Join button on the Drupal subvertical page
     Given user is on the visitor site subvertical page
     When a user performs actions
@@ -43,7 +43,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/app/signup"
 
-  @subverticalPageHeaderSignInClick @headerDailyRegression @subverticalHeader
+  @subverticalPageHeaderSignInClick @newHeader
   Scenario: User clicks on Header Sign In button on the Drupal subvertical page
     Given user is on the visitor site subvertical page
     When a user performs actions
@@ -61,7 +61,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/member/login"
 
-  @subverticalPageHeaderBusinessOwners @headerDailyRegression @subverticalHeader
+  @subverticalPageHeaderBusinessOwners @newHeader
   Scenario: User clicks on the Business Owners button in the header on the Drupal subvertical page
     Given user is on the visitor site subvertical page
     When a user performs actions
@@ -79,7 +79,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains "angieslistbusinesscenter.com"
 
-  @subHeaderInteriorCarpetCleaning @headerDailyRegression @subverticalHeader
+  @subHeaderInteriorCarpetCleaning @newHeader
   Scenario: User hovers then clicks on Carpet Cleaning in the header on the Drupal subvertical
     Given user is on the visitor site subvertical page
     When a user performs actions
@@ -97,7 +97,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/carpet-cleaning.htm"
 
-  @subHeaderExteriorBuilders @headerDailyRegression @subverticalHeader
+  @subHeaderExteriorBuilders @newHeader
   Scenario: User hovers then clicks on Home Buildsers in the header on the Drupal subvertical
     Given user is on the visitor site subvertical page
     When a user performs actions
@@ -115,7 +115,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/home-builders.htm"
 
-  @subHeaderLawnViewAllCategories @headerDailyRegression @subverticalHeader
+  @subHeaderLawnViewAllCategories @newHeader
   Scenario: User hovers then clicks on Lawn & Garden View All Categories in the header on the Drupal subvertical
     Given user is on the visitor site subvertical page
     When a user performs actions
@@ -133,7 +133,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/"
 
-  @subHeaderMorePests @headerDailyRegression @subverticalHeader
+  @subHeaderMorePests @newHeader
   Scenario: User hovers then clicks on Pest Control in the header on the Drupal subvertical
     Given user is on the visitor site subvertical page
     When a user performs actions
@@ -151,7 +151,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/pest-control.htm"
 
-  @subHeaderAdviceFlooring @headerDailyRegression @subverticalHeader
+  @subHeaderAdviceFlooring @newHeader
   Scenario: User hovers then clicks on Pest Control in the header on the Drupal subvertical
     Given user is on the visitor site subvertical page
     When a user performs actions
