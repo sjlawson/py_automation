@@ -1,177 +1,136 @@
-@companylistTree
 Feature:
 
-  @daily_auto
-  Scenario: testing segment pagecall on companylist page
-    Given user is on a visitor site page
-    """
-    /companylist
-    """
+  @companyListPageCall @companyTreeDaily
+  Scenario: Segment pagecall when companylist page loads
+    Given user is on the visitor site comnpanylist page
     When a segment page call is sent for a unique field value pair
-      | unique_field | unique_value        |
+      | unique_field | unique_value   |
       | name         | Visitor : Directory |
     Then the segment call contains parameters
-      | prop_key    | prop_value                                                         |
-      | name        | Visitor : Directory                                                |
-      | atTestOffer |                                                                    |
-      | cid         |                                                                    |
-      | pageVersion | Lullabot Redesign                                                  |
-      | path        | /companylist/                                                      |
-      | search      |                                                                    |
-      | userId      |                                                                    |
-      | userType    |                                                                    |
-      | title       | Search Real Local Reviews, Home Services Guide &vert; Angie's List |
+      | prop_key              | prop_value                                                         |
+      | atTestOffer           |                                                                    |
+      | cid                   |                                                                    |
+      | name                  | Visitor : Directory                                                |
+      | pageVersion           | Lullabot Redesign                                                  |
+      | path                  | /companylist/                                                      |
+      | referrer              |                                                                    |
+      | search                |                                                                    |
+      | title                 | Search Real Local Reviews, Home Services Guide &vert; Angie's List |
+      | url                   |                                                                    |
+      | userId                |                                                                    |
+      | userType              | Visitor - New                                                      |
 
-  @daily_auto
-  Scenario: segment call on clicking the join link in company list header
-    Given user is on a visitor site page
-    """
-    /companylist
-    """
+
+##### Header Tests #####
+
+  @companyListPageHeaderJoinClick @newHeader
+  Scenario: User clicks on Header Join button on the Drupal CompanyList page
+    Given user is on the visitor site comnpanylist page
     When a user performs actions
-    | action_method | action_params |
-    | click         | #header-join  |
+      | action_method   | action_params      |
+      | move_to_element | id: header-join    |
+      | click           |                    |
     Then a segment track call is sent for a unique field value pair
-    | unique_field | unique_value        |
-    | description  | Join link in header |
+      | unique_field | unique_value       |
+      | activityLocation | Visitor : Directory |
     And the segment call contains parameters
-    | prop_key         | prop_value          |
-    | activityLocation | Visitor : Directory |
-    | description      | Join link in header |
-    | userId           |                     |
+      | prop_key         | prop_value          |
+      | activityLocation | Visitor : Directory |
+      | description      | Join link in header |
+      | userId           |                     |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/app/signup"
 
-
-  Scenario: segment call on clicking the HIW link in the header
-    Given user is on a visitor site page
-    """
-    /companylist/?bustA12345
-    """
+  @companyListPageHeaderSignInClick @newHeader
+  Scenario: User clicks on Header Sign In button on the Drupal CompanyList page
+    Given user is on the visitor site comnpanylist page
     When a user performs actions
-    | action_method | action_params       |
-    | click         | .btnHiw |
+      | action_method   | action_params      |
+      | move_to_element | id: header-sign-in |
+      | click           |                    |
     Then a segment track call is sent for a unique field value pair
-    | unique_field | unique_value                |
-    | description  | How it Works link in header |
+      | unique_field | unique_value       |
+      | activityLocation | Visitor : Directory |
     And the segment call contains parameters
-    | prop_key         | prop_value                  |
-    | description      | How it Works link in header |
-    | activityLocation | Visitor : Directory         |
-    | userId           |                             |
+      | prop_key               | prop_value                        |
+      | activityLocation       | Visitor : Directory                    |
+      | description            | Sign In link in header            |
+      | userId                 |                                   |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/member/login"
 
-
-  Scenario: segment call on clicking the Sign In link in the header
-    Given user is on a visitor site page
-    """
-    /companylist/?bustA12345
-    """
+  @companyListPageHeaderBusinessOwners @newHeader
+  Scenario: User clicks on the Business Owners button in the header on the Drupal CompanyList page
+    Given user is on the visitor site comnpanylist page
     When a user performs actions
-    | action_method | action_params   |
-    | click         | #header-sign-in |
+      | action_method   | action_params       |
+      | move_to_element | id: business-center |
+      | click           |                     |
     Then a segment track call is sent for a unique field value pair
-    | unique_field | unique_value           |
-    | description  | Sign In link in header |
+      | unique_field | unique_value       |
+      | activityLocation | Visitor : Directory |
     And the segment call contains parameters
-    | prop_key         | prop_value             |
-    | description      | Sign In link in header |
-    | activityLocation | Visitor : Directory    |
-    | userId           |                        |
+      | prop_key               | prop_value                        |
+      | activityLocation       | Visitor : Directory                    |
+      | description            | Business Owners link in header    |
+      | userId                 |                                   |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains "angieslistbusinesscenter.com"
 
-
-  Scenario: segment call on clicking the FAQ link in the header
-    Given user is on a visitor site page
-    """
-    /companylist/?bustA12345
-    """
+  @companyListPageMoreJunk @newHeader
+  Scenario: User hovers then clicks on More NearMe in the header on the Drupal CompanyList Page
+    Given user is on the visitor site comnpanylist page
     When a user performs actions
-    | action_method | action_params   |
-    | click         | #faq |
+      | action_method   | action_params       |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(4) > label |
+      | click           | css: #more-toggle > ul > li:nth-child(4) > a |
     Then a segment track call is sent for a unique field value pair
-    | unique_field | unique_value           |
-    | description  | FAQ link in header |
+      | unique_field | unique_value           |
+      | activityLocation | Visitor : Directory   |
     And the segment call contains parameters
-    | prop_key         | prop_value             |
-    | description      | FAQ link in header     |
-    | activityLocation | Visitor : Directory    |
-    | userId           |                        |
+      | prop_key               | prop_value                       |
+      | activityLocation       | Visitor : Directory                 |
+      | description            | More menu category link in header   |
+      | userId                 |                                  |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/hauling.htm"
 
-
-  Scenario: segment call on clicking the Press link in the header
-    Given user is on a visitor site page
-    """
-    /companylist/?bustA12345
-    """
+  @companyListPageLawnTreeService
+  Scenario: User hovers then clicks on Tree Service - More in the header on the Drupal CompanyList Page
+    Given user is on a visitor site geocat page
     When a user performs actions
-    | action_method | action_params |
-    | click         | #press        |
+      | action_method   | action_params       |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(1) > label |
+      | click           | css: #secondary-nav > ul > li:nth-child(1) > div > ul > li:nth-child(1) > a |
     Then a segment track call is sent for a unique field value pair
-    | unique_field | unique_value                |
-    | description  | In the Press link in header |
+      | unique_field | unique_value           |
+      | activityLocation | Visitor : Geocat   |
     And the segment call contains parameters
-    | prop_key         | prop_value                  |
-    | description      | In the Press link in header |
-    | activityLocation | Visitor : Directory         |
-    | userId           |                             |
+      | prop_key               | prop_value                            |
+      | activityLocation       | Visitor : Geocat                      |
+      | description            | Interior menu category link in header |
+      | userId                 |                                       |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/appliance-repair.htm"
 
 
-  Scenario: segment call on clicking the SC link in the header
-    Given user is on a visitor site page
-    """
-    /companylist/?bustA12345
-    """
-    When a user performs actions
-    | action_method | action_params |
-    | click         | #articles     |
-    Then a segment track call is sent for a unique field value pair
-    | unique_field | unique_value                    |
-    | description  | Solution Center link in header  |
-    And the segment call contains parameters
-    | prop_key         | prop_value                     |
-    | description      | Solution Center link in header |
-    | activityLocation | Visitor : Directory            |
-    | userId           |                                |
 
 
-  Scenario: segment call on clicking the BC link in the header
-    Given user is on a visitor site page
-    """
-    /companylist/?bustA12345
-    """
-    When a user performs actions
-    | action_method | action_params       |
-    | click         | #nav_business_owner |
-    Then a segment track call is sent for a unique field value pair
-    | unique_field | unique_value                   |
-    | description  | Business Owners link in header |
-    And the segment call contains parameters
-    | prop_key         | prop_value                     |
-    | description      | Business Owners link in header |
-    | activityLocation | Visitor : Directory            |
-    | userId           |                                |
+##### Body Tests #####
 
 
-  Scenario: segment call on clicking the Join link in the footer
-    Given user is on a visitor site page
-    """
-    /companylist/?bustA12345
-    """
-    When a user performs actions
-    | action_method | action_params |
-    | click         | #footer-join  |
-    Then a segment track call is sent for a unique field value pair
-    | unique_field | unique_value          |
-    | description  | Join button in footer |
-    And the segment call contains parameters
-    | prop_key         | prop_value            |
-    | description      | Join button in footer |
-    | activityLocation | Visitor : Directory   |
-    | userId           |                       |
 
-  @topcities @companylistTopCities @daily_auto
+
+
+
+
+##### Footer Tests #####
+
+
+
+  @topcities @companylistTopCities @companyTreeDaily
   Scenario Outline: companylist Directory top cities
-      Given user is on a visitor site page
-      """
-      /companylist/?bustA12345
-      """
+    Given user is on the visitor site comnpanylist page
       When a user clicks on "<pageLink>"
       Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value              |

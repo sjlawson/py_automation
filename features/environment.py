@@ -30,14 +30,17 @@ def chrome_performance_logs(context):
     caps['name'] = 'cqtest_' + str(datetime.datetime.now())
     caps['build'] = '1.0'
     caps['browserName'] = 'chrome'
-    caps['screenResolution'] = '1366x768'
+    # caps['screenResolution'] = '1920x1200'
     caps['record_network'] = 'true'
 
     ch_profile = webdriver.ChromeOptions()
     ch_profile.perfLoggingPrefs = {'enableNetwork': True, 'traceCategories': 'performance, devtools.network'}
     ch_profile.add_argument('incognito')
     ch_profile.add_argument('disable-extensions')
-    ch_profile.add_argument('auto-open-devtools-for-tabs')
+    ch_profile.add_argument("--window-size=1600,1200")
+    # ch_profile.add_argument('auto-open-devtools-for-tabs')
+    # mobile_emulation = { "deviceName": "iPhone X" }
+    # ch_profile.add_experimental_option("mobileEmulation", mobile_emulation)
     context.browser = webdriver.Chrome(desired_capabilities=caps, chrome_options=ch_profile)
     context.browserlog = lambda : context.browser.get_log('performance')
     yield context.browser
@@ -110,7 +113,7 @@ def set_caps(caps, method_name):
     caps['build'] = '1.0'
     caps['browserName'] = method_name
     # caps['platform'] = test_client
-    caps['screenResolution'] = '1366x768'
+    # caps['screenResolution'] = '1366x768'
     caps['record_video'] = 'true'
     caps['record_network'] = 'true'
     caps['proxy'] = {
