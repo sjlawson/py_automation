@@ -49,6 +49,8 @@ jobs:
       - run:
           name: Launch Framework and run circle-tag tests
           command: |
+            cd /home/circleci
+            source .bashrc
             cd /home/circleci/al_py_automation
             python manage.py launch_framework &
             sleep 1
