@@ -1,7 +1,7 @@
-@allCP
+@companyListTree
 Feature:
 
-  @companyListPageCall @companyTreeDaily
+  @companyListPageCall
   Scenario: Segment pagecall when companylist page loads
     Given user is on the visitor site comnpanylist page
     When a segment page call is sent for a unique field value pair
@@ -24,7 +24,7 @@ Feature:
 
 ##### Header Tests #####
 
-  @companyListPageHeaderJoinClick @newHeaderA
+  @companyListPageHeaderJoinClick @companyListPageHeader @companyListTreeHeader
   Scenario: User clicks on Header Join button on the Drupal CompanyList page
     Given user is on the visitor site comnpanylist page
     When a user performs actions
@@ -42,7 +42,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/app/signup"
 
-  @companyListPageHeaderSignInClick @newHeaderA
+  @companyListPageHeaderSignInClick @companyListPageHeader @companyListTreeHeader
   Scenario: User clicks on Header Sign In button on the Drupal CompanyList page
     Given user is on the visitor site comnpanylist page
     When a user performs actions
@@ -60,7 +60,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/member/login"
 
-  @companyListPageHeaderBusinessOwners @newHeaderA
+  @companyListPageHeaderBusinessOwners @companyListPageHeader @companyListTreeHeader
   Scenario: User clicks on the Business Owners button in the header on the Drupal CompanyList page
     Given user is on the visitor site comnpanylist page
     When a user performs actions
@@ -78,7 +78,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains "angieslistbusinesscenter.com"
 
-  @companyListPageMoreJunk @newHeaderA
+  @companyListPageMoreJunk @companyListPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on More NearMe in the header on the Drupal CompanyList Page
     Given user is on the visitor site comnpanylist page
     When a user performs actions
@@ -96,7 +96,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/hauling.htm"
 
-  @companyListPageLawnTreeService @newHeaderA
+  @companyListPageLawnTreeService @companyListPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Tree Service - More in the header on the Drupal CompanyList Page
     Given user is on the visitor site comnpanylist page
     When a user performs actions
@@ -114,7 +114,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/appliance-repair.htm"
 
-  @companyListPageLawnTreeService @newHeaderA
+  @companyListPageLawnTreeService @companyListPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Articles & Advice menu view all articles link in header on the Drupal CompanyList Page
     Given user is on the visitor site comnpanylist page
     When a user performs actions
@@ -136,7 +136,7 @@ Feature:
 
 ##### Body Tests #####
 
-  @companyListPageBreadCrumbClick @newBody
+  @companyListPageBreadCrumbClick @companyListPageBody @companyListTreeBody
   Scenario: User clicks on the breadcrumb link in the body on the Drupal CompanyList Page
     Given user is on the visitor site comnpanylist page
     When a user performs actions
@@ -154,7 +154,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/"
 
-  @companyListPageCatSearchSelectPlumbing @newBody
+  @companyListPageCatSearchSelectPlumbing @companyListPageBody @companyListTreeBody
   Scenario: User clicks on the Choose A Category link in the body and selects Plumbing - Drupal CompanyList Page
     Given user is on the visitor site comnpanylist page
     When a user performs actions
@@ -176,7 +176,7 @@ Feature:
       | description            | Category selected from auto suggestion |
       | userId                 |                                        |
 
-  @companyListPageCatSearchPlumbing @newBody
+  @companyListPageCatSearchPlumbing @companyListPageBody @companyListTreeBody
   Scenario: User clicks on the Choose A Cat link in the body on the Drupal CompanyList Page
     Given user is on the visitor site comnpanylist page
     When a user performs actions
@@ -208,7 +208,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/mi/drummond-island/plumbing.htm"
 
-  @companyListPageSeeAllCatClick @newBody
+  @companyListPageSeeAllCatClick @companyListPageBody @companyListTreeBody
   Scenario: User clicks on the See All Categories link in the body on the Drupal CompanyList Page
     Given user is on the visitor site comnpanylist page
     When a user performs actions
@@ -224,7 +224,7 @@ Feature:
       | description            | See All Categories link clicked  |
       | userId                 |                                  |
 
-  @companyListPageSeeAllCat @newBody
+  @companyListPageSeeAllCat @companyListPageBody @companyListTreeBody
   Scenario: User clicks on the See All Categories link in the body on the Drupal CompanyList Page
     Given user is on the visitor site comnpanylist page
     When a user performs actions
@@ -264,7 +264,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/mi/drummond-island/cleaning.htm"
 
-  @companyListPageCatClickAsbestos @newBody
+  @companyListPageCatClickAsbestos @companyListPageBody @companyListTreeBody
   Scenario: User clicks on the category link in the body on the Drupal CompanyList Page
     Given user is on the visitor site comnpanylist page
     When a user performs actions
@@ -274,7 +274,7 @@ Feature:
     Then we wait "1" seconds for the next page to load
     Then the landing URL contains ".angieslist.com/companylist/asbestos-removal.htm"
 
-  @companyListPageCatClickGarage @newBody
+  @companyListPageCatClickGarage @companyListPageBody @companyListTreeBody
   Scenario: User clicks on the category link in the body on the Drupal CompanyList Page
     Given user is on the visitor site comnpanylist page
     When a user performs actions
@@ -284,7 +284,7 @@ Feature:
     Then we wait "1" seconds for the next page to load
     Then the landing URL contains ".angieslist.com/companylist/garage-doors.htm"
 
-  @companyListPageStateClick @newBody
+  @companyListPageStateClick @companyListPageBody @companyListTreeBody
   Scenario: User clicks on the state link in the body on the Drupal CompanyList Page
     Given user is on the visitor site comnpanylist page
     When a user performs actions
@@ -294,7 +294,7 @@ Feature:
     Then we wait "1" seconds for the next page to load
     Then the landing URL contains ".angieslist.com/companylist/us/nh/"
 
-  @companyListPageMajorMarketClick @newBody
+  @companyListPageMajorMarketClick @companyListPageBody @companyListTreeBody
   Scenario: User clicks on the major market link in the body on the Drupal CompanyList Page
     Given user is on the visitor site comnpanylist page
     When a user performs actions
@@ -307,7 +307,7 @@ Feature:
 
 ##### Footer Tests #####
 
-  @companyListPageFooterTopCityNYC @newFooter
+  @companyListPageFooterTopCityNYC @companyListPageFooter  @companyListTreeFooter
   Scenario: User clicks on the footer NYC top city link on Drupal Company List Page
     Given user is on the visitor site comnpanylist page
     When a user performs actions
@@ -326,7 +326,7 @@ Feature:
     And the landing URL contains ".angieslist.com/companylist/new-york-tristate-area/"
 
 
-  @companyListPageFooterTopCityHouston @newFooter
+  @companyListPageFooterTopCityHouston @companyListPageFooter  @companyListTreeFooter
   Scenario: User clicks on the footer Houston top city link on Drupal Company List Page
     Given user is on the visitor site comnpanylist page
     When a user performs actions
@@ -345,7 +345,7 @@ Feature:
     And the landing URL contains ".angieslist.com/companylist/houston/"
 
 
-  @companyListPageFooterTopCityChi @newFooter
+  @companyListPageFooterTopCityChi @companyListPageFooter  @companyListTreeFooter
   Scenario: User clicks on the footer Chicago top city link on Drupal Company List Page
     Given user is on the visitor site comnpanylist page
     When a user performs actions
@@ -364,7 +364,7 @@ Feature:
     And the landing URL contains ".angieslist.com/companylist/chicago/"
 
 
-  @companyListPageFooterTopCityIndy @newFooter
+  @companyListPageFooterTopCityIndy @companyListPageFooter  @companyListTreeFooter
   Scenario: User clicks on the footer Indianapolis top city link on Drupal Company List Page
     Given user is on the visitor site comnpanylist page
     When a user performs actions
@@ -383,7 +383,7 @@ Feature:
     And the landing URL contains ".angieslist.com/companylist/indianapolis/"
 
 
-  @companyListPageFooterTopCityBos @newFooter
+  @companyListPageFooterTopCityBos @companyListPageFooter  @companyListTreeFooter
   Scenario: User clicks on the footer Boston top city link on Drupal Company List Page
     Given user is on the visitor site comnpanylist page
     When a user performs actions
@@ -401,7 +401,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/boston/"
 
-  @companyListPageFooterTopCityATL @newFooter
+  @companyListPageFooterTopCityATL @companyListPageFooter  @companyListTreeFooter
   Scenario: User clicks on the footer Atlanta top city link on Drupal Company List Page
     Given user is on the visitor site comnpanylist page
     When a user performs actions
@@ -419,7 +419,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/atlanta/"
 
-  @companyListPageFooterTopCityCinci @newFooter
+  @companyListPageFooterTopCityCinci @companyListPageFooter  @companyListTreeFooter
   Scenario: User clicks on the footer Cincinnati top city link on Drupal Company List Page
     Given user is on the visitor site comnpanylist page
     When a user performs actions
@@ -437,7 +437,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/cincinnati/"
 
-  @companyListPageFooterTopCityLA @newFooter
+  @companyListPageFooterTopCityLA @companyListPageFooter  @companyListTreeFooter
   Scenario: User clicks on the footer Los Angeles top city link on Drupal Company List Page
     Given user is on the visitor site comnpanylist page
     When a user performs actions
@@ -455,7 +455,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/los-angeles/"
 
-  @companyListPageFooterTopCityDal @newFooter
+  @companyListPageFooterTopCityDal @companyListPageFooter  @companyListTreeFooter
   Scenario: User clicks on the footer Dallas top city link on Drupal Company List Page
     Given user is on the visitor site comnpanylist page
     When a user performs actions
@@ -473,7 +473,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/dallas/"
 
-  @companyListPageFooterTopCityPitt @newFooter
+  @companyListPageFooterTopCityPitt @companyListPageFooter  @companyListTreeFooter
   Scenario: User clicks on the footer Pittsburgh top city link on Drupal Company List Page
     Given user is on the visitor site comnpanylist page
     When a user performs actions
@@ -491,7 +491,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/pittsburgh/"
 
-  @companyListPageFooterTopCityMinn @newFooter
+  @companyListPageFooterTopCityMinn @companyListPageFooter  @companyListTreeFooter
   Scenario: User clicks on the footer Minneapolis top city link on Drupal Company List Page
     Given user is on the visitor site comnpanylist page
     When a user performs actions
@@ -509,7 +509,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/minneapolis/"
 
-  @companyListPageFooterTopCityLV @newFooter
+  @companyListPageFooterTopCityLV @companyListPageFooter  @companyListTreeFooter
   Scenario: User clicks on the footer Las Vegas top city link on Drupal Company List Page
     Given user is on the visitor site comnpanylist page
     When a user performs actions
@@ -527,7 +527,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/las-vegas/"
 
-  @companyListPageFooterTopCitySA @newFooter
+  @companyListPageFooterTopCitySA @companyListPageFooter  @companyListTreeFooter
   Scenario: User clicks on the footer San Antonio top city link on Drupal Company List Page
     Given user is on the visitor site comnpanylist page
     When a user performs actions
@@ -545,7 +545,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/san-antonio/"
 
-  @companyListPageFooterTopCityTampa @newFooter
+  @companyListPageFooterTopCityTampa @companyListPageFooter  @companyListTreeFooter
   Scenario: User clicks on the footer Tampa top city link on Drupal Company List Page
     Given user is on the visitor site comnpanylist page
     When a user performs actions
@@ -563,7 +563,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/tampa-bay/"
 
-  @companyListPageFooterSegmentJoinForFree @newFooter
+  @companyListPageFooterSegmentJoinForFree @companyListPageFooter  @companyListTreeFooter
   Scenario: User clicks on the footer-left Join For Free icon on Drupal Company List Page
     Given user is on the visitor site comnpanylist page
     When a user performs actions
@@ -581,7 +581,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/app/signup"
 
-  @companyListPageFooterSegmentCompanyList @newFooter
+  @companyListPageFooterSegmentCompanyList @companyListPageFooter  @companyListTreeFooter
   Scenario: User clicks on the footer-left Company List icon on Drupal Company List Page
     Given user is on the visitor site comnpanylist page
     When a user performs actions
@@ -599,7 +599,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/"
 
-  @companyListPageFooterSegmentNearMe @newFooter
+  @companyListPageFooterSegmentNearMe @companyListPageFooter  @companyListTreeFooter
   Scenario: User clicks on the footer-left Near Me icon on Drupal Company List Page
     Given user is on the visitor site comnpanylist page
     When a user performs actions
@@ -617,7 +617,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/nearme/"
 
-  @companyListPageFooterSegmentHowItWorks @newFooter
+  @companyListPageFooterSegmentHowItWorks @companyListPageFooter  @companyListTreeFooter
   Scenario: User clicks on the footer-left How It Works icon on Drupal Company List Page
     Given user is on the visitor site comnpanylist page
     When a user performs actions
@@ -635,7 +635,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/how-it-works.htm"
 
-  @companyListPageFooterSegmentSolutionCenter @newFooter
+  @companyListPageFooterSegmentSolutionCenter @companyListPageFooter  @companyListTreeFooter
   Scenario: User clicks on the footer-left Solution Center icon on Drupal Company List Page
     Given user is on the visitor site comnpanylist page
     When a user performs actions
@@ -653,7 +653,7 @@ Feature:
     And we wait "4" seconds for the next page to load
     And the landing URL contains ".angieslist.com/articles/"
 
-  @companyListPageFooterSegmentPhotoGalleries @newFooter
+  @companyListPageFooterSegmentPhotoGalleries @companyListPageFooter  @companyListTreeFooter
   Scenario: User clicks on the footer-left Photos icon on Drupal Company List Page
     Given user is on the visitor site comnpanylist page
     When a user performs actions
@@ -671,7 +671,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/photos/"
 
-  @companyListPageFooterSegmentVideos @newFooter
+  @companyListPageFooterSegmentVideos @companyListPageFooter  @companyListTreeFooter
   Scenario: User clicks on the footer-left Videos icon on Drupal Company List Page
     Given user is on the visitor site comnpanylist page
     When a user performs actions
@@ -689,7 +689,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/videos/"
 
-  @companyListPageFooterSegmentAnswers @newFooter
+  @companyListPageFooterSegmentAnswers @companyListPageFooter  @companyListTreeFooter
   Scenario: User clicks on the footer-left Answers icon on Drupal Company List Page
     Given user is on the visitor site comnpanylist page
     When a user performs actions
@@ -707,7 +707,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com"
 
-  @companyListPageFooterSegmentBusinessOwners @newFooter
+  @companyListPageFooterSegmentBusinessOwners @companyListPageFooter  @companyListTreeFooter
   Scenario: User clicks on the footer-left Business Owners icon on Drupal Company List Page
     Given user is on the visitor site comnpanylist page
     When a user performs actions
@@ -725,7 +725,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains "angieslistbusinesscenter.com/"
 
-  @companyListPageFooterSegmentInvestorRelations @newFooter
+  @companyListPageFooterSegmentInvestorRelations @companyListPageFooter  @companyListTreeFooter
   Scenario: User clicks on the footer-left Investor Relations icon on Drupal Company List Page
     Given user is on the visitor site comnpanylist page
     When a user performs actions
@@ -741,7 +741,7 @@ Feature:
       | description            | Investor Relations link in footer  |
       | userId                 |                                    |
 
-  @companyListPageFooterSegmentAboutUs @newFooter
+  @companyListPageFooterSegmentAboutUs @companyListPageFooter  @companyListTreeFooter
   Scenario: User clicks on the footer-left About Us icon on Drupal Company List Page
     Given user is on the visitor site comnpanylist page
     When a user performs actions
@@ -759,7 +759,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/aboutus.htm"
 
-  @companyListPageFooterSegmentCareers @newFooter
+  @companyListPageFooterSegmentCareers @companyListPageFooter  @companyListTreeFooter
   Scenario: User clicks on the footer-left Careers icon on Drupal Company List Page
     Given user is on the visitor site comnpanylist page
     When a user performs actions
@@ -775,7 +775,7 @@ Feature:
       | description            | Careers link in footer     |
       | userId                 |                            |
 
-  @companyListPageFooterSegmentFAQ @newFooter
+  @companyListPageFooterSegmentFAQ @companyListPageFooter  @companyListTreeFooter
   Scenario: User clicks on the footer-left FAQ icon on Drupal Company List Page
     Given user is on the visitor site comnpanylist page
     When a user performs actions
@@ -794,7 +794,7 @@ Feature:
     And the landing URL contains ".angieslist.com/faq/"
 
 
-  @companyListPageFooterSegmentContactUs @newFooter
+  @companyListPageFooterSegmentContactUs @companyListPageFooter  @companyListTreeFooter
   Scenario: User clicks on the footer-left Contact Us icon on Drupal Company List Page
     Given user is on the visitor site comnpanylist page
     When a user performs actions
@@ -812,7 +812,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/member/login"
 
-  @homePageFooterSegmentJoin @newFooter
+  @homePageFooterSegmentJoin @companyListPageFooter  @companyListTreeFooter
   Scenario: User clicks on the footer-right Join icon on Drupal Company List Page
     Given user is on the visitor site comnpanylist page
     When a user performs actions
@@ -830,7 +830,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/app/signup"
 
-  @companyListPageFooterSegmentTermsOfUse @newFooter
+  @companyListPageFooterSegmentTermsOfUse @companyListPageFooter  @companyListTreeFooter
   Scenario: User clicks on the footer TermsOfUse icon on Drupal Company List Page
     Given user is on the visitor site comnpanylist page
     When a user performs actions
@@ -846,7 +846,7 @@ Feature:
       | description            | Terms of Use link in footer  |
       | userId                 |                              |
 
-  @companyListPageFooterSegmentPrivacyPolicy @newFooter
+  @companyListPageFooterSegmentPrivacyPolicy @companyListPageFooter  @companyListTreeFooter
   Scenario: User clicks on the footer Privacy Policy icon on Drupal Company List Page
     Given user is on the visitor site comnpanylist page
     When a user performs actions
