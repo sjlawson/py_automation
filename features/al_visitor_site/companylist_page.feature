@@ -154,7 +154,7 @@ Feature:
     And the landing URL contains ".angieslist.com/companylist/"
 
   @companyListPageCatSearchSelectPlumbing @newBody
-  Scenario: User clicks on the Choose A Cat link in the body on the Drupal CompanyList Page
+  Scenario: User clicks on the Choose A Category link in the body and selects Plumbing - Drupal CompanyList Page
     Given user is on the visitor site comnpanylist page
     When a user performs actions
       | action_method   | action_params       |
@@ -163,24 +163,17 @@ Feature:
       | send_keys       | plumbing            |
     Then we wait "1" seconds for the next page to load
     When a user performs actions
-      | action_method   | action_params       |
+      | action_method   | action_params                                                                                                                                                         |
       | move_to_element | css: #al-geocat-filters-form > div > nav > div.geocat-category-select > div.autocomplete-suggestions > div:nth-child(1) > div.geocat-category-select__selection-group |
       | click           | css: #al-geocat-filters-form > div > nav > div.geocat-category-select > div.autocomplete-suggestions > div:nth-child(1) > div.geocat-category-select__selection-group |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value            |
-      | activityLocation | Visitor : GeoCat |
+      | unique_field | unique_value           |
+      | activityLocation | Visitor : GeoCat   |
     And the segment call contains parameters
-      | prop_key               | prop_value           |
-      | activityLocation       | Visitor : GeoCat  |
-      | description            | Search bar submission     |
-      | userId                 |                      |
-
-
-
-
-
-
-
+      | prop_key               | prop_value                             |
+      | activityLocation       | Visitor : GeoCat                       |
+      | description            | Category selected from auto suggestion |
+      | userId                 |                                        |
 
   @companyListPageCatSearchPlumbing @newBody
   Scenario: User clicks on the Choose A Cat link in the body on the Drupal CompanyList Page
@@ -192,7 +185,7 @@ Feature:
       | send_keys       | plumbing            |
     Then we wait "1" seconds for the next page to load
     When a user performs actions
-      | action_method   | action_params       |
+      | action_method   | action_params                                                                                                                                                         |
       | move_to_element | css: #al-geocat-filters-form > div > nav > div.geocat-category-select > div.autocomplete-suggestions > div:nth-child(1) > div.geocat-category-select__selection-group |
       | click           | css: #al-geocat-filters-form > div > nav > div.geocat-category-select > div.autocomplete-suggestions > div:nth-child(1) > div.geocat-category-select__selection-group |
     Then we wait "1" seconds for the next page to load
@@ -204,15 +197,71 @@ Feature:
       | move_to_element | css: #edit-geocat-submit |
       | click           | css: #edit-geocat-submit |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value            |
-      | activityLocation | Visitor : GeoCat |
+      | unique_field | unique_value           |
+      | activityLocation | Visitor : GeoCat   |
     And the segment call contains parameters
-      | prop_key               | prop_value           |
-      | activityLocation       | Visitor : GeoCat  |
-      | description            | Search bar submission     |
-      | userId                 |                      |
+      | prop_key               | prop_value            |
+      | activityLocation       | Visitor : GeoCat      |
+      | description            | Search bar submission |
+      | userId                 |                       |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/mi/drummond-island/plumbing.htm"
+
+  @companyListPageSeeAllCatClick @newBody
+  Scenario: User clicks on the See All Categories link in the body on the Drupal CompanyList Page
+    Given user is on the visitor site comnpanylist page
+    When a user performs actions
+      | action_method   | action_params                    |
+      | move_to_element | css: #geocat-category-select-all |
+      | click           | css: #geocat-category-select-all |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value         |
+      | activityLocation | Visitor : GeoCat |
+    And the segment call contains parameters
+      | prop_key               | prop_value                       |
+      | activityLocation       | Visitor : GeoCat                 |
+      | description            | See All Categories link clicked  |
+      | userId                 |                                  |
+
+  @companyListPageSeeAllCat @newBody
+  Scenario: User clicks on the See All Categories link in the body on the Drupal CompanyList Page
+    Given user is on the visitor site comnpanylist page
+    When a user performs actions
+      | action_method   | action_params                    |
+      | move_to_element | css: #geocat-category-select-all |
+      | click           | css: #geocat-category-select-all |
+    Then we wait "1" seconds for the next page to load
+    When a user performs actions
+      | action_method   | action_params                                                                                                                                              |
+      | move_to_element | css: #block-system-main > div > div.container.clearfix > div.panel-pane.pane-al-geocat-filters > div > div > div:nth-child(1) > ul > li:nth-child(4) > a   |
+      | click           | css: #block-system-main > div > div.container.clearfix > div.panel-pane.pane-al-geocat-filters > div > div > div:nth-child(1) > ul > li:nth-child(4) > a   |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value         |
+      | activityLocation | Visitor : GeoCat |
+    And the segment call contains parameters
+      | prop_key               | prop_value                                  |
+      | activityLocation       | Visitor : GeoCat                            |
+      | categorySelected       | Cleaning                                    |
+      | description            | Category selected from all categories list  |
+      | userId                 |                                             |
+    Then we wait "1" seconds for the next page to load
+    When a user performs actions
+      | action_method   | action_params            |
+      | move_to_element | css: #edit-location      |
+      | click           | css: #edit-location      |
+      | send_keys       | 49726                    |
+      | move_to_element | css: #edit-geocat-submit |
+      | click           | css: #edit-geocat-submit |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value           |
+      | activityLocation | Visitor : GeoCat   |
+    And the segment call contains parameters
+      | prop_key               | prop_value            |
+      | activityLocation       | Visitor : GeoCat      |
+      | description            | Search bar submission |
+      | userId                 |                       |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/us/mi/drummond-island/cleaning.htm"
 
 
 
