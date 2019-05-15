@@ -53,7 +53,8 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/app/signup"
 
-  @headerSignInGeoCat @newHeader
+
+  @headerSignInGeoCat @geoCatHeader @companyListTreeHeader
   Scenario: The Sign In link is clicked on the GeoCat(Denver Roofing) header
     Given user is on a visitor site geocat page
     When a user performs actions
@@ -71,7 +72,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/member"
 
-  @headerBcGeoCat @newHeader
+  @headerBcGeoCat @geoCatHeader @companyListTreeHeader
   Scenario: The Business Center link is clicked on the GeoCat(Denver Roofing) header
     Given user is on a visitor site geocat page
     When a user performs actions
@@ -88,7 +89,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains "angieslistbusinesscenter.com"
 
-  @geoCatHeaderInteriorApplianceRepair @newHeader
+  @geoCatHeaderInteriorApplianceRepair @geoCatHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Appliance Repair in the header on the Drupal GeoCat(Denver Roofing)
     Given user is on a visitor site geocat page
     When a user performs actions
@@ -106,7 +107,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/appliance-repair.htm"
 
-  @geoCatHeaderInteriorHouseCleaning @newHeader
+  @geoCatHeaderInteriorHouseCleaning @geoCatHeader @companyListTreeHeader
   Scenario: User hovers then clicks on House Cleaning in the header on the Drupal GeoCat(Denver Roofing)
     Given user is on a visitor site geocat page
     When a user performs actions
