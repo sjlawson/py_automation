@@ -1,4 +1,3 @@
-@catNoGeo
 Feature:
 
   @catNoGeoPageCallSrOverlap @companyTreeDaily
