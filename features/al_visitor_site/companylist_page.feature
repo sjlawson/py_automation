@@ -1,3 +1,4 @@
+@allCP
 Feature:
 
   @companyListPageCall @companyTreeDaily
@@ -267,7 +268,7 @@ Feature:
   Scenario: User clicks on the category link in the body on the Drupal CompanyList Page
     Given user is on the visitor site comnpanylist page
     When a user performs actions
-      | action_method   | action_params       |
+      | action_method   | action_params                                                                                                                                                                                  |
       | move_to_element | css: #block-system-main > div > div.row.greyback.row--sub-header > div > section.geocat-cities-list__container.geocat-cities-list__container--static-top-categories > ul > li:nth-child(5) > a |
       | click           | css: #block-system-main > div > div.row.greyback.row--sub-header > div > section.geocat-cities-list__container.geocat-cities-list__container--static-top-categories > ul > li:nth-child(5) > a |
     Then we wait "1" seconds for the next page to load
@@ -277,7 +278,7 @@ Feature:
   Scenario: User clicks on the category link in the body on the Drupal CompanyList Page
     Given user is on the visitor site comnpanylist page
     When a user performs actions
-      | action_method   | action_params       |
+      | action_method   | action_params                                                                                                                                                                                   |
       | move_to_element | css: #block-system-main > div > div.row.greyback.row--sub-header > div > section.geocat-cities-list__container.geocat-cities-list__container--static-top-categories > ul > li:nth-child(48) > a |
       | click           | css: #block-system-main > div > div.row.greyback.row--sub-header > div > section.geocat-cities-list__container.geocat-cities-list__container--static-top-categories > ul > li:nth-child(48) > a |
     Then we wait "1" seconds for the next page to load
@@ -297,7 +298,7 @@ Feature:
   Scenario: User clicks on the major market link in the body on the Drupal CompanyList Page
     Given user is on the visitor site comnpanylist page
     When a user performs actions
-      | action_method   | action_params       |
+      | action_method   | action_params                                                                                                                                                                                                          |
       | move_to_element | css: #block-system-main > div > div.row.greyback.row--sub-header > div > section.geocat-cities-list__container.geocat-cities-list__container--major-markets.geocat-major-markets-processed > ul > li:nth-child(62) > a |
       | click           | css: #block-system-main > div > div.row.greyback.row--sub-header > div > section.geocat-cities-list__container.geocat-cities-list__container--major-markets.geocat-major-markets-processed > ul > li:nth-child(62) > a |
     Then we wait "1" seconds for the next page to load
@@ -310,15 +311,15 @@ Feature:
   Scenario: User clicks on the footer NYC top city link on Drupal Company List Page
     Given user is on the visitor site comnpanylist page
     When a user performs actions
-      | action_method   | action_params      |
+      | action_method   | action_params                   |
       | move_to_element | id: footer-top-cities-new-york  |
-      | click           |                    |
+      | click           |                                 |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field | unique_value            |
       | activityLocation | Visitor : Directory |
     And the segment call contains parameters
       | prop_key               | prop_value                     |
-      | activityLocation       | Visitor : Directory                 |
+      | activityLocation       | Visitor : Directory            |
       | description            | Top Cities link in footer      |
       | userId                 |                                |
     And we wait "1" seconds for the next page to load
@@ -329,15 +330,15 @@ Feature:
   Scenario: User clicks on the footer Houston top city link on Drupal Company List Page
     Given user is on the visitor site comnpanylist page
     When a user performs actions
-      | action_method   | action_params      |
+      | action_method   | action_params                  |
       | move_to_element | id: footer-top-cities-houston  |
-      | click           |                    |
+      | click           |                                |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field | unique_value            |
       | activityLocation | Visitor : Directory |
     And the segment call contains parameters
       | prop_key               | prop_value                     |
-      | activityLocation       | Visitor : Directory                 |
+      | activityLocation       | Visitor : Directory            |
       | description            | Top Cities link in footer      |
       | userId                 |                                |
     And we wait "1" seconds for the next page to load
@@ -348,15 +349,15 @@ Feature:
   Scenario: User clicks on the footer Chicago top city link on Drupal Company List Page
     Given user is on the visitor site comnpanylist page
     When a user performs actions
-      | action_method   | action_params      |
+      | action_method   | action_params                  |
       | move_to_element | id: footer-top-cities-chicago  |
-      | click           |                    |
+      | click           |                                |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field | unique_value            |
       | activityLocation | Visitor : Directory |
     And the segment call contains parameters
       | prop_key               | prop_value                     |
-      | activityLocation       | Visitor : Directory                 |
+      | activityLocation       | Visitor : Directory            |
       | description            | Top Cities link in footer      |
       | userId                 |                                |
     And we wait "1" seconds for the next page to load
@@ -367,15 +368,15 @@ Feature:
   Scenario: User clicks on the footer Indianapolis top city link on Drupal Company List Page
     Given user is on the visitor site comnpanylist page
     When a user performs actions
-      | action_method   | action_params      |
+      | action_method   | action_params                       |
       | move_to_element | id: footer-top-cities-indianapolis  |
-      | click           |                    |
+      | click           |                                     |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field | unique_value            |
       | activityLocation | Visitor : Directory |
     And the segment call contains parameters
       | prop_key               | prop_value                     |
-      | activityLocation       | Visitor : Directory                 |
+      | activityLocation       | Visitor : Directory            |
       | description            | Top Cities link in footer      |
       | userId                 |                                |
     And we wait "1" seconds for the next page to load
@@ -386,15 +387,15 @@ Feature:
   Scenario: User clicks on the footer Boston top city link on Drupal Company List Page
     Given user is on the visitor site comnpanylist page
     When a user performs actions
-      | action_method   | action_params      |
+      | action_method   | action_params                 |
       | move_to_element | id: footer-top-cities-boston  |
-      | click           |                    |
+      | click           |                               |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field | unique_value            |
       | activityLocation | Visitor : Directory |
     And the segment call contains parameters
       | prop_key               | prop_value                     |
-      | activityLocation       | Visitor : Directory                 |
+      | activityLocation       | Visitor : Directory            |
       | description            | Top Cities link in footer      |
       | userId                 |                                |
     And we wait "1" seconds for the next page to load
@@ -404,15 +405,15 @@ Feature:
   Scenario: User clicks on the footer Atlanta top city link on Drupal Company List Page
     Given user is on the visitor site comnpanylist page
     When a user performs actions
-      | action_method   | action_params      |
+      | action_method   | action_params                  |
       | move_to_element | id: footer-top-cities-atlanta  |
-      | click           |                    |
+      | click           |                                |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field | unique_value            |
       | activityLocation | Visitor : Directory |
     And the segment call contains parameters
       | prop_key               | prop_value                     |
-      | activityLocation       | Visitor : Directory                 |
+      | activityLocation       | Visitor : Directory            |
       | description            | Top Cities link in footer      |
       | userId                 |                                |
     And we wait "1" seconds for the next page to load
@@ -422,15 +423,15 @@ Feature:
   Scenario: User clicks on the footer Cincinnati top city link on Drupal Company List Page
     Given user is on the visitor site comnpanylist page
     When a user performs actions
-      | action_method   | action_params      |
+      | action_method   | action_params                     |
       | move_to_element | id: footer-top-cities-cincinnati  |
-      | click           |                    |
+      | click           |                                   |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field | unique_value            |
       | activityLocation | Visitor : Directory |
     And the segment call contains parameters
       | prop_key               | prop_value                     |
-      | activityLocation       | Visitor : Directory                 |
+      | activityLocation       | Visitor : Directory            |
       | description            | Top Cities link in footer      |
       | userId                 |                                |
     And we wait "1" seconds for the next page to load
@@ -440,15 +441,15 @@ Feature:
   Scenario: User clicks on the footer Los Angeles top city link on Drupal Company List Page
     Given user is on the visitor site comnpanylist page
     When a user performs actions
-      | action_method   | action_params      |
+      | action_method   | action_params                      |
       | move_to_element | id: footer-top-cities-los-angeles  |
-      | click           |                    |
+      | click           |                                    |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field | unique_value            |
       | activityLocation | Visitor : Directory |
     And the segment call contains parameters
       | prop_key               | prop_value                     |
-      | activityLocation       | Visitor : Directory                 |
+      | activityLocation       | Visitor : Directory            |
       | description            | Top Cities link in footer      |
       | userId                 |                                |
     And we wait "1" seconds for the next page to load
@@ -458,15 +459,15 @@ Feature:
   Scenario: User clicks on the footer Dallas top city link on Drupal Company List Page
     Given user is on the visitor site comnpanylist page
     When a user performs actions
-      | action_method   | action_params      |
+      | action_method   | action_params                 |
       | move_to_element | id: footer-top-cities-dallas  |
-      | click           |                    |
+      | click           |                               |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field | unique_value            |
       | activityLocation | Visitor : Directory |
     And the segment call contains parameters
       | prop_key               | prop_value                     |
-      | activityLocation       | Visitor : Directory                 |
+      | activityLocation       | Visitor : Directory            |
       | description            | Top Cities link in footer      |
       | userId                 |                                |
     And we wait "1" seconds for the next page to load
@@ -476,15 +477,15 @@ Feature:
   Scenario: User clicks on the footer Pittsburgh top city link on Drupal Company List Page
     Given user is on the visitor site comnpanylist page
     When a user performs actions
-      | action_method   | action_params      |
+      | action_method   | action_params                     |
       | move_to_element | id: footer-top-cities-pittsburgh  |
-      | click           |                    |
+      | click           |                                   |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field | unique_value            |
       | activityLocation | Visitor : Directory |
     And the segment call contains parameters
       | prop_key               | prop_value                     |
-      | activityLocation       | Visitor : Directory                 |
+      | activityLocation       | Visitor : Directory            |
       | description            | Top Cities link in footer      |
       | userId                 |                                |
     And we wait "1" seconds for the next page to load
@@ -494,15 +495,15 @@ Feature:
   Scenario: User clicks on the footer Minneapolis top city link on Drupal Company List Page
     Given user is on the visitor site comnpanylist page
     When a user performs actions
-      | action_method   | action_params      |
+      | action_method   | action_params                      |
       | move_to_element | id: footer-top-cities-minneapolis  |
-      | click           |                    |
+      | click           |                                    |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field | unique_value            |
       | activityLocation | Visitor : Directory |
     And the segment call contains parameters
       | prop_key               | prop_value                     |
-      | activityLocation       | Visitor : Directory                 |
+      | activityLocation       | Visitor : Directory            |
       | description            | Top Cities link in footer      |
       | userId                 |                                |
     And we wait "1" seconds for the next page to load
@@ -512,15 +513,15 @@ Feature:
   Scenario: User clicks on the footer Las Vegas top city link on Drupal Company List Page
     Given user is on the visitor site comnpanylist page
     When a user performs actions
-      | action_method   | action_params      |
+      | action_method   | action_params                    |
       | move_to_element | id: footer-top-cities-las-vegas  |
-      | click           |                    |
+      | click           |                                  |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field | unique_value            |
       | activityLocation | Visitor : Directory |
     And the segment call contains parameters
       | prop_key               | prop_value                     |
-      | activityLocation       | Visitor : Directory                 |
+      | activityLocation       | Visitor : Directory            |
       | description            | Top Cities link in footer      |
       | userId                 |                                |
     And we wait "1" seconds for the next page to load
@@ -530,15 +531,15 @@ Feature:
   Scenario: User clicks on the footer San Antonio top city link on Drupal Company List Page
     Given user is on the visitor site comnpanylist page
     When a user performs actions
-      | action_method   | action_params      |
+      | action_method   | action_params                      |
       | move_to_element | id: footer-top-cities-san-antonio  |
-      | click           |                    |
+      | click           |                                    |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field | unique_value            |
       | activityLocation | Visitor : Directory |
     And the segment call contains parameters
       | prop_key               | prop_value                     |
-      | activityLocation       | Visitor : Directory                 |
+      | activityLocation       | Visitor : Directory            |
       | description            | Top Cities link in footer      |
       | userId                 |                                |
     And we wait "1" seconds for the next page to load
@@ -548,15 +549,15 @@ Feature:
   Scenario: User clicks on the footer Tampa top city link on Drupal Company List Page
     Given user is on the visitor site comnpanylist page
     When a user performs actions
-      | action_method   | action_params      |
+      | action_method   | action_params                    |
       | move_to_element | id: footer-top-cities-tampa-bay  |
-      | click           |                    |
+      | click           |                                  |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field | unique_value            |
       | activityLocation | Visitor : Directory |
     And the segment call contains parameters
       | prop_key               | prop_value                     |
-      | activityLocation       | Visitor : Directory                 |
+      | activityLocation       | Visitor : Directory            |
       | description            | Top Cities link in footer      |
       | userId                 |                                |
     And we wait "1" seconds for the next page to load
@@ -566,15 +567,15 @@ Feature:
   Scenario: User clicks on the footer-left Join For Free icon on Drupal Company List Page
     Given user is on the visitor site comnpanylist page
     When a user performs actions
-      | action_method   | action_params      |
+      | action_method   | action_params                |
       | move_to_element | css: #footer--join-for-free  |
-      | click           |                    |
+      | click           |                              |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field | unique_value            |
       | activityLocation | Visitor : Directory |
     And the segment call contains parameters
       | prop_key               | prop_value                        |
-      | activityLocation       | Visitor : Directory                    |
+      | activityLocation       | Visitor : Directory               |
       | description            | Join For Free link in footer      |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
@@ -584,17 +585,17 @@ Feature:
   Scenario: User clicks on the footer-left Company List icon on Drupal Company List Page
     Given user is on the visitor site comnpanylist page
     When a user performs actions
-      | action_method   | action_params      |
+      | action_method   | action_params                    |
       | move_to_element | id: footer--find-local-business  |
-      | click           |                    |
+      | click           |                                  |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field | unique_value            |
       | activityLocation | Visitor : Directory |
     And the segment call contains parameters
-      | prop_key               | prop_value                        |
+      | prop_key               | prop_value                             |
       | activityLocation       | Visitor : Directory                    |
-      | description            | Find Local Businesses link in footer      |
-      | userId                 |                                   |
+      | description            | Find Local Businesses link in footer   |
+      | userId                 |                                        |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/"
 
@@ -606,11 +607,11 @@ Feature:
       | move_to_element | id: footer--nearme |
       | click           |                    |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field | unique_value            |
       | activityLocation | Visitor : Directory |
     And the segment call contains parameters
       | prop_key               | prop_value                        |
-      | activityLocation       | Visitor : Directory                    |
+      | activityLocation       | Visitor : Directory               |
       | description            | Services Near Me link in footer   |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
@@ -620,15 +621,15 @@ Feature:
   Scenario: User clicks on the footer-left How It Works icon on Drupal Company List Page
     Given user is on the visitor site comnpanylist page
     When a user performs actions
-      | action_method   | action_params      |
+      | action_method   | action_params            |
       | move_to_element | id: footer--how-it-works |
-      | click           |                    |
+      | click           |                          |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field | unique_value            |
       | activityLocation | Visitor : Directory |
     And the segment call contains parameters
       | prop_key               | prop_value                        |
-      | activityLocation       | Visitor : Directory                    |
+      | activityLocation       | Visitor : Directory               |
       | description            | How It Works link in footer       |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
@@ -638,15 +639,15 @@ Feature:
   Scenario: User clicks on the footer-left Solution Center icon on Drupal Company List Page
     Given user is on the visitor site comnpanylist page
     When a user performs actions
-      | action_method   | action_params      |
+      | action_method   | action_params               |
       | move_to_element | id: footer--solution-center |
-      | click           |                    |
+      | click           |                             |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field | unique_value            |
       | activityLocation | Visitor : Directory |
     And the segment call contains parameters
       | prop_key               | prop_value                        |
-      | activityLocation       | Visitor : Directory                    |
+      | activityLocation       | Visitor : Directory               |
       | description            | Solution Center link in footer    |
       | userId                 |                                   |
     And we wait "4" seconds for the next page to load
@@ -656,15 +657,15 @@ Feature:
   Scenario: User clicks on the footer-left Photos icon on Drupal Company List Page
     Given user is on the visitor site comnpanylist page
     When a user performs actions
-      | action_method   | action_params      |
+      | action_method   | action_params               |
       | move_to_element | id: footer--photo-galleries |
-      | click           |                    |
+      | click           |                             |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field | unique_value            |
       | activityLocation | Visitor : Directory |
     And the segment call contains parameters
       | prop_key               | prop_value                        |
-      | activityLocation       | Visitor : Directory                    |
+      | activityLocation       | Visitor : Directory               |
       | description            | Photo Galleries link in footer    |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
@@ -678,11 +679,11 @@ Feature:
       | move_to_element | id: footer--video  |
       | click           |                    |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field | unique_value            |
       | activityLocation | Visitor : Directory |
     And the segment call contains parameters
       | prop_key               | prop_value                        |
-      | activityLocation       | Visitor : Directory                    |
+      | activityLocation       | Visitor : Directory               |
       | description            | Videos link in footer             |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
@@ -696,13 +697,13 @@ Feature:
       | move_to_element | id: footer--answers |
       | click           |                     |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field | unique_value            |
       | activityLocation | Visitor : Directory |
     And the segment call contains parameters
-      | prop_key               | prop_value                        |
-      | activityLocation       | Visitor : Directory                    |
-      | description            | Answers link in footer            |
-      | userId                 |                                   |
+      | prop_key               | prop_value                  |
+      | activityLocation       | Visitor : Directory         |
+      | description            | Answers link in footer      |
+      | userId                 |                             |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com"
 
@@ -710,15 +711,15 @@ Feature:
   Scenario: User clicks on the footer-left Business Owners icon on Drupal Company List Page
     Given user is on the visitor site comnpanylist page
     When a user performs actions
-      | action_method   | action_params       |
+      | action_method   | action_params               |
       | move_to_element | id: footer--business-owners |
-      | click           |                     |
+      | click           |                             |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field | unique_value            |
       | activityLocation | Visitor : Directory |
     And the segment call contains parameters
       | prop_key               | prop_value                         |
-      | activityLocation       | Visitor : Directory                     |
+      | activityLocation       | Visitor : Directory                |
       | description            | For Business Owners link in footer |
       | userId                 |                                    |
     And we wait "1" seconds for the next page to load
@@ -732,11 +733,11 @@ Feature:
       | move_to_element | id: footer--investor |
       | click           |                      |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field | unique_value            |
       | activityLocation | Visitor : Directory |
     And the segment call contains parameters
       | prop_key               | prop_value                         |
-      | activityLocation       | Visitor : Directory                     |
+      | activityLocation       | Visitor : Directory                |
       | description            | Investor Relations link in footer  |
       | userId                 |                                    |
 
@@ -748,11 +749,11 @@ Feature:
       | move_to_element | id: footer--about-angie |
       | click           |                         |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field | unique_value            |
       | activityLocation | Visitor : Directory |
     And the segment call contains parameters
       | prop_key               | prop_value                         |
-      | activityLocation       | Visitor : Directory                     |
+      | activityLocation       | Visitor : Directory                |
       | description            | About Angie’s List link in footer  |
       | userId                 |                                    |
     And we wait "1" seconds for the next page to load
@@ -766,11 +767,11 @@ Feature:
       | move_to_element | id: footer--careers     |
       | click           |                         |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field | unique_value            |
       | activityLocation | Visitor : Directory |
     And the segment call contains parameters
       | prop_key               | prop_value                 |
-      | activityLocation       | Visitor : Directory             |
+      | activityLocation       | Visitor : Directory        |
       | description            | Careers link in footer     |
       | userId                 |                            |
 
@@ -786,7 +787,7 @@ Feature:
       | activityLocation | Visitor : Directory |
     And the segment call contains parameters
       | prop_key               | prop_value           |
-      | activityLocation       | Visitor : Directory       |
+      | activityLocation       | Visitor : Directory  |
       | description            | FAQs link in footer  |
       | userId                 |                      |
     And we wait "1" seconds for the next page to load
@@ -801,11 +802,11 @@ Feature:
       | move_to_element | id: footer--contact-us  |
       | click           |                         |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field | unique_value            |
       | activityLocation | Visitor : Directory |
     And the segment call contains parameters
       | prop_key               | prop_value                 |
-      | activityLocation       | Visitor : Directory             |
+      | activityLocation       | Visitor : Directory        |
       | description            | Contact Us link in footer  |
       | userId                 |                            |
     And we wait "1" seconds for the next page to load
@@ -819,11 +820,11 @@ Feature:
       | move_to_element | id: footer-join  |
       | click           |                  |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field | unique_value            |
       | activityLocation | Visitor : Directory |
     And the segment call contains parameters
       | prop_key               | prop_value                 |
-      | activityLocation       | Visitor : Directory             |
+      | activityLocation       | Visitor : Directory        |
       | description            | Join button in footer      |
       | userId                 |                            |
     And we wait "1" seconds for the next page to load
@@ -833,31 +834,31 @@ Feature:
   Scenario: User clicks on the footer TermsOfUse icon on Drupal Company List Page
     Given user is on the visitor site comnpanylist page
     When a user performs actions
-      | action_method   | action_params    |
+      | action_method   | action_params     |
       | move_to_element | id: footer--terms |
-      | click           |                  |
+      | click           |                   |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field | unique_value            |
       | activityLocation | Visitor : Directory |
     And the segment call contains parameters
-      | prop_key               | prop_value                 |
-      | activityLocation       | Visitor : Directory             |
-      | description            | Terms of Use link in footer     |
-      | userId                 |                            |
+      | prop_key               | prop_value                   |
+      | activityLocation       | Visitor : Directory          |
+      | description            | Terms of Use link in footer  |
+      | userId                 |                              |
 
   @companyListPageFooterSegmentPrivacyPolicy @newFooter
   Scenario: User clicks on the footer Privacy Policy icon on Drupal Company List Page
     Given user is on the visitor site comnpanylist page
     When a user performs actions
-      | action_method   | action_params    |
+      | action_method   | action_params              |
       | move_to_element | id: footer--privacy-policy |
-      | click           |                  |
+      | click           |                            |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field | unique_value            |
       | activityLocation | Visitor : Directory |
     And the segment call contains parameters
-      | prop_key               | prop_value                 |
-      | activityLocation       | Visitor : Directory             |
-      | description            | Privacy Policy link in footer     |
-      | userId                 |                            |
+      | prop_key               | prop_value                    |
+      | activityLocation       | Visitor : Directory           |
+      | description            | Privacy Policy link in footer |
+      | userId                 |                               |
 
