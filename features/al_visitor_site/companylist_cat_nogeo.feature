@@ -25,34 +25,12 @@ Feature:
       | userType              | Visitor - New                                                            |
       | visitorPageCategory   | HOME INSPECTION                                                          |
 
-  @catNoGeoPageCallNoSrOverlap @companyTreeDaily
-  Scenario: a user lands the CatNoGeo page that is not an SR overlap category
-    Given user is on a visitor site catnogeo page that is not an SR overlap category
-    When a segment page call is sent for a unique field value pair
-      | unique_field | unique_value       |
-      | name         | Visitor : CatNoGeo |
-    Then the segment call contains parameters
-      | prop_key              | prop_value                                                        |
-      | atTestOffer           |                                                                   |
-      | categoryId            | 102                                                               |
-      | cid                   |                                                                   |
-      | homeAdvisorCategoryId |                                                                   |
-      | name                  | Visitor : CatNoGeo                                                |
-      | pageVersion           | Lullabot Redesign                                                 |
-      | path                  | /companylist/pet-care.htm                                         |
-      | referrer              |                                                                   |
-      | search                |                                                                   |
-      | srCtaDisplayed        |                                                                   |
-      | title                 | Local Pet Sitters - Find a Top-Rated Pet Service on Angie's List  |
-      | url                   |                                                                   |
-      | userId                |                                                                   |
-      | userType              | Visitor - New                                                     |
-      | visitorPageCategory   | ANIMAL & HOUSE SITTING |
-
-
 
 
 ##### Header Tests #####
+
+
+
   @headerJoinCatNoGeo @catNoGeoNewHeader @newHeader
   Scenario: join button on CatNoGeo page that is an SR overlap category
     Given user is on a visitor site catnogeo page
@@ -1440,118 +1418,6 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/articles/"
 
-
-##### Mobile Header Tests #####
-
-
-  @catNoGeoSegHeadOpenMobile @mobileOnlyRegression
-  Scenario: User clicks hamburger(mobile) in the header on the Drupal CatNoGeo
-    Given user is on a visitor site catnogeo page
-    When a user performs actions
-      | action_method   | action_params       |
-      | move_to_element | #al_show_menu > a > i |
-      | click           | #al_show_menu > a > i |
-    Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
-      | activityLocation | Visitor : CatNoGeo |
-    And the segment call contains parameters
-      | prop_key               | prop_value                      |
-      | activityLocation       | Visitor : CatNoGeo              |
-      | description            | Hamburger menu open in mobile header  |
-      | userId                 |                                 |
-
-  @catNoGeoSegHeadCloseMobile @mobileOnlyRegression
-  Scenario: User clicks hamburger then clicks the X(mobile) in the header on the Drupal CatNoGeo
-    Given user is on a visitor site catnogeo page
-    When a user performs actions
-      | action_method   | action_params       |
-      | move_to_element | #al_show_menu > a > i |
-      | click           | #al_show_menu > a > i |
-      | click           | #al_show_menu > a > i |
-    Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
-      | activityLocation | Visitor : CatNoGeo |
-    And the segment call contains parameters
-      | prop_key               | prop_value                             |
-      | activityLocation       | Visitor : CatNoGeo                     |
-      | description            | Hamburger menu close in mobile header  |
-      | userId                 |                                        |
-
-  @catNoGeoSegHeadJoinNowMobile @mobileOnlyRegression
-  Scenario: User clicks hamburger then clicks on Join Now(Mobile) in the header on the Drupal CatNoGeo
-    Given user is on a visitor site catnogeo page
-    When a user performs actions
-      | action_method   | action_params       |
-      | move_to_element | #al_show_menu > a > i |
-      | click           | #al_show_menu > a > i |
-      | click           | #mobile-navigation > div > ul.col-50-50 > li:nth-child(1)> li |
-    Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
-      | activityLocation | Visitor : CatNoGeo |
-    And the segment call contains parameters
-      | prop_key               | prop_value               |
-      | activityLocation       | Visitor : CatNoGeo       |
-      | description            | Join Now link in header  |
-      | userId                 |                          |
-    And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/app/signup"
-
-  @catNoGeoSegHeadSignInMobile @mobileOnlyRegression
-  Scenario: User clicks hamburger then clicks on Sign In in the header on the Drupal CatNoGeo
-    Given user is on a visitor site catnogeo page
-    When a user performs actions
-      | action_method   | action_params       |
-      | move_to_element | #al_show_menu > a > i |
-      | click           | #al_show_menu > a > i |
-      | click           | #mobile-navigation > div > ul.col-50-50 > li:nth-child(2)> li |
-    Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
-      | activityLocation | Visitor : CatNoGeo |
-    And the segment call contains parameters
-      | prop_key               | prop_value               |
-      | activityLocation       | Visitor : CatNoGeo       |
-      | description            | Sign In link in header   |
-      | userId                 |                          |
-    And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/member/login"
-
-  @catNoGeoSegHeadBusinessOwnerMobile @mobileOnlyRegression
-  Scenario: User clicks hamburger then clicks on Business Owner in the header on the Drupal CatNoGeo
-    Given user is on a visitor site catnogeo page
-    When a user performs actions
-      | action_method   | action_params       |
-      | move_to_element | #al_show_menu > a > i |
-      | click           | #al_show_menu > a > i |
-      | click           | #mobile-navigation > div > ul:nth-child(4) > a > a |
-    Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
-      | activityLocation | Visitor : CatNoGeo |
-    And the segment call contains parameters
-      | prop_key               | prop_value               |
-      | activityLocation       | Visitor : CatNoGeo       |
-      | description            | Business Owners link in header   |
-      | userId                 |                          |
-    And we wait "1" seconds for the next page to load
-    And the landing URL contains "angieslistbusinesscenter.com"
-
-  @catNoGeoSegHeadNearMeMobile @mobileOnlyRegression
-  Scenario: User clicks hamburger(Mobile) then clicks on NearMe link in the header on the Drupal CatNoGeo
-    Given user is on a visitor site catnogeo page
-    When a user performs actions
-      | action_method   | action_params       |
-      | move_to_element | #al_show_menu > a > i |
-      | click           | #al_show_menu > a > i |
-      | click           | #mobile-navigation > div > ul:nth-child(3) > a > a |
-    Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
-      | activityLocation | Visitor : CatNoGeo |
-    And the segment call contains parameters
-      | prop_key               | prop_value               |
-      | activityLocation       | Visitor : CatNoGeo       |
-      | description            | Near Me link in mobile header   |
-      | userId                 |                          |
-    And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/nearme/"
 
 
 ##### Body Tests #####
