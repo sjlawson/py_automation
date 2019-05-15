@@ -34,19 +34,19 @@ Feature:
     Given user is on the sign up page
     When the user creates a new account
     And the user enters geographic data
-    And the user sends "10" messages
+    And the user sends "11" messages
     Then the user receives a recaptcha challenge
 
   Scenario: test user challenge from leads is working as expected
     Given user is on the sign up page
     When the user creates a new account
     And the user enters geographic data
-    And the user creates "10" leads
+    And the user creates "11" leads
     Then the user receives a recaptcha challenge
-  @todo
+
   Scenario: test user challenge from profile views is working as expected
     Given user is on the sign up page
     When the user creates a new account
     And the user enters geographic data
-    And the user views "10" profiles
+    And the user views "21" profiles
     Then the user receives a recaptcha challenge

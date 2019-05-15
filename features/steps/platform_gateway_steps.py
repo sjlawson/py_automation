@@ -231,5 +231,6 @@ def step_impl(context):
   
 @then('the user receives a recaptcha challenge')
 def step_impl(context):
-    #todo when implemented
-    temp = 1
+    context.wait.until(EC.visibility_of_element_located(MemberServiceProviderProfilePageLocators.CHALLENGE_TEXT))
+    challenge_label = context.browser.find_element(*MemberServiceProviderProfilePageLocators.CHALLENGE_TEXT)
+    assert bool(challenge_label)

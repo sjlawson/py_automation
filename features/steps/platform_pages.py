@@ -45,6 +45,7 @@ class MemberSearchPageLocators(object):
 class MemberServiceProviderProfilePageLocators(object):
   MESSAGE_BUTTON = (By.ID, 'message-pro-button')
   CATEGORY_INFO = (By.ID, 'category-info')
+  CHALLENGE_TEXT = (By.CLASS_NAME, 'challenge-text')
 
 class MemberMessageModalLocators(object):
   MESSAGE_MODAL = (By.CLASS_NAME, 'modal-title')
