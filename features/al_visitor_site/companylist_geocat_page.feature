@@ -125,7 +125,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/house-cleaning.htm"
 
-  @geoCatHeaderExteriorPainting @newHeader
+  @geoCatHeaderExteriorPainting @geoCatHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Exterior Painting in the header on the Drupal GeoCat(Denver Roofing)
     Given user is on a visitor site geocat page
     When a user performs actions
@@ -143,7 +143,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/exterior-painting.htm"
 
-  @geoCatHeaderExteriorViewAllCats @newHeader
+  @geoCatHeaderExteriorViewAllCats @geoCatHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Exterior View All in the header on the Drupal GeoCat(Denver Roofing)
     Given user is on a visitor site geocat page
     When a user performs actions
@@ -161,7 +161,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/"
 
-  @geoCatHeaderMoreNearMe @newHeader
+  @geoCatHeaderMoreNearMe @geoCatHeader @companyListTreeHeader
   Scenario: User hovers then clicks on More NearMe in the header on the Drupal GeoCat(Denver Roofing)
     Given user is on a visitor site geocat page
     When a user performs actions
