@@ -1,3 +1,4 @@
+@companyListTree
 Feature:
 
   @geoCatPageCall
@@ -34,7 +35,7 @@ Feature:
 ##### Header Tests #####
 
 
-  @headerJoinGeoCat @newHeader
+  @geoCatHeaderJoin @geoCatHeader @companyListTreeHeader
   Scenario: The Join button is clicked on GeoCat(Denver Roofing) page
     Given user is on a visitor site geocat page
     When a user performs actions
