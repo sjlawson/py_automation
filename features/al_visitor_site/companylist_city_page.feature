@@ -233,95 +233,25 @@ Feature:
       | visitorPageGeo         |                                         |
       | visitorPageGeoCategory |                                         |
 
-    @cityPageBodyCatSearchWithPostalCode @cityPageBody @companyListTreeBody
-    Scenario: State Page clicking the Category Search link in the Body (Dock Search)
-    Given user is on a visitor city page
-      When a user performs actions
-      | action_method   | action_params        |
-      | move_to_element | css: #edit-category  |
-      | click           | css: #edit-category  |
-      | send_keys       | dock                 |
-    Then we wait "1" seconds for the next page to load
-    When a user performs actions
-      | action_method   | action_params                                                                                                                                                   |
-      | move_to_element | css: #al-geocat-filters-form > div > nav > div.geocat-category-select > div.autocomplete-suggestions > div > div.geocat-category-select__selection-group > div  |
-      | click           |                                                                                                                                                                 |
-      | click           | css: #edit-location                                                                                                                                             |
-      | send_keys       | 49726                                                                                                                                                           |
-      | click           | css: #edit-geocat-submit |
-    Then a segment track call is sent for a unique field value pair
-      | unique_field     | unique_value           |
-      | activityLocation | Visitor : GeoCat       |
-    And the segment call contains parameters
-      | prop_key               | prop_value                 |
-      | activityLocation       | Visitor : GeoCat           |
-      | categorySearched       | Dock Building & Repair     |
-      | description            | Search bar submission      |
-      | locationSearched       | 49726                      |
-      | userId                 |                            |
-      | visitorPageCategory    |                            |
-    And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/us/mi/drummond-island/dock-building-repair.htm"
-
-    @cityPageBodyCatSearchWithCityState @cityPageBody @companyListTreeBody
-    Scenario: State Page clicking the Category Search link in the Body (Dock Search)
-    Given user is on a visitor city page
-      When a user performs actions
-      | action_method   | action_params        |
-      | move_to_element | css: #edit-category  |
-      | click           | css: #edit-category  |
-      | send_keys       | dock                 |
-    Then we wait "1" seconds for the next page to load
-    When a user performs actions
-      | action_method   | action_params                                                                                                                                                   |
-      | move_to_element | css: #al-geocat-filters-form > div > nav > div.geocat-category-select > div.autocomplete-suggestions > div > div.geocat-category-select__selection-group > div  |
-      | click           |                                                                                                                                                                 |
-    Then we wait "1" seconds for the next page to load
-    When a user performs actions
-      | action_method   | action_params        |
-      | move_to_element | css: #edit-location                                                                                                               |
-      | click           | css: #edit-location                                                                                                               |
-      | send_keys       | Drummond Island                                                                                                                   |
-    Then we wait "1" seconds for the next page to load
-    When a user performs actions
-      | action_method   | action_params        |
-      | move_to_element | css: #al-geocat-filters-form > div > nav > div.geocat-location-select > div > div |
-      | click           | css: #al-geocat-filters-form > div > nav > div.geocat-location-select > div > div |
-      | move_to_element | css: #edit-geocat-submit |
-      | click           | css: #edit-geocat-submit |
-    Then a segment track call is sent for a unique field value pair
-      | unique_field     | unique_value           |
-      | activityLocation | Visitor : GeoCat       |
-    And the segment call contains parameters
-      | prop_key               | prop_value                 |
-      | activityLocation       | Visitor : GeoCat           |
-      | categorySearched       | Dock Building & Repair     |
-      | description            | Search bar submission      |
-      | locationSearched       |                            |
-      | userId                 |                            |
-      | visitorPageCategory    |                            |
-    And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/us/mi/drummond-island/dock-building-repair.htm"
-
-  @cityPageBodyTopCityClick @cityPageBody @companyListTreeBody
+  @cityPageBodyCatClick @cityPageBody @companyListTreeBody
     Scenario: State Page clicking a Top City link in the Body
     Given user is on a visitor city page
     When a user performs actions
       | action_method   | action_params                                                                                                         |
-      | move_to_element | css: #block-system-main > div > div.row.greyback.row--sub-header > div > div:nth-child(1) > ul > li:nth-child(12) > a |
-      | click           | css: #block-system-main > div > div.row.greyback.row--sub-header > div > div:nth-child(1) > ul > li:nth-child(12) > a |
+      | move_to_element | css: #block-system-main > div > div.max-panel > section > ul > li.geocat-choose-a-category__list-item.al-dropdown.js-active.initial > div > div > section:nth-child(1) > ul > li:nth-child(48) > a |
+      | click           | css: #block-system-main > div > div.max-panel > section > ul > li.geocat-choose-a-category__list-item.al-dropdown.js-active.initial > div > div > section:nth-child(1) > ul > li:nth-child(48) > a |
     Then we wait "1" seconds for the next page to load
-    Then the landing URL contains ".angieslist.com/companylist/us/mi/traverse-city/"
+    Then the landing URL contains "/companylist/us/mi/drummond-island/excavating.htm"
 
-  @cityPageBodyAllCityClick @cityPageBody @companyListTreeBody
+  @cityPageBodyPopularClick @cityPageBody @companyListTreeBody
     Scenario: State Page clicking All City link in the Body
     Given user is on a visitor city page
     When a user performs actions
       | action_method   | action_params                                                                                                          |
-      | move_to_element | css: #block-system-main > div > div.row.greyback.row--sub-header > div > div:nth-child(2) > ul > li:nth-child(181) > a |
-      | click           | css: #block-system-main > div > div.row.greyback.row--sub-header > div > div:nth-child(2) > ul > li:nth-child(181) > a |
+      | move_to_element | css: #block-system-main > div > div.max-panel > section > ul > li.geocat-choose-a-category__list-item.al-dropdown.js-active.initial > div > div > section:nth-child(2) > ul > li:nth-child(15) > a |
+      | click           | css: #block-system-main > div > div.max-panel > section > ul > li.geocat-choose-a-category__list-item.al-dropdown.js-active.initial > div > div > section:nth-child(2) > ul > li:nth-child(15) > a |
     Then we wait "1" seconds for the next page to load
-    Then the landing URL contains ".angieslist.com/companylist/us/mi/drummond-island/"
+    Then the landing URL contains ".angieslist.com/companylist/t/us/mi/drummond-island/deliver-river-rock.htm"
 
 
 
