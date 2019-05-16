@@ -31,13 +31,13 @@ jobs:
       - run:
           name: Run docker image
           command: docker run -d --name al_py_automation_al_py_automation_1 \
-          -e CBT_KEY\
-          -e CBT_USER\
-          -e MBI_PORT\
-          -e MB_HOST\
-          -e PYPROXY_PORT\
-          -e SAUCE_ACCESS_KEY\
-          -e SAUCE_USERNAME\
+          -e CBT_KEY \
+          -e CBT_USER \
+          -e MBI_PORT \
+          -e MB_HOST \
+          -e PYPROXY_PORT \
+          -e SAUCE_ACCESS_KEY \
+          -e SAUCE_USERNAME \
           -v `pwd`/container_reports:/al_py_automation/reports angieslist/al_py_automation:"${CIRCLE_BUILD_NUM}"
       - run: sleep 10
       - run:
