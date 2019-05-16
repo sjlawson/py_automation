@@ -1,5 +1,6 @@
 Feature:
-  @statePageCall
+
+  @statePagePageCall
   Scenario: testing segment pagecall on state page
     Given user is on a visitor state page
     When a segment page call is sent for a unique field value pair
@@ -23,7 +24,7 @@ Feature:
 ##### Header Tests #####
 
 
-    @headerJoinStatePage @newHeader
+    @statePageHeaderJoin @statePageHeader @companyListTreeHeader
     Scenario: State Page clicking the join link in the header
     Given user is on a visitor state page
       When a user performs actions
@@ -33,14 +34,14 @@ Feature:
       | unique_field | unique_value        |
       | description  | Join link in header |
       And the segment call contains parameters
-      | prop_key         | prop_value          |
+      | prop_key         | prop_value           |
       | activityLocation | Visitor : US : State |
-      | description      | Join link in header |
-      | userId           |                     |
+      | description      | Join link in header  |
+      | userId           |                      |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/app/signup"
 
-    @headerSignInStatePage @newHeader
+    @statePageHeaderSignIn @statePageHeader @companyListTreeHeader
     Scenario: State Page clicking the Sign In link in the header
     Given user is on a visitor state page
       When a user performs actions
@@ -52,12 +53,12 @@ Feature:
       And the segment call contains parameters
       | prop_key         | prop_value             |
       | description      | Sign In link in header |
-      | activityLocation | Visitor : US : State    |
+      | activityLocation | Visitor : US : State   |
       | userId           |                        |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/member/login"
 
-    @headerBusinessOwnersStatePage @newHeader
+    @statePageHeaderBusinessOwners @statePageHeader @companyListTreeHeader
     Scenario: State Page clicking the Business Owners link in the header
     Given user is on a visitor state page
       When a user performs actions
@@ -69,28 +70,37 @@ Feature:
       And the segment call contains parameters
       | prop_key         | prop_value                     |
       | description      | Business Owners link in header |
-      | activityLocation | Visitor : US : State            |
+      | activityLocation | Visitor : US : State           |
       | userId           |                                |
     And we wait "1" seconds for the next page to load
     And the landing URL contains "angieslistbusinesscenter.com"
 
-    @StatePageInteriorDrywall @newHeader
+    @statePageHeaderInteriorDrywall @statePageHeader @companyListTreeHeader
     Scenario: State Page clicking the Interior - Plumbing link in the header
     Given user is on a visitor state page
       When a user performs actions
-      | action_method   | action_params       |
-      | move_to_element | css: #secondary-nav > ul > li:nth-child(1) > label |
-      | click           | css: #secondary-nav > ul > li:nth-child(1) > div > ul > li:nth-child(10) > a |
+      | action_method   | action_params                                                                 |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(1) > label                            |
+      | click           | css: #secondary-nav > ul > li:nth-child(1) > div > ul > li:nth-child(10) > a  |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value           |
+      | unique_field     | unique_value           |
       | activityLocation | Visitor : US : State   |
     And the segment call contains parameters
-      | prop_key               | prop_value                       |
-      | activityLocation       | Visitor : US : State              |
+      | prop_key               | prop_value                              |
+      | activityLocation       | Visitor : US : State                    |
       | description            | Interior menu category link in header   |
-      | userId                 |                                  |
+      | userId                 |                                         |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/plumbing.htm"
+
+
+
+
+
+
+
+
+
 
 
 ##### Body Test #####
