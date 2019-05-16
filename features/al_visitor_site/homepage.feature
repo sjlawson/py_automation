@@ -1720,7 +1720,7 @@ Feature:
     And the landing URL contains "match"
 
 
-  @homePageBodySegmentHeroSRCTAFindProsDropdown @circle @daily_homepage_regression @body_regression
+  @homePageBodySegmentHeroSRCTAFindProsDropdown @daily_homepage_regression @body_regression
   Scenario: User clicks on hero Find Pros CTA (Dropdown) button on Drupal Homepage
     Given user is on a visitor site page
     """

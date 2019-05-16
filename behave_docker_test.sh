@@ -20,7 +20,10 @@ then
 elif [ $filtertype == 'scenario' ]
 then
     docker exec -it $container /bin/bash /al_py_automation/behave_scenario.sh $testService $browser "$filter"
-else
+elif [ $filtertype == 'all' ]
+then
     docker exec -it $container /bin/bash /al_py_automation/behave_default.sh $testService $browser
+else
+    echo "You didn't select a filter type"
 fi
 echo "Test complete"
