@@ -281,6 +281,31 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/denver/cleaning.htm"
 
+    @geoCatBodyEditLocation @geoCatBody @companyListTreeHeader
+    Scenario: User clicks on Location Field by Category and types in Colorado Springs  on GeoCat page
+      Given user is on a visitor site geocat page
+      When a user performs actions
+    | action_method   | action_params    |
+    | move_to_element | #edit-location   |
+    | click           | #edit-location   |
+    | click           | #block-system-main > div > div:nth-child(1) > div.panel-pane.pane-al-geocat-filters.panel-pane.pane-al-geocat-filters.row.greyback.row--sub-header > div > div > div:nth-child(1) > ul > li:nth-child(4) > a |
+    Then a segment track call is sent for a unique field value pair
+    | unique_field | unique_value                      |
+    | description  | Category selected from all categories list |
+    And the segment call contains parameters
+    | prop_key               | prop_value                                 |
+    | description            | Category selected from all categories list |
+    | activityLocation       | Visitor : GeoCat                           |
+    | userId                 |                                            |
+    | categorySelected       | Cleaning                                   |
+    | marketId               |                                            |
+    | visitorPageCategory    | ROOFING                                    |
+    | visitorPageGeo         | DENVER                                    |
+    | visitorPageGeoCategory | DENVER - ROOFING                          |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/denver/cleaning.htm"
+
+
 ##### Footer Tests #####
 
   @companyListPageFooterTopCityNYC @companyListPageFooter @companyListTreeFooter
