@@ -220,24 +220,24 @@ Feature:
 
 ##### Body Tests #####
 
-  @geoCatSegmentSRNoZip @daily_auto
+  @geoCatSegmentSRNoZip @geoCatBody @companyListTreeHeader
   Scenario: User is on a GeoCat Page and selects the SR flow without any postal code.
     Given user is on a visitor site geocat page
     When a user performs actions
     | action_method | action_params   |
     | click         | #ha-lead-submit |
     Then a segment track call is sent for a unique field value pair
-    | unique_field | unique_value        |
+    | unique_field | unique_value                      |
     | description  | Service Request Flow entry button |
     And the segment call contains parameters
-    | prop_key         | prop_value        |
+    | prop_key         | prop_value                        |
     | description      | Service Request Flow entry button |
-    | activityLocation | Visitor : Geocat  |
-    | userId           |                   |
+    | activityLocation | Visitor : Geocat                  |
+    | userId           |                                   |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/category.Roofing-Siding-Gutters.10217.html?entry_point_id=32723378&postalCode="
 
-  @geoCatSegmentSRWithZip @daily_auto
+  @geoCatSegmentSRWithZip @geoCatBody @companyListTreeHeader
   Scenario: SR CTA button click on GeoCat page
     Given user is on a visitor site geocat page
     When a user performs actions
@@ -247,17 +247,39 @@ Feature:
     | send_keys       | 90068           |
     | click           | #ha-lead-submit |
     Then a segment track call is sent for a unique field value pair
-    | unique_field | unique_value        |
+    | unique_field | unique_value                      |
     | description  | Service Request Flow entry button |
     And the segment call contains parameters
-    | prop_key         | prop_value        |
+    | prop_key         | prop_value                        |
     | description      | Service Request Flow entry button |
-    | activityLocation | Visitor : Geocat  |
-    | userId           |                   |
+    | activityLocation | Visitor : Geocat                  |
+    | userId           |                                   |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/category.Roofing-Siding-Gutters.10217.html?entry_point_id=32723378&postalCode=90068"
-
-
+    
+    @geoCatBodySeeAllCategoriesSearch @geoCatBody @companyListTreeHeader
+    Scenario: User clicks on See All Categories and selects Cleaning  on GeoCat page
+      Given user is on a visitor site geocat page
+      When a user performs actions
+    | action_method   | action_params                 |
+    | move_to_element | #geocat-category-select-all   |
+    | click           | #geocat-category-select-all   |
+    | click           | #block-system-main > div > div:nth-child(1) > div.panel-pane.pane-al-geocat-filters.panel-pane.pane-al-geocat-filters.row.greyback.row--sub-header > div > div > div:nth-child(1) > ul > li:nth-child(4) > a |
+    Then a segment track call is sent for a unique field value pair
+    | unique_field | unique_value                      |
+    | description  | Category selected from all categories list |
+    And the segment call contains parameters
+    | prop_key               | prop_value                                 |
+    | description            | Category selected from all categories list |
+    | activityLocation       | Visitor : GeoCat                           |
+    | userId                 |                                            |
+    | categorySelected       | Cleaning                                   |
+    | marketId               |                                            |
+    | visitorPageCategory    | ROOFING                                    |
+    | visitorPageGeo         | DENVER                                    |
+    | visitorPageGeoCategory | DENVER - ROOFING                          |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/denver/cleaning.htm"
 
 ##### Footer Tests #####
 
