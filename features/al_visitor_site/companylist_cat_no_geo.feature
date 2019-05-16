@@ -1422,55 +1422,680 @@ Feature:
 ##### Body Tests #####
 
 
-## Needs to be filled in ##
+
+  @catNoGeoBodySRNoZip @newBody
+  Scenario: User clicks on Find Pros in the Body on the Drupal CatNoGeo Page
+    Given user is on a visitor site catnogeo page
+    When a user performs actions
+      | action_method   | action_params        |
+      | move_to_element | css: #ha-lead-submit |
+      | click           | css: #ha-lead-submit |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value           |
+      | activityLocation | Visitor : CatNoGeo |
+    And the segment call contains parameters
+      | prop_key               | prop_value                        |
+      | activityLocation       | Visitor : CatNoGeo                |
+      | description            | Service Request Flow entry button |
+      | userId                 |                                   |
+      | userSelectedZipCode    |                                   |
+      | visitorPageCategory    | Drywall                           |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/category.Drywall-Plaster.12025.html?entry_point_id=33880173&postalCode="
+
+  @catNoGeoBodySRWithZip @newBody
+  Scenario: User clicks on Find Pros in the Body on the Drupal CatNoGeo Page AND enters a postal code
+    Given user is on a visitor site catnogeo page
+    When a user performs actions
+      | action_method   | action_params        |
+      | move_to_element | css: #ha-lead-zip    |
+      | send_keys       | 49726                |
+      | click           | css: #ha-lead-submit |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value           |
+      | activityLocation | Visitor : CatNoGeo |
+    And the segment call contains parameters
+      | prop_key               | prop_value                        |
+      | activityLocation       | Visitor : CatNoGeo                |
+      | description            | Service Request Flow entry button |
+      | userId                 |                                   |
+      | userSelectedZipCode    | 49726                             |
+      | visitorPageCategory    | Drywall                           |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/category.Drywall-Plaster.12025.html?entry_point_id=33880173&postalCode=49726"
+
+  @catNoGeoBodyBreadCrumbs @newBody
+  Scenario: User clicks on BreadCrumbs in the Body on the Drupal CatNoGeo Page
+    Given user is on a visitor site catnogeo page
+    When a user performs actions
+      | action_method   | action_params        |
+      | move_to_element | css: #block-system-main > div > div:nth-child(3) > div.panel-pane.pane-breadcrumb-block > div > div > div > a:nth-child(3) |
+      | click           |                                                                                                                            |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value           |
+      | activityLocation | Visitor : CatNoGeo |
+    And the segment call contains parameters
+      | prop_key               | prop_value            |
+      | activityLocation       | Visitor : CatNoGeo    |
+      | description            | Breadcrumbs link      |
+      | userId                 |                       |
+      | visitorPageCategory    | Drywall               |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/drywall.htm"
+
+  @catNoGeoBodyCatSearchWithPostalCode @newBody
+  Scenario: User Searches for Drywal with PostalCode in the Body on the Drupal CatNoGeo Page
+    Given user is on a visitor site catnogeo page
+    When a user performs actions
+      | action_method   | action_params            |
+      | move_to_element | css: #edit-location      |
+      | click           | css: #edit-location      |
+      | send_keys       | 49726                    |
+    Then we wait "1" seconds for the next page to load
+    When a user performs actions
+      | action_method   | action_params            |
+      | click           | css: #edit-geocat-submit |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value                    |
+      | description            | Search bar submission |
+    And the segment call contains parameters
+      | prop_key               | prop_value            |
+      | activityLocation       | Visitor : GeoCat      |
+      | categorySearched       | Drywall               |
+      | description            | Search bar submission |
+      | locationSearched       | 49726                 |
+      | userId                 |                       |
+      | visitorPageCategory    | DRYWALL               |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/us/mi/drummond-island/drywall.htm"
+
+  @catNoGeoBodySeeAllCats @newBody
+  Scenario: User clicks on See All Categories in the Body on the Drupal CatNoGeo Page
+    Given user is on a visitor site catnogeo page
+    When a user performs actions
+      | action_method   | action_params                    |
+      | move_to_element | css: #geocat-category-select-all |
+      | click           |                                  |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value           |
+      | activityLocation | Visitor : GeoCat   |
+    And the segment call contains parameters
+      | prop_key               | prop_value                       |
+      | activityLocation       | Visitor : GeoCat                 |
+      | description            | See All Categories link clicked  |
+      | marketId               |                                  |
+      | userId                 |                                  |
+      | visitorPageCategory    | DRYWALL                          |
+      | visitorPageGeo         |                                  |
+      | visitorPageGeoCategory |                                  |
+
+  @catNoGeoBodyMajorMarketClick @newBody
+  Scenario: User clicks on the major market link in the body on the Drupal CatNoGeo Page
+    Given user is on a visitor site catnogeo page
+    When a user performs actions
+      | action_method   | action_params                                                                                                |
+      | move_to_element | css: #block-system-main > div > div.row.greyback.row--sub-header > div > section > ul > li:nth-child(45) > a |
+      | click           | css: #block-system-main > div > div.row.greyback.row--sub-header > div > section > ul > li:nth-child(45) > a |
+    Then we wait "1" seconds for the next page to load
+    Then the landing URL contains ".angieslist.com/companylist/phoenix/drywall.htm"
+
+
 
 
 
 ##### Footer Tests #####
 
-
-  ## test_companyListCatNoGeoFooterJoinClick
-  Scenario: segment call on clicking the Join link in CatNoGeo footer
+  @catNoGeoFooterTopCityNYC @newFooter
+  Scenario: User clicks on the footer NYC top city link on Drupal Company List Page
     Given user is on a visitor site catnogeo page
     When a user performs actions
-    | action_method | action_params |
-    | click         | #footer-join  |
+      | action_method   | action_params                   |
+      | move_to_element | id: footer-top-cities-new-york  |
+      | click           |                                 |
     Then a segment track call is sent for a unique field value pair
-    | unique_field | unique_value          |
-    | description  | Join button in footer |
+      | unique_field | unique_value            |
+      | activityLocation | Visitor : CatNoGeo  |
     And the segment call contains parameters
-    | prop_key         | prop_value            |
-    | description      | Join button in footer |
-    | activityLocation | Visitor : CatNoGeo    |
-    | userId           |                       |
+      | prop_key               | prop_value                     |
+      | activityLocation       | Visitor : CatNoGeo             |
+      | description            | Top Cities link in footer      |
+      | userId                 |                                |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/new-york-tristate-area/drywall.htm"
 
 
-  ## test_companyListCatNoGeo_topCities
-  @topcities @catnogeo_topcities
-  Scenario Outline: companylist CatNoGeo top cities
+  @catNoGeoFooterTopCityHouston @newFooter
+  Scenario: User clicks on the footer Houston top city link on Drupal Company List Page
     Given user is on a visitor site catnogeo page
-    When a user clicks on "<pageLink>"
+    When a user performs actions
+      | action_method   | action_params                  |
+      | move_to_element | id: footer-top-cities-houston  |
+      | click           |                                |
     Then a segment track call is sent for a unique field value pair
-    | unique_field | unique_value              |
-    | description  | Top Cities link in footer |
+      | unique_field | unique_value            |
+      | activityLocation | Visitor : CatNoGeo |
     And the segment call contains parameters
-    | prop_key         | prop_value                |
-    | description      | Top Cities link in footer |
-    | activityLocation | Visitor : CatNoGeo        |
-    | userId           |                           |
-    Examples: pageLink
-    | pageLink                           |
-    | id: footer-top-cities-new-york     |
-    | id: footer-top-cities-houston      |
-    | id: footer-top-cities-chicago      |
-    | id: footer-top-cities-indianapolis |
-    | id: footer-top-cities-boston       |
-    | id: footer-top-cities-atlanta      |
-    | id: footer-top-cities-cincinnati   |
-    | id: footer-top-cities-los-angeles  |
-    | id: footer-top-cities-dallas       |
-    | id: footer-top-cities-pittsburgh   |
-    | id: footer-top-cities-minneapolis  |
-    | id: footer-top-cities-las-vegas    |
-    | id: footer-top-cities-san-antonio  |
-    | id: footer-top-cities-tampa-bay    |
+      | prop_key               | prop_value                     |
+      | activityLocation       | Visitor : CatNoGeo             |
+      | description            | Top Cities link in footer      |
+      | userId                 |                                |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/houston/drywall.htm"
+
+
+  @catNoGeoFooterTopCityChi @newFooter
+  Scenario: User clicks on the footer Chicago top city link on Drupal Company List Page
+    Given user is on a visitor site catnogeo page
+    When a user performs actions
+      | action_method   | action_params                  |
+      | move_to_element | id: footer-top-cities-chicago  |
+      | click           |                                |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value            |
+      | activityLocation | Visitor : CatNoGeo  |
+    And the segment call contains parameters
+      | prop_key               | prop_value                     |
+      | activityLocation       | Visitor : CatNoGeo             |
+      | description            | Top Cities link in footer      |
+      | userId                 |                                |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/chicago/drywall.htm"
+
+
+  @catNoGeoFooterTopCityIndy @newFooter
+  Scenario: User clicks on the footer Indianapolis top city link on Drupal Company List Page
+    Given user is on a visitor site catnogeo page
+    When a user performs actions
+      | action_method   | action_params                       |
+      | move_to_element | id: footer-top-cities-indianapolis  |
+      | click           |                                     |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value            |
+      | activityLocation | Visitor : CatNoGeo  |
+    And the segment call contains parameters
+      | prop_key               | prop_value                     |
+      | activityLocation       | Visitor : CatNoGeo             |
+      | description            | Top Cities link in footer      |
+      | userId                 |                                |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/indianapolis/drywall.htm"
+
+
+  @catNoGeoFooterTopCityBos @newFooter
+  Scenario: User clicks on the footer Boston top city link on Drupal Company List Page
+    Given user is on a visitor site catnogeo page
+    When a user performs actions
+      | action_method   | action_params                 |
+      | move_to_element | id: footer-top-cities-boston  |
+      | click           |                               |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value            |
+      | activityLocation | Visitor : CatNoGeo  |
+    And the segment call contains parameters
+      | prop_key               | prop_value                     |
+      | activityLocation       | Visitor : CatNoGeo             |
+      | description            | Top Cities link in footer      |
+      | userId                 |                                |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/boston/drywall.htm"
+
+  @catNoGeoFooterTopCityATL @newFooter
+  Scenario: User clicks on the footer Atlanta top city link on Drupal Company List Page
+    Given user is on a visitor site catnogeo page
+    When a user performs actions
+      | action_method   | action_params                  |
+      | move_to_element | id: footer-top-cities-atlanta  |
+      | click           |                                |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value            |
+      | activityLocation | Visitor : CatNoGeo  |
+    And the segment call contains parameters
+      | prop_key               | prop_value                     |
+      | activityLocation       | Visitor : CatNoGeo             |
+      | description            | Top Cities link in footer      |
+      | userId                 |                                |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/atlanta/drywall.htm"
+
+  @catNoGeoFooterTopCityCinci @newFooter
+  Scenario: User clicks on the footer Cincinnati top city link on Drupal Company List Page
+    Given user is on a visitor site catnogeo page
+    When a user performs actions
+      | action_method   | action_params                     |
+      | move_to_element | id: footer-top-cities-cincinnati  |
+      | click           |                                   |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value            |
+      | activityLocation | Visitor : CatNoGeo  |
+    And the segment call contains parameters
+      | prop_key               | prop_value                     |
+      | activityLocation       | Visitor : CatNoGeo             |
+      | description            | Top Cities link in footer      |
+      | userId                 |                                |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/cincinnati/drywall.htm"
+
+  @catNoGeoFooterTopCityLA @newFooter
+  Scenario: User clicks on the footer Los Angeles top city link on Drupal Company List Page
+    Given user is on a visitor site catnogeo page
+    When a user performs actions
+      | action_method   | action_params                      |
+      | move_to_element | id: footer-top-cities-los-angeles  |
+      | click           |                                    |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value            |
+      | activityLocation | Visitor : CatNoGeo  |
+    And the segment call contains parameters
+      | prop_key               | prop_value                     |
+      | activityLocation       | Visitor : CatNoGeo             |
+      | description            | Top Cities link in footer      |
+      | userId                 |                                |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/los-angeles/drywall.htm"
+
+  @catNoGeoFooterTopCityDal @newFooter
+  Scenario: User clicks on the footer Dallas top city link on Drupal Company List Page
+    Given user is on a visitor site catnogeo page
+    When a user performs actions
+      | action_method   | action_params                 |
+      | move_to_element | id: footer-top-cities-dallas  |
+      | click           |                               |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value            |
+      | activityLocation | Visitor : CatNoGeo  |
+    And the segment call contains parameters
+      | prop_key               | prop_value                     |
+      | activityLocation       | Visitor : CatNoGeo             |
+      | description            | Top Cities link in footer      |
+      | userId                 |                                |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/dallas/drywall.htm"
+
+  @catNoGeoFooterTopCityPitt @newFooter
+  Scenario: User clicks on the footer Pittsburgh top city link on Drupal Company List Page
+    Given user is on a visitor site catnogeo page
+    When a user performs actions
+      | action_method   | action_params                     |
+      | move_to_element | id: footer-top-cities-pittsburgh  |
+      | click           |                                   |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value            |
+      | activityLocation | Visitor : CatNoGeo  |
+    And the segment call contains parameters
+      | prop_key               | prop_value                     |
+      | activityLocation       | Visitor : CatNoGeo             |
+      | description            | Top Cities link in footer      |
+      | userId                 |                                |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/pittsburgh/drywall.htm"
+
+  @catNoGeoFooterTopCityMinn @newFooter
+  Scenario: User clicks on the footer Minneapolis top city link on Drupal Company List Page
+    Given user is on a visitor site catnogeo page
+    When a user performs actions
+      | action_method   | action_params                      |
+      | move_to_element | id: footer-top-cities-minneapolis  |
+      | click           |                                    |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value            |
+      | activityLocation | Visitor : CatNoGeo  |
+    And the segment call contains parameters
+      | prop_key               | prop_value                     |
+      | activityLocation       | Visitor : CatNoGeo             |
+      | description            | Top Cities link in footer      |
+      | userId                 |                                |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/minneapolis/drywall.htm"
+
+  @catNoGeoFooterTopCityLV @newFooter
+  Scenario: User clicks on the footer Las Vegas top city link on Drupal Company List Page
+    Given user is on a visitor site catnogeo page
+    When a user performs actions
+      | action_method   | action_params                    |
+      | move_to_element | id: footer-top-cities-las-vegas  |
+      | click           |                                  |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value            |
+      | activityLocation | Visitor : CatNoGeo  |
+    And the segment call contains parameters
+      | prop_key               | prop_value                     |
+      | activityLocation       | Visitor : CatNoGeo             |
+      | description            | Top Cities link in footer      |
+      | userId                 |                                |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/las-vegas/drywall.htm"
+
+  @catNoGeoFooterTopCitySA @newFooter
+  Scenario: User clicks on the footer San Antonio top city link on Drupal Company List Page
+    Given user is on a visitor site catnogeo page
+    When a user performs actions
+      | action_method   | action_params                      |
+      | move_to_element | id: footer-top-cities-san-antonio  |
+      | click           |                                    |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value            |
+      | activityLocation | Visitor : CatNoGeo  |
+    And the segment call contains parameters
+      | prop_key               | prop_value                     |
+      | activityLocation       | Visitor : CatNoGeo             |
+      | description            | Top Cities link in footer      |
+      | userId                 |                                |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/san-antonio/drywall.htm"
+
+  @catNoGeoFooterTopCityTampa @newFooter
+  Scenario: User clicks on the footer Tampa top city link on Drupal Company List Page
+    Given user is on a visitor site catnogeo page
+    When a user performs actions
+      | action_method   | action_params                    |
+      | move_to_element | id: footer-top-cities-tampa-bay  |
+      | click           |                                  |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value            |
+      | activityLocation | Visitor : CatNoGeo  |
+    And the segment call contains parameters
+      | prop_key               | prop_value                     |
+      | activityLocation       | Visitor : CatNoGeo             |
+      | description            | Top Cities link in footer      |
+      | userId                 |                                |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/tampa-bay/drywall.htm"
+
+  @catNoGeoFooterSegmentJoinForFree @newFooter
+  Scenario: User clicks on the footer-left Join For Free icon on Drupal Company List Page
+    Given user is on a visitor site catnogeo page
+    When a user performs actions
+      | action_method   | action_params                |
+      | move_to_element | css: #footer--join-for-free  |
+      | click           |                              |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value            |
+      | activityLocation | Visitor : CatNoGeo  |
+    And the segment call contains parameters
+      | prop_key               | prop_value                        |
+      | activityLocation       | Visitor : CatNoGeo                |
+      | description            | Join For Free link in footer      |
+      | userId                 |                                   |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/app/signup"
+
+  @catNoGeoFooterSegmentCompanyList @newFooter
+  Scenario: User clicks on the footer-left Company List icon on Drupal Company List Page
+    Given user is on a visitor site catnogeo page
+    When a user performs actions
+      | action_method   | action_params                    |
+      | move_to_element | id: footer--find-local-business  |
+      | click           |                                  |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value            |
+      | activityLocation | Visitor : CatNoGeo  |
+    And the segment call contains parameters
+      | prop_key               | prop_value                             |
+      | activityLocation       | Visitor : CatNoGeo                     |
+      | description            | Find Local Businesses link in footer   |
+      | userId                 |                                        |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/"
+
+  @catNoGeoFooterSegmentNearMe @newFooter
+  Scenario: User clicks on the footer-left Near Me icon on Drupal Company List Page
+    Given user is on a visitor site catnogeo page
+    When a user performs actions
+      | action_method   | action_params      |
+      | move_to_element | id: footer--nearme |
+      | click           |                    |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value            |
+      | activityLocation | Visitor : CatNoGeo  |
+    And the segment call contains parameters
+      | prop_key               | prop_value                        |
+      | activityLocation       | Visitor : CatNoGeo                |
+      | description            | Services Near Me link in footer   |
+      | userId                 |                                   |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/nearme/"
+
+  @catNoGeoFooterSegmentHowItWorks @newFooter
+  Scenario: User clicks on the footer-left How It Works icon on Drupal Company List Page
+    Given user is on a visitor site catnogeo page
+    When a user performs actions
+      | action_method   | action_params            |
+      | move_to_element | id: footer--how-it-works |
+      | click           |                          |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value            |
+      | activityLocation | Visitor : CatNoGeo  |
+    And the segment call contains parameters
+      | prop_key               | prop_value                        |
+      | activityLocation       | Visitor : CatNoGeo                |
+      | description            | How It Works link in footer       |
+      | userId                 |                                   |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/how-it-works.htm"
+
+  @catNoGeoFooterSegmentSolutionCenter @newFooter
+  Scenario: User clicks on the footer-left Solution Center icon on Drupal Company List Page
+    Given user is on a visitor site catnogeo page
+    When a user performs actions
+      | action_method   | action_params               |
+      | move_to_element | id: footer--solution-center |
+      | click           |                             |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value            |
+      | activityLocation | Visitor : CatNoGeo  |
+    And the segment call contains parameters
+      | prop_key               | prop_value                        |
+      | activityLocation       | Visitor : CatNoGeo                |
+      | description            | Solution Center link in footer    |
+      | userId                 |                                   |
+    And we wait "4" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/articles/"
+
+  @catNoGeoFooterSegmentPhotoGalleries @newFooter
+  Scenario: User clicks on the footer-left Photos icon on Drupal Company List Page
+    Given user is on a visitor site catnogeo page
+    When a user performs actions
+      | action_method   | action_params               |
+      | move_to_element | id: footer--photo-galleries |
+      | click           |                             |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value            |
+      | activityLocation | Visitor : CatNoGeo  |
+    And the segment call contains parameters
+      | prop_key               | prop_value                        |
+      | activityLocation       | Visitor : CatNoGeo                |
+      | description            | Photo Galleries link in footer    |
+      | userId                 |                                   |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/photos/"
+
+  @catNoGeoFooterSegmentVideos @newFooter
+  Scenario: User clicks on the footer-left Videos icon on Drupal Company List Page
+    Given user is on a visitor site catnogeo page
+    When a user performs actions
+      | action_method   | action_params      |
+      | move_to_element | id: footer--video  |
+      | click           |                    |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value            |
+      | activityLocation | Visitor : CatNoGeo |
+    And the segment call contains parameters
+      | prop_key               | prop_value                        |
+      | activityLocation       | Visitor : CatNoGeo                |
+      | description            | Videos link in footer             |
+      | userId                 |                                   |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/videos/"
+
+  @catNoGeoFooterSegmentAnswers @newFooter
+  Scenario: User clicks on the footer-left Answers icon on Drupal Company List Page
+    Given user is on a visitor site catnogeo page
+    When a user performs actions
+      | action_method   | action_params       |
+      | move_to_element | id: footer--answers |
+      | click           |                     |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value            |
+      | activityLocation | Visitor : CatNoGeo  |
+    And the segment call contains parameters
+      | prop_key               | prop_value                  |
+      | activityLocation       | Visitor : CatNoGeo          |
+      | description            | Answers link in footer      |
+      | userId                 |                             |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com"
+
+  @catNoGeoFooterSegmentBusinessOwners @newFooter
+  Scenario: User clicks on the footer-left Business Owners icon on Drupal Company List Page
+    Given user is on a visitor site catnogeo page
+    When a user performs actions
+      | action_method   | action_params               |
+      | move_to_element | id: footer--business-owners |
+      | click           |                             |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value            |
+      | activityLocation | Visitor : CatNoGeo  |
+    And the segment call contains parameters
+      | prop_key               | prop_value                         |
+      | activityLocation       | Visitor : CatNoGeo                 |
+      | description            | For Business Owners link in footer |
+      | userId                 |                                    |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains "angieslistbusinesscenter.com/"
+
+  @catNoGeoFooterSegmentInvestorRelations @newFooter
+  Scenario: User clicks on the footer-left Investor Relations icon on Drupal Company List Page
+    Given user is on a visitor site catnogeo page
+    When a user performs actions
+      | action_method   | action_params        |
+      | move_to_element | id: footer--investor |
+      | click           |                      |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value            |
+      | activityLocation | Visitor : CatNoGeo  |
+    And the segment call contains parameters
+      | prop_key               | prop_value                         |
+      | activityLocation       | Visitor : CatNoGeo                 |
+      | description            | Investor Relations link in footer  |
+      | userId                 |                                    |
+
+  @catNoGeoFooterSegmentAboutUs @newFooter
+  Scenario: User clicks on the footer-left About Us icon on Drupal Company List Page
+    Given user is on a visitor site catnogeo page
+    When a user performs actions
+      | action_method   | action_params           |
+      | move_to_element | id: footer--about-angie |
+      | click           |                         |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value            |
+      | activityLocation | Visitor : CatNoGeo  |
+    And the segment call contains parameters
+      | prop_key               | prop_value                         |
+      | activityLocation       | Visitor : CatNoGeo                 |
+      | description            | About Angie’s List link in footer  |
+      | userId                 |                                    |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/aboutus.htm"
+
+  @catNoGeoFooterSegmentCareers @newFooter
+  Scenario: User clicks on the footer-left Careers icon on Drupal Company List Page
+    Given user is on a visitor site catnogeo page
+    When a user performs actions
+      | action_method   | action_params           |
+      | move_to_element | id: footer--careers     |
+      | click           |                         |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value            |
+      | activityLocation | Visitor : CatNoGeo  |
+    And the segment call contains parameters
+      | prop_key               | prop_value                 |
+      | activityLocation       | Visitor : CatNoGeo         |
+      | description            | Careers link in footer     |
+      | userId                 |                            |
+
+  @catNoGeoFooterSegmentFAQ @newFooter
+  Scenario: User clicks on the footer-left FAQ icon on Drupal Company List Page
+    Given user is on a visitor site catnogeo page
+    When a user performs actions
+      | action_method   | action_params       |
+      | move_to_element | id: footer--faqs    |
+      | click           |                     |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value           |
+      | activityLocation | Visitor : CatNoGeo |
+    And the segment call contains parameters
+      | prop_key               | prop_value           |
+      | activityLocation       | Visitor : CatNoGeo   |
+      | description            | FAQs link in footer  |
+      | userId                 |                      |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/faq/"
+
+
+  @catNoGeoFooterSegmentContactUs @newFooter
+  Scenario: User clicks on the footer-left Contact Us icon on Drupal Company List Page
+    Given user is on a visitor site catnogeo page
+    When a user performs actions
+      | action_method   | action_params           |
+      | move_to_element | id: footer--contact-us  |
+      | click           |                         |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value            |
+      | activityLocation | Visitor : CatNoGeo  |
+    And the segment call contains parameters
+      | prop_key               | prop_value                 |
+      | activityLocation       | Visitor : CatNoGeo         |
+      | description            | Contact Us link in footer  |
+      | userId                 |                            |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/member/login"
+
+  @catNoGeoFooterSegmentJoin @newFooter
+  Scenario: User clicks on the footer-right Join icon on Drupal Company List Page
+    Given user is on a visitor site catnogeo page
+    When a user performs actions
+      | action_method   | action_params    |
+      | move_to_element | id: footer-join  |
+      | click           |                  |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value            |
+      | activityLocation | Visitor : CatNoGeo  |
+    And the segment call contains parameters
+      | prop_key               | prop_value                 |
+      | activityLocation       | Visitor : CatNoGeo         |
+      | description            | Join button in footer      |
+      | userId                 |                            |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/app/signup"
+
+  @catNoGeoFooterSegmentTermsOfUse @newFooter
+  Scenario: User clicks on the footer TermsOfUse icon on Drupal Company List Page
+    Given user is on a visitor site catnogeo page
+    When a user performs actions
+      | action_method   | action_params     |
+      | move_to_element | id: footer--terms |
+      | click           |                   |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value            |
+      | activityLocation | Visitor : CatNoGeo  |
+    And the segment call contains parameters
+      | prop_key               | prop_value                   |
+      | activityLocation       | Visitor : CatNoGeo           |
+      | description            | Terms of Use link in footer  |
+      | userId                 |                              |
+
+  @catNoGeoFooterSegmentPrivacyPolicy @newFooter
+  Scenario: User clicks on the footer Privacy Policy icon on Drupal Company List Page
+    Given user is on a visitor site catnogeo page
+    When a user performs actions
+      | action_method   | action_params              |
+      | move_to_element | id: footer--privacy-policy |
+      | click           |                            |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value            |
+      | activityLocation | Visitor : CatNoGeo  |
+    And the segment call contains parameters
+      | prop_key               | prop_value                    |
+      | activityLocation       | Visitor : CatNoGeo            |
+      | description            | Privacy Policy link in footer |
+      | userId                 |                               |
