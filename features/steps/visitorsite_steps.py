@@ -73,7 +73,7 @@ def step_impl(context):
 def step_impl(context):
     appsuite_env = 'al_visitor_site'
     appsuite_url = context.appsuites[appsuite_env]['base_url']
-    context.url = appsuite_url + '/companylist/us/in/fishers/'
+    context.url = appsuite_url + '/companylist/us/mi/drummond-island/'
     context.browser.get(context.url)
     time.sleep(1)
 
