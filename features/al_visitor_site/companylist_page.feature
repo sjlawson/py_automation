@@ -114,7 +114,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/appliance-repair.htm"
 
-  @companyListPageLawnTreeService @companyListPageHeader @companyListTreeHeader
+  @companyListPageArticlesViewAll @companyListPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Articles & Advice menu view all articles link in header on the Drupal CompanyList Page
     Given user is on the visitor site comnpanylist page
     When a user performs actions
