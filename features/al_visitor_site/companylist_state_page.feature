@@ -93,7 +93,41 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/plumbing.htm"
 
+    @statePageHeaderExteriorRoofing @statePageHeader @companyListTreeHeader
+    Scenario: State Page clicking the Exterior - Roofing link in the header
+    Given user is on a visitor state page
+      When a user performs actions
+      | action_method   | action_params                                      |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(2) > label |
+      | click           | css: #exterior-toggle > ul > li:nth-child(10) > a  |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value           |
+      | activityLocation | Visitor : US : State   |
+    And the segment call contains parameters
+      | prop_key               | prop_value                              |
+      | activityLocation       | Visitor : US : State                    |
+      | description            | Exterior menu category link in header   |
+      | userId                 |                                         |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/roofing.htm"
 
+    @statePageHeaderExteriorViewAll @statePageHeader @companyListTreeHeader
+    Scenario: State Page clicking the Exterior - View All Categories link in the header
+    Given user is on a visitor state page
+      When a user performs actions
+      | action_method   | action_params                                      |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(2) > label |
+      | click           | css: #exterior-toggle > div > a                    |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value           |
+      | activityLocation | Visitor : US : State   |
+    And the segment call contains parameters
+      | prop_key               | prop_value                                         |
+      | activityLocation       | Visitor : US : State                               |
+      | description            | Exterior menu view all categories link in header   |
+      | userId                 |                                                    |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/"
 
 
 
