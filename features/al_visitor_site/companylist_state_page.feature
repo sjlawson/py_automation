@@ -129,8 +129,41 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/"
 
+    @statePageHeaderLawnViewAll @statePageHeader @companyListTreeHeader
+    Scenario: State Page clicking the Lawn & Garden - View All Categories link in the header
+    Given user is on a visitor state page
+      When a user performs actions
+      | action_method   | action_params                                             |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(3) > label > span |
+      | click           | css: #lawn-toggle > div > a                               |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value           |
+      | activityLocation | Visitor : US : State   |
+    And the segment call contains parameters
+      | prop_key               | prop_value                                         |
+      | activityLocation       | Visitor : US : State                               |
+      | description            | Lawn & Garden menu view all categories link in header   |
+      | userId                 |                                                    |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/"
 
-
+    @statePageHeaderMoreViewAll @statePageHeader @companyListTreeHeader
+    Scenario: State Page clicking the More - View All Categories link in the header
+    Given user is on a visitor state page
+      When a user performs actions
+      | action_method   | action_params                                             |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(4) > label > span |
+      | click           | css: #more-toggle > div:nth-child(5) > a                  |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value           |
+      | activityLocation | Visitor : US : State   |
+    And the segment call contains parameters
+      | prop_key               | prop_value                                         |
+      | activityLocation       | Visitor : US : State                               |
+      | description            | More menu view all categories link in header       |
+      | userId                 |                                                    |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/"
 
 
 
