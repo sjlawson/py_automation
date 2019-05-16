@@ -276,13 +276,13 @@ Feature:
     | categorySelected       | Cleaning                                   |
     | marketId               |                                            |
     | visitorPageCategory    | ROOFING                                    |
-    | visitorPageGeo         | DENVER                                    |
-    | visitorPageGeoCategory | DENVER - ROOFING                          |
+    | visitorPageGeo         | DENVER                                     |
+    | visitorPageGeoCategory | DENVER - ROOFING                           |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/denver/cleaning.htm"
 
     @geoCatBodyEditLocation @geoCatBody @companyListTreeHeader
-    Scenario: User clicks on Location Field by Category and types in Colorado Springs  on GeoCat page
+    Scenario: User clicks on Location Field by Categor and types in Colorado Springs  on GeoCat page
       Given user is on a visitor site geocat page
       When a user performs actions
     | action_method   | action_params    |
@@ -294,14 +294,12 @@ Feature:
     | description  | Category selected from all categories list |
     And the segment call contains parameters
     | prop_key               | prop_value                                 |
-    | description            | Category selected from all categories list |
+    | description            |  |
     | activityLocation       | Visitor : GeoCat                           |
     | userId                 |                                            |
-    | categorySelected       | Cleaning                                   |
-    | marketId               |                                            |
-    | visitorPageCategory    | ROOFING                                    |
-    | visitorPageGeo         | DENVER                                    |
-    | visitorPageGeoCategory | DENVER - ROOFING                          |
+
+
+
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/denver/cleaning.htm"
 
