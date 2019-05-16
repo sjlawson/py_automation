@@ -161,6 +161,26 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/"
 
+
+  @geoCatHeaderLawnGardenDecks @geoCatHeader @companyListTreeHeader
+  Scenario: User hovers then clicks on Lawn & Garden in the header on the Drupal GeoCat(Denver Roofing)
+    Given user is on a visitor site geocat page
+    When a user performs actions
+      | action_method   | action_params       |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(3) > label > span |
+      | click           | css: #lawn-toggle > ul > li:nth-child(1) > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value           |
+      | activityLocation | Visitor : Geocat   |
+    And the segment call contains parameters
+      | prop_key               | prop_value                            |
+      | activityLocation       | Visitor : Geocat                      |
+      | description            | Lawn & Garden menu category link in header |
+      | userId                 |                                       |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/decks-and-porches.htm"
+
+
   @geoCatHeaderMoreNearMe @geoCatHeader @companyListTreeHeader
   Scenario: User hovers then clicks on More NearMe in the header on the Drupal GeoCat(Denver Roofing)
     Given user is on a visitor site geocat page
