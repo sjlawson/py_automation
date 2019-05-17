@@ -306,3 +306,59 @@ Feature:
       | click           | css: #app > div > div:nth-child(2) > div.pros-near-me-list.container > div > div:nth-child(2) > div:nth-child(192) > a  |
     Then we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/nearme/repair-patio/"
+
+
+
+##### Footer Tests #####
+
+
+  @nearMeLandingFooterJoin @nearMeLandingFooter @nearMeFooter
+  Scenario: User clicks on Join For Free in the Footer on the Visitor Near Me Landing Page
+    Given user is on a visitor site tball nearme landing page
+    When a user performs actions
+      | action_method   | action_params                                   |
+      | move_to_element | css: #footer--join-for-free-link                |
+      | click           | css: #footer--join-for-free-link                |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value                 |
+      | description      | Join For Free link in footer |
+    And the segment call contains parameters
+      | prop_key               | prop_value                   |
+      | activityLocation       |                              |
+      | description            | Join For Free link in footer |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/app/signup"
+
+  @nearMeLandingFooterCompanyList @nearMeLandingFooter @nearMeFooter
+  Scenario: User clicks on Find Local... in the Footer on the Visitor Near Me Landing Page
+    Given user is on a visitor site tball nearme landing page
+    When a user performs actions
+      | action_method   | action_params                                   |
+      | move_to_element | css: #footer--find-local-business-link          |
+      | click           | css: #footer--find-local-business-link          |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value                         |
+      | description      | Find Local Businesses link in footer |
+    And the segment call contains parameters
+      | prop_key               | prop_value                           |
+      | activityLocation       |                                      |
+      | description            | Find Local Businesses link in footer |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/"
+
+  @nearMeLandingFooterNearMe @nearMeLandingFooter @nearMeFooter
+  Scenario: User clicks on Near Me in the Footer on the Visitor Near Me Landing Page
+    Given user is on a visitor site tball nearme landing page
+    When a user performs actions
+      | action_method   | action_params                                |
+      | move_to_element | css: #footer--services-near-me-link          |
+      | click           | css: #footer--services-near-me-link          |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value                    |
+      | description      | Services Near Me link in footer |
+    And the segment call contains parameters
+      | prop_key               | prop_value                      |
+      | activityLocation       |                                 |
+      | description            | Services Near Me link in footer |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/nearme/"
