@@ -1,7 +1,7 @@
 @nearMeP
 Feature:
 
-  @nearMeFurnaceRepairWithZipPageCall @nearMeRegression
+  @nearMeFurnaceRepairWithZipPageCall
   Scenario: Segment pagecall when the NearMe furnace-repair page loads
     Given user is on a visitor site tball page
     """
@@ -31,7 +31,7 @@ Feature:
 
 ##### Header Tests #####
 
-  @nearMeFurnaceRepairHeaderJoinClick @nearMeRegression @tballHeaderRegression
+  @nearMeFurnaceRepairHeaderJoinClick @nearMePageHeader @nearMeHeader
   Scenario: Clicking the Join button in the header
     Given user is on a visitor site tball page
     """
@@ -51,7 +51,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/app/signup"
 
-  @nearMeFurnaceRepairHeaderSignInClick @nearMeRegression @tballHeaderRegression
+  @nearMeFurnaceRepairHeaderSignInClick @nearMePageHeader @nearMeHeader
   Scenario: Clicking the Sign In button in the header
     Given user is on a visitor site tball page
     """
@@ -71,7 +71,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/member/login"
 
-  @nearMedHeaderBusinessOwnersClick @nearMeRegression @tballHeaderRegression
+  @nearMedHeaderBusinessOwnersClick @nearMePageHeader @nearMeHeader
   Scenario: Clicking the Business Owners button in the header
     Given user is on a visitor site tball page
     """
@@ -91,7 +91,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains "angieslistbusinesscenter.com/"
 
-  @nearMeInteriorApplianceRepairClick @nearMeRegression @tballHeaderRegression
+  @nearMeInteriorApplianceRepairClick @nearMePageHeader @nearMeHeader
   Scenario: User hovers then clicks on Appliance Repair - Interior in the header on the Visitor Near Me Furnace Repair Page
     Given user is on a visitor site tball page
     """
@@ -111,7 +111,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/appliance-repair.htm"
 
-  @nearMeInteriorHeatingCoolingClick @nearMeRegression @tballHeaderRegression
+  @nearMeInteriorHeatingCoolingClick @nearMePageHeader @nearMeHeader
   Scenario: User hovers then clicks on Heating Cooling - Interior in the header on the Visitor Near Me Furnace Repair Page
     Given user is on a visitor site tball page
     """
@@ -131,7 +131,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/hvac.htm"
 
-  @nearMeInteriorViewAllClick @nearMeRegression @tballHeaderRegression
+  @nearMeInteriorViewAllClick @nearMePageHeader @nearMeHeader
   Scenario: User hovers then clicks on View All - Interior in the header on the Visitor Near Me Furnace Repair Page
     Given user is on a visitor site tball page
     """
@@ -151,7 +151,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/"
 
-  @nearMeExteriorMasonryClick @nearMeRegression @tballHeaderRegression
+  @nearMeExteriorMasonryClick @nearMePageHeader @nearMeHeader
   Scenario: User hovers then clicks on Masonry - Exterior in the header on the Visitor Near Me Furnace Repair Page
     Given user is on a visitor site tball page
     """
@@ -171,7 +171,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/masonry.htm"
 
-  @nearMeExteriorViewAllClick @nearMeRegression @tballHeaderRegression
+  @nearMeExteriorViewAllClick @nearMePageHeader @nearMeHeader
   Scenario: User hovers then clicks on View All - Exterior in the header on the Visitor Near Me Furnace Repair Page
     Given user is on a visitor site tball page
     """
@@ -191,7 +191,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/"
 
-  @nearMeLawnIrrigationClick @nearMeRegression @tballHeaderRegression
+  @nearMeLawnIrrigationClick @nearMePageHeader @nearMeHeader
   Scenario: User hovers then clicks on Lawn Irrigation - Lawn in the header on the Visitor Near Me Furnace Repair Page
     Given user is on a visitor site tball page
     """
@@ -211,7 +211,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/lawn-irrigation.htm"
 
-  @nearMeLawnViewAllClick @nearMeRegression @tballHeaderRegression
+  @nearMeLawnViewAllClick @nearMePageHeader @nearMeHeader
   Scenario: User hovers then clicks on View All - Lawn in the header on the Visitor Near Me Furnace Repair Page
     Given user is on a visitor site tball page
     """
@@ -231,7 +231,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/"
 
-  @nearMeMoreJunkClick @nearMeRegression @tballHeaderRegression
+  @nearMeMoreJunkClick @nearMePageHeader @nearMeHeader
   Scenario: User hovers then clicks on Junk Hauling - More in the header on the Visitor Near Me Furnace Repair Page
     Given user is on a visitor site tball page
     """
@@ -251,7 +251,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/hauling.htm"
 
-  @nearMeMoreNearMeClick @nearMeRegression @tballHeaderRegression
+  @nearMeMoreNearMeClick @nearMePageHeader @nearMeHeader
   Scenario: User hovers then clicks on Near Me - More in the header on the Visitor Near Me Furnace Repair Page
     Given user is on a visitor site tball page
     """
@@ -271,7 +271,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/nearme/"
 
-  @nearMeMoreViewAllClick @nearMeRegression @tballHeaderRegression
+  @nearMeMoreViewAllClick @nearMePageHeader @nearMeHeader
   Scenario: User hovers then clicks on View All - More in the header on the Visitor Near Me Furnace Repair Page
     Given user is on a visitor site tball page
     """
@@ -292,7 +292,7 @@ Feature:
     And the landing URL contains ".angieslist.com/companylist/"
 
 
-  @nearMeArticlesOutdoorLivingClick @nearMeRegression @tballHeaderRegression
+  @nearMeArticlesOutdoorLivingClick @nearMePageHeader @nearMeHeader
   Scenario: User hovers then clicks on Outdoor Living - More in the header on the Visitor Near Me Furnace Repair Page
     Given user is on a visitor site tball page
     """
@@ -312,7 +312,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/outdoor-living/"
 
-  @nearMeArticlesViewAllClick @nearMeRegression @tballHeaderRegression
+  @nearMeArticlesViewAllClick @nearMePageHeader @nearMeHeader
   Scenario: User hovers then clicks on View All - More in the header on the Visitor Near Me Furnace Repair Page
     Given user is on a visitor site tball page
     """
@@ -339,11 +339,82 @@ Feature:
 ##### Body Tests #####
 
 
+  @nearMePageFurnaceChangePostal @nearMePageBody @nearMeBody
+  Scenario: User clicks on change postal code in the body on the Visitor Near Me Furnace Repair Page
+    Given user is on a visitor site tball page
+    """
+    /nearme/furnace-repair/?postalCode=90210
+    """
+    When a user performs actions
+      | action_method   | action_params                  |
+      | move_to_element | css: #change-postal-code-link  |
+      | click           | css: #change-postal-code-link  |
+    Then we wait "1" seconds for the next page to load
+    When a user performs actions
+      | action_method   | action_params        |
+      | move_to_element | css: #postalCode     |
+      | click           | css: #postalCode     |
+      | send_keys       | 49726                |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value      |
+      | activityLocation | Visitor : Near Me |
+    And the segment call contains parameters
+      | prop_key               | prop_value          |
+      | activityLocation       | Visitor : Near Me   |
+      | description            | Change Zip Code     |
+    Then we wait "1" seconds for the next page to load
+    When a user performs actions
+      | action_method   | action_params        |
+      | move_to_element | css: #update-postal-code-button     |
+      | click           | css: #update-postal-code-button     |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value      |
+      | activityLocation | Visitor : Near Me |
+    And the segment call contains parameters
+      | prop_key               | prop_value          |
+      | activityLocation       | Visitor : Near Me   |
+      | description            | Update Zip Code     |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/nearme/furnace-repair/?postalCode=49726"
+
+  @nearMePageFurnaceSRClick @nearMePageBody @nearMeBody
+  Scenario: User clicks on find pros cta in the body on the Visitor Near Me Furnace Repair Page
+    Given user is on a visitor site tball page
+    """
+    /nearme/furnace-repair/?postalCode=90210
+    """
+    When a user performs actions
+      | action_method   | action_params                |
+      | move_to_element | css: #sr-near-me-btn         |
+      | click           | css: #sr-near-me-btn         |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value      |
+      | activityLocation | Visitor : Near Me |
+    And the segment call contains parameters
+      | prop_key               | prop_value                          |
+      | activityLocation       | Visitor : Near Me                   |
+      | description            | Service Request Flow entry button   |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/category.Heating-Cooling.10211.html?entry_point_id=33795230&postalCode=90210"
 
 
 
 
-  @nearMeClick @nearMeRegression
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  @nearMeClick @nearMePageBody @nearMeBody
   Scenario: Clicking major market link on Near Me pages
     Given user is on a visitor site tball page
     """
@@ -364,7 +435,7 @@ Feature:
       | keywordSearched  | /nearme/furnace-repair/ |
       | pathName         | /nearme/furnace-repair/ |
 
-  @checkElement @nearMeRegression
+  @checkElement @nearMePageBody @nearMeBody
   Scenario: Verify link element exists on Near Me pages
     Given user is on a visitor site tball page
     """
