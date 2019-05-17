@@ -613,3 +613,48 @@ Feature:
       | prop_key               | prop_value                     |
       | activityLocation       |                                |
       | description            | Google Play badge in footer    |
+
+  @nearMeLandingFooterTweetTweet @nearMeLandingFooter @nearMeFooter
+  Scenario: User clicks on Tweet Tweet in the Footer on the Visitor Near Me Landing Page
+    Given user is on a visitor site tball nearme landing page
+    When a user performs actions
+      | action_method   | action_params                  |
+      | move_to_element | css: #footer--twitter-icon     |
+      | click           | css: #footer--twitter-icon     |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value            |
+      | description      | Twitter icon in footer  |
+    And the segment call contains parameters
+      | prop_key               | prop_value                |
+      | activityLocation       |                           |
+      | description            | Twitter icon in footer    |
+
+  @nearMeLandingFooterBook @nearMeLandingFooter @nearMeFooter
+  Scenario: User clicks on Face O' Books in the Footer on the Visitor Near Me Landing Page
+    Given user is on a visitor site tball nearme landing page
+    When a user performs actions
+      | action_method   | action_params                   |
+      | move_to_element | css: #footer--facebook-icon     |
+      | click           | css: #footer--facebook-icon     |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value             |
+      | description      | Facebook icon in footer  |
+    And the segment call contains parameters
+      | prop_key               | prop_value                 |
+      | activityLocation       |                            |
+      | description            | Facebook icon in footer    |
+
+  @nearMeLandingPins @nearMeLandingFooter @nearMeFooter
+  Scenario: User clicks on Pins in the Footer on the Visitor Near Me Landing Page
+    Given user is on a visitor site tball nearme landing page
+    When a user performs actions
+      | action_method   | action_params                    |
+      | move_to_element | css: #footer--pinterest-icon     |
+      | click           | css: #footer--pinterest-icon     |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value              |
+      | description      | Pinterest icon in footer  |
+    And the segment call contains parameters
+      | prop_key               | prop_value                  |
+      | activityLocation       |                             |
+      | description            | Pinterest icon in footer    |
