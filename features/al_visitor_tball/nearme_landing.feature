@@ -362,3 +362,54 @@ Feature:
       | description            | Services Near Me link in footer |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/nearme/"
+
+  @nearMeLandingFooterHowItWorks @nearMeLandingFooter @nearMeFooter
+  Scenario: User clicks on How It Works in the Footer on the Visitor Near Me Landing Page
+    Given user is on a visitor site tball nearme landing page
+    When a user performs actions
+      | action_method   | action_params                            |
+      | move_to_element | css: #footer--how-it-works-link          |
+      | click           | css: #footer--how-it-works-link          |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value                |
+      | description      | How It Works link in footer |
+    And the segment call contains parameters
+      | prop_key               | prop_value                      |
+      | activityLocation       |                                 |
+      | description            | How It Works link in footer     |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/how-it-works.htm"
+
+  @nearMeLandingFooterSolution @nearMeLandingFooter @nearMeFooter
+  Scenario: User clicks on Solution Center in the Footer on the Visitor Near Me Landing Page
+    Given user is on a visitor site tball nearme landing page
+    When a user performs actions
+      | action_method   | action_params                            |
+      | move_to_element | css: #footer--solution-center-link       |
+      | click           | css: #footer--solution-center-link       |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value                   |
+      | description      | Solution Center link in footer |
+    And the segment call contains parameters
+      | prop_key               | prop_value                         |
+      | activityLocation       |                                    |
+      | description            | Solution Center link in footer     |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/articles/"
+
+  @nearMeLandingFooterPhotos @nearMeLandingFooter @nearMeFooter
+  Scenario: User clicks on Photos in the Footer on the Visitor Near Me Landing Page
+    Given user is on a visitor site tball nearme landing page
+    When a user performs actions
+      | action_method   | action_params                            |
+      | move_to_element | css: #footer--photo-galleries-link       |
+      | click           | css: #footer--photo-galleries-link       |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value                   |
+      | description      | Photo Galleries link in footer |
+    And the segment call contains parameters
+      | prop_key               | prop_value                         |
+      | activityLocation       |                                    |
+      | description            | Photo Galleries link in footer     |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/photos/"
