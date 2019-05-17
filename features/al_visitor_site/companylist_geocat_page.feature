@@ -288,6 +288,7 @@ Feature:
     | action_method   | action_params    |
     | move_to_element | #edit-location   |
     | click           | #edit-location   |
+    | send_keys       | Aurora           |
     | click           | #block-system-main > div > div:nth-child(1) > div.panel-pane.pane-al-geocat-filters.panel-pane.pane-al-geocat-filters.row.greyback.row--sub-header > div > div > div:nth-child(1) > ul > li:nth-child(4) > a |
     Then a segment track call is sent for a unique field value pair
     | unique_field | unique_value                      |
