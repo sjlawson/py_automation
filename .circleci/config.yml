@@ -39,6 +39,7 @@ jobs:
             -e PYPROXY_PORT \
             -e SAUCE_ACCESS_KEY \
             -e SAUCE_USERNAME \
+            -e BASEURL_OVERRIDE=https://wwwstg.angieslist.com \
             -v `pwd`/container_reports:/al_py_automation/reports angieslist/al_py_automation:"${CIRCLE_BUILD_NUM}"
       - run: sleep 10
       - run:
