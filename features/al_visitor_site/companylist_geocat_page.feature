@@ -282,7 +282,7 @@ Feature:
     And the landing URL contains ".angieslist.com/companylist/denver/cleaning.htm"
 
     @geoCatBodyEditLocation @geoCatBody @companyListTreeHeader
-    Scenario: User clicks on Location Field by Categor and types in Colorado Springs  on GeoCat page
+    Scenario: User clicks on Location Field by Categor and types in Aurora on GeoCat page
       Given user is on a visitor site geocat page
       When a user performs actions
     | action_method   | action_params    |
@@ -298,33 +298,18 @@ Feature:
     | description  | Category selected from all categories list |
     And the segment call contains parameters
     | prop_key               | prop_value                                 |
-    | description            |  |
+    | description            | Search bar submission                      |
     | activityLocation       | Visitor : GeoCat                           |
     | userId                 |                                            |
-    atTestOffer: ""
-categoryId: ""
-cid: ""
-homeAdvisorCategoryId: "12014"
-marketId: "27"
-name: "Visitor : Geocat"
-pageVersion: "GeoCat Tampa Redesign"
-path: "/companylist/us/co/aurora/cleaning.htm"
-referrer: "https://visitorstg.angieslist.com/companylist/denver/cleaning.htm"
-search: ""
-seoTestName: ""
-srCtaDisplayed: true
-srCtaVersion: "v2"
-title: "Top 10 Best Aurora CO Cleaners | Angie's List"
-url: "https://visitorstg.angieslist.com/companylist/us/co/aurora/cleaning.htm"
-userId: ""
-userType: "Visitor - Returning"
-visitorPageCategory: "CLEANING"
-visitorPageGeo: "AURORA CO"
-visitorPageGeoCategory: "AURORA CO - CLEANING"
-visitorPageVerticalId: "7051"
-visitorPageVerticalName: "Home Improvement"
-
-
+    | locationSearched       | Aurora, CO                                 |
+    | manualTextSearched     | Cleaning                                   |
+    | marketID               |                                            |
+    | atTestOffer            |                                            |
+    | results                |                                            |
+    | totalResults           |                                            |
+    | visitorPageCategory    | CLEANING                                   |
+    | visitorPageGeo         | DENVER                                     |
+    | isitorPageGeoCategory  | DENVER - CLEANING                          |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/aurora/cleaning.htm"
 
