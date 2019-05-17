@@ -442,7 +442,26 @@ Feature:
     Then we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/category.Heating-Cooling.10211.html?entry_point_id=33795230&postalCode=49726"
 
-
+  @nearMePageFurnaceRaqClick @nearMePageBody @nearMeBody
+  Scenario: User clicks on RAQ cta in the body on the Visitor Near Me Furnace Repair Page
+    Given user is on a visitor site tball page
+    """
+    /nearme/furnace-repair/?postalCode=90210
+    """
+    When a user performs actions
+      | action_method   | action_params                |
+      | move_to_element | css: #sp-raq-button          |
+      | click           | css: #sp-raq-button          |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value      |
+      | activityLocation | Visitor : Near Me |
+    And the segment call contains parameters
+      | prop_key          | prop_value                      |
+      | activityLocation  | Visitor : Near Me               |
+      | rank              | 1                               |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/app/lead/request_a_quote/"
+    And the landing URL contains "/project?placementType=Web_NearMe"
 
 
 
