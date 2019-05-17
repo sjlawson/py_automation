@@ -34,7 +34,7 @@ Feature:
       | description  | Join link in header |
       And the segment call contains parameters
       | prop_key         | prop_value           |
-      | activityLocation | Visitor : US : City |
+      | activityLocation | Visitor : US : City  |
       | description      | Join link in header  |
       | userId           |                      |
     And we wait "1" seconds for the next page to load
@@ -52,7 +52,7 @@ Feature:
       And the segment call contains parameters
       | prop_key         | prop_value             |
       | description      | Sign In link in header |
-      | activityLocation | Visitor : US : City   |
+      | activityLocation | Visitor : US : City    |
       | userId           |                        |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/member/login"
@@ -69,7 +69,7 @@ Feature:
       And the segment call contains parameters
       | prop_key         | prop_value                     |
       | description      | Business Owners link in header |
-      | activityLocation | Visitor : US : City           |
+      | activityLocation | Visitor : US : City            |
       | userId           |                                |
     And we wait "1" seconds for the next page to load
     And the landing URL contains "angieslistbusinesscenter.com"
@@ -83,10 +83,10 @@ Feature:
       | click           | css: #secondary-nav > ul > li:nth-child(1) > div > ul > li:nth-child(10) > a  |
     Then a segment track call is sent for a unique field value pair
       | unique_field     | unique_value           |
-      | activityLocation | Visitor : US : City   |
+      | activityLocation | Visitor : US : City    |
     And the segment call contains parameters
       | prop_key               | prop_value                              |
-      | activityLocation       | Visitor : US : City                    |
+      | activityLocation       | Visitor : US : City                     |
       | description            | Interior menu category link in header   |
       | userId                 |                                         |
     And we wait "1" seconds for the next page to load
@@ -101,10 +101,10 @@ Feature:
       | click           | css: #exterior-toggle > ul > li:nth-child(10) > a  |
     Then a segment track call is sent for a unique field value pair
       | unique_field     | unique_value           |
-      | activityLocation | Visitor : US : City   |
+      | activityLocation | Visitor : US : City    |
     And the segment call contains parameters
       | prop_key               | prop_value                              |
-      | activityLocation       | Visitor : US : City                    |
+      | activityLocation       | Visitor : US : City                     |
       | description            | Exterior menu category link in header   |
       | userId                 |                                         |
     And we wait "1" seconds for the next page to load
@@ -119,10 +119,10 @@ Feature:
       | click           | css: #exterior-toggle > div > a                    |
     Then a segment track call is sent for a unique field value pair
       | unique_field     | unique_value           |
-      | activityLocation | Visitor : US : City   |
+      | activityLocation | Visitor : US : City    |
     And the segment call contains parameters
       | prop_key               | prop_value                                         |
-      | activityLocation       | Visitor : US : City                               |
+      | activityLocation       | Visitor : US : City                                |
       | description            | Exterior menu view all categories link in header   |
       | userId                 |                                                    |
     And we wait "1" seconds for the next page to load
@@ -137,10 +137,10 @@ Feature:
       | click           | css: #lawn-toggle > div > a                               |
     Then a segment track call is sent for a unique field value pair
       | unique_field     | unique_value           |
-      | activityLocation | Visitor : US : City   |
+      | activityLocation | Visitor : US : City    |
     And the segment call contains parameters
       | prop_key               | prop_value                                              |
-      | activityLocation       | Visitor : US : City                                    |
+      | activityLocation       | Visitor : US : City                                     |
       | description            | Lawn & Garden menu view all categories link in header   |
       | userId                 |                                                         |
     And we wait "1" seconds for the next page to load
@@ -155,10 +155,10 @@ Feature:
       | click           | css: #more-toggle > div:nth-child(5) > a                  |
     Then a segment track call is sent for a unique field value pair
       | unique_field     | unique_value           |
-      | activityLocation | Visitor : US : City   |
+      | activityLocation | Visitor : US : City    |
     And the segment call contains parameters
       | prop_key               | prop_value                                         |
-      | activityLocation       | Visitor : US : City                               |
+      | activityLocation       | Visitor : US : City                                |
       | description            | More menu view all categories link in header       |
       | userId                 |                                                    |
     And we wait "1" seconds for the next page to load
@@ -172,11 +172,11 @@ Feature:
       | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label  |
       | click           | css: #articles-toggle > div > a                     |
     Then a segment track call is sent for a unique field value pair
-      | unique_field     | unique_value           |
+      | unique_field     | unique_value          |
       | activityLocation | Visitor : US : City   |
     And the segment call contains parameters
       | prop_key               | prop_value                                              |
-      | activityLocation       | Visitor : US : City                                    |
+      | activityLocation       | Visitor : US : City                                     |
       | description            | Articles & Advice menu view all articles link in header |
       | userId                 |                                                         |
     And we wait "1" seconds for the next page to load
@@ -197,10 +197,10 @@ Feature:
       | click           | css: #block-system-main > div > div.container.clearfix > div.panel-pane.pane-breadcrumb-block > div > div > div > a:nth-child(2)  |
     Then a segment track call is sent for a unique field value pair
       | unique_field     | unique_value           |
-      | activityLocation | Visitor : US : City   |
+      | activityLocation | Visitor : US : City    |
     And the segment call contains parameters
       | prop_key               | prop_value            |
-      | activityLocation       | Visitor : US : City  |
+      | activityLocation       | Visitor : US : City   |
       | description            | Breadcrumbs link      |
       | userId                 |                       |
     And we wait "1" seconds for the next page to load
@@ -237,17 +237,17 @@ Feature:
     Scenario: State Page clicking a Top City link in the Body
     Given user is on a visitor city page
     When a user performs actions
-      | action_method   | action_params                                                                                                         |
+      | action_method   | action_params                                                                                                                                                                                      |
       | move_to_element | css: #block-system-main > div > div.max-panel > section > ul > li.geocat-choose-a-category__list-item.al-dropdown.js-active.initial > div > div > section:nth-child(1) > ul > li:nth-child(48) > a |
       | click           | css: #block-system-main > div > div.max-panel > section > ul > li.geocat-choose-a-category__list-item.al-dropdown.js-active.initial > div > div > section:nth-child(1) > ul > li:nth-child(48) > a |
     Then we wait "1" seconds for the next page to load
     Then the landing URL contains "/companylist/us/mi/drummond-island/excavating.htm"
 
-  @cityPageBodyPopularClick @cityPageBody @companyListTreeBody
-    Scenario: State Page clicking All City link in the Body
+  @cityPageBodyPopularProjectsClick @cityPageBody @companyListTreeBody
+    Scenario: State Page clicking Popular Projects link in the Body
     Given user is on a visitor city page
     When a user performs actions
-      | action_method   | action_params                                                                                                          |
+      | action_method   | action_params                                                                                                                                                                                      |
       | move_to_element | css: #block-system-main > div > div.max-panel > section > ul > li.geocat-choose-a-category__list-item.al-dropdown.js-active.initial > div > div > section:nth-child(2) > ul > li:nth-child(15) > a |
       | click           | css: #block-system-main > div > div.max-panel > section > ul > li.geocat-choose-a-category__list-item.al-dropdown.js-active.initial > div > div > section:nth-child(2) > ul > li:nth-child(15) > a |
     Then we wait "1" seconds for the next page to load
