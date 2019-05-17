@@ -644,7 +644,7 @@ Feature:
       | activityLocation       |                            |
       | description            | Facebook icon in footer    |
 
-  @nearMeLandingPins @nearMeLandingFooter @nearMeFooter
+  @nearMeLandingPinterest @nearMeLandingFooter @nearMeFooter
   Scenario: User clicks on Pins in the Footer on the Visitor Near Me Landing Page
     Given user is on a visitor site tball nearme landing page
     When a user performs actions
