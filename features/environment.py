@@ -52,14 +52,15 @@ def chrome_performance_logs(context):
     caps['name'] = 'cqtest_' + str(datetime.datetime.now())
     caps['build'] = '1.0'
     caps['browserName'] = 'chrome'
-    caps['screenResolution'] = '1366x768'
+    # caps['screenResolution'] = '1920x1200'
     caps['record_network'] = 'true'
 
     ch_profile = webdriver.ChromeOptions()
     ch_profile.perfLoggingPrefs = {'enableNetwork': True, 'traceCategories': 'performance, devtools.network'}
     ch_profile.add_argument('incognito')
     ch_profile.add_argument('disable-extensions')
-    ch_profile.add_argument('auto-open-devtools-for-tabs')
+    ch_profile.add_argument("--window-size=1600,1200")
+    # ch_profile.add_argument('auto-open-devtools-for-tabs')
     # mobile_emulation = { "deviceName": "iPhone X" }
     # ch_profile.add_experimental_option("mobileEmulation", mobile_emulation)
     context.browser = webdriver.Chrome(desired_capabilities=caps, chrome_options=ch_profile)
@@ -156,19 +157,21 @@ def set_caps(caps, method_name):
 
 
 def selenium_browser_firefox(context):
-    myProxy = context.proxy_addr
-    print(myProxy)
-    p = Proxy(client='firefox')
-    p.proxyType = ProxyType.MANUAL
-    p.httpProxy = myProxy
-    p.sslProxy = myProxy
-    p = SeleniumProxy({
-        "proxy_type": {'ff_value': 1, 'string': 'MANUAL'},
-        "httpProxy": myProxy,
-        "sslProxy":myProxy,
-        "noProxy": ""
-    })
     caps = DesiredCapabilities.FIREFOX.copy()
+    caps = set_proxy(caps)
+    ## may revert to this in experiments
+    # myProxy = context.proxy_addr
+    # print(myProxy)
+    # p = Proxy(client='firefox')
+    # p.proxyType = ProxyType.MANUAL
+    # p.httpProxy = myProxy
+    # p.sslProxy = myProxy
+    # p = SeleniumProxy({
+    #     "proxy_type": {'ff_value': 1, 'string': 'MANUAL'},
+    #     "httpProxy": myProxy,
+    #     "sslProxy":myProxy,
+    #     "noProxy": ""
+    # })
 
     p.add_to_capabilities(caps)
     context.browser = webdriver.Firefox(capabilities=caps)
