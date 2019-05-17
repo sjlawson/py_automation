@@ -1,3 +1,4 @@
+@nearMeP
 Feature:
 
   @nearMeFurnaceRepairWithZipPageCall @nearMeRegression
@@ -37,9 +38,9 @@ Feature:
     /nearme/furnace-repair/?postalCode=90210
     """
     When a user performs actions
-     | action_method   | action_params                |
+     | action_method   | action_params                    |
      | move_to_element | id: header--join-for-free-button |
-     | click           |                              |
+     | click           |                                  |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value         |
       | description  | Join link in header  |
@@ -77,16 +78,16 @@ Feature:
     /companylist/t/indianapolis/install-keypad-lock.htm
     """
     When a user performs actions
-     | action_method   | action_params                |
+     | action_method   | action_params                          |
      | move_to_element | css: #header--business-owners-link     |
-     | click           |                              |
+     | click           |                                        |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value                 |
+      | unique_field | unique_value                    |
       | description  | Business Owners link in header  |
     And the segment call contains parameters
-      | prop_key         | prop_value                   |
+      | prop_key         | prop_value                      |
       | description      | Business Owners link in header  |
-      | activityLocation | Visitor App : Geo Task       |
+      | activityLocation | Visitor App : Geo Task          |
     And we wait "1" seconds for the next page to load
     And the landing URL contains "angieslistbusinesscenter.com/"
 
@@ -101,11 +102,11 @@ Feature:
       | move_to_element | css: #header--dynamic--interior-link                 |
       | click           | css: #header--dynamic--interior-link-ApplianceRepair |
     Then a segment track call is sent for a unique field value pair
-      | unique_field     | unique_value           |
+      | unique_field     | unique_value      |
       | activityLocation | Visitor : Near Me |
     And the segment call contains parameters
       | prop_key               | prop_value                            |
-      | activityLocation       | Visitor : Near Me                |
+      | activityLocation       | Visitor : Near Me                     |
       | description            | Interior menu category link in header |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/appliance-repair.htm"
@@ -121,11 +122,11 @@ Feature:
       | move_to_element | css: #header--dynamic--interior-link                |
       | click           | css: #header--dynamic--interior-link-HeatingCooling |
     Then a segment track call is sent for a unique field value pair
-      | unique_field     | unique_value           |
+      | unique_field     | unique_value      |
       | activityLocation | Visitor : Near Me |
     And the segment call contains parameters
       | prop_key               | prop_value                            |
-      | activityLocation       | Visitor : Near Me                |
+      | activityLocation       | Visitor : Near Me                     |
       | description            | Interior menu category link in header |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/hvac.htm"
@@ -141,11 +142,11 @@ Feature:
       | move_to_element | css: #header--dynamic--interior-link             |
       | click           | css: #header--dynamic--interior-viewAllCats-link |
     Then a segment track call is sent for a unique field value pair
-      | unique_field     | unique_value           |
+      | unique_field     | unique_value      |
       | activityLocation | Visitor : Near Me |
     And the segment call contains parameters
       | prop_key               | prop_value                                       |
-      | activityLocation       | Visitor : Near Me                           |
+      | activityLocation       | Visitor : Near Me                                |
       | description            | Interior menu view all categories link in header |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/"
@@ -161,11 +162,11 @@ Feature:
       | move_to_element | css: #header--dynamic--exterior-link         |
       | click           | css: #header--dynamic--exterior-link-Masonry |
     Then a segment track call is sent for a unique field value pair
-      | unique_field     | unique_value           |
+      | unique_field     | unique_value      |
       | activityLocation | Visitor : Near Me |
     And the segment call contains parameters
       | prop_key               | prop_value                            |
-      | activityLocation       | Visitor : Near Me                |
+      | activityLocation       | Visitor : Near Me                     |
       | description            | Exterior menu category link in header |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/masonry.htm"
@@ -181,11 +182,11 @@ Feature:
       | move_to_element | css: #header--dynamic--exterior-link             |
       | click           | css: #header--dynamic--exterior-viewAllCats-link |
     Then a segment track call is sent for a unique field value pair
-      | unique_field     | unique_value           |
+      | unique_field     | unique_value      |
       | activityLocation | Visitor : Near Me |
     And the segment call contains parameters
       | prop_key               | prop_value                                       |
-      | activityLocation       | Visitor : Near Me                           |
+      | activityLocation       | Visitor : Near Me                                |
       | description            | Exterior menu view all categories link in header |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/"
@@ -201,11 +202,11 @@ Feature:
       | move_to_element | css: #header--dynamic--lawn-link                |
       | click           | css: #header--dynamic--lawn-link-LawnIrrigation |
     Then a segment track call is sent for a unique field value pair
-      | unique_field     | unique_value           |
+      | unique_field     | unique_value      |
       | activityLocation | Visitor : Near Me |
     And the segment call contains parameters
-      | prop_key               | prop_value                                            |
-      | activityLocation       | Visitor : Near Me                                |
+      | prop_key               | prop_value                                 |
+      | activityLocation       | Visitor : Near Me                          |
       | description            | Lawn & Garden menu category link in header |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/lawn-irrigation.htm"
@@ -221,11 +222,11 @@ Feature:
       | move_to_element | css: #header--dynamic--lawn-link             |
       | click           | css: #header--dynamic--lawn-viewAllCats-link |
     Then a segment track call is sent for a unique field value pair
-      | unique_field     | unique_value           |
+      | unique_field     | unique_value      |
       | activityLocation | Visitor : Near Me |
     And the segment call contains parameters
       | prop_key               | prop_value                                            |
-      | activityLocation       | Visitor : Near Me                                |
+      | activityLocation       | Visitor : Near Me                                     |
       | description            | Lawn & Garden menu view all categories link in header |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/"
@@ -237,15 +238,15 @@ Feature:
     /nearme/furnace-repair/?postalCode=90210
     """
     When a user performs actions
-      | action_method   | action_params                           |
-      | move_to_element | css: #header--dynamic--more-link        |
+      | action_method   | action_params                                |
+      | move_to_element | css: #header--dynamic--more-link             |
       | click           | css: #header--dynamic--more-link-JunkHauling |
     Then a segment track call is sent for a unique field value pair
-      | unique_field     | unique_value           |
+      | unique_field     | unique_value      |
       | activityLocation | Visitor : Near Me |
     And the segment call contains parameters
       | prop_key               | prop_value                        |
-      | activityLocation       | Visitor : Near Me            |
+      | activityLocation       | Visitor : Near Me                 |
       | description            | More menu category link in header |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/hauling.htm"
@@ -261,11 +262,11 @@ Feature:
       | move_to_element | css: #header--dynamic--more-link        |
       | click           | css: #header--dynamic--more-nearMe-link |
     Then a segment track call is sent for a unique field value pair
-      | unique_field     | unique_value           |
+      | unique_field     | unique_value      |
       | activityLocation | Visitor : Near Me |
     And the segment call contains parameters
       | prop_key               | prop_value                     |
-      | activityLocation       | Visitor : Near Me         |
+      | activityLocation       | Visitor : Near Me              |
       | description            | Near Me link in desktop header |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/nearme/"
@@ -281,11 +282,11 @@ Feature:
       | move_to_element | css: #header--dynamic--more-link             |
       | click           | css: #header--dynamic--more-viewAllCats-link |
     Then a segment track call is sent for a unique field value pair
-      | unique_field     | unique_value           |
+      | unique_field     | unique_value      |
       | activityLocation | Visitor : Near Me |
     And the segment call contains parameters
       | prop_key               | prop_value                                   |
-      | activityLocation       | Visitor : Near Me                       |
+      | activityLocation       | Visitor : Near Me                            |
       | description            | More menu view all categories link in header |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/"
@@ -302,11 +303,11 @@ Feature:
       | move_to_element | css: #header--dynamic--articles-link               |
       | click           | css: #header--dynamic--articles-link-OutdoorLiving |
     Then a segment track call is sent for a unique field value pair
-      | unique_field     | unique_value           |
+      | unique_field     | unique_value      |
       | activityLocation | Visitor : Near Me |
     And the segment call contains parameters
       | prop_key               | prop_value                                    |
-      | activityLocation       | Visitor : Near Me                        |
+      | activityLocation       | Visitor : Near Me                             |
       | description            | Articles & Advice menu article link in header |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/outdoor-living/"
@@ -322,11 +323,11 @@ Feature:
       | move_to_element | css: #header--dynamic--articles-link                 |
       | click           | css: #header--dynamic--articles-viewAllArticles-link |
     Then a segment track call is sent for a unique field value pair
-      | unique_field     | unique_value           |
+      | unique_field     | unique_value      |
       | activityLocation | Visitor : Near Me |
     And the segment call contains parameters
       | prop_key               | prop_value                                              |
-      | activityLocation       | Visitor : Near Me                                  |
+      | activityLocation       | Visitor : Near Me                                       |
       | description            | Articles & Advice menu view all articles link in header |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/articles/"
@@ -356,10 +357,10 @@ Feature:
       | unique_field | unique_value         |
       | description  | Major Market Clicked |
     And the segment call contains parameters
-      | prop_key         | prop_value           |
-      | description      | Major Market Clicked |
-      | activityLocation | Visitor : Near Me    |
-      | cityClicked      | Albany               |
+      | prop_key         | prop_value              |
+      | description      | Major Market Clicked    |
+      | activityLocation | Visitor : Near Me       |
+      | cityClicked      | Albany                  |
       | keywordSearched  | /nearme/furnace-repair/ |
       | pathName         | /nearme/furnace-repair/ |
 
