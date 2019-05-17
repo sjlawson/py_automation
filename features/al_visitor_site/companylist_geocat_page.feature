@@ -289,7 +289,10 @@ Feature:
     | move_to_element | #edit-location   |
     | click           | #edit-location   |
     | send_keys       | Aurora           |
-    | click           | #block-system-main > div > div:nth-child(1) > div.panel-pane.pane-al-geocat-filters.panel-pane.pane-al-geocat-filters.row.greyback.row--sub-header > div > div > div:nth-child(1) > ul > li:nth-child(4) > a |
+    | move_to_element | #al-geocat-filters-form > div > nav > div.geocat-location-select > div > div:nth-child(1) |
+    | click           | #al-geocat-filters-form > div > nav > div.geocat-location-select > div > div:nth-child(1) |
+    | move_to_element | #edit-geocat-submit > i |
+    | click           | #edit-geocat-submit > i |
     Then a segment track call is sent for a unique field value pair
     | unique_field | unique_value                      |
     | description  | Category selected from all categories list |
@@ -298,11 +301,32 @@ Feature:
     | description            |  |
     | activityLocation       | Visitor : GeoCat                           |
     | userId                 |                                            |
-
+    atTestOffer: ""
+categoryId: ""
+cid: ""
+homeAdvisorCategoryId: "12014"
+marketId: "27"
+name: "Visitor : Geocat"
+pageVersion: "GeoCat Tampa Redesign"
+path: "/companylist/us/co/aurora/cleaning.htm"
+referrer: "https://visitorstg.angieslist.com/companylist/denver/cleaning.htm"
+search: ""
+seoTestName: ""
+srCtaDisplayed: true
+srCtaVersion: "v2"
+title: "Top 10 Best Aurora CO Cleaners | Angie's List"
+url: "https://visitorstg.angieslist.com/companylist/us/co/aurora/cleaning.htm"
+userId: ""
+userType: "Visitor - Returning"
+visitorPageCategory: "CLEANING"
+visitorPageGeo: "AURORA CO"
+visitorPageGeoCategory: "AURORA CO - CLEANING"
+visitorPageVerticalId: "7051"
+visitorPageVerticalName: "Home Improvement"
 
 
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/denver/cleaning.htm"
+    And the landing URL contains ".angieslist.com/companylist/us/co/aurora/cleaning.htm"
 
 
 ##### Footer Tests #####
