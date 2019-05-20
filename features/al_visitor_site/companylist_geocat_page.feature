@@ -462,7 +462,6 @@ Feature:
     Then we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/denver/roofing.htm?page=2"
   
-
   @geoCatSPDirectoryNext @geoCatBody @companyListTreeHeader
   Scenario: User clicks on the Next link in SP Directory below SP Reviews on GeoCat page
     Given user is on a visitor site geocat page
@@ -487,6 +486,32 @@ Feature:
     | click           | #geocat-full-sp-list > div > div.geocat-full-sp-list__dropdown-menu.al-dropdown-menu > div:nth-child(2) > ul > li.pager-previous.left-caret > a |
     Then we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/denver/roofing.htm"
+
+@geoCatGeoTaskLink @geoCatBody @companyListTreeHeader
+  Scenario: User clicks on a GeoTask Link below the SP Directory on GeoCat page
+    Given user is on a visitor site geocat page
+    When a user performs actions
+    | action_method | action_params                         |
+    | click         | css: #block-system-main > div > div:nth-child(1) > section.geocat-related-to.panel-pane.pane-al-geocat-related-v2 > div > div.geocat-related-to__tasks-wrapper.half > div:nth-child(2) > a |
+    Then a segment track call is sent for a unique field value pair
+    | unique_field | unique_value        |
+    | description  | GeoTask project link |
+    And the segment call contains parameters
+    | prop_key                 | prop_value                   |
+    | description              | GeoTask project link         |
+    | activityLocation         | Visitor : Geocat             |
+    | marketId                 | 27                           |
+    | userId                   |                              |
+    | taskSelected             | Install Asphalt Shingle Roof |
+    | visitorPageCategory      | ROOFING                      |
+    | visitorPageGeo           | DENVER                       |
+    | visitorPageGeoCategory   | DENVER - ROOFING             |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/t"
+    And the landing URL contains ".htm"
+
+
+@geoCatRelatedGeoCatLink @geoCatBody @companyListTreeHeader
 
 ##### Footer Tests #####
 
