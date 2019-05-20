@@ -470,7 +470,7 @@ Feature:
     /nearme/furnace-repair/?postalCode=90210
     """
     When a user performs actions
-      | action_method   | action_params                |
+      | action_method   | action_params                      |
       | move_to_element | css: #deal-card-812 > div          |
       | click           | css: #deal-card-812 > div          |
     Then a segment track call is sent for a unique field value pair
@@ -511,20 +511,36 @@ Feature:
     Then we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/deals/search"
 
+  @nearMePageFurnaceSimilarNearMeClick @nearMePageBody @nearMeBody
+  Scenario: User clicks on a Similar Near Me in the body on the Visitor Near Me Furnace Repair Page
+    Given user is on a visitor site tball page
+    """
+    /nearme/furnace-repair/?postalCode=90210
+    """
+    When a user performs actions
+      | action_method   | action_params                                        |
+      | move_to_element | css: #similar-nearme-link-24\ Hour\ Furnace\ Repair  |
+      | click           | css: #similar-nearme-link-24\ Hour\ Furnace\ Repair  |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value      |
+      | activityLocation | Visitor : Near Me |
+    And the segment call contains parameters
+      | prop_key                         | prop_value                   |
+      | activityLocation                 | Visitor : Near Me            |
+      | categoryId                       |                              |
+      | categoryIdSecondary              |                              |
+      | description                      | Similar Near Me link         |
+      | pathName                         | /nearme/furnace-repair/      |
+      | postalCodesList                  | 90210                        |
+      | similarNearMePageSelected        | 24 Hour Furnace Repair       |
+      | visitorPage4_0Category           | HEATING AND AIR CONDITIONING |
+      | visitorPage4_0CategorySecondary  |                              |
+      | visitorPageCategory              | HEATING & A/C                |
+      | visitorPageCategorySecondary     |                              |
+     And we wait "1" seconds for the next page to load
+     And the landing URL contains ".angieslist.com/nearme/24-hour-furnace-repair/?postalCode=90210"
 
-
-
-
-
-
-
-
-
-
-
-
-
-  @nearMeClick @nearMePageBody @nearMeBody
+  @nearMePageMajorMarketClick @nearMePageBody @nearMeBody
   Scenario: Clicking major market link on Near Me pages
     Given user is on a visitor site tball page
     """
@@ -544,14 +560,3 @@ Feature:
       | cityClicked      | Albany                  |
       | keywordSearched  | /nearme/furnace-repair/ |
       | pathName         | /nearme/furnace-repair/ |
-
-  @checkElement @nearMePageBody @nearMeBody
-  Scenario: Verify link element exists on Near Me pages
-    Given user is on a visitor site tball page
-    """
-    /nearme/furnace-repair/?postalCode=90210
-    """
-    When the page loads
-    Then the following element css selectors are clickable
-    | selector                                                       |
-    | id: major-market-link-Albany                                   |
