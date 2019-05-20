@@ -1,6 +1,6 @@
 Feature:
 
-  @geoTaskChicagoKeypadPageCall @geoTaskRegression
+  @geoTaskChicagoKeypadPageCall @geoTaskHeader
   Scenario: Segment pagecall when the GeoTask install-keypad-lock page loads
     Given user is on a visitor site tball page
     """
@@ -33,7 +33,7 @@ Feature:
 
 ##### Header Tests #####
 
-  @geoTaskChicagoKeypadHeaderJoinClick @geoTaskRegression @tballHeaderRegression
+  @geoTaskChicagoKeypadHeaderJoinClick @geoTaskHeader
   Scenario: Clicking the Join button in the header
     Given user is on a visitor site tball page
     """
@@ -54,7 +54,7 @@ Feature:
     And the landing URL contains ".angieslist.com/app/signup"
 
 
-  @geoTaskChicagoKeypadHeaderBusinessOwnersClick @geoTaskRegression @tballHeaderRegression
+  @geoTaskChicagoKeypadHeaderBusinessOwnersClick @geoTaskHeader
   Scenario: Clicking the Business Owners button in the header
     Given user is on a visitor site tball page
     """
@@ -75,7 +75,7 @@ Feature:
     And the landing URL contains "angieslistbusinesscenter.com/"
 
 
-  @geoTaskHeaderSignInClick @geoTaskRegression @tballHeaderRegression
+  @geoTaskHeaderSignInClick @geoTaskHeader
   Scenario: Clicking the Sign In button in the header
     Given user is on a visitor site tball page
     """
@@ -95,7 +95,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/member/login"
 
-  @geoTaskInteriorApplianceRepairClick @geoTaskRegression @tballHeaderRegression
+  @geoTaskInteriorApplianceRepairClick @geoTaskHeader
   Scenario: User hovers then clicks on Appliance Repair - Interior in the header on the Visitor GeoTask Page
     Given user is on a visitor site tball page
     """
@@ -115,7 +115,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/appliance-repair.htm"
 
-  @geoTaskInteriorHeatingCoolingClick @geoTaskRegression @tballHeaderRegression
+  @geoTaskInteriorHeatingCoolingClick @geoTaskHeader
   Scenario: User hovers then clicks on Heating Cooling - Interior in the header on the Visitor GeoTask Page
     Given user is on a visitor site tball page
     """
@@ -135,7 +135,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/hvac.htm"
 
-  @geoTaskInteriorViewAllClick @geoTaskRegression @tballHeaderRegression
+  @geoTaskInteriorViewAllClick @geoTaskHeader
   Scenario: User hovers then clicks on View All - Interior in the header on the Visitor GeoTask Page
     Given user is on a visitor site tball page
     """
@@ -155,7 +155,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/"
 
-  @geoTaskExteriorMasonryClick @geoTaskRegression @tballHeaderRegression
+  @geoTaskExteriorMasonryClick @geoTaskHeader
   Scenario: User hovers then clicks on Masonry - Exterior in the header on the Visitor GeoTask Page
     Given user is on a visitor site tball page
     """
@@ -175,7 +175,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/masonry.htm"
 
-  @geoTaskExteriorViewAllClick @geoTaskRegression @tballHeaderRegression
+  @geoTaskExteriorViewAllClick @geoTaskHeader
   Scenario: User hovers then clicks on View All - Exterior in the header on the Visitor GeoTask Page
     Given user is on a visitor site tball page
     """
@@ -195,7 +195,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/"
 
-  @geoTaskLawnIrrigationClick @geoTaskRegression @tballHeaderRegression
+  @geoTaskLawnIrrigationClick @geoTaskHeader
   Scenario: User hovers then clicks on Lawn Irrigation - Lawn in the header on the Visitor GeoTask Page
     Given user is on a visitor site tball page
     """
@@ -215,7 +215,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/lawn-irrigation.htm"
 
-  @geoTaskLawnViewAllClick @geoTaskRegression @tballHeaderRegression
+  @geoTaskLawnViewAllClick @geoTaskHeader
   Scenario: User hovers then clicks on View All - Lawn in the header on the Visitor GeoTask Page
     Given user is on a visitor site tball page
     """
@@ -235,7 +235,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/"
 
-  @geoTaskMoreJunkClick @geoTaskRegression @tballHeaderRegression
+  @geoTaskMoreJunkClick @geoTaskHeader
   Scenario: User hovers then clicks on Junk Hauling - More in the header on the Visitor GeoTask Page
     Given user is on a visitor site tball page
     """
@@ -255,7 +255,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/hauling.htm"
 
-  @geoTaskMoreNearMeClick @geoTaskRegression @tballHeaderRegression
+  @geoTaskMoreNearMeClick @geoTaskHeader
   Scenario: User hovers then clicks on Near Me - More in the header on the Visitor GeoTask Page
     Given user is on a visitor site tball page
     """
@@ -275,7 +275,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/nearme/"
 
-  @geoTaskMoreViewAllClick @geoTaskRegression @tballHeaderRegression
+  @geoTaskMoreViewAllClick @geoTaskHeader
   Scenario: User hovers then clicks on View All - More in the header on the Visitor GeoTask Page
     Given user is on a visitor site tball page
     """
@@ -296,7 +296,7 @@ Feature:
     And the landing URL contains ".angieslist.com/companylist/"
 
 
-  @geoTaskArticlesOutdoorLivingClick @geoTaskRegression @tballHeaderRegression
+  @geoTaskArticlesOutdoorLivingClick @geoTaskHeader
   Scenario: User hovers then clicks on Outdoor Living - More in the header on the Visitor GeoTask Page
     Given user is on a visitor site tball page
     """
@@ -316,7 +316,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/outdoor-living/"
 
-  @geoTaskArticlesViewAllClick @geoTaskRegression @tballHeaderRegression
+  @geoTaskArticlesViewAllClick @geoTaskHeader
   Scenario: User hovers then clicks on View All - More in the header on the Visitor GeoTask Page
     Given user is on a visitor site tball page
     """
@@ -335,3 +335,195 @@ Feature:
       | description            | Articles & Advice menu view all articles link in header |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/articles/"
+
+
+
+##### Body Tests #####
+
+
+
+  @geoTaskSrTaskFlowNoPostalCode @geoTaskBody
+  Scenario: User submits SR task without a Postal Code on the Visitor GeoTask Page
+    Given user is on a visitor site tball page
+    """
+    /companylist/t/indianapolis/install-keypad-lock.htm
+    """
+    When a user performs actions
+      | action_method   | action_params                     |
+      | move_to_element | css: #sr-flow-from-geotask-submit |
+      | click           | css: #sr-flow-from-geotask-submit |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value         |
+      | activityLocation | Visitor : GeoTask    |
+    And the segment call contains parameters
+      | prop_key                    | prop_value                                          |
+      | activityLocation            | Visitor : GeoTask                                   |
+      | description                 | Service Request Flow entry button                   |
+      | drupalGeoTaskId             |                                                     |
+      | pathName                    | /companylist/t/indianapolis/install-keypad-lock.htm |
+      | primaryParent4_0Category    | LOCKSMITHS                                          |
+      | primaryParentCategory       | LOCKSMITHS                                          |
+      | primaryParentCategoryId     |                                                     |
+      | secondaryParent4_0Category  | HOME SECURITY SYSTEMS,DOORS                         |
+      | secondaryParentCategory     | ALARMS,DOORS                                        |
+      | secondaryParentCategoryId   |                                                     |
+      | visitorPageCategory         | LOCKSMITHS                                          |
+      | visitorPageGeo              | INDIANAPOLIS                                        |
+      | visitorPageGeoTask          | INDIANAPOLIS - INSTALL KEYPAD LOCK                  |
+      | visitorPageTask             | INSTALL KEYPAD LOCK                                 |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/task.Locksmith.40097.html?8152=10002&501096=201517&step=intro"
+
+  @geoTaskSrTaskFlowWithPostalCode @geoTaskBody
+  Scenario: User submits SR task with a Postal Code on the Visitor GeoTask Page
+    Given user is on a visitor site tball page
+    """
+    /companylist/t/indianapolis/install-keypad-lock.htm
+    """
+    When a user performs actions
+      | action_method   | action_params      |
+      | move_to_element | css: #srPostalCode |
+      | click           | css: #srPostalCode |
+      | send_keys       | 49726              |
+      | click           | css: #sr-flow-from-geotask-submit      |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value         |
+      | activityLocation | Visitor : GeoTask    |
+    And the segment call contains parameters
+      | prop_key                    | prop_value                                          |
+      | activityLocation            | Visitor : GeoTask                                   |
+      | description                 | Service Request Flow entry button                   |
+      | drupalGeoTaskId             |                                                     |
+      | pathName                    | /companylist/t/indianapolis/install-keypad-lock.htm |
+      | primaryParent4_0Category    | LOCKSMITHS                                          |
+      | primaryParentCategory       | LOCKSMITHS                                          |
+      | primaryParentCategoryId     |                                                     |
+      | secondaryParent4_0Category  | HOME SECURITY SYSTEMS,DOORS                         |
+      | secondaryParentCategory     | ALARMS,DOORS                                        |
+      | secondaryParentCategoryId   |                                                     |
+      | visitorPageCategory         | LOCKSMITHS                                          |
+      | visitorPageGeo              | INDIANAPOLIS                                        |
+      | visitorPageGeoTask          | INDIANAPOLIS - INSTALL KEYPAD LOCK                  |
+      | visitorPageTask             | INSTALL KEYPAD LOCK                                 |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/task.Locksmith.40097.html?8152=10002&501096=201517&step=intro"
+
+  @geoTaskBreadCrumbs @geoTaskBody
+  Scenario: User clicks on a bread crumb on the Visitor GeoTask Page
+    Given user is on a visitor site tball page
+    """
+    /companylist/t/indianapolis/install-keypad-lock.htm
+    """
+    When a user performs actions
+      | action_method   | action_params      |
+      | move_to_element | css: #breadcrumb-link-Indianapolis\ Locksmiths > span |
+      | click           | css: #breadcrumb-link-Indianapolis\ Locksmiths > span |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value         |
+      | activityLocation | Visitor : GeoTask    |
+    And the segment call contains parameters
+      | prop_key                    | prop_value                                          |
+      | activityLocation            | Visitor : GeoTask                                   |
+      | description                 | Breadcrumbs link                                    |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/indianapolis/locksmiths.htm"
+
+  @geoTaskRaq @geoTaskBody
+  Scenario: User clicks on the RAQ CTA on the Visitor GeoTask Page
+    Given user is on a visitor site tball page
+    """
+    /companylist/t/indianapolis/install-keypad-lock.htm
+    """
+    When a user performs actions
+      | action_method   | action_params      |
+      | move_to_element | css: #sp-raq-button |
+      | click           | css: #sp-raq-button |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value         |
+      | activityLocation | Visitor : GeoTask    |
+    And the segment call contains parameters
+      | prop_key                    | prop_value                                          |
+      | activityLocation            | Visitor : GeoTask                                   |
+    And we wait "2" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/app/lead/request_a_quote/58688/project?&placementType=Web_GeoTask"
+
+  @geoTaskDeals @geoTaskBody
+  Scenario: User clicks on the Deals CTA on the Visitor GeoTask Page
+    Given user is on a visitor site tball page
+    """
+    /companylist/t/indianapolis/install-keypad-lock.htm
+    """
+    When a user performs actions
+      | action_method   | action_params      |
+      | move_to_element | css: #app > div > div.container-fluid > div:nth-child(4) > div > div > div.row > div:nth-child(1) |
+      | click           | css: #app > div > div.container-fluid > div:nth-child(4) > div > div > div.row > div:nth-child(1) |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value         |
+      | activityLocation | Visitor : GeoTask    |
+    And the segment call contains parameters
+      | prop_key                    | prop_value                                          |
+      | activityLocation            | Visitor : GeoTask                                   |
+    And we wait "2" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/app/offer/search/"
+    And the landing URL contains "?placementType=Web_GeoTask"
+
+  @geoTaskSeeAllDeals @geoTaskBody
+  Scenario: User clicks on the All Deals CTA on the Visitor GeoTask Page
+    Given user is on a visitor site tball page
+    """
+    /companylist/t/indianapolis/install-keypad-lock.htm
+    """
+    When a user performs actions
+      | action_method   | action_params      |
+      | move_to_element | css: #see-all-deals |
+      | click           | css: #see-all-deals |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value            |
+      | description      | See All Deals button    |
+    And the segment call contains parameters
+      | prop_key                    | prop_value                                             |
+      | description                 | See All Deals button                                   |
+      | activityLocation            | Visitor : GeoTask                                      |
+    And we wait "2" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/deals/search"
+
+
+  @geoTaskRelated @geoTaskBody
+  Scenario: User clicks on the Related Geotasks CTA on the Visitor GeoTask Page
+    Given user is on a visitor site tball page
+    """
+    /companylist/t/indianapolis/install-keypad-lock.htm
+    """
+    When a user performs actions
+      | action_method   | action_params      |
+      | move_to_element | css: #geoTaskLink |
+      | click           | css: #geoTaskLink |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value            |
+      | description      | Related GeoTask link    |
+    And the segment call contains parameters
+      | prop_key                    | prop_value                                             |
+      | description                 | Related GeoTask link                                   |
+      | activityLocation            | Visitor : GeoTask                                      |
+    And we wait "2" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/t/indianapolis/design-interior-lighting.htm"
+
+  @geoTaskRelatedGeoCat @geoTaskBody
+  Scenario: User clicks on the related geoCat CTA on the Visitor GeoTask Page
+    Given user is on a visitor site tball page
+    """
+    /companylist/t/indianapolis/install-keypad-lock.htm
+    """
+    When a user performs actions
+      | action_method   | action_params    |
+      | move_to_element | css: #geoCatLink |
+      | click           | css: #geoCatLink |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value           |
+      | description      | Related GeoCat link    |
+    And the segment call contains parameters
+      | prop_key                    | prop_value                                            |
+      | description                 | Related GeoCat link                                   |
+      | activityLocation            | Visitor : GeoTask                                     |
+    And we wait "2" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/indianapolis/home-security-systems.htm"
