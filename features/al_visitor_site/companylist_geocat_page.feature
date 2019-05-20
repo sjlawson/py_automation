@@ -341,7 +341,7 @@ Feature:
 
 
   @geoCatBodyJoinCTA @geoCatHeader @companyListTreeHeader
-  Scenario: The Join button CTA in the body below featured SP's is clicked on GeoCat page
+  Scenario: User clicks Join button CTA in the body below featured SP's on GeoCat page
     Given user is on a visitor site geocat page
     When a user performs actions
     | action_method | action_params                         |
@@ -362,10 +362,8 @@ Feature:
     And the landing URL contains ".angieslist.com/app/signup"
 
 
-
-
 @geoCatBodyArticles @geoCatHeader @companyListTreeHeader
-  Scenario: An Article below the Join CTA in the body is clicked on the GeoCat page
+  Scenario: User clickks on an Article below the Join CTA in the body on the GeoCat page
     Given user is on a visitor site geocat page
     When a user performs actions
     | action_method | action_params                         |
@@ -386,8 +384,9 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/articles/"
 
+
 @geoCatCitiesNearMeLink  @companyListTreeHeader
-  Scenario: The Cities Near Me below Articles is clicked on GeoCat page
+  Scenario: User clicks on the Cities Near Me below Articles is clicked on GeoCat page
     Given user is on a visitor site geocat page
     When a user performs actions
     | action_method | action_params                  |
@@ -409,7 +408,7 @@ Feature:
 
 
   @geoCatSPDirectoryJoinCTA  @companyListTreeHeader
-  Scenario: The Join button CTA in the SP Directory below SP Reviews is clicked on GeoCat page
+  Scenario: User clicks on the Join button CTA in the SP Directory below SP Reviews the on GeoCat page
     Given user is on a visitor site geocat page
     When a user performs actions
     | action_method | action_params                         |
@@ -429,6 +428,29 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/app/signup"
 
+
+  @geoCatSPDirectoryClick  @companyListTreeHeader
+  Scenario: User clicks on a Service Provider in SP Directory below SP Reviews on GeoCat page
+    Given user is on a visitor site geocat page
+    When a user performs actions
+    | action_method | action_params                         |
+    | click         | #geocat-full-sp-list > div > div.geocat-full-sp-list__dropdown-menu.al-dropdown-menu > ul:nth-child(3) > li:nth-child(2) > p > a  |
+    Then a segment track call is sent for a unique field value pair
+    | unique_field | unique_value        |
+    | description  | SP name in directory |
+    And the segment call contains parameters
+    | prop_key                 | prop_value          |
+    | description              | SP name in directory |
+    | activityLocation         | Visitor : GeoCat    |
+    | marketId                 | 27                  |
+    | userId                   |                     |
+    | visitorPageCategory      | ROOFING             |
+    | serviceProviderId        |                     |
+    | visitorPageGeo           | DENVER              |
+    | visitorPageGeoCategory   | DENVER - ROOFING    |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist"
+    And the landing URL contains ".htm"
 
 ##### Footer Tests #####
 
