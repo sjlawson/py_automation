@@ -340,7 +340,7 @@ Feature:
     And the landing URL contains ".htm"
 
 
-  @geoCatBodyJoinCTA @geoCatHeader @companyListTreeHeader
+  @geoCatBodyJoinCTA @geoCatBody @companyListTreeHeader
   Scenario: User clicks Join button CTA in the body below featured SP's on GeoCat page
     Given user is on a visitor site geocat page
     When a user performs actions
@@ -362,7 +362,7 @@ Feature:
     And the landing URL contains ".angieslist.com/app/signup"
 
 
-@geoCatBodyArticles @geoCatHeader @companyListTreeHeader
+@geoCatBodyArticles @geoCatBody @companyListTreeHeader
   Scenario: User clickks on an Article below the Join CTA in the body on the GeoCat page
     Given user is on a visitor site geocat page
     When a user performs actions
@@ -385,7 +385,7 @@ Feature:
     And the landing URL contains ".angieslist.com/articles/"
 
 
-@geoCatCitiesNearMeLink  @companyListTreeHeader
+@geoCatCitiesNearMeLink @geoCatBody @companyListTreeHeader
   Scenario: User clicks on the Cities Near Me below Articles is clicked on GeoCat page
     Given user is on a visitor site geocat page
     When a user performs actions
@@ -407,7 +407,7 @@ Feature:
     And the landing URL contains ".angieslist.com/companylist/"
 
 
-  @geoCatSPDirectoryJoinCTA  @companyListTreeHeader
+  @geoCatSPDirectoryJoinCTA @geoCatBody @companyListTreeHeader
   Scenario: User clicks on the Join button CTA in the SP Directory below SP Reviews the on GeoCat page
     Given user is on a visitor site geocat page
     When a user performs actions
@@ -429,7 +429,7 @@ Feature:
     And the landing URL contains ".angieslist.com/app/signup"
 
 
-  @geoCatSPDirectoryClick  @companyListTreeHeader
+  @geoCatSPDirectoryClick @geoCatBody @companyListTreeHeader
   Scenario: User clicks on a Service Provider in SP Directory below SP Reviews on GeoCat page
     Given user is on a visitor site geocat page
     When a user performs actions
@@ -451,6 +451,42 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist"
     And the landing URL contains ".htm"
+
+  @geoCatSPDirectoryPagination @geoCatBody @companyListTreeHeader
+  Scenario: User clicks on the pagination in SP Directory below SP Reviews on GeoCat page
+    Given user is on a visitor site geocat page
+    When a user performs actions
+    | action_method   | action_params                 |
+    | move_to_element | #geocat-full-sp-list > div > div.geocat-full-sp-list__dropdown-menu.al-dropdown-menu > div:nth-child(2) > ul > li:nth-child(3) > a |
+    | click           | #geocat-full-sp-list > div > div.geocat-full-sp-list__dropdown-menu.al-dropdown-menu > div:nth-child(2) > ul > li:nth-child(3) > a |
+    Then we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/denver/roofing.htm?page=2"
+  
+
+  @geoCatSPDirectoryNext @geoCatBody @companyListTreeHeader
+  Scenario: User clicks on the Next link in SP Directory below SP Reviews on GeoCat page
+    Given user is on a visitor site geocat page
+    When a user performs actions
+    | action_method   | action_params                 |
+    | move_to_element | #geocat-full-sp-list > div > div.geocat-full-sp-list__dropdown-menu.al-dropdown-menu > div:nth-child(2) > ul > li.pager-next.right-caret > a |
+    | click           | #geocat-full-sp-list > div > div.geocat-full-sp-list__dropdown-menu.al-dropdown-menu > div:nth-child(2) > ul > li.pager-next.right-caret > a |
+    Then we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/denver/roofing.htm?page=1"
+
+
+  @geoCatSPDirectoryPrevious @geoCatBody @companyListTreeHeader
+  Scenario: User clicks on the Previous link in SP Directory below SP Reviews on GeoCat page
+    Given user is on a visitor site geocat page
+    When a user performs actions
+    | action_method   | action_params                 |
+    | move_to_element | #geocat-full-sp-list > div > div.geocat-full-sp-list__dropdown-menu.al-dropdown-menu > div:nth-child(2) > ul > li.pager-next.right-caret > a |
+    | click           | #geocat-full-sp-list > div > div.geocat-full-sp-list__dropdown-menu.al-dropdown-menu > div:nth-child(2) > ul > li.pager-next.right-caret > a |
+    And a user performs actions
+    | action_method   | action_params                 |
+    | move_to_element | #geocat-full-sp-list > div > div.geocat-full-sp-list__dropdown-menu.al-dropdown-menu > div:nth-child(2) > ul > li.pager-previous.left-caret > a |
+    | click           | #geocat-full-sp-list > div > div.geocat-full-sp-list__dropdown-menu.al-dropdown-menu > div:nth-child(2) > ul > li.pager-previous.left-caret > a |
+    Then we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/denver/roofing.htm"
 
 ##### Footer Tests #####
 
