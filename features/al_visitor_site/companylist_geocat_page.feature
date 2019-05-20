@@ -282,36 +282,36 @@ Feature:
     And the landing URL contains ".angieslist.com/companylist/denver/cleaning.htm"
 
     @geoCatBodyEditLocation @geoCatBody @companyListTreeHeader
-    Scenario: User clicks on Location Field by Categor and types in Aurora on GeoCat page
+    Scenario: User clicks on Location Field by Category and types in Aurora on GeoCat page
       Given user is on a visitor site geocat page
+      When the user clears text field with selector "id: edit-location"
       When a user performs actions
-    | action_method   | action_params    |
-    | move_to_element | #edit-location   |
-    | click           | #edit-location   |
-    | send_keys       | Aurora           |
-    | move_to_element | #al-geocat-filters-form > div > nav > div.geocat-location-select > div > div:nth-child(1) |
-    | click           | #al-geocat-filters-form > div > nav > div.geocat-location-select > div > div:nth-child(1) |
-    | move_to_element | #edit-geocat-submit > i |
-    | click           | #edit-geocat-submit > i |
-    Then a segment track call is sent for a unique field value pair
-    | unique_field | unique_value                      |
-    | description  | Category selected from all categories list |
-    And the segment call contains parameters
-    | prop_key               | prop_value                                 |
-    | description            | Search bar submission                      |
-    | activityLocation       | Visitor : GeoCat                           |
-    | userId                 |                                            |
-    | locationSearched       | Aurora, CO                                 |
-    | manualTextSearched     | Cleaning                                   |
-    | marketID               |                                            |
-    | atTestOffer            |                                            |
-    | results                |                                            |
-    | totalResults           |                                            |
-    | visitorPageCategory    | CLEANING                                   |
-    | visitorPageGeo         | DENVER                                     |
-    | isitorPageGeoCategory  | DENVER - CLEANING                          |
-    And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/us/co/aurora/cleaning.htm"
+      | action_method   | action_params                                            |
+      | move_to_element | id: edit-location                                        |
+      | click           |                                                          |
+      | send_keys       | Aurora                                                   |
+      And a user performs actions
+      | action_method   | action_params                                            |
+      | move_to_element | css: div.geocat-location-select > div > div:nth-child(1) |
+      | click           |                                                          |
+      | move_to_element | css: #edit-geocat-submit > i                             |
+      | click           |                                                          |
+      Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value                               |
+      | description  | Search bar submission |
+      And the segment call contains parameters
+      | prop_key               | prop_value            |
+      | description            | Search bar submission |
+      | activityLocation       | Visitor : GeoCat      |
+      | userId                 |                       |
+      | locationSearched       | Aurora, CO            |
+      | manualTextSearched     | Roofing               |
+      | marketID               |                       |
+      | visitorPageCategory    | ROOFING               |
+      | visitorPageGeo         | DENVER                |
+      | visitorPageGeoCategory | DENVER - ROOFING      |
+      And we wait "1" seconds for the next page to load
+      And the landing URL contains ".angieslist.com/companylist/us/co/aurora/roofing.htm"
 
 
 ##### Footer Tests #####
