@@ -286,13 +286,16 @@ Feature:
       Given user is on a visitor site geocat page
       When a user performs actions
     | action_method   | action_params    |
-    | move_to_element | #edit-location   |
+    | move_to_element | #al-geocat-filters-form > div > nav > div.geocat-location-select > label   |
     | click           | #edit-location   |
+
     | send_keys       | Aurora           |
     | move_to_element | #al-geocat-filters-form > div > nav > div.geocat-location-select > div > div:nth-child(1) |
+    And we wait "1" seconds for the next page to load
     | click           | #al-geocat-filters-form > div > nav > div.geocat-location-select > div > div:nth-child(1) |
-    | move_to_element | #edit-geocat-submit > i |
-    | click           | #edit-geocat-submit > i |
+    And we wait "1" seconds for the next page to load
+    | move_to_element | #edit-geocat-submit |
+    | click           | #edit-geocat-submit |
     Then a segment track call is sent for a unique field value pair
     | unique_field | unique_value                      |
     | description  | Category selected from all categories list |
@@ -302,16 +305,16 @@ Feature:
     | activityLocation       | Visitor : GeoCat                           |
     | userId                 |                                            |
     | locationSearched       | Aurora, CO                                 |
-    | manualTextSearched     | Cleaning                                   |
+    | manualTextSearched     | Roofing                                    |
     | marketID               |                                            |
     | atTestOffer            |                                            |
     | results                |                                            |
     | totalResults           |                                            |
-    | visitorPageCategory    | CLEANING                                   |
+    | visitorPageCategory    | ROOFING                                    |
     | visitorPageGeo         | DENVER                                     |
-    | isitorPageGeoCategory  | DENVER - CLEANING                          |
+    | isitorPageGeoCategory  | DENVER - ROOFING                           |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/us/co/aurora/cleaning.htm"
+    And the landing URL contains ".angieslist.com/companylist/us/co/aurora/roofing.htm"
 
 
 ##### Footer Tests #####
