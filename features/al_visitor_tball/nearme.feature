@@ -1,4 +1,4 @@
-@nearMeP
+@nearMe
 Feature:
 
   @nearMeFurnaceRepairWithZipPageCall
