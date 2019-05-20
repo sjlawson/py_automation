@@ -589,7 +589,7 @@ Feature:
 
 
   @nearMePageFooterJoin @nearMePageFooter @nearMeFooter
-  Scenario: User clicks on Join For Free in the Footer on the Visitor Near Me Landing Page
+  Scenario: User clicks on Join For Free in the Footer on the Visitor Near Me Page
     Given user is on a visitor site tball page
     """
     /nearme/furnace-repair/?postalCode=90210
@@ -609,7 +609,7 @@ Feature:
     And the landing URL contains ".angieslist.com/app/signup"
 
   @nearMePageFooterCompanyList @nearMePageFooter @nearMeFooter
-  Scenario: User clicks on Find Local... in the Footer on the Visitor Near Me Landing Page
+  Scenario: User clicks on Find Local... in the Footer on the Visitor Near Me Page
     Given user is on a visitor site tball page
     """
     /nearme/furnace-repair/?postalCode=90210
@@ -629,7 +629,7 @@ Feature:
     And the landing URL contains ".angieslist.com/companylist/"
 
   @nearMePageFooterNearMe @nearMePageFooter @nearMeFooter
-  Scenario: User clicks on Near Me in the Footer on the Visitor Near Me Landing Page
+  Scenario: User clicks on Near Me in the Footer on the Visitor Near Me Page
     Given user is on a visitor site tball page
     """
     /nearme/furnace-repair/?postalCode=90210
@@ -649,7 +649,7 @@ Feature:
     And the landing URL contains ".angieslist.com/nearme/"
 
   @nearMePageFooterHowItWorks @nearMePageFooter @nearMeFooter
-  Scenario: User clicks on How It Works in the Footer on the Visitor Near Me Landing Page
+  Scenario: User clicks on How It Works in the Footer on the Visitor Near Me Page
     Given user is on a visitor site tball page
     """
     /nearme/furnace-repair/?postalCode=90210
@@ -669,7 +669,7 @@ Feature:
     And the landing URL contains ".angieslist.com/how-it-works.htm"
 
   @nearMePageFooterSolution @nearMePageFooter @nearMeFooter
-  Scenario: User clicks on Solution Center in the Footer on the Visitor Near Me Landing Page
+  Scenario: User clicks on Solution Center in the Footer on the Visitor Near Me Page
     Given user is on a visitor site tball page
     """
     /nearme/furnace-repair/?postalCode=90210
@@ -689,7 +689,7 @@ Feature:
     And the landing URL contains ".angieslist.com/articles/"
 
   @nearMePageFooterPhotos @nearMePageFooter @nearMeFooter
-  Scenario: User clicks on Photos in the Footer on the Visitor Near Me Landing Page
+  Scenario: User clicks on Photos in the Footer on the Visitor Near Me Page
     Given user is on a visitor site tball page
     """
     /nearme/furnace-repair/?postalCode=90210
@@ -709,7 +709,7 @@ Feature:
     And the landing URL contains ".angieslist.com/photos/"
 
   @nearMePageFooterVideos @nearMePageFooter @nearMeFooter
-  Scenario: User clicks on Videos in the Footer on the Visitor Near Me Landing Page
+  Scenario: User clicks on Videos in the Footer on the Visitor Near Me Page
     Given user is on a visitor site tball page
     """
     /nearme/furnace-repair/?postalCode=90210
@@ -729,7 +729,7 @@ Feature:
     And the landing URL contains ".angieslist.com/videos/"
 
   @nearMePageFooterAnswers @nearMePageFooter @nearMeFooter
-  Scenario: User clicks on Answers in the Footer on the Visitor Near Me Landing Page
+  Scenario: User clicks on Answers in the Footer on the Visitor Near Me Page
     Given user is on a visitor site tball page
     """
     /nearme/furnace-repair/?postalCode=90210
@@ -749,7 +749,7 @@ Feature:
     And the landing URL contains "answers.angieslist.com"
 
   @nearMePageFooterBo @nearMePageFooter @nearMeFooter
-  Scenario: User clicks on Business Owners in the Footer on the Visitor Near Me Landing Page
+  Scenario: User clicks on Business Owners in the Footer on the Visitor Near Me Page
     Given user is on a visitor site tball page
     """
     /nearme/furnace-repair/?postalCode=90210
@@ -769,7 +769,7 @@ Feature:
     And the landing URL contains "angieslistbusinesscenter.com"
 
   @nearMePageFooterPress @nearMePageFooter @nearMeFooter
-  Scenario: User clicks on Press in the Footer on the Visitor Near Me Landing Page
+  Scenario: User clicks on Press in the Footer on the Visitor Near Me Page
     Given user is on a visitor site tball page
     """
     /nearme/furnace-repair/?postalCode=90210
@@ -789,7 +789,7 @@ Feature:
     And the landing URL contains ".angieslist.com/in-the-press.htm"
 
   @nearMePageFooterInvest @nearMePageFooter @nearMeFooter
-  Scenario: User clicks on investor relations in the Footer on the Visitor Near Me Landing Page
+  Scenario: User clicks on investor relations in the Footer on the Visitor Near Me Page
     Given user is on a visitor site tball page
     """
     /nearme/furnace-repair/?postalCode=90210
@@ -809,7 +809,7 @@ Feature:
     And the landing URL contains ".angihomeservices.com/investor-overview"
 
   @nearMePageFooterAboutUs @nearMePageFooter @nearMeFooter
-  Scenario: User clicks on about us in the Footer on the Visitor Near Me Landing Page
+  Scenario: User clicks on about us in the Footer on the Visitor Near Me Page
     Given user is on a visitor site tball page
     """
     /nearme/furnace-repair/?postalCode=90210
@@ -829,7 +829,7 @@ Feature:
     And the landing URL contains ".angieslist.com/aboutus.htm"
 
   @nearMePageFooterCareers @nearMePageFooter @nearMeFooter
-  Scenario: User clicks on careers in the Footer on the Visitor Near Me Landing Page
+  Scenario: User clicks on careers in the Footer on the Visitor Near Me Page
     Given user is on a visitor site tball page
     """
     /nearme/furnace-repair/?postalCode=90210
@@ -849,7 +849,7 @@ Feature:
     And the landing URL contains ".abouthomeadvisor.com/careers/"
 
   @nearMePageFooterFaq @nearMePageFooter @nearMeFooter
-  Scenario: User clicks on FAQ in the Footer on the Visitor Near Me Landing Page
+  Scenario: User clicks on FAQ in the Footer on the Visitor Near Me Page
     Given user is on a visitor site tball page
     """
     /nearme/furnace-repair/?postalCode=90210
@@ -869,7 +869,7 @@ Feature:
     And the landing URL contains ".angieslist.com/faq/"
 
   @nearMePageFooterContactUs @nearMePageFooter @nearMeFooter
-  Scenario: User clicks on Contact Us in the Footer on the Visitor Near Me Landing Page
+  Scenario: User clicks on Contact Us in the Footer on the Visitor Near Me Page
     Given user is on a visitor site tball page
     """
     /nearme/furnace-repair/?postalCode=90210
@@ -889,7 +889,7 @@ Feature:
     And the landing URL contains ".angieslist.com/member/login"
 
   @nearMePageFooterJoinRight @nearMePageFooter @nearMeFooter
-  Scenario: User clicks on Join - Right in the Footer on the Visitor Near Me Landing Page
+  Scenario: User clicks on Join - Right in the Footer on the Visitor Near Me Page
     Given user is on a visitor site tball page
     """
     /nearme/furnace-repair/?postalCode=90210
@@ -909,7 +909,7 @@ Feature:
     And the landing URL contains ".angieslist.com/app/signup"
 
   @nearMePageFooterIos @nearMePageFooter @nearMeFooter
-  Scenario: User clicks on iOS in the Footer on the Visitor Near Me Landing Page
+  Scenario: User clicks on iOS in the Footer on the Visitor Near Me Page
     Given user is on a visitor site tball page
     """
     /nearme/furnace-repair/?postalCode=90210
@@ -927,7 +927,7 @@ Feature:
       | description            | App Store badge in footer    |
 
   @nearMePageFooterAndroid @nearMePageFooter @nearMeFooter
-  Scenario: User clicks on Android in the Footer on the Visitor Near Me Landing Page
+  Scenario: User clicks on Android in the Footer on the Visitor Near Me Page
     Given user is on a visitor site tball page
     """
     /nearme/furnace-repair/?postalCode=90210
@@ -945,7 +945,7 @@ Feature:
       | description            | Google Play badge in footer    |
 
   @nearMePageFooterTweetTweet @nearMePageFooter @nearMeFooter
-  Scenario: User clicks on Tweet Tweet in the Footer on the Visitor Near Me Landing Page
+  Scenario: User clicks on Tweet Tweet in the Footer on the Visitor Near Me Page
     Given user is on a visitor site tball page
     """
     /nearme/furnace-repair/?postalCode=90210
@@ -963,7 +963,7 @@ Feature:
       | description            | Twitter icon in footer    |
 
   @nearMePageFooterBook @nearMePageFooter @nearMeFooter
-  Scenario: User clicks on Face O' Books in the Footer on the Visitor Near Me Landing Page
+  Scenario: User clicks on Face O' Books in the Footer on the Visitor Near Me Page
     Given user is on a visitor site tball page
     """
     /nearme/furnace-repair/?postalCode=90210
@@ -981,7 +981,7 @@ Feature:
       | description            | Facebook icon in footer    |
 
   @nearMePagePinterest @nearMePageFooter @nearMeFooter
-  Scenario: User clicks on Pins in the Footer on the Visitor Near Me Landing Page
+  Scenario: User clicks on Pins in the Footer on the Visitor Near Me Page
     Given user is on a visitor site tball page
     """
     /nearme/furnace-repair/?postalCode=90210
