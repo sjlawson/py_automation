@@ -463,8 +463,53 @@ Feature:
     And the landing URL contains ".angieslist.com/app/lead/request_a_quote/"
     And the landing URL contains "/project?placementType=Web_NearMe"
 
+  @nearMePageFurnaceDealClick @nearMePageBody @nearMeBody
+  Scenario: User clicks on a Deal in the body on the Visitor Near Me Furnace Repair Page
+    Given user is on a visitor site tball page
+    """
+    /nearme/furnace-repair/?postalCode=90210
+    """
+    When a user performs actions
+      | action_method   | action_params                |
+      | move_to_element | css: #deal-card-812 > div          |
+      | click           | css: #deal-card-812 > div          |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value      |
+      | activityLocation | Visitor : Near Me |
+    And the segment call contains parameters
+      | prop_key                         | prop_value                    |
+      | activityLocation                 | Visitor : Near Me             |
+      | categoryId                       | 78                            |
+      | categoryIdSecondary              |                               |
+      | description                      |                               |
+      | gradeDisplayed                   |                               |
+      | keywordSearched                  | /nearme/furnace-repair/       |
+      | offerId                          |                               |
+      | pathName                         | /nearme/furnace-repair/       |
+      | postalCode                       | 90210                         |
+      | priceDisplayed                   |                               |
+      | rank                             | 1                             |
+      | serviceProviderId                |                               |
+      | visitorPage4_0Category           | HEATING AND AIR CONDITIONING  |
+      | visitorPage4_0CategorySecondary  |                               |
+      | visitorPageCategory              | HEATING & A/C                 |
+      | visitorPageCategorySecondary     |                               |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/app/offer/search/"
+    And the landing URL contains "placementType=Web_NearMe"
 
-
+  @nearMePageFurnaceAllDealClick @nearMePageBody @nearMeBody
+  Scenario: User clicks on a Deal in the body on the Visitor Near Me Furnace Repair Page
+    Given user is on a visitor site tball page
+    """
+    /nearme/furnace-repair/?postalCode=90210
+    """
+    When a user performs actions
+      | action_method   | action_params                                                                                       |
+      | move_to_element | css: #app > div > div.container-fluid > div:nth-child(3) > div > div > div.deal-footer > a          |
+      | click           | css: #app > div > div.container-fluid > div:nth-child(3) > div > div > div.deal-footer > a          |
+    Then we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/deals/search"
 
 
 
