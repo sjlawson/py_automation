@@ -419,7 +419,15 @@ Feature:
     And the segment call contains parameters
       | prop_key               | prop_value          |
       | activityLocation       | Visitor : Near Me   |
+      | categoryId            | Change Zip Code     |
+      | categoryIdSecondary            | Change Zip Code     |
       | description            | Change Zip Code     |
+      | pathName            | Change Zip Code     |
+      | postalCode            | Change Zip Code     |
+      | visitorPage4_0Category            | Change Zip Code     |
+      | visitorPage4_0CategorySecondary            | Change Zip Code     |
+      | visitorPageCategory            | Change Zip Code     |
+      | visitorPageCategorySecondary            | Change Zip Code     |
     Then we wait "1" seconds for the next page to load
     When a user performs actions
       | action_method   | action_params        |
@@ -456,9 +464,24 @@ Feature:
       | unique_field     | unique_value      |
       | activityLocation | Visitor : Near Me |
     And the segment call contains parameters
-      | prop_key          | prop_value                      |
-      | activityLocation  | Visitor : Near Me               |
-      | rank              | 1                               |
+      | prop_key                        | prop_value                     |
+      | activityLocation                | Visitor : Near Me              |
+      | categoryId                      | 78                             |
+      | categoryIdSecondary             |                                |
+      | displayedGrade                  |                                |
+      | displayedReviewCount            |                                |
+      | hasAd                           |                                |
+      | hasCertification                |                                |
+      | hasOffer                        |                                |
+      | isSSA                           |                                |
+      | pathName                        | /nearme/furnace-repair/        |
+      | postalCodesList                 | 90210                          |
+      | rank                            | 1                              |
+      | serviceproviderid               |                                |
+      | visitorPage4_0Category          | HEATING AND AIR CONDITIONING   |
+      | visitorPage4_0CategorySecondary |                                |
+      | visitorPageCategory             | HEATING & A/C                  |
+      | visitorPageCategorySecondary    |                                |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/app/lead/request_a_quote/"
     And the landing URL contains "/project?placementType=Web_NearMe"
