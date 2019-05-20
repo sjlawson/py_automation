@@ -417,32 +417,30 @@ Feature:
       | unique_field     | unique_value      |
       | activityLocation | Visitor : Near Me |
     And the segment call contains parameters
-      | prop_key               | prop_value          |
-      | activityLocation       | Visitor : Near Me   |
-      | categoryId            | Change Zip Code     |
-      | categoryIdSecondary            | Change Zip Code     |
-      | description            | Change Zip Code     |
-      | pathName            | Change Zip Code     |
-      | postalCode            | Change Zip Code     |
-      | visitorPage4_0Category            | Change Zip Code     |
-      | visitorPage4_0CategorySecondary            | Change Zip Code     |
-      | visitorPageCategory            | Change Zip Code     |
-      | visitorPageCategorySecondary            | Change Zip Code     |
-    Then we wait "1" seconds for the next page to load
+      | prop_key                         | prop_value          |
+      | activityLocation                 | Visitor : Near Me   |
+      | categoryId                       |                     |
+      | categoryIdSecondary              |                     |
+      | description                      | Change Zip Code     |
+      | pathName                         |                     |
+      | postalCodesList                  |                     |
+      | visitorPage4_0Category           |                     |
+      | visitorPage4_0CategorySecondary  |                     |
+    Then we wait "2" seconds for the next page to load
     When a user performs actions
-      | action_method   | action_params        |
+      | action_method   | action_params                       |
       | move_to_element | css: #update-postal-code-button     |
       | click           | css: #update-postal-code-button     |
     Then a segment track call is sent for a unique field value pair
       | unique_field     | unique_value      |
       | activityLocation | Visitor : Near Me |
     And the segment call contains parameters
-      | prop_key               | prop_value          |
-      | activityLocation       | Visitor : Near Me   |
-      | description            | Update Zip Code     |
-    Then we wait "1" seconds for the next page to load
+      | prop_key                         | prop_value          |
+      | activityLocation                 | Visitor : Near Me   |
+      | description                      | Update Zip Code     |
+    Then we wait "2" seconds for the next page to load
     And the landing URL contains ".angieslist.com/nearme/furnace-repair/?postalCode=49726"
-    Then we wait "1" seconds for the next page to load
+    Then we wait "2" seconds for the next page to load
     When a user performs actions
       | action_method   | action_params                |
       | move_to_element | css: #sr-near-me-btn         |
