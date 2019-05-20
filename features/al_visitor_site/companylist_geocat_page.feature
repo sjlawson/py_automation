@@ -313,7 +313,6 @@ Feature:
       And we wait "1" seconds for the next page to load
       And the landing URL contains ".angieslist.com/companylist/us/co/aurora/roofing.htm"
 
-
 @geoCatBodyFeaturedServiceProviderClick @geoCatBody @companyListTreeHeader
     Scenario: User clicks on an Service Provicer in the Featured SP List on GeoCat page
       Given user is on a visitor site geocat page
@@ -339,6 +338,31 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/"
     And the landing URL contains ".htm"
+
+
+  @geoCatBodyJoinCTA @geoCatHeader @companyListTreeHeader
+  Scenario: The Join button in the body is clicked on GeoCat page
+    Given user is on a visitor site geocat page
+    When a user performs actions
+    | action_method | action_params                         |
+    | click         | #block-system-main > div > div:nth-child(1) > section.geocat-see-all-cta > a > span.geocat-see-all-cta__no-wrap > span  |
+    Then a segment track call is sent for a unique field value pair
+    | unique_field | unique_value        |
+    | description  | Join button beneath list of featured SPs |
+    And the segment call contains parameters
+    | prop_key                 | prop_value          |
+    | description              | Join button beneath list of featured SPs |
+    | activityLocation         | Visitor : GeoCat    |
+    | marketId                 | 27                  |
+    | userId                   |                     |
+    | visitorPageCategory      | ROOFING             |
+    | visitorPageGeo           | DENVER              |
+    | visitorPageGeoCategory   | DENVER - ROOFING    |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/app/signup"
+
+
+
 
 
 ##### Footer Tests #####
