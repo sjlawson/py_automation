@@ -8,22 +8,22 @@ Feature:
       | unique_field | unique_value       |
       | name         | Visitor : CatNoGeo |
     Then the segment call contains parameters
-      | prop_key              | prop_value                                                               |
-      | atTestOffer           |                                                                          |
-      | categoryId            | 79                                                                       |
-      | cid                   |                                                                          |
-      | homeAdvisorCategoryId | 12041                                                                    |
-      | name                  | Visitor : CatNoGeo                                                       |
-      | pageVersion           | Lullabot Redesign                                                        |
-      | path                  | /companylist/home-inspection.htm                                         |
-      | referrer              |                                                                          |
-      | search                |                                                                          |
-      | srCtaDisplayed        | true                                                                     |
-      | title                 | Local Home Inspectors - Find a Top-Rated Home Inspector on Angie's List  |
-      | url                   |                                                                          |
-      | userId                |                                                                          |
-      | userType              | Visitor - New                                                            |
-      | visitorPageCategory   | HOME INSPECTION                                                          |
+      | prop_key              | prop_value                                                                       |
+      | atTestOffer           |                                                                                  |
+      | categoryId            | 53                                                                               |
+      | cid                   |                                                                                  |
+      | homeAdvisorCategoryId | 12025                                                                            |
+      | name                  | Visitor : CatNoGeo                                                               |
+      | pageVersion           | Lullabot Redesign                                                                |
+      | path                  | /companylist/drywall.htm                                                         |
+      | referrer              |                                                                                  |
+      | search                |                                                                                  |
+      | srCtaDisplayed        | true                                                                             |
+      | title                 | Local Drywall Contractors - Find a Top-Rated Drywall Contractor on Angie's List  |
+      | url                   |                                                                                  |
+      | userId                |                                                                                  |
+      | userType              | Visitor - New                                                                    |
+      | visitorPageCategory   | DRYWALL                                                                          |
 
   @catNoGeoPageCallNonOverlap @companyTreeDaily
   Scenario: a user lands the CatNoGeo page that is an SR overlap category
