@@ -341,7 +341,7 @@ Feature:
 
 
   @geoCatBodyJoinCTA @geoCatHeader @companyListTreeHeader
-  Scenario: The Join button in the body is clicked on GeoCat page
+  Scenario: The Join button CTA in the body below featured SP's is clicked on GeoCat page
     Given user is on a visitor site geocat page
     When a user performs actions
     | action_method | action_params                         |
@@ -363,6 +363,71 @@ Feature:
 
 
 
+
+@geoCatBodyArticles @geoCatHeader @companyListTreeHeader
+  Scenario: An Article below the Join CTA in the body is clicked on the GeoCat page
+    Given user is on a visitor site geocat page
+    When a user performs actions
+    | action_method | action_params                         |
+    | click         | #block-system-main > div > div:nth-child(1) > div.geocat-article-breaker__container.panel-pane.pane-al-geocat-articles.legacy_width_fix > div > div:nth-child(1) > a > h3  |
+    Then a segment track call is sent for a unique field value pair
+    | unique_field | unique_value        |
+    | description  | Solution Center helpful article |
+    And the segment call contains parameters
+    | prop_key                 | prop_value          |
+    | description              | Solution Center helpful article |
+    | activityLocation         | Visitor : GeoCat    |
+    | contentNodeId            | 125011              |
+    | marketId                 | 27                  |
+    | userId                   |                     |
+    | visitorPageCategory      | ROOFING             |
+    | visitorPageGeo           | DENVER              |
+    | visitorPageGeoCategory   | DENVER - ROOFING    |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/articles/"
+
+@geoCatCitiesNearMeLink  @companyListTreeHeader
+  Scenario: The Cities Near Me below Articles is clicked on GeoCat page
+    Given user is on a visitor site geocat page
+    When a user performs actions
+    | action_method | action_params                  |
+    | click         | #mini-panel-geocat_near_me_and_zip_codes > div > div > section > div > ul > li:nth-child(1) > a  |
+    Then a segment track call is sent for a unique field value pair
+    | unique_field | unique_value        |
+    | description  | Near Me city link |
+    And the segment call contains parameters
+    | prop_key                 | prop_value          |
+    | description              | Near Me city link|
+    | activityLocation         | Visitor : GeoCat    |
+    | marketId                 | 27                  |
+    | userId                   |                     |
+    | visitorPageCategory      | ROOFING             |
+    | visitorPageGeo           | DENVER              |
+    | visitorPageGeoCategory   |                     |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/"
+
+
+  @geoCatSPDirectoryJoinCTA  @companyListTreeHeader
+  Scenario: The Join button CTA in the SP Directory below SP Reviews is clicked on GeoCat page
+    Given user is on a visitor site geocat page
+    When a user performs actions
+    | action_method | action_params                         |
+    | click         | #join-angies-list-now  |
+    Then a segment track call is sent for a unique field value pair
+    | unique_field | unique_value        |
+    | description  | Join link within directory list of SPs |
+    And the segment call contains parameters
+    | prop_key                 | prop_value          |
+    | description              | Join link within directory list of SPs |
+    | activityLocation         | Visitor : GeoCat    |
+    | marketId                 | 27                  |
+    | userId                   |                     |
+    | visitorPageCategory      | ROOFING             |
+    | visitorPageGeo           | DENVER              |
+    | visitorPageGeoCategory   | DENVER - ROOFING    |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/app/signup"
 
 
 ##### Footer Tests #####
