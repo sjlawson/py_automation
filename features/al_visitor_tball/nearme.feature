@@ -1,3 +1,4 @@
+@nearMe
 Feature:
 
   @nearMeFurnaceRepairWithZipPageCall @nearMeRegression
