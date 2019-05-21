@@ -313,6 +313,28 @@ Feature:
       And we wait "1" seconds for the next page to load
       And the landing URL contains ".angieslist.com/companylist/us/co/aurora/roofing.htm"
 
+@geoCatBreadcrumbs @geoCatBody @companyListTreeHeader
+ Scenario: User clicks on a Breadcrumpb on the GeoCat page
+      Given user is on a visitor site geocat page
+      When a user performs actions
+      | action_method   | action_params                 |
+      | move_to_element | css: #block-system-main > div > div:nth-child(1) > div.panel-pane.pane-breadcrumb-block.clearfix > div > div > div > a:nth-child(4) |
+      | click           | css: #block-system-main > div > div:nth-child(1) > div.panel-pane.pane-breadcrumb-block.clearfix > div > div > div > a:nth-child(4) |
+      Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value          |
+      | description  | Breadcrumbs link      |
+      And the segment call contains parameters
+      | prop_key               | prop_value            |
+      | description            | Breadcrumbs link      |
+      | activityLocation       | Visitor : Geocat      |
+      | userId                 |                       |
+      | visitorPageCategory    | Roofing               |
+      | visitorPageGeo         | DENVER                |
+      | visitorPageGeoCategory | DENVER - ROOFING      |
+      And we wait "1" seconds for the next page to load
+      And the landing URL contains ".angieslist.com/companylist/"
+
+
 @geoCatBodyFeaturedServiceProviderClick @geoCatBody @companyListTreeHeader
     Scenario: User clicks on an Service Provicer in the Featured SP List on GeoCat page
       Given user is on a visitor site geocat page
@@ -494,7 +516,7 @@ Feature:
     | action_method | action_params                         |
     | click         | css: #block-system-main > div > div:nth-child(1) > section.geocat-related-to.panel-pane.pane-al-geocat-related-v2 > div > div.geocat-related-to__tasks-wrapper.half > div:nth-child(2) > a |
     Then a segment track call is sent for a unique field value pair
-    | unique_field | unique_value        |
+    | unique_field | unique_value         |
     | description  | GeoTask project link |
     And the segment call contains parameters
     | prop_key                 | prop_value                   |
@@ -510,8 +532,29 @@ Feature:
     And the landing URL contains ".angieslist.com/companylist/t"
     And the landing URL contains ".htm"
 
-
 @geoCatRelatedGeoCatLink @geoCatBody @companyListTreeHeader
+  Scenario: User clicks on a Related GeoCat Link below the SP Directory on GeoCat page
+    Given user is on a visitor site geocat page
+    When a user performs actions
+    | action_method | action_params                         |
+    | click         | css: #block-system-main > div > div:nth-child(1) > section.geocat-related-to.panel-pane.pane-al-geocat-related-v2 > div > div.geocat-related-to__cats-wrapper.half > div:nth-child(2) > a |
+    Then a segment track call is sent for a unique field value pair
+    | unique_field | unique_value        |
+    | description  | Related GeoCat link |
+    And the segment call contains parameters
+    | prop_key                 | prop_value                   |
+    | description              | Related GeoCat link          |
+    | activityLocation         | Visitor : Geocat             |
+    | marketId                 | 27                           |
+    | userId                   |                              |
+    | categorySelected         | Siding |
+    | visitorPageCategory      | ROOFING                      |
+    | visitorPageGeo           | DENVER                       |
+    | visitorPageGeoCategory   | DENVER - ROOFING             |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/"
+    And the landing URL contains ".htm"
+
 
 ##### Footer Tests #####
 
