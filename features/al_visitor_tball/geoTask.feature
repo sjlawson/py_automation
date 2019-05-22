@@ -1,3 +1,4 @@
+@geoTask
 Feature:
 
   @geoTaskChicagoKeypadPageCall @geoTaskHeader
@@ -110,7 +111,7 @@ Feature:
       | activityLocation | Visitor App : Geo Task |
     And the segment call contains parameters
       | prop_key               | prop_value                            |
-      | activityLocation       | Visitor App : Geo Task                |
+      | activityLocation       | Visitor App : Geo Task Visitor App : Geo Task                |
       | description            | Interior menu category link in header |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/appliance-repair.htm"
@@ -130,7 +131,7 @@ Feature:
       | activityLocation | Visitor App : Geo Task |
     And the segment call contains parameters
       | prop_key               | prop_value                            |
-      | activityLocation       | Visitor App : Geo Task                |
+      | activityLocation       | Visitor App : Geo Task Visitor App : Geo Task                |
       | description            | Interior menu category link in header |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/hvac.htm"
@@ -150,7 +151,7 @@ Feature:
       | activityLocation | Visitor App : Geo Task |
     And the segment call contains parameters
       | prop_key               | prop_value                                       |
-      | activityLocation       | Visitor App : Geo Task                           |
+      | activityLocation       | Visitor App : Geo Task Visitor App : Geo Task                           |
       | description            | Interior menu view all categories link in header |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/"
@@ -170,7 +171,7 @@ Feature:
       | activityLocation | Visitor App : Geo Task |
     And the segment call contains parameters
       | prop_key               | prop_value                            |
-      | activityLocation       | Visitor App : Geo Task                |
+      | activityLocation       | Visitor App : Geo Task Visitor App : Geo Task                |
       | description            | Exterior menu category link in header |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/masonry.htm"
@@ -190,7 +191,7 @@ Feature:
       | activityLocation | Visitor App : Geo Task |
     And the segment call contains parameters
       | prop_key               | prop_value                                       |
-      | activityLocation       | Visitor App : Geo Task                           |
+      | activityLocation       | Visitor App : Geo Task Visitor App : Geo Task                           |
       | description            | Exterior menu view all categories link in header |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/"
@@ -210,7 +211,7 @@ Feature:
       | activityLocation | Visitor App : Geo Task |
     And the segment call contains parameters
       | prop_key               | prop_value                                            |
-      | activityLocation       | Visitor App : Geo Task                                |
+      | activityLocation       | Visitor App : Geo Task Visitor App : Geo Task                                |
       | description            | Lawn & Garden menu category link in header |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/lawn-irrigation.htm"
@@ -230,7 +231,7 @@ Feature:
       | activityLocation | Visitor App : Geo Task |
     And the segment call contains parameters
       | prop_key               | prop_value                                            |
-      | activityLocation       | Visitor App : Geo Task                                |
+      | activityLocation       | Visitor App : Geo Task Visitor App : Geo Task                                |
       | description            | Lawn & Garden menu view all categories link in header |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/"
@@ -250,7 +251,7 @@ Feature:
       | activityLocation | Visitor App : Geo Task |
     And the segment call contains parameters
       | prop_key               | prop_value                        |
-      | activityLocation       | Visitor App : Geo Task            |
+      | activityLocation       | Visitor App : Geo Task Visitor App : Geo Task            |
       | description            | More menu category link in header |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/hauling.htm"
@@ -270,7 +271,7 @@ Feature:
       | activityLocation | Visitor App : Geo Task |
     And the segment call contains parameters
       | prop_key               | prop_value                     |
-      | activityLocation       | Visitor App : Geo Task         |
+      | activityLocation       | Visitor App : Geo Task Visitor App : Geo Task         |
       | description            | Near Me link in desktop header |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/nearme/"
@@ -290,7 +291,7 @@ Feature:
       | activityLocation | Visitor App : Geo Task |
     And the segment call contains parameters
       | prop_key               | prop_value                                   |
-      | activityLocation       | Visitor App : Geo Task                       |
+      | activityLocation       | Visitor App : Geo Task Visitor App : Geo Task                       |
       | description            | More menu view all categories link in header |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/"
@@ -311,7 +312,7 @@ Feature:
       | activityLocation | Visitor App : Geo Task |
     And the segment call contains parameters
       | prop_key               | prop_value                                    |
-      | activityLocation       | Visitor App : Geo Task                        |
+      | activityLocation       | Visitor App : Geo Task Visitor App : Geo Task                        |
       | description            | Articles & Advice menu article link in header |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/outdoor-living/"
@@ -331,7 +332,7 @@ Feature:
       | activityLocation | Visitor App : Geo Task |
     And the segment call contains parameters
       | prop_key               | prop_value                                              |
-      | activityLocation       | Visitor App : Geo Task                                  |
+      | activityLocation       | Visitor App : Geo Task Visitor App : Geo Task                                  |
       | description            | Articles & Advice menu view all articles link in header |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/articles/"
@@ -527,3 +528,420 @@ Feature:
       | activityLocation            | Visitor : GeoTask                                     |
     And we wait "2" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/indianapolis/home-security-systems.htm"
+
+
+
+
+
+##### Footer Tests #####
+
+
+  @geoTaskFooterJoin @geoTaskFooter
+  Scenario: User clicks on Join For Free in the Footer on the Visitor GeoTask Page
+    Given user is on a visitor site tball page
+    """
+    /companylist/t/indianapolis/install-keypad-lock.htm
+    """
+    When a user performs actions
+      | action_method   | action_params                                   |
+      | move_to_element | css: #footer--join-for-free-link                |
+      | click           | css: #footer--join-for-free-link                |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value                 |
+      | description      | Join For Free link in footer |
+    And the segment call contains parameters
+      | prop_key               | prop_value                   |
+      | activityLocation       | Visitor App : Geo Task                              |
+      | description            | Join For Free link in footer |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/app/signup"
+
+  @geoTaskFooterCompanyList @geoTaskFooter
+  Scenario: User clicks on Find Local... in the Footer on the Visitor GeoTask Page
+    Given user is on a visitor site tball page
+    """
+    /companylist/t/indianapolis/install-keypad-lock.htm
+    """
+    When a user performs actions
+      | action_method   | action_params                                   |
+      | move_to_element | css: #footer--find-local-business-link          |
+      | click           | css: #footer--find-local-business-link          |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value                         |
+      | description      | Find Local Businesses link in footer |
+    And the segment call contains parameters
+      | prop_key               | prop_value                           |
+      | activityLocation       | Visitor App : Geo Task                                      |
+      | description            | Find Local Businesses link in footer |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/"
+
+  @geoTaskFooterNearMe @geoTaskFooter
+  Scenario: User clicks on Near Me in the Footer on the Visitor GeoTask Page
+    Given user is on a visitor site tball page
+    """
+    /companylist/t/indianapolis/install-keypad-lock.htm
+    """
+    When a user performs actions
+      | action_method   | action_params                                |
+      | move_to_element | css: #footer--services-near-me-link          |
+      | click           | css: #footer--services-near-me-link          |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value                    |
+      | description      | Services Near Me link in footer |
+    And the segment call contains parameters
+      | prop_key               | prop_value                      |
+      | activityLocation       | Visitor App : Geo Task                                 |
+      | description            | Services Near Me link in footer |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/nearme/"
+
+  @geoTaskFooterHowItWorks @geoTaskFooter
+  Scenario: User clicks on How It Works in the Footer on the Visitor GeoTask Page
+    Given user is on a visitor site tball page
+    """
+    /companylist/t/indianapolis/install-keypad-lock.htm
+    """
+    When a user performs actions
+      | action_method   | action_params                            |
+      | move_to_element | css: #footer--how-it-works-link          |
+      | click           | css: #footer--how-it-works-link          |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value                |
+      | description      | How It Works link in footer |
+    And the segment call contains parameters
+      | prop_key               | prop_value                      |
+      | activityLocation       | Visitor App : Geo Task                                 |
+      | description            | How It Works link in footer     |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/how-it-works.htm"
+
+  @geoTaskFooterSolution @geoTaskFooter
+  Scenario: User clicks on Solution Center in the Footer on the Visitor GeoTask Page
+    Given user is on a visitor site tball page
+    """
+    /companylist/t/indianapolis/install-keypad-lock.htm
+    """
+    When a user performs actions
+      | action_method   | action_params                            |
+      | move_to_element | css: #footer--solution-center-link       |
+      | click           | css: #footer--solution-center-link       |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value                   |
+      | description      | Solution Center link in footer |
+    And the segment call contains parameters
+      | prop_key               | prop_value                         |
+      | activityLocation       | Visitor App : Geo Task                                    |
+      | description            | Solution Center link in footer     |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/articles/"
+
+  @geoTaskFooterPhotos @geoTaskFooter
+  Scenario: User clicks on Photos in the Footer on the Visitor GeoTask Page
+    Given user is on a visitor site tball page
+    """
+    /companylist/t/indianapolis/install-keypad-lock.htm
+    """
+    When a user performs actions
+      | action_method   | action_params                            |
+      | move_to_element | css: #footer--photo-galleries-link       |
+      | click           | css: #footer--photo-galleries-link       |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value                   |
+      | description      | Photo Galleries link in footer |
+    And the segment call contains parameters
+      | prop_key               | prop_value                         |
+      | activityLocation       | Visitor App : Geo Task                                    |
+      | description            | Photo Galleries link in footer     |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/photos/"
+
+  @geoTaskFooterVideos @geoTaskFooter
+  Scenario: User clicks on Videos in the Footer on the Visitor GeoTask Page
+    Given user is on a visitor site tball page
+    """
+    /companylist/t/indianapolis/install-keypad-lock.htm
+    """
+    When a user performs actions
+      | action_method   | action_params                   |
+      | move_to_element | css: #footer--videos-link       |
+      | click           | css: #footer--videos-link       |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value          |
+      | description      | Videos link in footer |
+    And the segment call contains parameters
+      | prop_key               | prop_value                |
+      | activityLocation       | Visitor App : Geo Task                           |
+      | description            | Videos link in footer     |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/videos/"
+
+  @geoTaskFooterAnswers @geoTaskFooter
+  Scenario: User clicks on Answers in the Footer on the Visitor GeoTask Page
+    Given user is on a visitor site tball page
+    """
+    /companylist/t/indianapolis/install-keypad-lock.htm
+    """
+    When a user performs actions
+      | action_method   | action_params                    |
+      | move_to_element | css: #footer--answers-link       |
+      | click           | css: #footer--answers-link       |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value           |
+      | description      | Answers link in footer |
+    And the segment call contains parameters
+      | prop_key               | prop_value                |
+      | activityLocation       | Visitor App : Geo Task                           |
+      | description            | Answers link in footer    |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains "answers.angieslist.com"
+
+  @geoTaskFooterBo @geoTaskFooter
+  Scenario: User clicks on Business Owners in the Footer on the Visitor GeoTask Page
+    Given user is on a visitor site tball page
+    """
+    /companylist/t/indianapolis/install-keypad-lock.htm
+    """
+    When a user performs actions
+      | action_method   | action_params                                |
+      | move_to_element | css: #footer--for-business-owners-link       |
+      | click           | css: #footer--for-business-owners-link       |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value                       |
+      | description      | For Business Owners link in footer |
+    And the segment call contains parameters
+      | prop_key               | prop_value                            |
+      | activityLocation       | Visitor App : Geo Task                                       |
+      | description            | For Business Owners link in footer    |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains "angieslistbusinesscenter.com"
+
+  @geoTaskFooterPress @geoTaskFooter
+  Scenario: User clicks on Press in the Footer on the Visitor GeoTask Page
+    Given user is on a visitor site tball page
+    """
+    /companylist/t/indianapolis/install-keypad-lock.htm
+    """
+    When a user performs actions
+      | action_method   | action_params                  |
+      | move_to_element | css: #footer--press-link       |
+      | click           | css: #footer--press-link       |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value         |
+      | description      | Press link in footer |
+    And the segment call contains parameters
+      | prop_key               | prop_value              |
+      | activityLocation       | Visitor App : Geo Task                         |
+      | description            | Press link in footer    |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/in-the-press.htm"
+
+  @geoTaskFooterInvest @geoTaskFooter
+  Scenario: User clicks on investor relations in the Footer on the Visitor GeoTask Page
+    Given user is on a visitor site tball page
+    """
+    /companylist/t/indianapolis/install-keypad-lock.htm
+    """
+    When a user performs actions
+      | action_method   | action_params                               |
+      | move_to_element | css: #footer--investor-relations-link       |
+      | click           | css: #footer--investor-relations-link       |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value                       |
+      | description      | Investor Relations link in footer  |
+    And the segment call contains parameters
+      | prop_key               | prop_value                           |
+      | activityLocation       | Visitor App : Geo Task                                      |
+      | description            | Investor Relations link in footer    |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angihomeservices.com/investor-overview"
+
+  @geoTaskFooterAboutUs @geoTaskFooter
+  Scenario: User clicks on about us in the Footer on the Visitor GeoTask Page
+    Given user is on a visitor site tball page
+    """
+    /companylist/t/indianapolis/install-keypad-lock.htm
+    """
+    When a user performs actions
+      | action_method   | action_params                    |
+      | move_to_element | css: #footer--about-us-link      |
+      | click           | css: #footer--about-us-link      |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value                       |
+      | description      | About Angie’s List link in footer  |
+    And the segment call contains parameters
+      | prop_key               | prop_value                           |
+      | activityLocation       | Visitor App : Geo Task                                      |
+      | description            | About Angie’s List link in footer    |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/aboutus.htm"
+
+  @geoTaskFooterCareers @geoTaskFooter
+  Scenario: User clicks on careers in the Footer on the Visitor GeoTask Page
+    Given user is on a visitor site tball page
+    """
+    /companylist/t/indianapolis/install-keypad-lock.htm
+    """
+    When a user performs actions
+      | action_method   | action_params                    |
+      | move_to_element | css: #footer--careers-link       |
+      | click           | css: #footer--careers-link       |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value            |
+      | description      | Careers link in footer  |
+    And the segment call contains parameters
+      | prop_key               | prop_value                |
+      | activityLocation       | Visitor App : Geo Task                           |
+      | description            | Careers link in footer    |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".abouthomeadvisor.com/careers/"
+
+  @geoTaskFooterFaq @geoTaskFooter
+  Scenario: User clicks on FAQ in the Footer on the Visitor GeoTask Page
+    Given user is on a visitor site tball page
+    """
+    /companylist/t/indianapolis/install-keypad-lock.htm
+    """
+    When a user performs actions
+      | action_method   | action_params               |
+      | move_to_element | css: #footer--faq-link      |
+      | click           | css: #footer--faq-link      |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value         |
+      | description      | FAQs link in footer  |
+    And the segment call contains parameters
+      | prop_key               | prop_value             |
+      | activityLocation       | Visitor App : Geo Task                        |
+      | description            | FAQs link in footer    |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/faq/"
+
+  @geoTaskFooterContactUs @geoTaskFooter
+  Scenario: User clicks on Contact Us in the Footer on the Visitor GeoTask Page
+    Given user is on a visitor site tball page
+    """
+    /companylist/t/indianapolis/install-keypad-lock.htm
+    """
+    When a user performs actions
+      | action_method   | action_params                      |
+      | move_to_element | css: #footer--contact-us-link      |
+      | click           | css: #footer--contact-us-link      |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value               |
+      | description      | Contact Us link in footer  |
+    And the segment call contains parameters
+      | prop_key               | prop_value                   |
+      | activityLocation       | Visitor App : Geo Task                              |
+      | description            | Contact Us link in footer    |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/member/login"
+
+  @geoTaskFooterJoinRight @geoTaskFooter
+  Scenario: User clicks on Join - Right in the Footer on the Visitor GeoTask Page
+    Given user is on a visitor site tball page
+    """
+    /companylist/t/indianapolis/install-keypad-lock.htm
+    """
+    When a user performs actions
+      | action_method   | action_params                  |
+      | move_to_element | css: #footer--join-button      |
+      | click           | css: #footer--join-button      |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value           |
+      | description      | Join button in footer  |
+    And the segment call contains parameters
+      | prop_key               | prop_value               |
+      | activityLocation       | Visitor App : Geo Task                          |
+      | description            | Join button in footer    |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/app/signup"
+
+  @geoTaskFooterIos @geoTaskFooter
+  Scenario: User clicks on iOS in the Footer on the Visitor GeoTask Page
+    Given user is on a visitor site tball page
+    """
+    /companylist/t/indianapolis/install-keypad-lock.htm
+    """
+    When a user performs actions
+      | action_method   | action_params                     |
+      | move_to_element | css: #footer--app-store-badge     |
+      | click           | css: #footer--app-store-badge     |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value               |
+      | description      | App Store badge in footer  |
+    And the segment call contains parameters
+      | prop_key               | prop_value                   |
+      | activityLocation       | Visitor App : Geo Task                              |
+      | description            | App Store badge in footer    |
+
+  @geoTaskFooterAndroid @geoTaskFooter
+  Scenario: User clicks on Android in the Footer on the Visitor GeoTask Page
+    Given user is on a visitor site tball page
+    """
+    /companylist/t/indianapolis/install-keypad-lock.htm
+    """
+    When a user performs actions
+      | action_method   | action_params                       |
+      | move_to_element | css: #footer--google-play-badge     |
+      | click           | css: #footer--google-play-badge     |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value                 |
+      | description      | Google Play badge in footer  |
+    And the segment call contains parameters
+      | prop_key               | prop_value                     |
+      | activityLocation       | Visitor App : Geo Task                                |
+      | description            | Google Play badge in footer    |
+
+  @geoTaskFooterTweetTweet @geoTaskFooter
+  Scenario: User clicks on Tweet Tweet in the Footer on the Visitor GeoTask Page
+    Given user is on a visitor site tball page
+    """
+    /companylist/t/indianapolis/install-keypad-lock.htm
+    """
+    When a user performs actions
+      | action_method   | action_params                  |
+      | move_to_element | css: #footer--twitter-icon     |
+      | click           | css: #footer--twitter-icon     |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value            |
+      | description      | Twitter icon in footer  |
+    And the segment call contains parameters
+      | prop_key               | prop_value                |
+      | activityLocation       | Visitor App : Geo Task                           |
+      | description            | Twitter icon in footer    |
+
+  @geoTaskFooterBook @geoTaskFooter
+  Scenario: User clicks on Face O' Books in the Footer on the Visitor GeoTask Page
+    Given user is on a visitor site tball page
+    """
+    /companylist/t/indianapolis/install-keypad-lock.htm
+    """
+    When a user performs actions
+      | action_method   | action_params                   |
+      | move_to_element | css: #footer--facebook-icon     |
+      | click           | css: #footer--facebook-icon     |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value             |
+      | description      | Facebook icon in footer  |
+    And the segment call contains parameters
+      | prop_key               | prop_value                 |
+      | activityLocation       | Visitor App : Geo Task                            |
+      | description            | Facebook icon in footer    |
+
+  @geoTaskPinterest @geoTaskFooter
+  Scenario: User clicks on Pins in the Footer on the Visitor GeoTask Page
+    Given user is on a visitor site tball page
+    """
+    /companylist/t/indianapolis/install-keypad-lock.htm
+    """
+    When a user performs actions
+      | action_method   | action_params                    |
+      | move_to_element | css: #footer--pinterest-icon     |
+      | click           | css: #footer--pinterest-icon     |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value              |
+      | description      | Pinterest icon in footer  |
+    And the segment call contains parameters
+      | prop_key               | prop_value                  |
+      | activityLocation       | Visitor App : Geo Task                             |
+      | description            | Pinterest icon in footer    |
