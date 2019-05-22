@@ -551,7 +551,7 @@ Feature:
       | description      | Join For Free link in footer |
     And the segment call contains parameters
       | prop_key               | prop_value                   |
-      | activityLocation       | Visitor App : Geo Task                              |
+      | activityLocation       | Visitor App : Geo Task       |
       | description            | Join For Free link in footer |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/app/signup"
@@ -591,7 +591,7 @@ Feature:
       | description      | Services Near Me link in footer |
     And the segment call contains parameters
       | prop_key               | prop_value                      |
-      | activityLocation       | Visitor App : Geo Task                                 |
+      | activityLocation       | Visitor App : Geo Task       |
       | description            | Services Near Me link in footer |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/nearme/"
@@ -611,7 +611,7 @@ Feature:
       | description      | How It Works link in footer |
     And the segment call contains parameters
       | prop_key               | prop_value                      |
-      | activityLocation       | Visitor App : Geo Task                                 |
+      | activityLocation       | Visitor App : Geo Task       |
       | description            | How It Works link in footer     |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/how-it-works.htm"
