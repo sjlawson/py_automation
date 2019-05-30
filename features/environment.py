@@ -3,6 +3,7 @@ from reporters.junit import JUnitReporter
 from selenium import webdriver
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from selenium.webdriver.common.proxy import Proxy as SeleniumProxy, ProxyType
+from selenium.webdriver.firefox.options import Options as FirefoxOptions
 from unittest import TestCase
 from common.proxy import *
 import yaml, os, datetime, json, requests
@@ -133,10 +134,10 @@ def set_proxy(caps):
         "httpProxy": PROXY,
         "ftpProxy": PROXY,
         "sslProxy": PROXY,
-        "noProxy": None,
+        # "noProxy": None,
         "proxyType": "MANUAL",
-        "class": "org.openqa.selenium.Proxy",
-        "autodetect": False
+        # "class": "org.openqa.selenium.Proxy",
+        # "autodetect": False
     }
 
     return caps
@@ -159,22 +160,10 @@ def set_caps(caps, method_name):
 def selenium_browser_firefox(context):
     caps = DesiredCapabilities.FIREFOX.copy()
     caps = set_proxy(caps)
-    ## may revert to this in experiments
-    # myProxy = context.proxy_addr
-    # print(myProxy)
-    # p = Proxy(client='firefox')
-    # p.proxyType = ProxyType.MANUAL
-    # p.httpProxy = myProxy
-    # p.sslProxy = myProxy
-    # p = SeleniumProxy({
-    #     "proxy_type": {'ff_value': 1, 'string': 'MANUAL'},
-    #     "httpProxy": myProxy,
-    #     "sslProxy":myProxy,
-    #     "noProxy": ""
-    # })
-
-    p.add_to_capabilities(caps)
-    context.browser = webdriver.Firefox(capabilities=caps)
+    options = FirefoxOptions()
+    if context.headless:
+        options.add_argument("--headless")
+    context.browser = webdriver.Firefox(options=options, capabilities=caps)
 
     yield context.browser
     context.browser.quit()
@@ -252,10 +241,13 @@ def before_all(context):
         use_fixture(chrome_performance_logs, context)
         context.noproxy = True
     elif context.fixture == 'headless' and browsername == 'chrome':
+        context.headless = True
         use_fixture(chrome_headless, context)
     elif context.fixture == 'headless' and browsername == 'firefox':
+        context.headless = True
         use_fixture(selenium_browser_firefox, context)
     elif context.fixture == 'local':
+        context.headless = False
         use_fixture(chrome_native, context)
     elif context.fixture == 'cbt':
         use_fixture(remote_cbt, context)
