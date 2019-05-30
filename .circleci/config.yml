@@ -45,7 +45,9 @@ jobs:
       - run:
           name: Run subset of tests
           command: |
-            ./behave_docker_test.sh al_py_automation_al_py_automation_1 cbt chrome tags circle
+            ./behave_docker_test.sh al_py_automation_al_py_automation_1 headless chrome tags geoTaskChicagoKeypadPageCall
+
+            # ./behave_docker_test.sh al_py_automation_al_py_automation_1 cbt chrome tags circle
 
       # - run:
       #     name: Install dependencies and launch framework
