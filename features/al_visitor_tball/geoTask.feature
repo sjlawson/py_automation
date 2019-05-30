@@ -111,7 +111,7 @@ Feature:
       | activityLocation | Visitor App : Geo Task |
     And the segment call contains parameters
       | prop_key               | prop_value                            |
-      | activityLocation       | Visitor App : Geo Task Visitor App : Geo Task                |
+      | activityLocation       | Visitor App : Geo Task                |
       | description            | Interior menu category link in header |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/appliance-repair.htm"
@@ -131,7 +131,7 @@ Feature:
       | activityLocation | Visitor App : Geo Task |
     And the segment call contains parameters
       | prop_key               | prop_value                            |
-      | activityLocation       | Visitor App : Geo Task Visitor App : Geo Task                |
+      | activityLocation       | Visitor App : Geo Task                |
       | description            | Interior menu category link in header |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/hvac.htm"
@@ -151,7 +151,7 @@ Feature:
       | activityLocation | Visitor App : Geo Task |
     And the segment call contains parameters
       | prop_key               | prop_value                                       |
-      | activityLocation       | Visitor App : Geo Task Visitor App : Geo Task                           |
+      | activityLocation       | Visitor App : Geo Task                           |
       | description            | Interior menu view all categories link in header |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/"
@@ -171,7 +171,7 @@ Feature:
       | activityLocation | Visitor App : Geo Task |
     And the segment call contains parameters
       | prop_key               | prop_value                            |
-      | activityLocation       | Visitor App : Geo Task Visitor App : Geo Task                |
+      | activityLocation       | Visitor App : Geo Task                |
       | description            | Exterior menu category link in header |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/masonry.htm"
@@ -191,7 +191,7 @@ Feature:
       | activityLocation | Visitor App : Geo Task |
     And the segment call contains parameters
       | prop_key               | prop_value                                       |
-      | activityLocation       | Visitor App : Geo Task Visitor App : Geo Task                           |
+      | activityLocation       | Visitor App : Geo Task                           |
       | description            | Exterior menu view all categories link in header |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/"
@@ -211,7 +211,7 @@ Feature:
       | activityLocation | Visitor App : Geo Task |
     And the segment call contains parameters
       | prop_key               | prop_value                                            |
-      | activityLocation       | Visitor App : Geo Task Visitor App : Geo Task                                |
+      | activityLocation       | Visitor App : Geo Task                                |
       | description            | Lawn & Garden menu category link in header |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/lawn-irrigation.htm"
@@ -231,7 +231,7 @@ Feature:
       | activityLocation | Visitor App : Geo Task |
     And the segment call contains parameters
       | prop_key               | prop_value                                            |
-      | activityLocation       | Visitor App : Geo Task Visitor App : Geo Task                                |
+      | activityLocation       | Visitor App : Geo Task                                |
       | description            | Lawn & Garden menu view all categories link in header |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/"
@@ -251,7 +251,7 @@ Feature:
       | activityLocation | Visitor App : Geo Task |
     And the segment call contains parameters
       | prop_key               | prop_value                        |
-      | activityLocation       | Visitor App : Geo Task Visitor App : Geo Task            |
+      | activityLocation       | Visitor App : Geo Task            |
       | description            | More menu category link in header |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/hauling.htm"
@@ -271,7 +271,7 @@ Feature:
       | activityLocation | Visitor App : Geo Task |
     And the segment call contains parameters
       | prop_key               | prop_value                     |
-      | activityLocation       | Visitor App : Geo Task Visitor App : Geo Task         |
+      | activityLocation       | Visitor App : Geo Task         |
       | description            | Near Me link in desktop header |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/nearme/"
@@ -291,7 +291,7 @@ Feature:
       | activityLocation | Visitor App : Geo Task |
     And the segment call contains parameters
       | prop_key               | prop_value                                   |
-      | activityLocation       | Visitor App : Geo Task Visitor App : Geo Task                       |
+      | activityLocation       | Visitor App : Geo Task                       |
       | description            | More menu view all categories link in header |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/"
@@ -312,7 +312,7 @@ Feature:
       | activityLocation | Visitor App : Geo Task |
     And the segment call contains parameters
       | prop_key               | prop_value                                    |
-      | activityLocation       | Visitor App : Geo Task Visitor App : Geo Task                        |
+      | activityLocation       | Visitor App : Geo Task                        |
       | description            | Articles & Advice menu article link in header |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/outdoor-living/"
@@ -332,7 +332,7 @@ Feature:
       | activityLocation | Visitor App : Geo Task |
     And the segment call contains parameters
       | prop_key               | prop_value                                              |
-      | activityLocation       | Visitor App : Geo Task Visitor App : Geo Task                                  |
+      | activityLocation       | Visitor App : Geo Task                                  |
       | description            | Articles & Advice menu view all articles link in header |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/articles/"
