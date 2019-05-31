@@ -46,11 +46,8 @@ jobs:
           name: Run subset of tests
           command: |
             ./behave_docker_test.sh al_py_automation_al_py_automation_1 headless firefox tags geoTaskChicagoKeypadPageCall
-      - run:
-          name: Stop container
-          command: |
             docker stop al_py_automation_al_py_automation_1
-          
+            
             # ./behave_docker_test.sh al_py_automation_al_py_automation_1 cbt chrome tags circle
 
       # - run:
