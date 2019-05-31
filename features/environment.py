@@ -162,6 +162,9 @@ def selenium_browser_firefox(context):
     caps = set_proxy(caps)
     options = FirefoxOptions()
     if context.headless:
+        caps['marionette'] = False
+        display = Display(visible=0, size=(800, 800))
+        display.start()
         options.add_argument("--headless")
     context.browser = webdriver.Firefox(options=options, capabilities=caps)
 
