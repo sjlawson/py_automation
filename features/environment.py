@@ -163,16 +163,14 @@ def selenium_browser_firefox(context):
     options = FirefoxOptions()
     if context.headless:
         options.add_argument("--headless")
-        with Display(visible=0, size=(800, 800)) as display:
-            display.start()
-            context.browser = webdriver.Firefox(options=options, capabilities=caps)
-            yield context.browser
-            context.browser.quit()
-    else:
-        context.browser = webdriver.Firefox(options=options, capabilities=caps)
-        yield context.browser
-        context.browser.quit()
+        display = Display(visible=0, size=(800, 800))
+        display.start()
 
+    context.browser = webdriver.Firefox(options=options, capabilities=caps)
+    yield context.browser
+    context.browser.quit()
+    if context.headless:
+        display.stop()
 
 def selenium_browser_safari(context):
     method_name = 'safari'
