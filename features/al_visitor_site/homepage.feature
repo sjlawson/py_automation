@@ -1672,7 +1672,7 @@ Feature:
 ##### Body Tests #####
 
 
-  @homePageBodySegmentHeroJoinCta @circle @daily_homepage_regression @body_regression
+  @homePageBodySegmentHeroJoinCta @daily_homepage_regression @body_regression
   Scenario: User clicks on hero Join button on Drupal Homepage
     Given user is on a visitor site page
     """
@@ -1694,7 +1694,7 @@ Feature:
     And the landing URL contains ".angieslist.com/app/signup"
 
 
-  @homePageBodySegmentHeroSRCTAFindProsNoText @circle @daily_homepage_regression @body_regression
+  @homePageBodySegmentHeroSRCTAFindProsNoText @circleci @daily_homepage_regression @body_regression
   Scenario: User clicks on hero Find Pros CTA (No Text) button on Drupal Homepage
     Given user is on a visitor site page
     """

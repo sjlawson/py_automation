@@ -238,8 +238,9 @@ def before_all(context):
 
     junit_reporter = JUnitReporter(context.config)
     context.config.reporters.append(junit_reporter)
-
     context.noproxy = False
+    context.headless = False
+
     if context.fixture == 'noproxy':
         use_fixture(chrome_performance_logs, context)
         context.noproxy = True
@@ -249,9 +250,10 @@ def before_all(context):
     elif context.fixture == 'headless' and browsername == 'firefox':
         context.headless = True
         use_fixture(selenium_browser_firefox, context)
-    elif context.fixture == 'local':
-        context.headless = False
+    elif context.fixture == 'local' and browsername == 'chrome':
         use_fixture(chrome_native, context)
+    elif context.fixture == 'local' and browsername == 'firefox':
+        use_fixture(selenium_browser_firefox, context)
     elif context.fixture == 'cbt':
         use_fixture(remote_cbt, context)
     elif context.fixture == 'sauce':
