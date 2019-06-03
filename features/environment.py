@@ -40,6 +40,7 @@ def chrome_headless(context):
     yield context.browser
     # -- CLEANUP-FIXTURE PART:
     context.browser.quit()
+    display.stop()
 
 @fixture
 def chrome_performance_logs(context):
