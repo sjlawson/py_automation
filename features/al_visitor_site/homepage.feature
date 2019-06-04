@@ -1,5 +1,14 @@
 Feature:
 
+  @accessibility
+  Scenario: Home page accessibility test
+    Given user is on a visitor site page
+    """
+    /
+    """
+    When the page has finished loading
+    Then the page is tested for accessibility
+    
   @homePageSegmentPagecall @daily_auto @daily_homepage_regression @header_regression
   Scenario: Segment pagecall when homepage loads
     Given user is on a visitor site page
