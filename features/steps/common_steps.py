@@ -18,11 +18,14 @@ def step_impl(context):
 def step_impl(context):
     axe = Axe(context.browser)
     axe.inject()
-    results = axe.run()
+    results = axe.run(options={'runOnly': { 'type': 'tag', 'values': ['wcag2a']}})
     current_url = context.browser.current_url
     try:
         assert len(results["violations"]) == 0
         context.test_case.test_result = 'pass'
     except AssertionError as ae:
         context.test_case.test_result = 'fail'
-        raise AssertionError('Page at url: %s failed accesibility with: %s ' % (current_url, str(axe.report(results["violations"])) ))
+        violations = str(axe.report(results["violations"]))
+        with open('./reports/ADA_violations.txt', 'w') as report:
+            report.write(violations)
+        raise AssertionError('Page at url: %s failed accesibility with: %s ' % (current_url, violations))
