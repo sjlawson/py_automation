@@ -1,6 +1,6 @@
 from behave import given, then, when
 from common.SegmentTestHelper import SegmentTestHelper
-from axe_selenium_python import Axe
+from common.BehaveStepHelper import BehaveStepHelper
 from selenium.webdriver.common.keys import Keys
 import time
 
@@ -14,18 +14,6 @@ def step_impl(context, keycode, element):
 def step_impl(context):
     time.sleep(3)
 
-@then('the page is tested for accessibility')
+@then('the page is tested for accessibility wcag2a standards')
 def step_impl(context):
-    axe = Axe(context.browser)
-    axe.inject()
-    results = axe.run(options={'runOnly': { 'type': 'tag', 'values': ['wcag2a']}})
-    current_url = context.browser.current_url
-    try:
-        assert len(results["violations"]) == 0
-        context.test_case.test_result = 'pass'
-    except AssertionError as ae:
-        context.test_case.test_result = 'fail'
-        violations = str(axe.report(results["violations"]))
-        with open('./reports/ADA_violations.txt', 'w') as report:
-            report.write(violations)
-        raise AssertionError('Page at url: %s failed accesibility with: %s ' % (current_url, violations))
+    BehaveStepHelper.accessibility(context)

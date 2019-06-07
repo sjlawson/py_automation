@@ -7,7 +7,17 @@ Feature:
     /
     """
     When the page has finished loading
-    Then the page is tested for accessibility
+    Then the page is tested for accessibility wcag2a standards
+
+  @accessibility
+  Scenario Outline: run wcag2a accessibility test on multiple pages
+    Given user is on visitor site page with path "<path>"
+    When the page has finished loading
+    Then the page is tested for accessibility wcag2a standards
+    Examples: path
+    | path         |
+    | /companylist |
+    | /articles    |
     
   @homePageSegmentPagecall @daily_auto @daily_homepage_regression @header_regression
   Scenario: Segment pagecall when homepage loads

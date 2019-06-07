@@ -218,11 +218,11 @@ def launch_framework(*args):
     pyproxy.start()
 
     time.sleep(1)
-    if os.environ['SAUCE_USERNAME']:
+    if 'SAUCE_USERNAME' in os.environ and os.environ['SAUCE_USERNAME']:
         sc = Process(target=start_sc)
         sc.start()
 
-    if os.environ['CBT_USER']:
+    if 'CBT_USER' in os.environ and os.environ['CBT_USER']:
         cbt = Process(target=start_cbt)
         cbt.start()
 

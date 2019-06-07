@@ -223,6 +223,10 @@ def before_scenario(context, scenario):
 
 
 def before_all(context):
+    if os.path.isfile('reports/test-results.xml'):
+        os.remove('reports/test-results.xml')
+    if os.path.isfile('reports/ADA_violations.txt'):
+        os.remove('reports/ADA_violations.txt')
     context.test_case = TestCase()
     context.test_case.test_result = 'fail'
     # setup mountebank imposter
@@ -275,7 +279,8 @@ def before_all(context):
 
 
 def after_all(context):
-    with open('reports/test-results.xml', 'r+') as f:
-        content = f.read()
-        f.seek(0, 0)
-        f.write('<testsuites>' + '\n' + content + '\n' + '</testsuites>')
+    if os.path.isfile('reports/test-results.xml'):
+        with open('reports/test-results.xml', 'r+') as f:
+            content = f.read()
+            f.seek(0, 0)
+            f.write('<testsuites>' + '\n' + content + '\n' + '</testsuites>')
