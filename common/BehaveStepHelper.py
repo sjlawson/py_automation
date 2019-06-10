@@ -2,10 +2,10 @@ from axe_selenium_python import Axe
 
 class BehaveStepHelper:
 
-    def accessibility(context):
+    def accessibility(context, acc_standard):
         axe = Axe(context.browser)
         axe.inject()
-        results = axe.run(options={'runOnly': { 'type': 'tag', 'values': ['wcag2a']}})
+        results = axe.run(options={'runOnly': { 'type': 'tag', 'values': [acc_standard]}})
         current_url = context.browser.current_url
         try:
             assert len(results["violations"]) == 0

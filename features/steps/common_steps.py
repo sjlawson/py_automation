@@ -14,6 +14,6 @@ def step_impl(context, keycode, element):
 def step_impl(context):
     time.sleep(3)
 
-@then('the page is tested for accessibility wcag2a standards')
-def step_impl(context):
-    BehaveStepHelper.accessibility(context)
+@then('the page should meet "{acc_standard}" accessibility guidelines')
+def step_impl(context, acc_standard):
+    BehaveStepHelper.accessibility(context, acc_standard)

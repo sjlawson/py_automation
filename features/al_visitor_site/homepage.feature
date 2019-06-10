@@ -7,13 +7,13 @@ Feature:
     /
     """
     When the page has finished loading
-    Then the page is tested for accessibility wcag2a standards
+    Then the page should meet "wcag2a" accessibility guidelines
 
   @accessibility
   Scenario Outline: run wcag2a accessibility test on multiple pages
     Given user is on visitor site page with path "<path>"
     When the page has finished loading
-    Then the page is tested for accessibility wcag2a standards
+    Then the page should meet "wcag2a" accessibility guidelines
     Examples: path
     | path         |
     | /companylist |
