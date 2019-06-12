@@ -225,8 +225,9 @@ def before_scenario(context, scenario):
 def before_all(context):
     if os.path.isfile('reports/test-results.xml'):
         os.remove('reports/test-results.xml')
-    if os.path.isfile('reports/ADA_violations.txt'):
-        os.remove('reports/ADA_violations.txt')
+    if os.path.isfile('reports/accessibility_violations.txt'):
+        os.remove('reports/accessibility_violations.txt')
+
     context.test_case = TestCase()
     context.test_case.test_result = 'fail'
     # setup mountebank imposter

@@ -2,7 +2,8 @@ from behave import given, then, when
 from common.SegmentTestHelper import SegmentTestHelper
 from common.BehaveStepHelper import BehaveStepHelper
 from selenium.webdriver.common.keys import Keys
-import time
+import os, time
+
 
 @then('press the "{keycode}" key while "{element}" is in focus')
 def step_impl(context, keycode, element):
@@ -14,6 +15,27 @@ def step_impl(context, keycode, element):
 def step_impl(context):
     time.sleep(3)
 
-@then('the page is tested for accessibility wcag2a standards')
+
+@then('the page should meet "{acc_standard}" accessibility guidelines')
+def step_impl(context, acc_standard):
+    BehaveStepHelper.accessibility(context, acc_standard)
+
+
+@given('a list of absolute URLs and Accessibility standard')
 def step_impl(context):
-    BehaveStepHelper.accessibility(context)
+    context.accessibility_urls = os.environ['ACPATHLIST'].split(',')
+    context.acc_standard = os.environ['ACSTANDARD']
+
+
+@then('each page at the given URL should meet given accessibility standard')
+def step_impl(context):
+    message = ""
+    for url in context.accessibility_urls:
+        context.browser.get(url)
+        time.sleep(3)
+        try:
+            BehaveStepHelper.accessibility(context, context.acc_standard)
+        except AssertionError as ae:
+            message = str(ae)
+    if context.test_case.test_result == 'fail':
+        raise AssertionError(message)

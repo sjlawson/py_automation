@@ -17,3 +17,7 @@ class BehaveStepHelper:
             with open('./reports/accessibility_violations.txt', 'a') as report:
                 report.write(message)
             raise AssertionError(message)
+
+
+    def page_loaded(context):
+        time.sleep(3)
