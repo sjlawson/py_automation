@@ -36,6 +36,6 @@ def step_impl(context):
         try:
             BehaveStepHelper.accessibility(context, context.acc_standard)
         except AssertionError as ae:
-            message = str(ae)
+            message += str(ae)
     if context.test_case.test_result == 'fail':
         raise AssertionError(message)
