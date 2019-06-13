@@ -1,5 +1,24 @@
 Feature:
 
+  @accessibility
+  Scenario: Home page accessibility test
+    Given user is on a visitor site page
+    """
+    /
+    """
+    When the page has finished loading
+    Then the page should meet "wcag2a" accessibility guidelines
+
+  @accessibility
+  Scenario Outline: run wcag2a accessibility test on multiple pages
+    Given user is on visitor site page with path "<path>"
+    When the page has finished loading
+    Then the page should meet "wcag2a" accessibility guidelines
+    Examples: path
+    | path         |
+    | /companylist |
+    | /articles    |
+    
   @homePageSegmentPagecall @daily_auto @daily_homepage_regression @header_regression
   Scenario: Segment pagecall when homepage loads
     Given user is on a visitor site page
