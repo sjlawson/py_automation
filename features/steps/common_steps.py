@@ -39,6 +39,7 @@ def step_impl(context):
 def step_impl(context):
     message = ""
     for url in context.accessibility_urls:
+        BehaveStepHelper.token_auth(context, url)
         context.browser.get(url)
         time.sleep(3)
         try:

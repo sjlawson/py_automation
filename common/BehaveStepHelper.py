@@ -27,3 +27,10 @@ class BehaveStepHelper:
 
     def page_loaded(context):
         time.sleep(3)
+
+    def token_auth(context, url=None):
+        if context.auth_token:
+            url = context.url if not url else url
+            context.browser.get(url)
+            cookie = {'name': 'authToken', 'value': context.auth_token}
+            context.browser.add_cookie(cookie)
