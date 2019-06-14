@@ -3,11 +3,19 @@ from common.SegmentTestHelper import SegmentTestHelper
 import time
 
 
+def token_auth(context):
+    if context.auth_token:
+        context.browser.get(context.url)
+        cookie = {'name': 'authToken', 'value': context.auth_token}
+        context.browser.add_cookie(cookie)
+
+
 @given('user is on a member site page')
 def step_impl(context):
     appsuite_env = 'al_member_site'
     appsuite_url = context.appsuites[appsuite_env]['base_url']
     context.url = appsuite_url + context.text
+    token_auth(context)
     context.browser.get(context.url)
     time.sleep(1)
 
@@ -17,6 +25,7 @@ def step_impl(context):
     appsuite_env = 'al_member_site'
     appsuite_url = context.appsuites[appsuite_env]['base_url'] + '/app/reviews'
     context.url = appsuite_url + context.text
+    token_auth(context)
     context.browser.get(context.url)
 
 

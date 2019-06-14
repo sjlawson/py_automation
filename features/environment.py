@@ -276,6 +276,8 @@ def before_all(context):
         for key in context.appsuites.keys():
             context.appsuites[key]['base_url'] = os.environ['BASEURL_OVERRIDE']
 
+    context.auth_token = os.environ.get('AUTH_TOKEN')
+
     print("Starting Python Selenium Test Framework")
 
 

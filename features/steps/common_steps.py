@@ -18,6 +18,14 @@ def step_impl(context):
     BehaveStepHelper.page_loaded(context)
 
 
+@step('the page shows the user is authenticated')
+def step_impl(context):
+    print(context.browser.get_cookies())
+    cookie = context.browser.get_cookie('authToken')
+    print("The Cookie: ", cookie)
+    assert cookie is not None
+    time.sleep(1)
+
 @then('the page should meet "{acc_standard}" accessibility guidelines')
 def step_impl(context, acc_standard):
     BehaveStepHelper.accessibility(context, acc_standard)
