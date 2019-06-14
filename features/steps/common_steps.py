@@ -20,9 +20,7 @@ def step_impl(context):
 
 @step('the page shows the user is authenticated')
 def step_impl(context):
-    print(context.browser.get_cookies())
     cookie = context.browser.get_cookie('authToken')
-    print("The Cookie: ", cookie)
     assert cookie is not None
     time.sleep(1)
 
