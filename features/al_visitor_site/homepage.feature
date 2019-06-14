@@ -1,5 +1,5 @@
 Feature:
-
+    
   @accessibility
   Scenario: Home page accessibility test
     Given user is on a visitor site page

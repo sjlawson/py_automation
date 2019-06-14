@@ -6,6 +6,7 @@ geckodriver.log
 .flycheck*
 reports/
 container_reports/*.xml
+container_reports/accessibility_violations.txt
 .DS_Store
 .idea/*
 .vscode/*

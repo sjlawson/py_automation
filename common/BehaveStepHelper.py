@@ -18,9 +18,19 @@ class BehaveStepHelper:
             violations = str(axe.report(results["violations"]))
             message = 'Page at url: %s failed accesibility with: %s ' %\
                 (current_url, violations)
-            with open('./reports/accessibility_violations.txt', 'a') as report:
-                report.write(message)
+            BehaveStepHelper.save_accessibility_report(message)
             raise AssertionError(message)
+
+    def save_accessibility_report(message):
+        with open('./reports/accessibility_violations.txt', 'a') as report:
+                report.write(message)
 
     def page_loaded(context):
         time.sleep(3)
+
+    def token_auth(context, url=None):
+        if context.auth_token:
+            url = context.url if not url else url
+            context.browser.get(url)
+            cookie = {'name': 'authToken', 'value': context.auth_token}
+            context.browser.add_cookie(cookie)
