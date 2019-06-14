@@ -43,7 +43,9 @@ def step_impl(context):
         time.sleep(3)
         try:
             BehaveStepHelper.accessibility(context, context.acc_standard)
+            message += "\nPage at URL %s PASSED accessibility standard %s\n" % (context.browser.current_url, context.acc_standard)
         except AssertionError as ae:
             message += str(ae)
+
     if context.test_case.test_result == 'fail':
         raise AssertionError(message)

@@ -18,9 +18,12 @@ class BehaveStepHelper:
             violations = str(axe.report(results["violations"]))
             message = 'Page at url: %s failed accesibility with: %s ' %\
                 (current_url, violations)
-            with open('./reports/accessibility_violations.txt', 'a') as report:
-                report.write(message)
+            BehaveStepHelper.save_accessibility_report(message)
             raise AssertionError(message)
+
+    def save_accessibility_report(message):
+        with open('./reports/accessibility_violations.txt', 'a') as report:
+                report.write(message)
 
     def page_loaded(context):
         time.sleep(3)
