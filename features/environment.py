@@ -3,9 +3,11 @@ from reporters.junit import JUnitReporter
 from selenium import webdriver
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from selenium.webdriver.common.proxy import Proxy as SeleniumProxy, ProxyType
+from selenium.webdriver.firefox.options import Options as FirefoxOptions
 from unittest import TestCase
 from common.proxy import *
 import yaml, os, datetime, json, requests
+from pyvirtualdisplay import Display
 
 if os.path.exists('.env'):
     print('Importing environment from .env...')
@@ -17,6 +19,28 @@ if os.path.exists('.env'):
     if 'BASEURL_OVERRIDE' not in os.environ or os.environ['BASEURL_OVERRIDE'] == 'none':
         os.environ['BASEURL_OVERRIDE'] = ''
 
+@fixture
+def chrome_headless(context):
+    caps = DesiredCapabilities.CHROME
+    caps['loggingPrefs'] = { 'performance': 'INFO'}
+    caps = set_proxy(caps)
+    ch_profile = webdriver.ChromeOptions()
+    ch_profile.perfLoggingPrefs = {'enableNetwork': True, 'traceCategories': 'performance, devtools.network'}
+    ch_profile.add_argument('incognito')
+    ch_profile.add_argument('disable-extensions')
+    ch_profile.add_argument('--headless')
+    ch_profile.add_argument('--no-sandbox')
+    ch_profile.add_argument('--disable-dev-shm-usage')
+    ch_profile.add_argument('--shm-size=2g')
+    ch_profile.add_argument('--proxy-server=%s' % caps['proxy']['httpProxy'])
+    display = Display(visible=0, size=(800, 800))
+    display.start()
+    context.browser = webdriver.Chrome(desired_capabilities=caps, chrome_options=ch_profile, service_args=["--verbose", "--log-path=./qc1.log"])
+    context.browserlog = lambda : context.browser.get_log('performance')
+    yield context.browser
+    # -- CLEANUP-FIXTURE PART:
+    context.browser.quit()
+    display.stop()
 
 @fixture
 def chrome_performance_logs(context):
@@ -105,51 +129,49 @@ def remote_sauce(context):
     context.browser.quit()
 
 
-def set_caps(caps, method_name):
+def set_proxy(caps):
     PROXY = os.environ.get('PROXY', '127.0.0.1:4545')
-    test_client = os.environ.get('OS_PLATFORM', 'Mac OSX 10.12')
-    caps['loggingPrefs'] = { 'performance': 'INFO'}
-    caps['name'] = 'cqtest_' + str(datetime.datetime.now())
-    caps['build'] = '1.0'
-    caps['browserName'] = method_name
-    # caps['platform'] = test_client
-    # caps['screenResolution'] = '1366x768'
-    caps['record_video'] = 'true'
-    caps['record_network'] = 'true'
     caps['proxy'] = {
         "httpProxy": PROXY,
         "ftpProxy": PROXY,
         "sslProxy": PROXY,
-        "noProxy": None,
+        # "noProxy": None,
         "proxyType": "MANUAL",
-        "class": "org.openqa.selenium.Proxy",
-        "autodetect": False
+        # "class": "org.openqa.selenium.Proxy",
+        # "autodetect": False
     }
 
     return caps
 
 
+def set_caps(caps, method_name):
+    test_client = os.environ.get('TEST_CLIENT', 'Mac OSX 10.12')
+    caps['loggingPrefs'] = { 'performance': 'INFO'}
+    caps['name'] = 'cqtest_' + str(datetime.datetime.now())
+    caps['build'] = '1.0'
+    caps['browserName'] = method_name
+    caps['screenResolution'] = '1366x768'
+    caps['record_video'] = 'true'
+    caps['record_network'] = 'true'
+    caps = set_proxy(caps)
+
+    return caps
+
+
 def selenium_browser_firefox(context):
-    myProxy = context.proxy_addr
-    print(myProxy)
-    p = Proxy(client='firefox')
-    p.proxyType = ProxyType.MANUAL
-    p.httpProxy = myProxy
-    p.sslProxy = myProxy
-    p = SeleniumProxy({
-        "proxy_type": {'ff_value': 1, 'string': 'MANUAL'},
-        "httpProxy": myProxy,
-        "sslProxy":myProxy,
-        "noProxy": ""
-    })
     caps = DesiredCapabilities.FIREFOX.copy()
+    caps = set_proxy(caps)
+    options = FirefoxOptions()
+    if context.headless:
+        options.add_argument("--headless")
+        display = Display(visible=0, size=(800, 800))
+        display.start()
 
-    p.add_to_capabilities(caps)
-    context.browser = webdriver.Firefox(capabilities=caps)
-
+    context.browser = webdriver.Firefox(options=options, capabilities=caps)
     yield context.browser
     context.browser.quit()
-
+    if context.headless:
+        display.stop()
 
 def selenium_browser_safari(context):
     method_name = 'safari'
@@ -201,6 +223,11 @@ def before_scenario(context, scenario):
 
 
 def before_all(context):
+    if os.path.isfile('reports/test-results.xml'):
+        os.remove('reports/test-results.xml')
+    if os.path.isfile('reports/accessibility_violations.txt'):
+        os.remove('reports/accessibility_violations.txt')
+
     context.test_case = TestCase()
     context.test_case.test_result = 'fail'
     # setup mountebank imposter
@@ -211,19 +238,28 @@ def before_all(context):
     context.proxy_addr = '%s:%s' % (proxy_host, proxy_port)
     context.mbi_port = int(os.environ.get('MBI_PORT', 58111))
     context.mb_host = os.environ.get('MB_HOST', '127.0.0.1')
-
+    browsername = os.environ.get('BROWSERNAME', 'chrome')
     logging.basicConfig(level=logging.INFO,
                         format='%(asctime)s - %(levelname)s - %(funcName)s:%(lineno)d - %(message)s')
 
     junit_reporter = JUnitReporter(context.config)
     context.config.reporters.append(junit_reporter)
-
     context.noproxy = False
+    context.headless = False
+
     if context.fixture == 'noproxy':
         use_fixture(chrome_performance_logs, context)
         context.noproxy = True
-    elif context.fixture == 'local':
+    elif context.fixture == 'headless' and browsername == 'chrome':
+        context.headless = True
+        use_fixture(chrome_headless, context)
+    elif context.fixture == 'headless' and browsername == 'firefox':
+        context.headless = True
+        use_fixture(selenium_browser_firefox, context)
+    elif context.fixture == 'local' and browsername == 'chrome':
         use_fixture(chrome_native, context)
+    elif context.fixture == 'local' and browsername == 'firefox':
+        use_fixture(selenium_browser_firefox, context)
     elif context.fixture == 'cbt':
         use_fixture(remote_cbt, context)
     elif context.fixture == 'sauce':
@@ -240,11 +276,14 @@ def before_all(context):
         for key in context.appsuites.keys():
             context.appsuites[key]['base_url'] = os.environ['BASEURL_OVERRIDE']
 
+    context.auth_token = os.environ.get('AUTH_TOKEN')
+
     print("Starting Python Selenium Test Framework")
 
 
 def after_all(context):
-    with open('reports/test-results.xml', 'r+') as f:
-        content = f.read()
-        f.seek(0, 0)
-        f.write('<testsuites>' + '\n' + content + '\n' + '</testsuites>')
+    if os.path.isfile('reports/test-results.xml'):
+        with open('reports/test-results.xml', 'r+') as f:
+            content = f.read()
+            f.seek(0, 0)
+            f.write('<testsuites>' + '\n' + content + '\n' + '</testsuites>')

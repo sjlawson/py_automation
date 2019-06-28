@@ -1,6 +1,14 @@
 @memberSegmentExample
 Feature:
-  
+
+  Scenario: verify authToken pattern works
+    Given user is on a member site page
+    """
+    /
+    """
+    When the page has finished loading
+    Then the page shows the user is authenticated
+    
   Scenario: test segment call on clicking the Approximate Cost of Service field on VRF
     Given user is on a member site review page
     """

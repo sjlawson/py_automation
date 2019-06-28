@@ -24,6 +24,14 @@ def step_impl(context):
     time.sleep(1)
 
 
+@given('user is on visitor site page with path "{path}"')
+def step_impl(context, path):
+    appsuite_env = 'al_visitor_site'
+    appsuite_url = context.appsuites[appsuite_env]['base_url']
+    context.url = appsuite_url + path
+    context.browser.get(context.url)
+
+
 @given('user is on a visitor site tball nearme landing page')
 def step_impl(context):
     appsuite_env = 'al_visitor_tball'
