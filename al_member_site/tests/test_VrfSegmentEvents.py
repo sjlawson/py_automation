@@ -15,14 +15,14 @@ class VrfSegmentEvents(SeleniumTestCase):
 
 
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/edit?serviceProviderId=10803144', '#reviews--add-media-button', 'click', False)
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/member/reviews/edit?serviceProviderId=10803144', '#reviews--add-media-button', 'click', False)
 
         segcall_info = {
             'main_field': 'description',
             'main_value': 'Review Form : Choose File Clicked',
             'segment_params': [
                 ('userType', 'Not Authenticated')
-                
+
             ]
         }
 
@@ -41,7 +41,7 @@ class VrfSegmentEvents(SeleniumTestCase):
 
 
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/edit?serviceProviderId=10803144', '#review--cost-of-service-input', 'click', False)
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/member/reviews/edit?serviceProviderId=10803144', '#review--cost-of-service-input', 'click', False)
 
         segcall_info = {
             'main_field': 'description',
@@ -49,7 +49,7 @@ class VrfSegmentEvents(SeleniumTestCase):
             'segment_params': [
                 ('description', 'Review - Approximate cost of service'),
                 ('userType', 'Not Authenticated')
-                
+
             ]
         }
 
@@ -68,7 +68,7 @@ class VrfSegmentEvents(SeleniumTestCase):
 
 
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/edit?serviceProviderId=10803144', '#calendar-input-input', 'click', False)
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/member/reviews/edit?serviceProviderId=10803144', '#calendar-input-input', 'click', False)
 
         segcall_info = {
             'main_field': 'description',
@@ -76,7 +76,7 @@ class VrfSegmentEvents(SeleniumTestCase):
             'segment_params': [
                 ('description', 'Approximate date of service (or last contact)'),
                 ('userType', 'Not Authenticated')
-                
+
             ]
         }
 
@@ -95,7 +95,7 @@ class VrfSegmentEvents(SeleniumTestCase):
 
 
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/edit?serviceProviderId=10803144', '#reviews--willHireAgain-button-no', 'click', False)
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/member/reviews/edit?serviceProviderId=10803144', '#reviews--willHireAgain-button-no', 'click', False)
 
         segcall_info = {
             'main_field': 'reviewSection',
@@ -103,7 +103,7 @@ class VrfSegmentEvents(SeleniumTestCase):
             'segment_params': [
                 ('userResponse', 'No'),
                 ('userType', 'Not Authenticated')
-                
+
             ]
         }
 
@@ -122,7 +122,7 @@ class VrfSegmentEvents(SeleniumTestCase):
 
 
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/edit?serviceProviderId=10803144', '#reviews--willHireAgain-button-yes', 'click', False)
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/member/reviews/edit?serviceProviderId=10803144', '#reviews--willHireAgain-button-yes', 'click', False)
 
         segcall_info = {
             'main_field': 'reviewSection',
@@ -130,7 +130,7 @@ class VrfSegmentEvents(SeleniumTestCase):
             'segment_params': [
                 ('userResponse', 'Yes'),
                 ('userType', 'Not Authenticated')
-                
+
             ]
         }
 
@@ -151,7 +151,7 @@ class VrfSegmentEvents(SeleniumTestCase):
 
 
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/edit?serviceProviderId=10803144', '#review--how-did-it-go-input', 'click', False)
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/member/reviews/edit?serviceProviderId=10803144', '#review--how-did-it-go-input', 'click', False)
 
         segcall_info = {
             'main_field': 'description',
@@ -159,7 +159,7 @@ class VrfSegmentEvents(SeleniumTestCase):
             'segment_params': [
                 ('description', 'Review - How did it go?'),
                 ('userType', 'Not Authenticated')
-                
+
             ]
         }
 
@@ -179,7 +179,7 @@ class VrfSegmentEvents(SeleniumTestCase):
 
 
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/edit?serviceProviderId=10803144', '#review--description-of-work-input', 'click', False)
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/member/reviews/edit?serviceProviderId=10803144', '#review--description-of-work-input', 'click', False)
 
         segcall_info = {
             'main_field': 'description',
@@ -187,7 +187,7 @@ class VrfSegmentEvents(SeleniumTestCase):
             'segment_params': [
                 ('description', 'Review - What work did you need done?'),
                 ('userType', 'Not Authenticated')
-                
+
             ]
         }
 
@@ -206,8 +206,8 @@ class VrfSegmentEvents(SeleniumTestCase):
 
 
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/edit?serviceProviderId=10803144', '#reviews--workComplete-button-no', 'click', False)
-        
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/member/reviews/edit?serviceProviderId=10803144', '#reviews--workComplete-button-no', 'click', False)
+
         segcall_info = {
             'main_field': 'reviewSection',
             'main_value': 'Work Done',
@@ -215,11 +215,11 @@ class VrfSegmentEvents(SeleniumTestCase):
                 ('reviewSection', 'Work Done'),
                 ('userType', 'Not Authenticated'),
                 ('userResponse', 'No'),
-                
+
             ]
         }
 
-       
+
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
@@ -236,8 +236,8 @@ class VrfSegmentEvents(SeleniumTestCase):
 
 
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/edit?serviceProviderId=10803144', '#reviews--workComplete-button-yes', 'click', False)
-        
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/member/reviews/edit?serviceProviderId=10803144', '#reviews--workComplete-button-yes', 'click', False)
+
         segcall_info = {
             'main_field': 'reviewSection',
             'main_value': 'Work Done',
@@ -245,11 +245,11 @@ class VrfSegmentEvents(SeleniumTestCase):
                 ('reviewSection', 'Work Done'),
                 ('userType', 'Not Authenticated'),
                 ('userResponse', 'Yes'),
-                
+
             ]
         }
 
-       
+
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
@@ -262,7 +262,7 @@ class VrfSegmentEvents(SeleniumTestCase):
             return 0
 
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/edit?serviceProviderId=10803144', '#reviews--rating-Overall--A', 'click', False)
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/member/reviews/edit?serviceProviderId=10803144', '#reviews--rating-Overall--A', 'click', False)
 
         segcall_info = {
             'main_field': 'overallGrade',
@@ -272,13 +272,13 @@ class VrfSegmentEvents(SeleniumTestCase):
                 ('autopopulated', 'false'),
                 ('serviceProviderId', '10803144'),
 
-    
+
             ]
         }
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/edit?serviceProviderId=10803144', '#reviews--rating-Overall--B', 'click', False)
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/member/reviews/edit?serviceProviderId=10803144', '#reviews--rating-Overall--B', 'click', False)
 
         segcall_info = {
             'main_field': 'overallGrade',
@@ -288,14 +288,14 @@ class VrfSegmentEvents(SeleniumTestCase):
                 ('autopopulated', 'false'),
                 ('serviceProviderId', '10803144'),
 
-    
+
             ]
         }
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/edit?serviceProviderId=10803144', '#reviews--rating-Overall--C', 'click', False)
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/member/reviews/edit?serviceProviderId=10803144', '#reviews--rating-Overall--C', 'click', False)
 
         segcall_info = {
             'main_field': 'overallGrade',
@@ -305,14 +305,14 @@ class VrfSegmentEvents(SeleniumTestCase):
                 ('autopopulated', 'false'),
                 ('serviceProviderId', '10803144'),
 
-    
+
             ]
         }
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/edit?serviceProviderId=10803144', '#reviews--rating-Overall--D', 'click', False)
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/member/reviews/edit?serviceProviderId=10803144', '#reviews--rating-Overall--D', 'click', False)
 
         segcall_info = {
             'main_field': 'overallGrade',
@@ -322,14 +322,14 @@ class VrfSegmentEvents(SeleniumTestCase):
                 ('autopopulated', 'false'),
                 ('serviceProviderId', '10803144'),
 
-    
+
             ]
         }
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/edit?serviceProviderId=10803144', '#reviews--rating-Overall--F', 'click', False)
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/member/reviews/edit?serviceProviderId=10803144', '#reviews--rating-Overall--F', 'click', False)
 
         segcall_info = {
             'main_field': 'overallGrade',
@@ -339,14 +339,14 @@ class VrfSegmentEvents(SeleniumTestCase):
                 ('autopopulated', 'false'),
                 ('serviceProviderId', '10803144'),
 
-    
+
             ]
         }
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/edit?serviceProviderId=10803144', '#reviews--rating-Price--A', 'click', False)
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/member/reviews/edit?serviceProviderId=10803144', '#reviews--rating-Price--A', 'click', False)
 
         segcall_info = {
             'main_field': 'priceGrade',
@@ -356,14 +356,14 @@ class VrfSegmentEvents(SeleniumTestCase):
                 ('autopopulated', 'false'),
                 ('serviceProviderId', '10803144'),
 
-    
+
             ]
         }
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/edit?serviceProviderId=10803144', '#reviews--rating-Price--B', 'click', False)
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/member/reviews/edit?serviceProviderId=10803144', '#reviews--rating-Price--B', 'click', False)
 
         segcall_info = {
             'main_field': 'priceGrade',
@@ -373,14 +373,14 @@ class VrfSegmentEvents(SeleniumTestCase):
                 ('autopopulated', 'false'),
                 ('serviceProviderId', '10803144'),
 
-    
+
             ]
         }
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/edit?serviceProviderId=10803144', '#reviews--rating-Price--C', 'click', False)
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/member/reviews/edit?serviceProviderId=10803144', '#reviews--rating-Price--C', 'click', False)
 
         segcall_info = {
             'main_field': 'priceGrade',
@@ -390,14 +390,14 @@ class VrfSegmentEvents(SeleniumTestCase):
                 ('autopopulated', 'false'),
                 ('serviceProviderId', '10803144'),
 
-    
+
             ]
         }
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/edit?serviceProviderId=10803144', '#reviews--rating-Price--D', 'click', False)
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/member/reviews/edit?serviceProviderId=10803144', '#reviews--rating-Price--D', 'click', False)
 
         segcall_info = {
             'main_field': 'priceGrade',
@@ -407,14 +407,14 @@ class VrfSegmentEvents(SeleniumTestCase):
                 ('autopopulated', 'false'),
                 ('serviceProviderId', '10803144'),
 
-    
+
             ]
         }
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/edit?serviceProviderId=10803144', '#reviews--rating-Price--F', 'click', False)
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/member/reviews/edit?serviceProviderId=10803144', '#reviews--rating-Price--F', 'click', False)
 
         segcall_info = {
             'main_field': 'priceGrade',
@@ -424,14 +424,14 @@ class VrfSegmentEvents(SeleniumTestCase):
                 ('autopopulated', 'false'),
                 ('serviceProviderId', '10803144'),
 
-    
+
             ]
         }
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/edit?serviceProviderId=10803144', '#reviews--rating-Price--N\/A', 'click', False)
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/member/reviews/edit?serviceProviderId=10803144', '#reviews--rating-Price--N\/A', 'click', False)
 
         segcall_info = {
             'main_field': 'priceGrade',
@@ -441,14 +441,14 @@ class VrfSegmentEvents(SeleniumTestCase):
                 ('autopopulated', 'false'),
                 ('serviceProviderId', '10803144'),
 
-    
+
             ]
         }
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/edit?serviceProviderId=10803144', '#reviews--rating-Quality--A', 'click', False)
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/member/reviews/edit?serviceProviderId=10803144', '#reviews--rating-Quality--A', 'click', False)
 
         segcall_info = {
             'main_field': 'qualityGrade',
@@ -458,14 +458,14 @@ class VrfSegmentEvents(SeleniumTestCase):
                 ('autopopulated', 'false'),
                 ('serviceProviderId', '10803144'),
 
-    
+
             ]
         }
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/edit?serviceProviderId=10803144', '#reviews--rating-Quality--B', 'click', False)
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/member/reviews/edit?serviceProviderId=10803144', '#reviews--rating-Quality--B', 'click', False)
 
         segcall_info = {
             'main_field': 'qualityGrade',
@@ -475,14 +475,14 @@ class VrfSegmentEvents(SeleniumTestCase):
                 ('autopopulated', 'false'),
                 ('serviceProviderId', '10803144'),
 
-    
+
             ]
         }
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/edit?serviceProviderId=10803144', '#reviews--rating-Quality--C', 'click', False)
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/member/reviews/edit?serviceProviderId=10803144', '#reviews--rating-Quality--C', 'click', False)
 
         segcall_info = {
             'main_field': 'qualityGrade',
@@ -492,14 +492,14 @@ class VrfSegmentEvents(SeleniumTestCase):
                 ('autopopulated', 'false'),
                 ('serviceProviderId', '10803144'),
 
-    
+
             ]
         }
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/edit?serviceProviderId=10803144', '#reviews--rating-Quality--D', 'click', False)
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/member/reviews/edit?serviceProviderId=10803144', '#reviews--rating-Quality--D', 'click', False)
 
         segcall_info = {
             'main_field': 'qualityGrade',
@@ -509,14 +509,14 @@ class VrfSegmentEvents(SeleniumTestCase):
                 ('autopopulated', 'false'),
                 ('serviceProviderId', '10803144'),
 
-    
+
             ]
         }
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/edit?serviceProviderId=10803144', '#reviews--rating-Quality--F', 'click', False)
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/member/reviews/edit?serviceProviderId=10803144', '#reviews--rating-Quality--F', 'click', False)
 
         segcall_info = {
             'main_field': 'qualityGrade',
@@ -526,14 +526,14 @@ class VrfSegmentEvents(SeleniumTestCase):
                 ('autopopulated', 'false'),
                 ('serviceProviderId', '10803144'),
 
-    
+
             ]
         }
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/edit?serviceProviderId=10803144', '#reviews--rating-Quality--N\/A', 'click', False)
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/member/reviews/edit?serviceProviderId=10803144', '#reviews--rating-Quality--N\/A', 'click', False)
 
         segcall_info = {
             'main_field': 'qualityGrade',
@@ -543,14 +543,14 @@ class VrfSegmentEvents(SeleniumTestCase):
                 ('autopopulated', 'false'),
                 ('serviceProviderId', '10803144'),
 
-    
+
             ]
         }
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/edit?serviceProviderId=10803144', '#reviews--rating-Responsiveness--A', 'click', False)
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/member/reviews/edit?serviceProviderId=10803144', '#reviews--rating-Responsiveness--A', 'click', False)
 
         segcall_info = {
             'main_field': 'responsivenessGrade',
@@ -560,14 +560,14 @@ class VrfSegmentEvents(SeleniumTestCase):
                 ('autopopulated', 'false'),
                 ('serviceProviderId', '10803144'),
 
-    
+
             ]
         }
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/edit?serviceProviderId=10803144', '#reviews--rating-Responsiveness--B', 'click', False)
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/member/reviews/edit?serviceProviderId=10803144', '#reviews--rating-Responsiveness--B', 'click', False)
 
         segcall_info = {
             'main_field': 'responsivenessGrade',
@@ -577,14 +577,14 @@ class VrfSegmentEvents(SeleniumTestCase):
                 ('autopopulated', 'false'),
                 ('serviceProviderId', '10803144'),
 
-    
+
             ]
         }
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/edit?serviceProviderId=10803144', '#reviews--rating-Responsiveness--C', 'click', False)
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/member/reviews/edit?serviceProviderId=10803144', '#reviews--rating-Responsiveness--C', 'click', False)
 
         segcall_info = {
             'main_field': 'responsivenessGrade',
@@ -594,14 +594,14 @@ class VrfSegmentEvents(SeleniumTestCase):
                 ('autopopulated', 'false'),
                 ('serviceProviderId', '10803144'),
 
-    
+
             ]
         }
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/edit?serviceProviderId=10803144', '#reviews--rating-Responsiveness--D', 'click', False)
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/member/reviews/edit?serviceProviderId=10803144', '#reviews--rating-Responsiveness--D', 'click', False)
 
         segcall_info = {
             'main_field': 'responsivenessGrade',
@@ -611,14 +611,14 @@ class VrfSegmentEvents(SeleniumTestCase):
                 ('autopopulated', 'false'),
                 ('serviceProviderId', '10803144'),
 
-    
+
             ]
         }
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/edit?serviceProviderId=10803144', '#reviews--rating-Responsiveness--F', 'click', False)
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/member/reviews/edit?serviceProviderId=10803144', '#reviews--rating-Responsiveness--F', 'click', False)
 
         segcall_info = {
             'main_field': 'responsivenessGrade',
@@ -628,14 +628,14 @@ class VrfSegmentEvents(SeleniumTestCase):
                 ('autopopulated', 'false'),
                 ('serviceProviderId', '10803144'),
 
-    
+
             ]
         }
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/edit?serviceProviderId=10803144', '#reviews--rating-Responsiveness--N\/A', 'click', False)
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/member/reviews/edit?serviceProviderId=10803144', '#reviews--rating-Responsiveness--N\/A', 'click', False)
 
         segcall_info = {
             'main_field': 'responsivenessGrade',
@@ -645,14 +645,14 @@ class VrfSegmentEvents(SeleniumTestCase):
                 ('autopopulated', 'false'),
                 ('serviceProviderId', '10803144'),
 
-    
+
             ]
         }
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/edit?serviceProviderId=10803144', '#reviews--rating-Punctuality--A', 'click', False)
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/member/reviews/edit?serviceProviderId=10803144', '#reviews--rating-Punctuality--A', 'click', False)
 
         segcall_info = {
             'main_field': 'punctualityGrade',
@@ -662,14 +662,14 @@ class VrfSegmentEvents(SeleniumTestCase):
                 ('autopopulated', 'false'),
                 ('serviceProviderId', '10803144'),
 
-    
+
             ]
         }
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/edit?serviceProviderId=10803144', '#reviews--rating-Punctuality--B', 'click', False)
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/member/reviews/edit?serviceProviderId=10803144', '#reviews--rating-Punctuality--B', 'click', False)
 
         segcall_info = {
             'main_field': 'punctualityGrade',
@@ -679,14 +679,14 @@ class VrfSegmentEvents(SeleniumTestCase):
                 ('autopopulated', 'false'),
                 ('serviceProviderId', '10803144'),
 
-    
+
             ]
         }
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/edit?serviceProviderId=10803144', '#reviews--rating-Punctuality--C', 'click', False)
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/member/reviews/edit?serviceProviderId=10803144', '#reviews--rating-Punctuality--C', 'click', False)
 
         segcall_info = {
             'main_field': 'punctualityGrade',
@@ -696,14 +696,14 @@ class VrfSegmentEvents(SeleniumTestCase):
                 ('autopopulated', 'false'),
                 ('serviceProviderId', '10803144'),
 
-    
+
             ]
         }
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/edit?serviceProviderId=10803144', '#reviews--rating-Punctuality--D', 'click', False)
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/member/reviews/edit?serviceProviderId=10803144', '#reviews--rating-Punctuality--D', 'click', False)
 
         segcall_info = {
             'main_field': 'punctualityGrade',
@@ -713,14 +713,14 @@ class VrfSegmentEvents(SeleniumTestCase):
                 ('autopopulated', 'false'),
                 ('serviceProviderId', '10803144'),
 
-    
+
             ]
         }
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/edit?serviceProviderId=10803144', '#reviews--rating-Punctuality--F', 'click', False)
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/member/reviews/edit?serviceProviderId=10803144', '#reviews--rating-Punctuality--F', 'click', False)
 
         segcall_info = {
             'main_field': 'punctualityGrade',
@@ -730,14 +730,14 @@ class VrfSegmentEvents(SeleniumTestCase):
                 ('autopopulated', 'false'),
                 ('serviceProviderId', '10803144'),
 
-    
+
             ]
         }
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/edit?serviceProviderId=10803144', '#reviews--rating-Punctuality--N\/A', 'click', False)
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/member/reviews/edit?serviceProviderId=10803144', '#reviews--rating-Punctuality--N\/A', 'click', False)
 
         segcall_info = {
             'main_field': 'punctualityGrade',
@@ -747,14 +747,14 @@ class VrfSegmentEvents(SeleniumTestCase):
                 ('autopopulated', 'false'),
                 ('serviceProviderId', '10803144'),
 
-    
+
             ]
         }
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/edit?serviceProviderId=10803144', '#reviews--rating-Professionalism--A', 'click', False)
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/member/reviews/edit?serviceProviderId=10803144', '#reviews--rating-Professionalism--A', 'click', False)
 
         segcall_info = {
             'main_field': 'professionalismGrade',
@@ -764,14 +764,14 @@ class VrfSegmentEvents(SeleniumTestCase):
                 ('autopopulated', 'false'),
                 ('serviceProviderId', '10803144'),
 
-    
+
             ]
         }
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/edit?serviceProviderId=10803144', '#reviews--rating-Professionalism--B', 'click', False)
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/member/reviews/edit?serviceProviderId=10803144', '#reviews--rating-Professionalism--B', 'click', False)
 
         segcall_info = {
             'main_field': 'professionalismGrade',
@@ -781,13 +781,13 @@ class VrfSegmentEvents(SeleniumTestCase):
                 ('autopopulated', 'false'),
                 ('serviceProviderId', '10803144'),
 
-    
+
             ]
         }
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/edit?serviceProviderId=10803144', '#reviews--rating-Professionalism--C', 'click', False)
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/member/reviews/edit?serviceProviderId=10803144', '#reviews--rating-Professionalism--C', 'click', False)
 
         segcall_info = {
             'main_field': 'professionalismGrade',
@@ -797,14 +797,14 @@ class VrfSegmentEvents(SeleniumTestCase):
                 ('autopopulated', 'false'),
                 ('serviceProviderId', '10803144'),
 
-    
+
             ]
         }
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/edit?serviceProviderId=10803144', '#reviews--rating-Professionalism--D', 'click', False)
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/member/reviews/edit?serviceProviderId=10803144', '#reviews--rating-Professionalism--D', 'click', False)
 
         segcall_info = {
             'main_field': 'professionalismGrade',
@@ -814,14 +814,14 @@ class VrfSegmentEvents(SeleniumTestCase):
                 ('autopopulated', 'false'),
                 ('serviceProviderId', '10803144'),
 
-    
+
             ]
         }
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/edit?serviceProviderId=10803144', '#reviews--rating-Professionalism--F', 'click', False)
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/member/reviews/edit?serviceProviderId=10803144', '#reviews--rating-Professionalism--F', 'click', False)
 
         segcall_info = {
             'main_field': 'professionalismGrade',
@@ -831,14 +831,14 @@ class VrfSegmentEvents(SeleniumTestCase):
                 ('autopopulated', 'false'),
                 ('serviceProviderId', '10803144'),
 
-    
+
             ]
         }
 
         SegmentTestHelper.do_segment_assertions(self, collect_seg_calls, segcall_info)
 
 
-        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/edit?serviceProviderId=10803144', '#reviews--rating-Professionalism--N\/A', 'click', False)
+        collect_seg_calls = SegmentTestHelper.gather_segment_requests_for_url(self, '/member/reviews/edit?serviceProviderId=10803144', '#reviews--rating-Professionalism--N\/A', 'click', False)
 
         segcall_info = {
             'main_field': 'professionalismGrade',
@@ -848,7 +848,7 @@ class VrfSegmentEvents(SeleniumTestCase):
                 ('autopopulated', 'false'),
                 ('serviceProviderId', '10803144'),
 
-    
+
             ]
         }
 

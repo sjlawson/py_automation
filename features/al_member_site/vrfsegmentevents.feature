@@ -1,4 +1,4 @@
-@memberSegmentExample
+@visitorReviewForm
 Feature:
 
   Scenario: verify authToken pattern works
@@ -8,7 +8,7 @@ Feature:
     """
     When the page has finished loading
     Then the page shows the user is authenticated
-    
+
   Scenario: test segment call on clicking the Approximate Cost of Service field on VRF
     Given user is on a member site review page
     """
@@ -26,7 +26,7 @@ Feature:
     | userType          | Not Authenticated                    |
     | serviceProviderId | 10803144                             |
 
-  
+
   Scenario: test segment call on clicking Choose File on VRF
     Given user is on a member site review page
     """
