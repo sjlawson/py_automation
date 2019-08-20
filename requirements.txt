@@ -2,7 +2,6 @@ axe-selenium-python==2.1.6
 behave==1.2.6
 certifi==2018.4.16
 chardet==3.0.4
-chromedriver-installer --install-option="--chromedriver-version=2.46"
 click==6.7
 codegen==1.0
 data==0.4
