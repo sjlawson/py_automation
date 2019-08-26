@@ -4,9 +4,10 @@
 ## Preliminary
 - make sure you have python >= 3.6 and pip,
 - and can create virtual environment containers either with virtualenv or pythonx.x -m venv container_name
-- _may_ have to install the Selenium chromedriver and geckodriver: 
-  - `brew install chromedriver`
-  - `brew install geckodriver`
+- Chromedriver will be installed in the virtual env for Chrome 76, and this will have to be occasionally updated by project maintainers
+- Geckodriver and other browser drivers can be added, but it's far simpler to use a selenium service such as Sauce Labs or Cross Browser Testing  
+  There are also selenium browser docker containers available. 
+
 
 ## For First Time installation:
 - Must use Bash or zsh (or some variant of sh -- fish doesn't seem to be compatible)
@@ -27,7 +28,7 @@ Then install the virtual environment module:
 ## From THIS POINT on you should be in the testing application directory: `al_py_automation`
 
 Create the virtual env:  
-`python3 -m venv py36`  
+`python3.x -m venv py36`  
 your python environment directory name is up to you, 
 I use py36 for Python 3.6
 
@@ -37,6 +38,12 @@ type: `source py36/bin/activate`
 
 install python package requirements with pip:  
 `pip install -r requirements.txt`
+
+- Chromedriver will be installed in the virtual env for Chrome 76, and this will have to be occasionally updated by project maintainers
+  - If your version of Chrome (for local workstation tests) is not compatible with Chromedriver 76, you will need to install chromedriver with:  
+   `pip install chromedriver-binary==[version]`  
+    You can find a list of available Chromedriver-binary versions at: https://chromedriver.chromium.org/downloads
+
 
 ## Environment configuration file: `.env`
 - modify the .env file to point to the environment you want to test and select which browser to use
