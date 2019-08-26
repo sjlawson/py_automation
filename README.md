@@ -42,7 +42,8 @@ install python package requirements with pip:
 - Chromedriver will be installed in the virtual env for Chrome 76, and this will have to be occasionally updated by project maintainers
   - If your version of Chrome (for local workstation tests) is not compatible with Chromedriver 76, you will need to install chromedriver with:  
    `pip install chromedriver-binary==[version]`  
-    You can find a list of available Chromedriver-binary versions at: https://chromedriver.chromium.org/downloads
+    You can find a list of available Chromedriver-binary versions at: https://chromedriver.chromium.org/downloads  
+	Also - you will need to RE-RUN: `source py3x/bin/activate` for the chromedriver executable and library to be added to the python env path	
 
 
 ## Environment configuration file: `.env`
