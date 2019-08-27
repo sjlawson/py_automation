@@ -1,4 +1,5 @@
 py36/
+py37/
 *.log
 *.pyc
 *results.txt
