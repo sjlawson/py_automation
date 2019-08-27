@@ -15,7 +15,7 @@ Feature:
     And we wait "2" seconds for the next page to load
 
   @vrfSubmit
-  Scenario: Submit review via VRF
+  Scenario: Submit review via VRF - existing user
     Given a user is on a member site visitor review page
     """
     /member/reviews/edit?serviceProviderId=1
