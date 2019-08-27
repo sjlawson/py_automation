@@ -93,7 +93,7 @@ Feature:
       | description            | Interior menu category link in header   |
       | userId                 |                                  |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/plumbing.htm"
+    And the landing URL contains ".angieslist.com/companylist/us/in/fishers/plumbing.htm"
 
 
 ##### Body Test #####

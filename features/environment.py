@@ -1,6 +1,7 @@
 from behave import fixture, use_fixture
 from reporters.junit import JUnitReporter
 from selenium import webdriver
+import chromedriver_binary
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from selenium.webdriver.common.proxy import Proxy as SeleniumProxy, ProxyType
 from selenium.webdriver.firefox.options import Options as FirefoxOptions
@@ -25,6 +26,7 @@ def chrome_headless(context):
     caps['loggingPrefs'] = { 'performance': 'INFO'}
     caps = set_proxy(caps)
     ch_profile = webdriver.ChromeOptions()
+    ch_profile.add_experimental_option('w3c', False)
     ch_profile.perfLoggingPrefs = {'enableNetwork': True, 'traceCategories': 'performance, devtools.network'}
     ch_profile.add_argument('incognito')
     ch_profile.add_argument('disable-extensions')
@@ -50,7 +52,7 @@ def chrome_performance_logs(context):
     # -- HINT: @behave.fixture is similar to @contextlib.contextmanager
     method_name = 'chrome'
     caps = getattr(DesiredCapabilities, method_name.upper())
-    caps['loggingPrefs'] = { 'performance': 'INFO'}
+    caps['loggingPrefs'] = {'performance': 'INFO'}
     caps['name'] = 'cqtest_' + str(datetime.datetime.now())
     caps['build'] = '1.0'
     caps['browserName'] = 'chrome'
@@ -58,7 +60,8 @@ def chrome_performance_logs(context):
     caps['record_network'] = 'true'
 
     ch_profile = webdriver.ChromeOptions()
-    ch_profile.perfLoggingPrefs = {'enableNetwork': True, 'traceCategories': 'performance, devtools.network'}
+    ch_profile.add_experimental_option('w3c', False)
+    ch_profile.perfLoggingPrefs = {'enableNetwork': True}
     ch_profile.add_argument('incognito')
     ch_profile.add_argument('disable-extensions')
     ch_profile.add_argument("--window-size=1600,1200")

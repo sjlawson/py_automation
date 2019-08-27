@@ -58,20 +58,20 @@ class SegmentTestHelper():
         count += 1
         if count > 10:
             return []
-        # time.sleep(1)
         perf_logs = context.browserlog()
         collect_seg = []
         for perflog in perf_logs:
-            perf_msgs = json.loads(perflog['message'])
-            if 'request' in perf_msgs['message']['params'] and 'postData' in perf_msgs['message']['params']['request']\
-               and perf_msgs['message']['params']['request']['postData'] is not None\
-               and 'properties' in perf_msgs['message']['params']['request']['postData']:
+            if 'request' in perflog['message'] and 'postData' in perflog['message'] and 'properties' in perflog['message']:
+                perf_msgs = json.loads(perflog['message'])
+            # testing which is a more performant search
+            # if 'request' in perf_msgs['message']['params'] and 'postData' in perf_msgs['message']['params']['request']\
+            #    and perf_msgs['message']['params']['request']['postData'] is not None\
+            #    and 'properties' in perf_msgs['message']['params']['request']['postData']:
                 props_string = json.loads(perf_msgs['message']['params']['request']['postData'])['properties']
                 if props_string is not None:
                     collect_seg.append(props_string)
         if not collect_seg:
             return SegmentTestHelper.get_browser_segmentlogs(context, count)
-
         return collect_seg
 
     def assert_segment_call_exists(context):
@@ -87,7 +87,7 @@ class SegmentTestHelper():
                     prop_exists = True
 
         try:
-            assert prop_exists == True
+            assert prop_exists
             context.test_case.test_result = 'pass'
         except:
             # caught to avoid false is not true response
