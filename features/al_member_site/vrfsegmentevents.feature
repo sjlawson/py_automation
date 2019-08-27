@@ -46,14 +46,21 @@ Feature:
      | send_keys       | 49726  4972649726                        |
      | move_to_element | id: reviews--submit-button               |
      | click           |                                          |
+    Then we wait "2" seconds for the next page to load
     When a user performs actions
      | action_method   | action_params                 |
      | move_to_element | id: sign-in-toggle            |
      | click           |                               |
+    Then we wait "2" seconds for the next page to load
+    When a user performs actions
+     | action_method   | action_params                    |
      | move_to_element | id: signin-form--email        |
      | click           |                               |
      | send_keys       | test2-member@angieslist.com   |
      | move_to_element | id: signin-form--password     |
      | click           |                               |
      | send_keys       | qwerty1234!                   |
+     | move_to_element | id: signin-form--submit       |
+     | click           |   |
+    Then we wait "5" seconds for the next page to load
     Then the landing URL contains ".angieslist.com/member?submissionconfirmation=true"
