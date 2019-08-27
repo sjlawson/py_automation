@@ -72,13 +72,13 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains "angieslistbusinesscenter.com"
 
-    @StatePageInteriorDrywall @newHeader
-    Scenario: State Page clicking the Interior - Plumbing link in the header
+    @TopCityPageInteriorDrywall @newHeader
+    Scenario: Top City Page clicking the Interior - Drywall link in the header
     Given user is on a visitor topcity page
       When a user performs actions
       | action_method   | action_params       |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(1) > label |
-      | click           | css: #secondary-nav > ul > li:nth-child(1) > div > ul > li:nth-child(10) > a |
+      | click           | css: #secondary-nav > ul > li:nth-child(1) > div > ul > li:nth-child(4) > a |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value           |
       | activityLocation | Visitor : US : City   |
@@ -88,7 +88,7 @@ Feature:
       | description            | Interior menu category link in header   |
       | userId                 |                                  |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/plumbing.htm"
+    And the landing URL contains ".angieslist.com/companylist/indianapolis/drywall.htm"
 
 
 
