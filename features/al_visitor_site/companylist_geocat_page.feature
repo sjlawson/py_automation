@@ -105,7 +105,7 @@ Feature:
       | description            | Interior menu category link in header |
       | userId                 |                                       |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/appliance-repair.htm"
+    And the landing URL contains ".angieslist.com/companylist/denver/appliance-repair.htm"
 
   @geoCatHeaderInteriorHouseCleaning @geoCatHeader @companyListTreeHeader
   Scenario: User hovers then clicks on House Cleaning in the header on the Drupal GeoCat(Denver Roofing)
@@ -123,7 +123,7 @@ Feature:
       | description            | Interior menu category link in header |
       | userId                 |                                       |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/house-cleaning.htm"
+    And the landing URL contains ".angieslist.com/companylist/denver/house-cleaning.htm"
 
   @geoCatHeaderExteriorPainting @geoCatHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Exterior Painting in the header on the Drupal GeoCat(Denver Roofing)
@@ -133,15 +133,15 @@ Feature:
       | move_to_element | css: #secondary-nav > ul > li:nth-child(2) > label > span |
       | click           | css: #secondary-nav > ul > li:nth-child(2) > div > ul > li:nth-child(4) > a |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value           |
-      | activityLocation | Visitor : Geocat   |
+      | unique_field      | unique_value           |
+      | activityLocation  | Visitor : Geocat       |
     And the segment call contains parameters
       | prop_key               | prop_value                            |
       | activityLocation       | Visitor : Geocat                      |
       | description            | Exterior menu category link in header |
       | userId                 |                                       |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/exterior-painting.htm"
+    And the landing URL contains ".angieslist.com/companylist/denver/exterior-painting.htm"
 
   @geoCatHeaderExteriorViewAllCats @geoCatHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Exterior View All in the header on the Drupal GeoCat(Denver Roofing)

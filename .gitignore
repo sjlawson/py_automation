@@ -1,4 +1,6 @@
 py36/
+py37/
+.venv
 *.log
 *.pyc
 *results.txt
