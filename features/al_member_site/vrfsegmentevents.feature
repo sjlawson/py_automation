@@ -9,7 +9,7 @@ Feature:
     When the page has finished loading
     Then the page should meet "wcag2a" accessibility guidelines
 
-  @vrfPageCall
+  @vrfPageCall @vrfSegment
   Scenario: VRF Page Load Event
     Given a user is on a member site visitor review page
     """
@@ -29,28 +29,122 @@ Feature:
       | url               |                             |
       | userType          | Not Authenticated           |
 
-  @vrfOverallClick
-  Scenario: VRF Overall Click Event
+
+  @vrfWorkDone @vrfSegment
+  Scenario: VRF Cost Of Service Click Event
     Given a user is on a member site visitor review page
     """
     /member/reviews/edit?serviceProviderId=1&at_preview_token=1OH6D8QWmHSyTdCaRZ4jBXWEFq%2Br1NJA9GWwjZnLpb4%3D&at_preview_index=1_1&at_preview_listed_activities_only=true&at_preview_evaluate_as_true_audience_ids=1100025
     """
     When a user performs actions
-      | action_method   | action_params      |
-      | move_to_element | id: reviews--rating-Overall--A   |
-      | click           | |
+      | action_method   | action_params                        |
+      | move_to_element | id: reviews--workComplete-button-yes |
+      | click           |                                      |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value  |
+      | reviewSection  | Work Done   |
+    And the segment call contains parameters
+      | prop_key          | prop_value        |
+      | reviewSection     | Work Done         |
+      | pathName          |                   |
+      | serviceProviderId |                   |
+      | userType          | Not Authenticated |
+      | userResponse      |                   |
+
+
+  @vrfCostOfServiceClick @vrfSegment
+  Scenario: VRF Cost Of Service Click Event
+    Given a user is on a member site visitor review page
+    """
+    /member/reviews/edit?serviceProviderId=1&at_preview_token=1OH6D8QWmHSyTdCaRZ4jBXWEFq%2Br1NJA9GWwjZnLpb4%3D&at_preview_index=1_1&at_preview_listed_activities_only=true&at_preview_evaluate_as_true_audience_ids=1100025
+    """
+    When a user performs actions
+      | action_method     | action_params                       |
+      | move_to_element   | id: review--cost-of-service-input   |
+      | click             |      |
+      | send_keys         | 1.00 |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value                         |
+      | description  | Review - Approximate cost of service |
+    And the segment call contains parameters
+      | prop_key          | prop_value                           |
+      | description       | Review - Approximate cost of service |
+      | pathName          |    |
+      | serviceProviderId | 1  |
+      | userType          | Not Authenticated |
+
+  @vrfCalendar @vrfSegment
+  Scenario: VRF Calendar Click Event
+    Given a user is on a member site visitor review page
+    """
+    /member/reviews/edit?serviceProviderId=1&at_preview_token=1OH6D8QWmHSyTdCaRZ4jBXWEFq%2Br1NJA9GWwjZnLpb4%3D&at_preview_index=1_1&at_preview_listed_activities_only=true&at_preview_evaluate_as_true_audience_ids=1100025
+    """
+    When a user performs actions
+      | action_method   | action_params              |
+      | move_to_element | id: calendar-input-input   |
+      | click           |                            |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value                                  |
+      | description  | Approximate date of service (or last contact) |
+    And the segment call contains parameters
+      | prop_key          | prop_value                                    |
+      | description       | Approximate date of service (or last contact) |
+      | dateSelected      |    |
+      | pathName          |    |
+      | userType          | Not Authenticated |
+
+
+  @vrfCategory @vrfSegment
+  Scenario: VRF Category Click Event
+    Given a user is on a member site visitor review page
+    """
+    /member/reviews/edit?serviceProviderId=1&at_preview_token=1OH6D8QWmHSyTdCaRZ4jBXWEFq%2Br1NJA9GWwjZnLpb4%3D&at_preview_index=1_1&at_preview_listed_activities_only=true&at_preview_evaluate_as_true_audience_ids=1100025
+    """
+    When a user performs actions
+      | action_method   | action_params                        |
+      | move_to_element | id: category-of-service-deselected   |
+      | click           |                                      |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
-      | autopopulated |  |
+      | changeType   | Add                |
     And the segment call contains parameters
-      | prop_key         | prop_value                           |
-      | autopopulated  | |
+      | prop_key      | prop_value        |
+      | changeType    | Add               |
+      | categoryId    | |
+      | autopopulated | |
+      | categoryName  | |
+      | pathName      | |
+      | serviceProviderId | |
+      | userType          | Not Authenticated |
+
+
+  @vrfAttachment @vrfSegment
+  Scenario: VRF Attachment Click Event
+    Given a user is on a member site visitor review page
+    """
+    /member/reviews/edit?serviceProviderId=1&at_preview_token=1OH6D8QWmHSyTdCaRZ4jBXWEFq%2Br1NJA9GWwjZnLpb4%3D&at_preview_index=1_1&at_preview_listed_activities_only=true&at_preview_evaluate_as_true_audience_ids=1100025
+    """
+    When a user performs actions
+      | action_method   | action_params                   |
+      | move_to_element | id: reviews--add-media-button   |
+      | click           |      |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field  | unique_value       |
+      | description   | Review Form : Choose File Clicked |
+    And the segment call contains parameters
+      | prop_key       | prop_value        |
+      | description    | Review Form : Choose File Clicked |
+      | pathName          | |
+      | serviceProviderId | |
+      | userType          | Not Authenticated |
 
 
 
 
 
-  @vrfSubmitExistingUser
+
+
+  @vrfSubmitExistingUser @reviewRegression
   Scenario: Submit review via VRF - existing user
     Given a user is on a member site visitor review page
     """
