@@ -4,7 +4,7 @@ Feature:
   Scenario: VRF Page Load Event
     Given a user is on a member site visitor review page
     """
-    /member/reviews/edit?serviceProviderId=1
+    /member/reviews/edit?serviceProviderId=1&at_preview_token=1OH6D8QWmHSyTdCaRZ4jBXWEFq%2Br1NJA9GWwjZnLpb4%3D&at_preview_index=1_1&at_preview_listed_activities_only=true&at_preview_evaluate_as_true_audience_ids=1100025
     """
     When a segment page call is sent for a unique field value pair
       | unique_field | unique_value           |
@@ -18,7 +18,7 @@ Feature:
   Scenario: Submit review via VRF - existing user
     Given a user is on a member site visitor review page
     """
-    /member/reviews/edit?serviceProviderId=1
+    /member/reviews/edit?serviceProviderId=1&at_preview_token=1OH6D8QWmHSyTdCaRZ4jBXWEFq%2Br1NJA9GWwjZnLpb4%3D&at_preview_index=1_1&at_preview_listed_activities_only=true&at_preview_evaluate_as_true_audience_ids=1100025
     """
     When a user performs actions
      | action_method   | action_params                    |
