@@ -30,8 +30,8 @@ Feature:
       | userType          | Not Authenticated           |
 
 
-  @vrfWorkDone @vrfSegment
-  Scenario: VRF Cost Of Service Click Event
+  @vrfWorkDoneYes @vrfSegment
+  Scenario: VRF Work Done Click Event - Yes
     Given a user is on a member site visitor review page
     """
     /member/reviews/edit?serviceProviderId=1&at_preview_token=1OH6D8QWmHSyTdCaRZ4jBXWEFq%2Br1NJA9GWwjZnLpb4%3D&at_preview_index=1_1&at_preview_listed_activities_only=true&at_preview_evaluate_as_true_audience_ids=1100025
@@ -49,7 +49,143 @@ Feature:
       | pathName          |                   |
       | serviceProviderId |                   |
       | userType          | Not Authenticated |
-      | userResponse      |                   |
+      | userResponse      | Yes               |
+
+
+  @vrfWorkDoneNo @vrfSegment
+  Scenario: VRF Work Done Click Event - No
+    Given a user is on a member site visitor review page
+    """
+    /member/reviews/edit?serviceProviderId=1&at_preview_token=1OH6D8QWmHSyTdCaRZ4jBXWEFq%2Br1NJA9GWwjZnLpb4%3D&at_preview_index=1_1&at_preview_listed_activities_only=true&at_preview_evaluate_as_true_audience_ids=1100025
+    """
+    When a user performs actions
+      | action_method   | action_params                        |
+      | move_to_element | id: reviews--workComplete-button-no |
+      | click           |                                      |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value  |
+      | reviewSection  | Work Done   |
+    And the segment call contains parameters
+      | prop_key          | prop_value        |
+      | reviewSection     | Work Done         |
+      | pathName          |                   |
+      | serviceProviderId |                   |
+      | userType          | Not Authenticated |
+      | userResponse      | No                |
+
+
+  @vrfHireAgainYes @vrfSegment
+  Scenario: VRF Hire Again Click Event - Yes
+    Given a user is on a member site visitor review page
+    """
+    /member/reviews/edit?serviceProviderId=1&at_preview_token=1OH6D8QWmHSyTdCaRZ4jBXWEFq%2Br1NJA9GWwjZnLpb4%3D&at_preview_index=1_1&at_preview_listed_activities_only=true&at_preview_evaluate_as_true_audience_ids=1100025
+    """
+    When a user performs actions
+      | action_method   | action_params                         |
+      | move_to_element | id: reviews--willHireAgain-button-yes |
+      | click           |                                       |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field   | unique_value  |
+      | reviewSection  | Hire Again   |
+    And the segment call contains parameters
+      | prop_key          | prop_value        |
+      | reviewSection     | Hire Again   |
+      | serviceProviderId |  |
+      | userResponse      | Yes |
+      | userType          | Not Authenticated |
+
+
+  @vrfHireAgainNo @vrfSegment
+  Scenario: VRF Hire Again Click Event - No
+    Given a user is on a member site visitor review page
+    """
+    /member/reviews/edit?serviceProviderId=1&at_preview_token=1OH6D8QWmHSyTdCaRZ4jBXWEFq%2Br1NJA9GWwjZnLpb4%3D&at_preview_index=1_1&at_preview_listed_activities_only=true&at_preview_evaluate_as_true_audience_ids=1100025
+    """
+    When a user performs actions
+      | action_method   | action_params                         |
+      | move_to_element | id: reviews--willHireAgain-button-no |
+      | click           |                                       |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field   | unique_value  |
+      | reviewSection  | Hire Again   |
+    And the segment call contains parameters
+      | prop_key          | prop_value        |
+      | reviewSection     | Hire Again   |
+      | serviceProviderId |  |
+      | userResponse      | No |
+      | userType          | Not Authenticated |
+
+
+  @vrfHowDidItGo @vrfSegment
+  Scenario: VRF How Did It Go
+    Given a user is on a member site visitor review page
+    """
+    /member/reviews/edit?serviceProviderId=1&at_preview_token=1OH6D8QWmHSyTdCaRZ4jBXWEFq%2Br1NJA9GWwjZnLpb4%3D&at_preview_index=1_1&at_preview_listed_activities_only=true&at_preview_evaluate_as_true_audience_ids=1100025
+    """
+    When a user performs actions
+      | action_method   | action_params                         |
+      | move_to_element | id: review--description-of-work-input |
+      | click           |                                       |
+      | send_keys       | This is an automated test! |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field   | unique_value  |
+      | description    | Review - What work did you need done?   |
+    And the segment call contains parameters
+      | prop_key          | prop_value        |
+      | description       | Review - What work did you need done?   |
+      | serviceProviderId |  |
+      | pathName          |  |
+      | userType          | Not Authenticated |
+
+
+  @vrfHowDidItGoWithText @vrfSegment
+  Scenario: VRF How Did It Go - With Text
+    Given a user is on a member site visitor review page
+    """
+    /member/reviews/edit?serviceProviderId=1&at_preview_token=1OH6D8QWmHSyTdCaRZ4jBXWEFq%2Br1NJA9GWwjZnLpb4%3D&at_preview_index=1_1&at_preview_listed_activities_only=true&at_preview_evaluate_as_true_audience_ids=1100025
+    """
+    When a user performs actions
+      | action_method   | action_params                         |
+      | move_to_element | id: review--description-of-work-input |
+      | click           |                                       |
+      | send_keys       | This is an automated test! |
+      | click           | id: review--how-did-it-go-input  |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field   | unique_value  |
+      | description    | Review - What work did you need done?   |
+    And the segment call contains parameters
+      | prop_key          | prop_value        |
+      | description       | Review - What work did you need done?   |
+      | characterCount    |  |
+      | formFieldInput    | This is an automated test!   |
+      | serviceProviderId |  |
+      | pathName          |  |
+      | userType          | Not Authenticated |
+
+
+  @vrfHowDidItGoWithText1 @vrfSegment
+  Scenario: VRF How Did It Go - With Text
+    Given a user is on a member site visitor review page
+    """
+    /member/reviews/edit?serviceProviderId=1&at_preview_token=1OH6D8QWmHSyTdCaRZ4jBXWEFq%2Br1NJA9GWwjZnLpb4%3D&at_preview_index=1_1&at_preview_listed_activities_only=true&at_preview_evaluate_as_true_audience_ids=1100025
+    """
+    When a user performs actions
+      | action_method   | action_params                         |
+      | move_to_element | id: review--how-did-it-go-input |
+      | click           |                                       |
+      | send_keys       | This is an automated test! |
+      | click           | id: reviews--willHireAgain-button-yes  |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field   | unique_value  |
+      | description    | Review - How did it go?  |
+    And the segment call contains parameters
+      | prop_key          | prop_value        |
+      | description       | Review - How did it go?   |
+      | characterCount    |  |
+      | formFieldInput    | This is an automated test!   |
+      | serviceProviderId |  |
+      | pathName          |  |
+      | userType          | Not Authenticated |
 
 
   @vrfCostOfServiceClick @vrfSegment
