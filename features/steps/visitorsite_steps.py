@@ -67,6 +67,14 @@ def step_impl(context):
     context.browser.get(context.url)
     time.sleep(1)
 
+@given('user is on a visitor site non-overlap catnogeo page')
+def step_impl(context):
+    appsuite_env = 'al_visitor_site'
+    appsuite_url = context.appsuites[appsuite_env]['base_url']
+    context.url = appsuite_url + '/companylist/eye-care.htm'
+    context.browser.get(context.url)
+    time.sleep(1)
+
 
 @given('user is on a visitor site geocat page')
 def step_impl(context):
@@ -90,7 +98,7 @@ def step_impl(context):
 def step_impl(context):
     appsuite_env = 'al_visitor_site'
     appsuite_url = context.appsuites[appsuite_env]['base_url']
-    context.url = appsuite_url + '/companylist/us/in/fishers/'
+    context.url = appsuite_url + '/companylist/us/mi/drummond-island/'
     context.browser.get(context.url)
     time.sleep(1)
 

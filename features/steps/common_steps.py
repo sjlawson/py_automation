@@ -13,6 +13,12 @@ def step_impl(context, keycode, element):
     element.send_keys(getattr(Keys, keycode))
 
 
+@when('the user clears text field with selector "{element}"')
+def step_impl(context, element):
+    element = SegmentTestHelper.get_webdriver_element(context.browser, element, 0)
+    element.clear()
+
+
 @when('the page has finished loading')
 def step_impl(context):
     BehaveStepHelper.page_loaded(context)
