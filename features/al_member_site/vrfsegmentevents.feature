@@ -10,9 +10,15 @@ Feature:
       | unique_field | unique_value           |
       | name         | Member – Review – Form |
     Then the segment call contains parameters
-      | prop_key                    | prop_value                                     |
-      | name                        | Member – Review – Form                         |
-    And we wait "2" seconds for the next page to load
+      | prop_key          | prop_value                  |
+      | name              | Member – Review – Form      |
+      | path              | /member/reviews/edit        |
+      | referrer          |                             |
+      | search            |                             |
+      | serviceProviderId | 1                           |
+      | title             | Angie's List - Reviews      |
+      | url               |                             |
+      | userType          | Not Authenticated           |
 
   @vrfSubmitExistingUser
   Scenario: Submit review via VRF - existing user
@@ -63,6 +69,8 @@ Feature:
      | click           |                               |
     Then we wait "8" seconds for the next page to load
     Then the landing URL contains ".angieslist.com/member?submissionconfirmation=true"
+
+
 
  # @vrfSubmitNewUser
  # Scenario: Submit review via VRF - New user
