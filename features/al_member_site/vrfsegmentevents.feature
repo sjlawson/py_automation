@@ -1,5 +1,14 @@
 Feature:
 
+  @vrfAccessibility
+  Scenario: Vistor Review Form Accessibility Test
+    Given a user is on a member site visitor review page
+    """
+    /member/reviews/edit?serviceProviderId=1&at_preview_token=1OH6D8QWmHSyTdCaRZ4jBXWEFq%2Br1NJA9GWwjZnLpb4%3D&at_preview_index=1_1&at_preview_listed_activities_only=true&at_preview_evaluate_as_true_audience_ids=1100025
+    """
+    When the page has finished loading
+    Then the page should meet "wcag2a" accessibility guidelines
+
   @vrfPageCall
   Scenario: VRF Page Load Event
     Given a user is on a member site visitor review page
@@ -19,6 +28,27 @@ Feature:
       | title             | Angie's List - Reviews      |
       | url               |                             |
       | userType          | Not Authenticated           |
+
+  @vrfOverallClick
+  Scenario: VRF Overall Click Event
+    Given a user is on a member site visitor review page
+    """
+    /member/reviews/edit?serviceProviderId=1&at_preview_token=1OH6D8QWmHSyTdCaRZ4jBXWEFq%2Br1NJA9GWwjZnLpb4%3D&at_preview_index=1_1&at_preview_listed_activities_only=true&at_preview_evaluate_as_true_audience_ids=1100025
+    """
+    When a user performs actions
+      | action_method   | action_params      |
+      | move_to_element | id: reviews--rating-Overall--A   |
+      | click           | |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value       |
+      | autopopulated |  |
+    And the segment call contains parameters
+      | prop_key         | prop_value                           |
+      | autopopulated  | |
+
+
+
+
 
   @vrfSubmitExistingUser
   Scenario: Submit review via VRF - existing user
