@@ -37,7 +37,7 @@ Feature:
   Scenario: user is on a visitor site page
     Given user is on a visitor site page
     """
-    /companylist/us/co/littleton/spire-roofing-llc-reviews-7367333.htm
+    /companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm
     """
     When a user performs actions
     | action_method | action_params |
@@ -59,7 +59,7 @@ Feature:
   Scenario: user is on a visitor site page
     Given user is on a visitor site page
     """
-    /companylist/us/co/littleton/spire-roofing-llc-reviews-7367333.htm
+    /companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm
     """
     When a user performs actions
     | action_method | action_params   |
@@ -81,7 +81,7 @@ Feature:
   Scenario: user is on a visitor site page
     Given user is on a visitor site page
     """
-    /companylist/us/co/littleton/spire-roofing-llc-reviews-7367333.htm
+    /companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm
     """
     When a user performs actions
     | action_method | action_params    |
@@ -98,28 +98,35 @@ Feature:
     And the landing URL contains "angieslistbusinesscenter.com"
 
 
-  @catNoGeoHeaderInteriorApplianceRepair @companyListTreeHeader
-  Scenario: User hovers then clicks on Appliance Repair in the header on the Drupal Leaf
-    Given user is on a visitor site catnogeo page
+
+  @leafPageHeaderInteriorApplianceRepair @leafPageHeader @companyListTreeHeader
+  Scenario: user is on a visitor site page
+    Given user is on a visitor site page
+    """
+    /companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm
+    """
     When a user performs actions
-      | action_method   | action_params       |
-      | move_to_element | css: #secondary-nav > ul > li:nth-child(1) > label |
+      | action_method   | action_params                                                               |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(1) > label                          |
       | click           | css: #secondary-nav > ul > li:nth-child(1) > div > ul > li:nth-child(1) > a |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value           |
+      | unique_field | unique_value             |
       | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
-      | prop_key               | prop_value                        |
-      | activityLocation       | Visitor : SP Profile                    |
+      | prop_key               | prop_value                            |
+      | activityLocation       | Visitor : SP Profile                  |
       | description            | Interior menu category link in header |
-      | userId                 |                                   |
+      | userId                 |                                       |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/appliance-repair.htm"
+    And the landing URL contains ".angieslist.com/companylist/us/co/longmont/appliance-repair.htm"
 
 
-  @catNoGeoSegmentHeaderInteriorCarpetCleaning @companyListTreeHeader
-  Scenario: User hovers then clicks on Carpet Cleaning in the header on the Drupal Leaf
-    Given user is on a visitor site catnogeo page
+  @leafPageSegmentHeaderInteriorCarpetCleaning  @leafPageHeader @companyListTreeHeader
+  Scenario: user is on a visitor site page
+    Given user is on a visitor site page
+    """
+    /companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm
+    """
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(1) > label |
@@ -135,9 +142,13 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/carpet-cleaning.htm"
 
-  @catNoGeoSegmentHeaderInteriorContractors @companyListTreeHeader
-  Scenario: User hovers then clicks on Contractors in the header on the Drupal Leaf
-    Given user is on a visitor site catnogeo page
+
+  @catNoGeoSegmentHeaderInteriorContractors @leafPageHeader @companyListTreeHeader
+  Scenario: user is on a visitor site page
+    Given user is on a visitor site page
+    """
+    /companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm
+    """
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(1) > label |
