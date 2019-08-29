@@ -30,6 +30,138 @@ Feature:
       | userType          | Not Authenticated           |
 
 
+  @vrfOverallGradeA @vrfSegment @letterGrades
+  Scenario: VRF Overall Grade - A
+    Given a user is on a member site visitor review page
+    """
+    /member/reviews/edit?serviceProviderId=1&at_preview_token=1OH6D8QWmHSyTdCaRZ4jBXWEFq%2Br1NJA9GWwjZnLpb4%3D&at_preview_index=1_1&at_preview_listed_activities_only=true&at_preview_evaluate_as_true_audience_ids=1100025
+    """
+    When a user performs actions
+      | action_method   | action_params                   |
+      | move_to_element | id: reviews--rating-Overall--A  |
+      | click           |                                 |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field    | unique_value  |
+      | overallGrade    | A |
+    And the segment call contains parameters
+      | prop_key          | prop_value    |
+      | overallGrade      | A |
+      | autopopulated     | false |
+      | pathName          | |
+      | serviceProviderId | |
+      | userType          | Not Authenticated |
+
+
+  @vrfPriceGradeA @vrfSegment @letterGrades
+  Scenario: VRF Price Grade - A
+    Given a user is on a member site visitor review page
+    """
+    /member/reviews/edit?serviceProviderId=1&at_preview_token=1OH6D8QWmHSyTdCaRZ4jBXWEFq%2Br1NJA9GWwjZnLpb4%3D&at_preview_index=1_1&at_preview_listed_activities_only=true&at_preview_evaluate_as_true_audience_ids=1100025
+    """
+    When a user performs actions
+      | action_method   | action_params                   |
+      | move_to_element | id: reviews--rating-Price--A  |
+      | click           |                                 |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field  | unique_value  |
+      | priceGrade    | A |
+    And the segment call contains parameters
+      | prop_key          | prop_value    |
+      | priceGrade        | A |
+      | autopopulated     | false |
+      | pathName          | |
+      | serviceProviderId | |
+      | userType          | Not Authenticated |
+
+
+  @vrfQualityGradeA @vrfSegment @letterGrades
+  Scenario: VRF Quality Grade - A
+    Given a user is on a member site visitor review page
+    """
+    /member/reviews/edit?serviceProviderId=1&at_preview_token=1OH6D8QWmHSyTdCaRZ4jBXWEFq%2Br1NJA9GWwjZnLpb4%3D&at_preview_index=1_1&at_preview_listed_activities_only=true&at_preview_evaluate_as_true_audience_ids=1100025
+    """
+    When a user performs actions
+      | action_method   | action_params                   |
+      | move_to_element | id: reviews--rating-Quality--A  |
+      | click           |                                 |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field    | unique_value  |
+      | qualityGrade    | A |
+    And the segment call contains parameters
+      | prop_key          | prop_value    |
+      | qualityGrade      | A |
+      | autopopulated     | false |
+      | pathName          | |
+      | serviceProviderId | |
+      | userType          | Not Authenticated |
+
+
+  @vrfResponsivenessGradeA @vrfSegment @letterGrades
+  Scenario: VRF Responsiveness Grade - A
+    Given a user is on a member site visitor review page
+    """
+    /member/reviews/edit?serviceProviderId=1&at_preview_token=1OH6D8QWmHSyTdCaRZ4jBXWEFq%2Br1NJA9GWwjZnLpb4%3D&at_preview_index=1_1&at_preview_listed_activities_only=true&at_preview_evaluate_as_true_audience_ids=1100025
+    """
+    When a user performs actions
+      | action_method   | action_params                          |
+      | move_to_element | id: reviews--rating-Responsiveness--A  |
+      | click           |                                        |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field    | unique_value  |
+      | responsivenessGrade    | A |
+    And the segment call contains parameters
+      | prop_key          | prop_value    |
+      | responsivenessGrade      | A |
+      | autopopulated     | false |
+      | pathName          | |
+      | serviceProviderId | |
+      | userType          | Not Authenticated |
+
+
+  @vrfPunctualityGradeA @vrfSegment @letterGrades
+  Scenario: VRF Punctuality Grade - A
+    Given a user is on a member site visitor review page
+    """
+    /member/reviews/edit?serviceProviderId=1&at_preview_token=1OH6D8QWmHSyTdCaRZ4jBXWEFq%2Br1NJA9GWwjZnLpb4%3D&at_preview_index=1_1&at_preview_listed_activities_only=true&at_preview_evaluate_as_true_audience_ids=1100025
+    """
+    When a user performs actions
+      | action_method   | action_params                       |
+      | move_to_element | id: reviews--rating-Punctuality--A  |
+      | click           |                                     |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field        | unique_value  |
+      | punctualityGrade    | A |
+    And the segment call contains parameters
+      | prop_key          | prop_value  |
+      | punctualityGrade  | A |
+      | autopopulated     | false |
+      | pathName          | |
+      | serviceProviderId | |
+      | userType          | Not Authenticated |
+
+
+  @vrfProfessionalismGradeA @vrfSegment @letterGrades
+  Scenario: VRF Professionalism Grade - A
+    Given a user is on a member site visitor review page
+    """
+    /member/reviews/edit?serviceProviderId=1&at_preview_token=1OH6D8QWmHSyTdCaRZ4jBXWEFq%2Br1NJA9GWwjZnLpb4%3D&at_preview_index=1_1&at_preview_listed_activities_only=true&at_preview_evaluate_as_true_audience_ids=1100025
+    """
+    When a user performs actions
+      | action_method   | action_params                           |
+      | move_to_element | id: reviews--rating-Professionalism--A  |
+      | click           |                                         |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field            | unique_value  |
+      | professionalismGrade    | A |
+    And the segment call contains parameters
+      | prop_key              | prop_value  |
+      | professionalismGrade  | A |
+      | autopopulated         | false |
+      | pathName              | |
+      | serviceProviderId     | |
+      | userType              | Not Authenticated |
+
+
   @vrfWorkDoneYes @vrfSegment
   Scenario: VRF Work Done Click Event - Yes
     Given a user is on a member site visitor review page
@@ -138,7 +270,7 @@ Feature:
       | userType          | Not Authenticated |
 
 
-  @vrfHowDidItGoWithText @vrfSegment
+  @vrfWhatWork @vrfSegment
   Scenario: VRF How Did It Go - With Text
     Given a user is on a member site visitor review page
     """
