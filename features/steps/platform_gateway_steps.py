@@ -72,4 +72,3 @@ def step_impl(context):
 def step_impl(context):
     sign_in = context.browser.find_element(By.ID, 'login--header-text-signin')
     assert bool(sign_in)
-  

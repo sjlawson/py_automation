@@ -148,8 +148,8 @@ class SegmentTestHelper():
             else:
                 raise NoSuchElementException("Element not found, identified by <%s> at location <%s>" % (selector, client.current_url))
 
-        if element:
-            print('ELEMENT FOUND: %s' % selector)
+            if element:
+                print('ELEMENT FOUND: %s' % selector)
 
         return element
 

@@ -21,6 +21,7 @@ def step_impl(context):
     context.url = appsuite_url + context.text
     BehaveStepHelper.token_auth(context)
     context.browser.get(context.url)
+    time.sleep(1)
 
 
 @then('a segment track call is sent for a unique field value pair')
