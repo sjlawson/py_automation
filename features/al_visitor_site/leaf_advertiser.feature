@@ -627,7 +627,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/"
 
-  @leafPageSegmentHeaderLawnGardenDecks @leafPageHeader @companyListTreeHeader
+  @leafPageSegmentHeaderLawnDecks @leafPageHeader @companyListTreeHeader
   Scenario: user is on a visitor site page
     Given user is on a visitor site page
     """
@@ -648,9 +648,9 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/longmont/decks-and-porches.htm"
 
-  @catNoGeoSegmentHeaderLawnGardenFencing @companyListTreeHeader
+  @leafPageSegmentHeaderLawnFencing @companyListTreeHeader
   Scenario: User hovers then clicks on Fencing in the header on the Drupal Leaf
-    Given user is on a visitor site catnogeo page
+    Given user is on a visitor site leaf advertiser page
     When a user performs actions
       | action_method   | action_params                                                               |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(3) > label                          |
@@ -664,11 +664,11 @@ Feature:
       | description            | Lawn & Garden menu category link in header  |
       | userId                 |                                             |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/fencing.htm"
+    And the landing URL contains ".angieslist.com/companylist/us/co/longmont/fencing.htm"
 
-  @catNoGeoSegmentHeaderLawnLandSurveying @companyListTreeHeader
+  @leafPageSegmentHeaderLawnLandSurveying @companyListTreeHeader
   Scenario: User hovers then clicks on Land Surveying in the header on the Drupal Leaf
-    Given user is on a visitor site catnogeo page
+    Given user is on a visitor site leaf advertiser page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(3) > label |
@@ -682,11 +682,11 @@ Feature:
       | description            | Lawn & Garden menu category link in header  |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/land-surveying.htm"
+    And the landing URL contains ".angieslist.com/companylist/us/co/longmont/land-surveying.htm"
 
-  @catNoGeoSegmentHeaderLawnLandscaping @companyListTreeHeader
+  @leafPageSegmentHeaderLawnLandscaping @companyListTreeHeader
   Scenario: User hovers then clicks on Landscaping in the header on the Drupal Leaf
-    Given user is on a visitor site catnogeo page
+    Given user is on a visitor site leaf advertiser page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(3) > label |
@@ -700,11 +700,11 @@ Feature:
       | description            | Lawn & Garden menu category link in header  |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/landscaping.htm"
+    And the landing URL contains ".angieslist.com/companylist/us/co/longmont/landscaping.htm"
 
-  @catNoGeoSegmentHeaderLawnYard @companyListTreeHeader
+  @leafPageSegmentHeaderLawnYard @companyListTreeHeader
   Scenario: User hovers then clicks on Lawn & Yard in the header on the Drupal Leaf
-    Given user is on a visitor site catnogeo page
+    Given user is on a visitor site leaf advertiser page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(3) > label |
@@ -718,11 +718,11 @@ Feature:
       | description            | Lawn & Garden menu category link in header  |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/lawn-and-yard-work.htm"
+    And the landing URL contains ".angieslist.com/companylist/us/co/longmont/lawn-and-yard-work.htm"
 
-  @catNoGeoSegmentHeaderLawnIrrigation @companyListTreeHeader
+  @leafPageSegmentHeaderLawnIrrigation @companyListTreeHeader
   Scenario: User hovers then clicks on Lawn Irrigation in the header on the Drupal Leaf
-    Given user is on a visitor site catnogeo page
+    Given user is on a visitor site leaf advertiser page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(3) > label |
@@ -736,11 +736,11 @@ Feature:
       | description            | Lawn & Garden menu category link in header  |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/lawn-irrigation.htm"
+    And the landing URL contains ".angieslist.com/companylist/us/co/longmont/lawn-irrigation.htm"
 
-  @catNoGeoSegmentHeaderLawnMowerRepair @companyListTreeHeader
+  @leafPageSegmentHeaderLawnMowerRepair @companyListTreeHeader
   Scenario: User hovers then clicks on Lawn Mower Repair in the header on the Drupal Leaf
-    Given user is on a visitor site catnogeo page
+    Given user is on a visitor site leaf advertiser page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(3) > label |
@@ -754,11 +754,11 @@ Feature:
       | description            | Lawn & Garden menu category link in header  |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/lawn-mower-repair.htm"
+    And the landing URL contains ".angieslist.com/companylist/us/co/longmont/lawn-mower-repair.htm"
 
-  @catNoGeoSegmentHeaderLawnLeafRemoval @companyListTreeHeader
+  @leafPageSegmentHeaderLawnLeafRemoval @companyListTreeHeader
   Scenario: User hovers then clicks on Leaf Removal in the header on the Drupal Leaf
-    Given user is on a visitor site catnogeo page
+    Given user is on a visitor site leaf advertiser page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(3) > label |
@@ -772,11 +772,11 @@ Feature:
       | description            | Lawn & Garden menu category link in header  |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/leaf-removal.htm"
+    And the landing URL contains ".angieslist.com/companylist/us/co/longmont/leaf-removal.htm"
 
-  @catNoGeoSegmentHeaderLawnPatios @companyListTreeHeader
+  @leafPageSegmentHeaderLawnPatios @companyListTreeHeader
   Scenario: User hovers then clicks on Patios in the header on the Drupal Leaf
-    Given user is on a visitor site catnogeo page
+    Given user is on a visitor site leaf advertiser page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(3) > label |
@@ -790,11 +790,11 @@ Feature:
       | description            | Lawn & Garden menu category link in header  |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/sunroom-and-patio-remodeling.htm"
+    And the landing URL contains ".angieslist.com/companylist/us/co/longmont/sunroom-and-patio-remodeling.htm"
 
-  @catNoGeoSegmentHeaderGaragePatios @companyListTreeHeader
+  @leafPageSegmentHeaderShedBuilders @companyListTreeHeader
   Scenario: User hovers then clicks on Shed Builders in the header on the Drupal Leaf
-    Given user is on a visitor site catnogeo page
+    Given user is on a visitor site leaf advertiser page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(3) > label |
@@ -808,11 +808,11 @@ Feature:
       | description            | Lawn & Garden menu category link in header  |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/garage-builders.htm"
+    And the landing URL contains ".angieslist.com/companylist/us/co/longmont/garage-builders.htm"
 
-  @catNoGeoSegmentHeaderLawnTreeSvc @companyListTreeHeader
+  @leafPageSegmentHeaderLawnTreeSvc @companyListTreeHeader
   Scenario: User hovers then clicks on Tree Service in the header on the Drupal Leaf
-    Given user is on a visitor site catnogeo page
+    Given user is on a visitor site leaf advertiser page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(3) > label |
@@ -826,11 +826,11 @@ Feature:
       | description            | Lawn & Garden menu category link in header  |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/tree-service.htm"
+    And the landing URL contains ".angieslist.com/companylist/us/co/longmont/tree-service.htm"
 
-  @catNoGeoSegmentHeaderLawnViewAll @companyListTreeHeader
+  @leafPageSegmentHeaderLawnViewAll @companyListTreeHeader
   Scenario: User hovers then clicks on View All in the header on the Drupal Leaf
-    Given user is on a visitor site catnogeo page
+    Given user is on a visitor site leaf advertiser page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(3) > label |
@@ -846,9 +846,9 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/"
 
-  @catNoGeoSegmentHeaderMoreBasement @companyListTreeHeader
+  @leafPageSegmentHeaderMoreBasement @companyListTreeHeader
   Scenario: User hovers then clicks on Basement Waterproofing in the header on the Drupal Leaf
-    Given user is on a visitor site catnogeo page
+    Given user is on a visitor site leaf advertiser page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(4) > label |
@@ -862,11 +862,11 @@ Feature:
       | description            | More menu category link in header |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/basement-waterproofing.htm"
+    And the landing URL contains ".angieslist.com/companylist/us/co/longmont/basement-waterproofing.htm"
 
-  @catNoGeoSegmentHeaderMoreDogGrooming @companyListTreeHeader
+  @leafPageSegmentHeaderMoreDogGrooming @companyListTreeHeader
   Scenario: User hovers then clicks on Dog Grooming in the header on the Drupal Leaf
-    Given user is on a visitor site catnogeo page
+    Given user is on a visitor site leaf advertiser page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(4) > label |
@@ -880,12 +880,12 @@ Feature:
       | description            | More menu category link in header |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/pet-grooming.htm"
+    And the landing URL contains ".angieslist.com/companylist/us/co/longmont/pet-grooming.htm"
 
 
-  @catNoGeoSegmentHeaderMoreHandymen @companyListTreeHeader
+  @leafPageSegmentHeaderMoreHandymen @companyListTreeHeader
   Scenario: User hovers then clicks on Handymen in the header on the Drupal Leaf
-    Given user is on a visitor site catnogeo page
+    Given user is on a visitor site leaf advertiser page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(4) > label |
@@ -899,11 +899,11 @@ Feature:
       | description            | More menu category link in header |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/handyman-service.htm"
+    And the landing URL contains ".angieslist.com/companylist/us/co/longmont/handyman-service.htm"
 
-  @catNoGeoSegmentHeaderMoreJunk @companyListTreeHeader
+  @leafPageSegmentHeaderMoreJunk @companyListTreeHeader
   Scenario: User hovers then clicks on Junk Hauling in the header on the Drupal Leaf
-    Given user is on a visitor site catnogeo page
+    Given user is on a visitor site leaf advertiser page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(4) > label |
@@ -917,11 +917,11 @@ Feature:
       | description            | More menu category link in header |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/hauling.htm"
+    And the landing URL contains ".angieslist.com/companylist/us/co/longmont/hauling.htm"
 
-  @catNoGeoSegmentHeaderMoreLocksmiths @companyListTreeHeader
+  @leafPageSegmentHeaderMoreLocksmiths @companyListTreeHeader
   Scenario: User hovers then clicks on Locksmiths in the header on the Drupal Leaf
-    Given user is on a visitor site catnogeo page
+    Given user is on a visitor site leaf advertiser page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(4) > label |
@@ -935,11 +935,11 @@ Feature:
       | description            | More menu category link in header |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/locksmiths.htm"
+    And the landing URL contains ".angieslist.com/companylist/us/co/longmont/locksmiths.htm"
 
-  @catNoGeoSegmentHeaderMoreMoving @companyListTreeHeader
+  @leafPageSegmentHeaderMoreMoving @companyListTreeHeader
   Scenario: User hovers then clicks on Moving Companies in the header on the Drupal Leaf
-    Given user is on a visitor site catnogeo page
+    Given user is on a visitor site leaf advertiser page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(4) > label |
@@ -953,11 +953,11 @@ Feature:
       | description            | More menu category link in header |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/moving.htm"
+    And the landing URL contains ".angieslist.com/companylist/us/co/longmont/moving.htm"
 
-  @catNoGeoSegmentHeaderMorePests @companyListTreeHeader
+  @leafPageSegmentHeaderMorePests @companyListTreeHeader
   Scenario: User hovers then clicks on Pest Control Companies in the header on the Drupal Leaf
-    Given user is on a visitor site catnogeo page
+    Given user is on a visitor site leaf advertiser page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(4) > label |
@@ -971,11 +971,11 @@ Feature:
       | description            | More menu category link in header |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/pest-control.htm"
+    And the landing URL contains ".angieslist.com/companylist/us/co/longmont/pest-control.htm"
 
-  @catNoGeoSegmentHeaderMorePressureWashing @companyListTreeHeader
+  @leafPageSegmentHeaderMorePressureWashing @companyListTreeHeader
   Scenario: User hovers then clicks on Pressure Washing Companies in the header on the Drupal Leaf
-    Given user is on a visitor site catnogeo page
+    Given user is on a visitor site leaf advertiser page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(4) > label |
@@ -989,11 +989,11 @@ Feature:
       | description            | More menu category link in header |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/pressure-washing.htm"
+    And the landing URL contains ".angieslist.com/companylist/us/co/longmont/pressure-washing.htm"
 
-  @catNoGeoSegmentHeaderMoreSeptic @companyListTreeHeader
+  @leafPageSegmentHeaderMoreSeptic @companyListTreeHeader
   Scenario: User hovers then clicks on Septic Tanks Companies in the header on the Drupal Leaf
-    Given user is on a visitor site catnogeo page
+    Given user is on a visitor site leaf advertiser page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(4) > label |
@@ -1007,11 +1007,11 @@ Feature:
       | description            | More menu category link in header |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/septic-tank.htm"
+    And the landing URL contains ".angieslist.com/companylist/us/co/longmont/septic-tank.htm"
 
-  @catNoGeoSegmentHeaderMoreViewAllCat @companyListTreeHeader
+  @leafPageSegmentHeaderMoreViewAllCat @companyListTreeHeader
   Scenario: User hovers then clicks on View All Cats - More in the header on the Drupal Leaf
-    Given user is on a visitor site catnogeo page
+    Given user is on a visitor site leaf advertiser page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(4) > label |
@@ -1027,9 +1027,9 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/"
 
-  @catNoGeoSegmentHeaderMoreNearMe @companyListTreeHeader
+  @leafPageSegmentHeaderMoreNearMe @companyListTreeHeader
   Scenario: User hovers then clicks on Near Me in the header on the Drupal Leaf
-    Given user is on a visitor site catnogeo page
+    Given user is on a visitor site leaf advertiser page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(4) > label |
@@ -1045,9 +1045,9 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/nearme/"
 
-  @catNoGeoSegmentHeaderArticlesAdviceAppliances @companyListTreeHeader
+  @leafPageSegmentHeaderArticlesAdviceAppliances @companyListTreeHeader
   Scenario: User hovers then clicks on Appliances in the header on the Drupal Leaf
-    Given user is on a visitor site catnogeo page
+    Given user is on a visitor site leaf advertiser page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label |
@@ -1063,9 +1063,9 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/appliances/"
 
-  @catNoGeoSegmentHeaderArticlesAdviceBaseFound @companyListTreeHeader
+  @leafPageSegmentHeaderArticlesAdviceBaseFound @companyListTreeHeader
   Scenario: User hovers then clicks on Basements & Foundations in the header on the Drupal Leaf
-    Given user is on a visitor site catnogeo page
+    Given user is on a visitor site leaf advertiser page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span |
@@ -1081,9 +1081,9 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/basements-and-foundations/"
 
-  @catNoGeoSegmentHeaderArticlesAdviceBathRemod @companyListTreeHeader
+  @leafPageSegmentHeaderArticlesAdviceBathRemod @companyListTreeHeader
   Scenario: User hovers then clicks on Bathroom Remodel in the header on the Drupal Leaf
-    Given user is on a visitor site catnogeo page
+    Given user is on a visitor site leaf advertiser page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span |
@@ -1099,9 +1099,9 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/bathroom-remodel/"
 
-  @catNoGeoSegmentHeaderArticlesAdviceChimney @companyListTreeHeader
+  @leafPageSegmentHeaderArticlesAdviceChimney @companyListTreeHeader
   Scenario: User hovers then clicks on Chimneys & Fireplaces in the header on the Drupal Leaf
-    Given user is on a visitor site catnogeo page
+    Given user is on a visitor site leaf advertiser page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span |
@@ -1117,9 +1117,9 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/chimneys-fireplaces/"
 
-  @catNoGeoSegmentHeaderArticlesAdviceCleaning @companyListTreeHeader
+  @leafPageSegmentHeaderArticlesAdviceCleaning @companyListTreeHeader
   Scenario: User hovers then clicks on Cleaning in the header on the Drupal Leaf
-    Given user is on a visitor site catnogeo page
+    Given user is on a visitor site leaf advertiser page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span |
@@ -1135,9 +1135,9 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/cleaning/"
 
-  @catNoGeoSegmentHeaderArticlesAdviceContractors @companyListTreeHeader
+  @leafPageSegmentHeaderArticlesAdviceContractors @companyListTreeHeader
   Scenario: User hovers then clicks on Contractors in the header on the Drupal Leaf
-    Given user is on a visitor site catnogeo page
+    Given user is on a visitor site leaf advertiser page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span |
@@ -1153,9 +1153,9 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/contractors/"
 
-  @catNoGeoSegmentHeaderArticlesAdviceElectrical @companyListTreeHeader
+  @leafPageSegmentHeaderArticlesAdviceElectrical @companyListTreeHeader
   Scenario: User hovers then clicks on Electrical in the header on the Drupal Leaf
-    Given user is on a visitor site catnogeo page
+    Given user is on a visitor site leaf advertiser page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span |
@@ -1171,9 +1171,9 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/electrical/"
 
-  @catNoGeoSegmentHeaderArticlesAdviceFlooring @companyListTreeHeader
+  @leafPageSegmentHeaderArticlesAdviceFlooring @companyListTreeHeader
   Scenario: User hovers then clicks on Flooring in the header on the Drupal Leaf
-    Given user is on a visitor site catnogeo page
+    Given user is on a visitor site leaf advertiser page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span |
@@ -1189,9 +1189,9 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/flooring/"
 
-  @catNoGeoSegmentHeaderArticlesAdviceGarageDrive @companyListTreeHeader
+  @leafPageSegmentHeaderArticlesAdviceGarageDrive @companyListTreeHeader
   Scenario: User hovers then clicks on Garages & Driveways in the header on the Drupal Leaf
-    Given user is on a visitor site catnogeo page
+    Given user is on a visitor site leaf advertiser page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span |
@@ -1207,9 +1207,9 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/garages-and-driveways/"
 
-  @catNoGeoSegmentHeaderArticlesAdviceHVAC @companyListTreeHeader
+  @leafPageSegmentHeaderArticlesAdviceHVAC @companyListTreeHeader
   Scenario: User hovers then clicks on Heating & Cooling in the header on the Drupal Leaf
-    Given user is on a visitor site catnogeo page
+    Given user is on a visitor site leaf advertiser page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span |
@@ -1225,9 +1225,9 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/hvac/"
 
-  @catNoGeoSegmentHeaderArticlesAdviceHomeConstruction @companyListTreeHeader
+  @leafPageSegmentHeaderArticlesAdviceHomeConstruction @companyListTreeHeader
   Scenario: User hovers then clicks on Home Construction in the header on the Drupal Leaf
-    Given user is on a visitor site catnogeo page
+    Given user is on a visitor site leaf advertiser page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span |
@@ -1243,9 +1243,9 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/home-construction-design/"
 
-  @catNoGeoSegmentHeaderArticlesAdviceHomeExterior @companyListTreeHeader
+  @leafPageSegmentHeaderArticlesAdviceHomeExterior @companyListTreeHeader
   Scenario: User hovers then clicks on Home Exteriors in the header on the Drupal Leaf
-    Given user is on a visitor site catnogeo page
+    Given user is on a visitor site leaf advertiser page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span |
@@ -1261,9 +1261,9 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/home-exteriors/"
 
-  @catNoGeoSegmentHeaderArticlesAdviceHomeInterior @companyListTreeHeader
+  @leafPageSegmentHeaderArticlesAdviceHomeInterior @companyListTreeHeader
   Scenario: User hovers then clicks on Home Interior in the header on the Drupal Leaf
-    Given user is on a visitor site catnogeo page
+    Given user is on a visitor site leaf advertiser page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span |
@@ -1279,9 +1279,9 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/home-interiors/"
 
-  @catNoGeoSegmentHeaderArticlesAdviceHomeSecurity @companyListTreeHeader
+  @leafPageSegmentHeaderArticlesAdviceHomeSecurity @companyListTreeHeader
   Scenario: User hovers then clicks on Home Security in the header on the Drupal Leaf
-    Given user is on a visitor site catnogeo page
+    Given user is on a visitor site leaf advertiser page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span |
@@ -1297,9 +1297,9 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/home-security-systems/"
 
-  @catNoGeoSegmentHeaderArticlesAdviceKitchenRemod @companyListTreeHeader
+  @leafPageSegmentHeaderArticlesAdviceKitchenRemod @companyListTreeHeader
   Scenario: User hovers then clicks on Kitchen Remodeling in the header on the Drupal Leaf
-    Given user is on a visitor site catnogeo page
+    Given user is on a visitor site leaf advertiser page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span |
@@ -1315,9 +1315,9 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/kitchen-remodeling/"
 
-  @catNoGeoSegmentHeaderArticlesAdviceLandscaping @companyListTreeHeader
+  @leafPageSegmentHeaderArticlesAdviceLandscaping @companyListTreeHeader
   Scenario: User hovers then clicks on Landscaping in the header on the Drupal Leaf
-    Given user is on a visitor site catnogeo page
+    Given user is on a visitor site leaf advertiser page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span |
@@ -1333,9 +1333,9 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/landscaping-lawn-care/"
 
-  @catNoGeoSegmentHeaderArticlesAdviceLighting @companyListTreeHeader
+  @leafPageSegmentHeaderArticlesAdviceLighting @companyListTreeHeader
   Scenario: User hovers then clicks on Lighting in the header on the Drupal Leaf
-    Given user is on a visitor site catnogeo page
+    Given user is on a visitor site leaf advertiser page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span |
@@ -1351,9 +1351,9 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/lights/"
 
-  @catNoGeoSegmentHeaderArticlesAdviceMoving @companyListTreeHeader
+  @leafPageSegmentHeaderArticlesAdviceMoving @companyListTreeHeader
   Scenario: User hovers then clicks on Moving in the header on the Drupal Leaf
-    Given user is on a visitor site catnogeo page
+    Given user is on a visitor site leaf advertiser page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span |
@@ -1369,9 +1369,9 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/movers/"
 
-  @catNoGeoSegmentHeaderArticlesAdviceOutdoorLiving @companyListTreeHeader
+  @leafPageSegmentHeaderArticlesAdviceOutdoorLiving @companyListTreeHeader
   Scenario: User hovers then clicks on Outdoor Living in the header on the Drupal Leaf
-    Given user is on a visitor site catnogeo page
+    Given user is on a visitor site leaf advertiser page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span |
@@ -1387,9 +1387,9 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/outdoor-living/"
 
-  @catNoGeoSegmentHeaderArticlesAdvicePests @companyListTreeHeader
+  @leafPageSegmentHeaderArticlesAdvicePests @companyListTreeHeader
   Scenario: User hovers then clicks on Pests in the header on the Drupal Leaf
-    Given user is on a visitor site catnogeo page
+    Given user is on a visitor site leaf advertiser page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span |
@@ -1405,9 +1405,9 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/household-pest-control/"
 
-  @catNoGeoSegmentHeaderArticlesAdvicePlumbing @companyListTreeHeader
+  @leafPageSegmentHeaderArticlesAdvicePlumbing @companyListTreeHeader
   Scenario: User hovers then clicks on Plumbing in the header on the Drupal Leaf
-    Given user is on a visitor site catnogeo page
+    Given user is on a visitor site leaf advertiser page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span |
@@ -1423,9 +1423,9 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/plumbing/"
 
-  @catNoGeoSegmentHeaderArticlesAdviceRemodeling @companyListTreeHeader
+  @leafPageSegmentHeaderArticlesAdviceRemodeling @companyListTreeHeader
   Scenario: User hovers then clicks on Remodeling in the header on the Drupal Leaf
-    Given user is on a visitor site catnogeo page
+    Given user is on a visitor site leaf advertiser page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span |
@@ -1441,9 +1441,9 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/remodeling/"
 
-  @catNoGeoSegmentHeaderArticlesAdviceRoofing @companyListTreeHeader
+  @leafPageSegmentHeaderArticlesAdviceRoofing @companyListTreeHeader
   Scenario: User hovers then clicks on Roofing in the header on the Drupal Leaf
-    Given user is on a visitor site catnogeo page
+    Given user is on a visitor site leaf advertiser page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span |
@@ -1459,9 +1459,9 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/roofing/"
 
-  @catNoGeoSegmentHeaderArticlesAdviceStoreageOrg @companyListTreeHeader
+  @leafPageSegmentHeaderArticlesAdviceStoreageOrg @companyListTreeHeader
   Scenario: User hovers then clicks on Storage & Organization in the header on the Drupal Leaf
-    Given user is on a visitor site catnogeo page
+    Given user is on a visitor site leaf advertiser page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span |
@@ -1477,9 +1477,9 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/storage-organization/"
 
-  @catNoGeoSegmentHeaderArticlesAdviceWasteManagement @companyListTreeHeader
+  @leafPageSegmentHeaderArticlesAdviceWasteManagement @companyListTreeHeader
   Scenario: User hovers then clicks on Waste Management in the header on the Drupal Leaf
-    Given user is on a visitor site catnogeo page
+    Given user is on a visitor site leaf advertiser page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span |
@@ -1495,9 +1495,9 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/waste-management/"
 
-  @catNoGeoSegmentHeaderArticlesAdviceMore @companyListTreeHeader
-  Scenario: User hovers then clicks on View All in the header(Advice) in the header on the Drupal Leaf
-    Given user is on a visitor site catnogeo page
+  @leafPageSegmentHeaderArticlesAdviceViewAll @companyListTreeHeader
+  Scenario: User hovers then clicks on View All in the header on the Drupal Leaf
+    Given user is on a visitor site leaf advertiser page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span |
