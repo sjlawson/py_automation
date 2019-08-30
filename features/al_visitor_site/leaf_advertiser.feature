@@ -228,9 +228,12 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/longmont/flooring.htm"
 
-  @catNoGeoSegmentHeaderInteriorHVAC @companyListTreeHeader
-  Scenario: User hovers then clicks on Heating & Cooling in the header on the Drupal Leaf
-    Given user is on a visitor site catnogeo page
+  @leafPageSegmentHeaderInteriorHVAC @leafPageHeader @companyListTreeHeader
+  Scenario: user is on a visitor site page
+    Given user is on a visitor site page
+    """
+    /companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm
+    """
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(1) > label |
@@ -244,11 +247,14 @@ Feature:
       | description            | Interior menu category link in header    |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/hvac.htm"
+    And the landing URL contains ".angieslist.com/companylist/us/co/longmont/hvac.htm"
 
-  @catNoGeoSegmentHeaderInteriorHouseCleaning @companyListTreeHeader
-  Scenario: User hovers then clicks on House Cleaning in the header on the Drupal Leaf
-    Given user is on a visitor site catnogeo page
+  @leafPageSegmentHeaderInteriorHouseCleaning @leafPageHeader @companyListTreeHeader
+  Scenario: user is on a visitor site page
+    Given user is on a visitor site page
+    """
+    /companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm
+    """
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(1) > label |
@@ -262,11 +268,14 @@ Feature:
       | description            | Interior menu category link in header    |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/house-cleaning.htm"
+    And the landing URL contains ".angieslist.com/companylist/us/co/longmont/house-cleaning.htm"
 
-  @catNoGeoSegmentHeaderInteriorPainting @companyListTreeHeader
-  Scenario: User hovers then clicks on Interior Painting in the header on the Drupal Leaf
-    Given user is on a visitor site catnogeo page
+  @leafPageSegmentHeaderInteriorPainting @leafPageHeader @companyListTreeHeader
+  Scenario: user is on a visitor site page
+    Given user is on a visitor site page
+    """
+    /companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm
+    """
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(1) > label |
@@ -280,11 +289,14 @@ Feature:
       | description            | Interior menu category link in header    |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/interior-painting.htm"
+    And the landing URL contains ".angieslist.com/companylist/us/co/longmont/interior-painting.htm"
 
-  @catNoGeoSegmentHeaderInteriorPlumbing @companyListTreeHeader
-  Scenario: User hovers then clicks on Plumbing in the header on the Drupal Leaf
-    Given user is on a visitor site catnogeo page
+  @leafPageSegmentHeaderInteriorPlumbing @leafPageHeader @companyListTreeHeader
+  Scenario: user is on a visitor site page
+    Given user is on a visitor site page
+    """
+    /companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm
+    """
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(1) > label |
@@ -298,11 +310,14 @@ Feature:
       | description            | Interior menu category link in header    |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/plumbing.htm"
+    And the landing URL contains ".angieslist.com/companylist/us/co/longmont/plumbing.htm"
 
-  @catNoGeoSegmentHeaderInteriorRemodeling @companyListTreeHeader
-  Scenario: User hovers then clicks on Remodeling in the header on the Drupal Leaf
-    Given user is on a visitor site catnogeo page
+  @leafPageSegmentHeaderInteriorRemodeling @leafPageHeader @companyListTreeHeader
+  Scenario: user is on a visitor site page
+    Given user is on a visitor site page
+    """
+    /companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm
+    """
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(1) > label |
@@ -316,11 +331,14 @@ Feature:
       | description            | Interior menu category link in header    |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/kitchen-and-bath-remodeling.htm"
+    And the landing URL contains ".angieslist.com/companylist/us/co/longmont/kitchen-and-bath-remodeling.htm"
 
-  @catNoGeoSegmentHeaderInteriorViewAll @companyListTreeHeader
-  Scenario: User hovers then clicks on View All Categories in the header on the Drupal Leaf
-    Given user is on a visitor site catnogeo page
+  @leafPageSegmentHeaderInteriorViewAll @leafPageHeader @companyListTreeHeader
+  Scenario: user is on a visitor site page
+    Given user is on a visitor site page
+    """
+    /companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm
+    """
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(1) > label |
