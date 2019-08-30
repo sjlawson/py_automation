@@ -99,7 +99,7 @@ Feature:
 
 
 
-  @leafPageHeaderInteriorApplianceRepair @leafPageHeader @companyListTreeHeader
+  @leafPageSegmentHeaderInteriorApplianceRepair @leafPageHeader @companyListTreeHeader
   Scenario: user is on a visitor site page
     Given user is on a visitor site page
     """
@@ -143,7 +143,7 @@ Feature:
     And the landing URL contains ".angieslist.com/companylist/us/co/longmont/carpet-cleaning.htm"
 
 
-  @leafPageHeaderInteriorContractors @leafPageHeader @companyListTreeHeader
+  @leafPageSegmentHeaderInteriorContractors @leafPageHeader @companyListTreeHeader
   Scenario: user is on a visitor site page
     Given user is on a visitor site page
     """
@@ -165,7 +165,7 @@ Feature:
     And the landing URL contains ".angieslist.com/companylist/us/co/longmont/contractor.htm"
 
 
-  @leafPageGeoSegmentHeaderInteriorDrywall @leafPageHeader @companyListTreeHeader
+  @leafPageSegmentHeaderInteriorDrywall @leafPageHeader @companyListTreeHeader
   Scenario: user is on a visitor site page
     Given user is on a visitor site page
     """
@@ -606,7 +606,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/longmont/window-treatments.htm"
 
-  @leafPageGeoSegmentHeaderExteriorViewAll @leafPageHeader @companyListTreeHeader
+  @leafPageSegmentHeaderExteriorViewAll @leafPageHeader @companyListTreeHeader
   Scenario: user is on a visitor site page
     Given user is on a visitor site page
     """
@@ -792,7 +792,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/longmont/sunroom-and-patio-remodeling.htm"
 
-  @leafPageSegmentHeaderShedBuilders @companyListTreeHeader
+  @leafPageSegmentHeaderLawnShed @companyListTreeHeader
   Scenario: User hovers then clicks on Shed Builders in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
