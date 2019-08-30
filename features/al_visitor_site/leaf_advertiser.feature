@@ -354,9 +354,12 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/"
 
-  @catNoGeoSegmentHeaderExteriorConcreteRepair @companyListTreeHeader
-  Scenario: User hovers then clicks on Concrete Repair in the header on the Drupal Leaf
-    Given user is on a visitor site catnogeo page
+  @leafPageSegmentHeaderExteriorConcreteRepair @leafPageHeader @companyListTreeHeader
+  Scenario: user is on a visitor site page
+    Given user is on a visitor site page
+    """
+    /companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm
+    """
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(2) > label > span |
@@ -370,11 +373,14 @@ Feature:
       | description            | Exterior menu category link in header  |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/concrete-repair.htm"
+    And the landing URL contains ".angieslist.com/companylist/us/co/longmont/concrete-repair.htm"
 
-  @catNoGeoSegmentHeaderExteriorDoors @companyListTreeHeader
-  Scenario: User hovers then clicks on Doors in the header on the Drupal Leaf
-    Given user is on a visitor site catnogeo page
+  @leafPageSegmentHeaderExteriorDoors @leafPageHeader @companyListTreeHeader
+  Scenario: user is on a visitor site page
+    Given user is on a visitor site page
+    """
+    /companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm
+    """
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(2) > label > span |
@@ -388,11 +394,14 @@ Feature:
       | description            | Exterior menu category link in header  |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/doors.htm"
+    And the landing URL contains ".angieslist.com/companylist/us/co/longmont/doors.htm"
 
-  @catNoGeoSegmentHeaderExteriorDriveways @companyListTreeHeader
-  Scenario: User hovers then clicks on Driveways in the header on the Drupal Leaf
-    Given user is on a visitor site catnogeo page
+  @leafPageSegmentHeaderExteriorDriveways @leafPageHeader @companyListTreeHeader
+  Scenario: user is on a visitor site page
+    Given user is on a visitor site page
+    """
+    /companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm
+    """
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(2) > label > span |
@@ -406,11 +415,14 @@ Feature:
       | description            | Exterior menu category link in header  |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/driveways.htm"
+    And the landing URL contains ".angieslist.com/companylist/us/co/longmont/driveways.htm"
 
-  @catNoGeoSegmentHeaderExteriorPainting @companyListTreeHeader
-  Scenario: User hovers then clicks on Exterior Painting in the header on the Drupal Leaf
-    Given user is on a visitor site catnogeo page
+  @leafPageSegmentHeaderExteriorPainting @leafPageHeader @companyListTreeHeader
+  Scenario: user is on a visitor site page
+    Given user is on a visitor site page
+    """
+    /companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm
+    """
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(2) > label > span |
@@ -424,11 +436,14 @@ Feature:
       | description            | Exterior menu category link in header  |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/exterior-painting.htm"
+    And the landing URL contains ".angieslist.com/companylist/us/co/longmont/exterior-painting.htm"
 
-  @catNoGeoSegmentHeaderExteriorGarage @companyListTreeHeader
-  Scenario: User hovers then clicks on Garage Doors in the header on the Drupal Leaf
-    Given user is on a visitor site catnogeo page
+  @leafPageSegmentHeaderExteriorGarage @leafPageHeader @companyListTreeHeader
+  Scenario: user is on a visitor site page
+    Given user is on a visitor site page
+    """
+    /companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm
+    """
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(2) > label > span |
@@ -442,185 +457,212 @@ Feature:
       | description            | Exterior menu category link in header  |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/garage-doors.htm"
+    And the landing URL contains ".angieslist.com/companylist/us/co/longmont/garage-doors.htm"
 
-  @catNoGeoSegmentHeaderExteriorGutterCleaning @companyListTreeHeader
-  Scenario: User hovers then clicks on Gutter Cleaning in the header on the Drupal Leaf
-    Given user is on a visitor site catnogeo page
+  @leafPageSegmentHeaderExteriorGutterCleaning @leafPageHeader @companyListTreeHeader
+  Scenario: user is on a visitor site page
+    Given user is on a visitor site page
+    """
+    /companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm
+    """
     When a user performs actions
-      | action_method   | action_params       |
-      | move_to_element | css: #secondary-nav > ul > li:nth-child(2) > label > span |
+      | action_method   | action_params                                                               |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(2) > label > span                   |
       | click           | css: #secondary-nav > ul > li:nth-child(2) > div > ul > li:nth-child(6) > a |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field | unique_value             |
       | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
-      | prop_key               | prop_value                        |
-      | activityLocation       | Visitor : SP Profile                    |
+      | prop_key               | prop_value                             |
+      | activityLocation       | Visitor : SP Profile                   |
       | description            | Exterior menu category link in header  |
-      | userId                 |                                   |
+      | userId                 |                                        |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/gutter-cleaning.htm"
+    And the landing URL contains ".angieslist.com/companylist/us/co/longmont/gutter-cleaning.htm"
 
-  @catNoGeoSegmentHeaderExteriorGutterRepair @companyListTreeHeader
-  Scenario: User hovers then clicks on Gutter Repair in the header on the Drupal Leaf
-    Given user is on a visitor site catnogeo page
+  @leafPageSegmentHeaderExteriorGutterRepair @leafPageHeader @companyListTreeHeader
+  Scenario: user is on a visitor site page
+    Given user is on a visitor site page
+    """
+    /companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm
+    """
     When a user performs actions
-      | action_method   | action_params       |
-      | move_to_element | css: #secondary-nav > ul > li:nth-child(2) > label > span |
+      | action_method   | action_params                                                               |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(2) > label > span                   |
       | click           | css: #secondary-nav > ul > li:nth-child(2) > div > ul > li:nth-child(7) > a |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field | unique_value             |
       | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
-      | prop_key               | prop_value                        |
-      | activityLocation       | Visitor : SP Profile                    |
+      | prop_key               | prop_value                             |
+      | activityLocation       | Visitor : SP Profile                   |
       | description            | Exterior menu category link in header  |
-      | userId                 |                                   |
+      | userId                 |                                        |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/gutter-repair-replacement.htm"
+    And the landing URL contains ".angieslist.com/companylist/us/co/longmont/gutter-repair-replacement.htm"
 
-  @catNoGeoSegmentHeaderExteriorHomeBuilders @companyListTreeHeader
-  Scenario: User hovers then clicks on Home Builders in the header on the Drupal Leaf
-    Given user is on a visitor site catnogeo page
+  @leafPageSegmentHeaderExteriorHomeBuilders @leafPageHeader @companyListTreeHeader
+  Scenario: user is on a visitor site page
+    Given user is on a visitor site page
+    """
+    /companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm
+    """
     When a user performs actions
-      | action_method   | action_params       |
-      | move_to_element | css: #secondary-nav > ul > li:nth-child(2) > label > span |
+      | action_method   | action_params                                                               |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(2) > label > span                   |
       | click           | css: #secondary-nav > ul > li:nth-child(2) > div > ul > li:nth-child(8) > a |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field | unique_value             |
       | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
-      | prop_key               | prop_value                        |
-      | activityLocation       | Visitor : SP Profile                    |
+      | prop_key               | prop_value                             |
+      | activityLocation       | Visitor : SP Profile                   |
       | description            | Exterior menu category link in header  |
-      | userId                 |                                   |
+      | userId                 |                                        |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/home-builders.htm"
+    And the landing URL contains ".angieslist.com/companylist/us/co/longmont/home-builders.htm"
 
-  @catNoGeoSegmentHeaderExteriorMasonry @companyListTreeHeader
-  Scenario: User hovers then clicks on Masonry in the header on the Drupal Leaf
-    Given user is on a visitor site catnogeo page
+  @leafPageSegmentHeaderExteriorMasonry @leafPageHeader @companyListTreeHeader
+  Scenario: user is on a visitor site page
+    Given user is on a visitor site page
+    """
+    /companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm
+    """
     When a user performs actions
-      | action_method   | action_params       |
-      | move_to_element | css: #secondary-nav > ul > li:nth-child(2) > label |
+      | action_method   | action_params                                                               |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(2) > label                          |
       | click           | css: #secondary-nav > ul > li:nth-child(2) > div > ul > li:nth-child(9) > a |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field | unique_value             |
       | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
-      | prop_key               | prop_value                        |
-      | activityLocation       | Visitor : SP Profile                    |
+      | prop_key               | prop_value                             |
+      | activityLocation       | Visitor : SP Profile                   |
       | description            | Exterior menu category link in header  |
-      | userId                 |                                   |
+      | userId                 |                                        |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/masonry.htm"
+    And the landing URL contains ".angieslist.com/companylist/us/co/longmont/masonry.htm"
 
-  @catNoGeoSegmentHeaderExteriorRoofing @companyListTreeHeader
-  Scenario: User hovers then clicks on Roofing in the header on the Drupal Leaf
-    Given user is on a visitor site catnogeo page
+  @leafPageSegmentHeaderExteriorRoofing @leafPageHeader @companyListTreeHeader
+  Scenario: user is on a visitor site page
+    Given user is on a visitor site page
+    """
+    /companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm
+    """
     When a user performs actions
-      | action_method   | action_params       |
-      | move_to_element | css: #secondary-nav > ul > li:nth-child(2) > label > span |
+      | action_method   | action_params                                                                |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(2) > label > span                    |
       | click           | css: #secondary-nav > ul > li:nth-child(2) > div > ul > li:nth-child(10) > a |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field | unique_value             |
       | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
-      | prop_key               | prop_value                        |
-      | activityLocation       | Visitor : SP Profile                    |
+      | prop_key               | prop_value                             |
+      | activityLocation       | Visitor : SP Profile                   |
       | description            | Exterior menu category link in header  |
-      | userId                 |                                   |
+      | userId                 |                                        |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/roofing.htm"
+    And the landing URL contains ".angieslist.com/companylist/us/co/longmont/roofing.htm"
 
-  @catNoGeoSegmentHeaderExteriorSiding @companyListTreeHeader
-  Scenario: User hovers then clicks on Siding in the header on the Drupal Leaf
-    Given user is on a visitor site catnogeo page
+  @leafPageSegmentHeaderExteriorSiding @leafPageHeader @companyListTreeHeader
+  Scenario: user is on a visitor site page
+    Given user is on a visitor site page
+    """
+    /companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm
+    """
     When a user performs actions
-      | action_method   | action_params       |
-      | move_to_element | css: #secondary-nav > ul > li:nth-child(2) > label > span |
+      | action_method   | action_params                                                                |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(2) > label > span                    |
       | click           | css: #secondary-nav > ul > li:nth-child(2) > div > ul > li:nth-child(11) > a |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field | unique_value             |
       | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
-      | prop_key               | prop_value                        |
-      | activityLocation       | Visitor : SP Profile                    |
+      | prop_key               | prop_value                             |
+      | activityLocation       | Visitor : SP Profile                   |
       | description            | Exterior menu category link in header  |
-      | userId                 |                                   |
+      | userId                 |                                        |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/siding.htm"
+    And the landing URL contains ".angieslist.com/companylist/us/co/longmont/siding.htm"
 
-  @catNoGeoSegmentHeaderExteriorWindows @companyListTreeHeader
-  Scenario: User hovers then clicks on Windows in the header on the Drupal Leaf
-    Given user is on a visitor site catnogeo page
+  @leafPageSegmentHeaderExteriorWindows @leafPageHeader @companyListTreeHeader
+  Scenario: user is on a visitor site page
+    Given user is on a visitor site page
+    """
+    /companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm
+    """
     When a user performs actions
-      | action_method   | action_params       |
-      | move_to_element | css: #secondary-nav > ul > li:nth-child(2) > label > span |
+      | action_method   | action_params                                                                |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(2) > label > span                    |
       | click           | css: #secondary-nav > ul > li:nth-child(2) > div > ul > li:nth-child(12) > a |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field | unique_value             |
       | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
-      | prop_key               | prop_value                        |
-      | activityLocation       | Visitor : SP Profile                    |
+      | prop_key               | prop_value                             |
+      | activityLocation       | Visitor : SP Profile                   |
       | description            | Exterior menu category link in header  |
-      | userId                 |                                   |
+      | userId                 |                                        |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/window-treatments.htm"
+    And the landing URL contains ".angieslist.com/companylist/us/co/longmont/window-treatments.htm"
 
-  @catNoGeoSegmentHeaderExteriorViewAll @companyListTreeHeader
-  Scenario: User hovers then clicks on View All in the header on the Drupal Leaf
-    Given user is on a visitor site catnogeo page
+  @leafPageGeoSegmentHeaderExteriorViewAll @leafPageHeader @companyListTreeHeader
+  Scenario: user is on a visitor site page
+    Given user is on a visitor site page
+    """
+    /companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm
+    """
     When a user performs actions
-      | action_method   | action_params       |
-      | move_to_element | css: #secondary-nav > ul > li:nth-child(2) > label > span |
+      | action_method   | action_params                                              |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(2) > label > span  |
       | click           | css: #secondary-nav > ul > li:nth-child(2) > div > div > a |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field | unique_value             |
       | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
-      | prop_key               | prop_value                        |
-      | activityLocation       | Visitor : SP Profile                    |
+      | prop_key               | prop_value                                        |
+      | activityLocation       | Visitor : SP Profile                              |
       | description            | Exterior menu view all categories link in header  |
-      | userId                 |                                   |
+      | userId                 |                                                   |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/"
 
-  @catNoGeoSegmentHeaderLawnGardenDecks @companyListTreeHeader
-  Scenario: User hovers then clicks on Decks in the header on the Drupal Leaf
-    Given user is on a visitor site catnogeo page
+  @leafPageSegmentHeaderLawnGardenDecks @leafPageHeader @companyListTreeHeader
+  Scenario: user is on a visitor site page
+    Given user is on a visitor site page
+    """
+    /companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm
+    """
     When a user performs actions
-      | action_method   | action_params       |
-      | move_to_element | css: #secondary-nav > ul > li:nth-child(3) > label |
+      | action_method   | action_params                                                               |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(3) > label                          |
       | click           | css: #secondary-nav > ul > li:nth-child(3) > div > ul > li:nth-child(1) > a |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field | unique_value             |
       | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
-      | prop_key               | prop_value                        |
-      | activityLocation       | Visitor : SP Profile                    |
+      | prop_key               | prop_value                                  |
+      | activityLocation       | Visitor : SP Profile                        |
       | description            | Lawn & Garden menu category link in header  |
-      | userId                 |                                   |
+      | userId                 |                                             |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/decks-and-porches.htm"
+    And the landing URL contains ".angieslist.com/companylist/us/co/longmont/decks-and-porches.htm"
 
   @catNoGeoSegmentHeaderLawnGardenFencing @companyListTreeHeader
   Scenario: User hovers then clicks on Fencing in the header on the Drupal Leaf
     Given user is on a visitor site catnogeo page
     When a user performs actions
-      | action_method   | action_params       |
-      | move_to_element | css: #secondary-nav > ul > li:nth-child(3) > label |
+      | action_method   | action_params                                                               |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(3) > label                          |
       | click           | css: #secondary-nav > ul > li:nth-child(3) > div > ul > li:nth-child(2) > a |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field | unique_value             |
       | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
-      | prop_key               | prop_value                        |
-      | activityLocation       | Visitor : SP Profile                    |
+      | prop_key               | prop_value                                  |
+      | activityLocation       | Visitor : SP Profile                        |
       | description            | Lawn & Garden menu category link in header  |
-      | userId                 |                                   |
+      | userId                 |                                             |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/fencing.htm"
 
