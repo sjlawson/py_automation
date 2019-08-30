@@ -21,7 +21,7 @@ Feature:
       | path                   | /companylist/us/tx/richardson/green-leaf-air-reviews-8993301.htm                        |
       | referrer               |                                                                                         |
       | search                 |                                                                                         |
-      | srCtaDisplayed         |                                                                                    |
+      | srCtaDisplayed         |                                                                                         |
       | srCtaVersion           |                                                                                         |
       | title                  | Green Leaf Air Reviews - Richardson, TX &vert; Angie's List                             |
       | url                    |                                                                                         |
@@ -128,17 +128,17 @@ Feature:
     /companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm
     """
     When a user performs actions
-      | action_method   | action_params       |
-      | move_to_element | css: #secondary-nav > ul > li:nth-child(1) > label |
+      | action_method   | action_params                                                               |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(1) > label                          |
       | click           | css: #secondary-nav > ul > li:nth-child(1) > div > ul > li:nth-child(2) > a |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field | unique_value             |
       | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
-      | prop_key               | prop_value                        |
-      | activityLocation       | Visitor : SP Profile                    |
+      | prop_key               | prop_value                               |
+      | activityLocation       | Visitor : SP Profile                     |
       | description            | Interior menu category link in header    |
-      | userId                 |                                   |
+      | userId                 |                                          |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/longmont/carpet-cleaning.htm"
 
@@ -150,17 +150,17 @@ Feature:
     /companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm
     """
     When a user performs actions
-      | action_method   | action_params       |
-      | move_to_element | css: #secondary-nav > ul > li:nth-child(1) > label |
+      | action_method   | action_params                                                               |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(1) > label                          |
       | click           | css: #secondary-nav > ul > li:nth-child(1) > div > ul > li:nth-child(3) > a |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field | unique_value             |
       | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
-      | prop_key               | prop_value                        |
-      | activityLocation       | Visitor : SP Profile                    |
+      | prop_key               | prop_value                               |
+      | activityLocation       | Visitor : SP Profile                     |
       | description            | Interior menu category link in header    |
-      | userId                 |                                   |
+      | userId                 |                                          |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/longmont/contractor.htm"
 
@@ -172,17 +172,17 @@ Feature:
     /companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm
     """
     When a user performs actions
-      | action_method   | action_params       |
-      | move_to_element | css: #secondary-nav > ul > li:nth-child(1) > label |
+      | action_method   | action_params                                                               |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(1) > label                          |
       | click           | css: #secondary-nav > ul > li:nth-child(1) > div > ul > li:nth-child(4) > a |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field | unique_value             |
       | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
-      | prop_key               | prop_value                        |
-      | activityLocation       | Visitor : SP Profile                    |
+      | prop_key               | prop_value                               |
+      | activityLocation       | Visitor : SP Profile                     |
       | description            | Interior menu category link in header    |
-      | userId                 |                                   |
+      | userId                 |                                          |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/longmont/drywall.htm"
 
@@ -193,17 +193,17 @@ Feature:
     /companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm
     """
     When a user performs actions
-      | action_method   | action_params       |
-      | move_to_element | css: #secondary-nav > ul > li:nth-child(1) > label |
+      | action_method   | action_params                                                               |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(1) > label                          |
       | click           | css: #secondary-nav > ul > li:nth-child(1) > div > ul > li:nth-child(5) > a |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field | unique_value             |
       | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
-      | prop_key               | prop_value                        |
-      | activityLocation       | Visitor : SP Profile                    |
+      | prop_key               | prop_value                               |
+      | activityLocation       | Visitor : SP Profile                     |
       | description            | Interior menu category link in header    |
-      | userId                 |                                   |
+      | userId                 |                                          |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/longmont/electrical.htm"
 
@@ -214,17 +214,17 @@ Feature:
     /companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm
     """
     When a user performs actions
-      | action_method   | action_params       |
-      | move_to_element | css: #secondary-nav > ul > li:nth-child(1) > label |
+      | action_method   | action_params                                                               |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(1) > label                          |
       | click           | css: #secondary-nav > ul > li:nth-child(1) > div > ul > li:nth-child(6) > a |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field | unique_value             |
       | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
-      | prop_key               | prop_value                        |
-      | activityLocation       | Visitor : SP Profile                    |
+      | prop_key               | prop_value                               |
+      | activityLocation       | Visitor : SP Profile                     |
       | description            | Interior menu category link in header    |
-      | userId                 |                                   |
+      | userId                 |                                          |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/longmont/flooring.htm"
 
@@ -235,17 +235,17 @@ Feature:
     /companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm
     """
     When a user performs actions
-      | action_method   | action_params       |
-      | move_to_element | css: #secondary-nav > ul > li:nth-child(1) > label |
+      | action_method   | action_params                                                               |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(1) > label                          |
       | click           | css: #secondary-nav > ul > li:nth-child(1) > div > ul > li:nth-child(7) > a |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field | unique_value             |
       | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
-      | prop_key               | prop_value                        |
-      | activityLocation       | Visitor : SP Profile                    |
+      | prop_key               | prop_value                               |
+      | activityLocation       | Visitor : SP Profile                     |
       | description            | Interior menu category link in header    |
-      | userId                 |                                   |
+      | userId                 |                                          |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/longmont/hvac.htm"
 
@@ -256,17 +256,17 @@ Feature:
     /companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm
     """
     When a user performs actions
-      | action_method   | action_params       |
-      | move_to_element | css: #secondary-nav > ul > li:nth-child(1) > label |
+      | action_method   | action_params                                                               |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(1) > label                          |
       | click           | css: #secondary-nav > ul > li:nth-child(1) > div > ul > li:nth-child(8) > a |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field | unique_value             |
       | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
-      | prop_key               | prop_value                        |
-      | activityLocation       | Visitor : SP Profile                    |
+      | prop_key               | prop_value                               |
+      | activityLocation       | Visitor : SP Profile                     |
       | description            | Interior menu category link in header    |
-      | userId                 |                                   |
+      | userId                 |                                          |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/longmont/house-cleaning.htm"
 
@@ -277,17 +277,17 @@ Feature:
     /companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm
     """
     When a user performs actions
-      | action_method   | action_params       |
-      | move_to_element | css: #secondary-nav > ul > li:nth-child(1) > label |
+      | action_method   | action_params                                                               |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(1) > label                          |
       | click           | css: #secondary-nav > ul > li:nth-child(1) > div > ul > li:nth-child(9) > a |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field | unique_value             |
       | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
-      | prop_key               | prop_value                        |
-      | activityLocation       | Visitor : SP Profile                    |
+      | prop_key               | prop_value                               |
+      | activityLocation       | Visitor : SP Profile                     |
       | description            | Interior menu category link in header    |
-      | userId                 |                                   |
+      | userId                 |                                          |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/longmont/interior-painting.htm"
 
@@ -298,17 +298,17 @@ Feature:
     /companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm
     """
     When a user performs actions
-      | action_method   | action_params       |
-      | move_to_element | css: #secondary-nav > ul > li:nth-child(1) > label |
+      | action_method   | action_params                                                                |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(1) > label                           |
       | click           | css: #secondary-nav > ul > li:nth-child(1) > div > ul > li:nth-child(10) > a |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field | unique_value             |
       | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
-      | prop_key               | prop_value                        |
-      | activityLocation       | Visitor : SP Profile                    |
+      | prop_key               | prop_value                               |
+      | activityLocation       | Visitor : SP Profile                     |
       | description            | Interior menu category link in header    |
-      | userId                 |                                   |
+      | userId                 |                                          |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/longmont/plumbing.htm"
 
@@ -319,17 +319,17 @@ Feature:
     /companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm
     """
     When a user performs actions
-      | action_method   | action_params       |
-      | move_to_element | css: #secondary-nav > ul > li:nth-child(1) > label |
+      | action_method   | action_params                                                                |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(1) > label                           |
       | click           | css: #secondary-nav > ul > li:nth-child(1) > div > ul > li:nth-child(11) > a |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field | unique_value             |
       | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
-      | prop_key               | prop_value                        |
-      | activityLocation       | Visitor : SP Profile                    |
+      | prop_key               | prop_value                               |
+      | activityLocation       | Visitor : SP Profile                     |
       | description            | Interior menu category link in header    |
-      | userId                 |                                   |
+      | userId                 |                                          |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/longmont/kitchen-and-bath-remodeling.htm"
 
@@ -340,17 +340,17 @@ Feature:
     /companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm
     """
     When a user performs actions
-      | action_method   | action_params       |
-      | move_to_element | css: #secondary-nav > ul > li:nth-child(1) > label |
+      | action_method   | action_params                                              |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(1) > label         |
       | click           | css: #secondary-nav > ul > li:nth-child(1) > div > div > a |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field | unique_value             |
       | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
-      | prop_key               | prop_value                        |
-      | activityLocation       | Visitor : SP Profile                    |
+      | prop_key               | prop_value                                          |
+      | activityLocation       | Visitor : SP Profile                                |
       | description            | Interior menu view all categories link in header    |
-      | userId                 |                                   |
+      | userId                 |                                                     |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/"
 
@@ -361,17 +361,17 @@ Feature:
     /companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm
     """
     When a user performs actions
-      | action_method   | action_params       |
-      | move_to_element | css: #secondary-nav > ul > li:nth-child(2) > label > span |
+      | action_method   | action_params                                                               |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(2) > label > span                   |
       | click           | css: #secondary-nav > ul > li:nth-child(2) > div > ul > li:nth-child(1) > a |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field | unique_value             |
       | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
-      | prop_key               | prop_value                        |
-      | activityLocation       | Visitor : SP Profile                    |
+      | prop_key               | prop_value                             |
+      | activityLocation       | Visitor : SP Profile                   |
       | description            | Exterior menu category link in header  |
-      | userId                 |                                   |
+      | userId                 |                                        |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/longmont/concrete-repair.htm"
 
@@ -382,17 +382,17 @@ Feature:
     /companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm
     """
     When a user performs actions
-      | action_method   | action_params       |
-      | move_to_element | css: #secondary-nav > ul > li:nth-child(2) > label > span |
+      | action_method   | action_params                                                               |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(2) > label > span                   |
       | click           | css: #secondary-nav > ul > li:nth-child(2) > div > ul > li:nth-child(2) > a |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field | unique_value             |
       | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
-      | prop_key               | prop_value                        |
-      | activityLocation       | Visitor : SP Profile                    |
+      | prop_key               | prop_value                             |
+      | activityLocation       | Visitor : SP Profile                   |
       | description            | Exterior menu category link in header  |
-      | userId                 |                                   |
+      | userId                 |                                        |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/longmont/doors.htm"
 
@@ -403,17 +403,17 @@ Feature:
     /companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm
     """
     When a user performs actions
-      | action_method   | action_params       |
-      | move_to_element | css: #secondary-nav > ul > li:nth-child(2) > label > span |
+      | action_method   | action_params                                                               |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(2) > label > span                   |
       | click           | css: #secondary-nav > ul > li:nth-child(2) > div > ul > li:nth-child(3) > a |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field | unique_value             |
       | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
-      | prop_key               | prop_value                        |
-      | activityLocation       | Visitor : SP Profile                    |
+      | prop_key               | prop_value                             |
+      | activityLocation       | Visitor : SP Profile                   |
       | description            | Exterior menu category link in header  |
-      | userId                 |                                   |
+      | userId                 |                                        |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/longmont/driveways.htm"
 
@@ -424,17 +424,17 @@ Feature:
     /companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm
     """
     When a user performs actions
-      | action_method   | action_params       |
-      | move_to_element | css: #secondary-nav > ul > li:nth-child(2) > label > span |
+      | action_method   | action_params                                                               |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(2) > label > span                   |
       | click           | css: #secondary-nav > ul > li:nth-child(2) > div > ul > li:nth-child(4) > a |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field | unique_value             |
       | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
-      | prop_key               | prop_value                        |
-      | activityLocation       | Visitor : SP Profile                    |
+      | prop_key               | prop_value                             |
+      | activityLocation       | Visitor : SP Profile                   |
       | description            | Exterior menu category link in header  |
-      | userId                 |                                   |
+      | userId                 |                                        |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/longmont/exterior-painting.htm"
 
@@ -445,17 +445,17 @@ Feature:
     /companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm
     """
     When a user performs actions
-      | action_method   | action_params       |
-      | move_to_element | css: #secondary-nav > ul > li:nth-child(2) > label > span |
+      | action_method   | action_params                                                               |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(2) > label > span                   |
       | click           | css: #secondary-nav > ul > li:nth-child(2) > div > ul > li:nth-child(5) > a |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field | unique_value             |
       | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
-      | prop_key               | prop_value                        |
-      | activityLocation       | Visitor : SP Profile                    |
+      | prop_key               | prop_value                             |
+      | activityLocation       | Visitor : SP Profile                   |
       | description            | Exterior menu category link in header  |
-      | userId                 |                                   |
+      | userId                 |                                        |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/longmont/garage-doors.htm"
 
