@@ -140,10 +140,10 @@ Feature:
       | description            | Interior menu category link in header    |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/carpet-cleaning.htm"
+    And the landing URL contains ".angieslist.com/companylist/us/co/longmont/carpet-cleaning.htm"
 
 
-  @catNoGeoSegmentHeaderInteriorContractors @leafPageHeader @companyListTreeHeader
+  @leafPageHeaderInteriorContractors @leafPageHeader @companyListTreeHeader
   Scenario: user is on a visitor site page
     Given user is on a visitor site page
     """
@@ -162,11 +162,15 @@ Feature:
       | description            | Interior menu category link in header    |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/contractor.htm"
+    And the landing URL contains ".angieslist.com/companylist/us/co/longmont/contractor.htm"
 
-  @catNoGeoSegmentHeaderInteriorDrywall @companyListTreeHeader
-  Scenario: User hovers then clicks on Drywall in the header on the Drupal Leaf
-    Given user is on a visitor site catnogeo page
+
+  @leafPageGeoSegmentHeaderInteriorDrywall @leafPageHeader @companyListTreeHeader
+  Scenario: user is on a visitor site page
+    Given user is on a visitor site page
+    """
+    /companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm
+    """
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(1) > label |
@@ -180,11 +184,14 @@ Feature:
       | description            | Interior menu category link in header    |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/drywall.htm"
+    And the landing URL contains ".angieslist.com/companylist/us/co/longmont/drywall.htm"
 
-  @catNoGeoSegmentHeaderInteriorElectrical @companyListTreeHeader
-  Scenario: User hovers then clicks on Electrical in the header on the Drupal Leaf
-    Given user is on a visitor site catnogeo page
+  @leafPageSegmentHeaderInteriorElectrical @leafPageHeader @companyListTreeHeader
+  Scenario: user is on a visitor site page
+    Given user is on a visitor site page
+    """
+    /companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm
+    """
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(1) > label |
@@ -198,11 +205,14 @@ Feature:
       | description            | Interior menu category link in header    |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/electrical.htm"
+    And the landing URL contains ".angieslist.com/companylist/us/co/longmont/electrical.htm"
 
-  @catNoGeoSegmentHeaderInteriorFlooring @companyListTreeHeader
-  Scenario: User hovers then clicks on Flooring in the header on the Drupal Leaf
-    Given user is on a visitor site catnogeo page
+  @leafPageSegmentHeaderInteriorFlooring @leafPageHeader @companyListTreeHeader
+  Scenario: user is on a visitor site page
+    Given user is on a visitor site page
+    """
+    /companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm
+    """
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(1) > label |
@@ -216,7 +226,7 @@ Feature:
       | description            | Interior menu category link in header    |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/flooring.htm"
+    And the landing URL contains ".angieslist.com/companylist/us/co/longmont/flooring.htm"
 
   @catNoGeoSegmentHeaderInteriorHVAC @companyListTreeHeader
   Scenario: User hovers then clicks on Heating & Cooling in the header on the Drupal Leaf
