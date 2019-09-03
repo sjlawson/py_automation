@@ -1,44 +1,38 @@
-@leafAdvertiser
 Feature:
+
   @leafAdvertiserPageCall
-  Scenario: segment page call for Advertiser
-    Given user is on a visitor site page
-    """
-    /companylist/us/tx/richardson/green-leaf-air-reviews-8993301.htm
-    """
+  Scenario: segment page call for Leaf Page Advertiser
+    Given user is on a visitor site leaf advertiser page
     When a segment page call is sent for a unique field value pair
       | unique_field | unique_value         |
       | name         | Visitor : SP Profile |
     Then the segment call contains parameters
       | prop_key               | prop_value                                                                              |
       | atTestOffer            |                                                                                         |
-      | categoryId             | 107                                                                                     |
+      | categoryId             | 294                                                                                     |
       | cid                    |                                                                                         |
-      | homeAdvisorCategoryId  | 10216                                                                                   |
-      | marketId               | 13                                                                                      |
+      | homeAdvisorCategoryId  | 10381                                                                                   |
+      | marketId               | 27                                                                                      |
       | name                   | Visitor : SP Profile                                                                    |
       | pageVersion            | Lullabot Redesign                                                                       |
-      | path                   | /companylist/us/tx/richardson/green-leaf-air-reviews-8993301.htm                        |
+      | path                   | /companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm                |
       | referrer               |                                                                                         |
       | search                 |                                                                                         |
       | srCtaDisplayed         |                                                                                         |
       | srCtaVersion           |                                                                                         |
-      | title                  | Green Leaf Air Reviews - Richardson, TX &vert; Angie's List                             |
+      | title                  | Ace of Diamonds Painting Reviews - Longmont, CO \| Angie's List                         |
       | url                    |                                                                                         |
       | userId                 |                                                                                         |
       | userType               | Visitor - New                                                                           |
-      | visitorPageCategory    | PLUMBING                                                                                |
-      | visitorPageGeo         | RICHARDSON                                                                              |
-      | visitorPageGeoCategory | RICHARDSON - PLUMBING                                                                   |
+      | visitorPageCategory    | PAINTING - INTERIOR                                                                     |
+      | visitorPageGeo         | LONGMONT                                                                                |
+      | visitorPageGeoCategory | LONGMONT - PAINTING - INTERIOR                                                          |
 
 
 ##### Header Tests #####
   @headerJoinLeafPage @leafPageHeader @companyListTreeHeader
-  Scenario: user is on a visitor site page
-    Given user is on a visitor site page
-    """
-    /companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm
-    """
+  Scenario: user is on a visitor site leaf advertiser page
+    Given user is on a visitor site leaf advertiser page
     When a user performs actions
     | action_method | action_params |
     | click         | #header-join  |
