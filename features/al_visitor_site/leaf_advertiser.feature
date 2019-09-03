@@ -670,17 +670,17 @@ Feature:
   Scenario: User hovers then clicks on Land Surveying in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
-      | action_method   | action_params       |
-      | move_to_element | css: #secondary-nav > ul > li:nth-child(3) > label |
+      | action_method   | action_params                                                               |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(3) > label                          |
       | click           | css: #secondary-nav > ul > li:nth-child(3) > div > ul > li:nth-child(3) > a |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field     | unique_value         |
       | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
-      | prop_key               | prop_value                        |
-      | activityLocation       | Visitor : SP Profile                    |
+      | prop_key               | prop_value                                  |
+      | activityLocation       | Visitor : SP Profile                        |
       | description            | Lawn & Garden menu category link in header  |
-      | userId                 |                                   |
+      | userId                 |                                             |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/longmont/land-surveying.htm"
 
@@ -688,17 +688,17 @@ Feature:
   Scenario: User hovers then clicks on Landscaping in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
-      | action_method   | action_params       |
-      | move_to_element | css: #secondary-nav > ul > li:nth-child(3) > label |
+      | action_method   | action_params                                                               |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(3) > label                          |
       | click           | css: #secondary-nav > ul > li:nth-child(3) > div > ul > li:nth-child(4) > a |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field     | unique_value         |
       | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
-      | prop_key               | prop_value                        |
-      | activityLocation       | Visitor : SP Profile                    |
+      | prop_key               | prop_value                                  |
+      | activityLocation       | Visitor : SP Profile                        |
       | description            | Lawn & Garden menu category link in header  |
-      | userId                 |                                   |
+      | userId                 |                                             |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/longmont/landscaping.htm"
 
@@ -706,17 +706,17 @@ Feature:
   Scenario: User hovers then clicks on Lawn & Yard in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
-      | action_method   | action_params       |
-      | move_to_element | css: #secondary-nav > ul > li:nth-child(3) > label |
+      | action_method   | action_params                                                               |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(3) > label                          |
       | click           | css: #secondary-nav > ul > li:nth-child(3) > div > ul > li:nth-child(5) > a |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field     | unique_value         |
       | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
-      | prop_key               | prop_value                        |
-      | activityLocation       | Visitor : SP Profile                    |
+      | prop_key               | prop_value                                  |
+      | activityLocation       | Visitor : SP Profile                        |
       | description            | Lawn & Garden menu category link in header  |
-      | userId                 |                                   |
+      | userId                 |                                             |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/longmont/lawn-and-yard-work.htm"
 
@@ -724,17 +724,17 @@ Feature:
   Scenario: User hovers then clicks on Lawn Irrigation in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
-      | action_method   | action_params       |
-      | move_to_element | css: #secondary-nav > ul > li:nth-child(3) > label |
+      | action_method   | action_params                                                               |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(3) > label                          |
       | click           | css: #secondary-nav > ul > li:nth-child(3) > div > ul > li:nth-child(6) > a |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field     | unique_value         |
       | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
-      | prop_key               | prop_value                        |
-      | activityLocation       | Visitor : SP Profile                    |
+      | prop_key               | prop_value                                  |
+      | activityLocation       | Visitor : SP Profile                        |
       | description            | Lawn & Garden menu category link in header  |
-      | userId                 |                                   |
+      | userId                 |                                             |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/longmont/lawn-irrigation.htm"
 
@@ -742,17 +742,17 @@ Feature:
   Scenario: User hovers then clicks on Lawn Mower Repair in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
-      | action_method   | action_params       |
-      | move_to_element | css: #secondary-nav > ul > li:nth-child(3) > label |
+      | action_method   | action_params                                                               |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(3) > label                          |
       | click           | css: #secondary-nav > ul > li:nth-child(3) > div > ul > li:nth-child(7) > a |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field     | unique_value         |
       | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
-      | prop_key               | prop_value                        |
-      | activityLocation       | Visitor : SP Profile                    |
+      | prop_key               | prop_value                                  |
+      | activityLocation       | Visitor : SP Profile                        |
       | description            | Lawn & Garden menu category link in header  |
-      | userId                 |                                   |
+      | userId                 |                                             |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/longmont/lawn-mower-repair.htm"
 
@@ -760,17 +760,17 @@ Feature:
   Scenario: User hovers then clicks on Leaf Removal in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
-      | action_method   | action_params       |
-      | move_to_element | css: #secondary-nav > ul > li:nth-child(3) > label |
+      | action_method   | action_params                                                               |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(3) > label                          |
       | click           | css: #secondary-nav > ul > li:nth-child(3) > div > ul > li:nth-child(8) > a |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field     | unique_value         |
       | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
-      | prop_key               | prop_value                        |
-      | activityLocation       | Visitor : SP Profile                    |
+      | prop_key               | prop_value                                  |
+      | activityLocation       | Visitor : SP Profile                        |
       | description            | Lawn & Garden menu category link in header  |
-      | userId                 |                                   |
+      | userId                 |                                             |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/longmont/leaf-removal.htm"
 
@@ -778,17 +778,17 @@ Feature:
   Scenario: User hovers then clicks on Patios in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
-      | action_method   | action_params       |
-      | move_to_element | css: #secondary-nav > ul > li:nth-child(3) > label |
+      | action_method   | action_params                                                               |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(3) > label                          |
       | click           | css: #secondary-nav > ul > li:nth-child(3) > div > ul > li:nth-child(9) > a |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field     | unique_value         |
       | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
-      | prop_key               | prop_value                        |
-      | activityLocation       | Visitor : SP Profile                    |
+      | prop_key               | prop_value                                  |
+      | activityLocation       | Visitor : SP Profile                        |
       | description            | Lawn & Garden menu category link in header  |
-      | userId                 |                                   |
+      | userId                 |                                             |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/longmont/sunroom-and-patio-remodeling.htm"
 
@@ -796,17 +796,17 @@ Feature:
   Scenario: User hovers then clicks on Shed Builders in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
-      | action_method   | action_params       |
-      | move_to_element | css: #secondary-nav > ul > li:nth-child(3) > label |
+      | action_method   | action_params                                                                |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(3) > label                           |
       | click           | css: #secondary-nav > ul > li:nth-child(3) > div > ul > li:nth-child(10) > a |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field     | unique_value         |
       | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
-      | prop_key               | prop_value                        |
-      | activityLocation       | Visitor : SP Profile                    |
+      | prop_key               | prop_value                                  |
+      | activityLocation       | Visitor : SP Profile                        |
       | description            | Lawn & Garden menu category link in header  |
-      | userId                 |                                   |
+      | userId                 |                                             |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/longmont/garage-builders.htm"
 
@@ -815,16 +815,16 @@ Feature:
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
       | action_method   | action_params       |
-      | move_to_element | css: #secondary-nav > ul > li:nth-child(3) > label |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(3) > label                           |
       | click           | css: #secondary-nav > ul > li:nth-child(3) > div > ul > li:nth-child(11) > a |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field     | unique_value         |
       | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
-      | prop_key               | prop_value                        |
-      | activityLocation       | Visitor : SP Profile                    |
+      | prop_key               | prop_value                                  |
+      | activityLocation       | Visitor : SP Profile                        |
       | description            | Lawn & Garden menu category link in header  |
-      | userId                 |                                   |
+      | userId                 |                                             |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/longmont/tree-service.htm"
 
@@ -832,17 +832,17 @@ Feature:
   Scenario: User hovers then clicks on View All in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
-      | action_method   | action_params       |
-      | move_to_element | css: #secondary-nav > ul > li:nth-child(3) > label |
+      | action_method   | action_params                                              |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(3) > label         |
       | click           | css: #secondary-nav > ul > li:nth-child(3) > div > div > a |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field     | unique_value         |
       | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
-      | prop_key               | prop_value                        |
-      | activityLocation       | Visitor : SP Profile                    |
+      | prop_key               | prop_value                                             |
+      | activityLocation       | Visitor : SP Profile                                   |
       | description            | Lawn & Garden menu view all categories link in header  |
-      | userId                 |                                   |
+      | userId                 |                                                        |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/"
 
@@ -850,15 +850,15 @@ Feature:
   Scenario: User hovers then clicks on Basement Waterproofing in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
-      | action_method   | action_params       |
-      | move_to_element | css: #secondary-nav > ul > li:nth-child(4) > label |
+      | action_method   | action_params                                                               |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(4) > label                          |
       | click           | css: #secondary-nav > ul > li:nth-child(4) > div > ul > li:nth-child(1) > a |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field     | unique_value         |
       | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
       | prop_key               | prop_value                        |
-      | activityLocation       | Visitor : SP Profile                    |
+      | activityLocation       | Visitor : SP Profile              |
       | description            | More menu category link in header |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
@@ -868,15 +868,15 @@ Feature:
   Scenario: User hovers then clicks on Dog Grooming in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
-      | action_method   | action_params       |
-      | move_to_element | css: #secondary-nav > ul > li:nth-child(4) > label |
+      | action_method   | action_params                                                               |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(4) > label                          |
       | click           | css: #secondary-nav > ul > li:nth-child(4) > div > ul > li:nth-child(2) > a |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field     | unique_value         |
       | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
       | prop_key               | prop_value                        |
-      | activityLocation       | Visitor : SP Profile                    |
+      | activityLocation       | Visitor : SP Profile              |
       | description            | More menu category link in header |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
@@ -887,15 +887,15 @@ Feature:
   Scenario: User hovers then clicks on Handymen in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
-      | action_method   | action_params       |
-      | move_to_element | css: #secondary-nav > ul > li:nth-child(4) > label |
+      | action_method   | action_params                                                               |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(4) > label                          |
       | click           | css: #secondary-nav > ul > li:nth-child(4) > div > ul > li:nth-child(3) > a |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field     | unique_value         |
       | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
       | prop_key               | prop_value                        |
-      | activityLocation       | Visitor : SP Profile                    |
+      | activityLocation       | Visitor : SP Profile              |
       | description            | More menu category link in header |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
@@ -905,15 +905,15 @@ Feature:
   Scenario: User hovers then clicks on Junk Hauling in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
-      | action_method   | action_params       |
-      | move_to_element | css: #secondary-nav > ul > li:nth-child(4) > label |
+      | action_method   | action_params                                                               |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(4) > label                          |
       | click           | css: #secondary-nav > ul > li:nth-child(4) > div > ul > li:nth-child(4) > a |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field     | unique_value         |
       | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
       | prop_key               | prop_value                        |
-      | activityLocation       | Visitor : SP Profile                    |
+      | activityLocation       | Visitor : SP Profile              |
       | description            | More menu category link in header |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
@@ -923,15 +923,15 @@ Feature:
   Scenario: User hovers then clicks on Locksmiths in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
-      | action_method   | action_params       |
-      | move_to_element | css: #secondary-nav > ul > li:nth-child(4) > label |
+      | action_method   | action_params                                                               |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(4) > label                          |
       | click           | css: #secondary-nav > ul > li:nth-child(4) > div > ul > li:nth-child(5) > a |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field     | unique_value         |
       | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
       | prop_key               | prop_value                        |
-      | activityLocation       | Visitor : SP Profile                    |
+      | activityLocation       | Visitor : SP Profile              |
       | description            | More menu category link in header |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
@@ -941,15 +941,15 @@ Feature:
   Scenario: User hovers then clicks on Moving Companies in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
-      | action_method   | action_params       |
-      | move_to_element | css: #secondary-nav > ul > li:nth-child(4) > label |
+      | action_method   | action_params                                                               |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(4) > label                          |
       | click           | css: #secondary-nav > ul > li:nth-child(4) > div > ul > li:nth-child(6) > a |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field     | unique_value         |
       | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
       | prop_key               | prop_value                        |
-      | activityLocation       | Visitor : SP Profile                    |
+      | activityLocation       | Visitor : SP Profile              |
       | description            | More menu category link in header |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
@@ -959,15 +959,15 @@ Feature:
   Scenario: User hovers then clicks on Pest Control Companies in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
-      | action_method   | action_params       |
-      | move_to_element | css: #secondary-nav > ul > li:nth-child(4) > label |
+      | action_method   | action_params                                                               |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(4) > label                          |
       | click           | css: #secondary-nav > ul > li:nth-child(4) > div > ul > li:nth-child(7) > a |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field     | unique_value         |
       | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
       | prop_key               | prop_value                        |
-      | activityLocation       | Visitor : SP Profile                    |
+      | activityLocation       | Visitor : SP Profile              |
       | description            | More menu category link in header |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
@@ -977,15 +977,15 @@ Feature:
   Scenario: User hovers then clicks on Pressure Washing Companies in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
-      | action_method   | action_params       |
-      | move_to_element | css: #secondary-nav > ul > li:nth-child(4) > label |
+      | action_method   | action_params                                                               |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(4) > label                          |
       | click           | css: #secondary-nav > ul > li:nth-child(4) > div > ul > li:nth-child(8) > a |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field     | unique_value         |
       | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
       | prop_key               | prop_value                        |
-      | activityLocation       | Visitor : SP Profile                    |
+      | activityLocation       | Visitor : SP Profile              |
       | description            | More menu category link in header |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
@@ -995,15 +995,15 @@ Feature:
   Scenario: User hovers then clicks on Septic Tanks Companies in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
-      | action_method   | action_params       |
-      | move_to_element | css: #secondary-nav > ul > li:nth-child(4) > label |
+      | action_method   | action_params                                                               |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(4) > label                          |
       | click           | css: #secondary-nav > ul > li:nth-child(4) > div > ul > li:nth-child(9) > a |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field     | unique_value         |
       | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
       | prop_key               | prop_value                        |
-      | activityLocation       | Visitor : SP Profile                    |
+      | activityLocation       | Visitor : SP Profile              |
       | description            | More menu category link in header |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
@@ -1013,17 +1013,17 @@ Feature:
   Scenario: User hovers then clicks on View All Cats - More in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
-      | action_method   | action_params       |
+      | action_method   | action_params                                      |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(4) > label |
-      | click           | css: #more-toggle > div:nth-child(5) > a |
+      | click           | css: #more-toggle > div:nth-child(5) > a           |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field     | unique_value         |
       | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
-      | prop_key               | prop_value                        |
-      | activityLocation       | Visitor : SP Profile                    |
+      | prop_key               | prop_value                                   |
+      | activityLocation       | Visitor : SP Profile                         |
       | description            | More menu view all categories link in header |
-      | userId                 |                                   |
+      | userId                 |                                              |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/"
 
@@ -1031,15 +1031,15 @@ Feature:
   Scenario: User hovers then clicks on Near Me in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
-      | action_method   | action_params       |
+      | action_method   | action_params                                      |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(4) > label |
-      | click           | css: #more-toggle > div:nth-child(3) > a |
+      | click           | css: #more-toggle > div:nth-child(3) > a           |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field     | unique_value         |
       | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
       | prop_key               | prop_value                      |
-      | activityLocation       | Visitor : SP Profile                  |
+      | activityLocation       | Visitor : SP Profile            |
       | description            | Near Me link in desktop header  |
       | userId                 |                                 |
     And we wait "1" seconds for the next page to load
@@ -1049,17 +1049,17 @@ Feature:
   Scenario: User hovers then clicks on Appliances in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
-      | action_method   | action_params       |
-      | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label |
+      | action_method   | action_params                                                               |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label                          |
       | click           | css: #secondary-nav > ul > li:nth-child(5) > div > ul > li:nth-child(1) > a |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field     | unique_value         |
       | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
-      | prop_key               | prop_value                      |
-      | activityLocation       | Visitor : SP Profile                  |
+      | prop_key               | prop_value                                      |
+      | activityLocation       | Visitor : SP Profile                            |
       | description            | Articles & Advice menu category link in header  |
-      | userId                 |                                 |
+      | userId                 |                                                 |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/appliances/"
 
@@ -1067,17 +1067,17 @@ Feature:
   Scenario: User hovers then clicks on Basements & Foundations in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
-      | action_method   | action_params       |
-      | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span |
+      | action_method   | action_params                                                               |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span                   |
       | click           | css: #secondary-nav > ul > li:nth-child(5) > div > ul > li:nth-child(2) > a |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field     | unique_value         |
       | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
-      | prop_key               | prop_value                      |
-      | activityLocation       | Visitor : SP Profile                  |
+      | prop_key               | prop_value                                      |
+      | activityLocation       | Visitor : SP Profile                            |
       | description            | Articles & Advice menu category link in header  |
-      | userId                 |                                 |
+      | userId                 |                                                 |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/basements-and-foundations/"
 
@@ -1085,17 +1085,17 @@ Feature:
   Scenario: User hovers then clicks on Bathroom Remodel in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
-      | action_method   | action_params       |
-      | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span |
+      | action_method   | action_params                                                               |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span                   |
       | click           | css: #secondary-nav > ul > li:nth-child(5) > div > ul > li:nth-child(3) > a |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field     | unique_value         |
       | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
-      | prop_key               | prop_value                      |
-      | activityLocation       | Visitor : SP Profile                  |
+      | prop_key               | prop_value                                      |
+      | activityLocation       | Visitor : SP Profile                            |
       | description            | Articles & Advice menu category link in header  |
-      | userId                 |                                 |
+      | userId                 |                                                 |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/bathroom-remodel/"
 
@@ -1103,17 +1103,17 @@ Feature:
   Scenario: User hovers then clicks on Chimneys & Fireplaces in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
-      | action_method   | action_params       |
-      | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span |
+      | action_method   | action_params                                                               |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span                   |
       | click           | css: #secondary-nav > ul > li:nth-child(5) > div > ul > li:nth-child(4) > a |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field     | unique_value         |
       | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
-      | prop_key               | prop_value                      |
-      | activityLocation       | Visitor : SP Profile                  |
+      | prop_key               | prop_value                                      |
+      | activityLocation       | Visitor : SP Profile                            |
       | description            | Articles & Advice menu category link in header  |
-      | userId                 |                                 |
+      | userId                 |                                                 |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/chimneys-fireplaces/"
 
@@ -1121,17 +1121,17 @@ Feature:
   Scenario: User hovers then clicks on Cleaning in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
-      | action_method   | action_params       |
-      | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span |
+      | action_method   | action_params                                                               |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span                   |
       | click           | css: #secondary-nav > ul > li:nth-child(5) > div > ul > li:nth-child(5) > a |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field     | unique_value         |
       | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
-      | prop_key               | prop_value                      |
-      | activityLocation       | Visitor : SP Profile                  |
+      | prop_key               | prop_value                                      |
+      | activityLocation       | Visitor : SP Profile                            |
       | description            | Articles & Advice menu category link in header  |
-      | userId                 |                                 |
+      | userId                 |                                                 |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/cleaning/"
 
@@ -1139,17 +1139,17 @@ Feature:
   Scenario: User hovers then clicks on Contractors in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
-      | action_method   | action_params       |
-      | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span |
+      | action_method   | action_params                                                               |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span                   |
       | click           | css: #secondary-nav > ul > li:nth-child(5) > div > ul > li:nth-child(6) > a |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field     | unique_value         |
       | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
-      | prop_key               | prop_value                      |
-      | activityLocation       | Visitor : SP Profile                  |
+      | prop_key               | prop_value                                      |
+      | activityLocation       | Visitor : SP Profile                            |
       | description            | Articles & Advice menu category link in header  |
-      | userId                 |                                 |
+      | userId                 |                                                 |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/contractors/"
 
@@ -1157,17 +1157,17 @@ Feature:
   Scenario: User hovers then clicks on Electrical in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
-      | action_method   | action_params       |
-      | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span |
+      | action_method   | action_params                                                               |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span                   |
       | click           | css: #secondary-nav > ul > li:nth-child(5) > div > ul > li:nth-child(7) > a |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field     | unique_value         |
       | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
-      | prop_key               | prop_value                      |
-      | activityLocation       | Visitor : SP Profile                  |
+      | prop_key               | prop_value                                      |
+      | activityLocation       | Visitor : SP Profile                            |
       | description            | Articles & Advice menu category link in header  |
-      | userId                 |                                 |
+      | userId                 |                                                 |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/electrical/"
 
@@ -1175,17 +1175,17 @@ Feature:
   Scenario: User hovers then clicks on Flooring in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
-      | action_method   | action_params       |
-      | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span |
+      | action_method   | action_params                                                               |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span                   |
       | click           | css: #secondary-nav > ul > li:nth-child(5) > div > ul > li:nth-child(8) > a |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field     | unique_value         |
       | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
-      | prop_key               | prop_value                      |
-      | activityLocation       | Visitor : SP Profile                  |
+      | prop_key               | prop_value                                      |
+      | activityLocation       | Visitor : SP Profile                            |
       | description            | Articles & Advice menu category link in header  |
-      | userId                 |                                 |
+      | userId                 |                                                 |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/flooring/"
 
@@ -1193,17 +1193,17 @@ Feature:
   Scenario: User hovers then clicks on Garages & Driveways in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
-      | action_method   | action_params       |
-      | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span |
+      | action_method   | action_params                                                               |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span                   |
       | click           | css: #secondary-nav > ul > li:nth-child(5) > div > ul > li:nth-child(9) > a |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field     | unique_value         |
       | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
-      | prop_key               | prop_value                      |
-      | activityLocation       | Visitor : SP Profile                  |
+      | prop_key               | prop_value                                      |
+      | activityLocation       | Visitor : SP Profile                            |
       | description            | Articles & Advice menu category link in header  |
-      | userId                 |                                 |
+      | userId                 |                                                 |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/garages-and-driveways/"
 
@@ -1211,17 +1211,17 @@ Feature:
   Scenario: User hovers then clicks on Heating & Cooling in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
-      | action_method   | action_params       |
-      | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span |
+      | action_method   | action_params                                                                |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span                    |
       | click           | css: #secondary-nav > ul > li:nth-child(5) > div > ul > li:nth-child(10) > a |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field     | unique_value         |
       | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
-      | prop_key               | prop_value                      |
-      | activityLocation       | Visitor : SP Profile                  |
+      | prop_key               | prop_value                                      |
+      | activityLocation       | Visitor : SP Profile                            |
       | description            | Articles & Advice menu category link in header  |
-      | userId                 |                                 |
+      | userId                 |                                                 |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/hvac/"
 
@@ -1229,17 +1229,17 @@ Feature:
   Scenario: User hovers then clicks on Home Construction in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
-      | action_method   | action_params       |
-      | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span |
+      | action_method   | action_params                                                                |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span                    |
       | click           | css: #secondary-nav > ul > li:nth-child(5) > div > ul > li:nth-child(11) > a |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field     | unique_value         |
       | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
-      | prop_key               | prop_value                      |
-      | activityLocation       | Visitor : SP Profile                  |
+      | prop_key               | prop_value                                      |
+      | activityLocation       | Visitor : SP Profile                            |
       | description            | Articles & Advice menu category link in header  |
-      | userId                 |                                 |
+      | userId                 |                                                 |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/home-construction-design/"
 
@@ -1247,17 +1247,17 @@ Feature:
   Scenario: User hovers then clicks on Home Exteriors in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
-      | action_method   | action_params       |
-      | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span |
+      | action_method   | action_params                                                                |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span                    |
       | click           | css: #secondary-nav > ul > li:nth-child(5) > div > ul > li:nth-child(12) > a |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field     | unique_value         |
       | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
-      | prop_key               | prop_value                      |
-      | activityLocation       | Visitor : SP Profile                  |
+      | prop_key               | prop_value                                      |
+      | activityLocation       | Visitor : SP Profile                            |
       | description            | Articles & Advice menu category link in header  |
-      | userId                 |                                 |
+      | userId                 |                                                 |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/home-exteriors/"
 
@@ -1265,17 +1265,17 @@ Feature:
   Scenario: User hovers then clicks on Home Interior in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
-      | action_method   | action_params       |
-      | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span |
+      | action_method   | action_params                                                                |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span                    |
       | click           | css: #secondary-nav > ul > li:nth-child(5) > div > ul > li:nth-child(13) > a |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field     | unique_value         |
       | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
-      | prop_key               | prop_value                      |
-      | activityLocation       | Visitor : SP Profile                  |
+      | prop_key               | prop_value                                      |
+      | activityLocation       | Visitor : SP Profile                            |
       | description            | Articles & Advice menu category link in header  |
-      | userId                 |                                 |
+      | userId                 |                                                 |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/home-interiors/"
 
@@ -1283,17 +1283,17 @@ Feature:
   Scenario: User hovers then clicks on Home Security in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
-      | action_method   | action_params       |
-      | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span |
+      | action_method   | action_params                                                                |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span                    |
       | click           | css: #secondary-nav > ul > li:nth-child(5) > div > ul > li:nth-child(14) > a |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field     | unique_value         |
       | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
-      | prop_key               | prop_value                      |
-      | activityLocation       | Visitor : SP Profile                  |
+      | prop_key               | prop_value                                      |
+      | activityLocation       | Visitor : SP Profile                            |
       | description            | Articles & Advice menu category link in header  |
-      | userId                 |                                 |
+      | userId                 |                                                 |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/home-security-systems/"
 
@@ -1301,17 +1301,17 @@ Feature:
   Scenario: User hovers then clicks on Kitchen Remodeling in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
-      | action_method   | action_params       |
-      | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span |
+      | action_method   | action_params                                                                |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span                    |
       | click           | css: #secondary-nav > ul > li:nth-child(5) > div > ul > li:nth-child(15) > a |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field     | unique_value         |
       | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
-      | prop_key               | prop_value                      |
-      | activityLocation       | Visitor : SP Profile                  |
+      | prop_key               | prop_value                                      |
+      | activityLocation       | Visitor : SP Profile                            |
       | description            | Articles & Advice menu category link in header  |
-      | userId                 |                                 |
+      | userId                 |                                                 |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/kitchen-remodeling/"
 
@@ -1319,17 +1319,17 @@ Feature:
   Scenario: User hovers then clicks on Landscaping in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
-      | action_method   | action_params       |
-      | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span |
+      | action_method   | action_params                                                                |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span                    |
       | click           | css: #secondary-nav > ul > li:nth-child(5) > div > ul > li:nth-child(16) > a |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field     | unique_value         |
       | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
-      | prop_key               | prop_value                      |
-      | activityLocation       | Visitor : SP Profile                  |
+      | prop_key               | prop_value                                      |
+      | activityLocation       | Visitor : SP Profile                            |
       | description            | Articles & Advice menu category link in header  |
-      | userId                 |                                 |
+      | userId                 |                                                 |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/landscaping-lawn-care/"
 
@@ -1337,17 +1337,17 @@ Feature:
   Scenario: User hovers then clicks on Lighting in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
-      | action_method   | action_params       |
-      | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span |
+      | action_method   | action_params                                                                |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span                    |
       | click           | css: #secondary-nav > ul > li:nth-child(5) > div > ul > li:nth-child(17) > a |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field     | unique_value         |
       | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
-      | prop_key               | prop_value                      |
-      | activityLocation       | Visitor : SP Profile                  |
+      | prop_key               | prop_value                                      |
+      | activityLocation       | Visitor : SP Profile                            |
       | description            | Articles & Advice menu category link in header  |
-      | userId                 |                                 |
+      | userId                 |                                                 |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/lights/"
 
@@ -1355,17 +1355,17 @@ Feature:
   Scenario: User hovers then clicks on Moving in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
-      | action_method   | action_params       |
-      | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span |
+      | action_method   | action_params                                                                |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span                    |
       | click           | css: #secondary-nav > ul > li:nth-child(5) > div > ul > li:nth-child(18) > a |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field     | unique_value         |
       | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
-      | prop_key               | prop_value                      |
-      | activityLocation       | Visitor : SP Profile                  |
+      | prop_key               | prop_value                                      |
+      | activityLocation       | Visitor : SP Profile                            |
       | description            | Articles & Advice menu category link in header  |
-      | userId                 |                                 |
+      | userId                 |                                                 |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/movers/"
 
@@ -1373,17 +1373,17 @@ Feature:
   Scenario: User hovers then clicks on Outdoor Living in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
-      | action_method   | action_params       |
-      | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span |
+      | action_method   | action_params                                                                |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span                    |
       | click           | css: #secondary-nav > ul > li:nth-child(5) > div > ul > li:nth-child(19) > a |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field     | unique_value         |
       | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
-      | prop_key               | prop_value                      |
-      | activityLocation       | Visitor : SP Profile                  |
+      | prop_key               | prop_value                                      |
+      | activityLocation       | Visitor : SP Profile                            |
       | description            | Articles & Advice menu category link in header  |
-      | userId                 |                                 |
+      | userId                 |                                                 |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/outdoor-living/"
 
@@ -1391,17 +1391,17 @@ Feature:
   Scenario: User hovers then clicks on Pests in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
-      | action_method   | action_params       |
-      | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span |
+      | action_method   | action_params                                                                |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span                    |
       | click           | css: #secondary-nav > ul > li:nth-child(5) > div > ul > li:nth-child(20) > a |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field     | unique_value         |
       | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
-      | prop_key               | prop_value                      |
-      | activityLocation       | Visitor : SP Profile                  |
+      | prop_key               | prop_value                                      |
+      | activityLocation       | Visitor : SP Profile                            |
       | description            | Articles & Advice menu category link in header  |
-      | userId                 |                                 |
+      | userId                 |                                                 |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/household-pest-control/"
 
@@ -1409,17 +1409,17 @@ Feature:
   Scenario: User hovers then clicks on Plumbing in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
-      | action_method   | action_params       |
-      | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span |
+      | action_method   | action_params                                                                |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span                    |
       | click           | css: #secondary-nav > ul > li:nth-child(5) > div > ul > li:nth-child(21) > a |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field     | unique_value         |
       | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
-      | prop_key               | prop_value                      |
-      | activityLocation       | Visitor : SP Profile                  |
+      | prop_key               | prop_value                                      |
+      | activityLocation       | Visitor : SP Profile                            |
       | description            | Articles & Advice menu category link in header  |
-      | userId                 |                                 |
+      | userId                 |                                                 |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/plumbing/"
 
@@ -1427,17 +1427,17 @@ Feature:
   Scenario: User hovers then clicks on Remodeling in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
-      | action_method   | action_params       |
-      | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span |
+      | action_method   | action_params                                                                |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span                    |
       | click           | css: #secondary-nav > ul > li:nth-child(5) > div > ul > li:nth-child(22) > a |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field     | unique_value         |
       | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
-      | prop_key               | prop_value                      |
-      | activityLocation       | Visitor : SP Profile                  |
+      | prop_key               | prop_value                                      |
+      | activityLocation       | Visitor : SP Profile                            |
       | description            | Articles & Advice menu category link in header  |
-      | userId                 |                                 |
+      | userId                 |                                                 |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/remodeling/"
 
@@ -1445,17 +1445,17 @@ Feature:
   Scenario: User hovers then clicks on Roofing in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
-      | action_method   | action_params       |
-      | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span |
+      | action_method   | action_params                                                                |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span                    |
       | click           | css: #secondary-nav > ul > li:nth-child(5) > div > ul > li:nth-child(23) > a |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field     | unique_value         |
       | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
-      | prop_key               | prop_value                      |
-      | activityLocation       | Visitor : SP Profile                  |
+      | prop_key               | prop_value                                      |
+      | activityLocation       | Visitor : SP Profile                            |
       | description            | Articles & Advice menu category link in header  |
-      | userId                 |                                 |
+      | userId                 |                                                 |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/roofing/"
 
@@ -1463,17 +1463,17 @@ Feature:
   Scenario: User hovers then clicks on Storage & Organization in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
-      | action_method   | action_params       |
-      | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span |
+      | action_method   | action_params                                                                |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span                    |
       | click           | css: #secondary-nav > ul > li:nth-child(5) > div > ul > li:nth-child(24) > a |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field     | unique_value         |
       | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
-      | prop_key               | prop_value                      |
-      | activityLocation       | Visitor : SP Profile                  |
+      | prop_key               | prop_value                                      |
+      | activityLocation       | Visitor : SP Profile                            |
       | description            | Articles & Advice menu category link in header  |
-      | userId                 |                                 |
+      | userId                 |                                                 |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/storage-organization/"
 
@@ -1481,17 +1481,17 @@ Feature:
   Scenario: User hovers then clicks on Waste Management in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
-      | action_method   | action_params       |
-      | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span |
+      | action_method   | action_params                                                                |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span                    |
       | click           | css: #secondary-nav > ul > li:nth-child(5) > div > ul > li:nth-child(25) > a |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field     | unique_value         |
       | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
-      | prop_key               | prop_value                      |
-      | activityLocation       | Visitor : SP Profile                  |
+      | prop_key               | prop_value                                      |
+      | activityLocation       | Visitor : SP Profile                            |
       | description            | Articles & Advice menu category link in header  |
-      | userId                 |                                 |
+      | userId                 |                                                 |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/waste-management/"
 
@@ -1499,17 +1499,17 @@ Feature:
   Scenario: User hovers then clicks on View All in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
-      | action_method   | action_params       |
-      | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span |
+      | action_method   | action_params                                              |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span  |
       | click           | css: #secondary-nav > ul > li:nth-child(5) > div > div > a |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field     | unique_value         |
       | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
-      | prop_key               | prop_value                      |
-      | activityLocation       | Visitor : SP Profile              |
+      | prop_key               | prop_value                                               |
+      | activityLocation       | Visitor : SP Profile                                     |
       | description            | Articles & Advice menu view all articles link in header  |
-      | userId                 |                                 |
+      | userId                 |                                                          |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/articles/"
 
@@ -1519,10 +1519,7 @@ Feature:
 ##### Body Tests #####
   @leafAdvertiserRaqClick
   Scenario: RAQ click on Leaf Advertiser.
-    Given user is on a visitor site page
-    """
-    /companylist/us/tx/richardson/green-leaf-air-reviews-8993301.htm
-    """
+    Given user is on a visitor site leaf advertiser page
     When a user performs actions
       | action_method | action_params   |
       | click         | css: #block-system-main > div > div.grayRow.leaf--row__top > div > div.leaf__top-left > div.grayRow.leaf__contact-us > div > div.leaf-contact-us__contact-link > a |
@@ -1530,19 +1527,19 @@ Feature:
       | unique_field | unique_value           |
       | description  | Request a Quote button |
     And the segment call contains parameters
-      | prop_key                | prop_value              |
-      | activityLocation        | Visitor : SP Profile    |
-      | description             | Request a Quote button  |
-      | legacyServiceProviderId |                         |
-      | marketId                | 13                      |
-      | overallReviewGrade      |                         |
-      | reviewCount             |                         |
-      | userId                  |                         |
-      | visitorPageCategory     | PLUMBING                |
-      | visitorPageGeo          | RICHARDSON              |
-      | visitorPageGeoCategory  | RICHARDSON - PLUMBING   |
+      | prop_key                | prop_value                       |
+      | activityLocation        | Visitor : SP Profile             |
+      | description             | Request a Quote button           |
+      | legacyServiceProviderId |                                  |
+      | marketId                | 27                               |
+      | overallReviewGrade      |                                  |
+      | reviewCount             |                                  |
+      | userId                  |                                  |
+      | visitorPageCategory     | PAINTING - INTERIOR              |
+      | visitorPageGeo          | LONGMONT                         |
+      | visitorPageGeoCategory  | LONGMONT - PAINTING - INTERIOR   |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/app/lead/request_a_quote/8993301/project?categoryId=107&placementType=Web_LeafPage&withAlId=8993301"
+    And the landing URL contains ".angieslist.com/app/lead/request_a_quote/3623201/project?categoryId=294&placementType=Web_LeafPage&withAlId=3623201"
 
   @leafAdvertiserFirstOfferClick
   Scenario: Click on first offer - Advertiser Leaf
@@ -1632,7 +1629,16 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/app/offer/search"
 
-
+  @leafAdvertiserContactUs
+  Scenario: Click on button - Contact Us
+    Given user is on a visitor site leaf advertiser page
+    When a user performs actions
+      | action_method | action_params   |
+      | click | css: #block-system-main > div > div.grayRow.leaf--row__top > div > div.leaf__top-left div.leaf-contact-us > div.leaf-contact-us__contact-link |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value     |
+      | modalName    | Contact SP       | 
+    And we wait "1" seconds for the next page to load
 
 
 ##### Footer #####
