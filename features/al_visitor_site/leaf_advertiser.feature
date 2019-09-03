@@ -30,8 +30,8 @@ Feature:
 
 
 ##### Header Tests #####
-  @headerJoinLeafPage @leafPageHeader @companyListTreeHeader
-  Scenario: user is on a visitor site leaf advertiser page
+  @headerJoinNowLeafPage @leafPageHeader @companyListTreeHeader
+  Scenario: user is on a visitor site leaf advertiser page and clicks on Join Now
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
     | action_method | action_params |
@@ -44,17 +44,14 @@ Feature:
     | description         | Join link in header  |
     | activityLocation    | Visitor : SP Profile |
     | userId              |                      |
-    | visitorPageCategory | Roofing              |
+    | visitorPageCategory | Painting - Interior  |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/app/signup"
 
 
   @headerSignInLeafPage @leafPageHeader @companyListTreeHeader
-  Scenario: user is on a visitor site page
-    Given user is on a visitor site page
-    """
-    /companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm
-    """
+  Scenario: user is on a visitor site leaf advertiser page and clicks on Sign In button
+    Given user is on a visitor site leaf advertiser page
     When a user performs actions
     | action_method | action_params   |
     | click         | #header-sign-in |
@@ -66,17 +63,14 @@ Feature:
     | description         | Sign In link in header |
     | activityLocation    | Visitor : SP Profile   |
     | userId              |                        |
-    | visitorPageCategory | Roofing                |
+    | visitorPageCategory | Painting - Interior    |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/member/login"
 
 
   @headerBusinessCenterLeafPage @leafPageHeader @companyListTreeHeader
-  Scenario: user is on a visitor site page
-    Given user is on a visitor site page
-    """
-    /companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm
-    """
+  Scenario: user is on a visitor site leaf advertiser page and clicks on Business Center button
+    Given user is on a visitor site leaf advertiser page
     When a user performs actions
     | action_method | action_params    |
     | click         | #business-center |
@@ -94,11 +88,8 @@ Feature:
 
 
   @leafPageSegmentHeaderInteriorApplianceRepair @leafPageHeader @companyListTreeHeader
-  Scenario: user is on a visitor site page
-    Given user is on a visitor site page
-    """
-    /companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm
-    """
+  Scenario: user is on a visitor site page and clicks on Interior Appliance Repair
+    Given user is on a visitor site leaf advertiser page
     When a user performs actions
       | action_method   | action_params                                                               |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(1) > label                          |
