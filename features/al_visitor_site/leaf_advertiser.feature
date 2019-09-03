@@ -1,44 +1,38 @@
-@leafAdvertiser
 Feature:
+
   @leafAdvertiserPageCall
-  Scenario: segment page call for Advertiser
-    Given user is on a visitor site page
-    """
-    /companylist/us/tx/richardson/green-leaf-air-reviews-8993301.htm
-    """
+  Scenario: segment page call for Leaf Page Advertiser
+    Given user is on a visitor site leaf advertiser page
     When a segment page call is sent for a unique field value pair
       | unique_field | unique_value         |
       | name         | Visitor : SP Profile |
     Then the segment call contains parameters
       | prop_key               | prop_value                                                                              |
       | atTestOffer            |                                                                                         |
-      | categoryId             | 107                                                                                     |
+      | categoryId             | 294                                                                                     |
       | cid                    |                                                                                         |
-      | homeAdvisorCategoryId  | 10216                                                                                   |
-      | marketId               | 13                                                                                      |
+      | homeAdvisorCategoryId  | 10381                                                                                   |
+      | marketId               | 27                                                                                      |
       | name                   | Visitor : SP Profile                                                                    |
       | pageVersion            | Lullabot Redesign                                                                       |
-      | path                   | /companylist/us/tx/richardson/green-leaf-air-reviews-8993301.htm                        |
+      | path                   | /companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm                |
       | referrer               |                                                                                         |
       | search                 |                                                                                         |
       | srCtaDisplayed         |                                                                                         |
       | srCtaVersion           |                                                                                         |
-      | title                  | Green Leaf Air Reviews - Richardson, TX &vert; Angie's List                             |
+      | title                  | Ace of Diamonds Painting Reviews - Longmont, CO \| Angie's List                         |
       | url                    |                                                                                         |
       | userId                 |                                                                                         |
       | userType               | Visitor - New                                                                           |
-      | visitorPageCategory    | PLUMBING                                                                                |
-      | visitorPageGeo         | RICHARDSON                                                                              |
-      | visitorPageGeoCategory | RICHARDSON - PLUMBING                                                                   |
+      | visitorPageCategory    | PAINTING - INTERIOR                                                                     |
+      | visitorPageGeo         | LONGMONT                                                                                |
+      | visitorPageGeoCategory | LONGMONT - PAINTING - INTERIOR                                                          |
 
 
 ##### Header Tests #####
-  @headerJoinLeafPage @leafPageHeader @companyListTreeHeader
-  Scenario: user is on a visitor site page
-    Given user is on a visitor site page
-    """
-    /companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm
-    """
+  @headerJoinNowLeafPage @leafPageHeader @companyListTreeHeader
+  Scenario: user is on a visitor site leaf advertiser page and clicks on Join Now
+    Given user is on a visitor site leaf advertiser page
     When a user performs actions
     | action_method | action_params |
     | click         | #header-join  |
@@ -50,17 +44,14 @@ Feature:
     | description         | Join link in header  |
     | activityLocation    | Visitor : SP Profile |
     | userId              |                      |
-    | visitorPageCategory | Roofing              |
+    | visitorPageCategory | Painting - Interior  |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/app/signup"
 
 
   @headerSignInLeafPage @leafPageHeader @companyListTreeHeader
-  Scenario: user is on a visitor site page
-    Given user is on a visitor site page
-    """
-    /companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm
-    """
+  Scenario: user is on a visitor site leaf advertiser page and clicks on Sign In button
+    Given user is on a visitor site leaf advertiser page
     When a user performs actions
     | action_method | action_params   |
     | click         | #header-sign-in |
@@ -72,17 +63,14 @@ Feature:
     | description         | Sign In link in header |
     | activityLocation    | Visitor : SP Profile   |
     | userId              |                        |
-    | visitorPageCategory | Roofing                |
+    | visitorPageCategory | Painting - Interior    |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/member/login"
 
 
   @headerBusinessCenterLeafPage @leafPageHeader @companyListTreeHeader
-  Scenario: user is on a visitor site page
-    Given user is on a visitor site page
-    """
-    /companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm
-    """
+  Scenario: user is on a visitor site leaf advertiser page and clicks on Business Center button
+    Given user is on a visitor site leaf advertiser page
     When a user performs actions
     | action_method | action_params    |
     | click         | #business-center |
@@ -100,11 +88,8 @@ Feature:
 
 
   @leafPageSegmentHeaderInteriorApplianceRepair @leafPageHeader @companyListTreeHeader
-  Scenario: user is on a visitor site page
-    Given user is on a visitor site page
-    """
-    /companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm
-    """
+  Scenario: User hovers then clicks on Interior Appliance Repair in the header on the Drupal Leaf
+    Given user is on a visitor site leaf advertiser page
     When a user performs actions
       | action_method   | action_params                                                               |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(1) > label                          |
@@ -122,11 +107,8 @@ Feature:
 
 
   @leafPageSegmentHeaderInteriorCarpetCleaning  @leafPageHeader @companyListTreeHeader
-  Scenario: user is on a visitor site page
-    Given user is on a visitor site page
-    """
-    /companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm
-    """
+  Scenario: User hovers then clicks on Interior Carpet Cleaning in the header on the Drupal Leaf
+    Given user is on a visitor site leaf advertiser page
     When a user performs actions
       | action_method   | action_params                                                               |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(1) > label                          |
@@ -144,11 +126,8 @@ Feature:
 
 
   @leafPageSegmentHeaderInteriorContractors @leafPageHeader @companyListTreeHeader
-  Scenario: user is on a visitor site page
-    Given user is on a visitor site page
-    """
-    /companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm
-    """
+  Scenario: User hovers then clicks on Interior Contractors in the header on the Drupal Leaf
+    Given user is on a visitor site leaf advertiser page
     When a user performs actions
       | action_method   | action_params                                                               |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(1) > label                          |
@@ -166,11 +145,8 @@ Feature:
 
 
   @leafPageSegmentHeaderInteriorDrywall @leafPageHeader @companyListTreeHeader
-  Scenario: user is on a visitor site page
-    Given user is on a visitor site page
-    """
-    /companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm
-    """
+  Scenario: User hovers then clicks on Interior Drywall in the header on the Drupal Leaf
+    Given user is on a visitor site leaf advertiser page
     When a user performs actions
       | action_method   | action_params                                                               |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(1) > label                          |
@@ -187,11 +163,8 @@ Feature:
     And the landing URL contains ".angieslist.com/companylist/us/co/longmont/drywall.htm"
 
   @leafPageSegmentHeaderInteriorElectrical @leafPageHeader @companyListTreeHeader
-  Scenario: user is on a visitor site page
-    Given user is on a visitor site page
-    """
-    /companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm
-    """
+  Scenario: User hovers then clicks on Interior Electrical in the header on the Drupal Leaf
+    Given user is on a visitor site leaf advertiser page
     When a user performs actions
       | action_method   | action_params                                                               |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(1) > label                          |
@@ -208,11 +181,8 @@ Feature:
     And the landing URL contains ".angieslist.com/companylist/us/co/longmont/electrical.htm"
 
   @leafPageSegmentHeaderInteriorFlooring @leafPageHeader @companyListTreeHeader
-  Scenario: user is on a visitor site page
-    Given user is on a visitor site page
-    """
-    /companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm
-    """
+  Scenario: User hovers then clicks on Interior Flooring in the header on the Drupal Leaf
+    Given user is on a visitor site leaf advertiser page
     When a user performs actions
       | action_method   | action_params                                                               |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(1) > label                          |
@@ -229,11 +199,8 @@ Feature:
     And the landing URL contains ".angieslist.com/companylist/us/co/longmont/flooring.htm"
 
   @leafPageSegmentHeaderInteriorHVAC @leafPageHeader @companyListTreeHeader
-  Scenario: user is on a visitor site page
-    Given user is on a visitor site page
-    """
-    /companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm
-    """
+  Scenario: User hovers then clicks on Interior HVAC in the header on the Drupal Leaf
+    Given user is on a visitor site leaf advertiser page
     When a user performs actions
       | action_method   | action_params                                                               |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(1) > label                          |
@@ -250,11 +217,8 @@ Feature:
     And the landing URL contains ".angieslist.com/companylist/us/co/longmont/hvac.htm"
 
   @leafPageSegmentHeaderInteriorHouseCleaning @leafPageHeader @companyListTreeHeader
-  Scenario: user is on a visitor site page
-    Given user is on a visitor site page
-    """
-    /companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm
-    """
+  Scenario: User hovers then clicks on House Cleaning in the header on the Drupal Leaf
+    Given user is on a visitor site leaf advertiser page
     When a user performs actions
       | action_method   | action_params                                                               |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(1) > label                          |
@@ -271,11 +235,8 @@ Feature:
     And the landing URL contains ".angieslist.com/companylist/us/co/longmont/house-cleaning.htm"
 
   @leafPageSegmentHeaderInteriorPainting @leafPageHeader @companyListTreeHeader
-  Scenario: user is on a visitor site page
-    Given user is on a visitor site page
-    """
-    /companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm
-    """
+  Scenario: User hovers then clicks on Interior Painting in the header on the Drupal Leaf
+    Given user is on a visitor site leaf advertiser page
     When a user performs actions
       | action_method   | action_params                                                               |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(1) > label                          |
@@ -292,11 +253,8 @@ Feature:
     And the landing URL contains ".angieslist.com/companylist/us/co/longmont/interior-painting.htm"
 
   @leafPageSegmentHeaderInteriorPlumbing @leafPageHeader @companyListTreeHeader
-  Scenario: user is on a visitor site page
-    Given user is on a visitor site page
-    """
-    /companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm
-    """
+  Scenario: User hovers then clicks on Interior Plumbing in the header on the Drupal Leaf
+    Given user is on a visitor site leaf advertiser page
     When a user performs actions
       | action_method   | action_params                                                                |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(1) > label                           |
@@ -313,11 +271,8 @@ Feature:
     And the landing URL contains ".angieslist.com/companylist/us/co/longmont/plumbing.htm"
 
   @leafPageSegmentHeaderInteriorRemodeling @leafPageHeader @companyListTreeHeader
-  Scenario: user is on a visitor site page
-    Given user is on a visitor site page
-    """
-    /companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm
-    """
+  Scenario: User hovers then clicks on Interior Remodeling in the header on the Drupal Leaf
+    Given user is on a visitor site leaf advertiser page
     When a user performs actions
       | action_method   | action_params                                                                |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(1) > label                           |
@@ -334,11 +289,8 @@ Feature:
     And the landing URL contains ".angieslist.com/companylist/us/co/longmont/kitchen-and-bath-remodeling.htm"
 
   @leafPageSegmentHeaderInteriorViewAll @leafPageHeader @companyListTreeHeader
-  Scenario: user is on a visitor site page
-    Given user is on a visitor site page
-    """
-    /companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm
-    """
+  Scenario: User hovers then clicks on Interior View All in the header on the Drupal Leaf
+    Given user is on a visitor site leaf advertiser page
     When a user performs actions
       | action_method   | action_params                                              |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(1) > label         |
@@ -355,11 +307,8 @@ Feature:
     And the landing URL contains ".angieslist.com/companylist/"
 
   @leafPageSegmentHeaderExteriorConcreteRepair @leafPageHeader @companyListTreeHeader
-  Scenario: user is on a visitor site page
-    Given user is on a visitor site page
-    """
-    /companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm
-    """
+  Scenario: User hovers then clicks on Concrete Repair in the header on the Drupal Leaf
+    Given user is on a visitor site leaf advertiser page
     When a user performs actions
       | action_method   | action_params                                                               |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(2) > label > span                   |
@@ -376,11 +325,8 @@ Feature:
     And the landing URL contains ".angieslist.com/companylist/us/co/longmont/concrete-repair.htm"
 
   @leafPageSegmentHeaderExteriorDoors @leafPageHeader @companyListTreeHeader
-  Scenario: user is on a visitor site page
-    Given user is on a visitor site page
-    """
-    /companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm
-    """
+  Scenario: User hovers then clicks on Exterior Doors in the header on the Drupal Leaf
+    Given user is on a visitor site leaf advertiser page
     When a user performs actions
       | action_method   | action_params                                                               |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(2) > label > span                   |
@@ -397,11 +343,8 @@ Feature:
     And the landing URL contains ".angieslist.com/companylist/us/co/longmont/doors.htm"
 
   @leafPageSegmentHeaderExteriorDriveways @leafPageHeader @companyListTreeHeader
-  Scenario: user is on a visitor site page
-    Given user is on a visitor site page
-    """
-    /companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm
-    """
+  Scenario: User hovers then clicks on Driveways in the header on the Drupal Leaf
+    Given user is on a visitor site leaf advertiser page
     When a user performs actions
       | action_method   | action_params                                                               |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(2) > label > span                   |
@@ -418,11 +361,8 @@ Feature:
     And the landing URL contains ".angieslist.com/companylist/us/co/longmont/driveways.htm"
 
   @leafPageSegmentHeaderExteriorPainting @leafPageHeader @companyListTreeHeader
-  Scenario: user is on a visitor site page
-    Given user is on a visitor site page
-    """
-    /companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm
-    """
+  Scenario: User hovers then clicks on Exterior Painting in the header on the Drupal Leaf
+    Given user is on a visitor site leaf advertiser page
     When a user performs actions
       | action_method   | action_params                                                               |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(2) > label > span                   |
@@ -439,11 +379,8 @@ Feature:
     And the landing URL contains ".angieslist.com/companylist/us/co/longmont/exterior-painting.htm"
 
   @leafPageSegmentHeaderExteriorGarage @leafPageHeader @companyListTreeHeader
-  Scenario: user is on a visitor site page
-    Given user is on a visitor site page
-    """
-    /companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm
-    """
+  Scenario: User hovers then clicks on and clicks on Garage in the header on the Drupal Leaf
+    Given user is on a visitor site leaf advertiser page
     When a user performs actions
       | action_method   | action_params                                                               |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(2) > label > span                   |
@@ -460,11 +397,8 @@ Feature:
     And the landing URL contains ".angieslist.com/companylist/us/co/longmont/garage-doors.htm"
 
   @leafPageSegmentHeaderExteriorGutterCleaning @leafPageHeader @companyListTreeHeader
-  Scenario: user is on a visitor site page
-    Given user is on a visitor site page
-    """
-    /companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm
-    """
+  Scenario: User hovers then clicks on Gutter Cleaning in the header on the Drupal Leaf
+    Given user is on a visitor site leaf advertiser page
     When a user performs actions
       | action_method   | action_params                                                               |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(2) > label > span                   |
@@ -481,11 +415,8 @@ Feature:
     And the landing URL contains ".angieslist.com/companylist/us/co/longmont/gutter-cleaning.htm"
 
   @leafPageSegmentHeaderExteriorGutterRepair @leafPageHeader @companyListTreeHeader
-  Scenario: user is on a visitor site page
-    Given user is on a visitor site page
-    """
-    /companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm
-    """
+  Scenario: User hovers then clicks on Gutter Repair in the header on the Drupal Leaf
+    Given user is on a visitor site leaf advertiser page
     When a user performs actions
       | action_method   | action_params                                                               |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(2) > label > span                   |
@@ -502,11 +433,8 @@ Feature:
     And the landing URL contains ".angieslist.com/companylist/us/co/longmont/gutter-repair-replacement.htm"
 
   @leafPageSegmentHeaderExteriorHomeBuilders @leafPageHeader @companyListTreeHeader
-  Scenario: user is on a visitor site page
-    Given user is on a visitor site page
-    """
-    /companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm
-    """
+  Scenario: User hovers then clicks on Home Builders in the header on the Drupal Leaf
+    Given user is on a visitor site leaf advertiser page
     When a user performs actions
       | action_method   | action_params                                                               |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(2) > label > span                   |
@@ -523,11 +451,8 @@ Feature:
     And the landing URL contains ".angieslist.com/companylist/us/co/longmont/home-builders.htm"
 
   @leafPageSegmentHeaderExteriorMasonry @leafPageHeader @companyListTreeHeader
-  Scenario: user is on a visitor site page
-    Given user is on a visitor site page
-    """
-    /companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm
-    """
+  Scenario: User hovers then clicks on Masonry in the header on the Drupal Leaf
+    Given user is on a visitor site leaf advertiser page
     When a user performs actions
       | action_method   | action_params                                                               |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(2) > label                          |
@@ -544,11 +469,8 @@ Feature:
     And the landing URL contains ".angieslist.com/companylist/us/co/longmont/masonry.htm"
 
   @leafPageSegmentHeaderExteriorRoofing @leafPageHeader @companyListTreeHeader
-  Scenario: user is on a visitor site page
-    Given user is on a visitor site page
-    """
-    /companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm
-    """
+  Scenario: User hovers then clicks on Roofing in the header on the Drupal Leaf
+    Given user is on a visitor site leaf advertiser page
     When a user performs actions
       | action_method   | action_params                                                                |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(2) > label > span                    |
@@ -565,11 +487,8 @@ Feature:
     And the landing URL contains ".angieslist.com/companylist/us/co/longmont/roofing.htm"
 
   @leafPageSegmentHeaderExteriorSiding @leafPageHeader @companyListTreeHeader
-  Scenario: user is on a visitor site page
-    Given user is on a visitor site page
-    """
-    /companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm
-    """
+  Scenario: User hovers then clicks on Siding in the header on the Drupal Leaf
+    Given user is on a visitor site leaf advertiser page
     When a user performs actions
       | action_method   | action_params                                                                |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(2) > label > span                    |
@@ -586,11 +505,8 @@ Feature:
     And the landing URL contains ".angieslist.com/companylist/us/co/longmont/siding.htm"
 
   @leafPageSegmentHeaderExteriorWindows @leafPageHeader @companyListTreeHeader
-  Scenario: user is on a visitor site page
-    Given user is on a visitor site page
-    """
-    /companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm
-    """
+  Scenario: User hovers then clicks on Windows in the header on the Drupal Leaf
+    Given user is on a visitor site leaf advertiser page
     When a user performs actions
       | action_method   | action_params                                                                |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(2) > label > span                    |
@@ -607,11 +523,8 @@ Feature:
     And the landing URL contains ".angieslist.com/companylist/us/co/longmont/window-treatments.htm"
 
   @leafPageSegmentHeaderExteriorViewAll @leafPageHeader @companyListTreeHeader
-  Scenario: user is on a visitor site page
-    Given user is on a visitor site page
-    """
-    /companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm
-    """
+  Scenario: User hovers then clicks and clicks on Exterior View All in the header on the Drupal Leaf
+    Given user is on a visitor site leaf advertiser page
     When a user performs actions
       | action_method   | action_params                                              |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(2) > label > span  |
@@ -628,11 +541,8 @@ Feature:
     And the landing URL contains ".angieslist.com/companylist/"
 
   @leafPageSegmentHeaderLawnDecks @leafPageHeader @companyListTreeHeader
-  Scenario: user is on a visitor site page
-    Given user is on a visitor site page
-    """
-    /companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm
-    """
+  Scenario: User hovers then clicks on and clicks on Decks in the header on the Drupal Leaf
+    Given user is on a visitor site leaf advertiser page
     When a user performs actions
       | action_method   | action_params                                                               |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(3) > label                          |
