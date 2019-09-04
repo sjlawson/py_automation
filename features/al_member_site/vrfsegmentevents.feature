@@ -1,6 +1,6 @@
 Feature:
 
-  @vrfAccessibility
+  @vrfAccessibility @demo1
   Scenario: Vistor Review Form Accessibility Test
     Given a user is on a member site visitor review page
     """
@@ -30,7 +30,7 @@ Feature:
       | userType          | Not Authenticated           |
 
 
-  @vrfOverallGradeA @vrfSegment @letterGrades
+  @vrfOverallGradeA @vrfSegment @letterGrades @demo1
   Scenario: VRF Overall Grade - A
     Given a user is on a member site visitor review page
     """
@@ -407,7 +407,7 @@ Feature:
       | userType          | Not Authenticated |
 
 
-  @vrfSubmitExistingUser @reviewRegression
+  @vrfSubmitExistingUser @reviewRegression @demo1
   Scenario: Submit review via VRF - existing user
     Given a user is on a member site visitor review page
     """
