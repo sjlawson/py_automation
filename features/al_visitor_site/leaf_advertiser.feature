@@ -1548,10 +1548,7 @@ Feature:
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value     |
       | modalName    | Contact SP       | 
-    Then a user performs actions
-      | action_method | action_params   |
-      | click         | css: #cboxClose |
-    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm"
 
 
 
