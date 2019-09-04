@@ -19,6 +19,8 @@ Feature:
     Given user is logged into the member site
     When a user performs actions
     | action_method   | action_params                                   |
+    | move_to_element | .search-panel_welcome-msg                       |
+    | click           |                                                 |
     | move_to_element | #header--user-flyout-icon                       |
     | move_to_element | #header--user-flyout--menu-item--account-logout |
     | click           |                                                 |
@@ -37,11 +39,11 @@ Feature:
     And the user sends "11" messages
     Then the user receives a recaptcha challenge
 
-  Scenario: test user challenge from leads is working as expected
+  Scenario: test user challenge from offers is working as expected
     Given user is on the sign up page
     When the user creates a new account
     And the user enters geographic data
-    And the user creates "11" leads
+    And the user creates "11" offers
     Then the user receives a recaptcha challenge
 
   Scenario: test user challenge from profile views is working as expected

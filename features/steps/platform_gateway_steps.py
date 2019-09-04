@@ -122,7 +122,7 @@ def step_impl(context, message_count):
         ActionChains(context.browser).move_to_element(message_area).click().send_keys('test message: ' + str(counter)).perform()
         send_button = context.browser.find_element(*MemberMessagePageLocators.SEND_MESSAGE_BUTTON)
         ActionChains(context.browser).move_to_element(send_button).click().perform()
-        time.sleep(1)
+        time.sleep(3)
 
 @when('the user views "{number_views:d}" profiles')
 def step_impl(context, number_views):
@@ -137,7 +137,6 @@ def step_impl(context, number_views):
         for child_category_result in search_child_categories:
             child_list.append(child_category_result.get_attribute('id'))
         for this_category_id in child_list:
-            print(this_category_id)
             search_hover = context.browser.find_element(By.ID, top_level_locator)
             ActionChains(context.browser).move_to_element(search_hover).perform()
             context.wait.until(EC.visibility_of_element_located((By.ID, this_category_id)))
@@ -161,19 +160,21 @@ def step_impl(context, number_views):
                 for sp_result in page_results:
                     profile_urls.append(sp_result.get_attribute('href'))
                 for this_url in profile_urls:
-                    if (profiles_viewed >= number_views):
+                    if (profiles_viewed > number_views):
+                        time.sleep(10)
                         return
                     context.browser.get(this_url)
                     context.wait.until(EC.visibility_of_element_located(MemberServiceProviderProfilePageLocators.CATEGORY_INFO))
                     profiles_viewed += 1
 
-@when('the user creates "{number_leads:d}" leads')
+@when('the user creates "{number_leads:d}" offers')
 def step_impl(context, number_leads):
     leads_created = 0
     deals_button = context.browser.find_element(*MemberHeaderLocators.DEALS_BUTTON)
     ActionChains(context.browser).move_to_element(deals_button).click().perform()
-    context.wait.until(EC.visibility_of_element_located(MemberDealsSearchPageLocators.SHOP_ALL_DEALS_LINK))
+    context.wait.until(EC.visibility_of_element_located(MemberDealsSearchPageLocators.DEALS_PAGINATION))
     pages_list = context.browser.find_elements(*MemberDealsSearchPageLocators.DEALS_PAGINATION)
+    print(pages_list)
     max_pages = 1
     if len(pages_list) > 1:
         last_page_element = pages_list[-2]
@@ -187,7 +188,8 @@ def step_impl(context, number_leads):
         for deal in page_deals_list:
             deals_to_claim.append(deal.get_attribute('href'))
         for this_url in deals_to_claim:
-            if (leads_created >= number_leads):
+            if (leads_created > number_leads):
+                time.sleep(10)
                 return
             context.browser.get(this_url)
             context.wait.until(EC.visibility_of_element_located(MemberDealPageLocators.CLAIM_DEAL))
