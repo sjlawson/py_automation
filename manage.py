@@ -162,11 +162,12 @@ def runtestsuite(*args):
         print("example: manage.py runtestsuite al_visitor_site AA404")
 
 @manager.command
-def geckodriver_install(*args):
-    from webdriverdownloader import GeckoDriverDownloader
+def webdrivers_install(*args):
+    from webdriverdownloader import GeckoDriverDownloader, ChromeDriverDownloader
     gdd = GeckoDriverDownloader()
     gdd.download_and_install()
-
+    # cdd = ChromeDriverDownloader()
+    # cdd.download_and_install()
 
 def proxy_start(proxy_host, proxy_port, mountebank_host, mountebank_port):
     proxy = HTTP(hostname=proxy_host, port=proxy_port, targethost=mountebank_host, targetport=mountebank_port)
@@ -217,11 +218,11 @@ def launch_framework(*args):
     pyproxy.start()
 
     time.sleep(1)
-    if os.environ['SAUCE_USERNAME']:
+    if 'SAUCE_USERNAME' in os.environ and os.environ['SAUCE_USERNAME']:
         sc = Process(target=start_sc)
         sc.start()
 
-    if os.environ['CBT_USER']:
+    if 'CBT_USER' in os.environ and os.environ['CBT_USER']:
         cbt = Process(target=start_cbt)
         cbt.start()
 

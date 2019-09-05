@@ -230,7 +230,7 @@ def step_impl(context):
     context.wait.until(EC.presence_of_element_located(MemberLandingPageLocators.LOGIN_TEXT_LABEL))
     sign_in = context.browser.find_element(*MemberLandingPageLocators.LOGIN_TEXT_LABEL)
     assert bool(sign_in)
-  
+
 @then('the user receives a recaptcha challenge')
 def step_impl(context):
     context.wait.until(EC.visibility_of_element_located(MemberServiceProviderProfilePageLocators.CHALLENGE_TEXT))

@@ -5,6 +5,7 @@ import _thread
 import requests
 import datetime
 from selenium import webdriver
+import chromedriver_binary
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from browsermobproxy import Server
@@ -65,6 +66,7 @@ class SeleniumTestCase(unittest.TestCase):
             d['loggingPrefs'] = { 'browser':'ALL','driver': 'ALL','performance': 'ALL'}
             if method_name == 'Chrome':
                 ch_profile = webdriver.ChromeOptions()
+                ch_profile.add_experimental_option('w3c', False)
                 ch_profile.perfLoggingPrefs = {'enableNetwork': True, 'traceCategories': 'performance, devtools.network'}
                 ch_profile.add_argument('incognito')
                 ch_profile.add_argument('disable-extensions')

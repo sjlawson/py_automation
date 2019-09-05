@@ -1,9 +1,10 @@
 version: 2
 jobs:
   build:
+    resource_class: medium
     working_directory: ~/al_py_automation
     docker:
-      - image: angieslist/circleci-node:8.11.1
+      - image: circleci/python:3.7.2
         auth:
            username: $DOCKER_USERNAME
            password: $DOCKER_AUTH
@@ -15,12 +16,6 @@ jobs:
           name: Authenticate to DockerHub
           command: 'docker login -u "$DOCKER_USERNAME" -p "$DOCKER_AUTH"'
       - run:
-          name: Install Docker Compose
-          command: |
-            curl -L https://github.com/docker/compose/releases/download/1.23.2/docker-compose-`uname -s`-`uname -m` > ~/docker-compose
-            chmod +x ~/docker-compose
-            sudo mv ~/docker-compose /usr/local/bin/docker-compose
-      - run:
           name: Build Docker image
           command: |
             docker build -t angieslist/al_py_automation:"${CIRCLE_BUILD_NUM}" -t angieslist/al_py_automation:latest .
@@ -30,9 +25,22 @@ jobs:
             docker push angieslist/al_py_automation:"${CIRCLE_BUILD_NUM}"
             docker push angieslist/al_py_automation:latest
       - run:
-          name: Start container
-          command: docker-compose up -d
+          name: Run docker image
+          command: |
+            docker run -d --name al_py_automation_al_py_automation_1 \
+            -e CBT_KEY \
+            -e CBT_USER \
+            -e MBI_PORT \
+            -e MB_HOST \
+            -e PYPROXY_PORT \
+            -e SAUCE_ACCESS_KEY \
+            -e SAUCE_USERNAME \
+            -e BASEURL_OVERRIDE=https://wwwstg.angieslist.com \
+            -v `pwd`/container_reports:/al_py_automation/reports angieslist/al_py_automation:"${CIRCLE_BUILD_NUM}"
       - run: sleep 10
       - run:
-          name: Basic regression
-          command: ./behave_docker_test.sh al_py_automation_al_py_automation_1 cbt chrome tags daily_auto
+          name: Run subset of tests
+          command: |
+            ./behave_docker_test.sh al_py_automation_al_py_automation_1 headless chrome tags circleci
+            docker stop al_py_automation_al_py_automation_1
+            

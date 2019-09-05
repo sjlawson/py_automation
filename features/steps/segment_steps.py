@@ -1,5 +1,6 @@
 from behave import given, then, when
 from common.SegmentTestHelper import SegmentTestHelper
+from common.BehaveStepHelper import BehaveStepHelper
 import time
 
 
@@ -8,6 +9,7 @@ def step_impl(context):
     appsuite_env = 'al_member_site'
     appsuite_url = context.appsuites[appsuite_env]['base_url']
     context.url = appsuite_url + context.text
+    BehaveStepHelper.token_auth(context)
     context.browser.get(context.url)
     time.sleep(1)
 
@@ -17,7 +19,9 @@ def step_impl(context):
     appsuite_env = 'al_member_site'
     appsuite_url = context.appsuites[appsuite_env]['base_url'] + '/app/reviews'
     context.url = appsuite_url + context.text
+    BehaveStepHelper.token_auth(context)
     context.browser.get(context.url)
+    time.sleep(1)
 
 
 @then('a segment track call is sent for a unique field value pair')

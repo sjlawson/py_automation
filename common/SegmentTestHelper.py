@@ -58,20 +58,20 @@ class SegmentTestHelper():
         count += 1
         if count > 10:
             return []
-        # time.sleep(1)
         perf_logs = context.browserlog()
         collect_seg = []
         for perflog in perf_logs:
-            perf_msgs = json.loads(perflog['message'])
-            if 'request' in perf_msgs['message']['params'] and 'postData' in perf_msgs['message']['params']['request']\
-               and perf_msgs['message']['params']['request']['postData'] is not None\
-               and 'properties' in perf_msgs['message']['params']['request']['postData']:
+            if 'request' in perflog['message'] and 'postData' in perflog['message'] and 'properties' in perflog['message']:
+                perf_msgs = json.loads(perflog['message'])
+            # testing which is a more performant search
+            # if 'request' in perf_msgs['message']['params'] and 'postData' in perf_msgs['message']['params']['request']\
+            #    and perf_msgs['message']['params']['request']['postData'] is not None\
+            #    and 'properties' in perf_msgs['message']['params']['request']['postData']:
                 props_string = json.loads(perf_msgs['message']['params']['request']['postData'])['properties']
                 if props_string is not None:
                     collect_seg.append(props_string)
         if not collect_seg:
             return SegmentTestHelper.get_browser_segmentlogs(context, count)
-
         return collect_seg
 
     def assert_segment_call_exists(context):
@@ -87,7 +87,7 @@ class SegmentTestHelper():
                     prop_exists = True
 
         try:
-            assert prop_exists == True
+            assert prop_exists
             context.test_case.test_result = 'pass'
         except:
             # caught to avoid false is not true response
@@ -121,7 +121,7 @@ class SegmentTestHelper():
     def get_webdriver_element(client, selector, tries):
         wait = WebDriverWait(client, 5)
         if tries > 2:
-            raise NoSuchElementException("Element not found, identified by <%s>" % selector)
+            raise NoSuchElementException("Element not found, identified by <%s> at location <%s>" % (selector, client.current_url))
 
         element = None
         try:
@@ -139,13 +139,17 @@ class SegmentTestHelper():
                 #element = client.find_element_by_name(selector[5:].strip())
                 element = wait.until(EC.presence_of_element_located((By.NAME, selector[5:].strip())))
             else:
+                print('parameter %s did not match a selector pattern' % selector)
                 return selector
         except TimeoutException as e:
             if tries < 2:
                 time.sleep(1)
                 element = SegmentTestHelper.get_webdriver_element(client, selector, tries + 1)
             else:
-                raise NoSuchElementException("Element not found, identified by <%s>" % selector)
+                raise NoSuchElementException("Element not found, identified by <%s> at location <%s>" % (selector, client.current_url))
+
+            if element:
+                print('ELEMENT FOUND: %s' % selector)
 
         return element
 
@@ -157,6 +161,9 @@ class SegmentTestHelper():
 
         In the case where an action param is an element, the string element identifier (best practise is to use ID),
         the param must be mutated to an instance of a webdriver element
+
+        IF an action causes an element to appear on the page that you then want to interact with, you must break up the
+        ActionChains into separate blocks of 'a user performs actions'
         """
         wait = WebDriverWait(client, timeout)
         for action in actions:
@@ -166,7 +173,7 @@ class SegmentTestHelper():
                 for i in range(0, len(action['action_params'])):
                     if action['action_params'][i]:
                         print("Looking for element...")
-                        action['action_params'][i] = SegmentTestHelper.get_webdriver_element(client=client, selector=action['action_params'][i], tries=1)
+                        action['action_params'][i] = SegmentTestHelper.get_webdriver_element(client=client, selector=action['action_params'][i], tries=0)
 
         for action in actions:
             action_chain = ActionChains(client)
