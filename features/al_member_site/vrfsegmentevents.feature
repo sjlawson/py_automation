@@ -9,6 +9,7 @@ Feature:
     When the page has finished loading
     Then the page should meet "wcag2a" accessibility guidelines
 
+
   @vrfPageCall @vrfSegment @reviewRegression
   Scenario: VRF Page Load Event
     Given a user is on a member site visitor review page
@@ -341,6 +342,7 @@ Feature:
       | serviceProviderId | 1  |
       | userType          | Not Authenticated |
 
+
   @vrfCalendar @vrfSegment
   Scenario: VRF Calendar Click Event
     Given a user is on a member site visitor review page
@@ -424,7 +426,8 @@ Feature:
     /member/reviews/edit?serviceProviderId=1&at_preview_token=1OH6D8QWmHSyTdCaRZ4jBXWEFq%2Br1NJA9GWwjZnLpb4%3D&at_preview_index=1_1&at_preview_listed_activities_only=true&at_preview_evaluate_as_true_audience_ids=1100025
     """
     When the user fills out a review form and joins
-    Then the landing URL contains ".angieslist.com/member?submissionconfirmation=true"
+    Then the landing URL contains ".angieslist.com"
+
 
   @signInToggle
   Scenario: VRF Overall Grade - A
@@ -439,7 +442,6 @@ Feature:
     And the segment call contains parameters
       | prop_key          | prop_value    |
       | toggleResponse    | Sign In |
-
 
 
   @vrfMedicalAccessibility
@@ -850,6 +852,7 @@ Feature:
       | serviceProviderId |    |
       | userType          | Not Authenticated |
 
+
   @vrfMedCalendar @vrfSegment
   Scenario: VRF Calendar Click Event
     Given a user is on a member site visitor review page
@@ -916,60 +919,11 @@ Feature:
       | userType          | Not Authenticated |
 
 
-
-
   @vrfMedSubmitExistingUser @reviewRegression
   Scenario: Submit review via Medical VRF - existing user
     Given a user is on a member site visitor review page
     """
     /member/reviews/edit?serviceProviderId=10212562&at_preview_token=1OH6D8QWmHSyTdCaRZ4jBXWEFq%2Br1NJA9GWwjZnLpb4%3D&at_preview_index=1_1&at_preview_listed_activities_only=true&at_preview_evaluate_as_true_audience_ids=1100025
     """
-    When a user performs actions
-     | action_method   | action_params                    |
-     | move_to_element | id: reviews--rating-Overall--A   |
-     | click           |                                  |
-     | move_to_element | id: reviews--rating-Availability--A     |
-     | click           |                                  |
-     | move_to_element | id: reviews--rating-Office Environment--A   |
-     | click           |                                  |
-     | move_to_element | id: reviews--rating-Punctuality--A    |
-     | click           |                                          |
-     | move_to_element | id: reviews--rating-Staff Friendliness--A       |
-     | click           |                                          |
-     | move_to_element | id: reviews--rating-Bedside Manner--A   |
-     | click           |                                          |
-     | move_to_element | id: reviews--rating-Communication--A     |
-     | click           |                                          |
-     | move_to_element | id: reviews--rating-Effectiveness of Treatment--A |
-     | click           |                                          |
-     | move_to_element | id: reviews--rating-Billing and Administration--A |
-     | click           |  |
-     | move_to_element | id: reviews--workComplete-button-no  |
-     | click     |    |
-     | move_to_element | id: reviews--willHireAgain-button-yes    |
-     | click           |                                          |
-     | move_to_element | id: review--description-of-work-input    |
-     | click           |                                          |
-     | send_keys       | Automated testing is being done          |
-     | move_to_element | id: review--how-did-it-go-input          |
-     | click           |                                          |
-     | send_keys       | Automated testing is being done          |
-     | move_to_element | id: reviews--submit-button               |
-     | click           |                                          |
-    When a user performs actions
-     | action_method   | action_params                 |
-     | move_to_element | id: sign-in-toggle            |
-     | click           |                               |
-    Then we wait "1" seconds for the next page to load
-    When a user performs actions
-     | action_method   | action_params                 |
-     | move_to_element | id: signin-form--email        |
-     | click           |                               |
-     | send_keys       | test2-member@angieslist.com   |
-     | move_to_element | id: signin-form--password     |
-     | click           |                               |
-     | send_keys       | qwerty1234!                   |
-     | move_to_element | id: signin-form--submit       |
-     | click           |                               |
-    Then we wait "8" seconds for the next page to load
+    When the user fills out a medical review form as an existing user
     Then the landing URL contains ".angieslist.com/member?submissionconfirmation=true"
