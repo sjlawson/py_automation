@@ -43,12 +43,30 @@ class ReviewLetterGradeSelectors(object):
   AVAILABILITY_D_GRADE = (By.ID, 'reviews--rating-Availability--D')
   AVAILABILITY_F_GRADE = (By.ID, 'reviews--rating-Availability--F')
   AVAILABILITY_NA_GRADE = (By.ID, 'reviews--rating-Availability--N/A')
+  BILLING_AND_ADMIN_A_GRADE = (By.ID, 'reviews--rating-Billing and Administration--A')
+  BILLING_AND_ADMIN_B_GRADE = (By.ID, 'reviews--rating-Billing and Administration--B')
+  BILLING_AND_ADMIN_C_GRADE = (By.ID, 'reviews--rating-Billing and Administration--C')
+  BILLING_AND_ADMIN_D_GRADE = (By.ID, 'reviews--rating-Billing and Administration--D')
+  BILLING_AND_ADMIN_F_GRADE = (By.ID, 'reviews--rating-Billing and Administration--F')
+  BILLING_AND_ADMIN_N/A_GRADE = (By.ID, 'reviews--rating-Billing and Administration--N/A')
   BEDSIDE_MANNER_A_GRADE = (By.ID, 'reviews--rating-Bedside Manner--A')
   BEDSIDE_MANNER_B_GRADE = (By.ID, 'reviews--rating-Bedside Manner--B')
   BEDSIDE_MANNER_C_GRADE = (By.ID, 'reviews--rating-Bedside Manner--C')
   BEDSIDE_MANNER_D_GRADE = (By.ID, 'reviews--rating-Bedside Manner--D')
   BEDSIDE_MANNER_F_GRADE = (By.ID, 'reviews--rating-Bedside Manner--F')
   BEDSIDE_MANNER_NA_GRADE = (By.ID, 'reviews--rating-Bedside Manner--N/A')
+  COMMUNICATION_A_GRADE = (By.ID, 'reviews--rating-Communication--A')
+  COMMUNICATION_B_GRADE = (By.ID, 'reviews--rating-Communication--A')
+  COMMUNICATION_C_GRADE = (By.ID, 'reviews--rating-Communication--C')
+  COMMUNICATION_D_GRADE = (By.ID, 'reviews--rating-Communication--D')
+  COMMUNICATION_F_GRADE = (By.ID, 'reviews--rating-Communication--F')
+  COMMUNICATION_NA_GRADE = (By.ID, 'reviews--rating-Communication--N/A')
+  EFFECTIVENESS_OF_TREATMENT_A_GRADE = (By.ID, 'reviews--rating-Effectiveness of Treatment--A')
+  EFFECTIVENESS_OF_TREATMENT_B_GRADE = (By.ID, 'reviews--rating-Effectiveness of Treatment--B')
+  EFFECTIVENESS_OF_TREATMENT_C_GRADE = (By.ID, 'reviews--rating-Effectiveness of Treatment--C')
+  EFFECTIVENESS_OF_TREATMENT_D_GRADE = (By.ID, 'reviews--rating-Effectiveness of Treatment--D')
+  EFFECTIVENESS_OF_TREATMENT_F_GRADE = (By.ID, 'reviews--rating-Effectiveness of Treatment--F')
+  EFFECTIVENESS_OF_TREATMENT_N/A_GRADE = (By.ID, 'reviews--rating-Effectiveness of Treatment--N/A')
   OVERALL_A_GRADE = (By.ID, 'reviews--rating-Overall--A')
   OVERALL_B_GRADE = (By.ID, 'reviews--rating-Overall--B')
   OVERALL_C_GRADE = (By.ID, 'reviews--rating-Overall--C')
@@ -96,18 +114,6 @@ class ReviewLetterGradeSelectors(object):
   STAFF_FRIENDLINESS_D_GRADE = (By.ID, 'reviews--rating-Staff Friendliness--D')
   STAFF_FRIENDLINESS_F_GRADE = (By.ID, 'reviews--rating-Staff Friendliness--F')
   STAFF_FRIENDLINESS_NA_GRADE = (By.ID, 'reviews--rating-Staff Friendliness--N/A')
-
-
-
-
-     | move_to_element | id: reviews--rating-Communication--A     |
-     | click           |                                          |
-     | move_to_element | id: reviews--rating-Effectiveness of Treatment--A |
-     | click           |                                          |
-     | move_to_element | id: reviews--rating-Billing and Administration--A |
-
-
-
 
 class VRFHappyMixedPathSelectors(object):
   OVERALL_B_GRADE = (By.ID, 'reviews--rating-Overall--B')
