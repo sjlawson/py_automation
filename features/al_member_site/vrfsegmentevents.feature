@@ -407,7 +407,7 @@ Feature:
       | userType          | Not Authenticated |
 
 
-  @vrfSubmitExistingUser @reviewRegression @demo1
+  @vrfSubmitExistingUser @reviewRegression
   Scenario: Submit review via VRF - existing user
     Given a user is on a member site visitor review page
     """
