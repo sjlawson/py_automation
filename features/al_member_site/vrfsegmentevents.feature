@@ -9,7 +9,7 @@ Feature:
     When the page has finished loading
     Then the page should meet "wcag2a" accessibility guidelines
 
-  @vrfPageCall @vrfSegment
+  @vrfPageCall @vrfSegment @reviewRegression
   Scenario: VRF Page Load Event
     Given a user is on a member site visitor review page
     """
@@ -408,7 +408,7 @@ Feature:
 
 
   @vrfSubmitExistingUser @reviewRegression
-  Scenario: Submit review via VRF - existing user
+  Scenario: Submit review via VRF - Existing user
     Given a user is on a member site visitor review page
     """
     /member/reviews/edit?serviceProviderId=1&at_preview_token=1OH6D8QWmHSyTdCaRZ4jBXWEFq%2Br1NJA9GWwjZnLpb4%3D&at_preview_index=1_1&at_preview_listed_activities_only=true&at_preview_evaluate_as_true_audience_ids=1100025
@@ -418,7 +418,7 @@ Feature:
 
 
   @vrfSubmitNewUser @reviewRegression
-  Scenario: Submit review via VRF - existing user
+  Scenario: Submit review via VRF - New user
     Given a user is on a member site visitor review page
     """
     /member/reviews/edit?serviceProviderId=1&at_preview_token=1OH6D8QWmHSyTdCaRZ4jBXWEFq%2Br1NJA9GWwjZnLpb4%3D&at_preview_index=1_1&at_preview_listed_activities_only=true&at_preview_evaluate_as_true_audience_ids=1100025
@@ -426,7 +426,7 @@ Feature:
     When the user fills out a review form and joins
     Then the landing URL contains ".angieslist.com/member?submissionconfirmation=true"
 
-  @toggle
+  @signInToggle
   Scenario: VRF Overall Grade - A
     Given a user is on a member site visitor review page
     """
@@ -442,7 +442,7 @@ Feature:
 
 
 
-  @vrfMedAccessibility
+  @vrfMedicalAccessibility
   Scenario: Vistor Review Form Accessibility Test
     Given a user is on a member site visitor review page
     """
@@ -452,7 +452,7 @@ Feature:
     Then the page should meet "wcag2a" accessibility guidelines
 
 
-  @vrfMedPageCall @vrfSegment
+  @vrfMedicalPageCall @vrfSegment
   Scenario: VRF Med Page Load Event
     Given a user is on a member site visitor review page
     """
@@ -919,7 +919,7 @@ Feature:
 
 
   @vrfMedSubmitExistingUser @reviewRegression
-  Scenario: Submit review via VRF - existing user
+  Scenario: Submit review via Medical VRF - existing user
     Given a user is on a member site visitor review page
     """
     /member/reviews/edit?serviceProviderId=10212562&at_preview_token=1OH6D8QWmHSyTdCaRZ4jBXWEFq%2Br1NJA9GWwjZnLpb4%3D&at_preview_index=1_1&at_preview_listed_activities_only=true&at_preview_evaluate_as_true_audience_ids=1100025
