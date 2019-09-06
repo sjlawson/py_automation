@@ -37,17 +37,47 @@ class VRFHappyPathSelectors(object):
   SING_IN_FORM_SUBMIT = (By.ID, 'signin-form--submit')
 
 class ReviewLetterGradeSelectors(object):
+  AVAILABILITY_A_GRADE = (By.ID, 'reviews--rating-Availability--A')
+  AVAILABILITY_B_GRADE = (By.ID, 'reviews--rating-Availability--B')
+  AVAILABILITY_C_GRADE = (By.ID, 'reviews--rating-Availability--C')
+  AVAILABILITY_D_GRADE = (By.ID, 'reviews--rating-Availability--D')
+  AVAILABILITY_F_GRADE = (By.ID, 'reviews--rating-Availability--F')
+  AVAILABILITY_NA_GRADE = (By.ID, 'reviews--rating-Availability--N/A')
+  BEDSIDE_MANNER_A_GRADE = (By.ID, 'reviews--rating-Bedside Manner--A')
+  BEDSIDE_MANNER_B_GRADE = (By.ID, 'reviews--rating-Bedside Manner--B')
+  BEDSIDE_MANNER_C_GRADE = (By.ID, 'reviews--rating-Bedside Manner--C')
+  BEDSIDE_MANNER_D_GRADE = (By.ID, 'reviews--rating-Bedside Manner--D')
+  BEDSIDE_MANNER_F_GRADE = (By.ID, 'reviews--rating-Bedside Manner--F')
+  BEDSIDE_MANNER_NA_GRADE = (By.ID, 'reviews--rating-Bedside Manner--N/A')
   OVERALL_A_GRADE = (By.ID, 'reviews--rating-Overall--A')
   OVERALL_B_GRADE = (By.ID, 'reviews--rating-Overall--B')
   OVERALL_C_GRADE = (By.ID, 'reviews--rating-Overall--C')
   OVERALL_D_GRADE = (By.ID, 'reviews--rating-Overall--D')
   OVERALL_F_GRADE = (By.ID, 'reviews--rating-Overall--F')
+  OFFICE_ENVIRONMENT_A_GRADE = (By.ID, 'reviews--rating-Office Environment--A')
+  OFFICE_ENVIRONMENT_B_GRADE = (By.ID, 'reviews--rating-Office Environment--B')
+  OFFICE_ENVIRONMENT_C_GRADE = (By.ID, 'reviews--rating-Office Environment--C')
+  OFFICE_ENVIRONMENT_D_GRADE = (By.ID, 'reviews--rating-Office Environment--D')
+  OFFICE_ENVIRONMENT_F_GRADE = (By.ID, 'reviews--rating-Office Environment--F')
+  OFFICE_ENVIRONMENT_NA_GRADE = (By.ID, 'reviews--rating-Office Environment--N/A')
   PRICE_A_GRADE = (By.ID, 'reviews--rating-Price--A')
   PRICE_B_GRADE = (By.ID, 'reviews--rating-Price--B')
   PRICE_C_GRADE = (By.ID, 'reviews--rating-Price--C')
   PRICE_D_GRADE = (By.ID, 'reviews--rating-Price--D')
   PRICE_F_GRADE = (By.ID, 'reviews--rating-Price--F')
   PRICE_NA_GRADE = (By.ID, 'reviews--rating-Price--N/A')
+  PROFESSIONALISM_A_GRADE = (By.ID, 'reviews--rating-Professionalism--A')
+  PROFESSIONALISM_B_GRADE = (By.ID, 'reviews--rating-Professionalism--B')
+  PROFESSIONALISM_C_GRADE = (By.ID, 'reviews--rating-Professionalism--C')
+  PROFESSIONALISM_D_GRADE = (By.ID, 'reviews--rating-Professionalism--D')
+  PROFESSIONALISM_F_GRADE = (By.ID, 'reviews--rating-Professionalism--F')
+  PROFESSIONALISM_NA_GRADE = (By.ID, 'reviews--rating-Professionalism--N/A')
+  PUNCTUALITY_A_GRADE = (By.ID, 'reviews--rating-Punctuality--A')
+  PUNCTUALITY_B_GRADE = (By.ID, 'reviews--rating-Punctuality--B')
+  PUNCTUALITY_C_GRADE = (By.ID, 'reviews--rating-Punctuality--C')
+  PUNCTUALITY_D_GRADE = (By.ID, 'reviews--rating-Punctuality--D')
+  PUNCTUALITY_F_GRADE = (By.ID, 'reviews--rating-Punctuality--F')
+  PUNCTUALITY_NA_GRADE = (By.ID, 'reviews--rating-Punctuality--N/A')
   QUALITY_A_GRADE = (By.ID, 'reviews--rating-Quality--A')
   QUALITY_B_GRADE = (By.ID, 'reviews--rating-Quality--B')
   QUALITY_C_GRADE = (By.ID, 'reviews--rating-Quality--C')
@@ -60,43 +90,24 @@ class ReviewLetterGradeSelectors(object):
   RESPONSIVENESS_D_GRADE = (By.ID, 'reviews--rating-Responsiveness--D')
   RESPONSIVENESS_F_GRADE = (By.ID, 'reviews--rating-Responsiveness--F')
   RESPONSIVENESS_NA_GRADE = (By.ID, 'reviews--rating-Responsiveness--N/A')
-  PUNCTUALITY_A_GRADE = (By.ID, 'reviews--rating-Punctuality--A')
-  PUNCTUALITY_B_GRADE = (By.ID, 'reviews--rating-Punctuality--B')
-  PUNCTUALITY_C_GRADE = (By.ID, 'reviews--rating-Punctuality--C')
-  PUNCTUALITY_D_GRADE = (By.ID, 'reviews--rating-Punctuality--D')
-  PUNCTUALITY_F_GRADE = (By.ID, 'reviews--rating-Punctuality--F')
-  PUNCTUALITY_NA_GRADE = (By.ID, 'reviews--rating-Punctuality--N/A')
-  PROFESSIONALISM_A_GRADE = (By.ID, 'reviews--rating-Professionalism--A')
-  PROFESSIONALISM_B_GRADE = (By.ID, 'reviews--rating-Professionalism--B')
-  PROFESSIONALISM_C_GRADE = (By.ID, 'reviews--rating-Professionalism--C')
-  PROFESSIONALISM_D_GRADE = (By.ID, 'reviews--rating-Professionalism--D')
-  PROFESSIONALISM_F_GRADE = (By.ID, 'reviews--rating-Professionalism--F')
-  PROFESSIONALISM_NA_GRADE = (By.ID, 'reviews--rating-Professionalism--N/A')
-  AVAILABILITY_A_GRADE = (By.ID, 'reviews--rating-Availability--A')
-  AVAILABILITY_B_GRADE = (By.ID, 'reviews--rating-Availability--B')
-  AVAILABILITY_C_GRADE = (By.ID, 'reviews--rating-Availability--C')
-  AVAILABILITY_D_GRADE = (By.ID, 'reviews--rating-Availability--D')
-  AVAILABILITY_F_GRADE = (By.ID, 'reviews--rating-Availability--F')
-  AVAILABILITY_NA_GRADE = (By.ID, 'reviews--rating-Availability--N/A')
+  STAFF_FRIENDLINESS_A_GRADE = (By.ID, 'reviews--rating-Staff Friendliness--A')
+  STAFF_FRIENDLINESS_B_GRADE = (By.ID, 'reviews--rating-Staff Friendliness--B')
+  STAFF_FRIENDLINESS_C_GRADE = (By.ID, 'reviews--rating-Staff Friendliness--C')
+  STAFF_FRIENDLINESS_D_GRADE = (By.ID, 'reviews--rating-Staff Friendliness--D')
+  STAFF_FRIENDLINESS_F_GRADE = (By.ID, 'reviews--rating-Staff Friendliness--F')
+  STAFF_FRIENDLINESS_NA_GRADE = (By.ID, 'reviews--rating-Staff Friendliness--N/A')
 
 
 
 
-     | move_to_element | id: reviews--rating-Availability--A     |
-     | click           |                                  |
-     | move_to_element | id: reviews--rating-Office Environment--A   |
-     | click           |                                  |
-     | move_to_element | id: reviews--rating-Punctuality--A    |
-     | click           |                                          |
-     | move_to_element | id: reviews--rating-Staff Friendliness--A       |
-     | click           |                                          |
-     | move_to_element | id: reviews--rating-Bedside Manner--A   |
-     | click           |                                          |
      | move_to_element | id: reviews--rating-Communication--A     |
      | click           |                                          |
      | move_to_element | id: reviews--rating-Effectiveness of Treatment--A |
      | click           |                                          |
      | move_to_element | id: reviews--rating-Billing and Administration--A |
+
+
+
 
 class VRFHappyMixedPathSelectors(object):
   OVERALL_B_GRADE = (By.ID, 'reviews--rating-Overall--B')
