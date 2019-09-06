@@ -31,3 +31,16 @@ class VRFHappyPathSelectors(object):
   DESCRIPTION_OF_WORK = (By.ID, 'review--description-of-work-input')
   HOW_DID_IT_GO = (By.ID, 'review--how-did-it-go-input')
   REVIEW_SUBMIT_BUTTON = (By.ID, 'reviews--submit-button')
+
+class VRFHappyMixedPathSelectors(object):
+  OVERALL_B_GRADE = (By.ID, 'reviews--rating-Overall--B')
+  PRICE_A_GRADE = (By.ID, 'reviews--rating-Price--A')
+  QUALITY_C_GRADE = (By.ID, 'reviews--rating-Quality--C')
+  RESPONSIVENESS_A_GRADE = (By.ID, 'reviews--rating-Responsiveness--A')
+  PUNCTUALITY_B_GRADE = (By.ID, 'reviews--rating-Punctuality--B')
+  PROFESSIONALISM_A_GRADE = (By.ID, 'reviews--rating-Professionalism--A')
+  WORK_COMPLETED_YES = (By.ID, 'reviews--workComplete-button-yes')
+  WILL_HIRE_AGAIN_NO = (By.ID, 'reviews--willHireAgain-button-no')
+  DESCRIPTION_OF_WORK = (By.ID, 'review--description-of-work-input')
+  HOW_DID_IT_GO = (By.ID, 'review--how-did-it-go-input')
+  REVIEW_SUBMIT_BUTTON = (By.ID, 'reviews--submit-button')
