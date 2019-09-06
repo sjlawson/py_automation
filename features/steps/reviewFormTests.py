@@ -31,6 +31,10 @@ class VRFHappyPathSelectors(object):
   DESCRIPTION_OF_WORK = (By.ID, 'review--description-of-work-input')
   HOW_DID_IT_GO = (By.ID, 'review--how-did-it-go-input')
   REVIEW_SUBMIT_BUTTON = (By.ID, 'reviews--submit-button')
+  SIGN_IN_TOGGLE = (By.ID, 'sign-in-toggle')
+  SIGN_IN_EMAIL = (By.ID, 'signin-form--email')
+  SIGN_IN_PASSWORD = (By.ID, 'signin-form--password')
+  SING_IN_FORM_SUBMIT = (By.ID, 'signin-form--submit')
 
 class VRFHappyMixedPathSelectors(object):
   OVERALL_B_GRADE = (By.ID, 'reviews--rating-Overall--B')
