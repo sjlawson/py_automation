@@ -6,8 +6,8 @@ from selenium.webdriver.common.action_chains import ActionChains
 from common.SegmentTestHelper import SegmentTestHelper
 from platform_pages import *
 from faker import Faker
-from uszipcode import SearchEngine
 import time
+
 
 @given('user is logged into the member site')
 def step_impl(context):

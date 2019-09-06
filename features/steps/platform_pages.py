@@ -34,6 +34,7 @@ class MemberSignUpAddressLocators(object):
   ADDRESS_ZIP = (By.ID, 'address-component--zip-code')
   ADDRESS_SUBMIT = (By.ID, 'address-collection--submit-button')
 
+
 class MemberSearchModalLocators(object):
   DEFAULT_SEARCH_TERM = (By.ID, 'searchTerm')
 
