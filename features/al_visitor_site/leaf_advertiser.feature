@@ -1453,10 +1453,7 @@ Feature:
 
   @leafAdvertiserFirstOfferClick
   Scenario: Click on first offer - Advertiser Leaf
-    Given user is on a visitor site page
-    """
-    /companylist/us/tx/richardson/green-leaf-air-reviews-8993301.htm
-    """
+    Given user is on a visitor site leaf advertiser page with deals
     When a user performs actions
       | action_method | action_params                                                 |
       | click         | css: #offers > div.owl-wrapper-outer > div > div:nth-child(1) |
@@ -1469,15 +1466,15 @@ Feature:
       | dealsDisplayed          |                          |
       | description             | View Deal CTA            |
       | gradeDisplayed          |                          |
-      | marketId                | 13                       |
+      | marketId                | 5                        |
       | offerId                 |                          |
       | priceDisplayed          |                          |
       | rank                    |                          |
       | serviceProviderId       |                          |
       | userId                  |                          |
       | visitorPageCategory     | PLUMBING                 |
-      | visitorPageGeo          | RICHARDSON               |
-      | visitorPageGeoCategory  | RICHARDSON - PLUMBING    |
+      | visitorPageGeo          | HILLIARD                 |
+      | visitorPageGeoCategory  | HILLIARD - PLUMBING      |
 
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/app/offer/search/"
@@ -1485,15 +1482,12 @@ Feature:
 
   @leafAdvertiserFirstOfferButtonClick
   Scenario: Click on button - first offer - Advertiser Leaf
-    Given user is on a visitor site page
-    """
-    /companylist/us/tx/richardson/green-leaf-air-reviews-8993301.htm
-    """
+    Given user is on a visitor site leaf advertiser page with deals
     When a user performs actions
-      | action_method | action_params   |
-      | click         | css: #offer-51954 > a > div:nth-child(5) > button |
+      | action_method | action_params                                     |
+      | click         | css: #offer-50674 > a > div:nth-child(5) > button |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value                      |
+      | unique_field | unique_value  |
       | description  | View Deal CTA |
     And the segment call contains parameters
       | prop_key                | prop_value               |
@@ -1501,25 +1495,78 @@ Feature:
       | dealsDisplayed          |                          |
       | description             | View Deal CTA            |
       | gradeDisplayed          |                          |
-      | marketId                | 13                       |
+      | marketId                | 5                        |
       | offerId                 |                          |
       | priceDisplayed          |                          |
       | rank                    |                          |
       | serviceProviderId       |                          |
       | userId                  |                          |
       | visitorPageCategory     | PLUMBING                 |
-      | visitorPageGeo          | RICHARDSON               |
-      | visitorPageGeoCategory  | RICHARDSON - PLUMBING    |
+      | visitorPageGeo          | HILLIARD                 |
+      | visitorPageGeoCategory  | HILLIARD - PLUMBING      |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/app/offer/search/"
+    And the landing URL contains "placementType=Web_LeafPage"
+
+  @leafAdvertiserSecondOfferButtonClick
+  Scenario: Click on button - second offer - Advertiser Leaf
+    Given user is on a visitor site leaf advertiser page with deals
+    When a user performs actions
+      | action_method | action_params                                     |
+      | click         | css: #offer-51120 > a > div:nth-child(5) > button |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value  |
+      | description  | View Deal CTA |
+    And the segment call contains parameters
+      | prop_key               | prop_value           |
+      | activityLocation       | Visitor : SP Profile |
+      | dealsDisplayed         |                      |
+      | description            | View Deal CTA        |
+      | gradeDisplayed         |                      |
+      | marketId               | 5                    |
+      | offerId                |                      |
+      | priceDisplayed         |                      |
+      | rank                   |                      |
+      | serviceProviderId      |                      |
+      | userId                 |                      |
+      | visitorPageCategory    | PLUMBING             |
+      | visitorPageGeo         | HILLIARD             |
+      | visitorPageGeoCategory | HILLIARD - PLUMBING  |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/app/offer/search/"
+    And the landing URL contains "placementType=Web_LeafPage"
+
+  @leafAdvertiserThirdOfferButtonClick
+  Scenario: Click on button - third offer - Advertiser Leaf
+    Given user is on a visitor site leaf advertiser page with deals
+    When a user performs actions
+      | action_method | action_params                                     |
+      | click         | css: #offer-51432 > a > div:nth-child(5) > button |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value  |
+      | description  | View Deal CTA |
+    And the segment call contains parameters
+      | prop_key               | prop_value           |
+      | activityLocation       | Visitor : SP Profile |
+      | dealsDisplayed         |                      |
+      | description            | View Deal CTA        |
+      | gradeDisplayed         |                      |
+      | marketId               | 5                    |
+      | offerId                |                      |
+      | priceDisplayed         |                      |
+      | rank                   |                      |
+      | serviceProviderId      |                      |
+      | userId                 |                      |
+      | visitorPageCategory    | PLUMBING             |
+      | visitorPageGeo         | HILLIARD             |
+      | visitorPageGeoCategory | HILLIARD - PLUMBING  |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/app/offer/search/"
     And the landing URL contains "placementType=Web_LeafPage"
 
   @leafAdvertiserSeeAllDealButtonClick
-  Scenario: Click on button - first offer - Advertiser Leaf
-    Given user is on a visitor site page
-    """
-    /companylist/us/tx/richardson/green-leaf-air-reviews-8993301.htm
-    """
+  Scenario: Click on button - See All Deals - Advertiser Leaf
+    Given user is on a visitor site leaf advertiser page with deals
     When a user performs actions
       | action_method | action_params       |
       | click         | css: #see-all-deals |
@@ -1531,11 +1578,11 @@ Feature:
       | activityLocation        | Visitor : SP Profile  |
       | dealsDisplayed          |                       |
       | description             | See All Deals button  |
-      | marketId                | 13                    |
+      | marketId                | 5                     |
       | userId                  |                       |
       | visitorPageCategory     | PLUMBING              |
-      | visitorPageGeo          | RICHARDSON            |
-      | visitorPageGeoCategory  | RICHARDSON - PLUMBING |
+      | visitorPageGeo          | HILLIARD              |
+      | visitorPageGeoCategory  | HILLIARD - PLUMBING   |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/app/offer/search"
 
