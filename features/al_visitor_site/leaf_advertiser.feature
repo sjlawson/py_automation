@@ -1626,13 +1626,98 @@ Feature:
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
       | action_method | action_params   |
-      | click | css: #block-system-main > div > div.grayRow.leaf--row__top > div > div.leaf__top-left div.leaf-contact-us > div.leaf-contact-us__contact-link |
+      | click         | css: #block-system-main > div > div.grayRow.leaf--row__top > div > div.leaf__top-left div.leaf-contact-us > div.leaf-contact-us__contact-link |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value     |
       | modalName    | Contact SP       | 
     And the landing URL contains ".angieslist.com/companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm"
 
+  @LeafAdvertiserReviewPagination2
+  Scenario: Click on Reviews page two - Advertiser Leaf
+    Given user is on a visitor site leaf advertiser page
+    When a user performs actions
+      | action_method | action_params |
+      | click         | css: #block-system-main > div > aside.grayRow.leaf--row > div.container.clearfix > div.leaf__lower-left > div.leaf-reviews > div.item-list > ul.pager > li:nth-child(2) > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value         |
+      | name         | Visitor : SP Profile |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains "/companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm?page=1"
 
+  @LeafAdvertiserReviewPagination3
+  Scenario: Click on Reviews page three - Advertiser Leaf
+    Given user is on a visitor site leaf advertiser page
+    When a user performs actions
+      | action_method | action_params |
+      | click         | css: #block-system-main > div > aside.grayRow.leaf--row > div.container.clearfix > div.leaf__lower-left > div.leaf-reviews > div.item-list > ul.pager > li:nth-child(3) > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value         |
+      | name         | Visitor : SP Profile |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains "/companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm?page=2"
+
+  @LeafAdvertiserReviewPagination4
+  Scenario: Click on Reviews page four - Advertiser Leaf
+    Given user is on a visitor site leaf advertiser page
+    When a user performs actions
+      | action_method | action_params |
+      | click         | css: #block-system-main > div > aside.grayRow.leaf--row > div.container.clearfix > div.leaf__lower-left > div.leaf-reviews > div.item-list > ul.pager > li:nth-child(4) > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value         |
+      | name         | Visitor : SP Profile |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains "/companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm?page=3"
+    
+  @LeafAdvertiserReviewPagination5
+  Scenario: Click on Reviews page five - Advertiser Leaf
+    Given user is on a visitor site leaf advertiser page
+    When a user performs actions
+      | action_method | action_params |
+      | click         | css: #block-system-main > div > aside.grayRow.leaf--row > div.container.clearfix > div.leaf__lower-left > div.leaf-reviews > div.item-list > ul.pager > li:nth-child(5) > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value         |
+      | name         | Visitor : SP Profile |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains "/companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm?page=4"
+
+  @LeafAdvertiserReviewPagination6
+  Scenario: Click on Reviews page six - Advertiser Leaf
+    Given user is on a visitor site leaf advertiser page
+    When a user performs actions
+      | action_method | action_params |
+      | click         | css: #block-system-main > div > aside.grayRow.leaf--row > div.container.clearfix > div.leaf__lower-left > div.leaf-reviews > div.item-list > ul.pager > li:nth-child(6) > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value         |
+      | name         | Visitor : SP Profile |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains "/companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm?page=5"
+
+  @LeafAdvertiserReviewPaginationNext
+  Scenario: Click on Reviews next page - Advertiser Leaf
+    Given user is on a visitor site leaf advertiser page
+    When a user performs actions
+      | action_method | action_params |
+      | click         | css: #block-system-main > div > aside.grayRow.leaf--row > div.container.clearfix > div.leaf__lower-left > div.leaf-reviews > div.item-list > ul.pager > li.pager-next.right-caret > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value         |
+      | name         | Visitor : SP Profile |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains "/companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm?page=1"
+
+  @LeafAdvertiserReviewPaginationPrev
+  Scenario: Click on Reviews prev page - Advertiser Leaf
+    Given user is on a visitor site page
+      """
+      /companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm?page=2
+      """
+    When a user performs actions
+      | action_method | action_params |
+      | click         | css: #block-system-main > div > aside.grayRow.leaf--row > div.container.clearfix > div.leaf__lower-left > div.leaf-reviews > div.item-list > ul.pager > li.pager-previous.left-caret > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value         |
+      | name         | Visitor : SP Profile |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains "/companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm?page=1"
 
 ##### Footer #####
 
