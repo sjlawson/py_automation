@@ -1552,7 +1552,7 @@ Feature:
       | description            | View Deal CTA        |
       | gradeDisplayed         |                      |
       | marketId               | 5                    |
-      | offerId                |                      |
+      | offerId                | 51432                |
       | priceDisplayed         |                      |
       | rank                   |                      |
       | serviceProviderId      |                      |
@@ -1583,6 +1583,41 @@ Feature:
       | visitorPageCategory     | PLUMBING              |
       | visitorPageGeo          | HILLIARD              |
       | visitorPageGeoCategory  | HILLIARD - PLUMBING   |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/app/offer/search"
+
+  @leafAdvertiserDealsScrollButtonClick
+  Scenario: Click on Deals scroll button on Advertiser Leaf
+    Given user is on a visitor site leaf advertiser page with deals
+    When a user performs actions
+      | action_method | action_params                                            |
+      | click         | css: #offers > div:nth-child(2) > div > div:nth-child(2) |  
+      | click         | css: #offers > div:nth-child(2) > div > div:nth-child(3) |
+      | click         | css: #offers > div:nth-child(2) > div > div:nth-child(2) |
+      | click         | css: #offers > div:nth-child(2) > div > div:nth-child(1) |
+      | click         | css: #offers > div:nth-child(2) > div > div:nth-child(2) |
+    Then we wait "1" seconds for the next page to load
+    When a user performs actions
+      | action_method | action_params                                            |
+      | click         | css: #offer-77896 > a > div:nth-child(5) > button        |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value  |
+      | description  | View Deal CTA |
+    And the segment call contains parameters
+      | prop_key               | prop_value           |
+      | activityLocation       | Visitor : SP Profile |
+      | dealsDisplayed         |                      |
+      | description            | View Deal CTA        |
+      | gradeDisplayed         |                      |
+      | marketId               | 5                    |
+      | offerId                |                      |
+      | priceDisplayed         |                      |
+      | rank                   |                      |
+      | serviceProviderId      |                      |
+      | userId                 |                      |
+      | visitorPageCategory    | PLUMBING             |
+      | visitorPageGeo         | HILLIARD             |
+      | visitorPageGeoCategory | HILLIARD - PLUMBING  |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/app/offer/search"
 
