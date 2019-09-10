@@ -160,7 +160,7 @@ Feature:
       | description            | Interior menu category link in header    |
       | userId                 |                                          |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/us/co/longmont/interior-painting.htm"
+    And the landing URL contains ".angieslist.com/companylist/us/co/longmont/drywall.htm"
 
   @leafPageSegmentHeaderInteriorElectrical @leafPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Interior Electrical in the header on the Drupal Leaf
