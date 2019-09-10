@@ -1,6 +1,6 @@
 Feature:
 
-  @leafAdvertiserPageCall
+  @leafNonAdvertiserPageCall
   Scenario: segment page call for Leaf Page Advertiser
     Given user is on a visitor site leaf non advertiser page
     When a segment page call is sent for a unique field value pair
@@ -8,25 +8,27 @@ Feature:
       | name         | Visitor : SP Profile |
     Then the segment call contains parameters
       | prop_key               | prop_value                                                                              |
+      | advertiserStatus       | NonAdvertiser                                                                           |
       | atTestOffer            |                                                                                         |
-      | categoryId             | 294                                                                                     |
+      | categoryId             | 112                                                                                     |
       | cid                    |                                                                                         |
-      | homeAdvisorCategoryId  | 10381                                                                                   |
-      | marketId               | 27                                                                                      |
+      | homeAdvisorCategoryId  | 12061                                                                                   |
+      | marketId               | 11                                                                                      |
       | name                   | Visitor : SP Profile                                                                    |
       | pageVersion            | Lullabot Redesign                                                                       |
-      | path                   | /companylist/us/ga/cartersville/1-oak-roofing-reviews-9205981.htm                |
+      | path                   | /companylist/us/ga/cartersville/1-oak-roofing-reviews-9205981.htm                       |
       | referrer               |                                                                                         |
       | search                 |                                                                                         |
-      | srCtaDisplayed         |                                                                                         |
-      | srCtaVersion           |                                                                                         |
-      | title                  | Ace of Diamonds Painting Reviews - Longmont, CO \| Angie's List                         |
+      | serviceProviderId      |                                                                                         |
+      | srCtaDisplayed         | true                                                                                    |
+      | srCtaVersion           | v2                                                                                      |
+      | title                  | 1 OAK Roofing Reviews - Cartersville, GA \| Angie's List                                |
       | url                    |                                                                                         |
       | userId                 |                                                                                         |
       | userType               | Visitor - New                                                                           |
-      | visitorPageCategory    | PAINTING - INTERIOR                                                                     |
-      | visitorPageGeo         | LONGMONT                                                                                |
-      | visitorPageGeoCategory | LONGMONT - PAINTING - INTERIOR                                                          |
+      | visitorPageCategory    | ROOFING                                                                                 |
+      | visitorPageGeo         | CARTERSVILLE                                                                            |
+      | visitorPageGeoCategory | CARTERSVILLE - ROOFING                                                                  |
 
 
 ##### Header Tests #####
@@ -1554,34 +1556,557 @@ Feature:
 
 ##### Footer #####
 
-  @leafTopCities
-  Scenario Outline: leaf page top cities
-    Given user is on a visitor site page
-    """
-    /companylist/us/tx/richardson/green-leaf-air-reviews-8993301.htm
-    """
-    When a user clicks on "<pageLink>"
+@leafAdvertiserFooterTopCityNYC @leafAdvertiserFooter @companyListTreeFooter
+  Scenario: User clicks on the footer NYC top city link on leaf non advertiser Page
+    Given user is on a visitor site leaf non advertiser page
+    When a user performs actions
+      | action_method   | action_params                   |
+      | move_to_element | id: footer-top-cities-new-york  |
+      | click           |                                 |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value              |
-      | description  | Top Cities link in footer |
+      | unique_field | unique_value            |
+      | activityLocation | Visitor : SP Profile  |
     And the segment call contains parameters
-      | prop_key         | prop_value                |
-      | description      | Top Cities link in footer |
-      | activityLocation | Visitor : SP Profile      |
-      | userId           |                           |
-    Examples: pageLink
-    | pageLink                           |
-    | id: footer-top-cities-new-york     |
-    | id: footer-top-cities-houston      |
-    | id: footer-top-cities-chicago      |
-    | id: footer-top-cities-indianapolis |
-    | id: footer-top-cities-boston       |
-    | id: footer-top-cities-atlanta      |
-    | id: footer-top-cities-cincinnati   |
-    | id: footer-top-cities-los-angeles  |
-    | id: footer-top-cities-dallas       |
-    | id: footer-top-cities-pittsburgh   |
-    | id: footer-top-cities-minneapolis  |
-    | id: footer-top-cities-las-vegas    |
-    | id: footer-top-cities-san-antonio  |
-    | id: footer-top-cities-tampa-bay    |
+      | prop_key               | prop_value                     |
+      | activityLocation       | Visitor : SP Profile             |
+      | description            | Top Cities link in footer      |
+      | userId                 |                                |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/new-york-tristate-area/interior-painting.htm"
+
+
+  @leafAdvertiserFooterTopCityHouston @leafAdvertiserFooter @companyListTreeFooter
+  Scenario: User clicks on the footer Houston top city link on leaf non advertiser Page
+    Given user is on a visitor site leaf non advertiser page
+    When a user performs actions
+      | action_method   | action_params                  |
+      | move_to_element | id: footer-top-cities-houston  |
+      | click           |                                |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value            |
+      | activityLocation | Visitor : SP Profile |
+    And the segment call contains parameters
+      | prop_key               | prop_value                     |
+      | activityLocation       | Visitor : SP Profile             |
+      | description            | Top Cities link in footer      |
+      | userId                 |                                |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/houston/interior-painting.htm"
+
+
+  @leafAdvertiserFooterTopCityChi @leafAdvertiserFooter @companyListTreeFooter
+  Scenario: User clicks on the footer Chicago top city link on leaf non advertiser Page
+    Given user is on a visitor site leaf non advertiser page
+    When a user performs actions
+      | action_method   | action_params                  |
+      | move_to_element | id: footer-top-cities-chicago  |
+      | click           |                                |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value            |
+      | activityLocation | Visitor : SP Profile  |
+    And the segment call contains parameters
+      | prop_key               | prop_value                     |
+      | activityLocation       | Visitor : SP Profile             |
+      | description            | Top Cities link in footer      |
+      | userId                 |                                |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/chicago/interior-painting.htm"
+
+
+  @leafAdvertiserFooterTopCityIndy @leafAdvertiserFooter @companyListTreeFooter
+  Scenario: User clicks on the footer Indianapolis top city link on leaf non advertiser Page
+    Given user is on a visitor site leaf non advertiser page
+    When a user performs actions
+      | action_method   | action_params                       |
+      | move_to_element | id: footer-top-cities-indianapolis  |
+      | click           |                                     |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value            |
+      | activityLocation | Visitor : SP Profile  |
+    And the segment call contains parameters
+      | prop_key               | prop_value                     |
+      | activityLocation       | Visitor : SP Profile             |
+      | description            | Top Cities link in footer      |
+      | userId                 |                                |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/indianapolis/interior-painting.htm"
+
+
+  @leafAdvertiserFooterTopCityBos @leafAdvertiserFooter @companyListTreeFooter
+  Scenario: User clicks on the footer Boston top city link on leaf non advertiser Page
+    Given user is on a visitor site leaf non advertiser page
+    When a user performs actions
+      | action_method   | action_params                 |
+      | move_to_element | id: footer-top-cities-boston  |
+      | click           |                               |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value            |
+      | activityLocation | Visitor : SP Profile  |
+    And the segment call contains parameters
+      | prop_key               | prop_value                     |
+      | activityLocation       | Visitor : SP Profile             |
+      | description            | Top Cities link in footer      |
+      | userId                 |                                |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/boston/interior-painting.htm"
+
+  @leafAdvertiserFooterTopCityATL @leafAdvertiserFooter @companyListTreeFooter
+  Scenario: User clicks on the footer Atlanta top city link on leaf non advertiser Page
+    Given user is on a visitor site leaf non advertiser page
+    When a user performs actions
+      | action_method   | action_params                  |
+      | move_to_element | id: footer-top-cities-atlanta  |
+      | click           |                                |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value            |
+      | activityLocation | Visitor : SP Profile  |
+    And the segment call contains parameters
+      | prop_key               | prop_value                     |
+      | activityLocation       | Visitor : SP Profile             |
+      | description            | Top Cities link in footer      |
+      | userId                 |                                |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/atlanta/interior-painting.htm"
+
+  @leafAdvertiserFooterTopCityCinci @leafAdvertiserFooter @companyListTreeFooter
+  Scenario: User clicks on the footer Cincinnati top city link on leaf non advertiser Page
+    Given user is on a visitor site leaf non advertiser page
+    When a user performs actions
+      | action_method   | action_params                     |
+      | move_to_element | id: footer-top-cities-cincinnati  |
+      | click           |                                   |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value            |
+      | activityLocation | Visitor : SP Profile  |
+    And the segment call contains parameters
+      | prop_key               | prop_value                     |
+      | activityLocation       | Visitor : SP Profile             |
+      | description            | Top Cities link in footer      |
+      | userId                 |                                |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/cincinnati/interior-painting.htm"
+
+  @leafAdvertiserFooterTopCityLA @leafAdvertiserFooter @companyListTreeFooter
+  Scenario: User clicks on the footer Los Angeles top city link on leaf non advertiser Page
+    Given user is on a visitor site leaf non advertiser page
+    When a user performs actions
+      | action_method   | action_params                      |
+      | move_to_element | id: footer-top-cities-los-angeles  |
+      | click           |                                    |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value            |
+      | activityLocation | Visitor : SP Profile  |
+    And the segment call contains parameters
+      | prop_key               | prop_value                     |
+      | activityLocation       | Visitor : SP Profile             |
+      | description            | Top Cities link in footer      |
+      | userId                 |                                |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/los-angeles/interior-painting.htm"
+
+  @leafAdvertiserTopCityDal @leafAdvertiserFooter @companyListTreeFooter
+  Scenario: User clicks on the footer Dallas top city link on leaf non advertiser Page
+    Given user is on a visitor site leaf non advertiser page
+    When a user performs actions
+      | action_method   | action_params                 |
+      | move_to_element | id: footer-top-cities-dallas  |
+      | click           |                               |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value            |
+      | activityLocation | Visitor : SP Profile  |
+    And the segment call contains parameters
+      | prop_key               | prop_value                     |
+      | activityLocation       | Visitor : SP Profile             |
+      | description            | Top Cities link in footer      |
+      | userId                 |                                |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/dallas/interior-painting.htm"
+
+  @leafAdvertiserTopCityPitt @leafAdvertiserFooter @companyListTreeFooter
+  Scenario: User clicks on the footer Pittsburgh top city link on leaf non advertiser Page
+    Given user is on a visitor site leaf non advertiser page
+    When a user performs actions
+      | action_method   | action_params                     |
+      | move_to_element | id: footer-top-cities-pittsburgh  |
+      | click           |                                   |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value            |
+      | activityLocation | Visitor : SP Profile  |
+    And the segment call contains parameters
+      | prop_key               | prop_value                     |
+      | activityLocation       | Visitor : SP Profile             |
+      | description            | Top Cities link in footer      |
+      | userId                 |                                |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/pittsburgh/interior-painting.htm"
+
+  @leafAdvertiserFooterTopCityMinn @leafAdvertiserFooter @companyListTreeFooter
+  Scenario: User clicks on the footer Minneapolis top city link on leaf non advertiser Page
+    Given user is on a visitor site leaf non advertiser page
+    When a user performs actions
+      | action_method   | action_params                      |
+      | move_to_element | id: footer-top-cities-minneapolis  |
+      | click           |                                    |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value            |
+      | activityLocation | Visitor : SP Profile  |
+    And the segment call contains parameters
+      | prop_key               | prop_value                     |
+      | activityLocation       | Visitor : SP Profile             |
+      | description            | Top Cities link in footer      |
+      | userId                 |                                |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/minneapolis/interior-painting.htm"
+
+  @leafAdvertiserFooterTopCityLV @leafAdvertiserFooter @companyListTreeFooter
+  Scenario: User clicks on the footer Las Vegas top city link on leaf non advertiser Page
+    Given user is on a visitor site leaf non advertiser page
+    When a user performs actions
+      | action_method   | action_params                    |
+      | move_to_element | id: footer-top-cities-las-vegas  |
+      | click           |                                  |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value            |
+      | activityLocation | Visitor : SP Profile  |
+    And the segment call contains parameters
+      | prop_key               | prop_value                     |
+      | activityLocation       | Visitor : SP Profile             |
+      | description            | Top Cities link in footer      |
+      | userId                 |                                |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/las-vegas/interior-painting.htm"
+
+  @leafAdvertiserFooterTopCitySA @leafAdvertiserFooter @companyListTreeFooter
+  Scenario: User clicks on the footer San Antonio top city link on leaf non advertiser Page
+    Given user is on a visitor site leaf non advertiser page
+    When a user performs actions
+      | action_method   | action_params                      |
+      | move_to_element | id: footer-top-cities-san-antonio  |
+      | click           |                                    |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value            |
+      | activityLocation | Visitor : SP Profile  |
+    And the segment call contains parameters
+      | prop_key               | prop_value                     |
+      | activityLocation       | Visitor : SP Profile             |
+      | description            | Top Cities link in footer      |
+      | userId                 |                                |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/san-antonio/interior-painting.htm"
+
+  @leafAdvertiserFooterTopCityTampa @leafAdvertiserFooter @companyListTreeFooter
+  Scenario: User clicks on the footer Tampa top city link on leaf non advertiser Page
+    Given user is on a visitor site leaf non advertiser page
+    When a user performs actions
+      | action_method   | action_params                    |
+      | move_to_element | id: footer-top-cities-tampa-bay  |
+      | click           |                                  |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value            |
+      | activityLocation | Visitor : SP Profile  |
+    And the segment call contains parameters
+      | prop_key               | prop_value                     |
+      | activityLocation       | Visitor : SP Profile             |
+      | description            | Top Cities link in footer      |
+      | userId                 |                                |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/tampa-bay/interior-painting.htm"
+
+  @leafAdvertiserFooterSegmentJoinForFree @leafAdvertiserFooter @companyListTreeFooter
+  Scenario: User clicks on the footer-left Join For Free icon on leaf non advertiser Page
+    Given user is on a visitor site leaf non advertiser page
+    When a user performs actions
+      | action_method   | action_params                |
+      | move_to_element | css: #footer--join-for-free  |
+      | click           |                              |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value            |
+      | activityLocation | Visitor : SP Profile  |
+    And the segment call contains parameters
+      | prop_key               | prop_value                        |
+      | activityLocation       | Visitor : SP Profile                |
+      | description            | Join For Free link in footer      |
+      | userId                 |                                   |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/app/signup"
+
+  @leafAdvertiserFooterSegmentCompanyList @leafAdvertiserFooter @companyListTreeFooter
+  Scenario: User clicks on the footer-left Company List icon on leaf non advertiser Page
+    Given user is on a visitor site leaf non advertiser page
+    When a user performs actions
+      | action_method   | action_params                    |
+      | move_to_element | id: footer--find-local-business  |
+      | click           |                                  |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value            |
+      | activityLocation | Visitor : SP Profile  |
+    And the segment call contains parameters
+      | prop_key               | prop_value                             |
+      | activityLocation       | Visitor : SP Profile                     |
+      | description            | Find Local Businesses link in footer   |
+      | userId                 |                                        |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/"
+
+  @leafAdvertiserFooterSegmentNearMe @leafAdvertiserFooter @companyListTreeFooter
+  Scenario: User clicks on the footer-left Near Me icon on leaf non advertiser Page
+    Given user is on a visitor site leaf non advertiser page
+    When a user performs actions
+      | action_method   | action_params      |
+      | move_to_element | id: footer--nearme |
+      | click           |                    |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value            |
+      | activityLocation | Visitor : SP Profile  |
+    And the segment call contains parameters
+      | prop_key               | prop_value                        |
+      | activityLocation       | Visitor : SP Profile                |
+      | description            | Services Near Me link in footer   |
+      | userId                 |                                   |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/nearme/"
+
+  @leafAdvertiserFooterSegmentHowItWorks @leafAdvertiserFooter @companyListTreeFooter
+  Scenario: User clicks on the footer-left How It Works icon on leaf non advertiser Page
+    Given user is on a visitor site leaf non advertiser page
+    When a user performs actions
+      | action_method   | action_params            |
+      | move_to_element | id: footer--how-it-works |
+      | click           |                          |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value            |
+      | activityLocation | Visitor : SP Profile  |
+    And the segment call contains parameters
+      | prop_key               | prop_value                        |
+      | activityLocation       | Visitor : SP Profile                |
+      | description            | How It Works link in footer       |
+      | userId                 |                                   |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/how-it-works.htm"
+
+  @leafAdvertiserFooterSegmentSolutionCenter @leafAdvertiserFooter @companyListTreeFooter
+  Scenario: User clicks on the footer-left Solution Center icon on leaf non advertiser Page
+    Given user is on a visitor site leaf non advertiser page
+    When a user performs actions
+      | action_method   | action_params               |
+      | move_to_element | id: footer--solution-center |
+      | click           |                             |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value            |
+      | activityLocation | Visitor : SP Profile  |
+    And the segment call contains parameters
+      | prop_key               | prop_value                        |
+      | activityLocation       | Visitor : SP Profile                |
+      | description            | Solution Center link in footer    |
+      | userId                 |                                   |
+    And we wait "4" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/articles/"
+
+  @leafAdvertiserFooterSegmentPhotoGalleries @leafAdvertiserFooter @companyListTreeFooter
+  Scenario: User clicks on the footer-left Photos icon on leaf non advertiser Page
+    Given user is on a visitor site leaf non advertiser page
+    When a user performs actions
+      | action_method   | action_params               |
+      | move_to_element | id: footer--photo-galleries |
+      | click           |                             |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value            |
+      | activityLocation | Visitor : SP Profile  |
+    And the segment call contains parameters
+      | prop_key               | prop_value                        |
+      | activityLocation       | Visitor : SP Profile                |
+      | description            | Photo Galleries link in footer    |
+      | userId                 |                                   |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/photos/"
+
+  @leafAdvertiserFooterSegmentVideos @leafAdvertiserFooter @companyListTreeFooter
+  Scenario: User clicks on the footer-left Videos icon on leaf non advertiser Page
+    Given user is on a visitor site leaf non advertiser page
+    When a user performs actions
+      | action_method   | action_params      |
+      | move_to_element | id: footer--video  |
+      | click           |                    |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value            |
+      | activityLocation | Visitor : SP Profile |
+    And the segment call contains parameters
+      | prop_key               | prop_value                        |
+      | activityLocation       | Visitor : SP Profile                |
+      | description            | Videos link in footer             |
+      | userId                 |                                   |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/videos/"
+
+  @leafAdvertiserFooterSegmentAnswers @leafAdvertiserFooter @companyListTreeFooter
+  Scenario: User clicks on the footer-left Answers icon on leaf non advertiser Page
+    Given user is on a visitor site leaf non advertiser page
+    When a user performs actions
+      | action_method   | action_params       |
+      | move_to_element | id: footer--answers |
+      | click           |                     |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value            |
+      | activityLocation | Visitor : SP Profile  |
+    And the segment call contains parameters
+      | prop_key               | prop_value                  |
+      | activityLocation       | Visitor : SP Profile          |
+      | description            | Answers link in footer      |
+      | userId                 |                             |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com"
+
+  @leafAdvertiserFooterSegmentBusinessOwners @leafAdvertiserFooter @companyListTreeFooter
+  Scenario: User clicks on the footer-left Business Owners icon on leaf non advertiser Page
+    Given user is on a visitor site leaf non advertiser page
+    When a user performs actions
+      | action_method   | action_params               |
+      | move_to_element | id: footer--business-owners |
+      | click           |                             |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value            |
+      | activityLocation | Visitor : SP Profile  |
+    And the segment call contains parameters
+      | prop_key               | prop_value                         |
+      | activityLocation       | Visitor : SP Profile                 |
+      | description            | For Business Owners link in footer |
+      | userId                 |                                    |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains "angieslistbusinesscenter.com/"
+
+  @leafAdvertiserFooterSegmentInvestorRelations @leafAdvertiserFooter @companyListTreeFooter
+  Scenario: User clicks on the footer-left Investor Relations icon on leaf non advertiser Page
+    Given user is on a visitor site leaf non advertiser page
+    When a user performs actions
+      | action_method   | action_params        |
+      | move_to_element | id: footer--investor |
+      | click           |                      |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value            |
+      | activityLocation | Visitor : SP Profile  |
+    And the segment call contains parameters
+      | prop_key               | prop_value                         |
+      | activityLocation       | Visitor : SP Profile                 |
+      | description            | Investor Relations link in footer  |
+      | userId                 |                                    |
+
+  @leafAdvertiserFooterSegmentAboutUs @leafAdvertiserFooter @companyListTreeFooter
+  Scenario: User clicks on the footer-left About Us icon on leaf non advertiser Page
+    Given user is on a visitor site leaf non advertiser page
+    When a user performs actions
+      | action_method   | action_params           |
+      | move_to_element | id: footer--about-angie |
+      | click           |                         |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value            |
+      | activityLocation | Visitor : SP Profile  |
+    And the segment call contains parameters
+      | prop_key               | prop_value                         |
+      | activityLocation       | Visitor : SP Profile                 |
+      | description            | About Angie’s List link in footer  |
+      | userId                 |                                    |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/aboutus.htm"
+
+  @leafAdvertiserFooterSegmentCareers @leafAdvertiserFooter @companyListTreeFooter
+  Scenario: User clicks on the footer-left Careers icon on leaf non advertiser Page
+    Given user is on a visitor site leaf non advertiser page
+    When a user performs actions
+      | action_method   | action_params           |
+      | move_to_element | id: footer--careers     |
+      | click           |                         |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value            |
+      | activityLocation | Visitor : SP Profile  |
+    And the segment call contains parameters
+      | prop_key               | prop_value                 |
+      | activityLocation       | Visitor : SP Profile         |
+      | description            | Careers link in footer     |
+      | userId                 |                            |
+
+  @leafAdvertiserFooterSegmentFAQ @leafAdvertiserFooter @companyListTreeFooter
+  Scenario: User clicks on the footer-left FAQ icon on leaf non advertiser Page
+    Given user is on a visitor site leaf non advertiser page
+    When a user performs actions
+      | action_method   | action_params       |
+      | move_to_element | id: footer--faqs    |
+      | click           |                     |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value           |
+      | activityLocation | Visitor : SP Profile |
+    And the segment call contains parameters
+      | prop_key               | prop_value           |
+      | activityLocation       | Visitor : SP Profile   |
+      | description            | FAQs link in footer  |
+      | userId                 |                      |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/faq/"
+
+
+  @leafAdvertiserFooterSegmentContactUs @leafAdvertiserFooter @companyListTreeFooter
+  Scenario: User clicks on the footer-left Contact Us icon on leaf non advertiser Page
+    Given user is on a visitor site leaf non advertiser page
+    When a user performs actions
+      | action_method   | action_params           |
+      | move_to_element | id: footer--contact-us  |
+      | click           |                         |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value            |
+      | activityLocation | Visitor : SP Profile  |
+    And the segment call contains parameters
+      | prop_key               | prop_value                 |
+      | activityLocation       | Visitor : SP Profile         |
+      | description            | Contact Us link in footer  |
+      | userId                 |                            |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/member/login"
+
+  @leafAdvertiserFooterSegmentJoin @leafAdvertiserFooter @companyListTreeFooter
+  Scenario: User clicks on the footer-right Join icon on leaf non advertiser Page
+    Given user is on a visitor site leaf non advertiser page
+    When a user performs actions
+      | action_method   | action_params    |
+      | move_to_element | id: footer-join  |
+      | click           |                  |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value            |
+      | activityLocation | Visitor : SP Profile  |
+    And the segment call contains parameters
+      | prop_key               | prop_value                 |
+      | activityLocation       | Visitor : SP Profile         |
+      | description            | Join button in footer      |
+      | userId                 |                            |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/app/signup"
+
+  @leafAdvertiserFooterSegmentTermsOfUse @leafAdvertiserFooter @companyListTreeFooter
+  Scenario: User clicks on the footer TermsOfUse icon on leaf non advertiser Page
+    Given user is on a visitor site leaf non advertiser page
+    When a user performs actions
+      | action_method   | action_params     |
+      | move_to_element | id: footer--terms |
+      | click           |                   |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value            |
+      | activityLocation | Visitor : SP Profile  |
+    And the segment call contains parameters
+      | prop_key               | prop_value                   |
+      | activityLocation       | Visitor : SP Profile           |
+      | description            | Terms of Use link in footer  |
+      | userId                 |                              |
+
+  @leafAdvertiserFooterSegmentPrivacyPolicy @leafAdvertiserFooter @companyListTreeFooter
+  Scenario: User clicks on the footer Privacy Policy icon on leaf non advertiser Page
+    Given user is on a visitor site leaf non advertiser page
+    When a user performs actions
+      | action_method   | action_params              |
+      | move_to_element | id: footer--privacy-policy |
+      | click           |                            |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value            |
+      | activityLocation | Visitor : SP Profile  |
+    And the segment call contains parameters
+      | prop_key               | prop_value                    |
+      | activityLocation       | Visitor : SP Profile            |
+      | description            | Privacy Policy link in footer |
+      | userId                 |                               |
