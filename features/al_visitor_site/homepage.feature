@@ -793,9 +793,9 @@ Feature:
     /
     """
     When a user performs actions
-      | action_method   | action_params      |
+      | action_method   | action_params                      |
       | move_to_element | id: footer-top-cities-san-antonio  |
-      | click           |                    |
+      | click           |                                    |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : Home |
@@ -814,9 +814,9 @@ Feature:
     /
     """
     When a user performs actions
-      | action_method   | action_params      |
+      | action_method   | action_params                    |
       | move_to_element | id: footer-top-cities-tampa-bay  |
-      | click           |                    |
+      | click           |                                  |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : Home |
@@ -835,9 +835,9 @@ Feature:
     /
     """
     When a user performs actions
-      | action_method   | action_params      |
+      | action_method   | action_params              |
       | move_to_element | id: footer--join-for-free  |
-      | click           |                    |
+      | click           |                            |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
       | activityLocation | Visitor : Home |
@@ -847,7 +847,7 @@ Feature:
       | description            | Join For Free link in footer      |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/app/signup/"
+    And the landing URL contains ".angieslist.com/app/signup"
 
   @homePageFooterSegmentCompanyList  @daily_homepage_regression @footer
   Scenario: User clicks on the footer-left Company List icon on Drupal Homepage
