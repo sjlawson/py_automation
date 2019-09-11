@@ -1425,7 +1425,6 @@ Feature:
 
 
 
-
 ##### Body Tests #####
   @leafNonAdvertiserSRWithZip @leafNonAdvertierBody @companyListTreeBody
   Scenario: SR CTA button click on leaf non advertiser page
@@ -1446,6 +1445,25 @@ Feature:
     | userId           |                                   |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/category.Roofing-Siding-Gutters.10217.html?entry_point_id=32723379&postalCode=90068"
+
+  @leafNonAdvertiserBreadcrumb @leafNonAdvertierBody @companyListTreeBody
+  Scenario: SR CTA button click on leaf non advertiser page
+    Given user is on a visitor site leaf non advertiser page
+    When a user performs actions
+    | action_method   | action_params                     |
+    | move_to_element | css: .breadcrumb a:nth-child(3)   |
+    | click           |                                   |
+
+    Then a segment track call is sent for a unique field value pair
+    | unique_field | unique_value       |
+    | description  | Breadcrumbs link   |
+    And the segment call contains parameters
+    | prop_key         | prop_value               |
+    | description      | Breadcrumbs link         |
+    | activityLocation | Visitor : SP Profile     |
+    | userId           |                          |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/roofing.htm"
 
 
 ##### Footer #####
