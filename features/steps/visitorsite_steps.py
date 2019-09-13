@@ -134,7 +134,7 @@ def step_impl(context):
 def step_impl(context):
     appsuite_env = 'al_visitor_site'
     appsuite_url = context.appsuites[appsuite_env]['base_url']
-    context.url = appsuite_url + '/companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm'
+    context.url = appsuite_url + '/companylist/us/co/boulder/painting-plus-reviews-221961.htm'
     context.browser.get(context.url)
     time.sleep(1)
 

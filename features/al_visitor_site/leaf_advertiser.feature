@@ -15,18 +15,18 @@ Feature:
       | marketId               | 27                                                                                      |
       | name                   | Visitor : SP Profile                                                                    |
       | pageVersion            | Lullabot Redesign                                                                       |
-      | path                   | /companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm                |
+      | path                   | /companylist/us/co/boulder/painting-plus-reviews-221961.htm                |
       | referrer               |                                                                                         |
       | search                 |                                                                                         |
       | srCtaDisplayed         |                                                                                         |
       | srCtaVersion           |                                                                                         |
-      | title                  | Ace of Diamonds Painting Reviews - Longmont, CO \| Angie's List                         |
+      | title                  | Ace of Diamonds Painting Reviews - BOULDER, CO \| Angie's List                         |
       | url                    |                                                                                         |
       | userId                 |                                                                                         |
       | userType               | Visitor - New                                                                           |
       | visitorPageCategory    | PAINTING - INTERIOR                                                                     |
-      | visitorPageGeo         | LONGMONT                                                                                |
-      | visitorPageGeoCategory | LONGMONT - PAINTING - INTERIOR                                                          |
+      | visitorPageGeo         | BOULDER                                                                                |
+      | visitorPageGeoCategory | BOULDER - PAINTING - INTERIOR                                                          |
 
 
 ##### Header Tests #####
@@ -103,7 +103,7 @@ Feature:
       | description            | Interior menu category link in header |
       | userId                 |                                       |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/us/co/longmont/appliance-repair.htm"
+    And the landing URL contains ".angieslist.com/companylist/us/co/boulder/appliance-repair.htm"
 
 
   @leafPageSegmentHeaderInteriorCarpetCleaning  @leafPageHeader @companyListTreeHeader
@@ -122,7 +122,7 @@ Feature:
       | description            | Interior menu category link in header    |
       | userId                 |                                          |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/us/co/longmont/carpet-cleaning.htm"
+    And the landing URL contains ".angieslist.com/companylist/us/co/boulder/carpet-cleaning.htm"
 
 
   @leafPageSegmentHeaderInteriorContractors @leafPageHeader @companyListTreeHeader
@@ -141,7 +141,7 @@ Feature:
       | description            | Interior menu category link in header    |
       | userId                 |                                          |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/us/co/longmont/contractor.htm"
+    And the landing URL contains ".angieslist.com/companylist/us/co/boulder/contractor.htm"
 
 
   @leafPageSegmentHeaderInteriorDrywall @leafPageHeader @companyListTreeHeader
@@ -160,7 +160,7 @@ Feature:
       | description            | Interior menu category link in header    |
       | userId                 |                                          |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/us/co/longmont/drywall.htm"
+    And the landing URL contains ".angieslist.com/companylist/us/co/boulder/drywall.htm"
 
   @leafPageSegmentHeaderInteriorElectrical @leafPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Interior Electrical in the header on the Drupal Leaf
@@ -178,7 +178,7 @@ Feature:
       | description            | Interior menu category link in header    |
       | userId                 |                                          |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/us/co/longmont/electrical.htm"
+    And the landing URL contains ".angieslist.com/companylist/us/co/boulder/electrical.htm"
 
   @leafPageSegmentHeaderInteriorFlooring @leafPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Interior Flooring in the header on the Drupal Leaf
@@ -196,7 +196,7 @@ Feature:
       | description            | Interior menu category link in header    |
       | userId                 |                                          |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/us/co/longmont/flooring.htm"
+    And the landing URL contains ".angieslist.com/companylist/us/co/boulder/flooring.htm"
 
   @leafPageSegmentHeaderInteriorHVAC @leafPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Interior HVAC in the header on the Drupal Leaf
@@ -214,7 +214,7 @@ Feature:
       | description            | Interior menu category link in header    |
       | userId                 |                                          |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/us/co/longmont/hvac.htm"
+    And the landing URL contains ".angieslist.com/companylist/us/co/boulder/hvac.htm"
 
   @leafPageSegmentHeaderInteriorHouseCleaning @leafPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on House Cleaning in the header on the Drupal Leaf
@@ -232,7 +232,7 @@ Feature:
       | description            | Interior menu category link in header    |
       | userId                 |                                          |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/us/co/longmont/house-cleaning.htm"
+    And the landing URL contains ".angieslist.com/companylist/us/co/boulder/house-cleaning.htm"
 
   @leafPageSegmentHeaderInteriorPainting @leafPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Interior Painting in the header on the Drupal Leaf
@@ -250,7 +250,7 @@ Feature:
       | description            | Interior menu category link in header    |
       | userId                 |                                          |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/us/co/longmont/interior-painting.htm"
+    And the landing URL contains ".angieslist.com/companylist/us/co/boulder/interior-painting.htm"
 
   @leafPageSegmentHeaderInteriorPlumbing @leafPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Interior Plumbing in the header on the Drupal Leaf
@@ -268,7 +268,7 @@ Feature:
       | description            | Interior menu category link in header    |
       | userId                 |                                          |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/us/co/longmont/plumbing.htm"
+    And the landing URL contains ".angieslist.com/companylist/us/co/boulder/plumbing.htm"
 
   @leafPageSegmentHeaderInteriorRemodeling @leafPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Interior Remodeling in the header on the Drupal Leaf
@@ -286,7 +286,7 @@ Feature:
       | description            | Interior menu category link in header    |
       | userId                 |                                          |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/us/co/longmont/kitchen-and-bath-remodeling.htm"
+    And the landing URL contains ".angieslist.com/companylist/us/co/boulder/kitchen-and-bath-remodeling.htm"
 
   @leafPageSegmentHeaderInteriorViewAll @leafPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Interior View All in the header on the Drupal Leaf
@@ -322,7 +322,7 @@ Feature:
       | description            | Exterior menu category link in header  |
       | userId                 |                                        |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/us/co/longmont/concrete-repair.htm"
+    And the landing URL contains ".angieslist.com/companylist/us/co/boulder/concrete-repair.htm"
 
   @leafPageSegmentHeaderExteriorDoors @leafPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Exterior Doors in the header on the Drupal Leaf
@@ -340,7 +340,7 @@ Feature:
       | description            | Exterior menu category link in header  |
       | userId                 |                                        |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/us/co/longmont/doors.htm"
+    And the landing URL contains ".angieslist.com/companylist/us/co/boulder/doors.htm"
 
   @leafPageSegmentHeaderExteriorDriveways @leafPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Driveways in the header on the Drupal Leaf
@@ -358,7 +358,7 @@ Feature:
       | description            | Exterior menu category link in header  |
       | userId                 |                                        |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/us/co/longmont/driveways.htm"
+    And the landing URL contains ".angieslist.com/companylist/us/co/boulder/driveways.htm"
 
   @leafPageSegmentHeaderExteriorPainting @leafPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Exterior Painting in the header on the Drupal Leaf
@@ -376,7 +376,7 @@ Feature:
       | description            | Exterior menu category link in header  |
       | userId                 |                                        |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/us/co/longmont/exterior-painting.htm"
+    And the landing URL contains ".angieslist.com/companylist/us/co/boulder/exterior-painting.htm"
 
   @leafPageSegmentHeaderExteriorGarage @leafPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on and clicks on Garage in the header on the Drupal Leaf
@@ -394,7 +394,7 @@ Feature:
       | description            | Exterior menu category link in header  |
       | userId                 |                                        |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/us/co/longmont/garage-doors.htm"
+    And the landing URL contains ".angieslist.com/companylist/us/co/boulder/garage-doors.htm"
 
   @leafPageSegmentHeaderExteriorGutterCleaning @leafPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Gutter Cleaning in the header on the Drupal Leaf
@@ -412,7 +412,7 @@ Feature:
       | description            | Exterior menu category link in header  |
       | userId                 |                                        |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/us/co/longmont/gutter-cleaning.htm"
+    And the landing URL contains ".angieslist.com/companylist/us/co/boulder/gutter-cleaning.htm"
 
   @leafPageSegmentHeaderExteriorGutterRepair @leafPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Gutter Repair in the header on the Drupal Leaf
@@ -430,7 +430,7 @@ Feature:
       | description            | Exterior menu category link in header  |
       | userId                 |                                        |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/us/co/longmont/gutter-repair-replacement.htm"
+    And the landing URL contains ".angieslist.com/companylist/us/co/boulder/gutter-repair-replacement.htm"
 
   @leafPageSegmentHeaderExteriorHomeBuilders @leafPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Home Builders in the header on the Drupal Leaf
@@ -448,7 +448,7 @@ Feature:
       | description            | Exterior menu category link in header  |
       | userId                 |                                        |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/us/co/longmont/home-builders.htm"
+    And the landing URL contains ".angieslist.com/companylist/us/co/boulder/home-builders.htm"
 
   @leafPageSegmentHeaderExteriorMasonry @leafPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Masonry in the header on the Drupal Leaf
@@ -466,7 +466,7 @@ Feature:
       | description            | Exterior menu category link in header  |
       | userId                 |                                        |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/us/co/longmont/masonry.htm"
+    And the landing URL contains ".angieslist.com/companylist/us/co/boulder/masonry.htm"
 
   @leafPageSegmentHeaderExteriorRoofing @leafPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Roofing in the header on the Drupal Leaf
@@ -484,7 +484,7 @@ Feature:
       | description            | Exterior menu category link in header  |
       | userId                 |                                        |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/us/co/longmont/roofing.htm"
+    And the landing URL contains ".angieslist.com/companylist/us/co/boulder/roofing.htm"
 
   @leafPageSegmentHeaderExteriorSiding @leafPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Siding in the header on the Drupal Leaf
@@ -502,7 +502,7 @@ Feature:
       | description            | Exterior menu category link in header  |
       | userId                 |                                        |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/us/co/longmont/siding.htm"
+    And the landing URL contains ".angieslist.com/companylist/us/co/boulder/siding.htm"
 
   @leafPageSegmentHeaderExteriorWindows @leafPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Windows in the header on the Drupal Leaf
@@ -520,7 +520,7 @@ Feature:
       | description            | Exterior menu category link in header  |
       | userId                 |                                        |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/us/co/longmont/window-treatments.htm"
+    And the landing URL contains ".angieslist.com/companylist/us/co/boulder/window-treatments.htm"
 
   @leafPageSegmentHeaderExteriorViewAll @leafPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks and clicks on Exterior View All in the header on the Drupal Leaf
@@ -556,7 +556,7 @@ Feature:
       | description            | Lawn & Garden menu category link in header  |
       | userId                 |                                             |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/us/co/longmont/decks-and-porches.htm"
+    And the landing URL contains ".angieslist.com/companylist/us/co/boulder/decks-and-porches.htm"
 
   @leafPageSegmentHeaderLawnFencing @leafPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Fencing in the header on the Drupal Leaf
@@ -574,7 +574,7 @@ Feature:
       | description            | Lawn & Garden menu category link in header  |
       | userId                 |                                             |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/us/co/longmont/fencing.htm"
+    And the landing URL contains ".angieslist.com/companylist/us/co/boulder/fencing.htm"
 
   @leafPageSegmentHeaderLawnLandSurveying @leafPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Land Surveying in the header on the Drupal Leaf
@@ -592,7 +592,7 @@ Feature:
       | description            | Lawn & Garden menu category link in header  |
       | userId                 |                                             |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/us/co/longmont/land-surveying.htm"
+    And the landing URL contains ".angieslist.com/companylist/us/co/boulder/land-surveying.htm"
 
   @leafPageSegmentHeaderLawnLandscaping @leafPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Landscaping in the header on the Drupal Leaf
@@ -610,7 +610,7 @@ Feature:
       | description            | Lawn & Garden menu category link in header  |
       | userId                 |                                             |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/us/co/longmont/landscaping.htm"
+    And the landing URL contains ".angieslist.com/companylist/us/co/boulder/landscaping.htm"
 
   @leafPageSegmentHeaderLawnYard @leafPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Lawn & Yard in the header on the Drupal Leaf
@@ -628,7 +628,7 @@ Feature:
       | description            | Lawn & Garden menu category link in header  |
       | userId                 |                                             |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/us/co/longmont/lawn-and-yard-work.htm"
+    And the landing URL contains ".angieslist.com/companylist/us/co/boulder/lawn-and-yard-work.htm"
 
   @leafPageSegmentHeaderLawnIrrigation @leafPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Lawn Irrigation in the header on the Drupal Leaf
@@ -646,7 +646,7 @@ Feature:
       | description            | Lawn & Garden menu category link in header  |
       | userId                 |                                             |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/us/co/longmont/lawn-irrigation.htm"
+    And the landing URL contains ".angieslist.com/companylist/us/co/boulder/lawn-irrigation.htm"
 
   @leafPageSegmentHeaderLawnMowerRepair @leafPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Lawn Mower Repair in the header on the Drupal Leaf
@@ -664,7 +664,7 @@ Feature:
       | description            | Lawn & Garden menu category link in header  |
       | userId                 |                                             |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/us/co/longmont/lawn-mower-repair.htm"
+    And the landing URL contains ".angieslist.com/companylist/us/co/boulder/lawn-mower-repair.htm"
 
   @leafPageSegmentHeaderLawnLeafRemoval @leafPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Leaf Removal in the header on the Drupal Leaf
@@ -682,7 +682,7 @@ Feature:
       | description            | Lawn & Garden menu category link in header  |
       | userId                 |                                             |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/us/co/longmont/leaf-removal.htm"
+    And the landing URL contains ".angieslist.com/companylist/us/co/boulder/leaf-removal.htm"
 
   @leafPageSegmentHeaderLawnPatios @leafPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Patios in the header on the Drupal Leaf
@@ -700,7 +700,7 @@ Feature:
       | description            | Lawn & Garden menu category link in header  |
       | userId                 |                                             |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/us/co/longmont/sunroom-and-patio-remodeling.htm"
+    And the landing URL contains ".angieslist.com/companylist/us/co/boulder/sunroom-and-patio-remodeling.htm"
 
   @leafPageSegmentHeaderLawnShed @leafPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Shed Builders in the header on the Drupal Leaf
@@ -718,7 +718,7 @@ Feature:
       | description            | Lawn & Garden menu category link in header  |
       | userId                 |                                             |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/us/co/longmont/garage-builders.htm"
+    And the landing URL contains ".angieslist.com/companylist/us/co/boulder/garage-builders.htm"
 
   @leafPageSegmentHeaderLawnTreeSvc @leafPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Tree Service in the header on the Drupal Leaf
@@ -736,7 +736,7 @@ Feature:
       | description            | Lawn & Garden menu category link in header  |
       | userId                 |                                             |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/us/co/longmont/tree-service.htm"
+    And the landing URL contains ".angieslist.com/companylist/us/co/boulder/tree-service.htm"
 
   @leafPageSegmentHeaderLawnViewAll @leafPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on View All in the header on the Drupal Leaf
@@ -772,7 +772,7 @@ Feature:
       | description            | More menu category link in header |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/us/co/longmont/basement-waterproofing.htm"
+    And the landing URL contains ".angieslist.com/companylist/us/co/boulder/basement-waterproofing.htm"
 
   @leafPageSegmentHeaderMoreDogGrooming @leafPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Dog Grooming in the header on the Drupal Leaf
@@ -790,7 +790,7 @@ Feature:
       | description            | More menu category link in header |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/us/co/longmont/pet-grooming.htm"
+    And the landing URL contains ".angieslist.com/companylist/us/co/boulder/pet-grooming.htm"
 
 
   @leafPageSegmentHeaderMoreHandymen @leafPageHeader @companyListTreeHeader
@@ -809,7 +809,7 @@ Feature:
       | description            | More menu category link in header |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/us/co/longmont/handyman-service.htm"
+    And the landing URL contains ".angieslist.com/companylist/us/co/boulder/handyman-service.htm"
 
   @leafPageSegmentHeaderMoreJunk @leafPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Junk Hauling in the header on the Drupal Leaf
@@ -827,7 +827,7 @@ Feature:
       | description            | More menu category link in header |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/us/co/longmont/hauling.htm"
+    And the landing URL contains ".angieslist.com/companylist/us/co/boulder/hauling.htm"
 
   @leafPageSegmentHeaderMoreLocksmiths @leafPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Locksmiths in the header on the Drupal Leaf
@@ -845,7 +845,7 @@ Feature:
       | description            | More menu category link in header |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/us/co/longmont/locksmiths.htm"
+    And the landing URL contains ".angieslist.com/companylist/us/co/boulder/locksmiths.htm"
 
   @leafPageSegmentHeaderMoreMoving @leafPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Moving Companies in the header on the Drupal Leaf
@@ -863,7 +863,7 @@ Feature:
       | description            | More menu category link in header |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/us/co/longmont/moving.htm"
+    And the landing URL contains ".angieslist.com/companylist/us/co/boulder/moving.htm"
 
   @leafPageSegmentHeaderMorePests @leafPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Pest Control Companies in the header on the Drupal Leaf
@@ -881,7 +881,7 @@ Feature:
       | description            | More menu category link in header |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/us/co/longmont/pest-control.htm"
+    And the landing URL contains ".angieslist.com/companylist/us/co/boulder/pest-control.htm"
 
   @leafPageSegmentHeaderMorePressureWashing @leafPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Pressure Washing Companies in the header on the Drupal Leaf
@@ -899,7 +899,7 @@ Feature:
       | description            | More menu category link in header |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/us/co/longmont/pressure-washing.htm"
+    And the landing URL contains ".angieslist.com/companylist/us/co/boulder/pressure-washing.htm"
 
   @leafPageSegmentHeaderMoreSeptic @leafPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Septic Tanks Companies in the header on the Drupal Leaf
@@ -917,7 +917,7 @@ Feature:
       | description            | More menu category link in header |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/us/co/longmont/septic-tank.htm"
+    And the landing URL contains ".angieslist.com/companylist/us/co/boulder/septic-tank.htm"
 
   @leafPageSegmentHeaderMoreViewAllCat @leafPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on View All Cats - More in the header on the Drupal Leaf
@@ -1446,10 +1446,10 @@ Feature:
       | reviewCount             |                                  |
       | userId                  |                                  |
       | visitorPageCategory     | PAINTING - INTERIOR              |
-      | visitorPageGeo          | LONGMONT                         |
-      | visitorPageGeoCategory  | LONGMONT - PAINTING - INTERIOR   |
+      | visitorPageGeo          | BOULDER                         |
+      | visitorPageGeoCategory  | BOULDER - PAINTING - INTERIOR   |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/app/lead/request_a_quote/3623201/project?categoryId=294&placementType=Web_LeafPage&withAlId=3623201"
+    And the landing URL contains ".angieslist.com/app/lead/request_a_quote/221961/project?categoryId=294&placementType=Web_LeafPage&withAlId=221961"
 
   @leafAdvertiserFirstOfferClick
   Scenario: Click on first offer - Advertiser Leaf
@@ -1630,7 +1630,7 @@ Feature:
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value     |
       | modalName    | Contact SP       | 
-    And the landing URL contains ".angieslist.com/companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm"
+    And the landing URL contains ".angieslist.com/companylist/us/co/boulder/painting-plus-reviews-221961.htm"
 
   @leafAdvertiserReviewPage2 @leafAdvertiserReviewPagination
   Scenario: Click on Reviews page two - Advertiser Leaf
@@ -1639,13 +1639,13 @@ Feature:
       | action_method | action_params |
       | click         | css: #block-system-main > div > aside.grayRow.leaf--row > div.container.clearfix > div.leaf__lower-left > div.leaf-reviews > div.item-list > ul.pager > li:nth-child(2) > a |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value         |
-      | advertiserStatus | Advertiser |
-#    And the segment call contains parameters
-#      | prop_key         | prop_value  |
-#      | advertiserStatus | Advertiser  |
+      | unique_field     | unique_value  |
+      | advertiserStatus | Advertiser    |
+    And the segment call contains parameters
+      | prop_key         | prop_value  |
+      | advertiserStatus | Advertiser  |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains "/companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm?page=1"
+    And the landing URL contains "/companylist/us/co/boulder/painting-plus-reviews-221961.htm?page=1"
 
   @leafAdvertiserReviewPage3 @leafAdvertiserReviewPagination
   Scenario: Click on Reviews page three - Advertiser Leaf
@@ -1657,7 +1657,7 @@ Feature:
       | unique_field | unique_value         |
       | name         | Visitor : SP Profile |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains "/companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm?page=2"
+    And the landing URL contains "/companylist/us/co/boulder/painting-plus-reviews-221961.htm?page=2"
 
   @leafAdvertiserReviewPage4 @leafAdvertiserReviewPagination
   Scenario: Click on Reviews page four - Advertiser Leaf
@@ -1669,7 +1669,7 @@ Feature:
       | unique_field | unique_value         |
       | name         | Visitor : SP Profile |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains "/companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm?page=3"
+    And the landing URL contains "/companylist/us/co/boulder/painting-plus-reviews-221961.htm?page=3"
     
   @leafAdvertiserReviewPage5 @leafAdvertiserReviewPagination
   Scenario: Click on Reviews page five - Advertiser Leaf
@@ -1681,7 +1681,7 @@ Feature:
       | unique_field | unique_value         |
       | name         | Visitor : SP Profile |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains "/companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm?page=4"
+    And the landing URL contains "/companylist/us/co/boulder/painting-plus-reviews-221961.htm?page=4"
 
   @leafAdvertiserReviewPage6 @leafAdvertiserReviewPagination
   Scenario: Click on Reviews page six - Advertiser Leaf
@@ -1693,7 +1693,7 @@ Feature:
       | unique_field | unique_value         |
       | name         | Visitor : SP Profile |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains "/companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm?page=5"
+    And the landing URL contains "/companylist/us/co/boulder/painting-plus-reviews-221961.htm?page=5"
 
   @leafAdvertiserReviewPageNext @leafAdvertiserReviewPagination
   Scenario: Click on Reviews next page - Advertiser Leaf
@@ -1705,13 +1705,13 @@ Feature:
       | unique_field | unique_value         |
       | name         | Visitor : SP Profile |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains "/companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm?page=1"
+    And the landing URL contains "/companylist/us/co/boulder/painting-plus-reviews-221961.htm?page=1"
 
   @leafAdvertiserReviewPagePrev @leafAdvertiserReviewPagination
   Scenario: Click on Reviews prev page - Advertiser Leaf
     Given user is on a visitor site page
       """
-      /companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm?page=2
+      /companylist/us/co/boulder/painting-plus-reviews-221961.htm?page=2
       """
     When a user performs actions
       | action_method | action_params |
@@ -1720,7 +1720,7 @@ Feature:
       | unique_field | unique_value         |
       | name         | Visitor : SP Profile |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains "/companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm?page=1"
+    And the landing URL contains "/companylist/us/co/boulder/painting-plus-reviews-221961.htm?page=1"
 
   @leafNonAdvertiserPageCall
   Scenario: segment page call for Leaf Page Advertiser
