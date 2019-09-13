@@ -1632,7 +1632,7 @@ Feature:
       | modalName    | Contact SP       | 
     And the landing URL contains ".angieslist.com/companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm"
 
-  @LeafAdvertiserReviewPagination2
+  @leafAdvertiserReviewPage2 @leafAdvertiserReviewPagination
   Scenario: Click on Reviews page two - Advertiser Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -1640,11 +1640,14 @@ Feature:
       | click         | css: #block-system-main > div > aside.grayRow.leaf--row > div.container.clearfix > div.leaf__lower-left > div.leaf-reviews > div.item-list > ul.pager > li:nth-child(2) > a |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value         |
-      | name         | Visitor : SP Profile |
+      | advertiserStatus | Advertiser |
+#    And the segment call contains parameters
+#      | prop_key         | prop_value  |
+#      | advertiserStatus | Advertiser  |
     And we wait "1" seconds for the next page to load
     And the landing URL contains "/companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm?page=1"
 
-  @LeafAdvertiserReviewPagination3
+  @leafAdvertiserReviewPage3 @leafAdvertiserReviewPagination
   Scenario: Click on Reviews page three - Advertiser Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -1656,7 +1659,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains "/companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm?page=2"
 
-  @LeafAdvertiserReviewPagination4
+  @leafAdvertiserReviewPage4 @leafAdvertiserReviewPagination
   Scenario: Click on Reviews page four - Advertiser Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -1668,7 +1671,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains "/companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm?page=3"
     
-  @LeafAdvertiserReviewPagination5
+  @leafAdvertiserReviewPage5 @leafAdvertiserReviewPagination
   Scenario: Click on Reviews page five - Advertiser Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -1680,7 +1683,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains "/companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm?page=4"
 
-  @LeafAdvertiserReviewPagination6
+  @leafAdvertiserReviewPage6 @leafAdvertiserReviewPagination
   Scenario: Click on Reviews page six - Advertiser Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -1692,7 +1695,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains "/companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm?page=5"
 
-  @LeafAdvertiserReviewPaginationNext
+  @leafAdvertiserReviewPageNext @leafAdvertiserReviewPagination
   Scenario: Click on Reviews next page - Advertiser Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -1704,7 +1707,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains "/companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm?page=1"
 
-  @LeafAdvertiserReviewPaginationPrev
+  @leafAdvertiserReviewPagePrev @leafAdvertiserReviewPagination
   Scenario: Click on Reviews prev page - Advertiser Leaf
     Given user is on a visitor site page
       """
@@ -1718,6 +1721,36 @@ Feature:
       | name         | Visitor : SP Profile |
     And we wait "1" seconds for the next page to load
     And the landing URL contains "/companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm?page=1"
+
+  @leafNonAdvertiserPageCall
+  Scenario: segment page call for Leaf Page Advertiser
+    Given user is on a visitor site leaf non advertiser page
+    When a segment page call is sent for a unique field value pair
+      | unique_field | unique_value         |
+      | name         | Visitor : SP Profile |
+    Then the segment call contains parameters
+      | prop_key               | prop_value                                                                              |
+      | advertiserStatus       | NonAdvertiser                                                                           |
+      | atTestOffer            |                                                                                         |
+      | categoryId             | 112                                                                                     |
+      | cid                    |                                                                                         |
+      | homeAdvisorCategoryId  | 12061                                                                                   |
+      | marketId               | 11                                                                                      |
+      | name                   | Visitor : SP Profile                                                                    |
+      | pageVersion            | Lullabot Redesign                                                                       |
+      | path                   | /companylist/us/ga/cartersville/1-oak-roofing-reviews-9205981.htm                       |
+      | referrer               |                                                                                         |
+      | search                 |                                                                                         |
+      | serviceProviderId      |                                                                                         |
+      | srCtaDisplayed         | true                                                                                    |
+      | srCtaVersion           | v2                                                                                      |
+      | title                  | 1 OAK Roofing Reviews - Cartersville, GA \| Angie's List                                |
+      | url                    |                                                                                         |
+      | userId                 |                                                                                         |
+      | userType               | Visitor - New                                                                           |
+      | visitorPageCategory    | ROOFING                                                                                 |
+      | visitorPageGeo         | CARTERSVILLE                                                                            |
+      | visitorPageGeoCategory | CARTERSVILLE - ROOFING                                                                  |
 
 ##### Footer #####
 
