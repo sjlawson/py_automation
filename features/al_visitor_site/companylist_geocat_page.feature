@@ -8,29 +8,29 @@ Feature:
       | unique_field | unique_value   |
       | pageVersion         | GeoCat Tampa Redesign |
     Then the segment call contains parameters
-      | prop_key              | prop_value                                                 |
-      | atTestOffer           |                                                            |
-      | categoryId            | 112                                                        |
-      | cid                   |                                                            |
-      | homeAdvisorCategoryId | 12061                                                      |
-      | marketId              | 27                                                         |
-      | name                  | Visitor : Geocat                                           |
-      | pageVersion           | GeoCat Tampa Redesign                                      |
-      | path                  | /companylist/denver/roofing.htm                            |
-      | referrer              |                                                            |
-      | search                |                                                            |
-      | seoTestName           |                                                            |
-      | srCtaDisplayed        | true                                                       |
-      | srCtaVersion          | v2                                                         |
+      | prop_key              | prop_value                                                      |
+      | atTestOffer           |                                                                 |
+      | categoryId            | 112                                                             |
+      | cid                   |                                                                 |
+      | homeAdvisorCategoryId | 12061                                                           |
+      | marketId              | 27                                                              |
+      | name                  | Visitor : Geocat                                                |
+      | pageVersion           | GeoCat Tampa Redesign                                           |
+      | path                  | /companylist/denver/roofing.htm                                 |
+      | referrer              |                                                                 |
+      | search                |                                                                 |
+      | seoTestName           |                                                                 |
+      | srCtaDisplayed        | true                                                            |
+      | srCtaVersion          | v2                                                              |
       | title                 | Top 10 Best Denver CO Roofing Contractors &vert; Angie's List   |
-      | url                   |                                                            |
-      | userId                |                                                            |
-      | userType              | Visitor - New                                              |
-      | visitorPageCategory   | ROOFING                                                    |
-      | visitorPageGeo        | DENVER                                                     |
-      | visitorPageGeoCategory  | DENVER - ROOFING                                         |
-      | visitorPageVerticalId   | 7051                                                     |
-      | visitorPageVerticalName | Home Improvement                                         |
+      | url                   |                                                                 |
+      | userId                |                                                                 |
+      | userType              | Visitor - New                                                   |
+      | visitorPageCategory   | ROOFING                                                         |
+      | visitorPageGeo        | DENVER                                                          |
+      | visitorPageGeoCategory  | DENVER - ROOFING                                              |
+      | visitorPageVerticalId   | 7051                                                          |
+      | visitorPageVerticalName | Home Improvement                                              |
 
 ##### Header Tests #####
 
@@ -178,7 +178,7 @@ Feature:
       | description            | Lawn & Garden menu category link in header |
       | userId                 |                                       |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/decks-and-porches.htm"
+    And the landing URL contains ".angieslist.com/companylist/denver/decks-and-porches.htm"
 
 
   @geoCatHeaderMoreNearMe @geoCatHeader @companyListTreeHeader
