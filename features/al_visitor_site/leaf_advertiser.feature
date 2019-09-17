@@ -1508,12 +1508,12 @@ Feature:
     And the landing URL contains ".angieslist.com/app/offer/search/"
     And the landing URL contains "placementType=Web_LeafPage"
 
-  @leafAdvertiserSecondOfferButtonClick
+  @leafAdvertiserSecondOfferClick
   Scenario: Click on button - second offer - Advertiser Leaf
     Given user is on a visitor site leaf advertiser page with deals
     When a user performs actions
-      | action_method | action_params                                     |
-      | click         | css: #offer-51120 > a > div:nth-child(5) > button |
+      | action_method | action_params                                                 |
+      | click         | css: #offers > div.owl-wrapper-outer > div > div:nth-child(2) |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value  |
       | description  | View Deal CTA |
@@ -1536,12 +1536,12 @@ Feature:
     And the landing URL contains ".angieslist.com/app/offer/search/"
     And the landing URL contains "placementType=Web_LeafPage"
 
-  @leafAdvertiserThirdOfferButtonClick
+  @leafAdvertiserThirdOfferClick
   Scenario: Click on button - third offer - Advertiser Leaf
     Given user is on a visitor site leaf advertiser page with deals
     When a user performs actions
-      | action_method | action_params                                     |
-      | click         | css: #offer-51432 > a > div:nth-child(5) > button |
+      | action_method | action_params                                                 |
+      | click         | css: #offers > div.owl-wrapper-outer > div > div:nth-child(3) |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value  |
       | description  | View Deal CTA |
@@ -1552,7 +1552,7 @@ Feature:
       | description            | View Deal CTA        |
       | gradeDisplayed         |                      |
       | marketId               | 5                    |
-      | offerId                | 51432                |
+      | offerId                |                      |
       | priceDisplayed         |                      |
       | rank                   |                      |
       | serviceProviderId      |                      |
@@ -1598,8 +1598,8 @@ Feature:
       | click         | css: #offers > div:nth-child(2) > div > div:nth-child(2) |
     Then we wait "1" seconds for the next page to load
     When a user performs actions
-      | action_method | action_params                                            |
-      | click         | css: #offer-77896 > a > div:nth-child(5) > button        |
+      | action_method | action_params                                                 |
+      | click         | css: #offers > div.owl-wrapper-outer > div > div:nth-child(5) |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value  |
       | description  | View Deal CTA |
@@ -1638,13 +1638,7 @@ Feature:
     When a user performs actions
       | action_method | action_params |
       | click         | css: #block-system-main > div > aside.grayRow.leaf--row > div.container.clearfix > div.leaf__lower-left > div.leaf-reviews > div.item-list > ul.pager > li:nth-child(2) > a |
-    Then a segment track call is sent for a unique field value pair
-      | unique_field     | unique_value  |
-      | advertiserStatus | Advertiser    |
-    And the segment call contains parameters
-      | prop_key         | prop_value  |
-      | advertiserStatus | Advertiser  |
-    And we wait "1" seconds for the next page to load
+    Then we wait "1" seconds for the next page to load
     And the landing URL contains "/companylist/us/co/boulder/painting-plus-reviews-221961.htm?page=1"
 
   @leafAdvertiserReviewPage3 @leafAdvertiserReviewPagination
