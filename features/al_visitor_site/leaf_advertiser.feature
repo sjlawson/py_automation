@@ -7,27 +7,26 @@ Feature:
       | unique_field | unique_value         |
       | name         | Visitor : SP Profile |
     Then the segment call contains parameters
-      | prop_key               | prop_value                                                                              |
-      | atTestOffer            |                                                                                         |
-      | categoryId             | 294                                                                                     |
-      | cid                    |                                                                                         |
-      | homeAdvisorCategoryId  | 10381                                                                                   |
-      | marketId               | 27                                                                                      |
-      | name                   | Visitor : SP Profile                                                                    |
-      | pageVersion            | Lullabot Redesign                                                                       |
-      | path                   | /companylist/us/co/boulder/painting-plus-reviews-221961.htm                |
-      | referrer               |                                                                                         |
-      | search                 |                                                                                         |
-      | srCtaDisplayed         |                                                                                         |
-      | srCtaVersion           |                                                                                         |
-      | title                  | Ace of Diamonds Painting Reviews - BOULDER, CO \| Angie's List                         |
-      | url                    |                                                                                         |
-      | userId                 |                                                                                         |
-      | userType               | Visitor - New                                                                           |
-      | visitorPageCategory    | PAINTING - INTERIOR                                                                     |
-      | visitorPageGeo         | BOULDER                                                                                |
-      | visitorPageGeoCategory | BOULDER - PAINTING - INTERIOR                                                          |
-
+      | prop_key               | prop_value                                                  |
+      | atTestOffer            |                                                             |
+      | categoryId             | 294                                                         |
+      | cid                    |                                                             |
+      | homeAdvisorCategoryId  | 10381                                                       |
+      | marketId               | 27                                                          |
+      | name                   | Visitor : SP Profile                                        |
+      | pageVersion            | Lullabot Redesign                                           |
+      | path                   | /companylist/us/co/boulder/painting-plus-reviews-221961.htm |
+      | referrer               |                                                             |
+      | search                 |                                                             |
+      | srCtaDisplayed         |                                                             |
+      | srCtaVersion           |                                                             |
+      | title                  | Painting Plus Reviews - Boulder, CO \| Angie's List         |
+      | url                    |                                                             |
+      | userId                 |                                                             |
+      | userType               |                                                             |
+      | visitorPageCategory    | PAINTING - INTERIOR                                         |
+      | visitorPageGeo         | BOULDER                                                     |
+      | visitorPageGeoCategory | BOULDER - PAINTING - INTERIOR                               |
 
 ##### Header Tests #####
   @headerJoinNowLeafPage @leafPageHeader @companyListTreeHeader
@@ -1431,21 +1430,21 @@ Feature:
   Scenario: RAQ click on Leaf Advertiser.
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
-      | action_method | action_params   |
-      | click         | css: #block-system-main > div > div.grayRow.leaf--row__top > div > div.leaf__top-left > div.grayRow.leaf__contact-us > div > div.leaf-contact-us__contact-link > a |
+      | action_method | action_params                           |
+      | click         | css: .leaf-contact-us__contact-link > a |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value           |
       | description  | Request a Quote button |
     And the segment call contains parameters
-      | prop_key                | prop_value                       |
-      | activityLocation        | Visitor : SP Profile             |
-      | description             | Request a Quote button           |
-      | legacyServiceProviderId |                                  |
-      | marketId                | 27                               |
-      | overallReviewGrade      |                                  |
-      | reviewCount             |                                  |
-      | userId                  |                                  |
-      | visitorPageCategory     | PAINTING - INTERIOR              |
+      | prop_key                | prop_value                      |
+      | activityLocation        | Visitor : SP Profile            |
+      | description             | Request a Quote button          |
+      | legacyServiceProviderId |                                 |
+      | marketId                | 27                              |
+      | overallReviewGrade      |                                 |
+      | reviewCount             |                                 |
+      | userId                  |                                 |
+      | visitorPageCategory     | PAINTING - INTERIOR             |
       | visitorPageGeo          | BOULDER                         |
       | visitorPageGeoCategory  | BOULDER - PAINTING - INTERIOR   |
     And we wait "1" seconds for the next page to load
@@ -1625,8 +1624,8 @@ Feature:
   Scenario: Click on button - Contact Us
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
-      | action_method | action_params   |
-      | click         | css: #block-system-main > div > div.grayRow.leaf--row__top > div > div.leaf__top-left div.leaf-contact-us > div.leaf-contact-us__contact-link |
+      | action_method | action_params                                             |
+      | click         | css: .leaf-contact-us > div.leaf-contact-us__contact-link |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value     |
       | modalName    | Contact SP       | 
@@ -1636,8 +1635,8 @@ Feature:
   Scenario: Click on Reviews page two - Advertiser Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
-      | action_method | action_params |
-      | click         | css: #block-system-main > div > aside.grayRow.leaf--row > div.container.clearfix > div.leaf__lower-left > div.leaf-reviews > div.item-list > ul.pager > li:nth-child(2) > a |
+      | action_method | action_params                     |
+      | click         | css: .pager > li:nth-child(2) > a |
     Then we wait "1" seconds for the next page to load
     And the landing URL contains "/companylist/us/co/boulder/painting-plus-reviews-221961.htm?page=1"
 
@@ -1645,45 +1644,45 @@ Feature:
   Scenario: Click on Reviews page three - Advertiser Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
-      | action_method | action_params |
-      | click         | css: #block-system-main > div > aside.grayRow.leaf--row > div.container.clearfix > div.leaf__lower-left > div.leaf-reviews > div.item-list > ul.pager > li:nth-child(3) > a |
-    And we wait "1" seconds for the next page to load
+      | action_method | action_params                     |
+      | click         | css: .pager > li:nth-child(3) > a |
+    Then we wait "1" seconds for the next page to load
     And the landing URL contains "/companylist/us/co/boulder/painting-plus-reviews-221961.htm?page=2"
 
   @leafAdvertiserReviewPage4 @leafAdvertiserReviewPagination
   Scenario: Click on Reviews page four - Advertiser Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
-      | action_method | action_params |
-      | click         | css: #block-system-main > div > aside.grayRow.leaf--row > div.container.clearfix > div.leaf__lower-left > div.leaf-reviews > div.item-list > ul.pager > li:nth-child(4) > a |
-    And we wait "1" seconds for the next page to load
+      | action_method | action_params                     |
+      | click         | css: .pager > li:nth-child(4) > a |
+    Then we wait "1" seconds for the next page to load
     And the landing URL contains "/companylist/us/co/boulder/painting-plus-reviews-221961.htm?page=3"
     
   @leafAdvertiserReviewPage5 @leafAdvertiserReviewPagination
   Scenario: Click on Reviews page five - Advertiser Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
-      | action_method | action_params |
-      | click         | css: #block-system-main > div > aside.grayRow.leaf--row > div.container.clearfix > div.leaf__lower-left > div.leaf-reviews > div.item-list > ul.pager > li:nth-child(5) > a |
-    And we wait "1" seconds for the next page to load
+      | action_method | action_params                     |
+      | click         | css: .pager > li:nth-child(5) > a |
+    Then we wait "1" seconds for the next page to load
     And the landing URL contains "/companylist/us/co/boulder/painting-plus-reviews-221961.htm?page=4"
 
   @leafAdvertiserReviewPage6 @leafAdvertiserReviewPagination
   Scenario: Click on Reviews page six - Advertiser Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
-      | action_method | action_params |
-      | click         | css: #block-system-main > div > aside.grayRow.leaf--row > div.container.clearfix > div.leaf__lower-left > div.leaf-reviews > div.item-list > ul.pager > li:nth-child(6) > a |
-    And we wait "1" seconds for the next page to load
+      | action_method | action_params                     |
+      | click         | css: .pager > li:nth-child(6) > a |
+    Then we wait "1" seconds for the next page to load
     And the landing URL contains "/companylist/us/co/boulder/painting-plus-reviews-221961.htm?page=5"
 
   @leafAdvertiserReviewPageNext @leafAdvertiserReviewPagination
   Scenario: Click on Reviews next page - Advertiser Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
-      | action_method | action_params |
-      | click         | css: #block-system-main > div > aside.grayRow.leaf--row > div.container.clearfix > div.leaf__lower-left > div.leaf-reviews > div.item-list > ul.pager > li.pager-next.right-caret > a |
-    And we wait "1" seconds for the next page to load
+      | action_method | action_params                               |
+      | click         | css: .pager > li.pager-next.right-caret > a |
+    Then we wait "1" seconds for the next page to load
     And the landing URL contains "/companylist/us/co/boulder/painting-plus-reviews-221961.htm?page=1"
 
   @leafAdvertiserReviewPagePrev @leafAdvertiserReviewPagination
@@ -1693,9 +1692,9 @@ Feature:
       /companylist/us/co/boulder/painting-plus-reviews-221961.htm?page=2
       """
     When a user performs actions
-      | action_method | action_params |
-      | click         | css: #block-system-main > div > aside.grayRow.leaf--row > div.container.clearfix > div.leaf__lower-left > div.leaf-reviews > div.item-list > ul.pager > li.pager-previous.left-caret > a |
-    And we wait "1" seconds for the next page to load
+      | action_method | action_params                                  |
+      | click         | css: .pager > li.pager-previous.left-caret > a |
+    Then we wait "1" seconds for the next page to load
     And the landing URL contains "/companylist/us/co/boulder/painting-plus-reviews-221961.htm?page=1"
 
 
@@ -1703,8 +1702,8 @@ Feature:
   Scenario: Click on review filter category link
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
-      | action_method | action_params |
-      | click         | css: #block-system-main > div > aside.grayRow.leaf--row > div.container.clearfix > div.leaf__lower-left > div.leaf-reviews > div.leaf-reviews__header-section > div.leaf-reviews__category-filters > div:nth-child(1) |
+      | action_method | action_params                                           |
+      | click         | css: .leaf-reviews__category-filters > div:nth-child(1) |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value           |
       | description  | Review category filter |
@@ -1723,8 +1722,8 @@ Feature:
   Scenario: Click on second review filter category link
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
-      | action_method | action_params |
-      | click         | css: #block-system-main > div > aside.grayRow.leaf--row > div.container.clearfix > div.leaf__lower-left > div.leaf-reviews > div.leaf-reviews__header-section > div.leaf-reviews__category-filters > div:nth-child(2) |
+      | action_method | action_params                                           |
+      | click         | css: .leaf-reviews__category-filters > div:nth-child(2) |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value           |
       | description  | Review category filter |
@@ -1743,8 +1742,8 @@ Feature:
   Scenario: Click on third review filter category link
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
-      | action_method | action_params |
-      | click         | css: #block-system-main > div > aside.grayRow.leaf--row > div.container.clearfix > div.leaf__lower-left > div.leaf-reviews > div.leaf-reviews__header-section > div.leaf-reviews__category-filters > div:nth-child(3) |
+      | action_method | action_params                                           |
+      | click         | css: .leaf-reviews__category-filters > div:nth-child(3) |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value           |
       | description  | Review category filter |
@@ -1763,8 +1762,8 @@ Feature:
   Scenario: Click on fourth review filter category link
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
-      | action_method | action_params |
-      | click         | css: #block-system-main > div > aside.grayRow.leaf--row > div.container.clearfix > div.leaf__lower-left > div.leaf-reviews > div.leaf-reviews__header-section > div.leaf-reviews__category-filters > div:nth-child(4) |
+      | action_method | action_params                                           |
+      | click         | css: .leaf-reviews__category-filters > div:nth-child(4) |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value           |
       | description  | Review category filter |
@@ -1783,11 +1782,11 @@ Feature:
   Scenario: Click on mulitple review filter category links
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
-      | action_method | action_params |
-      | click         | css: #block-system-main > div > aside.grayRow.leaf--row > div.container.clearfix > div.leaf__lower-left > div.leaf-reviews > div.leaf-reviews__header-section > div.leaf-reviews__category-filters > div:nth-child(1) |
-      | click         | css: #block-system-main > div > aside.grayRow.leaf--row > div.container.clearfix > div.leaf__lower-left > div.leaf-reviews > div.leaf-reviews__header-section > div.leaf-reviews__category-filters > div:nth-child(2) |
-      | click         | css: #block-system-main > div > aside.grayRow.leaf--row > div.container.clearfix > div.leaf__lower-left > div.leaf-reviews > div.leaf-reviews__header-section > div.leaf-reviews__category-filters > div:nth-child(3) |
-      | click         | css: #block-system-main > div > aside.grayRow.leaf--row > div.container.clearfix > div.leaf__lower-left > div.leaf-reviews > div.leaf-reviews__header-section > div.leaf-reviews__category-filters > div:nth-child(4) |
+      | action_method | action_params                                           |
+      | click         | css: .leaf-reviews__category-filters > div:nth-child(1) |
+      | click         | css: .leaf-reviews__category-filters > div:nth-child(2) |
+      | click         | css: .leaf-reviews__category-filters > div:nth-child(3) |
+      | click         | css: .leaf-reviews__category-filters > div:nth-child(4) |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value           |
       | description  | Review category filter |
@@ -1806,8 +1805,8 @@ Feature:
   Scenario: Click on review clear filter link
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
-      | action_method | action_params |
-      | click         | css: #block-system-main > div > aside.grayRow.leaf--row > div.container.clearfix > div.leaf__lower-left > div.leaf-reviews > div.leaf-reviews__header-section > div.leaf-reviews__stats > div.leaf-reviews__clear-filter |
+      | action_method | action_params                    |
+      | click         | css: .leaf-reviews__clear-filter |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value      |
       | description  | Clear filter link |
@@ -1826,12 +1825,12 @@ Feature:
   Scenario: Click on a review filter and then click clear filter link
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
-      | action_method | action_params |
-      | click         | css: #block-system-main > div > aside.grayRow.leaf--row > div.container.clearfix > div.leaf__lower-left > div.leaf-reviews > div.leaf-reviews__header-section > div.leaf-reviews__category-filters > div:nth-child(1)    |
+      | action_method | action_params                                           |
+      | click         | css: .leaf-reviews__category-filters > div:nth-child(1) |
     Then we wait "1" seconds for the next page to load
     When a user performs actions
-      | action_method | action_params |
-      | click         | css: #block-system-main > div > aside.grayRow.leaf--row > div.container.clearfix > div.leaf__lower-left > div.leaf-reviews > div.leaf-reviews__header-section > div.leaf-reviews__stats > div.leaf-reviews__clear-filter |
+      | action_method | action_params                    |
+      | click         | css: .leaf-reviews__clear-filter |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value      |
       | description  | Clear filter link |
@@ -1850,12 +1849,12 @@ Feature:
   Scenario: Click on a review filter and then the load more link
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
-      | action_method | action_params |
-      | click         | css: #block-system-main > div > aside.grayRow.leaf--row > div.container.clearfix > div.leaf__lower-left > div.leaf-reviews > div.leaf-reviews__header-section > div.leaf-reviews__category-filters > div:nth-child(1) |
+      | action_method | action_params                                           |
+      | click         | css: .leaf-reviews__category-filters > div:nth-child(1) |
     Then we wait "1" seconds for the next page to load 
     When a user performs actions
-      | action_method | action_params |
-      | click         | css: #block-system-main > div > aside.grayRow.leaf--row > div.container.clearfix > div.leaf__lower-left > div.leaf-reviews > div.leaf-reviews__load-more > button |
+      | action_method | action_params                          |
+      | click         | css: .leaf-reviews__load-more > button |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value           |
       | description  | Show more reviews link |
@@ -1874,8 +1873,8 @@ Feature:
   Scenario: Click on the first from the right breadcrumb link
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
-      | action_method | action_params |
-      | click         | css: #block-system-main > div.content > div.grayRow.leaf__subheader > div.container.clearfix > div.panel-pane.pane-breadcrumb-block > div.pane-content > div.breadcrumb-wrapper > div.breadcrumb > a:nth-child(6) |
+      | action_method | action_params                     |
+      | click         | css: .breadcrumb > a:nth-child(6) |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value     |
       | description  | Breadcrumbs link |
@@ -1895,8 +1894,8 @@ Feature:
   Scenario: Click on the second from the right breadcrumb link
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
-      | action_method | action_params |
-      | click         | css: #block-system-main > div.content > div.grayRow.leaf__subheader > div.container.clearfix > div.panel-pane.pane-breadcrumb-block > div.pane-content > div.breadcrumb-wrapper > div.breadcrumb > a:nth-child(5) |
+      | action_method | action_params                     |
+      | click         | css: .breadcrumb > a:nth-child(5) |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value     |
       | description  | Breadcrumbs link |
@@ -1916,8 +1915,8 @@ Feature:
   Scenario: Click on the third from the right breadcrumb link
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
-      | action_method | action_params |
-      | click         | css: #block-system-main > div.content > div.grayRow.leaf__subheader > div.container.clearfix > div.panel-pane.pane-breadcrumb-block > div.pane-content > div.breadcrumb-wrapper > div.breadcrumb > a:nth-child(4) |
+      | action_method | action_params                     |
+      | click         | css: .breadcrumb > a:nth-child(4) |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value     |
       | description  | Breadcrumbs link |
@@ -1937,8 +1936,8 @@ Feature:
   Scenario: Click on the fourth from the right breadcrumb link
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
-      | action_method | action_params |
-      | click         | css: #block-system-main > div.content > div.grayRow.leaf__subheader > div.container.clearfix > div.panel-pane.pane-breadcrumb-block > div.pane-content > div.breadcrumb-wrapper > div.breadcrumb > a:nth-child(3) |
+      | action_method | action_params                     |
+      | click         | css: .breadcrumb > a:nth-child(3) |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value     |
       | description  | Breadcrumbs link |
@@ -1958,8 +1957,8 @@ Feature:
   Scenario: Click on the fifth from the right breadcrumb link
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
-      | action_method | action_params |
-      | click         | css: #block-system-main > div.content > div.grayRow.leaf__subheader > div.container.clearfix > div.panel-pane.pane-breadcrumb-block > div.pane-content > div.breadcrumb-wrapper > div.breadcrumb > a:nth-child(2) |
+      | action_method | action_params                     |
+      | click         | css: .breadcrumb > a:nth-child(2) |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value     |
       | description  | Breadcrumbs link |
@@ -1979,8 +1978,8 @@ Feature:
   Scenario: Click on the sixth from the right breadcrumb link
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
-      | action_method | action_params |
-      | click         | css: #block-system-main > div.content > div.grayRow.leaf__subheader > div.container.clearfix > div.panel-pane.pane-breadcrumb-block > div.pane-content > div.breadcrumb-wrapper > div.breadcrumb > a:nth-child(1) |
+      | action_method | action_params                     |
+      | click         | css: .breadcrumb > a:nth-child(1) |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value     |
       | description  | Breadcrumbs link |
@@ -2000,8 +1999,8 @@ Feature:
   Scenario: click on the first category link
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
-      | action_method | action_params |
-      | click         | css: #block-system-main > div.content > div.grayRow.leaf--row__top > div.leaf--sidebar-wrapper.container.clearfix > div.leaf__top-left > aside.leaf-tags.leaf-tags-processed > ul > li:nth-child(1) |
+      | action_method | action_params                                                      |
+      | click         | css: .leaf-tags__list.leaf-tags__list--collapsed > li:nth-child(1) |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value            |
       | description  | Serviced category links |
@@ -2021,8 +2020,8 @@ Feature:
   Scenario: click on the second category link
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
-      | action_method | action_params |
-      | click         | css: #block-system-main > div.content > div.grayRow.leaf--row__top > div.leaf--sidebar-wrapper.container.clearfix > div.leaf__top-left > aside.leaf-tags.leaf-tags-processed > ul > li:nth-child(2) |
+      | action_method | action_params                                                      |
+      | click         | css: .leaf-tags__list.leaf-tags__list--collapsed > li:nth-child(2) |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value            |
       | description  | Serviced category links |
@@ -2042,8 +2041,8 @@ Feature:
   Scenario: click on the third category link
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
-      | action_method | action_params |
-      | click         | css: #block-system-main > div.content > div.grayRow.leaf--row__top > div.leaf--sidebar-wrapper.container.clearfix > div.leaf__top-left > aside.leaf-tags.leaf-tags-processed > ul > li:nth-child(3) |
+      | action_method | action_params                                                      |
+      | click         | css: .leaf-tags__list.leaf-tags__list--collapsed > li:nth-child(3) |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value            |
       | description  | Serviced category links |
@@ -2063,8 +2062,8 @@ Feature:
   Scenario: click on the fourth category link
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
-      | action_method | action_params |
-      | click         | css: #block-system-main > div.content > div.grayRow.leaf--row__top > div.leaf--sidebar-wrapper.container.clearfix > div.leaf__top-left > aside.leaf-tags.leaf-tags-processed > ul > li:nth-child(4) |
+      | action_method | action_params                                                      |
+      | click         | css: .leaf-tags__list.leaf-tags__list--collapsed > li:nth-child(4) |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value            |
       | description  | Serviced category links |
@@ -2084,8 +2083,8 @@ Feature:
   Scenario: click on the fifth category link
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
-      | action_method | action_params |
-      | click         | css: #block-system-main > div.content > div.grayRow.leaf--row__top > div.leaf--sidebar-wrapper.container.clearfix > div.leaf__top-left > aside.leaf-tags.leaf-tags-processed > ul > li:nth-child(5) |
+      | action_method | action_params                                                      |
+      | click         | css: .leaf-tags__list.leaf-tags__list--collapsed > li:nth-child(5) |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value            |
       | description  | Serviced category links |
@@ -2105,12 +2104,12 @@ Feature:
   Scenario: click on the category more link
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
-      | action_method | action_params |
-      | click         | css: #block-system-main > div.content > div.grayRow.leaf--row__top > div.leaf--sidebar-wrapper.container.clearfix > div.leaf__top-left > aside.leaf-tags.leaf-tags-processed > ul > li:nth-child(6) |
+      | action_method | action_params                                                      |
+      | click         | css: .leaf-tags__list.leaf-tags__list--collapsed > li:nth-child(6) |
     Then we wait "1" seconds for the next page to load
     When a user performs actions
-      | action_method | action_params |
-      | click         | css: #block-system-main > div.content > div.grayRow.leaf--row__top > div.leaf--sidebar-wrapper.container.clearfix > div.leaf__top-left > aside.leaf-tags.leaf-tags-processed > ul > li:nth-child(6) |
+      | action_method | action_params                           |
+      | click         | css: .leaf-tags__list > li:nth-child(6) |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value            |
       | description  | Serviced category links |
@@ -2126,36 +2125,48 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains "/companylist/us/co/boulder/wallpaper-removal.htm"
 
-
-  @leafAdvertiserPageCall
-  Scenario: segment page call for Leaf Page Advertiser
+  @leafAdvertiserJoinNowLinkBeneathReviews
+  Scenario: click on the Join Now link beneath reviews
     Given user is on a visitor site leaf advertiser page
-    When a segment page call is sent for a unique field value pair
-      | unique_field | unique_value         |
-      | name         | Visitor : SP Profile |
-    Then the segment call contains parameters
-      | prop_key               | prop_value                                                                              |
-      | advertiserStatus       | Advertiser                                                                              |
-      | atTestOffer            |                                                                                         |
-      | categoryId             | 112                                                                                     |
-      | cid                    |                                                                                         |
-      | homeAdvisorCategoryId  | 12061                                                                                   |
-      | marketId               | 11                                                                                      |
-      | name                   | Visitor : SP Profile                                                                    |
-      | pageVersion            | Lullabot Redesign                                                                       |
-      | path                   | /companylist/us/ga/cartersville/1-oak-roofing-reviews-9205981.htm                       |
-      | referrer               |                                                                                         |
-      | search                 |                                                                                         |
-      | serviceProviderId      |                                                                                         |
-      | srCtaDisplayed         | true                                                                                    |
-      | srCtaVersion           | v2                                                                                      |
-      | title                  | 1 OAK Roofing Reviews - Cartersville, GA \| Angie's List                                |
-      | url                    |                                                                                         |
-      | userId                 |                                                                                         |
-      | userType               | Visitor - New                                                                           |
-      | visitorPageCategory    | ROOFING                                                                                 |
-      | visitorPageGeo         | CARTERSVILLE                                                                            |
-      | visitorPageGeoCategory | CARTERSVILLE - ROOFING                                                                  |
+    When a user performs actions
+      | action_method | action_params                          |
+      | click         | css: .leaf-reviews__cta-link.join-link |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value              |
+      | description  | Join link beneath reviews |
+    And the segment call contains parameters
+      | prop_key               | prop_value                    |
+      | activityLocation       | Visitor : SP Profile          |
+      | description            | Join link beneath reviews     |
+      | marketId               | 27                            |
+      | userId                 |                               |
+      | visitorPageCategory    | Painting - Interior           |
+      | visitorPageGeo         | BOULDER                       |
+      | visitorPageGeoCategory | BOULDER - PAINTING - INTERIOR |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains "angieslist.com/app/signup"
+
+  @leafAdvertiserSignInLinkBeneathReviews
+  Scenario: click on the Sign In link beneath reviews
+    Given user is on a visitor site leaf advertiser page
+    When a user performs actions
+      | action_method | action_params                       |
+      | click         | css: .leaf-reviews__cta-member-link |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value                 |
+      | description  | Sign In link beneath reviews |
+    And the segment call contains parameters
+      | prop_key               | prop_value                    |
+      | activityLocation       | Visitor : SP Profile          |
+      | description            | Sign In link beneath reviews  |
+      | marketId               | 27                            |
+      | userId                 |                               |
+      | visitorPageCategory    | Painting - Interior           |
+      | visitorPageGeo         | BOULDER                       |
+      | visitorPageGeoCategory | BOULDER - PAINTING - INTERIOR |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains "angieslist.com/member/login"
+
 
 ##### Footer #####
 
