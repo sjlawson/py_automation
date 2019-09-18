@@ -1870,6 +1870,132 @@ Feature:
       | visitorPageGeo         | BOULDER                       |
       | visitorPageGeoCategory | BOULDER - PAINTING - INTERIOR |
 
+  @leafAdvertiserFirstBreadcrumbLink  @leafAdBreadcrumb
+  Scenario: Click on the first from the right breadcrumb link
+    Given user is on a visitor site leaf advertiser page
+    When a user performs actions
+      | action_method | action_params |
+      | click         | css: #block-system-main > div.content > div.grayRow.leaf__subheader > div.container.clearfix > div.panel-pane.pane-breadcrumb-block > div.pane-content > div.breadcrumb-wrapper > div.breadcrumb > a:nth-child(6) |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value     |
+      | description  | Breadcrumbs link |
+    And the segment call contains parameters
+      | prop_key               | prop_value                    |
+      | activityLocation       | Visitor : SP Profile          |
+      | description            | Breadcrumbs link              |
+      | marketId               | 27                            |
+      | userId                 |                               |
+      | visitorPageCategory    | Painting - Interior           |
+      | visitorPageGeo         | BOULDER                       |
+      | visitorPageGeoCategory | BOULDER - PAINTING - INTERIOR |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains "/companylist/us/co/boulder/interior-painting.htm"
+
+  @leafAdvertiserSecondBreadcrumbLink  @leafAdBreadcrumb
+  Scenario: Click on the second from the right breadcrumb link
+    Given user is on a visitor site leaf advertiser page
+    When a user performs actions
+      | action_method | action_params |
+      | click         | css: #block-system-main > div.content > div.grayRow.leaf__subheader > div.container.clearfix > div.panel-pane.pane-breadcrumb-block > div.pane-content > div.breadcrumb-wrapper > div.breadcrumb > a:nth-child(5) |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value     |
+      | description  | Breadcrumbs link |
+    And the segment call contains parameters
+      | prop_key               | prop_value                    |
+      | activityLocation       | Visitor : SP Profile          |
+      | description            | Breadcrumbs link              |
+      | marketId               | 27                            |
+      | userId                 |                               |
+      | visitorPageCategory    | Painting - Interior           |
+      | visitorPageGeo         | BOULDER                       |
+      | visitorPageGeoCategory | BOULDER - PAINTING - INTERIOR |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains "/companylist/us/co/boulder"
+
+  @leafAdvertiserThirdBreadcrumbLink  @leafAdBreadcrumb
+  Scenario: Click on the third from the right breadcrumb link
+    Given user is on a visitor site leaf advertiser page
+    When a user performs actions
+      | action_method | action_params |
+      | click         | css: #block-system-main > div.content > div.grayRow.leaf__subheader > div.container.clearfix > div.panel-pane.pane-breadcrumb-block > div.pane-content > div.breadcrumb-wrapper > div.breadcrumb > a:nth-child(4) |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value     |
+      | description  | Breadcrumbs link |
+    And the segment call contains parameters
+      | prop_key               | prop_value                    |
+      | activityLocation       | Visitor : SP Profile          |
+      | description            | Breadcrumbs link              |
+      | marketId               | 27                            |
+      | userId                 |                               |
+      | visitorPageCategory    | Painting - Interior           |
+      | visitorPageGeo         | BOULDER                       |
+      | visitorPageGeoCategory | BOULDER - PAINTING - INTERIOR |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains "/companylist/us/co"
+
+  @leafAdvertiserFourthBreadcrumbLink  @leafAdBreadcrumb
+  Scenario: Click on the fourth from the right breadcrumb link
+    Given user is on a visitor site leaf advertiser page
+    When a user performs actions
+      | action_method | action_params |
+      | click         | css: #block-system-main > div.content > div.grayRow.leaf__subheader > div.container.clearfix > div.panel-pane.pane-breadcrumb-block > div.pane-content > div.breadcrumb-wrapper > div.breadcrumb > a:nth-child(3) |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value     |
+      | description  | Breadcrumbs link |
+    And the segment call contains parameters
+      | prop_key               | prop_value                    |
+      | activityLocation       | Visitor : SP Profile          |
+      | description            | Breadcrumbs link              |
+      | marketId               | 27                            |
+      | userId                 |                               |
+      | visitorPageCategory    | Painting - Interior           |
+      | visitorPageGeo         | BOULDER                       |
+      | visitorPageGeoCategory | BOULDER - PAINTING - INTERIOR |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains "/companylist/interior-painting.htm"
+
+  @leafAdvertiserFifthBreadcrumbLink  @leafAdBreadcrumb
+  Scenario: Click on the fifth from the right breadcrumb link
+    Given user is on a visitor site leaf advertiser page
+    When a user performs actions
+      | action_method | action_params |
+      | click         | css: #block-system-main > div.content > div.grayRow.leaf__subheader > div.container.clearfix > div.panel-pane.pane-breadcrumb-block > div.pane-content > div.breadcrumb-wrapper > div.breadcrumb > a:nth-child(2) |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value     |
+      | description  | Breadcrumbs link |
+    And the segment call contains parameters
+      | prop_key               | prop_value                    |
+      | activityLocation       | Visitor : SP Profile          |
+      | description            | Breadcrumbs link              |
+      | marketId               | 27                            |
+      | userId                 |                               |
+      | visitorPageCategory    | Painting - Interior           |
+      | visitorPageGeo         | BOULDER                       |
+      | visitorPageGeoCategory | BOULDER - PAINTING - INTERIOR |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains "/companylist"
+
+  @leafAdvertiserSixthBreadcrumbLink  @leafAdBreadcrumb
+  Scenario: Click on the sixth from the right breadcrumb link
+    Given user is on a visitor site leaf advertiser page
+    When a user performs actions
+      | action_method | action_params |
+      | click         | css: #block-system-main > div.content > div.grayRow.leaf__subheader > div.container.clearfix > div.panel-pane.pane-breadcrumb-block > div.pane-content > div.breadcrumb-wrapper > div.breadcrumb > a:nth-child(1) |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value     |
+      | description  | Breadcrumbs link |
+    And the segment call contains parameters
+      | prop_key               | prop_value                    |
+      | activityLocation       | Visitor : SP Profile          |
+      | description            | Breadcrumbs link              |
+      | marketId               | 27                            |
+      | userId                 |                               |
+      | visitorPageCategory    | Painting - Interior           |
+      | visitorPageGeo         | BOULDER                       |
+      | visitorPageGeoCategory | BOULDER - PAINTING - INTERIOR |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains "angieslist.com"
+
 
   @leafAdvertiserPageCall
   Scenario: segment page call for Leaf Page Advertiser
