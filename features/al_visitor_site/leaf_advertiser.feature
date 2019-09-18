@@ -1704,7 +1704,7 @@ Feature:
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
       | action_method | action_params |
-      | click | css: #block-system-main > div > aside.grayRow.leaf--row > div.container.clearfix > div.leaf__lower-left > div.leaf-reviews > div.leaf-reviews__header-section > div.leaf-reviews__category-filters > div:nth-child(1) |
+      | click         | css: #block-system-main > div > aside.grayRow.leaf--row > div.container.clearfix > div.leaf__lower-left > div.leaf-reviews > div.leaf-reviews__header-section > div.leaf-reviews__category-filters > div:nth-child(1) |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value           |
       | description  | Review category filter |
@@ -1807,7 +1807,7 @@ Feature:
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
       | action_method | action_params |
-      | click | css: #block-system-main > div > aside.grayRow.leaf--row > div.container.clearfix > div.leaf__lower-left > div.leaf-reviews > div.leaf-reviews__header-section > div.leaf-reviews__stats > div.leaf-reviews__clear-filter |
+      | click         | css: #block-system-main > div > aside.grayRow.leaf--row > div.container.clearfix > div.leaf__lower-left > div.leaf-reviews > div.leaf-reviews__header-section > div.leaf-reviews__stats > div.leaf-reviews__clear-filter |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value      |
       | description  | Clear filter link |
@@ -1995,6 +1995,136 @@ Feature:
       | visitorPageGeoCategory | BOULDER - PAINTING - INTERIOR |
     And we wait "1" seconds for the next page to load
     And the landing URL contains "angieslist.com"
+
+  @leafAdvertiserFirstServiceCategoryLink @leafAdCatLinks
+  Scenario: click on the first category link
+    Given user is on a visitor site leaf advertiser page
+    When a user performs actions
+      | action_method | action_params |
+      | click         | css: #block-system-main > div.content > div.grayRow.leaf--row__top > div.leaf--sidebar-wrapper.container.clearfix > div.leaf__top-left > aside.leaf-tags.leaf-tags-processed > ul > li:nth-child(1) |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value            |
+      | description  | Serviced category links |
+    And the segment call contains parameters
+      | prop_key               | prop_value                    |
+      | activityLocation       | Visitor : SP Profile          |
+      | description            | Serviced category links       |
+      | marketId               | 27                            |
+      | userId                 |                               |
+      | visitorPageCategory    | Painting - Interior           |
+      | visitorPageGeo         | BOULDER                       |
+      | visitorPageGeoCategory | BOULDER - PAINTING - INTERIOR |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains "/companylist/us/co/boulder/interior-painting.htm"
+
+  @leafAdvertiserSecondServiceCategoryLink @leafAdCatLinks
+  Scenario: click on the second category link
+    Given user is on a visitor site leaf advertiser page
+    When a user performs actions
+      | action_method | action_params |
+      | click         | css: #block-system-main > div.content > div.grayRow.leaf--row__top > div.leaf--sidebar-wrapper.container.clearfix > div.leaf__top-left > aside.leaf-tags.leaf-tags-processed > ul > li:nth-child(2) |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value            |
+      | description  | Serviced category links |
+    And the segment call contains parameters
+      | prop_key               | prop_value                    |
+      | activityLocation       | Visitor : SP Profile          |
+      | description            | Serviced category links       |
+      | marketId               | 27                            |
+      | userId                 |                               |
+      | visitorPageCategory    | Painting - Interior           |
+      | visitorPageGeo         | BOULDER                       |
+      | visitorPageGeoCategory | BOULDER - PAINTING - INTERIOR |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains "/companylist/us/co/boulder/exterior-painting.htm"
+
+  @leafAdvertiserThirdServiceCategoryLink @leafAdCatLinks
+  Scenario: click on the third category link
+    Given user is on a visitor site leaf advertiser page
+    When a user performs actions
+      | action_method | action_params |
+      | click         | css: #block-system-main > div.content > div.grayRow.leaf--row__top > div.leaf--sidebar-wrapper.container.clearfix > div.leaf__top-left > aside.leaf-tags.leaf-tags-processed > ul > li:nth-child(3) |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value            |
+      | description  | Serviced category links |
+    And the segment call contains parameters
+      | prop_key               | prop_value                    |
+      | activityLocation       | Visitor : SP Profile          |
+      | description            | Serviced category links       |
+      | marketId               | 27                            |
+      | userId                 |                               |
+      | visitorPageCategory    | Painting - Interior           |
+      | visitorPageGeo         | BOULDER                       |
+      | visitorPageGeoCategory | BOULDER - PAINTING - INTERIOR |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains "/companylist/us/co/boulder/drywall.htm"
+
+  @leafAdvertiserFourthServiceCategoryLink @leafAdCatLinks
+  Scenario: click on the fourth category link
+    Given user is on a visitor site leaf advertiser page
+    When a user performs actions
+      | action_method | action_params |
+      | click         | css: #block-system-main > div.content > div.grayRow.leaf--row__top > div.leaf--sidebar-wrapper.container.clearfix > div.leaf__top-left > aside.leaf-tags.leaf-tags-processed > ul > li:nth-child(4) |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value            |
+      | description  | Serviced category links |
+    And the segment call contains parameters
+      | prop_key               | prop_value                    |
+      | activityLocation       | Visitor : SP Profile          |
+      | description            | Serviced category links       |
+      | marketId               | 27                            |
+      | userId                 |                               |
+      | visitorPageCategory    | Painting - Interior           |
+      | visitorPageGeo         | BOULDER                       |
+      | visitorPageGeoCategory | BOULDER - PAINTING - INTERIOR |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains "/companylist/us/co/boulder/pressure-washing.htm"
+
+  @leafAdvertiserFifthServiceCategoryLink @leafAdCatLinks
+  Scenario: click on the fifth category link
+    Given user is on a visitor site leaf advertiser page
+    When a user performs actions
+      | action_method | action_params |
+      | click         | css: #block-system-main > div.content > div.grayRow.leaf--row__top > div.leaf--sidebar-wrapper.container.clearfix > div.leaf__top-left > aside.leaf-tags.leaf-tags-processed > ul > li:nth-child(5) |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value            |
+      | description  | Serviced category links |
+    And the segment call contains parameters
+      | prop_key               | prop_value                    |
+      | activityLocation       | Visitor : SP Profile          |
+      | description            | Serviced category links       |
+      | marketId               | 27                            |
+      | userId                 |                               |
+      | visitorPageCategory    | Painting - Interior           |
+      | visitorPageGeo         | BOULDER                       |
+      | visitorPageGeoCategory | BOULDER - PAINTING - INTERIOR |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains "/companylist/us/co/boulder/deck-maintenance.htm"
+
+  @leafAdvertiserServiceCategoryMoreLink @leafAdCatLinks
+  Scenario: click on the category more link
+    Given user is on a visitor site leaf advertiser page
+    When a user performs actions
+      | action_method | action_params |
+      | click         | css: #block-system-main > div.content > div.grayRow.leaf--row__top > div.leaf--sidebar-wrapper.container.clearfix > div.leaf__top-left > aside.leaf-tags.leaf-tags-processed > ul > li:nth-child(6) |
+    Then we wait "1" seconds for the next page to load
+    When a user performs actions
+      | action_method | action_params |
+      | click         | css: #block-system-main > div.content > div.grayRow.leaf--row__top > div.leaf--sidebar-wrapper.container.clearfix > div.leaf__top-left > aside.leaf-tags.leaf-tags-processed > ul > li:nth-child(6) |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value            |
+      | description  | Serviced category links |
+    And the segment call contains parameters
+      | prop_key               | prop_value                    |
+      | activityLocation       | Visitor : SP Profile          |
+      | description            | Serviced category links       |
+      | marketId               | 27                            |
+      | userId                 |                               |
+      | visitorPageCategory    | Painting - Interior           |
+      | visitorPageGeo         | BOULDER                       |
+      | visitorPageGeoCategory | BOULDER - PAINTING - INTERIOR |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains "/companylist/us/co/boulder/wallpaper-removal.htm"
 
 
   @leafAdvertiserPageCall
