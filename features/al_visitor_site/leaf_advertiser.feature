@@ -1647,9 +1647,6 @@ Feature:
     When a user performs actions
       | action_method | action_params |
       | click         | css: #block-system-main > div > aside.grayRow.leaf--row > div.container.clearfix > div.leaf__lower-left > div.leaf-reviews > div.item-list > ul.pager > li:nth-child(3) > a |
-    Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value         |
-      | name         | Visitor : SP Profile |
     And we wait "1" seconds for the next page to load
     And the landing URL contains "/companylist/us/co/boulder/painting-plus-reviews-221961.htm?page=2"
 
@@ -1659,9 +1656,6 @@ Feature:
     When a user performs actions
       | action_method | action_params |
       | click         | css: #block-system-main > div > aside.grayRow.leaf--row > div.container.clearfix > div.leaf__lower-left > div.leaf-reviews > div.item-list > ul.pager > li:nth-child(4) > a |
-    Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value         |
-      | name         | Visitor : SP Profile |
     And we wait "1" seconds for the next page to load
     And the landing URL contains "/companylist/us/co/boulder/painting-plus-reviews-221961.htm?page=3"
     
@@ -1671,9 +1665,6 @@ Feature:
     When a user performs actions
       | action_method | action_params |
       | click         | css: #block-system-main > div > aside.grayRow.leaf--row > div.container.clearfix > div.leaf__lower-left > div.leaf-reviews > div.item-list > ul.pager > li:nth-child(5) > a |
-    Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value         |
-      | name         | Visitor : SP Profile |
     And we wait "1" seconds for the next page to load
     And the landing URL contains "/companylist/us/co/boulder/painting-plus-reviews-221961.htm?page=4"
 
@@ -1683,9 +1674,6 @@ Feature:
     When a user performs actions
       | action_method | action_params |
       | click         | css: #block-system-main > div > aside.grayRow.leaf--row > div.container.clearfix > div.leaf__lower-left > div.leaf-reviews > div.item-list > ul.pager > li:nth-child(6) > a |
-    Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value         |
-      | name         | Visitor : SP Profile |
     And we wait "1" seconds for the next page to load
     And the landing URL contains "/companylist/us/co/boulder/painting-plus-reviews-221961.htm?page=5"
 
@@ -1695,9 +1683,6 @@ Feature:
     When a user performs actions
       | action_method | action_params |
       | click         | css: #block-system-main > div > aside.grayRow.leaf--row > div.container.clearfix > div.leaf__lower-left > div.leaf-reviews > div.item-list > ul.pager > li.pager-next.right-caret > a |
-    Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value         |
-      | name         | Visitor : SP Profile |
     And we wait "1" seconds for the next page to load
     And the landing URL contains "/companylist/us/co/boulder/painting-plus-reviews-221961.htm?page=1"
 
@@ -1710,21 +1695,191 @@ Feature:
     When a user performs actions
       | action_method | action_params |
       | click         | css: #block-system-main > div > aside.grayRow.leaf--row > div.container.clearfix > div.leaf__lower-left > div.leaf-reviews > div.item-list > ul.pager > li.pager-previous.left-caret > a |
-    Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value         |
-      | name         | Visitor : SP Profile |
     And we wait "1" seconds for the next page to load
     And the landing URL contains "/companylist/us/co/boulder/painting-plus-reviews-221961.htm?page=1"
 
-  @leafNonAdvertiserPageCall
+
+  @leafAdvertiserReviewFilter
+  Scenario: Click on review filter category link
+    Given user is on a visitor site leaf advertiser page
+    When a user performs actions
+      | action_method | action_params |
+      | click | css: #block-system-main > div > aside.grayRow.leaf--row > div.container.clearfix > div.leaf__lower-left > div.leaf-reviews > div.leaf-reviews__header-section > div.leaf-reviews__category-filters > div:nth-child(1) |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value           |
+      | description  | Review category filter |
+    And the segment call contains parameters
+      | prop_key               | prop_value                    |
+      | activityLocation       | Visitor : SP Profile          |
+      | description            | Review category filter        |
+      | marketId               | 27                            |
+      | serviceProviderId      |                               |
+      | userId                 |                               |
+      | visitorPageCategory    | Painting - Interior           |
+      | visitorPageGeo         | BOULDER                       |
+      | visitorPageGeoCategory | BOULDER - PAINTING - INTERIOR |
+
+  @leafAdvertiserReviewSecondFilter
+  Scenario: Click on second review filter category link
+    Given user is on a visitor site leaf advertiser page
+    When a user performs actions
+      | action_method | action_params |
+      | click         | css: #block-system-main > div > aside.grayRow.leaf--row > div.container.clearfix > div.leaf__lower-left > div.leaf-reviews > div.leaf-reviews__header-section > div.leaf-reviews__category-filters > div:nth-child(2) |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value           |
+      | description  | Review category filter |
+    And the segment call contains parameters
+      | prop_key               | prop_value                    |
+      | activityLocation       | Visitor : SP Profile          |
+      | description            | Review category filter        |
+      | marketId               | 27                            |
+      | serviceProviderId      |                               |
+      | userId                 |                               |
+      | visitorPageCategory    | Painting - Interior           |
+      | visitorPageGeo         | BOULDER                       |
+      | visitorPageGeoCategory | BOULDER - PAINTING - INTERIOR |
+
+  @leafAdvertiserReviewThirdFilter
+  Scenario: Click on third review filter category link
+    Given user is on a visitor site leaf advertiser page
+    When a user performs actions
+      | action_method | action_params |
+      | click         | css: #block-system-main > div > aside.grayRow.leaf--row > div.container.clearfix > div.leaf__lower-left > div.leaf-reviews > div.leaf-reviews__header-section > div.leaf-reviews__category-filters > div:nth-child(3) |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value           |
+      | description  | Review category filter |
+    And the segment call contains parameters
+      | prop_key               | prop_value                    |
+      | activityLocation       | Visitor : SP Profile          |
+      | description            | Review category filter        |
+      | marketId               | 27                            |
+      | serviceProviderId      |                               |
+      | userId                 |                               |
+      | visitorPageCategory    | Painting - Interior           |
+      | visitorPageGeo         | BOULDER                       |
+      | visitorPageGeoCategory | BOULDER - PAINTING - INTERIOR |
+
+  @leafAdvertiserReviewFourthFilter
+  Scenario: Click on fourth review filter category link
+    Given user is on a visitor site leaf advertiser page
+    When a user performs actions
+      | action_method | action_params |
+      | click         | css: #block-system-main > div > aside.grayRow.leaf--row > div.container.clearfix > div.leaf__lower-left > div.leaf-reviews > div.leaf-reviews__header-section > div.leaf-reviews__category-filters > div:nth-child(4) |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value           |
+      | description  | Review category filter |
+    And the segment call contains parameters
+      | prop_key               | prop_value                    |
+      | activityLocation       | Visitor : SP Profile          |
+      | description            | Review category filter        |
+      | marketId               | 27                            |
+      | serviceProviderId      |                               |
+      | userId                 |                               |
+      | visitorPageCategory    | Painting - Interior           |
+      | visitorPageGeo         | BOULDER                       |
+      | visitorPageGeoCategory | BOULDER - PAINTING - INTERIOR |
+
+  @leafAdvertiserMultipleReviewFilter
+  Scenario: Click on mulitple review filter category links
+    Given user is on a visitor site leaf advertiser page
+    When a user performs actions
+      | action_method | action_params |
+      | click         | css: #block-system-main > div > aside.grayRow.leaf--row > div.container.clearfix > div.leaf__lower-left > div.leaf-reviews > div.leaf-reviews__header-section > div.leaf-reviews__category-filters > div:nth-child(1) |
+      | click         | css: #block-system-main > div > aside.grayRow.leaf--row > div.container.clearfix > div.leaf__lower-left > div.leaf-reviews > div.leaf-reviews__header-section > div.leaf-reviews__category-filters > div:nth-child(2) |
+      | click         | css: #block-system-main > div > aside.grayRow.leaf--row > div.container.clearfix > div.leaf__lower-left > div.leaf-reviews > div.leaf-reviews__header-section > div.leaf-reviews__category-filters > div:nth-child(3) |
+      | click         | css: #block-system-main > div > aside.grayRow.leaf--row > div.container.clearfix > div.leaf__lower-left > div.leaf-reviews > div.leaf-reviews__header-section > div.leaf-reviews__category-filters > div:nth-child(4) |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value           |
+      | description  | Review category filter |
+    And the segment call contains parameters
+      | prop_key               | prop_value                    |
+      | activityLocation       | Visitor : SP Profile          |
+      | description            | Review category filter        |
+      | marketId               | 27                            |
+      | serviceProviderId      |                               |
+      | userId                 |                               |
+      | visitorPageCategory    | Painting - Interior           |
+      | visitorPageGeo         | BOULDER                       |
+      | visitorPageGeoCategory | BOULDER - PAINTING - INTERIOR |
+
+  @leafAdvertiserReviewClearFilter
+  Scenario: Click on review clear filter link
+    Given user is on a visitor site leaf advertiser page
+    When a user performs actions
+      | action_method | action_params |
+      | click | css: #block-system-main > div > aside.grayRow.leaf--row > div.container.clearfix > div.leaf__lower-left > div.leaf-reviews > div.leaf-reviews__header-section > div.leaf-reviews__stats > div.leaf-reviews__clear-filter |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value      |
+      | description  | Clear filter link |
+    And the segment call contains parameters
+      | prop_key               | prop_value                    |
+      | activityLocation       | Visitor : SP Profile          |
+      | description            | Clear filter link             |
+      | marketId               | 27                            |
+      | serviceProviderId      |                               |
+      | userId                 |                               |
+      | visitorPageCategory    | Painting - Interior           |
+      | visitorPageGeo         | BOULDER                       |
+      | visitorPageGeoCategory | BOULDER - PAINTING - INTERIOR |
+
+  @leafAdvertiserClickReviewFilterClickClearFilter
+  Scenario: Click on a review filter and then click clear filter link
+    Given user is on a visitor site leaf advertiser page
+    When a user performs actions
+      | action_method | action_params |
+      | click         | css: #block-system-main > div > aside.grayRow.leaf--row > div.container.clearfix > div.leaf__lower-left > div.leaf-reviews > div.leaf-reviews__header-section > div.leaf-reviews__category-filters > div:nth-child(1)    |
+    Then we wait "1" seconds for the next page to load
+    When a user performs actions
+      | action_method | action_params |
+      | click         | css: #block-system-main > div > aside.grayRow.leaf--row > div.container.clearfix > div.leaf__lower-left > div.leaf-reviews > div.leaf-reviews__header-section > div.leaf-reviews__stats > div.leaf-reviews__clear-filter |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value      |
+      | description  | Clear filter link |
+    And the segment call contains parameters
+      | prop_key               | prop_value                    |
+      | activityLocation       | Visitor : SP Profile          |
+      | description            | Clear filter link             |
+      | marketId               | 27                            |
+      | serviceProviderId      |                               |
+      | userId                 |                               |
+      | visitorPageCategory    | Painting - Interior           |
+      | visitorPageGeo         | BOULDER                       |
+      | visitorPageGeoCategory | BOULDER - PAINTING - INTERIOR |
+
+  @leafAdvertiserReviewFilterLoadMore
+  Scenario: Click on a review filter and then the load more link
+    Given user is on a visitor site leaf advertiser page
+    When a user performs actions
+      | action_method | action_params |
+      | click         | css: #block-system-main > div > aside.grayRow.leaf--row > div.container.clearfix > div.leaf__lower-left > div.leaf-reviews > div.leaf-reviews__header-section > div.leaf-reviews__category-filters > div:nth-child(1) |
+    Then we wait "1" seconds for the next page to load 
+    When a user performs actions
+      | action_method | action_params |
+      | click         | css: #block-system-main > div > aside.grayRow.leaf--row > div.container.clearfix > div.leaf__lower-left > div.leaf-reviews > div.leaf-reviews__load-more > button |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value           |
+      | description  | Show more reviews link |
+    And the segment call contains parameters
+      | prop_key               | prop_value                    |
+      | activityLocation       | Visitor : SP Profile          |
+      | description            | Show more reviews link        |
+      | marketId               | 27                            |
+      | serviceProviderId      |                               |
+      | userId                 |                               |
+      | visitorPageCategory    | Painting - Interior           |
+      | visitorPageGeo         | BOULDER                       |
+      | visitorPageGeoCategory | BOULDER - PAINTING - INTERIOR |
+
+
+  @leafAdvertiserPageCall
   Scenario: segment page call for Leaf Page Advertiser
-    Given user is on a visitor site leaf non advertiser page
+    Given user is on a visitor site leaf advertiser page
     When a segment page call is sent for a unique field value pair
       | unique_field | unique_value         |
       | name         | Visitor : SP Profile |
     Then the segment call contains parameters
       | prop_key               | prop_value                                                                              |
-      | advertiserStatus       | NonAdvertiser                                                                           |
+      | advertiserStatus       | Advertiser                                                                              |
       | atTestOffer            |                                                                                         |
       | categoryId             | 112                                                                                     |
       | cid                    |                                                                                         |
