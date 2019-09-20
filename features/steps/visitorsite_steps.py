@@ -24,6 +24,15 @@ def step_impl(context):
     time.sleep(1)
 
 
+@given('a user is on a member site visitor page')
+def step_impl(context):
+    appsuite_env = 'al_member_site'
+    appsuite_url = context.appsuites[appsuite_env]['base_url']
+    context.url = appsuite_url + context.text
+    context.browser.get(context.url)
+    time.sleep(1)
+
+
 @given('user is on a visitor site tball page')
 def step_impl(context):
     appsuite_env = 'al_visitor_tball'
@@ -147,7 +156,16 @@ def step_impl(context):
     context.browser.get(context.url)
     time.sleep(1)
 
+    
+@given('user is on a visitor site leaf non advertiser page')
+def step_impl(context):
+    appsuite_env = 'al_visitor_site'
+    appsuite_url = context.appsuites[appsuite_env]['base_url']
+    context.url = appsuite_url + '/companylist/us/ga/cartersville/1-oak-roofing-reviews-9205981.htm'
+    context.browser.get(context.url)
+    time.sleep(1)
 
+    
 @then('the title of link with id "{link_id}" is "{linktitle}"')
 def step_impl(context, link_id, linktitle):
     selector = "id: %s" % link_id
