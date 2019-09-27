@@ -1,6 +1,11 @@
 @companyListTree
 Feature:
 
+
+##### Segment Page Call Tests #####
+
+
+
   @catNoGeoPageCallSrOverlap @companyTreeDaily
   Scenario: a user lands the CatNoGeo page that is an SR overlap category
     Given user is on a visitor site catnogeo page
@@ -42,7 +47,7 @@ Feature:
       | path                  | /companylist/eye-care.htm                                                |
       | referrer              |                                                                          |
       | search                |                                                                          |
-      | srCtaDisplayed        |                                                                          |
+      | srCtaDisplayed        | false                                                                    |
       | title                 | Local Eye Doctors - Find a Top-Rated Eye Doctor on Angie's List          |
       | url                   |                                                                          |
       | userId                |                                                                          |
