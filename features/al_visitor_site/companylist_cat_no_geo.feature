@@ -1566,12 +1566,12 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/category.Drywall-Plaster.12025.html?entry_point_id=33880173&postalCode=49726"
 
-  @catNoGeoBodyBreadCrumbs @catNoGeoBody @companyListTreeBody
-  Scenario: User clicks on BreadCrumbs in the Body on the Drupal CatNoGeo Page
+  @catNoGeoBodyThirdBreadcrumb @catNoGeoBody @companyListTreeBody
+  Scenario: User clicks on the third Breadcrumb in the Body on the Drupal CatNoGeo Page
     Given user is on a visitor site catnogeo page
     When a user performs actions
-      | action_method   | action_params        |
-      | move_to_element | css: #block-system-main > div > div:nth-child(3) > div.panel-pane.pane-breadcrumb-block > div > div > div > a:nth-child(3) |
+      | action_method   | action_params                     |
+      | move_to_element | css: .breadcrumb > a:nth-child(3) |
       | click           |                                                                                                                            |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value           |
@@ -1585,6 +1585,43 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/drywall.htm"
 
+  @catNoGeoBodySecondBreadcrumb @catNoGeoBody @companyListTreeBody
+  Scenario: User clicks on the second Breadcrumb in the Body on the Drupal CatNoGeo Page
+    Given user is on a visitor site catnogeo page
+    When a user performs actions
+      | action_method   | action_params                     |
+      | move_to_element | css: .breadcrumb > a:nth-child(2) |
+      | click           |                                   |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value       |
+      | activityLocation | Visitor : CatNoGeo |
+    And the segment call contains parameters
+      | prop_key            | prop_value         |
+      | activityLocation    | Visitor : CatNoGeo |
+      | description         | Breadcrumbs link   |
+      | userId              |                    |
+      | visitorPageCategory | Drywall            |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/"
+
+  @catNoGeoBodyFirstBreadcrumb @catNoGeoBody @companyListTreeBody
+  Scenario: User clicks on the first Breadcrumb in the Body on the Drupal CatNoGeo Page
+    Given user is on a visitor site catnogeo page
+    When a user performs actions
+      | action_method   | action_params                     |
+      | move_to_element | css: .breadcrumb > a:nth-child(1) |
+      | click           |                                   |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value       |
+      | activityLocation | Visitor : CatNoGeo |
+    And the segment call contains parameters
+      | prop_key            | prop_value         |
+      | activityLocation    | Visitor : CatNoGeo |
+      | description         | Breadcrumbs link   |
+      | userId              |                    |
+      | visitorPageCategory | Drywall            |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/"
   @catNoGeoBodyCatSearchWithPostalCode @catNoGeoBody @companyListTreeBody
   Scenario: User Searches for Drywal with PostalCode in the Body on the Drupal CatNoGeo Page
     Given user is on a visitor site catnogeo page
