@@ -1572,7 +1572,7 @@ Feature:
     When a user performs actions
       | action_method   | action_params                     |
       | move_to_element | css: .breadcrumb > a:nth-child(3) |
-      | click           |                                                                                                                            |
+      | click           |                                   |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value           |
       | activityLocation | Visitor : CatNoGeo |
@@ -1622,8 +1622,9 @@ Feature:
       | visitorPageCategory | Drywall            |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/"
+
   @catNoGeoBodyCatSearchWithPostalCode @catNoGeoBody @companyListTreeBody
-  Scenario: User Searches for Drywal with PostalCode in the Body on the Drupal CatNoGeo Page
+  Scenario: User Searches for Drywall with PostalCode in the Body on the Drupal CatNoGeo Page
     Given user is on a visitor site catnogeo page
     When a user performs actions
       | action_method   | action_params            |
@@ -1648,6 +1649,46 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/mi/drummond-island/drywall.htm"
 
+  @catNoGeoBodyCatSearchWithCity @catNoGeoBody @companyListTreeBody
+  Scenario: User Searches for Drywall with typed city and selects from list in the Body on the Drupal CatNoGeo Page
+    Given user is on a visitor site catnogeo page
+    When a user performs actions
+      | action_method   | action_params       |
+      | move_to_element | css: #edit-location |
+      | click           | css: #edit-location |
+      | send_keys       | fishers             |
+    Then we wait "1" seconds for the next page to load
+    When a user performs actions
+      | action_method | action_params                                     |
+      | click         | css: .autocomplete-suggestions > div:nth-child(1) |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field           | unique_value                           |
+      | activityLocation       | Visitor : GeoCat                       |
+      | categorySelected       | Fishers, IN                            |
+      | description            | Category selected from auto suggestion |
+      | marketId               |                                        |
+      | userId                 |                                        |
+      | visitorPageCategory    | DRYWALL                                |
+      | visitorPageGeo         |                                        |
+      | visitorPageGeoCategory |  - DRYWALL                             |
+    Then we wait "1" seconds for the next page to load
+    When a user performs actions
+      | action_method | action_params            |
+      | click         | css: #edit-geocat-submit |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value          |
+      | description  | Search bar submission |
+    And the segment call contains parameters
+      | prop_key            | prop_value            |
+      | activityLocation    | Visitor : GeoCat      |
+      | description         | Search bar submission |
+      | locationSearched    | Fishers, IN           |
+      | manualTextSearched  | Drywall               |
+      | userId              |                       |
+      | visitorPageCategory | DRYWALL               |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains "angieslist.com/companylist/us/in/fishers/drywall.htm"
+
   @catNoGeoBodySeeAllCats @catNoGeoBody @companyListTreeBody
   Scenario: User clicks on See All Categories in the Body on the Drupal CatNoGeo Page
     Given user is on a visitor site catnogeo page
@@ -1667,16 +1708,49 @@ Feature:
       | visitorPageCategory    | DRYWALL                          |
       | visitorPageGeo         |                                  |
       | visitorPageGeoCategory |                                  |
+    Then we wait "1" seconds for the next page to load
+    When a user performs actions
+      | action_method          | action_params                                                    |
+      | move_to_element        | css: .geocat-filters__wrapper > div > div > ul > li:nth-child(6) |
+      | click                  |                                                                  |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value                               |
+      | activityLocation | Visitor : GeoCat                           |
+      | categorySelected | Electrician                                |
+      | description      | Category selected from all categories list |
 
   @catNoGeoBodyMajorMarketClick @catNoGeoBody @companyListTreeBody
   Scenario: User clicks on the major market link in the body on the Drupal CatNoGeo Page
     Given user is on a visitor site catnogeo page
     When a user performs actions
-      | action_method   | action_params                                                                                                |
-      | move_to_element | css: #block-system-main > div > div.row.greyback.row--sub-header > div > section > ul > li:nth-child(45) > a |
-      | click           | css: #block-system-main > div > div.row.greyback.row--sub-header > div > section > ul > li:nth-child(45) > a |
+      | action_method   | action_params                                                                     |
+      | move_to_element | css: .geocat-cities-list.geocat-cities-list--major-markets > li:nth-child(45) > a |
+      | click           |                                                                                   |
     Then we wait "1" seconds for the next page to load
     Then the landing URL contains ".angieslist.com/companylist/phoenix/drywall.htm"
+
+  @catNoGeoBodyArticles @catNoGeoBody @companyListTreeBody
+  Scenario: User clicks on the recommended articles link on the Drupal CatNoGeo Page
+    Given user is on a visitor site catnogeo page
+    When a user performs actions
+      | action_method   | action_params                               |
+      | move_to_element | css: .geocat-article-breaker__row > div > a |
+      | click           |                                             |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value                    |
+      | description  | Solution Center helpful article |
+    And the segment call contains parameters
+      | prop_key               | prop_value                      |
+      | activityLocation       | Visitor : GeoCat                |
+      | contentNodeId          | 178491                          |
+      | description            | Solution Center helpful article |
+      | marketId               |                                 |
+      | userId                 |                                 |
+      | visitorPageCategory    | DRYWALL                         |
+      | visitorPageGeo         |                                 |
+      | visitorPageGeoCategory |                                 |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/articles/what-cost-install-drywall.htm"
 
 
 
