@@ -2281,6 +2281,103 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/app/signup"
 
+  @catNoGeoFooterSegmentiOS  @catNoGeoFooter @companyListTreeFooter
+  Scenario: User clicks on the footer-right iOS App icon on Drupal CatNoGeo Page
+    Given user is on a visitor site catnogeo page
+    When a user performs actions
+      | action_method   | action_params          |
+      | move_to_element | cid: footer--app-store |
+      | click           |                        |
+    Then we wait "1" seconds for the next page to load
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value       |
+      | activityLocation | Visitor : CatNoGeo |
+    And the segment call contains parameters
+      | prop_key         | prop_value                |
+      | activityLocation | Visitor : CatNoGeo        |
+      | description      | App Store badge in footer |
+      | userId           |                           |
+
+  @catNoGeoFooterSegmentGoogle  @catNoGeoFooter @companyListTreeFooter
+  Scenario: User clicks on the footer-right Google App icon on Drupal CatNoGeo Page
+    Given user is on a visitor site catnogeo page
+    When a user performs actions
+      | action_method   | action_params           |
+      | move_to_element | id: footer--google-play |
+      | click           |                         |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value       |
+      | activityLocation | Visitor : CatNoGeo |
+    And the segment call contains parameters
+      | prop_key         | prop_value                  |
+      | activityLocation | Visitor : CatNoGeo          |
+      | description      | Google Play badge in footer |
+      | userId           |                             |
+
+  @catNoGeoFooterSegmentTwitter  @catNoGeoFooter @companyListTreeFooter
+  Scenario: User clicks on the footer-right Twitter icon on Drupal CatNoGeo Page
+    Given user is on a visitor site catnogeo page
+    When a user performs actions
+      | action_method   | action_params       |
+      | move_to_element | id: footer--twitter |
+      | click           |                     |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value       |
+      | activityLocation | Visitor : CatNoGeo |
+    And the segment call contains parameters
+      | prop_key         | prop_value             |
+      | activityLocation | Visitor : CatNoGeo     |
+      | description      | Twitter icon in footer |
+      | userId           |                        |
+
+  @catNoGeoFooterSegmentFaceBook  @catNoGeoFooter @companyListTreeFooter
+  Scenario: User clicks on the footer-right Facebook icon on Drupal CatNoGeo Page
+    Given user is on a visitor site catnogeo page
+    When a user performs actions
+      | action_method   | action_params        |
+      | move_to_element | id: footer--facebook |
+      | click           |                      |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value       |
+      | activityLocation | Visitor : CatNoGeo |
+    And the segment call contains parameters
+      | prop_key         | prop_value              |
+      | activityLocation | Visitor : CatNoGeo      |
+      | description      | Facebook icon in footer |
+      | userId           |                         |
+
+  @catNoGeoFooterSegmentPinterest  @catNoGeoFooter @companyListTreeFooter
+  Scenario: User clicks on the footer-right Pinterest icon on Drupal CatNoGeo Page
+    Given user is on a visitor site catnogeo page
+    When a user performs actions
+      | action_method   | action_params         |
+      | move_to_element | id: footer--pinterest |
+      | click           |                       |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value       |
+      | activityLocation | Visitor : CatNoGeo |
+    And the segment call contains parameters
+      | prop_key         | prop_value               |
+      | activityLocation | Visitor : CatNoGeo       |
+      | description      | Pinterest icon in footer |
+      | userId           |                          |
+
+  @catNoGeoFooterSegmentYouTube  @catNoGeoFooter @companyListTreeFooter
+  Scenario: User clicks on the footer-right YouTube icon on Drupal CatNoGeo Page
+    Given user is on a visitor site catnogeo page
+    When a user performs actions
+      | action_method   | action_params       |
+      | move_to_element | id: footer--youtube |
+      | click           |                     |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value       |
+      | activityLocation | Visitor : CatNoGeo |
+    And the segment call contains parameters
+      | prop_key         | prop_value             |
+      | activityLocation | Visitor : CatNoGeo     |
+      | description      | YouTube icon in footer |
+      | userId           |                        |
+
   @catNoGeoFooterSegmentTermsOfUse @catNoGeoFooter @companyListTreeFooter
   Scenario: User clicks on the footer TermsOfUse icon on Drupal Company List Page
     Given user is on a visitor site catnogeo page
