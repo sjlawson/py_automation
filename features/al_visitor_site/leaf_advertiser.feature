@@ -29,7 +29,7 @@ Feature:
       | visitorPageGeoCategory | BOULDER - PAINTING - INTERIOR                               |
 
 ##### Header Tests #####
-  @headerJoinNowLeafPage @leafPageHeader @companyListTreeHeader
+  @headerJoinNowLeafAdvertiserPage @leafAdvertiserPageHeader @companyListTreeHeader
   Scenario: user is on a visitor site leaf advertiser page and clicks on Join Now
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -48,7 +48,7 @@ Feature:
     And the landing URL contains ".angieslist.com/app/signup"
 
 
-  @headerSignInLeafPage @leafPageHeader @companyListTreeHeader
+  @headerSignInLeafAdvertiserPage @leafAdvertiserPageHeader @companyListTreeHeader
   Scenario: user is on a visitor site leaf advertiser page and clicks on Sign In button
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -67,7 +67,7 @@ Feature:
     And the landing URL contains ".angieslist.com/member/login"
 
 
-  @headerBusinessCenterLeafPage @leafPageHeader @companyListTreeHeader
+  @headerBusinessCenterLeafAdvertiserPage @leafAdvertiserPageHeader @companyListTreeHeader
   Scenario: user is on a visitor site leaf advertiser page and clicks on Business Center button
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -86,7 +86,7 @@ Feature:
 
 
 
-  @leafPageSegmentHeaderInteriorApplianceRepair @leafPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderInteriorApplianceRepair @leafAdvertiserPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Interior Appliance Repair in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -105,7 +105,7 @@ Feature:
     And the landing URL contains ".angieslist.com/companylist/us/co/boulder/appliance-repair.htm"
 
 
-  @leafPageSegmentHeaderInteriorCarpetCleaning  @leafPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderInteriorCarpetCleaning  @leafAdvertiserPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Interior Carpet Cleaning in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -124,7 +124,7 @@ Feature:
     And the landing URL contains ".angieslist.com/companylist/us/co/boulder/carpet-cleaning.htm"
 
 
-  @leafPageSegmentHeaderInteriorContractors @leafPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderInteriorContractors @leafAdvertiserPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Interior Contractors in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -143,7 +143,7 @@ Feature:
     And the landing URL contains ".angieslist.com/companylist/us/co/boulder/contractor.htm"
 
 
-  @leafPageSegmentHeaderInteriorDrywall @leafPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderInteriorDrywall @leafAdvertiserPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Interior Drywall in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -161,7 +161,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/boulder/drywall.htm"
 
-  @leafPageSegmentHeaderInteriorElectrical @leafPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderInteriorElectrical @leafAdvertiserPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Interior Electrical in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -179,7 +179,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/boulder/electrical.htm"
 
-  @leafPageSegmentHeaderInteriorFlooring @leafPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderInteriorFlooring @leafAdvertiserPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Interior Flooring in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -197,7 +197,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/boulder/flooring.htm"
 
-  @leafPageSegmentHeaderInteriorHVAC @leafPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderInteriorHVAC @leafAdvertiserPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Interior HVAC in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -215,7 +215,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/boulder/hvac.htm"
 
-  @leafPageSegmentHeaderInteriorHouseCleaning @leafPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderInteriorHouseCleaning @leafAdvertiserPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on House Cleaning in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -233,7 +233,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/boulder/house-cleaning.htm"
 
-  @leafPageSegmentHeaderInteriorPainting @leafPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderInteriorPainting @leafAdvertiserPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Interior Painting in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -251,7 +251,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/boulder/interior-painting.htm"
 
-  @leafPageSegmentHeaderInteriorPlumbing @leafPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderInteriorPlumbing @leafAdvertiserPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Interior Plumbing in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -269,7 +269,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/boulder/plumbing.htm"
 
-  @leafPageSegmentHeaderInteriorRemodeling @leafPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderInteriorRemodeling @leafAdvertiserPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Interior Remodeling in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -287,7 +287,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/boulder/kitchen-and-bath-remodeling.htm"
 
-  @leafPageSegmentHeaderInteriorViewAll @leafPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderInteriorViewAll @leafAdvertiserPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Interior View All in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -305,7 +305,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/"
 
-  @leafPageSegmentHeaderExteriorConcreteRepair @leafPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderExteriorConcreteRepair @leafAdvertiserPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Concrete Repair in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -323,7 +323,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/boulder/concrete-repair.htm"
 
-  @leafPageSegmentHeaderExteriorDoors @leafPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderExteriorDoors @leafAdvertiserPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Exterior Doors in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -341,7 +341,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/boulder/doors.htm"
 
-  @leafPageSegmentHeaderExteriorDriveways @leafPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderExteriorDriveways @leafAdvertiserPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Driveways in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -359,7 +359,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/boulder/driveways.htm"
 
-  @leafPageSegmentHeaderExteriorPainting @leafPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderExteriorPainting @leafAdvertiserPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Exterior Painting in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -377,7 +377,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/boulder/exterior-painting.htm"
 
-  @leafPageSegmentHeaderExteriorGarage @leafPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderExteriorGarage @leafAdvertiserPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on and clicks on Garage in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -395,7 +395,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/boulder/garage-doors.htm"
 
-  @leafPageSegmentHeaderExteriorGutterCleaning @leafPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderExteriorGutterCleaning @leafAdvertiserPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Gutter Cleaning in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -413,7 +413,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/boulder/gutter-cleaning.htm"
 
-  @leafPageSegmentHeaderExteriorGutterRepair @leafPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderExteriorGutterRepair @leafAdvertiserPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Gutter Repair in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -431,7 +431,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/boulder/gutter-repair-replacement.htm"
 
-  @leafPageSegmentHeaderExteriorHomeBuilders @leafPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderExteriorHomeBuilders @leafAdvertiserPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Home Builders in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -449,7 +449,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/boulder/home-builders.htm"
 
-  @leafPageSegmentHeaderExteriorMasonry @leafPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderExteriorMasonry @leafAdvertiserPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Masonry in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -467,7 +467,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/boulder/masonry.htm"
 
-  @leafPageSegmentHeaderExteriorRoofing @leafPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderExteriorRoofing @leafAdvertiserPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Roofing in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -485,7 +485,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/boulder/roofing.htm"
 
-  @leafPageSegmentHeaderExteriorSiding @leafPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderExteriorSiding @leafAdvertiserPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Siding in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -503,7 +503,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/boulder/siding.htm"
 
-  @leafPageSegmentHeaderExteriorWindows @leafPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderExteriorWindows @leafAdvertiserPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Windows in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -521,7 +521,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/boulder/window-treatments.htm"
 
-  @leafPageSegmentHeaderExteriorViewAll @leafPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderExteriorViewAll @leafAdvertiserPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks and clicks on Exterior View All in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -539,7 +539,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/"
 
-  @leafPageSegmentHeaderLawnDecks @leafPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderLawnDecks @leafAdvertiserPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on and clicks on Decks in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -557,7 +557,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/boulder/decks-and-porches.htm"
 
-  @leafPageSegmentHeaderLawnFencing @leafPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderLawnFencing @leafAdvertiserPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Fencing in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -575,7 +575,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/boulder/fencing.htm"
 
-  @leafPageSegmentHeaderLawnLandSurveying @leafPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderLawnLandSurveying @leafAdvertiserPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Land Surveying in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -593,7 +593,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/boulder/land-surveying.htm"
 
-  @leafPageSegmentHeaderLawnLandscaping @leafPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderLawnLandscaping @leafAdvertiserPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Landscaping in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -611,7 +611,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/boulder/landscaping.htm"
 
-  @leafPageSegmentHeaderLawnYard @leafPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderLawnYard @leafAdvertiserPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Lawn & Yard in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -629,7 +629,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/boulder/lawn-and-yard-work.htm"
 
-  @leafPageSegmentHeaderLawnIrrigation @leafPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderLawnIrrigation @leafAdvertiserPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Lawn Irrigation in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -647,7 +647,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/boulder/lawn-irrigation.htm"
 
-  @leafPageSegmentHeaderLawnMowerRepair @leafPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderLawnMowerRepair @leafAdvertiserPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Lawn Mower Repair in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -665,7 +665,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/boulder/lawn-mower-repair.htm"
 
-  @leafPageSegmentHeaderLawnLeafRemoval @leafPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderLawnLeafRemoval @leafAdvertiserPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Leaf Removal in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -683,7 +683,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/boulder/leaf-removal.htm"
 
-  @leafPageSegmentHeaderLawnPatios @leafPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderLawnPatios @leafAdvertiserPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Patios in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -701,7 +701,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/boulder/sunroom-and-patio-remodeling.htm"
 
-  @leafPageSegmentHeaderLawnShed @leafPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderLawnShed @leafAdvertiserPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Shed Builders in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -719,7 +719,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/boulder/garage-builders.htm"
 
-  @leafPageSegmentHeaderLawnTreeSvc @leafPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderLawnTreeSvc @leafAdvertiserPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Tree Service in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -737,7 +737,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/boulder/tree-service.htm"
 
-  @leafPageSegmentHeaderLawnViewAll @leafPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderLawnViewAll @leafAdvertiserPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on View All in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -755,7 +755,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/"
 
-  @leafPageSegmentHeaderMoreBasement @leafPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderMoreBasement @leafAdvertiserPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Basement Waterproofing in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -773,7 +773,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/boulder/basement-waterproofing.htm"
 
-  @leafPageSegmentHeaderMoreDogGrooming @leafPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderMoreDogGrooming @leafAdvertiserPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Dog Grooming in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -792,7 +792,7 @@ Feature:
     And the landing URL contains ".angieslist.com/companylist/us/co/boulder/pet-grooming.htm"
 
 
-  @leafPageSegmentHeaderMoreHandymen @leafPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderMoreHandymen @leafAdvertiserPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Handymen in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -810,7 +810,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/boulder/handyman-service.htm"
 
-  @leafPageSegmentHeaderMoreJunk @leafPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderMoreJunk @leafAdvertiserPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Junk Hauling in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -828,7 +828,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/boulder/hauling.htm"
 
-  @leafPageSegmentHeaderMoreLocksmiths @leafPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderMoreLocksmiths @leafAdvertiserPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Locksmiths in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -846,7 +846,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/boulder/locksmiths.htm"
 
-  @leafPageSegmentHeaderMoreMoving @leafPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderMoreMoving @leafAdvertiserPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Moving Companies in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -864,7 +864,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/boulder/moving.htm"
 
-  @leafPageSegmentHeaderMorePests @leafPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderMorePests @leafAdvertiserPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Pest Control Companies in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -882,7 +882,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/boulder/pest-control.htm"
 
-  @leafPageSegmentHeaderMorePressureWashing @leafPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderMorePressureWashing @leafAdvertiserPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Pressure Washing Companies in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -900,7 +900,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/boulder/pressure-washing.htm"
 
-  @leafPageSegmentHeaderMoreSeptic @leafPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderMoreSeptic @leafAdvertiserPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Septic Tanks Companies in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -918,7 +918,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/boulder/septic-tank.htm"
 
-  @leafPageSegmentHeaderMoreViewAllCat @leafPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderMoreViewAllCat @leafAdvertiserPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on View All Cats - More in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -936,7 +936,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/"
 
-  @leafPageSegmentHeaderMoreNearMe @leafPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderMoreNearMe @leafAdvertiserPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Near Me in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -954,7 +954,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/nearme/"
 
-  @leafPageSegmentHeaderArticlesAdviceAppliances @leafPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderArticlesAdviceAppliances @leafAdvertiserPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Appliances in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -972,7 +972,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/appliances/"
 
-  @leafPageSegmentHeaderArticlesAdviceBaseFound @leafPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderArticlesAdviceBaseFound @leafAdvertiserPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Basements & Foundations in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -990,7 +990,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/basements-and-foundations/"
 
-  @leafPageSegmentHeaderArticlesAdviceBathRemod @leafPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderArticlesAdviceBathRemod @leafAdvertiserPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Bathroom Remodel in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -1008,7 +1008,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/bathroom-remodel/"
 
-  @leafPageSegmentHeaderArticlesAdviceChimney @leafPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderArticlesAdviceChimney @leafAdvertiserPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Chimneys & Fireplaces in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -1026,7 +1026,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/chimneys-fireplaces/"
 
-  @leafPageSegmentHeaderArticlesAdviceCleaning @leafPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderArticlesAdviceCleaning @leafAdvertiserPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Cleaning in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -1044,7 +1044,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/cleaning/"
 
-  @leafPageSegmentHeaderArticlesAdviceContractors @leafPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderArticlesAdviceContractors @leafAdvertiserPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Contractors in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -1062,7 +1062,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/contractors/"
 
-  @leafPageSegmentHeaderArticlesAdviceElectrical @leafPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderArticlesAdviceElectrical @leafAdvertiserPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Electrical in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -1080,7 +1080,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/electrical/"
 
-  @leafPageSegmentHeaderArticlesAdviceFlooring @leafPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderArticlesAdviceFlooring @leafAdvertiserPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Flooring in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -1098,7 +1098,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/flooring/"
 
-  @leafPageSegmentHeaderArticlesAdviceGarageDrive @leafPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderArticlesAdviceGarageDrive @leafAdvertiserPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Garages & Driveways in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -1116,7 +1116,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/garages-and-driveways/"
 
-  @leafPageSegmentHeaderArticlesAdviceHVAC @leafPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderArticlesAdviceHVAC @leafAdvertiserPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Heating & Cooling in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -1134,7 +1134,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/hvac/"
 
-  @leafPageSegmentHeaderArticlesAdviceHomeConstruction @leafPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderArticlesAdviceHomeConstruction @leafAdvertiserPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Home Construction in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -1152,7 +1152,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/home-construction-design/"
 
-  @leafPageSegmentHeaderArticlesAdviceHomeExterior @leafPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderArticlesAdviceHomeExterior @leafAdvertiserPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Home Exteriors in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -1170,7 +1170,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/home-exteriors/"
 
-  @leafPageSegmentHeaderArticlesAdviceHomeInterior @leafPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderArticlesAdviceHomeInterior @leafAdvertiserPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Home Interior in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -1188,7 +1188,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/home-interiors/"
 
-  @leafPageSegmentHeaderArticlesAdviceHomeSecurity @leafPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderArticlesAdviceHomeSecurity @leafAdvertiserPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Home Security in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -1206,7 +1206,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/home-security-systems/"
 
-  @leafPageSegmentHeaderArticlesAdviceKitchenRemod @leafPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderArticlesAdviceKitchenRemod @leafAdvertiserPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Kitchen Remodeling in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -1224,7 +1224,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/kitchen-remodeling/"
 
-  @leafPageSegmentHeaderArticlesAdviceLandscaping @leafPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderArticlesAdviceLandscaping @leafAdvertiserPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Landscaping in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -1242,7 +1242,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/landscaping-lawn-care/"
 
-  @leafPageSegmentHeaderArticlesAdviceLighting @leafPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderArticlesAdviceLighting @leafAdvertiserPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Lighting in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -1260,7 +1260,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/lights/"
 
-  @leafPageSegmentHeaderArticlesAdviceMoving @leafPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderArticlesAdviceMoving @leafAdvertiserPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Moving in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -1278,7 +1278,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/movers/"
 
-  @leafPageSegmentHeaderArticlesAdviceOutdoorLiving @leafPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderArticlesAdviceOutdoorLiving @leafAdvertiserPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Outdoor Living in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -1296,7 +1296,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/outdoor-living/"
 
-  @leafPageSegmentHeaderArticlesAdvicePests @leafPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderArticlesAdvicePests @leafAdvertiserPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Pests in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -1314,7 +1314,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/household-pest-control/"
 
-  @leafPageSegmentHeaderArticlesAdvicePlumbing @leafPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderArticlesAdvicePlumbing @leafAdvertiserPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Plumbing in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -1332,7 +1332,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/plumbing/"
 
-  @leafPageSegmentHeaderArticlesAdviceRemodeling @leafPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderArticlesAdviceRemodeling @leafAdvertiserPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Remodeling in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -1350,7 +1350,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/remodeling/"
 
-  @leafPageSegmentHeaderArticlesAdviceRoofing @leafPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderArticlesAdviceRoofing @leafAdvertiserPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Roofing in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -1368,7 +1368,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/roofing/"
 
-  @leafPageSegmentHeaderArticlesAdviceStoreageOrg @leafPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderArticlesAdviceStoreageOrg @leafAdvertiserPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Storage & Organization in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -1386,7 +1386,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/storage-organization/"
 
-  @leafPageSegmentHeaderArticlesAdviceWasteManagement @leafPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderArticlesAdviceWasteManagement @leafAdvertiserPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Waste Management in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -1404,7 +1404,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/waste-management/"
 
-  @leafPageSegmentHeaderArticlesAdviceViewAll @leafPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderArticlesAdviceViewAll @leafAdvertiserPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on View All in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -1448,7 +1448,7 @@ Feature:
       | visitorPageGeo          | BOULDER                         |
       | visitorPageGeoCategory  | BOULDER - PAINTING - INTERIOR   |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/app/lead/request_a_quote/221961/project?categoryId=294&placementType=Web_LeafPage&withAlId=221961"
+    And the landing URL contains ".angieslist.com/app/lead/request_a_quote/221961/project?categoryId=294&placementType=Web_LeafAdvertiserPage&withAlId=221961"
 
   @leafAdvertiserFirstOfferClick
   Scenario: Click on first offer - Advertiser Leaf
@@ -1477,7 +1477,7 @@ Feature:
 
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/app/offer/search/"
-    And the landing URL contains "placementType=Web_LeafPage"
+    And the landing URL contains "placementType=Web_LeafAdvertiserPage"
 
   @leafAdvertiserFirstOfferButtonClick
   Scenario: Click on button - first offer - Advertiser Leaf
@@ -1505,7 +1505,7 @@ Feature:
       | visitorPageGeoCategory  | HILLIARD - PLUMBING      |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/app/offer/search/"
-    And the landing URL contains "placementType=Web_LeafPage"
+    And the landing URL contains "placementType=Web_LeafAdvertiserPage"
 
   @leafAdvertiserSecondOfferClick
   Scenario: Click on button - second offer - Advertiser Leaf
@@ -1533,7 +1533,7 @@ Feature:
       | visitorPageGeoCategory | HILLIARD - PLUMBING  |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/app/offer/search/"
-    And the landing URL contains "placementType=Web_LeafPage"
+    And the landing URL contains "placementType=Web_LeafAdvertiserPage"
 
   @leafAdvertiserThirdOfferClick
   Scenario: Click on button - third offer - Advertiser Leaf
@@ -1561,7 +1561,7 @@ Feature:
       | visitorPageGeoCategory | HILLIARD - PLUMBING  |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/app/offer/search/"
-    And the landing URL contains "placementType=Web_LeafPage"
+    And the landing URL contains "placementType=Web_LeafAdvertiserPage"
 
   @leafAdvertiserSeeAllDealButtonClick
   Scenario: Click on button - See All Deals - Advertiser Leaf
