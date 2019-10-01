@@ -1,6 +1,6 @@
 Feature:
 
-  @leafAdvertiserPageCall
+@leafAdvertiserPageCall @companyListTreeRegression @companyListTreeSmoke
   Scenario: segment page call for Leaf Page Advertiser
     Given user is on a visitor site leaf advertiser page
     When a segment page call is sent for a unique field value pair
@@ -29,7 +29,8 @@ Feature:
       | visitorPageGeoCategory | BOULDER - PAINTING - INTERIOR                               |
 
 ##### Header Tests #####
-  @headerJoinNowLeafAdvertiserPage @leafAdvertiserPageHeader @companyListTreeHeader
+
+  @headerJoinNowLeafAdvertiserPage @leafAdvertiserPageHeader @companyListTreeHeader @companyListTreeRegression @companyListTreeSmoke
   Scenario: user is on a visitor site leaf advertiser page and clicks on Join Now
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -48,7 +49,7 @@ Feature:
     And the landing URL contains ".angieslist.com/app/signup"
 
 
-  @headerSignInLeafAdvertiserPage @leafAdvertiserPageHeader @companyListTreeHeader
+  @headerSignInLeafAdvertiserPage @leafAdvertiserPageHeader @companyListTreeHeader @companyListTreeRegression @companyListTreeSmoke
   Scenario: user is on a visitor site leaf advertiser page and clicks on Sign In button
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -67,7 +68,7 @@ Feature:
     And the landing URL contains ".angieslist.com/member/login"
 
 
-  @headerBusinessCenterLeafAdvertiserPage @leafAdvertiserPageHeader @companyListTreeHeader
+  @headerBusinessCenterLeafAdvertiserPage @leafAdvertiserPageHeader @companyListTreeHeader @companyListTreeRegression @companyListTreeSmoke
   Scenario: user is on a visitor site leaf advertiser page and clicks on Business Center button
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -86,7 +87,7 @@ Feature:
 
 
 
-  @leafAdvertiserPageSegmentHeaderInteriorApplianceRepair @leafAdvertiserPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderInteriorApplianceRepair @leafAdvertiserPageHeader @companyListTreeHeader @companyListTreeRegression
   Scenario: User hovers then clicks on Interior Appliance Repair in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -105,7 +106,7 @@ Feature:
     And the landing URL contains ".angieslist.com/companylist/us/co/boulder/appliance-repair.htm"
 
 
-  @leafAdvertiserPageSegmentHeaderInteriorCarpetCleaning  @leafAdvertiserPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderInteriorCarpetCleaning  @leafAdvertiserPageHeader @companyListTreeHeader @companyListTreeRegression
   Scenario: User hovers then clicks on Interior Carpet Cleaning in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -124,7 +125,7 @@ Feature:
     And the landing URL contains ".angieslist.com/companylist/us/co/boulder/carpet-cleaning.htm"
 
 
-  @leafAdvertiserPageSegmentHeaderInteriorContractors @leafAdvertiserPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderInteriorContractors @leafAdvertiserPageHeader @companyListTreeHeader @companyListTreeRegression
   Scenario: User hovers then clicks on Interior Contractors in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -143,7 +144,7 @@ Feature:
     And the landing URL contains ".angieslist.com/companylist/us/co/boulder/contractor.htm"
 
 
-  @leafAdvertiserPageSegmentHeaderInteriorDrywall @leafAdvertiserPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderInteriorDrywall @leafAdvertiserPageHeader @companyListTreeHeader @companyListTreeRegression
   Scenario: User hovers then clicks on Interior Drywall in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -161,7 +162,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/boulder/drywall.htm"
 
-  @leafAdvertiserPageSegmentHeaderInteriorElectrical @leafAdvertiserPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderInteriorElectrical @leafAdvertiserPageHeader @companyListTreeHeader @companyListTreeRegression @companyListTreeSmoke
   Scenario: User hovers then clicks on Interior Electrical in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -179,7 +180,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/boulder/electrical.htm"
 
-  @leafAdvertiserPageSegmentHeaderInteriorFlooring @leafAdvertiserPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderInteriorFlooring @leafAdvertiserPageHeader @companyListTreeHeader @companyListTreeRegression
   Scenario: User hovers then clicks on Interior Flooring in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -197,7 +198,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/boulder/flooring.htm"
 
-  @leafAdvertiserPageSegmentHeaderInteriorHVAC @leafAdvertiserPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderInteriorHVAC @leafAdvertiserPageHeader @companyListTreeHeader @companyListTreeRegression
   Scenario: User hovers then clicks on Interior HVAC in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -215,7 +216,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/boulder/hvac.htm"
 
-  @leafAdvertiserPageSegmentHeaderInteriorHouseCleaning @leafAdvertiserPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderInteriorHouseCleaning @leafAdvertiserPageHeader @companyListTreeHeader @companyListTreeRegression
   Scenario: User hovers then clicks on House Cleaning in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -233,7 +234,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/boulder/house-cleaning.htm"
 
-  @leafAdvertiserPageSegmentHeaderInteriorPainting @leafAdvertiserPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderInteriorPainting @leafAdvertiserPageHeader @companyListTreeHeader @companyListTreeRegression
   Scenario: User hovers then clicks on Interior Painting in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -251,7 +252,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/boulder/interior-painting.htm"
 
-  @leafAdvertiserPageSegmentHeaderInteriorPlumbing @leafAdvertiserPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderInteriorPlumbing @leafAdvertiserPageHeader @companyListTreeHeader @companyListTreeRegression
   Scenario: User hovers then clicks on Interior Plumbing in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -269,7 +270,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/boulder/plumbing.htm"
 
-  @leafAdvertiserPageSegmentHeaderInteriorRemodeling @leafAdvertiserPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderInteriorRemodeling @leafAdvertiserPageHeader @companyListTreeHeader @companyListTreeRegression
   Scenario: User hovers then clicks on Interior Remodeling in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -287,7 +288,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/boulder/kitchen-and-bath-remodeling.htm"
 
-  @leafAdvertiserPageSegmentHeaderInteriorViewAll @leafAdvertiserPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderInteriorViewAll @leafAdvertiserPageHeader @companyListTreeHeader @companyListTreeRegression
   Scenario: User hovers then clicks on Interior View All in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -305,7 +306,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/"
 
-  @leafAdvertiserPageSegmentHeaderExteriorConcreteRepair @leafAdvertiserPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderExteriorConcreteRepair @leafAdvertiserPageHeader @companyListTreeHeader @companyListTreeRegression
   Scenario: User hovers then clicks on Concrete Repair in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -323,7 +324,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/boulder/concrete-repair.htm"
 
-  @leafAdvertiserPageSegmentHeaderExteriorDoors @leafAdvertiserPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderExteriorDoors @leafAdvertiserPageHeader @companyListTreeHeader @companyListTreeRegression
   Scenario: User hovers then clicks on Exterior Doors in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -341,7 +342,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/boulder/doors.htm"
 
-  @leafAdvertiserPageSegmentHeaderExteriorDriveways @leafAdvertiserPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderExteriorDriveways @leafAdvertiserPageHeader @companyListTreeHeader @companyListTreeRegression
   Scenario: User hovers then clicks on Driveways in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -359,7 +360,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/boulder/driveways.htm"
 
-  @leafAdvertiserPageSegmentHeaderExteriorPainting @leafAdvertiserPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderExteriorPainting @leafAdvertiserPageHeader @companyListTreeHeader @companyListTreeRegression @companyListTreeSmoke
   Scenario: User hovers then clicks on Exterior Painting in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -377,7 +378,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/boulder/exterior-painting.htm"
 
-  @leafAdvertiserPageSegmentHeaderExteriorGarage @leafAdvertiserPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderExteriorGarage @leafAdvertiserPageHeader @companyListTreeHeader @companyListTreeRegression
   Scenario: User hovers then clicks on and clicks on Garage in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -395,7 +396,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/boulder/garage-doors.htm"
 
-  @leafAdvertiserPageSegmentHeaderExteriorGutterCleaning @leafAdvertiserPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderExteriorGutterCleaning @leafAdvertiserPageHeader @companyListTreeHeader @companyListTreeRegression
   Scenario: User hovers then clicks on Gutter Cleaning in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -413,7 +414,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/boulder/gutter-cleaning.htm"
 
-  @leafAdvertiserPageSegmentHeaderExteriorGutterRepair @leafAdvertiserPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderExteriorGutterRepair @leafAdvertiserPageHeader @companyListTreeHeader @companyListTreeRegression
   Scenario: User hovers then clicks on Gutter Repair in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -431,7 +432,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/boulder/gutter-repair-replacement.htm"
 
-  @leafAdvertiserPageSegmentHeaderExteriorHomeBuilders @leafAdvertiserPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderExteriorHomeBuilders @leafAdvertiserPageHeader @companyListTreeHeader @companyListTreeRegression
   Scenario: User hovers then clicks on Home Builders in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -449,7 +450,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/boulder/home-builders.htm"
 
-  @leafAdvertiserPageSegmentHeaderExteriorMasonry @leafAdvertiserPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderExteriorMasonry @leafAdvertiserPageHeader @companyListTreeHeader @companyListTreeRegression
   Scenario: User hovers then clicks on Masonry in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -467,7 +468,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/boulder/masonry.htm"
 
-  @leafAdvertiserPageSegmentHeaderExteriorRoofing @leafAdvertiserPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderExteriorRoofing @leafAdvertiserPageHeader @companyListTreeHeader @companyListTreeRegression
   Scenario: User hovers then clicks on Roofing in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -485,7 +486,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/boulder/roofing.htm"
 
-  @leafAdvertiserPageSegmentHeaderExteriorSiding @leafAdvertiserPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderExteriorSiding @leafAdvertiserPageHeader @companyListTreeHeader @companyListTreeRegression
   Scenario: User hovers then clicks on Siding in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -503,7 +504,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/boulder/siding.htm"
 
-  @leafAdvertiserPageSegmentHeaderExteriorWindows @leafAdvertiserPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderExteriorWindows @leafAdvertiserPageHeader @companyListTreeHeader @companyListTreeRegression
   Scenario: User hovers then clicks on Windows in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -521,7 +522,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/boulder/window-treatments.htm"
 
-  @leafAdvertiserPageSegmentHeaderExteriorViewAll @leafAdvertiserPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderExteriorViewAll @leafAdvertiserPageHeader @companyListTreeHeader @companyListTreeRegression
   Scenario: User hovers then clicks and clicks on Exterior View All in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -539,7 +540,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/"
 
-  @leafAdvertiserPageSegmentHeaderLawnDecks @leafAdvertiserPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderLawnDecks @leafAdvertiserPageHeader @companyListTreeHeader @companyListTreeRegression
   Scenario: User hovers then clicks on and clicks on Decks in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -557,7 +558,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/boulder/decks-and-porches.htm"
 
-  @leafAdvertiserPageSegmentHeaderLawnFencing @leafAdvertiserPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderLawnFencing @leafAdvertiserPageHeader @companyListTreeHeader @companyListTreeRegression
   Scenario: User hovers then clicks on Fencing in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -575,7 +576,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/boulder/fencing.htm"
 
-  @leafAdvertiserPageSegmentHeaderLawnLandSurveying @leafAdvertiserPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderLawnLandSurveying @leafAdvertiserPageHeader @companyListTreeHeader @companyListTreeRegression
   Scenario: User hovers then clicks on Land Surveying in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -593,7 +594,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/boulder/land-surveying.htm"
 
-  @leafAdvertiserPageSegmentHeaderLawnLandscaping @leafAdvertiserPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderLawnLandscaping @leafAdvertiserPageHeader @companyListTreeHeader @companyListTreeRegression @companyListTreeSmoke
   Scenario: User hovers then clicks on Landscaping in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -611,7 +612,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/boulder/landscaping.htm"
 
-  @leafAdvertiserPageSegmentHeaderLawnYard @leafAdvertiserPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderLawnYard @leafAdvertiserPageHeader @companyListTreeHeader @companyListTreeRegression
   Scenario: User hovers then clicks on Lawn & Yard in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -629,7 +630,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/boulder/lawn-and-yard-work.htm"
 
-  @leafAdvertiserPageSegmentHeaderLawnIrrigation @leafAdvertiserPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderLawnIrrigation @leafAdvertiserPageHeader @companyListTreeHeader @companyListTreeRegression
   Scenario: User hovers then clicks on Lawn Irrigation in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -647,7 +648,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/boulder/lawn-irrigation.htm"
 
-  @leafAdvertiserPageSegmentHeaderLawnMowerRepair @leafAdvertiserPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderLawnMowerRepair @leafAdvertiserPageHeader @companyListTreeHeader @companyListTreeRegression
   Scenario: User hovers then clicks on Lawn Mower Repair in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -665,7 +666,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/boulder/lawn-mower-repair.htm"
 
-  @leafAdvertiserPageSegmentHeaderLawnLeafRemoval @leafAdvertiserPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderLawnLeafRemoval @leafAdvertiserPageHeader @companyListTreeHeader @companyListTreeRegression
   Scenario: User hovers then clicks on Leaf Removal in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -683,7 +684,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/boulder/leaf-removal.htm"
 
-  @leafAdvertiserPageSegmentHeaderLawnPatios @leafAdvertiserPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderLawnPatios @leafAdvertiserPageHeader @companyListTreeHeader @companyListTreeRegression
   Scenario: User hovers then clicks on Patios in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -701,7 +702,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/boulder/sunroom-and-patio-remodeling.htm"
 
-  @leafAdvertiserPageSegmentHeaderLawnShed @leafAdvertiserPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderLawnShed @leafAdvertiserPageHeader @companyListTreeHeader @companyListTreeRegression
   Scenario: User hovers then clicks on Shed Builders in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -719,7 +720,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/boulder/garage-builders.htm"
 
-  @leafAdvertiserPageSegmentHeaderLawnTreeSvc @leafAdvertiserPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderLawnTreeSvc @leafAdvertiserPageHeader @companyListTreeHeader @companyListTreeRegression
   Scenario: User hovers then clicks on Tree Service in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -737,7 +738,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/boulder/tree-service.htm"
 
-  @leafAdvertiserPageSegmentHeaderLawnViewAll @leafAdvertiserPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderLawnViewAll @leafAdvertiserPageHeader @companyListTreeHeader @companyListTreeRegression
   Scenario: User hovers then clicks on View All in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -755,7 +756,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/"
 
-  @leafAdvertiserPageSegmentHeaderMoreBasement @leafAdvertiserPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderMoreBasement @leafAdvertiserPageHeader @companyListTreeHeader @companyListTreeRegression
   Scenario: User hovers then clicks on Basement Waterproofing in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -773,7 +774,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/boulder/basement-waterproofing.htm"
 
-  @leafAdvertiserPageSegmentHeaderMoreDogGrooming @leafAdvertiserPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderMoreDogGrooming @leafAdvertiserPageHeader @companyListTreeHeader @companyListTreeRegression
   Scenario: User hovers then clicks on Dog Grooming in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -792,7 +793,7 @@ Feature:
     And the landing URL contains ".angieslist.com/companylist/us/co/boulder/pet-grooming.htm"
 
 
-  @leafAdvertiserPageSegmentHeaderMoreHandymen @leafAdvertiserPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderMoreHandymen @leafAdvertiserPageHeader @companyListTreeHeader @companyListTreeRegression @companyListTreeSmoke
   Scenario: User hovers then clicks on Handymen in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -810,7 +811,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/boulder/handyman-service.htm"
 
-  @leafAdvertiserPageSegmentHeaderMoreJunk @leafAdvertiserPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderMoreJunk @leafAdvertiserPageHeader @companyListTreeHeader @companyListTreeRegression
   Scenario: User hovers then clicks on Junk Hauling in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -828,7 +829,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/boulder/hauling.htm"
 
-  @leafAdvertiserPageSegmentHeaderMoreLocksmiths @leafAdvertiserPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderMoreLocksmiths @leafAdvertiserPageHeader @companyListTreeHeader @companyListTreeRegression
   Scenario: User hovers then clicks on Locksmiths in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -846,7 +847,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/boulder/locksmiths.htm"
 
-  @leafAdvertiserPageSegmentHeaderMoreMoving @leafAdvertiserPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderMoreMoving @leafAdvertiserPageHeader @companyListTreeHeader @companyListTreeRegression
   Scenario: User hovers then clicks on Moving Companies in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -864,7 +865,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/boulder/moving.htm"
 
-  @leafAdvertiserPageSegmentHeaderMorePests @leafAdvertiserPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderMorePests @leafAdvertiserPageHeader @companyListTreeHeader @companyListTreeRegression
   Scenario: User hovers then clicks on Pest Control Companies in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -882,7 +883,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/boulder/pest-control.htm"
 
-  @leafAdvertiserPageSegmentHeaderMorePressureWashing @leafAdvertiserPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderMorePressureWashing @leafAdvertiserPageHeader @companyListTreeHeader @companyListTreeRegression
   Scenario: User hovers then clicks on Pressure Washing Companies in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -900,7 +901,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/boulder/pressure-washing.htm"
 
-  @leafAdvertiserPageSegmentHeaderMoreSeptic @leafAdvertiserPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderMoreSeptic @leafAdvertiserPageHeader @companyListTreeHeader @companyListTreeRegression
   Scenario: User hovers then clicks on Septic Tanks Companies in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -918,7 +919,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/co/boulder/septic-tank.htm"
 
-  @leafAdvertiserPageSegmentHeaderMoreViewAllCat @leafAdvertiserPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderMoreViewAllCat @leafAdvertiserPageHeader @companyListTreeHeader @companyListTreeRegression
   Scenario: User hovers then clicks on View All Cats - More in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -936,7 +937,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/"
 
-  @leafAdvertiserPageSegmentHeaderMoreNearMe @leafAdvertiserPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderMoreNearMe @leafAdvertiserPageHeader @companyListTreeHeader @companyListTreeRegression
   Scenario: User hovers then clicks on Near Me in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -954,7 +955,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/nearme/"
 
-  @leafAdvertiserPageSegmentHeaderArticlesAdviceAppliances @leafAdvertiserPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderArticlesAdviceAppliances @leafAdvertiserPageHeader @companyListTreeHeader @companyListTreeRegression @companyListTreeSmoke
   Scenario: User hovers then clicks on Appliances in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -972,7 +973,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/appliances/"
 
-  @leafAdvertiserPageSegmentHeaderArticlesAdviceBaseFound @leafAdvertiserPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderArticlesAdviceBaseFound @leafAdvertiserPageHeader @companyListTreeHeader @companyListTreeRegression
   Scenario: User hovers then clicks on Basements & Foundations in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -990,7 +991,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/basements-and-foundations/"
 
-  @leafAdvertiserPageSegmentHeaderArticlesAdviceBathRemod @leafAdvertiserPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderArticlesAdviceBathRemod @leafAdvertiserPageHeader @companyListTreeHeader @companyListTreeRegression
   Scenario: User hovers then clicks on Bathroom Remodel in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -1008,7 +1009,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/bathroom-remodel/"
 
-  @leafAdvertiserPageSegmentHeaderArticlesAdviceChimney @leafAdvertiserPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderArticlesAdviceChimney @leafAdvertiserPageHeader @companyListTreeHeader @companyListTreeRegression
   Scenario: User hovers then clicks on Chimneys & Fireplaces in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -1026,7 +1027,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/chimneys-fireplaces/"
 
-  @leafAdvertiserPageSegmentHeaderArticlesAdviceCleaning @leafAdvertiserPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderArticlesAdviceCleaning @leafAdvertiserPageHeader @companyListTreeHeader @companyListTreeRegression
   Scenario: User hovers then clicks on Cleaning in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -1044,7 +1045,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/cleaning/"
 
-  @leafAdvertiserPageSegmentHeaderArticlesAdviceContractors @leafAdvertiserPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderArticlesAdviceContractors @leafAdvertiserPageHeader @companyListTreeHeader @companyListTreeRegression
   Scenario: User hovers then clicks on Contractors in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -1062,7 +1063,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/contractors/"
 
-  @leafAdvertiserPageSegmentHeaderArticlesAdviceElectrical @leafAdvertiserPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderArticlesAdviceElectrical @leafAdvertiserPageHeader @companyListTreeHeader @companyListTreeRegression
   Scenario: User hovers then clicks on Electrical in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -1080,7 +1081,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/electrical/"
 
-  @leafAdvertiserPageSegmentHeaderArticlesAdviceFlooring @leafAdvertiserPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderArticlesAdviceFlooring @leafAdvertiserPageHeader @companyListTreeHeader @companyListTreeRegression
   Scenario: User hovers then clicks on Flooring in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -1098,7 +1099,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/flooring/"
 
-  @leafAdvertiserPageSegmentHeaderArticlesAdviceGarageDrive @leafAdvertiserPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderArticlesAdviceGarageDrive @leafAdvertiserPageHeader @companyListTreeHeader @companyListTreeRegression
   Scenario: User hovers then clicks on Garages & Driveways in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -1116,7 +1117,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/garages-and-driveways/"
 
-  @leafAdvertiserPageSegmentHeaderArticlesAdviceHVAC @leafAdvertiserPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderArticlesAdviceHVAC @leafAdvertiserPageHeader @companyListTreeHeader @companyListTreeRegression
   Scenario: User hovers then clicks on Heating & Cooling in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -1134,7 +1135,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/hvac/"
 
-  @leafAdvertiserPageSegmentHeaderArticlesAdviceHomeConstruction @leafAdvertiserPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderArticlesAdviceHomeConstruction @leafAdvertiserPageHeader @companyListTreeHeader @companyListTreeRegression
   Scenario: User hovers then clicks on Home Construction in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -1152,7 +1153,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/home-construction-design/"
 
-  @leafAdvertiserPageSegmentHeaderArticlesAdviceHomeExterior @leafAdvertiserPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderArticlesAdviceHomeExterior @leafAdvertiserPageHeader @companyListTreeHeader @companyListTreeRegression
   Scenario: User hovers then clicks on Home Exteriors in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -1170,7 +1171,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/home-exteriors/"
 
-  @leafAdvertiserPageSegmentHeaderArticlesAdviceHomeInterior @leafAdvertiserPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderArticlesAdviceHomeInterior @leafAdvertiserPageHeader @companyListTreeHeader @companyListTreeRegression
   Scenario: User hovers then clicks on Home Interior in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -1188,7 +1189,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/home-interiors/"
 
-  @leafAdvertiserPageSegmentHeaderArticlesAdviceHomeSecurity @leafAdvertiserPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderArticlesAdviceHomeSecurity @leafAdvertiserPageHeader @companyListTreeHeader @companyListTreeRegression
   Scenario: User hovers then clicks on Home Security in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -1206,7 +1207,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/home-security-systems/"
 
-  @leafAdvertiserPageSegmentHeaderArticlesAdviceKitchenRemod @leafAdvertiserPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderArticlesAdviceKitchenRemod @leafAdvertiserPageHeader @companyListTreeHeader @companyListTreeRegression
   Scenario: User hovers then clicks on Kitchen Remodeling in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -1224,7 +1225,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/kitchen-remodeling/"
 
-  @leafAdvertiserPageSegmentHeaderArticlesAdviceLandscaping @leafAdvertiserPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderArticlesAdviceLandscaping @leafAdvertiserPageHeader @companyListTreeHeader @companyListTreeRegression
   Scenario: User hovers then clicks on Landscaping in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -1242,7 +1243,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/landscaping-lawn-care/"
 
-  @leafAdvertiserPageSegmentHeaderArticlesAdviceLighting @leafAdvertiserPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderArticlesAdviceLighting @leafAdvertiserPageHeader @companyListTreeHeader @companyListTreeRegression
   Scenario: User hovers then clicks on Lighting in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -1260,7 +1261,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/lights/"
 
-  @leafAdvertiserPageSegmentHeaderArticlesAdviceMoving @leafAdvertiserPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderArticlesAdviceMoving @leafAdvertiserPageHeader @companyListTreeHeader @companyListTreeRegression
   Scenario: User hovers then clicks on Moving in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -1278,7 +1279,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/movers/"
 
-  @leafAdvertiserPageSegmentHeaderArticlesAdviceOutdoorLiving @leafAdvertiserPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderArticlesAdviceOutdoorLiving @leafAdvertiserPageHeader @companyListTreeHeader @companyListTreeRegression
   Scenario: User hovers then clicks on Outdoor Living in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -1296,7 +1297,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/outdoor-living/"
 
-  @leafAdvertiserPageSegmentHeaderArticlesAdvicePests @leafAdvertiserPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderArticlesAdvicePests @leafAdvertiserPageHeader @companyListTreeHeader @companyListTreeRegression
   Scenario: User hovers then clicks on Pests in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -1314,7 +1315,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/household-pest-control/"
 
-  @leafAdvertiserPageSegmentHeaderArticlesAdvicePlumbing @leafAdvertiserPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderArticlesAdvicePlumbing @leafAdvertiserPageHeader @companyListTreeHeader @companyListTreeRegression
   Scenario: User hovers then clicks on Plumbing in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -1332,7 +1333,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/plumbing/"
 
-  @leafAdvertiserPageSegmentHeaderArticlesAdviceRemodeling @leafAdvertiserPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderArticlesAdviceRemodeling @leafAdvertiserPageHeader @companyListTreeHeader @companyListTreeRegression
   Scenario: User hovers then clicks on Remodeling in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -1350,7 +1351,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/remodeling/"
 
-  @leafAdvertiserPageSegmentHeaderArticlesAdviceRoofing @leafAdvertiserPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderArticlesAdviceRoofing @leafAdvertiserPageHeader @companyListTreeHeader @companyListTreeRegression
   Scenario: User hovers then clicks on Roofing in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -1368,7 +1369,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/roofing/"
 
-  @leafAdvertiserPageSegmentHeaderArticlesAdviceStoreageOrg @leafAdvertiserPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderArticlesAdviceStoreageOrg @leafAdvertiserPageHeader @companyListTreeHeader @companyListTreeRegression
   Scenario: User hovers then clicks on Storage & Organization in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -1386,7 +1387,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/storage-organization/"
 
-  @leafAdvertiserPageSegmentHeaderArticlesAdviceWasteManagement @leafAdvertiserPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderArticlesAdviceWasteManagement @leafAdvertiserPageHeader @companyListTreeHeader @companyListTreeRegression
   Scenario: User hovers then clicks on Waste Management in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -1404,7 +1405,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/waste-management/"
 
-  @leafAdvertiserPageSegmentHeaderArticlesAdviceViewAll @leafAdvertiserPageHeader @companyListTreeHeader
+  @leafAdvertiserPageSegmentHeaderArticlesAdviceViewAll @leafAdvertiserPageHeader @companyListTreeHeader @companyListTreeRegression
   Scenario: User hovers then clicks on View All in the header on the Drupal Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -1426,7 +1427,7 @@ Feature:
 
 
 ##### Body Tests #####
-  @leafAdvertiserRaqClick
+  @leafAdvertiserRaqClick @leafAdvertiserBody @companyListTreeRegression @companyListTreeSmoke
   Scenario: RAQ click on Leaf Advertiser.
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -1450,7 +1451,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/app/lead/request_a_quote/221961/project?categoryId=294&placementType=Web_LeafAdvertiserPage&withAlId=221961"
 
-  @leafAdvertiserFirstOfferClick
+  @leafAdvertiserFirstOfferClick @leafAdvertiserBody @companyListTreeRegression @companyListTreeSmoke
   Scenario: Click on first offer - Advertiser Leaf
     Given user is on a visitor site leaf advertiser page with deals
     When a user performs actions
@@ -1479,7 +1480,7 @@ Feature:
     And the landing URL contains ".angieslist.com/app/offer/search/"
     And the landing URL contains "placementType=Web_LeafAdvertiserPage"
 
-  @leafAdvertiserFirstOfferButtonClick
+  @leafAdvertiserFirstOfferButtonClick @leafAdvertiserBody @companyListTreeRegression
   Scenario: Click on button - first offer - Advertiser Leaf
     Given user is on a visitor site leaf advertiser page with deals
     When a user performs actions
@@ -1507,7 +1508,7 @@ Feature:
     And the landing URL contains ".angieslist.com/app/offer/search/"
     And the landing URL contains "placementType=Web_LeafAdvertiserPage"
 
-  @leafAdvertiserSecondOfferClick
+  @leafAdvertiserSecondOfferClick @leafAdvertiserBody @companyListTreeRegression
   Scenario: Click on button - second offer - Advertiser Leaf
     Given user is on a visitor site leaf advertiser page with deals
     When a user performs actions
@@ -1535,7 +1536,7 @@ Feature:
     And the landing URL contains ".angieslist.com/app/offer/search/"
     And the landing URL contains "placementType=Web_LeafAdvertiserPage"
 
-  @leafAdvertiserThirdOfferClick
+  @leafAdvertiserThirdOfferClick @leafAdvertiserBody @companyListTreeRegression
   Scenario: Click on button - third offer - Advertiser Leaf
     Given user is on a visitor site leaf advertiser page with deals
     When a user performs actions
@@ -1563,7 +1564,7 @@ Feature:
     And the landing URL contains ".angieslist.com/app/offer/search/"
     And the landing URL contains "placementType=Web_LeafAdvertiserPage"
 
-  @leafAdvertiserSeeAllDealButtonClick
+  @leafAdvertiserSeeAllDealButtonClick @leafAdvertiserBody @companyListTreeRegression @companyListTreeSmoke
   Scenario: Click on button - See All Deals - Advertiser Leaf
     Given user is on a visitor site leaf advertiser page with deals
     When a user performs actions
@@ -1585,7 +1586,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/app/offer/search"
 
-  @leafAdvertiserDealsScrollButtonClick
+  @leafAdvertiserDealsScrollButtonClick @leafAdvertiserBody @companyListTreeRegression
   Scenario: Click on Deals scroll button on Advertiser Leaf
     Given user is on a visitor site leaf advertiser page with deals
     When a user performs actions
@@ -1620,7 +1621,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/app/offer/search"
 
-  @leafAdvertiserContactUs
+  @leafAdvertiserContactUs @leafAdvertiserBody @companyListTreeRegression @companyListTreeSmoke
   Scenario: Click on button - Contact Us
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -1631,7 +1632,7 @@ Feature:
       | modalName    | Contact SP       | 
     And the landing URL contains ".angieslist.com/companylist/us/co/boulder/painting-plus-reviews-221961.htm"
 
-  @leafAdvertiserReviewPage2 @leafAdvertiserReviewPagination
+  @leafAdvertiserReviewPage2 @leafAdvertiserReviewPagination @leafAdvertiserBody @companyListTreeRegression @companyListTreeSmoke
   Scenario: Click on Reviews page two - Advertiser Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -1640,7 +1641,7 @@ Feature:
     Then we wait "1" seconds for the next page to load
     And the landing URL contains "/companylist/us/co/boulder/painting-plus-reviews-221961.htm?page=1"
 
-  @leafAdvertiserReviewPage3 @leafAdvertiserReviewPagination
+  @leafAdvertiserReviewPage3 @leafAdvertiserReviewPagination @leafAdvertiserBody @companyListTreeRegression
   Scenario: Click on Reviews page three - Advertiser Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -1649,7 +1650,7 @@ Feature:
     Then we wait "1" seconds for the next page to load
     And the landing URL contains "/companylist/us/co/boulder/painting-plus-reviews-221961.htm?page=2"
 
-  @leafAdvertiserReviewPage4 @leafAdvertiserReviewPagination
+  @leafAdvertiserReviewPage4 @leafAdvertiserReviewPagination @leafAdvertiserBody @companyListTreeRegression
   Scenario: Click on Reviews page four - Advertiser Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -1658,7 +1659,7 @@ Feature:
     Then we wait "1" seconds for the next page to load
     And the landing URL contains "/companylist/us/co/boulder/painting-plus-reviews-221961.htm?page=3"
     
-  @leafAdvertiserReviewPage5 @leafAdvertiserReviewPagination
+  @leafAdvertiserReviewPage5 @leafAdvertiserReviewPagination @leafAdvertiserBody @companyListTreeRegression
   Scenario: Click on Reviews page five - Advertiser Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -1667,7 +1668,7 @@ Feature:
     Then we wait "1" seconds for the next page to load
     And the landing URL contains "/companylist/us/co/boulder/painting-plus-reviews-221961.htm?page=4"
 
-  @leafAdvertiserReviewPage6 @leafAdvertiserReviewPagination
+  @leafAdvertiserReviewPage6 @leafAdvertiserReviewPagination @leafAdvertiserBody @companyListTreeRegression
   Scenario: Click on Reviews page six - Advertiser Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -1676,7 +1677,7 @@ Feature:
     Then we wait "1" seconds for the next page to load
     And the landing URL contains "/companylist/us/co/boulder/painting-plus-reviews-221961.htm?page=5"
 
-  @leafAdvertiserReviewPageNext @leafAdvertiserReviewPagination
+  @leafAdvertiserReviewPageNext @leafAdvertiserReviewPagination @leafAdvertiserBody @companyListTreeRegression @companyListTreeSmoke
   Scenario: Click on Reviews next page - Advertiser Leaf
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -1685,7 +1686,7 @@ Feature:
     Then we wait "1" seconds for the next page to load
     And the landing URL contains "/companylist/us/co/boulder/painting-plus-reviews-221961.htm?page=1"
 
-  @leafAdvertiserReviewPagePrev @leafAdvertiserReviewPagination
+  @leafAdvertiserReviewPagePrev @leafAdvertiserReviewPagination @leafAdvertiserBody @companyListTreeRegression @companyListTreeSmoke
   Scenario: Click on Reviews prev page - Advertiser Leaf
     Given user is on a visitor site page
       """
@@ -1698,7 +1699,7 @@ Feature:
     And the landing URL contains "/companylist/us/co/boulder/painting-plus-reviews-221961.htm?page=1"
 
 
-  @leafAdvertiserReviewFilter
+  @leafAdvertiserReviewFilter @leafAdvertiserBody @companyListTreeRegression
   Scenario: Click on review filter category link
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -1718,7 +1719,7 @@ Feature:
       | visitorPageGeo         | BOULDER                       |
       | visitorPageGeoCategory | BOULDER - PAINTING - INTERIOR |
 
-  @leafAdvertiserReviewSecondFilter
+  @leafAdvertiserReviewSecondFilter @leafAdvertiserBody @companyListTreeRegression @companyListTreeSmoke
   Scenario: Click on second review filter category link
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -1738,7 +1739,7 @@ Feature:
       | visitorPageGeo         | BOULDER                       |
       | visitorPageGeoCategory | BOULDER - PAINTING - INTERIOR |
 
-  @leafAdvertiserReviewThirdFilter
+  @leafAdvertiserReviewThirdFilter @leafAdvertiserBody @companyListTreeRegression
   Scenario: Click on third review filter category link
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -1758,7 +1759,7 @@ Feature:
       | visitorPageGeo         | BOULDER                       |
       | visitorPageGeoCategory | BOULDER - PAINTING - INTERIOR |
 
-  @leafAdvertiserReviewFourthFilter
+  @leafAdvertiserReviewFourthFilter @leafAdvertiserBody @companyListTreeRegression
   Scenario: Click on fourth review filter category link
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -1778,7 +1779,7 @@ Feature:
       | visitorPageGeo         | BOULDER                       |
       | visitorPageGeoCategory | BOULDER - PAINTING - INTERIOR |
 
-  @leafAdvertiserMultipleReviewFilter
+  @leafAdvertiserMultipleReviewFilter @leafAdvertiserBody @companyListTreeRegression @companyListTreeSmoke
   Scenario: Click on mulitple review filter category links
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -1801,7 +1802,7 @@ Feature:
       | visitorPageGeo         | BOULDER                       |
       | visitorPageGeoCategory | BOULDER - PAINTING - INTERIOR |
 
-  @leafAdvertiserReviewClearFilter
+  @leafAdvertiserReviewClearFilter @leafAdvertiserBody @companyListTreeRegression
   Scenario: Click on review clear filter link
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -1821,7 +1822,7 @@ Feature:
       | visitorPageGeo         | BOULDER                       |
       | visitorPageGeoCategory | BOULDER - PAINTING - INTERIOR |
 
-  @leafAdvertiserClickReviewFilterClickClearFilter
+  @leafAdvertiserClickReviewFilterClickClearFilter @leafAdvertiserBody @companyListTreeRegression @companyListTreeSmoke
   Scenario: Click on a review filter and then click clear filter link
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -1845,7 +1846,7 @@ Feature:
       | visitorPageGeo         | BOULDER                       |
       | visitorPageGeoCategory | BOULDER - PAINTING - INTERIOR |
 
-  @leafAdvertiserReviewFilterLoadMore
+  @leafAdvertiserReviewFilterLoadMore @leafAdvertiserBody @companyListTreeRegression @companyListTreeSmoke
   Scenario: Click on a review filter and then the load more link
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -1869,7 +1870,7 @@ Feature:
       | visitorPageGeo         | BOULDER                       |
       | visitorPageGeoCategory | BOULDER - PAINTING - INTERIOR |
 
-  @leafAdvertiserFirstBreadcrumbLink  @leafAdBreadcrumb
+  @leafAdvertiserFirstBreadcrumbLink  @leafAdBreadcrumb @leafAdvertiserBody @companyListTreeRegression @companyListTreeSmoke
   Scenario: Click on the first from the right breadcrumb link
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -1890,7 +1891,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains "/companylist/us/co/boulder/interior-painting.htm"
 
-  @leafAdvertiserSecondBreadcrumbLink  @leafAdBreadcrumb
+  @leafAdvertiserSecondBreadcrumbLink  @leafAdBreadcrumb @leafAdvertiserBody @companyListTreeRegression
   Scenario: Click on the second from the right breadcrumb link
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -1911,7 +1912,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains "/companylist/us/co/boulder"
 
-  @leafAdvertiserThirdBreadcrumbLink  @leafAdBreadcrumb
+  @leafAdvertiserThirdBreadcrumbLink  @leafAdBreadcrumb @leafAdvertiserBody @companyListTreeRegression
   Scenario: Click on the third from the right breadcrumb link
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -1932,7 +1933,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains "/companylist/us/co"
 
-  @leafAdvertiserFourthBreadcrumbLink  @leafAdBreadcrumb
+  @leafAdvertiserFourthBreadcrumbLink  @leafAdBreadcrumb @leafAdvertiserBody @companyListTreeRegression
   Scenario: Click on the fourth from the right breadcrumb link
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -1953,7 +1954,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains "/companylist/interior-painting.htm"
 
-  @leafAdvertiserFifthBreadcrumbLink  @leafAdBreadcrumb
+  @leafAdvertiserFifthBreadcrumbLink  @leafAdBreadcrumb @leafAdvertiserBody @companyListTreeRegression
   Scenario: Click on the fifth from the right breadcrumb link
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -1974,7 +1975,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains "/companylist"
 
-  @leafAdvertiserSixthBreadcrumbLink  @leafAdBreadcrumb
+  @leafAdvertiserSixthBreadcrumbLink  @leafAdBreadcrumb @leafAdvertiserBody @companyListTreeRegression
   Scenario: Click on the sixth from the right breadcrumb link
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -1995,7 +1996,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains "angieslist.com"
 
-  @leafAdvertiserFirstServiceCategoryLink @leafAdCatLinks
+  @leafAdvertiserFirstServiceCategoryLink @leafAdCatLinks @leafAdvertiserBody @companyListTreeRegression @companyListTreeSmoke
   Scenario: click on the first category link
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -2016,7 +2017,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains "/companylist/us/co/boulder/interior-painting.htm"
 
-  @leafAdvertiserSecondServiceCategoryLink @leafAdCatLinks
+  @leafAdvertiserSecondServiceCategoryLink @leafAdCatLinks @leafAdvertiserBody @companyListTreeRegression
   Scenario: click on the second category link
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -2037,7 +2038,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains "/companylist/us/co/boulder/exterior-painting.htm"
 
-  @leafAdvertiserThirdServiceCategoryLink @leafAdCatLinks
+  @leafAdvertiserThirdServiceCategoryLink @leafAdCatLinks @leafAdvertiserBody @companyListTreeRegression
   Scenario: click on the third category link
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -2058,7 +2059,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains "/companylist/us/co/boulder/drywall.htm"
 
-  @leafAdvertiserFourthServiceCategoryLink @leafAdCatLinks
+  @leafAdvertiserFourthServiceCategoryLink @leafAdCatLinks @leafAdvertiserBody @companyListTreeRegression
   Scenario: click on the fourth category link
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -2079,7 +2080,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains "/companylist/us/co/boulder/pressure-washing.htm"
 
-  @leafAdvertiserFifthServiceCategoryLink @leafAdCatLinks
+  @leafAdvertiserFifthServiceCategoryLink @leafAdCatLinks @leafAdvertiserBody @companyListTreeRegression
   Scenario: click on the fifth category link
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -2100,7 +2101,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains "/companylist/us/co/boulder/deck-maintenance.htm"
 
-  @leafAdvertiserServiceCategoryMoreLink @leafAdCatLinks
+  @leafAdvertiserServiceCategoryMoreLink @leafAdCatLinks @leafAdvertiserBody @companyListTreeRegression
   Scenario: click on the category more link
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -2125,7 +2126,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains "/companylist/us/co/boulder/wallpaper-removal.htm"
 
-  @leafAdvertiserJoinNowLinkBeneathReviews
+  @leafAdvertiserJoinNowLinkBeneathReviews @leafAdvertiserBody @companyListTreeRegression @companyListTreeSmoke
   Scenario: click on the Join Now link beneath reviews
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -2146,7 +2147,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains "angieslist.com/app/signup"
 
-  @leafAdvertiserSignInLinkBeneathReviews
+  @leafAdvertiserSignInLinkBeneathReviews @leafAdvertiserBody @companyListTreeRegression @companyListTreeSmoke
   Scenario: click on the Sign In link beneath reviews
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -2170,7 +2171,7 @@ Feature:
 
 ##### Footer #####
 
-@leafAdvertiserFooterTopCityNYC @leafAdvertiserFooter @companyListTreeFooter
+  @leafAdvertiserFooterTopCityNYC @leafAdvertiserFooter @companyListTreeFooter @companyListTreeRegression @companyListTreeSmoke
   Scenario: User clicks on the footer NYC top city link on leaf advertiser Page
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -2178,18 +2179,18 @@ Feature:
       | move_to_element | id: footer-top-cities-new-york  |
       | click           |                                 |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value            |
-      | activityLocation | Visitor : SP Profile  |
+      | unique_field | unique_value             |
+      | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
       | prop_key               | prop_value                     |
-      | activityLocation       | Visitor : SP Profile             |
+      | activityLocation       | Visitor : SP Profile           |
       | description            | Top Cities link in footer      |
       | userId                 |                                |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/new-york-tristate-area/interior-painting.htm"
 
 
-  @leafAdvertiserFooterTopCityHouston @leafAdvertiserFooter @companyListTreeFooter
+  @leafAdvertiserFooterTopCityHouston @leafAdvertiserFooter @companyListTreeFooter @companyListTreeRegression
   Scenario: User clicks on the footer Houston top city link on leaf advertiser Page
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -2197,18 +2198,18 @@ Feature:
       | move_to_element | id: footer-top-cities-houston  |
       | click           |                                |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value            |
+      | unique_field | unique_value             |
       | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
       | prop_key               | prop_value                     |
-      | activityLocation       | Visitor : SP Profile             |
+      | activityLocation       | Visitor : SP Profile           |
       | description            | Top Cities link in footer      |
       | userId                 |                                |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/houston/interior-painting.htm"
 
 
-  @leafAdvertiserFooterTopCityChi @leafAdvertiserFooter @companyListTreeFooter
+  @leafAdvertiserFooterTopCityChi @leafAdvertiserFooter @companyListTreeFooter @companyListTreeRegression
   Scenario: User clicks on the footer Chicago top city link on leaf advertiser Page
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -2216,18 +2217,18 @@ Feature:
       | move_to_element | id: footer-top-cities-chicago  |
       | click           |                                |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value            |
-      | activityLocation | Visitor : SP Profile  |
+      | unique_field | unique_value             |
+      | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
       | prop_key               | prop_value                     |
-      | activityLocation       | Visitor : SP Profile             |
+      | activityLocation       | Visitor : SP Profile           |
       | description            | Top Cities link in footer      |
       | userId                 |                                |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/chicago/interior-painting.htm"
 
 
-  @leafAdvertiserFooterTopCityIndy @leafAdvertiserFooter @companyListTreeFooter
+  @leafAdvertiserFooterTopCityIndy @leafAdvertiserFooter @companyListTreeFooter @companyListTreeRegression
   Scenario: User clicks on the footer Indianapolis top city link on leaf advertiser Page
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -2235,18 +2236,18 @@ Feature:
       | move_to_element | id: footer-top-cities-indianapolis  |
       | click           |                                     |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value            |
-      | activityLocation | Visitor : SP Profile  |
+      | unique_field | unique_value             |
+      | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
       | prop_key               | prop_value                     |
-      | activityLocation       | Visitor : SP Profile             |
+      | activityLocation       | Visitor : SP Profile           |
       | description            | Top Cities link in footer      |
       | userId                 |                                |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/indianapolis/interior-painting.htm"
 
 
-  @leafAdvertiserFooterTopCityBos @leafAdvertiserFooter @companyListTreeFooter
+  @leafAdvertiserFooterTopCityBos @leafAdvertiserFooter @companyListTreeFooter @companyListTreeRegression
   Scenario: User clicks on the footer Boston top city link on leaf advertiser Page
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -2254,17 +2255,17 @@ Feature:
       | move_to_element | id: footer-top-cities-boston  |
       | click           |                               |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value            |
-      | activityLocation | Visitor : SP Profile  |
+      | unique_field | unique_value             |
+      | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
       | prop_key               | prop_value                     |
-      | activityLocation       | Visitor : SP Profile             |
+      | activityLocation       | Visitor : SP Profile           |
       | description            | Top Cities link in footer      |
       | userId                 |                                |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/boston/interior-painting.htm"
 
-  @leafAdvertiserFooterTopCityATL @leafAdvertiserFooter @companyListTreeFooter
+  @leafAdvertiserFooterTopCityATL @leafAdvertiserFooter @companyListTreeFooter @companyListTreeRegression
   Scenario: User clicks on the footer Atlanta top city link on leaf advertiser Page
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -2272,17 +2273,17 @@ Feature:
       | move_to_element | id: footer-top-cities-atlanta  |
       | click           |                                |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value            |
-      | activityLocation | Visitor : SP Profile  |
+      | unique_field | unique_value             |
+      | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
       | prop_key               | prop_value                     |
-      | activityLocation       | Visitor : SP Profile             |
+      | activityLocation       | Visitor : SP Profile           |
       | description            | Top Cities link in footer      |
       | userId                 |                                |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/atlanta/interior-painting.htm"
 
-  @leafAdvertiserFooterTopCityCinci @leafAdvertiserFooter @companyListTreeFooter
+  @leafAdvertiserFooterTopCityCinci @leafAdvertiserFooter @companyListTreeFooter @companyListTreeRegression
   Scenario: User clicks on the footer Cincinnati top city link on leaf advertiser Page
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -2290,17 +2291,17 @@ Feature:
       | move_to_element | id: footer-top-cities-cincinnati  |
       | click           |                                   |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value            |
-      | activityLocation | Visitor : SP Profile  |
+      | unique_field | unique_value             |
+      | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
       | prop_key               | prop_value                     |
-      | activityLocation       | Visitor : SP Profile             |
+      | activityLocation       | Visitor : SP Profile           |
       | description            | Top Cities link in footer      |
       | userId                 |                                |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/cincinnati/interior-painting.htm"
 
-  @leafAdvertiserFooterTopCityLA @leafAdvertiserFooter @companyListTreeFooter
+  @leafAdvertiserFooterTopCityLA @leafAdvertiserFooter @companyListTreeFooter @companyListTreeRegression
   Scenario: User clicks on the footer Los Angeles top city link on leaf advertiser Page
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -2308,17 +2309,17 @@ Feature:
       | move_to_element | id: footer-top-cities-los-angeles  |
       | click           |                                    |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value            |
-      | activityLocation | Visitor : SP Profile  |
+      | unique_field | unique_value             |
+      | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
       | prop_key               | prop_value                     |
-      | activityLocation       | Visitor : SP Profile             |
+      | activityLocation       | Visitor : SP Profile           |
       | description            | Top Cities link in footer      |
       | userId                 |                                |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/los-angeles/interior-painting.htm"
 
-  @leafAdvertiserTopCityDal @leafAdvertiserFooter @companyListTreeFooter
+  @leafAdvertiserTopCityDal @leafAdvertiserFooter @companyListTreeFooter @companyListTreeRegression
   Scenario: User clicks on the footer Dallas top city link on leaf advertiser Page
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -2326,17 +2327,17 @@ Feature:
       | move_to_element | id: footer-top-cities-dallas  |
       | click           |                               |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value            |
-      | activityLocation | Visitor : SP Profile  |
+      | unique_field | unique_value             |
+      | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
       | prop_key               | prop_value                     |
-      | activityLocation       | Visitor : SP Profile             |
+      | activityLocation       | Visitor : SP Profile           |
       | description            | Top Cities link in footer      |
       | userId                 |                                |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/dallas/interior-painting.htm"
 
-  @leafAdvertiserTopCityPitt @leafAdvertiserFooter @companyListTreeFooter
+  @leafAdvertiserTopCityPitt @leafAdvertiserFooter @companyListTreeFooter @companyListTreeRegression
   Scenario: User clicks on the footer Pittsburgh top city link on leaf advertiser Page
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -2344,17 +2345,17 @@ Feature:
       | move_to_element | id: footer-top-cities-pittsburgh  |
       | click           |                                   |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value            |
-      | activityLocation | Visitor : SP Profile  |
+      | unique_field | unique_value             |
+      | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
       | prop_key               | prop_value                     |
-      | activityLocation       | Visitor : SP Profile             |
+      | activityLocation       | Visitor : SP Profile           |
       | description            | Top Cities link in footer      |
       | userId                 |                                |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/pittsburgh/interior-painting.htm"
 
-  @leafAdvertiserFooterTopCityMinn @leafAdvertiserFooter @companyListTreeFooter
+  @leafAdvertiserFooterTopCityMinn @leafAdvertiserFooter @companyListTreeFooter @companyListTreeRegression
   Scenario: User clicks on the footer Minneapolis top city link on leaf advertiser Page
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -2362,17 +2363,17 @@ Feature:
       | move_to_element | id: footer-top-cities-minneapolis  |
       | click           |                                    |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value            |
-      | activityLocation | Visitor : SP Profile  |
+      | unique_field | unique_value             |
+      | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
       | prop_key               | prop_value                     |
-      | activityLocation       | Visitor : SP Profile             |
+      | activityLocation       | Visitor : SP Profile           |
       | description            | Top Cities link in footer      |
       | userId                 |                                |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/minneapolis/interior-painting.htm"
 
-  @leafAdvertiserFooterTopCityLV @leafAdvertiserFooter @companyListTreeFooter
+  @leafAdvertiserFooterTopCityLV @leafAdvertiserFooter @companyListTreeFooter @companyListTreeRegression
   Scenario: User clicks on the footer Las Vegas top city link on leaf advertiser Page
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -2380,17 +2381,17 @@ Feature:
       | move_to_element | id: footer-top-cities-las-vegas  |
       | click           |                                  |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value            |
-      | activityLocation | Visitor : SP Profile  |
+      | unique_field | unique_value             |
+      | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
       | prop_key               | prop_value                     |
-      | activityLocation       | Visitor : SP Profile             |
+      | activityLocation       | Visitor : SP Profile           |
       | description            | Top Cities link in footer      |
       | userId                 |                                |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/las-vegas/interior-painting.htm"
 
-  @leafAdvertiserFooterTopCitySA @leafAdvertiserFooter @companyListTreeFooter
+  @leafAdvertiserFooterTopCitySA @leafAdvertiserFooter @companyListTreeFooter @companyListTreeRegression
   Scenario: User clicks on the footer San Antonio top city link on leaf advertiser Page
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -2398,17 +2399,17 @@ Feature:
       | move_to_element | id: footer-top-cities-san-antonio  |
       | click           |                                    |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value            |
-      | activityLocation | Visitor : SP Profile  |
+      | unique_field | unique_value             |
+      | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
       | prop_key               | prop_value                     |
-      | activityLocation       | Visitor : SP Profile             |
+      | activityLocation       | Visitor : SP Profile           |
       | description            | Top Cities link in footer      |
       | userId                 |                                |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/san-antonio/interior-painting.htm"
 
-  @leafAdvertiserFooterTopCityTampa @leafAdvertiserFooter @companyListTreeFooter
+  @leafAdvertiserFooterTopCityTampa @leafAdvertiserFooter @companyListTreeFooter @companyListTreeRegression
   Scenario: User clicks on the footer Tampa top city link on leaf advertiser Page
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -2416,17 +2417,17 @@ Feature:
       | move_to_element | id: footer-top-cities-tampa-bay  |
       | click           |                                  |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value            |
-      | activityLocation | Visitor : SP Profile  |
+      | unique_field | unique_value             |
+      | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
       | prop_key               | prop_value                     |
-      | activityLocation       | Visitor : SP Profile             |
+      | activityLocation       | Visitor : SP Profile           |
       | description            | Top Cities link in footer      |
       | userId                 |                                |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/tampa-bay/interior-painting.htm"
 
-  @leafAdvertiserFooterSegmentJoinForFree @leafAdvertiserFooter @companyListTreeFooter
+  @leafAdvertiserFooterSegmentJoinForFree @leafAdvertiserFooter @companyListTreeFooter @companyListTreeRegression @companyListTreeSmoke
   Scenario: User clicks on the footer-left Join For Free icon on leaf advertiser Page
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -2434,17 +2435,17 @@ Feature:
       | move_to_element | css: #footer--join-for-free  |
       | click           |                              |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value            |
-      | activityLocation | Visitor : SP Profile  |
+      | unique_field | unique_value             |
+      | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
       | prop_key               | prop_value                        |
-      | activityLocation       | Visitor : SP Profile                |
+      | activityLocation       | Visitor : SP Profile              |
       | description            | Join For Free link in footer      |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/app/signup"
 
-  @leafAdvertiserFooterSegmentCompanyList @leafAdvertiserFooter @companyListTreeFooter
+  @leafAdvertiserFooterSegmentCompanyList @leafAdvertiserFooter @companyListTreeFooter @companyListTreeRegression @companyListTreeSmoke
   Scenario: User clicks on the footer-left Company List icon on leaf advertiser Page
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -2452,17 +2453,17 @@ Feature:
       | move_to_element | id: footer--find-local-business  |
       | click           |                                  |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value            |
-      | activityLocation | Visitor : SP Profile  |
+      | unique_field | unique_value             |
+      | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
       | prop_key               | prop_value                             |
-      | activityLocation       | Visitor : SP Profile                     |
+      | activityLocation       | Visitor : SP Profile                   |
       | description            | Find Local Businesses link in footer   |
       | userId                 |                                        |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/"
 
-  @leafAdvertiserFooterSegmentNearMe @leafAdvertiserFooter @companyListTreeFooter
+  @leafAdvertiserFooterSegmentNearMe @leafAdvertiserFooter @companyListTreeFooter @companyListTreeRegression
   Scenario: User clicks on the footer-left Near Me icon on leaf advertiser Page
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -2470,17 +2471,17 @@ Feature:
       | move_to_element | id: footer--nearme |
       | click           |                    |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value            |
-      | activityLocation | Visitor : SP Profile  |
+      | unique_field | unique_value             |
+      | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
       | prop_key               | prop_value                        |
-      | activityLocation       | Visitor : SP Profile                |
+      | activityLocation       | Visitor : SP Profile              |
       | description            | Services Near Me link in footer   |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/nearme/"
 
-  @leafAdvertiserFooterSegmentHowItWorks @leafAdvertiserFooter @companyListTreeFooter
+  @leafAdvertiserFooterSegmentHowItWorks @leafAdvertiserFooter @companyListTreeFooter @companyListTreeRegression
   Scenario: User clicks on the footer-left How It Works icon on leaf advertiser Page
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -2488,17 +2489,17 @@ Feature:
       | move_to_element | id: footer--how-it-works |
       | click           |                          |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value            |
-      | activityLocation | Visitor : SP Profile  |
+      | unique_field | unique_value             |
+      | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
       | prop_key               | prop_value                        |
-      | activityLocation       | Visitor : SP Profile                |
+      | activityLocation       | Visitor : SP Profile              |
       | description            | How It Works link in footer       |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/how-it-works.htm"
 
-  @leafAdvertiserFooterSegmentSolutionCenter @leafAdvertiserFooter @companyListTreeFooter
+  @leafAdvertiserFooterSegmentSolutionCenter @leafAdvertiserFooter @companyListTreeFooter @companyListTreeRegression
   Scenario: User clicks on the footer-left Solution Center icon on leaf advertiser Page
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -2506,17 +2507,17 @@ Feature:
       | move_to_element | id: footer--solution-center |
       | click           |                             |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value            |
-      | activityLocation | Visitor : SP Profile  |
+      | unique_field | unique_value             |
+      | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
       | prop_key               | prop_value                        |
-      | activityLocation       | Visitor : SP Profile                |
+      | activityLocation       | Visitor : SP Profile              |
       | description            | Solution Center link in footer    |
       | userId                 |                                   |
     And we wait "4" seconds for the next page to load
     And the landing URL contains ".angieslist.com/articles/"
 
-  @leafAdvertiserFooterSegmentPhotoGalleries @leafAdvertiserFooter @companyListTreeFooter
+  @leafAdvertiserFooterSegmentPhotoGalleries @leafAdvertiserFooter @companyListTreeFooter @companyListTreeRegression
   Scenario: User clicks on the footer-left Photos icon on leaf advertiser Page
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -2524,17 +2525,17 @@ Feature:
       | move_to_element | id: footer--photo-galleries |
       | click           |                             |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value            |
-      | activityLocation | Visitor : SP Profile  |
+      | unique_field | unique_value             |
+      | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
       | prop_key               | prop_value                        |
-      | activityLocation       | Visitor : SP Profile                |
+      | activityLocation       | Visitor : SP Profile              |
       | description            | Photo Galleries link in footer    |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/photos/"
 
-  @leafAdvertiserFooterSegmentVideos @leafAdvertiserFooter @companyListTreeFooter
+  @leafAdvertiserFooterSegmentVideos @leafAdvertiserFooter @companyListTreeFooter @companyListTreeRegression
   Scenario: User clicks on the footer-left Videos icon on leaf advertiser Page
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -2542,17 +2543,17 @@ Feature:
       | move_to_element | id: footer--video  |
       | click           |                    |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value            |
+      | unique_field | unique_value             |
       | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
       | prop_key               | prop_value                        |
-      | activityLocation       | Visitor : SP Profile                |
+      | activityLocation       | Visitor : SP Profile              |
       | description            | Videos link in footer             |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/videos/"
 
-  @leafAdvertiserFooterSegmentAnswers @leafAdvertiserFooter @companyListTreeFooter
+  @leafAdvertiserFooterSegmentAnswers @leafAdvertiserFooter @companyListTreeFooter @companyListTreeRegression
   Scenario: User clicks on the footer-left Answers icon on leaf advertiser Page
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -2560,17 +2561,17 @@ Feature:
       | move_to_element | id: footer--answers |
       | click           |                     |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value            |
-      | activityLocation | Visitor : SP Profile  |
+      | unique_field | unique_value             |
+      | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
       | prop_key               | prop_value                  |
-      | activityLocation       | Visitor : SP Profile          |
+      | activityLocation       | Visitor : SP Profile        |
       | description            | Answers link in footer      |
       | userId                 |                             |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com"
 
-  @leafAdvertiserFooterSegmentBusinessOwners @leafAdvertiserFooter @companyListTreeFooter
+  @leafAdvertiserFooterSegmentBusinessOwners @leafAdvertiserFooter @companyListTreeFooter @companyListTreeRegression
   Scenario: User clicks on the footer-left Business Owners icon on leaf advertiser Page
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -2578,17 +2579,17 @@ Feature:
       | move_to_element | id: footer--business-owners |
       | click           |                             |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value            |
-      | activityLocation | Visitor : SP Profile  |
+      | unique_field | unique_value             |
+      | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
       | prop_key               | prop_value                         |
-      | activityLocation       | Visitor : SP Profile                 |
+      | activityLocation       | Visitor : SP Profile               |
       | description            | For Business Owners link in footer |
       | userId                 |                                    |
     And we wait "1" seconds for the next page to load
     And the landing URL contains "angieslistbusinesscenter.com/"
 
-  @leafAdvertiserFooterSegmentInvestorRelations @leafAdvertiserFooter @companyListTreeFooter
+  @leafAdvertiserFooterSegmentInvestorRelations @leafAdvertiserFooter @companyListTreeFooter @companyListTreeRegression
   Scenario: User clicks on the footer-left Investor Relations icon on leaf advertiser Page
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -2596,15 +2597,15 @@ Feature:
       | move_to_element | id: footer--investor |
       | click           |                      |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value            |
-      | activityLocation | Visitor : SP Profile  |
+      | unique_field | unique_value             |
+      | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
       | prop_key               | prop_value                         |
-      | activityLocation       | Visitor : SP Profile                 |
+      | activityLocation       | Visitor : SP Profile               |
       | description            | Investor Relations link in footer  |
       | userId                 |                                    |
 
-  @leafAdvertiserFooterSegmentAboutUs @leafAdvertiserFooter @companyListTreeFooter
+  @leafAdvertiserFooterSegmentAboutUs @leafAdvertiserFooter @companyListTreeFooter @companyListTreeRegression
   Scenario: User clicks on the footer-left About Us icon on leaf advertiser Page
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -2612,17 +2613,17 @@ Feature:
       | move_to_element | id: footer--about-angie |
       | click           |                         |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value            |
-      | activityLocation | Visitor : SP Profile  |
+      | unique_field | unique_value             |
+      | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
       | prop_key               | prop_value                         |
-      | activityLocation       | Visitor : SP Profile                 |
+      | activityLocation       | Visitor : SP Profile               |
       | description            | About Angie’s List link in footer  |
       | userId                 |                                    |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/aboutus.htm"
 
-  @leafAdvertiserFooterSegmentCareers @leafAdvertiserFooter @companyListTreeFooter
+@leafAdvertiserFooterSegmentCareers @leafAdvertiserFooter @companyListTreeFooter@companyListTreeRegression
   Scenario: User clicks on the footer-left Careers icon on leaf advertiser Page
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -2630,15 +2631,15 @@ Feature:
       | move_to_element | id: footer--careers     |
       | click           |                         |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value            |
-      | activityLocation | Visitor : SP Profile  |
+      | unique_field | unique_value             |
+      | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
       | prop_key               | prop_value                 |
-      | activityLocation       | Visitor : SP Profile         |
+      | activityLocation       | Visitor : SP Profile       |
       | description            | Careers link in footer     |
       | userId                 |                            |
 
-  @leafAdvertiserFooterSegmentFAQ @leafAdvertiserFooter @companyListTreeFooter
+  @leafAdvertiserFooterSegmentFAQ @leafAdvertiserFooter @companyListTreeFooter @companyListTreeRegression
   Scenario: User clicks on the footer-left FAQ icon on leaf advertiser Page
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -2646,18 +2647,18 @@ Feature:
       | move_to_element | id: footer--faqs    |
       | click           |                     |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value           |
+      | unique_field | unique_value             |
       | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
       | prop_key               | prop_value           |
-      | activityLocation       | Visitor : SP Profile   |
+      | activityLocation       | Visitor : SP Profile |
       | description            | FAQs link in footer  |
       | userId                 |                      |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/faq/"
 
 
-  @leafAdvertiserFooterSegmentContactUs @leafAdvertiserFooter @companyListTreeFooter
+  @leafAdvertiserFooterSegmentContactUs @leafAdvertiserFooter @companyListTreeFooter @companyListTreeRegression
   Scenario: User clicks on the footer-left Contact Us icon on leaf advertiser Page
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -2665,17 +2666,17 @@ Feature:
       | move_to_element | id: footer--contact-us  |
       | click           |                         |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value            |
-      | activityLocation | Visitor : SP Profile  |
+      | unique_field | unique_value             |
+      | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
       | prop_key               | prop_value                 |
-      | activityLocation       | Visitor : SP Profile         |
+      | activityLocation       | Visitor : SP Profile       |
       | description            | Contact Us link in footer  |
       | userId                 |                            |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/member/login"
 
-  @leafAdvertiserFooterSegmentJoin @leafAdvertiserFooter @companyListTreeFooter
+  @leafAdvertiserFooterSegmentJoin @leafAdvertiserFooter @companyListTreeFooter @companyListTreeRegression
   Scenario: User clicks on the footer-right Join icon on leaf advertiser Page
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -2683,17 +2684,17 @@ Feature:
       | move_to_element | id: footer-join  |
       | click           |                  |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value            |
-      | activityLocation | Visitor : SP Profile  |
+      | unique_field | unique_value             |
+      | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
       | prop_key               | prop_value                 |
-      | activityLocation       | Visitor : SP Profile         |
+      | activityLocation       | Visitor : SP Profile       |
       | description            | Join button in footer      |
       | userId                 |                            |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/app/signup"
 
-  @leafAdvertiserFooterSegmentTermsOfUse @leafAdvertiserFooter @companyListTreeFooter
+  @leafAdvertiserFooterSegmentTermsOfUse @leafAdvertiserFooter @companyListTreeFooter @companyListTreeRegression
   Scenario: User clicks on the footer TermsOfUse icon on leaf advertiser Page
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -2701,15 +2702,15 @@ Feature:
       | move_to_element | id: footer--terms |
       | click           |                   |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value            |
-      | activityLocation | Visitor : SP Profile  |
+      | unique_field | unique_value             |
+      | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
       | prop_key               | prop_value                   |
-      | activityLocation       | Visitor : SP Profile           |
+      | activityLocation       | Visitor : SP Profile         |
       | description            | Terms of Use link in footer  |
       | userId                 |                              |
 
-  @leafAdvertiserFooterSegmentPrivacyPolicy @leafAdvertiserFooter @companyListTreeFooter
+  @leafAdvertiserFooterSegmentPrivacyPolicy @leafAdvertiserFooter @companyListTreeFooter @companyListTreeRegression
   Scenario: User clicks on the footer Privacy Policy icon on leaf advertiser Page
     Given user is on a visitor site leaf advertiser page
     When a user performs actions
@@ -2717,10 +2718,10 @@ Feature:
       | move_to_element | id: footer--privacy-policy |
       | click           |                            |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value            |
-      | activityLocation | Visitor : SP Profile  |
+      | unique_field | unique_value             |
+      | activityLocation | Visitor : SP Profile |
     And the segment call contains parameters
       | prop_key               | prop_value                    |
-      | activityLocation       | Visitor : SP Profile            |
+      | activityLocation       | Visitor : SP Profile          |
       | description            | Privacy Policy link in footer |
       | userId                 |                               |
