@@ -19,7 +19,7 @@ Feature:
     | /companylist |
     | /articles    |
     
-  @homePageSegmentPagecall @daily_auto @daily_homepage_regression 
+  @homePageSegmentPagecall @dailyHomepageRegression 
   Scenario: Segment pagecall when homepage loads
     Given user is on a visitor site page
     """
@@ -38,12 +38,12 @@ Feature:
       | search         |                                                                       |
       | srCtaDisplayed | true                                                                  |
       | userId         |                                                                       |
-      | url            |                                                                       |
+      | url            | https://www.angieslist.com/                                           |
       | userType       | Visitor - New                                                         |
-      | title          | Angie's List &vert; Join for FREE to see 10 Million Verified Reviews  |
+      | title          | Angie's List \| See for FREE our 12 Million Verified Reviews          |
       | srCtaVersion   | v2.1                                                                  |
 
-  @homePageSegmentPageCallReturn
+  @homePageSegmentPageCallReturn @dailyHomepageRegression 
   Scenario: Segment pagecall on homepage when a user returns to our site
     Given user is on a visitor site page
     """
@@ -1216,7 +1216,7 @@ Feature:
       | description            | Facebook icon in footer    |
       | userId                 |                            |
 
-  @homePageFooterSegmentPinterest  @daily_homepage_regression @footer
+  @homePageFooterSegmentPinterest   @footer
   Scenario: User clicks on the footer-right Pinterest icon on Drupal Homepage
     Given user is on a visitor site page
     """
