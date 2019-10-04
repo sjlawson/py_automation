@@ -203,7 +203,7 @@ Feature:
 ##### Body Tests #####
 
 
-  @homePageBodySegmentHeroJoinCta @dailyHomepageRegression @body_regression
+  @homePageBodySegmentHeroJoinCta @dailyHomepageRegression @homePageBodyRegression
   Scenario: User clicks on hero Join button on Drupal Homepage
     Given user is on a visitor site page
     """
@@ -225,7 +225,7 @@ Feature:
     And the landing URL contains ".angieslist.com/app/signup"
 
 
-  @homePageBodySegmentHeroSRCTAFindProsNoText @circleci @dailyHomepageRegression @body_regression
+  @homePageBodySegmentHeroSRCTAFindProsNoText @circleci @dailyHomepageRegression @homePageBodyRegression
   Scenario: User clicks on hero Find Pros CTA (No Text) button on Drupal Homepage
     Given user is on a visitor site page
     """
@@ -251,7 +251,7 @@ Feature:
     And the landing URL contains "match"
 
 
-  @homePageBodySegmentHeroSRCTAFindProsDropdown @dailyHomepageRegression @body_regression
+  @homePageBodySegmentHeroSRCTAFindProsDropdown @dailyHomepageRegression @homePageBodyRegression
   Scenario: User clicks on hero Find Pros CTA (Dropdown) button on Drupal Homepage
     Given user is on a visitor site page
     """
@@ -282,7 +282,7 @@ Feature:
     And the landing URL contains "angieslist.com/category.Plumbing.10216.html?entry_point_id=32949645"
 
 
-  @homePageBodySegmentSRCTAFindProsButton @dailyHomepageRegression @body_regression
+  @homePageBodySegmentSRCTAFindProsButton @dailyHomepageRegression @homePageBodyRegression
   Scenario: User clicks on hero Find Pros CTA button on Drupal Homepage
     Given user is on a visitor site page
     """
@@ -313,7 +313,7 @@ Feature:
     And the landing URL contains "angieslist.com/category.Plumbing.10216.html?entry_point_id=32949645"
 
 
-  @homePageBodySegmentSRCTAFindProsEnter @dailyHomepageRegression @body_regression
+  @homePageBodySegmentSRCTAFindProsEnter @dailyHomepageRegression @homePageBodyRegression
   Scenario: User clicks on hero Find Pros CTA button on Drupal Homepage
     Given user is on a visitor site page
     """
@@ -341,7 +341,7 @@ Feature:
     And the landing URL contains "angieslist.com/category.Plumbing.10216.html?entry_point_id=32949645"
 
 
-  @homePageBodySegmentPlumbingPopularServiceQuickLink @dailyHomepageRegression @body_regression
+  @homePageBodySegmentPlumbingPopularServiceQuickLink @dailyHomepageRegression @homePageBodyRegression
   Scenario: User clicks on Popular Service icon for Plumbing on Drupal Homepage
     Given user is on a visitor site page
     """
@@ -366,7 +366,7 @@ Feature:
     And the landing URL contains ".angieslist.com/category.Plumbing.10216.html?entry_point_id=32949645"
 
 
-  @homePageBodySegmentRoofingPopularServiceQuickLink @dailyHomepageRegression @body_regression
+  @homePageBodySegmentRoofingPopularServiceQuickLink @dailyHomepageRegression @homePageBodyRegression
   Scenario: User clicks on Popular Service icon for Roofing on Drupal Homepage
     Given user is on a visitor site page
     """
@@ -390,7 +390,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/category.Roofing-Siding-Gutters.10217.html?entry_point_id=32949645"
 
-  @homePageBodySegmentHeatingCoolingPopularServiceQuickLink @dailyHomepageRegression @body_regression
+  @homePageBodySegmentHeatingCoolingPopularServiceQuickLink @dailyHomepageRegression @homePageBodyRegression
   Scenario: User clicks on Popular Service icon for HeatingCooling on Drupal Homepage
     Given user is on a visitor site page
     """
@@ -415,7 +415,7 @@ Feature:
     And the landing URL contains ".angieslist.com/category.Heating-Cooling.10211.html?entry_point_id=32949645"
 
 
-  @homePageBodySegmentElectricalPopularServiceQuickLink @dailyHomepageRegression @body_regression
+  @homePageBodySegmentElectricalPopularServiceQuickLink @dailyHomepageRegression @homePageBodyRegression
   Scenario: User clicks on Popular Service icon for Electrical on Drupal Homepage
     Given user is on a visitor site page
     """
@@ -440,7 +440,7 @@ Feature:
     And the landing URL contains ".angieslist.com/category.Electrical.12026.html?entry_point_id=32949645"
 
 
-  @homePageBodySegmentLandscapingPopularServiceQuickLink @dailyHomepageRegression @body_regression
+  @homePageBodySegmentLandscapingPopularServiceQuickLink @dailyHomepageRegression @homePageBodyRegression
   Scenario: User clicks on Popular Service icon for Landscaping on Drupal Homepage
     Given user is on a visitor site page
     """
@@ -465,7 +465,7 @@ Feature:
     And the landing URL contains ".angieslist.com/category.Landscaping.12046.html?entry_point_id=32949645"
 
 
-@homePageBodySegmentHouseCleaningPopularServiceQuickLink @dailyHomepageRegression @body_regression
+@homePageBodySegmentHouseCleaningPopularServiceQuickLink @dailyHomepageRegression @homePageBodyRegression
   Scenario: User clicks on Popular Service icon for House Cleaning on Drupal Homepage
     Given user is on a visitor site page
     """
@@ -490,7 +490,7 @@ Feature:
     And the landing URL contains ".angieslist.com/category.Cleaning-Maid-Services.12014.html?entry_point_id=32949645"  
   
   
-  @homePageBodySegmentRemodelingPopularServiceQuickLink  @dailyHomepageRegression @body_regression
+  @homePageBodySegmentRemodelingPopularServiceQuickLink  @dailyHomepageRegression @homePageBodyRegression
   Scenario: User clicks on Popular Service icon for Remodeling on Drupal Homepage
     Given user is on a visitor site page
     """
@@ -515,7 +515,7 @@ Feature:
     And the landing URL contains ".angieslist.com/category.Additions-Remodeling.12001.html?entry_point_id=32949645"
 
 
-@homePageBodySegmentPaintingPopularServiceQuickLink  @dailyHomepageRegression @body_regression
+@homePageBodySegmentPaintingPopularServiceQuickLink  @dailyHomepageRegression @homePageBodyRegression
   Scenario: User clicks on Popular Service icon for Painting on Drupal Homepage
     Given user is on a visitor site page
     """
@@ -543,7 +543,7 @@ Feature:
 
 ##### Footer Tests #####
 
-  @homePageFooterSegmentTopCity  @dailyHomepageRegression @footer
+  @homePageFooterSegmentTopCity  @dailyHomepageRegression @HomePageFooter
   Scenario: User clicks on the footer NYC top city link on Drupal Homepage
     Given user is on a visitor site page
     """
@@ -565,7 +565,7 @@ Feature:
     And the landing URL contains ".angieslist.com/companylist/new-york-tristate-area/"
 
 
-  @homePageFooterSegmentTopCity  @dailyHomepageRegression @footer
+  @homePageFooterSegmentTopCity  @dailyHomepageRegression @HomePageFooter
   Scenario: User clicks on the footer Houston top city link on Drupal Homepage
     Given user is on a visitor site page
     """
@@ -587,7 +587,7 @@ Feature:
     And the landing URL contains ".angieslist.com/companylist/houston/"
 
 
-  @homePageFooterSegmentTopCity  @dailyHomepageRegression @footer
+  @homePageFooterSegmentTopCity  @dailyHomepageRegression @HomePageFooter
   Scenario: User clicks on the footer Chicago top city link on Drupal Homepage
     Given user is on a visitor site page
     """
@@ -609,7 +609,7 @@ Feature:
     And the landing URL contains ".angieslist.com/companylist/chicago/"
 
 
-  @homePageFooterSegmentTopCity  @dailyHomepageRegression @footer
+  @homePageFooterSegmentTopCity  @dailyHomepageRegression @HomePageFooter
   Scenario: User clicks on the footer Indianapolis top city link on Drupal Homepage
     Given user is on a visitor site page
     """
@@ -631,7 +631,7 @@ Feature:
     And the landing URL contains ".angieslist.com/companylist/indianapolis/"
 
 
-  @homePageFooterSegmentTopCity  @dailyHomepageRegression @footer
+  @homePageFooterSegmentTopCity  @dailyHomepageRegression @HomePageFooter
   Scenario: User clicks on the footer Boston top city link on Drupal Homepage
     Given user is on a visitor site page
     """
@@ -652,7 +652,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/boston/"
 
-  @homePageFooterSegmentTopCity  @dailyHomepageRegression @footer
+  @homePageFooterSegmentTopCity  @dailyHomepageRegression @HomePageFooter
   Scenario: User clicks on the footer Atlanta top city link on Drupal Homepage
     Given user is on a visitor site page
     """
@@ -673,7 +673,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/atlanta/"
 
-  @homePageFooterSegmentTopCity  @dailyHomepageRegression @footer
+  @homePageFooterSegmentTopCity  @dailyHomepageRegression @HomePageFooter
   Scenario: User clicks on the footer Cincinnati top city link on Drupal Homepage
     Given user is on a visitor site page
     """
@@ -694,7 +694,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/cincinnati/"
 
-  @homePageFooterSegmentTopCity  @dailyHomepageRegression @footer
+  @homePageFooterSegmentTopCity  @dailyHomepageRegression @HomePageFooter
   Scenario: User clicks on the footer Los Angeles top city link on Drupal Homepage
     Given user is on a visitor site page
     """
@@ -715,7 +715,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/los-angeles/"
 
-  @homePageFooterSegmentTopCity  @dailyHomepageRegression @footer
+  @homePageFooterSegmentTopCity  @dailyHomepageRegression @HomePageFooter
   Scenario: User clicks on the footer Dallas top city link on Drupal Homepage
     Given user is on a visitor site page
     """
@@ -736,7 +736,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/dallas/"
 
-  @homePageFooterSegmentTopCity  @dailyHomepageRegression @footer
+  @homePageFooterSegmentTopCity  @dailyHomepageRegression @HomePageFooter
   Scenario: User clicks on the footer Pittsburgh top city link on Drupal Homepage
     Given user is on a visitor site page
     """
@@ -757,7 +757,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/pittsburgh/"
 
-  @homePageFooterSegmentTopCity  @dailyHomepageRegression @footer
+  @homePageFooterSegmentTopCity  @dailyHomepageRegression @HomePageFooter
   Scenario: User clicks on the footer Minneapolis top city link on Drupal Homepage
     Given user is on a visitor site page
     """
@@ -778,7 +778,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/minneapolis/"
 
-  @homePageFooterSegmentTopCity  @dailyHomepageRegression @footer
+  @homePageFooterSegmentTopCity  @dailyHomepageRegression @HomePageFooter
   Scenario: User clicks on the footer Las Vegas top city link on Drupal Homepage
     Given user is on a visitor site page
     """
@@ -799,7 +799,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/las-vegas/"
 
-  @homePageFooterSegmentTopCity  @dailyHomepageRegression @footer
+  @homePageFooterSegmentTopCity  @dailyHomepageRegression @HomePageFooter
   Scenario: User clicks on the footer San Antonio top city link on Drupal Homepage
     Given user is on a visitor site page
     """
@@ -820,7 +820,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/san-antonio/"
 
-  @homePageFooterSegmentTopCity  @dailyHomepageRegression @footer
+  @homePageFooterSegmentTopCity  @dailyHomepageRegression @HomePageFooter
   Scenario: User clicks on the footer Tampa top city link on Drupal Homepage
     Given user is on a visitor site page
     """
@@ -841,7 +841,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/tampa-bay/"
 
-  @homePageFooterSegmentJoinForFree  @dailyHomepageRegression @footer
+  @homePageFooterSegmentJoinForFree  @dailyHomepageRegression @HomePageFooter
   Scenario: User clicks on the footer-left Join For Free icon on Drupal Homepage
     Given user is on a visitor site page
     """
@@ -862,7 +862,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/app/signup"
 
-  @homePageFooterSegmentCompanyList  @dailyHomepageRegression @footer
+  @homePageFooterSegmentCompanyList  @dailyHomepageRegression @HomePageFooter
   Scenario: User clicks on the footer-left Company List icon on Drupal Homepage
     Given user is on a visitor site page
     """
@@ -883,7 +883,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/"
 
-  @homePageFooterSegmentNearMe  @dailyHomepageRegression @footer
+  @homePageFooterSegmentNearMe  @dailyHomepageRegression @HomePageFooter
   Scenario: User clicks on the footer-left Near Me icon on Drupal Homepage
     Given user is on a visitor site page
     """
@@ -904,7 +904,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/nearme/"
 
-  @homePageFooterSegmentHowItWorks  @dailyHomepageRegression @footer
+  @homePageFooterSegmentHowItWorks  @dailyHomepageRegression @HomePageFooter
   Scenario: User clicks on the footer-left How It Works icon on Drupal Homepage
     Given user is on a visitor site page
     """
@@ -925,7 +925,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/how-it-works.htm"
 
-  @homePageFooterSegmentSolutionCenter  @dailyHomepageRegression @footer
+  @homePageFooterSegmentSolutionCenter  @dailyHomepageRegression @HomePageFooter
   Scenario: User clicks on the footer-left Solution Center icon on Drupal Homepage
     Given user is on a visitor site page
     """
@@ -946,7 +946,7 @@ Feature:
     And we wait "4" seconds for the next page to load
     And the landing URL contains ".angieslist.com/articles/"
 
-  @homePageFooterSegmentPhotoGalleries  @dailyHomepageRegression @footer
+  @homePageFooterSegmentPhotoGalleries  @dailyHomepageRegression @HomePageFooter
   Scenario: User clicks on the footer-left Photos icon on Drupal Homepage
     Given user is on a visitor site page
     """
@@ -967,7 +967,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/photos/"
 
-  @homePageFooterSegmentVideos  @dailyHomepageRegression @footer
+  @homePageFooterSegmentVideos  @dailyHomepageRegression @HomePageFooter
   Scenario: User clicks on the footer-left Videos icon on Drupal Homepage
     Given user is on a visitor site page
     """
@@ -988,7 +988,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/videos/"
 
-  @homePageFooterSegmentAnswers  @dailyHomepageRegression @footer
+  @homePageFooterSegmentAnswers  @dailyHomepageRegression @HomePageFooter
   Scenario: User clicks on the footer-left Answers icon on Drupal Homepage
     Given user is on a visitor site page
     """
@@ -1009,7 +1009,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com"
 
-  @homePageFooterSegmentBusinessOwners  @dailyHomepageRegression @footer
+  @homePageFooterSegmentBusinessOwners  @dailyHomepageRegression @HomePageFooter
   Scenario: User clicks on the footer-left Business Owners icon on Drupal Homepage
     Given user is on a visitor site page
     """
@@ -1030,7 +1030,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains "angieslistbusinesscenter.com/"
 
-  @homePageFooterSegmentInvestorRelations  @dailyHomepageRegression @footer
+  @homePageFooterSegmentInvestorRelations  @dailyHomepageRegression @HomePageFooter
   Scenario: User clicks on the footer-left Investor Relations icon on Drupal Homepage
     Given user is on a visitor site page
     """
@@ -1049,7 +1049,7 @@ Feature:
       | description            | Investor Relations link in footer  |
       | userId                 |                                    |
 
-  @homePageFooterSegmentAboutUs  @dailyHomepageRegression @footer
+  @homePageFooterSegmentAboutUs  @dailyHomepageRegression @HomePageFooter
   Scenario: User clicks on the footer-left About Us icon on Drupal Homepage
     Given user is on a visitor site page
     """
@@ -1070,7 +1070,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/aboutus.htm"
 
-  @homePageFooterSegmentCareers  @dailyHomepageRegression @footer
+  @homePageFooterSegmentCareers  @dailyHomepageRegression @HomePageFooter
   Scenario: User clicks on the footer-left Careers icon on Drupal Homepage
     Given user is on a visitor site page
     """
@@ -1089,7 +1089,7 @@ Feature:
       | description            | Careers link in footer     |
       | userId                 |                            |
 
-  @homePageFooterSegmentFAQ  @dailyHomepageRegression @footer
+  @homePageFooterSegmentFAQ  @dailyHomepageRegression @HomePageFooter
   Scenario: User clicks on the footer-left FAQ icon on Drupal Homepage
     Given user is on a visitor site page
     """
@@ -1111,7 +1111,7 @@ Feature:
     And the landing URL contains ".angieslist.com/faq/"
 
 
-  @homePageFooterSegmentContactUs  @dailyHomepageRegression @footer
+  @homePageFooterSegmentContactUs  @dailyHomepageRegression @HomePageFooter
   Scenario: User clicks on the footer-left Contact Us icon on Drupal Homepage
     Given user is on a visitor site page
     """
@@ -1132,7 +1132,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/member/login"
 
-  @homePageFooterSegmentJoin  @dailyHomepageRegression @footer
+  @homePageFooterSegmentJoin  @dailyHomepageRegression @HomePageFooter
   Scenario: User clicks on the footer-right Join icon on Drupal Homepage
     Given user is on a visitor site page
     """
@@ -1153,7 +1153,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/app/signup"
 
-  @homePageFooterSegmentiOS  @dailyHomepageRegression @footer
+  @homePageFooterSegmentiOS  @dailyHomepageRegression @HomePageFooter
   Scenario: User clicks on the footer-right iOS App icon on Drupal Homepage
     Given user is on a visitor site page
     """
@@ -1172,7 +1172,7 @@ Feature:
       | description            | App Store badge in footer  |
       | userId                 |                            |
 
-  @homePageFooterSegmentGoogle  @dailyHomepageRegression @footer
+  @homePageFooterSegmentGoogle  @dailyHomepageRegression @HomePageFooter
   Scenario: User clicks on the footer-right Google App icon on Drupal Homepage
     Given user is on a visitor site page
     """
@@ -1191,7 +1191,7 @@ Feature:
       | description            | Google Play badge in footer  |
       | userId                 |                            |
 
-  @homePageFooterSegmentTwitter  @dailyHomepageRegression @footer
+  @homePageFooterSegmentTwitter  @dailyHomepageRegression @HomePageFooter
   Scenario: User clicks on the footer-right Twitter icon on Drupal Homepage
     Given user is on a visitor site page
     """
@@ -1210,7 +1210,7 @@ Feature:
       | description            | Twitter icon in footer     |
       | userId                 |                            |
 
-  @homePageFooterSegmentFaceBook  @dailyHomepageRegression @footer
+  @homePageFooterSegmentFaceBook  @dailyHomepageRegression @HomePageFooter
   Scenario: User clicks on the footer-right Facebook icon on Drupal Homepage
     Given user is on a visitor site page
     """
@@ -1229,7 +1229,7 @@ Feature:
       | description            | Facebook icon in footer    |
       | userId                 |                            |
 
-  @homePageFooterSegmentPinterest   @footer
+  @homePageFooterSegmentPinterest   @HomePageFooter
   Scenario: User clicks on the footer-right Pinterest icon on Drupal Homepage
     Given user is on a visitor site page
     """
@@ -1248,7 +1248,7 @@ Feature:
       | description            | Pinterest icon in footer   |
       | userId                 |                            |
 
-  @homePageFooterSegmentYouTube  @dailyHomepageRegression @footer
+  @homePageFooterSegmentYouTube  @dailyHomepageRegression @HomePageFooter
   Scenario: User clicks on the footer-right YouTube icon on Drupal Homepage
     Given user is on a visitor site page
     """
@@ -1267,7 +1267,7 @@ Feature:
       | description            | YouTube icon in footer     |
       | userId                 |                            |
 
-  @homePageFooterSegmentTermsOfUse @dailyHomepageRegression @footer
+  @homePageFooterSegmentTermsOfUse @dailyHomepageRegression @homePageFooter
   Scenario: User clicks on the footer TermsOfUse icon on Drupal Homepage
     Given user is on a visitor site page
     """
@@ -1286,7 +1286,7 @@ Feature:
       | description            | Terms of Use link in footer     |
       | userId                 |                            |
 
-  @homePageFooterSegmentPrivacyPolicy @dailyHomepageRegression @footer
+  @homePageFooterSegmentPrivacyPolicy @dailyHomepageRegression @HomePageFooter
   Scenario: User clicks on the footer Privacy Policy icon on Drupal Homepage
     Given user is on a visitor site page
     """
