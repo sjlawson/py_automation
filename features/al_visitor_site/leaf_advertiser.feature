@@ -1449,7 +1449,8 @@ Feature:
       | visitorPageGeo          | BOULDER                         |
       | visitorPageGeoCategory  | BOULDER - PAINTING - INTERIOR   |
     And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/app/lead/request_a_quote/221961/project?categoryId=294&placementType=Web_LeafAdvertiserPage&withAlId=221961"
+    And the landing URL contains "angieslist.com/app/lead/request_a_quote/221961/project?categoryId=294&placementType=Web_LeafPage&withAlId=221961"
+                                  
 
   @leafAdvertiserFirstOfferClick @leafAdvertiserBody @companyListTreeRegression @companyListTreeSmoke
   Scenario: Click on first offer - Advertiser Leaf
@@ -1478,7 +1479,7 @@ Feature:
 
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/app/offer/search/"
-    And the landing URL contains "placementType=Web_LeafAdvertiserPage"
+    And the landing URL contains "placementType=Web_LeafPage"
 
   @leafAdvertiserFirstOfferButtonClick @leafAdvertiserBody @companyListTreeRegression
   Scenario: Click on button - first offer - Advertiser Leaf
@@ -1506,7 +1507,7 @@ Feature:
       | visitorPageGeoCategory  | HILLIARD - PLUMBING      |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/app/offer/search/"
-    And the landing URL contains "placementType=Web_LeafAdvertiserPage"
+    And the landing URL contains "placementType=Web_LeafPage"
 
   @leafAdvertiserSecondOfferClick @leafAdvertiserBody @companyListTreeRegression
   Scenario: Click on button - second offer - Advertiser Leaf
@@ -1534,7 +1535,7 @@ Feature:
       | visitorPageGeoCategory | HILLIARD - PLUMBING  |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/app/offer/search/"
-    And the landing URL contains "placementType=Web_LeafAdvertiserPage"
+    And the landing URL contains "placementType=Web_LeafPage"
 
   @leafAdvertiserThirdOfferClick @leafAdvertiserBody @companyListTreeRegression
   Scenario: Click on button - third offer - Advertiser Leaf
@@ -1562,7 +1563,7 @@ Feature:
       | visitorPageGeoCategory | HILLIARD - PLUMBING  |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/app/offer/search/"
-    And the landing URL contains "placementType=Web_LeafAdvertiserPage"
+    And the landing URL contains "placementType=Web_LeafPage"
 
   @leafAdvertiserSeeAllDealButtonClick @leafAdvertiserBody @companyListTreeRegression @companyListTreeSmoke
   Scenario: Click on button - See All Deals - Advertiser Leaf
