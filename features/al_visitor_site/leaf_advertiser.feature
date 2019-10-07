@@ -1629,8 +1629,13 @@ Feature:
       | action_method | action_params                                             |
       | click         | css: .leaf-contact-us > div.leaf-contact-us__contact-link |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value     |
-      | modalName    | Contact SP       | 
+      | unique_field            | unique_value         |
+      | activityLocation        | Visitor : SP Profile |
+      | advertiserStatus        | Advertiser           |
+      | legacyServiceProviderId | 221961               |
+      | modalName               | Contact SP           |
+      | serviceProviderId       | 221961               |
+      | userId                  |                      |
     And the landing URL contains ".angieslist.com/companylist/us/co/boulder/painting-plus-reviews-221961.htm"
 
   @leafAdvertiserReviewPage2 @leafAdvertiserReviewPagination @leafAdvertiserBody @companyListTreeRegression @companyListTreeSmoke
