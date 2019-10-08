@@ -31,7 +31,7 @@ def step_impl(context):
     appsuite_url = context.appsuites[appsuite_env]['base_url']
     context.url = appsuite_url + '/app/lead/survey/sr/working_with_pro?entry_point_id=34138795'
     context.browser.get(context.url)
-    time.sleep(1.5)
+    time.sleep(2)
 
 
 @given('a user is on a member site SR No Contact page')
@@ -59,19 +59,3 @@ def step_impl(context):
     context.url = appsuite_url + context.text
     context.browser.get(context.url)
     time.sleep(1.5)
-
-
-@then('we wait "{seconds}" seconds for the next page to load')
-def step_impl(context, seconds):
-    time.sleep(int(seconds))
-
-
-@then('the landing URL contains "{url}"')
-def step_impl(context, url):
-    current_url = context.browser.current_url
-    try:
-        assert url in current_url
-        context.test_case.test_result = 'pass'
-    except AssertionError as ae:
-        context.test_case.test_result = 'fail'
-        raise AssertionError('Did not find %s in %s' % (url, current_url))

@@ -120,24 +120,6 @@ Feature:
     Then we wait "1" seconds for the next page to load
     Then the landing URL contains ".angieslist.com/?entry_point_id=34138795"
 
-  @workingWithProVBC
-  Scenario: Post SR Survery Landing Page working_with_pro header VBC Click
-    Given a user is on a member site SR Working With Pro page
-    When a user performs actions
-      | action_method   | action_params                                 |
-      | move_to_element | css: #header-right-nav--visit-business-center |
-      | click           | css: #header-right-nav--visit-business-center |
-    Then a segment track call is sent for a unique field value pair
-      | unique_field      | unique_value  |
-      | activityLocation  | Unauth Header   |
-    And the segment call contains parameters
-      | prop_key          | prop_value        |
-      | activityLocation  | Unauth Header          |
-      | description       | Visit Business Center  |
-      | userType          | Not Authenticated |
-    Then we wait "1" seconds for the next page to load
-    Then the landing URL contains "?entry_point_id=34138795"
-
 
   @stillDecidingClick @postSrLandingFeature
   Scenario: Vistor Post SR Survery Landing Page still_deciding Segment Click
