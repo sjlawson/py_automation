@@ -21,7 +21,7 @@ def step_impl(context):
     appsuite_url = context.appsuites[appsuite_env]['base_url']
     context.url = appsuite_url + context.text
     context.browser.get(context.url)
-    time.sleep(1)
+    time.sleep(1.5)
 
 
 @given('a user is on a member site visitor page')
