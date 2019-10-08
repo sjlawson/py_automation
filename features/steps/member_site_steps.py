@@ -16,22 +16,49 @@ def step_impl(context):
     time.sleep(1.5)
 
 
-@given('a user is on a member site SR landing page')
+@given('a user is on a member site SR Still Deciding page')
+def step_impl(context):
+    appsuite_env = 'al_member_site'
+    appsuite_url = context.appsuites[appsuite_env]['base_url']
+    context.url = appsuite_url + '/app/lead/survey/sr/still_deciding?entry_point_id=34138796'
+    context.browser.get(context.url)
+    time.sleep(1.5)
+
+
+@given('a user is on a member site SR Working With Pro page')
+def step_impl(context):
+    appsuite_env = 'al_member_site'
+    appsuite_url = context.appsuites[appsuite_env]['base_url']
+    context.url = appsuite_url + '/app/lead/survey/sr/working_with_pro?entry_point_id=34138795'
+    context.browser.get(context.url)
+    time.sleep(1.5)
+
+
+@given('a user is on a member site SR No Contact page')
+def step_impl(context):
+    appsuite_env = 'al_member_site'
+    appsuite_url = context.appsuites[appsuite_env]['base_url']
+    context.url = appsuite_url + '/app/lead/survey/sr/no_contact?entry_point_id=34138797'
+    context.browser.get(context.url)
+    time.sleep(1.5)
+
+
+@given('a user is on a member site SR No Longer Doing page')
+def step_impl(context):
+    appsuite_env = 'al_member_site'
+    appsuite_url = context.appsuites[appsuite_env]['base_url']
+    context.url = appsuite_url + '/app/lead/survey/sr/no_longer_doing?entry_point_id=34138798'
+    context.browser.get(context.url)
+    time.sleep(1.5)
+
+
+@given('a user is on a certain member site page')
 def step_impl(context):
     appsuite_env = 'al_member_site'
     appsuite_url = context.appsuites[appsuite_env]['base_url']
     context.url = appsuite_url + context.text
     context.browser.get(context.url)
     time.sleep(1.5)
-
-
-@given('a user is on a member site visitor page')
-def step_impl(context):
-    appsuite_env = 'al_member_site'
-    appsuite_url = context.appsuites[appsuite_env]['base_url']
-    context.url = appsuite_url + context.text
-    context.browser.get(context.url)
-    time.sleep(1)
 
 
 @then('we wait "{seconds}" seconds for the next page to load')
