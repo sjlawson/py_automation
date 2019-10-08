@@ -2,49 +2,34 @@ Feature:
 
   @postSrLandingAccessibilityStillDeciding
   Scenario: Vistor Post SR Survery Landing Page still_deciding Accessibility Test
-    Given a user is on a member site visitor page
-    """
-    /app/lead/survey/sr/still_deciding?entry_point_id=341387965
-    """
+    Given a user is on a member site SR Still Deciding page
     When the page has finished loading
     Then the page should meet "wcag2a" accessibility guidelines
 
   @postSrLandingAccessibilityWorkingWith
   Scenario: Vistor Post SR Survery Landing Page working_with_pro Accessibility Test
-    Given a user is on a member site visitor page
-    """
-    /app/lead/survey/sr/working_with_pro?entry_point_id=34138795
-    """
+    Given a user is on a member site SR Working With Pro page
     When the page has finished loading
     Then the page should meet "wcag2a" accessibility guidelines
 
 
   @postSrLandingAccessibilityNoContact
   Scenario: Vistor Post SR Survery Landing Page no_contact Accessibility Test
-    Given a user is on a member site visitor page
-    """
-    /app/lead/survey/sr/no_contact?entry_point_id=34138797
-    """
+    Given a user is on a member site SR No Contact page
     When the page has finished loading
     Then the page should meet "wcag2a" accessibility guidelines
 
 
   @postSrLandingAccessibilityNoLonger
   Scenario: Vistor Post SR Survery Landing Page no_longer_doing Accessibility Test
-    Given a user is on a member site visitor page
-    """
-    /app/lead/survey/sr/no_longer_doing?entry_point_id=34138798
-    """
+    Given a user is on a member site SR No Longer Doing page
     When the page has finished loading
     Then the page should meet "wcag2a" accessibility guidelines
 
 
   @workingWithAProPageLoadSegment @postSrLandingFeature
   Scenario: Vistor Post SR Survery Landing Page working_with_pro Segment Page Load
-    Given a user is on a member site visitor review page
-    """
-    /app/lead/survey/sr/working_with_pro?entry_point_id=34138795
-    """
+    Given a user is on a member site SR Working With Pro page
     When a segment page call is sent for a unique field value pair
       | unique_field      | unique_value           |
       | description       | PostSR Landing Page - Working with a pro |
@@ -63,10 +48,7 @@ Feature:
 
   @stillDecidingPageLoadSegment @postSrLandingFeature
   Scenario: Vistor Post SR Survery Landing Page still_deciding Segment Page Load
-    Given a user is on a member site visitor review page
-    """
-    /app/lead/survey/sr/still_deciding?entry_point_id=34138796
-    """
+    Given a user is on a member site SR Still Deciding page
     When a segment page call is sent for a unique field value pair
       | unique_field      | unique_value           |
       | description       | PostSR Landing Page - Still deciding |
@@ -85,10 +67,7 @@ Feature:
 
   @noContactsPageLoadSegment @postSrLandingFeature
   Scenario: Vistor Post SR Survery Landing Page no_contact Segment Page Load
-    Given a user is on a member site visitor review page
-    """
-    /app/lead/survey/sr/no_contact?entry_point_id=34138797
-    """
+    Given a user is on a member site SR No Contact page
     When a segment page call is sent for a unique field value pair
       | unique_field      | unique_value           |
       | description       | PostSR Landing Page - No one contacted |
@@ -107,10 +86,7 @@ Feature:
 
   @noLongerDoingPageLoadSegment @postSrLandingFeature
   Scenario: Vistor Post SR Survery Landing Page no_longer_doing Segment Page Load
-    Given a user is on a member site visitor review page
-    """
-    /app/lead/survey/sr/no_longer_doing?entry_point_id=34138798
-    """
+    Given a user is on a member site SR No Longer Doing page
     When a segment page call is sent for a unique field value pair
       | unique_field      | unique_value           |
       | description       | PostSR Landing Page - Not doing project |
@@ -129,10 +105,7 @@ Feature:
 
   @workingWithProClick @postSrLandingFeature
   Scenario: Vistor Post SR Survery Landing Page working_with_pro Segment Click
-    Given a user is on a member site visitor review page
-    """
-    /app/lead/survey/sr/working_with_pro?entry_point_id=34138795
-    """
+    Given a user is on a member site SR Working With Pro page
     When a user performs actions
       | action_method   | action_params                        |
       | move_to_element | id: post-sr--find-more |
@@ -149,10 +122,7 @@ Feature:
 
   @workingWithProVBC
   Scenario: Post SR Survery Landing Page working_with_pro header VBC Click
-    Given a user is on a member site visitor review page
-    """
-    /app/lead/survey/sr/working_with_pro?entry_point_id=34138795
-    """
+    Given a user is on a member site SR Working With Pro page
     When a user performs actions
       | action_method   | action_params                                 |
       | move_to_element | css: #header-right-nav--visit-business-center |
@@ -171,10 +141,7 @@ Feature:
 
   @stillDecidingClick @postSrLandingFeature
   Scenario: Vistor Post SR Survery Landing Page still_deciding Segment Click
-    Given a user is on a member site visitor review page
-    """
-    /app/lead/survey/sr/still_deciding?entry_point_id=34138796
-    """
+    Given a user is on a member site SR Still Deciding page
     When a user performs actions
       | action_method   | action_params          |
       | move_to_element | id: post-sr--find-more |
@@ -192,10 +159,7 @@ Feature:
 
   @noContactClick @postSrLandingFeature
   Scenario: Vistor Post SR Survery Landing Page no_contact Segment Click
-    Given a user is on a member site visitor review page
-    """
-    /app/lead/survey/sr/no_contact?entry_point_id=34138797
-    """
+    Given a user is on a member site SR No Contact page
     When a user performs actions
       | action_method   | action_params          |
       | move_to_element | id: post-sr--find-more |
@@ -213,10 +177,7 @@ Feature:
 
   @noLongerDoingClick @postSrLandingFeature
   Scenario: Vistor Post SR Survery Landing Page no_contact Segment Click
-    Given a user is on a member site visitor review page
-    """
-    /app/lead/survey/sr/no_longer_doing?entry_point_id=34138798
-    """
+    Given a user is on a member site SR No Longer Doing page
     When a user performs actions
       | action_method   | action_params           |
       | move_to_element | id: post-sr--find-more  |
