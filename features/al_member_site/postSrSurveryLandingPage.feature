@@ -1,7 +1,6 @@
-@postSrLandingFeature
 Feature:
 
-  @postSrLandingAccessibility
+  @postSrLandingAccessibilityStillDeciding
   Scenario: Vistor Post SR Survery Landing Page still_deciding Accessibility Test
     Given a user is on a member site visitor page
     """
@@ -10,7 +9,7 @@ Feature:
     When the page has finished loading
     Then the page should meet "wcag2a" accessibility guidelines
 
-  @postSrLandingAccessibility
+  @postSrLandingAccessibilityWorkingWith
   Scenario: Vistor Post SR Survery Landing Page working_with_pro Accessibility Test
     Given a user is on a member site visitor page
     """
@@ -20,7 +19,7 @@ Feature:
     Then the page should meet "wcag2a" accessibility guidelines
 
 
-  @postSrLandingAccessibility
+  @postSrLandingAccessibilityNoContact
   Scenario: Vistor Post SR Survery Landing Page no_contact Accessibility Test
     Given a user is on a member site visitor page
     """
@@ -30,7 +29,7 @@ Feature:
     Then the page should meet "wcag2a" accessibility guidelines
 
 
-  @postSrLandingAccessibility
+  @postSrLandingAccessibilityNoLonger
   Scenario: Vistor Post SR Survery Landing Page no_longer_doing Accessibility Test
     Given a user is on a member site visitor page
     """
@@ -40,7 +39,7 @@ Feature:
     Then the page should meet "wcag2a" accessibility guidelines
 
 
-  @workingWithAProPageLoadSegment
+  @workingWithAProPageLoadSegment @postSrLandingFeature
   Scenario: Vistor Post SR Survery Landing Page working_with_pro Segment Page Load
     Given a user is on a member site visitor review page
     """
@@ -62,7 +61,7 @@ Feature:
     Then the landing URL contains ".angieslist.com/app/lead/survey/sr/working_with_pro?entry_point_id=34138795"
 
 
-  @stillDecidingPageLoadSegment
+  @stillDecidingPageLoadSegment @postSrLandingFeature
   Scenario: Vistor Post SR Survery Landing Page still_deciding Segment Page Load
     Given a user is on a member site visitor review page
     """
@@ -84,7 +83,7 @@ Feature:
     Then the landing URL contains ".angieslist.com/app/lead/survey/sr/still_deciding?entry_point_id=34138796"
 
 
-  @noContactsPageLoadSegment
+  @noContactsPageLoadSegment @postSrLandingFeature
   Scenario: Vistor Post SR Survery Landing Page no_contact Segment Page Load
     Given a user is on a member site visitor review page
     """
@@ -106,7 +105,7 @@ Feature:
     Then the landing URL contains ".angieslist.com/app/lead/survey/sr/no_contact?entry_point_id=34138797"
 
 
-  @noLongerDoingPageLoadSegment
+  @noLongerDoingPageLoadSegment @postSrLandingFeature
   Scenario: Vistor Post SR Survery Landing Page no_longer_doing Segment Page Load
     Given a user is on a member site visitor review page
     """
@@ -127,7 +126,7 @@ Feature:
       | url               |         |
     Then the landing URL contains ".angieslist.com/app/lead/survey/sr/no_longer_doing?entry_point_id=34138798"
 
-  @workingWithProClick
+  @workingWithProClick @postSrLandingFeature
   Scenario: Vistor Post SR Survery Landing Page working_with_pro Segment Click
     Given a user is on a member site visitor review page
     """
@@ -148,7 +147,7 @@ Feature:
     Then the landing URL contains ".angieslist.com/?entry_point_id=34138795"
 
 
-  @stillDecidingClick
+  @stillDecidingClick @postSrLandingFeature
   Scenario: Vistor Post SR Survery Landing Page still_deciding Segment Click
     Given a user is on a member site visitor review page
     """
@@ -169,7 +168,7 @@ Feature:
     Then the landing URL contains ".angieslist.com/?entry_point_id=34138796"
 
 
-  @noContactClick
+  @noContactClick @postSrLandingFeature
   Scenario: Vistor Post SR Survery Landing Page no_contact Segment Click
     Given a user is on a member site visitor review page
     """
@@ -190,7 +189,7 @@ Feature:
     Then the landing URL contains ".angieslist.com/?entry_point_id=34138797"
 
 
-  @noLongerDoingClick
+  @noLongerDoingClick @postSrLandingFeature
   Scenario: Vistor Post SR Survery Landing Page no_contact Segment Click
     Given a user is on a member site visitor review page
     """
