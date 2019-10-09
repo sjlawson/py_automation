@@ -3,7 +3,7 @@ Feature:
 
   @companyListPageCall
   Scenario: Segment pagecall when companylist page loads
-    Given user is on the visitor site comnpanylist page
+    Given user is on the visitor site companylist page
     When a segment page call is sent for a unique field value pair
       | unique_field | unique_value   |
       | name         | Visitor : Directory |
@@ -26,7 +26,7 @@ Feature:
 
   @companyListPageHeaderJoinClick @companyListPageHeader @companyListTreeHeader
   Scenario: User clicks on Header Join button on the Drupal CompanyList page
-    Given user is on the visitor site comnpanylist page
+    Given user is on the visitor site companylist page
     When a user performs actions
       | action_method   | action_params      |
       | move_to_element | id: header-join    |
@@ -44,7 +44,7 @@ Feature:
 
   @companyListPageHeaderSignInClick @companyListPageHeader @companyListTreeHeader
   Scenario: User clicks on Header Sign In button on the Drupal CompanyList page
-    Given user is on the visitor site comnpanylist page
+    Given user is on the visitor site companylist page
     When a user performs actions
       | action_method   | action_params      |
       | move_to_element | id: header-sign-in |
@@ -62,7 +62,7 @@ Feature:
 
   @companyListPageHeaderBusinessOwners @companyListPageHeader @companyListTreeHeader
   Scenario: User clicks on the Business Owners button in the header on the Drupal CompanyList page
-    Given user is on the visitor site comnpanylist page
+    Given user is on the visitor site companylist page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | id: business-center |
@@ -80,7 +80,7 @@ Feature:
 
   @companyListPageMoreJunk @companyListPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on More NearMe in the header on the Drupal CompanyList Page
-    Given user is on the visitor site comnpanylist page
+    Given user is on the visitor site companylist page
     When a user performs actions
       | action_method   | action_params                                      |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(4) > label |
@@ -98,7 +98,7 @@ Feature:
 
   @companyListPageLawnTreeService @companyListPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Tree Service - More in the header on the Drupal CompanyList Page
-    Given user is on the visitor site comnpanylist page
+    Given user is on the visitor site companylist page
     When a user performs actions
       | action_method   | action_params                                                               |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(1) > label                          |
@@ -116,7 +116,7 @@ Feature:
 
   @companyListPageArticlesViewAll @companyListPageHeader @companyListTreeHeader
   Scenario: User hovers then clicks on Articles & Advice menu view all articles link in header on the Drupal CompanyList Page
-    Given user is on the visitor site comnpanylist page
+    Given user is on the visitor site companylist page
     When a user performs actions
       | action_method   | action_params                                      |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label |
@@ -138,7 +138,7 @@ Feature:
 
   @companyListPageBreadCrumbClick @companyListPageBody @companyListTreeBody
   Scenario: User clicks on the breadcrumb link in the body on the Drupal CompanyList Page
-    Given user is on the visitor site comnpanylist page
+    Given user is on the visitor site companylist page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | css: #block-system-main > div > div.container.clearfix > div.panel-pane.pane-breadcrumb-block > div > div > div > a:nth-child(2) |
@@ -156,7 +156,7 @@ Feature:
 
   @companyListPageCatSearchSelectPlumbing @companyListPageBody @companyListTreeBody
   Scenario: User clicks on the Choose A Category link in the body and selects Plumbing - Drupal CompanyList Page
-    Given user is on the visitor site comnpanylist page
+    Given user is on the visitor site companylist page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | css: #edit-category |
@@ -178,7 +178,7 @@ Feature:
 
   @companyListPageCatSearchPlumbing @companyListPageBody @companyListTreeBody
   Scenario: User clicks on the Choose A Cat link in the body on the Drupal CompanyList Page
-    Given user is on the visitor site comnpanylist page
+    Given user is on the visitor site companylist page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | css: #edit-category |
@@ -210,7 +210,7 @@ Feature:
 
   @companyListPageSeeAllCatClick @companyListPageBody @companyListTreeBody
   Scenario: User clicks on the See All Categories link in the body on the Drupal CompanyList Page
-    Given user is on the visitor site comnpanylist page
+    Given user is on the visitor site companylist page
     When a user performs actions
       | action_method   | action_params                    |
       | move_to_element | css: #geocat-category-select-all |
@@ -226,7 +226,7 @@ Feature:
 
   @companyListPageSeeAllCat @companyListPageBody @companyListTreeBody
   Scenario: User clicks on the See All Categories link in the body on the Drupal CompanyList Page
-    Given user is on the visitor site comnpanylist page
+    Given user is on the visitor site companylist page
     When a user performs actions
       | action_method   | action_params                    |
       | move_to_element | css: #geocat-category-select-all |
@@ -266,7 +266,7 @@ Feature:
 
   @companyListPageCatClickAsbestos @companyListPageBody @companyListTreeBody
   Scenario: User clicks on the category link in the body on the Drupal CompanyList Page
-    Given user is on the visitor site comnpanylist page
+    Given user is on the visitor site companylist page
     When a user performs actions
       | action_method   | action_params                                                                                                                                                                                  |
       | move_to_element | css: #block-system-main > div > div.row.greyback.row--sub-header > div > section.geocat-cities-list__container.geocat-cities-list__container--static-top-categories > ul > li:nth-child(5) > a |
@@ -276,7 +276,7 @@ Feature:
 
   @companyListPageCatClickGarage @companyListPageBody @companyListTreeBody
   Scenario: User clicks on the category link in the body on the Drupal CompanyList Page
-    Given user is on the visitor site comnpanylist page
+    Given user is on the visitor site companylist page
     When a user performs actions
       | action_method   | action_params                                                                                                                                                                                   |
       | move_to_element | css: #block-system-main > div > div.row.greyback.row--sub-header > div > section.geocat-cities-list__container.geocat-cities-list__container--static-top-categories > ul > li:nth-child(48) > a |
@@ -286,7 +286,7 @@ Feature:
 
   @companyListPageStateClick @companyListPageBody @companyListTreeBody
   Scenario: User clicks on the state link in the body on the Drupal CompanyList Page
-    Given user is on the visitor site comnpanylist page
+    Given user is on the visitor site companylist page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | css: #block-system-main > div > div.row.greyback.row--sub-header > div > div > ul > li:nth-child(30) > a |
@@ -296,7 +296,7 @@ Feature:
 
   @companyListPageMajorMarketClick @companyListPageBody @companyListTreeBody
   Scenario: User clicks on the major market link in the body on the Drupal CompanyList Page
-    Given user is on the visitor site comnpanylist page
+    Given user is on the visitor site companylist page
     When a user performs actions
       | action_method   | action_params                                                                                                                                                                                                          |
       | move_to_element | css: #block-system-main > div > div.row.greyback.row--sub-header > div > section.geocat-cities-list__container.geocat-cities-list__container--major-markets.geocat-major-markets-processed > ul > li:nth-child(62) > a |
@@ -309,7 +309,7 @@ Feature:
 
   @companyListPageFooterTopCityNYC @companyListPageFooter @companyListTreeFooter
   Scenario: User clicks on the footer NYC top city link on Drupal Company List Page
-    Given user is on the visitor site comnpanylist page
+    Given user is on the visitor site companylist page
     When a user performs actions
       | action_method   | action_params                   |
       | move_to_element | id: footer-top-cities-new-york  |
@@ -328,7 +328,7 @@ Feature:
 
   @companyListPageFooterTopCityHouston @companyListPageFooter @companyListTreeFooter
   Scenario: User clicks on the footer Houston top city link on Drupal Company List Page
-    Given user is on the visitor site comnpanylist page
+    Given user is on the visitor site companylist page
     When a user performs actions
       | action_method   | action_params                  |
       | move_to_element | id: footer-top-cities-houston  |
@@ -347,7 +347,7 @@ Feature:
 
   @companyListPageFooterTopCityChi @companyListPageFooter @companyListTreeFooter
   Scenario: User clicks on the footer Chicago top city link on Drupal Company List Page
-    Given user is on the visitor site comnpanylist page
+    Given user is on the visitor site companylist page
     When a user performs actions
       | action_method   | action_params                  |
       | move_to_element | id: footer-top-cities-chicago  |
@@ -366,7 +366,7 @@ Feature:
 
   @companyListPageFooterTopCityIndy @companyListPageFooter @companyListTreeFooter
   Scenario: User clicks on the footer Indianapolis top city link on Drupal Company List Page
-    Given user is on the visitor site comnpanylist page
+    Given user is on the visitor site companylist page
     When a user performs actions
       | action_method   | action_params                       |
       | move_to_element | id: footer-top-cities-indianapolis  |
@@ -385,7 +385,7 @@ Feature:
 
   @companyListPageFooterTopCityBos @companyListPageFooter @companyListTreeFooter
   Scenario: User clicks on the footer Boston top city link on Drupal Company List Page
-    Given user is on the visitor site comnpanylist page
+    Given user is on the visitor site companylist page
     When a user performs actions
       | action_method   | action_params                 |
       | move_to_element | id: footer-top-cities-boston  |
@@ -403,7 +403,7 @@ Feature:
 
   @companyListPageFooterTopCityATL @companyListPageFooter @companyListTreeFooter
   Scenario: User clicks on the footer Atlanta top city link on Drupal Company List Page
-    Given user is on the visitor site comnpanylist page
+    Given user is on the visitor site companylist page
     When a user performs actions
       | action_method   | action_params                  |
       | move_to_element | id: footer-top-cities-atlanta  |
@@ -421,7 +421,7 @@ Feature:
 
   @companyListPageFooterTopCityCinci @companyListPageFooter @companyListTreeFooter
   Scenario: User clicks on the footer Cincinnati top city link on Drupal Company List Page
-    Given user is on the visitor site comnpanylist page
+    Given user is on the visitor site companylist page
     When a user performs actions
       | action_method   | action_params                     |
       | move_to_element | id: footer-top-cities-cincinnati  |
@@ -439,7 +439,7 @@ Feature:
 
   @companyListPageFooterTopCityLA @companyListPageFooter @companyListTreeFooter
   Scenario: User clicks on the footer Los Angeles top city link on Drupal Company List Page
-    Given user is on the visitor site comnpanylist page
+    Given user is on the visitor site companylist page
     When a user performs actions
       | action_method   | action_params                      |
       | move_to_element | id: footer-top-cities-los-angeles  |
@@ -457,7 +457,7 @@ Feature:
 
   @companyListPageFooterTopCityDal @companyListPageFooter @companyListTreeFooter
   Scenario: User clicks on the footer Dallas top city link on Drupal Company List Page
-    Given user is on the visitor site comnpanylist page
+    Given user is on the visitor site companylist page
     When a user performs actions
       | action_method   | action_params                 |
       | move_to_element | id: footer-top-cities-dallas  |
@@ -475,7 +475,7 @@ Feature:
 
   @companyListPageFooterTopCityPitt @companyListPageFooter @companyListTreeFooter
   Scenario: User clicks on the footer Pittsburgh top city link on Drupal Company List Page
-    Given user is on the visitor site comnpanylist page
+    Given user is on the visitor site companylist page
     When a user performs actions
       | action_method   | action_params                     |
       | move_to_element | id: footer-top-cities-pittsburgh  |
@@ -493,7 +493,7 @@ Feature:
 
   @companyListPageFooterTopCityMinn @companyListPageFooter @companyListTreeFooter
   Scenario: User clicks on the footer Minneapolis top city link on Drupal Company List Page
-    Given user is on the visitor site comnpanylist page
+    Given user is on the visitor site companylist page
     When a user performs actions
       | action_method   | action_params                      |
       | move_to_element | id: footer-top-cities-minneapolis  |
@@ -511,7 +511,7 @@ Feature:
 
   @companyListPageFooterTopCityLV @companyListPageFooter @companyListTreeFooter
   Scenario: User clicks on the footer Las Vegas top city link on Drupal Company List Page
-    Given user is on the visitor site comnpanylist page
+    Given user is on the visitor site companylist page
     When a user performs actions
       | action_method   | action_params                    |
       | move_to_element | id: footer-top-cities-las-vegas  |
@@ -529,7 +529,7 @@ Feature:
 
   @companyListPageFooterTopCitySA @companyListPageFooter @companyListTreeFooter
   Scenario: User clicks on the footer San Antonio top city link on Drupal Company List Page
-    Given user is on the visitor site comnpanylist page
+    Given user is on the visitor site companylist page
     When a user performs actions
       | action_method   | action_params                      |
       | move_to_element | id: footer-top-cities-san-antonio  |
@@ -547,7 +547,7 @@ Feature:
 
   @companyListPageFooterTopCityTampa @companyListPageFooter @companyListTreeFooter
   Scenario: User clicks on the footer Tampa top city link on Drupal Company List Page
-    Given user is on the visitor site comnpanylist page
+    Given user is on the visitor site companylist page
     When a user performs actions
       | action_method   | action_params                    |
       | move_to_element | id: footer-top-cities-tampa-bay  |
@@ -565,7 +565,7 @@ Feature:
 
   @companyListPageFooterSegmentJoinForFree @companyListPageFooter @companyListTreeFooter
   Scenario: User clicks on the footer-left Join For Free icon on Drupal Company List Page
-    Given user is on the visitor site comnpanylist page
+    Given user is on the visitor site companylist page
     When a user performs actions
       | action_method   | action_params                |
       | move_to_element | css: #footer--join-for-free  |
@@ -583,7 +583,7 @@ Feature:
 
   @companyListPageFooterSegmentCompanyList @companyListPageFooter @companyListTreeFooter
   Scenario: User clicks on the footer-left Company List icon on Drupal Company List Page
-    Given user is on the visitor site comnpanylist page
+    Given user is on the visitor site companylist page
     When a user performs actions
       | action_method   | action_params                    |
       | move_to_element | id: footer--find-local-business  |
@@ -601,7 +601,7 @@ Feature:
 
   @companyListPageFooterSegmentNearMe @companyListPageFooter @companyListTreeFooter
   Scenario: User clicks on the footer-left Near Me icon on Drupal Company List Page
-    Given user is on the visitor site comnpanylist page
+    Given user is on the visitor site companylist page
     When a user performs actions
       | action_method   | action_params      |
       | move_to_element | id: footer--nearme |
@@ -619,7 +619,7 @@ Feature:
 
   @companyListPageFooterSegmentHowItWorks @companyListPageFooter @companyListTreeFooter
   Scenario: User clicks on the footer-left How It Works icon on Drupal Company List Page
-    Given user is on the visitor site comnpanylist page
+    Given user is on the visitor site companylist page
     When a user performs actions
       | action_method   | action_params            |
       | move_to_element | id: footer--how-it-works |
@@ -637,7 +637,7 @@ Feature:
 
   @companyListPageFooterSegmentSolutionCenter @companyListPageFooter @companyListTreeFooter
   Scenario: User clicks on the footer-left Solution Center icon on Drupal Company List Page
-    Given user is on the visitor site comnpanylist page
+    Given user is on the visitor site companylist page
     When a user performs actions
       | action_method   | action_params               |
       | move_to_element | id: footer--solution-center |
@@ -655,7 +655,7 @@ Feature:
 
   @companyListPageFooterSegmentPhotoGalleries @companyListPageFooter @companyListTreeFooter
   Scenario: User clicks on the footer-left Photos icon on Drupal Company List Page
-    Given user is on the visitor site comnpanylist page
+    Given user is on the visitor site companylist page
     When a user performs actions
       | action_method   | action_params               |
       | move_to_element | id: footer--photo-galleries |
@@ -673,7 +673,7 @@ Feature:
 
   @companyListPageFooterSegmentVideos @companyListPageFooter @companyListTreeFooter
   Scenario: User clicks on the footer-left Videos icon on Drupal Company List Page
-    Given user is on the visitor site comnpanylist page
+    Given user is on the visitor site companylist page
     When a user performs actions
       | action_method   | action_params      |
       | move_to_element | id: footer--video  |
@@ -691,7 +691,7 @@ Feature:
 
   @companyListPageFooterSegmentAnswers @companyListPageFooter @companyListTreeFooter
   Scenario: User clicks on the footer-left Answers icon on Drupal Company List Page
-    Given user is on the visitor site comnpanylist page
+    Given user is on the visitor site companylist page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | id: footer--answers |
@@ -709,7 +709,7 @@ Feature:
 
   @companyListPageFooterSegmentBusinessOwners @companyListPageFooter @companyListTreeFooter
   Scenario: User clicks on the footer-left Business Owners icon on Drupal Company List Page
-    Given user is on the visitor site comnpanylist page
+    Given user is on the visitor site companylist page
     When a user performs actions
       | action_method   | action_params               |
       | move_to_element | id: footer--business-owners |
@@ -727,7 +727,7 @@ Feature:
 
   @companyListPageFooterSegmentInvestorRelations @companyListPageFooter @companyListTreeFooter
   Scenario: User clicks on the footer-left Investor Relations icon on Drupal Company List Page
-    Given user is on the visitor site comnpanylist page
+    Given user is on the visitor site companylist page
     When a user performs actions
       | action_method   | action_params        |
       | move_to_element | id: footer--investor |
@@ -743,7 +743,7 @@ Feature:
 
   @companyListPageFooterSegmentAboutUs @companyListPageFooter @companyListTreeFooter
   Scenario: User clicks on the footer-left About Us icon on Drupal Company List Page
-    Given user is on the visitor site comnpanylist page
+    Given user is on the visitor site companylist page
     When a user performs actions
       | action_method   | action_params           |
       | move_to_element | id: footer--about-angie |
@@ -761,7 +761,7 @@ Feature:
 
   @companyListPageFooterSegmentCareers @companyListPageFooter @companyListTreeFooter
   Scenario: User clicks on the footer-left Careers icon on Drupal Company List Page
-    Given user is on the visitor site comnpanylist page
+    Given user is on the visitor site companylist page
     When a user performs actions
       | action_method   | action_params           |
       | move_to_element | id: footer--careers     |
@@ -777,7 +777,7 @@ Feature:
 
   @companyListPageFooterSegmentFAQ @companyListPageFooter @companyListTreeFooter
   Scenario: User clicks on the footer-left FAQ icon on Drupal Company List Page
-    Given user is on the visitor site comnpanylist page
+    Given user is on the visitor site companylist page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | id: footer--faqs    |
@@ -796,7 +796,7 @@ Feature:
 
   @companyListPageFooterSegmentContactUs @companyListPageFooter @companyListTreeFooter
   Scenario: User clicks on the footer-left Contact Us icon on Drupal Company List Page
-    Given user is on the visitor site comnpanylist page
+    Given user is on the visitor site companylist page
     When a user performs actions
       | action_method   | action_params           |
       | move_to_element | id: footer--contact-us  |
@@ -814,7 +814,7 @@ Feature:
 
   @companyListPageFooterSegmentJoin @companyListPageFooter @companyListTreeFooter
   Scenario: User clicks on the footer-right Join icon on Drupal Company List Page
-    Given user is on the visitor site comnpanylist page
+    Given user is on the visitor site companylist page
     When a user performs actions
       | action_method   | action_params    |
       | move_to_element | id: footer-join  |
@@ -832,7 +832,7 @@ Feature:
 
   @companyListPageFooterSegmentTermsOfUse @companyListPageFooter @companyListTreeFooter
   Scenario: User clicks on the footer TermsOfUse icon on Drupal Company List Page
-    Given user is on the visitor site comnpanylist page
+    Given user is on the visitor site companylist page
     When a user performs actions
       | action_method   | action_params     |
       | move_to_element | id: footer--terms |
@@ -848,7 +848,7 @@ Feature:
 
   @companyListPageFooterSegmentPrivacyPolicy @companyListPageFooter @companyListTreeFooter
   Scenario: User clicks on the footer Privacy Policy icon on Drupal Company List Page
-    Given user is on the visitor site comnpanylist page
+    Given user is on the visitor site companylist page
     When a user performs actions
       | action_method   | action_params              |
       | move_to_element | id: footer--privacy-policy |

@@ -50,7 +50,7 @@ def step_impl(context):
     time.sleep(1)
 
 
-@given('user is on the visitor site comnpanylist page')
+@given('user is on the visitor site companylist page')
 def step_impl(context):
     appsuite_env = 'al_visitor_site'
     appsuite_url = context.appsuites[appsuite_env]['base_url']
