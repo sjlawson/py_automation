@@ -24,16 +24,16 @@ Feature:
 
 ##### Header Tests #####
 
-  @companyListPageHeaderJoinClick @companyListPageHeader @companyListTreeHeader
-  Scenario: User clicks on Header Join button on the Drupal CompanyList page
+
+  @headerJoinNowCompanyListPage @companyListPageHeader @companyListTreeHeader @companyListTreeRegression @companyListTreeSmoke
+  Scenario: user is on the visitor site companylist page and clicks on Join Now
     Given user is on the visitor site companylist page
     When a user performs actions
-      | action_method   | action_params      |
-      | move_to_element | id: header-join    |
-      | click           |                    |
+      | action_method | action_params    |
+      | click         | id: header-join  |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
-      | activityLocation | Visitor : Directory |
+      | unique_field | unique_value        |
+      | description  | Join link in header |
     And the segment call contains parameters
       | prop_key         | prop_value          |
       | activityLocation | Visitor : Directory |
@@ -42,96 +42,1379 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/app/signup"
 
-  @companyListPageHeaderSignInClick @companyListPageHeader @companyListTreeHeader
-  Scenario: User clicks on Header Sign In button on the Drupal CompanyList page
+
+  @headerSignInCompanyListPage @companyListPageHeader @companyListTreeHeader @companyListTreeRegression @companyListTreeSmoke
+  Scenario: user is on the visitor site companylist page and clicks on Sign In button
     Given user is on the visitor site companylist page
     When a user performs actions
-      | action_method   | action_params      |
-      | move_to_element | id: header-sign-in |
-      | click           |                    |
+      | action_method | action_params      |
+      | click         | id: header-sign-in |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value            |
-      | activityLocation | Visitor : Directory |
+      | unique_field | unique_value           |
+      | description  | Sign In link in header |
     And the segment call contains parameters
-      | prop_key               | prop_value                        |
-      | activityLocation       | Visitor : Directory               |
-      | description            | Sign In link in header            |
-      | userId                 |                                   |
+      | prop_key         | prop_value             |
+      | activityLocation | Visitor : Directory    |
+      | description      | Sign In link in header |
+      | userId           |                        |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/member/login"
 
-  @companyListPageHeaderBusinessOwners @companyListPageHeader @companyListTreeHeader
-  Scenario: User clicks on the Business Owners button in the header on the Drupal CompanyList page
+
+  @headerBusinessCenterCompanyListPage @companyListPageHeader @companyListTreeHeader @companyListTreeRegression @companyListTreeSmoke
+  Scenario: user is on the visitor site companylist page and clicks on Business Center button
     Given user is on the visitor site companylist page
     When a user performs actions
-      | action_method   | action_params       |
-      | move_to_element | id: business-center |
-      | click           |                     |
+      | action_method | action_params       |
+      | click         | id: business-center |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value            |
-      | activityLocation | Visitor : Directory |
+      | unique_field | unique_value                   |
+      | description  | Business Owners link in header |
     And the segment call contains parameters
-      | prop_key               | prop_value                        |
-      | activityLocation       | Visitor : Directory               |
-      | description            | Business Owners link in header    |
-      | userId                 |                                   |
+      | prop_key         | prop_value                     |
+      | activityLocation | Visitor : Directory            |
+      | description      | Business Owners link in header |
+      | userId           |                                |
     And we wait "1" seconds for the next page to load
     And the landing URL contains "angieslistbusinesscenter.com"
 
-  @companyListPageMoreJunk @companyListPageHeader @companyListTreeHeader
-  Scenario: User hovers then clicks on More NearMe in the header on the Drupal CompanyList Page
-    Given user is on the visitor site companylist page
-    When a user performs actions
-      | action_method   | action_params                                      |
-      | move_to_element | css: #secondary-nav > ul > li:nth-child(4) > label |
-      | click           | css: #more-toggle > ul > li:nth-child(4) > a       |
-    Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value             |
-      | activityLocation | Visitor : Directory  |
-    And the segment call contains parameters
-      | prop_key               | prop_value                         |
-      | activityLocation       | Visitor : Directory                |
-      | description            | More menu category link in header  |
-      | userId                 |                                    |
-    And we wait "1" seconds for the next page to load
-    And the landing URL contains ".angieslist.com/companylist/hauling.htm"
 
-  @companyListPageLawnTreeService @companyListPageHeader @companyListTreeHeader
-  Scenario: User hovers then clicks on Tree Service - More in the header on the Drupal CompanyList Page
+
+  @companyListPageSegmentHeaderInteriorApplianceRepair @companyListPageHeader @companyListTreeHeader @companyListTreeRegression
+  Scenario: User hovers then clicks on Interior Appliance Repair in the header on the CompanyList page
     Given user is on the visitor site companylist page
     When a user performs actions
       | action_method   | action_params                                                               |
       | move_to_element | css: #secondary-nav > ul > li:nth-child(1) > label                          |
       | click           | css: #secondary-nav > ul > li:nth-child(1) > div > ul > li:nth-child(1) > a |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value            |
+      | unique_field     | unique_value        |
       | activityLocation | Visitor : Directory |
     And the segment call contains parameters
-      | prop_key               | prop_value                            |
-      | activityLocation       | Visitor : Directory                   |
-      | description            | Interior menu category link in header |
-      | userId                 |                                       |
+      | prop_key         | prop_value                            |
+      | activityLocation | Visitor : Directory                   |
+      | description      | Interior menu category link in header |
+      | userId           |                                       |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/appliance-repair.htm"
 
-  @companyListPageArticlesViewAll @companyListPageHeader @companyListTreeHeader
-  Scenario: User hovers then clicks on Articles & Advice menu view all articles link in header on the Drupal CompanyList Page
+
+  @companyListPageSegmentHeaderInteriorCarpetCleaning  @companyListPageHeader @companyListTreeHeader @companyListTreeRegression
+  Scenario: User hovers then clicks on Interior Carpet Cleaning in the header on the CompanyList page
+    Given user is on the visitor site companylist page
+    When a user performs actions
+      | action_method   | action_params                                                               |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(1) > label                          |
+      | click           | css: #secondary-nav > ul > li:nth-child(1) > div > ul > li:nth-child(2) > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value        |
+      | activityLocation | Visitor : Directory |
+    And the segment call contains parameters
+      | prop_key         | prop_value                            |
+      | activityLocation | Visitor : Directory                   |
+      | description      | Interior menu category link in header |
+      | userId           |                                       |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/carpet-cleaning.htm"
+
+
+  @companyListPageSegmentHeaderInteriorContractors @companyListPageHeader @companyListTreeHeader @companyListTreeRegression
+  Scenario: User hovers then clicks on Interior Contractors in the header on the CompanyList page
+    Given user is on the visitor site companylist page
+    When a user performs actions
+      | action_method   | action_params                                                               |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(1) > label                          |
+      | click           | css: #secondary-nav > ul > li:nth-child(1) > div > ul > li:nth-child(3) > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value        |
+      | activityLocation | Visitor : Directory |
+    And the segment call contains parameters
+      | prop_key         | prop_value                            |
+      | activityLocation | Visitor : Directory                   |
+      | description      | Interior menu category link in header |
+      | userId           |                                       |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/contractor.htm"
+
+
+  @companyListPageSegmentHeaderInteriorDrywall @companyListPageHeader @companyListTreeHeader @companyListTreeRegression
+  Scenario: User hovers then clicks on Interior Drywall in the header on the CompanyList page
+    Given user is on the visitor site companylist page
+    When a user performs actions
+      | action_method   | action_params                                                               |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(1) > label                          |
+      | click           | css: #secondary-nav > ul > li:nth-child(1) > div > ul > li:nth-child(4) > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value        |
+      | activityLocation | Visitor : Directory |
+    And the segment call contains parameters
+      | prop_key         | prop_value                            |
+      | activityLocation | Visitor : Directory                   |
+      | description      | Interior menu category link in header |
+      | userId           |                                       |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/drywall.htm"
+
+  @companyListPageSegmentHeaderInteriorElectrical @companyListPageHeader @companyListTreeHeader @companyListTreeRegression @companyListTreeSmoke
+  Scenario: User hovers then clicks on Interior Electrical in the header on the CompanyList page
+    Given user is on the visitor site companylist page
+    When a user performs actions
+      | action_method   | action_params                                                               |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(1) > label                          |
+      | click           | css: #secondary-nav > ul > li:nth-child(1) > div > ul > li:nth-child(5) > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value        |
+      | activityLocation | Visitor : Directory |
+    And the segment call contains parameters
+      | prop_key         | prop_value                            |
+      | activityLocation | Visitor : Directory                   |
+      | description      | Interior menu category link in header |
+      | userId           |                                       |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/electrical.htm"
+
+  @companyListPageSegmentHeaderInteriorFlooring @companyListPageHeader @companyListTreeHeader @companyListTreeRegression
+  Scenario: User hovers then clicks on Interior Flooring in the header on the CompanyList page
+    Given user is on the visitor site companylist page
+    When a user performs actions
+      | action_method   | action_params                                                               |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(1) > label                          |
+      | click           | css: #secondary-nav > ul > li:nth-child(1) > div > ul > li:nth-child(6) > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value        |
+      | activityLocation | Visitor : Directory |
+    And the segment call contains parameters
+      | prop_key         | prop_value                            |
+      | activityLocation | Visitor : Directory                   |
+      | description      | Interior menu category link in header |
+      | userId           |                                       |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/flooring.htm"
+
+  @companyListPageSegmentHeaderInteriorHVAC @companyListPageHeader @companyListTreeHeader @companyListTreeRegression
+  Scenario: User hovers then clicks on Interior HVAC in the header on the CompanyList page
+    Given user is on the visitor site companylist page
+    When a user performs actions
+      | action_method   | action_params                                                               |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(1) > label                          |
+      | click           | css: #secondary-nav > ul > li:nth-child(1) > div > ul > li:nth-child(7) > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value        |
+      | activityLocation | Visitor : Directory |
+    And the segment call contains parameters
+      | prop_key         | prop_value                            |
+      | activityLocation | Visitor : Directory                   |
+      | description      | Interior menu category link in header |
+      | userId           |                                       |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/hvac.htm"
+
+  @companyListPageSegmentHeaderInteriorHouseCleaning @companyListPageHeader @companyListTreeHeader @companyListTreeRegression
+  Scenario: User hovers then clicks on House Cleaning in the header on the CompanyList page
+    Given user is on the visitor site companylist page
+    When a user performs actions
+      | action_method   | action_params                                                               |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(1) > label                          |
+      | click           | css: #secondary-nav > ul > li:nth-child(1) > div > ul > li:nth-child(8) > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value        |
+      | activityLocation | Visitor : Directory |
+    And the segment call contains parameters
+      | prop_key         | prop_value                            |
+      | activityLocation | Visitor : Directory                   |
+      | description      | Interior menu category link in header |
+      | userId           |                                       |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/house-cleaning.htm"
+
+  @companyListPageSegmentHeaderInteriorPainting @companyListPageHeader @companyListTreeHeader @companyListTreeRegression
+  Scenario: User hovers then clicks on Interior Painting in the header on the CompanyList page
+    Given user is on the visitor site companylist page
+    When a user performs actions
+      | action_method   | action_params                                                               |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(1) > label                          |
+      | click           | css: #secondary-nav > ul > li:nth-child(1) > div > ul > li:nth-child(9) > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value        |
+      | activityLocation | Visitor : Directory |
+    And the segment call contains parameters
+      | prop_key         | prop_value                            |
+      | activityLocation | Visitor : Directory                   |
+      | description      | Interior menu category link in header |
+      | userId           |                                       |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/interior-painting.htm"
+
+  @companyListPageSegmentHeaderInteriorPlumbing @companyListPageHeader @companyListTreeHeader @companyListTreeRegression
+  Scenario: User hovers then clicks on Interior Plumbing in the header on the CompanyList page
+    Given user is on the visitor site companylist page
+    When a user performs actions
+      | action_method   | action_params                                                                |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(1) > label                           |
+      | click           | css: #secondary-nav > ul > li:nth-child(1) > div > ul > li:nth-child(10) > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value        |
+      | activityLocation | Visitor : Directory |
+    And the segment call contains parameters
+      | prop_key         | prop_value                            |
+      | activityLocation | Visitor : Directory                   |
+      | description      | Interior menu category link in header |
+      | userId           |                                       |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/plumbing.htm"
+
+  @companyListPageSegmentHeaderInteriorRemodeling @companyListPageHeader @companyListTreeHeader @companyListTreeRegression
+  Scenario: User hovers then clicks on Interior Remodeling in the header on the CompanyList page
+    Given user is on the visitor site companylist page
+    When a user performs actions
+      | action_method   | action_params                                                                |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(1) > label                           |
+      | click           | css: #secondary-nav > ul > li:nth-child(1) > div > ul > li:nth-child(11) > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value        |
+      | activityLocation | Visitor : Directory |
+    And the segment call contains parameters
+      | prop_key         | prop_value                            |
+      | activityLocation | Visitor : Directory                   |
+      | description      | Interior menu category link in header |
+      | userId           |                                       |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/kitchen-and-bath-remodeling.htm"
+
+  @companyListPageSegmentHeaderInteriorViewAll @companyListPageHeader @companyListTreeHeader @companyListTreeRegression
+  Scenario: User hovers then clicks on Interior View All in the header on the CompanyList page
+    Given user is on the visitor site companylist page
+    When a user performs actions
+      | action_method   | action_params                                              |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(1) > label         |
+      | click           | css: #secondary-nav > ul > li:nth-child(1) > div > div > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value        |
+      | activityLocation | Visitor : Directory |
+    And the segment call contains parameters
+      | prop_key         | prop_value                                       |
+      | activityLocation | Visitor : Directory                              |
+      | description      | Interior menu view all categories link in header |
+      | userId           |                                                  |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/"
+
+  @companyListPageSegmentHeaderExteriorConcreteRepair @companyListPageHeader @companyListTreeHeader @companyListTreeRegression
+  Scenario: User hovers then clicks on Concrete Repair in the header on the CompanyList page
+    Given user is on the visitor site companylist page
+    When a user performs actions
+      | action_method   | action_params                                                               |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(2) > label > span                   |
+      | click           | css: #secondary-nav > ul > li:nth-child(2) > div > ul > li:nth-child(1) > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value        |
+      | activityLocation | Visitor : Directory |
+    And the segment call contains parameters
+      | prop_key         | prop_value                            |
+      | activityLocation | Visitor : Directory                   |
+      | description      | Exterior menu category link in header |
+      | userId           |                                       |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/concrete-repair.htm"
+
+  @companyListPageSegmentHeaderExteriorDoors @companyListPageHeader @companyListTreeHeader @companyListTreeRegression
+  Scenario: User hovers then clicks on Exterior Doors in the header on the CompanyList page
+    Given user is on the visitor site companylist page
+    When a user performs actions
+      | action_method   | action_params                                                               |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(2) > label > span                   |
+      | click           | css: #secondary-nav > ul > li:nth-child(2) > div > ul > li:nth-child(2) > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value        |
+      | activityLocation | Visitor : Directory |
+    And the segment call contains parameters
+      | prop_key         | prop_value                            |
+      | activityLocation | Visitor : Directory                   |
+      | description      | Exterior menu category link in header |
+      | userId           |                                       |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/doors.htm"
+
+  @companyListPageSegmentHeaderExteriorDriveways @companyListPageHeader @companyListTreeHeader @companyListTreeRegression
+  Scenario: User hovers then clicks on Driveways in the header on the CompanyList page
+    Given user is on the visitor site companylist page
+    When a user performs actions
+      | action_method   | action_params                                                               |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(2) > label > span                   |
+      | click           | css: #secondary-nav > ul > li:nth-child(2) > div > ul > li:nth-child(3) > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value        |
+      | activityLocation | Visitor : Directory |
+    And the segment call contains parameters
+      | prop_key         | prop_value                            |
+      | activityLocation | Visitor : Directory                   |
+      | description      | Exterior menu category link in header |
+      | userId           |                                       |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/driveways.htm"
+
+  @companyListPageSegmentHeaderExteriorPainting @companyListPageHeader @companyListTreeHeader @companyListTreeRegression @companyListTreeSmoke
+  Scenario: User hovers then clicks on Exterior Painting in the header on the CompanyList page
+    Given user is on the visitor site companylist page
+    When a user performs actions
+      | action_method   | action_params                                                               |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(2) > label > span                   |
+      | click           | css: #secondary-nav > ul > li:nth-child(2) > div > ul > li:nth-child(4) > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value        |
+      | activityLocation | Visitor : Directory |
+    And the segment call contains parameters
+      | prop_key         | prop_value                            |
+      | activityLocation | Visitor : Directory                   |
+      | description      | Exterior menu category link in header |
+      | userId           |                                       |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/exterior-painting.htm"
+
+  @companyListPageSegmentHeaderExteriorGarage @companyListPageHeader @companyListTreeHeader @companyListTreeRegression
+  Scenario: User hovers then clicks on and clicks on Garage in the header on the CompanyList page
+    Given user is on the visitor site companylist page
+    When a user performs actions
+      | action_method   | action_params                                                               |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(2) > label > span                   |
+      | click           | css: #secondary-nav > ul > li:nth-child(2) > div > ul > li:nth-child(5) > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value        |
+      | activityLocation | Visitor : Directory |
+    And the segment call contains parameters
+      | prop_key         | prop_value                            |
+      | activityLocation | Visitor : Directory                   |
+      | description      | Exterior menu category link in header |
+      | userId           |                                       |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/garage-doors.htm"
+
+  @companyListPageSegmentHeaderExteriorGutterCleaning @companyListPageHeader @companyListTreeHeader @companyListTreeRegression
+  Scenario: User hovers then clicks on Gutter Cleaning in the header on the CompanyList page
+    Given user is on the visitor site companylist page
+    When a user performs actions
+      | action_method   | action_params                                                               |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(2) > label > span                   |
+      | click           | css: #secondary-nav > ul > li:nth-child(2) > div > ul > li:nth-child(6) > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value        |
+      | activityLocation | Visitor : Directory |
+    And the segment call contains parameters
+      | prop_key         | prop_value                            |
+      | activityLocation | Visitor : Directory                   |
+      | description      | Exterior menu category link in header |
+      | userId           |                                       |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/gutter-cleaning.htm"
+
+  @companyListPageSegmentHeaderExteriorGutterRepair @companyListPageHeader @companyListTreeHeader @companyListTreeRegression
+  Scenario: User hovers then clicks on Gutter Repair in the header on the CompanyList page
+    Given user is on the visitor site companylist page
+    When a user performs actions
+      | action_method   | action_params                                                               |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(2) > label > span                   |
+      | click           | css: #secondary-nav > ul > li:nth-child(2) > div > ul > li:nth-child(7) > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value        |
+      | activityLocation | Visitor : Directory |
+    And the segment call contains parameters
+      | prop_key         | prop_value                            |
+      | activityLocation | Visitor : Directory                   |
+      | description      | Exterior menu category link in header |
+      | userId           |                                       |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/gutter-repair-replacement.htm"
+
+  @companyListPageSegmentHeaderExteriorHomeBuilders @companyListPageHeader @companyListTreeHeader @companyListTreeRegression
+  Scenario: User hovers then clicks on Home Builders in the header on the CompanyList page
+    Given user is on the visitor site companylist page
+    When a user performs actions
+      | action_method   | action_params                                                               |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(2) > label > span                   |
+      | click           | css: #secondary-nav > ul > li:nth-child(2) > div > ul > li:nth-child(8) > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value        |
+      | activityLocation | Visitor : Directory |
+    And the segment call contains parameters
+      | prop_key         | prop_value                            |
+      | activityLocation | Visitor : Directory                   |
+      | description      | Exterior menu category link in header |
+      | userId           |                                       |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/home-builders.htm"
+
+  @companyListPageSegmentHeaderExteriorMasonry @companyListPageHeader @companyListTreeHeader @companyListTreeRegression
+  Scenario: User hovers then clicks on Masonry in the header on the CompanyList page
+    Given user is on the visitor site companylist page
+    When a user performs actions
+      | action_method   | action_params                                                               |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(2) > label                          |
+      | click           | css: #secondary-nav > ul > li:nth-child(2) > div > ul > li:nth-child(9) > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value        |
+      | activityLocation | Visitor : Directory |
+    And the segment call contains parameters
+      | prop_key         | prop_value                            |
+      | activityLocation | Visitor : Directory                   |
+      | description      | Exterior menu category link in header |
+      | userId           |                                       |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/masonry.htm"
+
+  @companyListPageSegmentHeaderExteriorRoofing @companyListPageHeader @companyListTreeHeader @companyListTreeRegression
+  Scenario: User hovers then clicks on Roofing in the header on the CompanyList page
+    Given user is on the visitor site companylist page
+    When a user performs actions
+      | action_method   | action_params                                                                |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(2) > label > span                    |
+      | click           | css: #secondary-nav > ul > li:nth-child(2) > div > ul > li:nth-child(10) > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value        |
+      | activityLocation | Visitor : Directory |
+    And the segment call contains parameters
+      | prop_key         | prop_value                            |
+      | activityLocation | Visitor : Directory                   |
+      | description      | Exterior menu category link in header |
+      | userId           |                                       |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/roofing.htm"
+
+  @companyListPageSegmentHeaderExteriorSiding @companyListPageHeader @companyListTreeHeader @companyListTreeRegression
+  Scenario: User hovers then clicks on Siding in the header on the CompanyList page
+    Given user is on the visitor site companylist page
+    When a user performs actions
+      | action_method   | action_params                                                                |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(2) > label > span                    |
+      | click           | css: #secondary-nav > ul > li:nth-child(2) > div > ul > li:nth-child(11) > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value        |
+      | activityLocation | Visitor : Directory |
+    And the segment call contains parameters
+      | prop_key         | prop_value                            |
+      | activityLocation | Visitor : Directory                   |
+      | description      | Exterior menu category link in header |
+      | userId           |                                       |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/siding.htm"
+
+  @companyListPageSegmentHeaderExteriorWindows @companyListPageHeader @companyListTreeHeader @companyListTreeRegression
+  Scenario: User hovers then clicks on Windows in the header on the CompanyList page
+    Given user is on the visitor site companylist page
+    When a user performs actions
+      | action_method   | action_params                                                                |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(2) > label > span                    |
+      | click           | css: #secondary-nav > ul > li:nth-child(2) > div > ul > li:nth-child(12) > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value        |
+      | activityLocation | Visitor : Directory |
+    And the segment call contains parameters
+      | prop_key         | prop_value                            |
+      | activityLocation | Visitor : Directory                   |
+      | description      | Exterior menu category link in header |
+      | userId           |                                       |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/window-treatments.htm"
+
+  @companyListPageSegmentHeaderExteriorViewAll @companyListPageHeader @companyListTreeHeader @companyListTreeRegression
+  Scenario: User hovers then clicks and clicks on Exterior View All in the header on the CompanyList page
+    Given user is on the visitor site companylist page
+    When a user performs actions
+      | action_method   | action_params                                              |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(2) > label > span  |
+      | click           | css: #secondary-nav > ul > li:nth-child(2) > div > div > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value        |
+      | activityLocation | Visitor : Directory |
+    And the segment call contains parameters
+      | prop_key         | prop_value                                       |
+      | activityLocation | Visitor : Directory                              |
+      | description      | Exterior menu view all categories link in header |
+      | userId           |                                                  |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/"
+
+  @companyListPageSegmentHeaderLawnDecks @companyListPageHeader @companyListTreeHeader @companyListTreeRegression
+  Scenario: User hovers then clicks on and clicks on Decks in the header on the CompanyList page
+    Given user is on the visitor site companylist page
+    When a user performs actions
+      | action_method   | action_params                                                               |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(3) > label                          |
+      | click           | css: #secondary-nav > ul > li:nth-child(3) > div > ul > li:nth-child(1) > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value        |
+      | activityLocation | Visitor : Directory |
+    And the segment call contains parameters
+      | prop_key         | prop_value                                 |
+      | activityLocation | Visitor : Directory                        |
+      | description      | Lawn & Garden menu category link in header |
+      | userId           |                                            |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/decks-and-porches.htm"
+
+  @companyListPageSegmentHeaderLawnFencing @companyListPageHeader @companyListTreeHeader @companyListTreeRegression
+  Scenario: User hovers then clicks on Fencing in the header on the CompanyList page
+    Given user is on the visitor site companylist page
+    When a user performs actions
+      | action_method   | action_params                                                               |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(3) > label                          |
+      | click           | css: #secondary-nav > ul > li:nth-child(3) > div > ul > li:nth-child(2) > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value        |
+      | activityLocation | Visitor : Directory |
+    And the segment call contains parameters
+      | prop_key         | prop_value                                 |
+      | activityLocation | Visitor : Directory                        |
+      | description      | Lawn & Garden menu category link in header |
+      | userId           |                                            |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/fencing.htm"
+
+  @companyListPageSegmentHeaderLawnLandSurveying @companyListPageHeader @companyListTreeHeader @companyListTreeRegression
+  Scenario: User hovers then clicks on Land Surveying in the header on the CompanyList page
+    Given user is on the visitor site companylist page
+    When a user performs actions
+      | action_method   | action_params                                                               |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(3) > label                          |
+      | click           | css: #secondary-nav > ul > li:nth-child(3) > div > ul > li:nth-child(3) > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value        |
+      | activityLocation | Visitor : Directory |
+    And the segment call contains parameters
+      | prop_key         | prop_value                                 |
+      | activityLocation | Visitor : Directory                        |
+      | description      | Lawn & Garden menu category link in header |
+      | userId           |                                            |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/land-surveying.htm"
+
+  @companyListPageSegmentHeaderLawnLandscaping @companyListPageHeader @companyListTreeHeader @companyListTreeRegression @companyListTreeSmoke
+  Scenario: User hovers then clicks on Landscaping in the header on the CompanyList page
+    Given user is on the visitor site companylist page
+    When a user performs actions
+      | action_method   | action_params                                                               |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(3) > label                          |
+      | click           | css: #secondary-nav > ul > li:nth-child(3) > div > ul > li:nth-child(4) > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value        |
+      | activityLocation | Visitor : Directory |
+    And the segment call contains parameters
+      | prop_key         | prop_value                                 |
+      | activityLocation | Visitor : Directory                        |
+      | description      | Lawn & Garden menu category link in header |
+      | userId           |                                            |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/landscaping.htm"
+
+  @companyListPageSegmentHeaderLawnYard @companyListPageHeader @companyListTreeHeader @companyListTreeRegression
+  Scenario: User hovers then clicks on Lawn & Yard in the header on the CompanyList page
+    Given user is on the visitor site companylist page
+    When a user performs actions
+      | action_method   | action_params                                                               |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(3) > label                          |
+      | click           | css: #secondary-nav > ul > li:nth-child(3) > div > ul > li:nth-child(5) > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value        |
+      | activityLocation | Visitor : Directory |
+    And the segment call contains parameters
+      | prop_key         | prop_value                                 |
+      | activityLocation | Visitor : Directory                        |
+      | description      | Lawn & Garden menu category link in header |
+      | userId           |                                            |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/lawn-and-yard-work.htm"
+
+  @companyListPageSegmentHeaderLawnIrrigation @companyListPageHeader @companyListTreeHeader @companyListTreeRegression
+  Scenario: User hovers then clicks on Lawn Irrigation in the header on the CompanyList page
+    Given user is on the visitor site companylist page
+    When a user performs actions
+      | action_method   | action_params                                                               |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(3) > label                          |
+      | click           | css: #secondary-nav > ul > li:nth-child(3) > div > ul > li:nth-child(6) > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value        |
+      | activityLocation | Visitor : Directory |
+    And the segment call contains parameters
+      | prop_key         | prop_value                                 |
+      | activityLocation | Visitor : Directory                        |
+      | description      | Lawn & Garden menu category link in header |
+      | userId           |                                            |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/lawn-irrigation.htm"
+
+  @companyListPageSegmentHeaderLawnMowerRepair @companyListPageHeader @companyListTreeHeader @companyListTreeRegression
+  Scenario: User hovers then clicks on Lawn Mower Repair in the header on the CompanyList page
+    Given user is on the visitor site companylist page
+    When a user performs actions
+      | action_method   | action_params                                                               |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(3) > label                          |
+      | click           | css: #secondary-nav > ul > li:nth-child(3) > div > ul > li:nth-child(7) > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value        |
+      | activityLocation | Visitor : Directory |
+    And the segment call contains parameters
+      | prop_key         | prop_value                                 |
+      | activityLocation | Visitor : Directory                        |
+      | description      | Lawn & Garden menu category link in header |
+      | userId           |                                            |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/lawn-mower-repair.htm"
+
+  @companyListPageSegmentHeaderLawnLeafRemoval @companyListPageHeader @companyListTreeHeader @companyListTreeRegression
+  Scenario: User hovers then clicks on Leaf Removal in the header on the CompanyList page
+    Given user is on the visitor site companylist page
+    When a user performs actions
+      | action_method   | action_params                                                               |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(3) > label                          |
+      | click           | css: #secondary-nav > ul > li:nth-child(3) > div > ul > li:nth-child(8) > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value        |
+      | activityLocation | Visitor : Directory |
+    And the segment call contains parameters
+      | prop_key         | prop_value                                 |
+      | activityLocation | Visitor : Directory                        |
+      | description      | Lawn & Garden menu category link in header |
+      | userId           |                                            |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/leaf-removal.htm"
+
+  @companyListPageSegmentHeaderLawnPatios @companyListPageHeader @companyListTreeHeader @companyListTreeRegression
+  Scenario: User hovers then clicks on Patios in the header on the CompanyList page
+    Given user is on the visitor site companylist page
+    When a user performs actions
+      | action_method   | action_params                                                               |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(3) > label                          |
+      | click           | css: #secondary-nav > ul > li:nth-child(3) > div > ul > li:nth-child(9) > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value        |
+      | activityLocation | Visitor : Directory |
+    And the segment call contains parameters
+      | prop_key         | prop_value                                 |
+      | activityLocation | Visitor : Directory                        |
+      | description      | Lawn & Garden menu category link in header |
+      | userId           |                                            |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/sunroom-and-patio-remodeling.htm"
+
+  @companyListPageSegmentHeaderLawnShed @companyListPageHeader @companyListTreeHeader @companyListTreeRegression
+  Scenario: User hovers then clicks on Shed Builders in the header on the CompanyList page
+    Given user is on the visitor site companylist page
+    When a user performs actions
+      | action_method   | action_params                                                                |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(3) > label                           |
+      | click           | css: #secondary-nav > ul > li:nth-child(3) > div > ul > li:nth-child(10) > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value        |
+      | activityLocation | Visitor : Directory |
+    And the segment call contains parameters
+      | prop_key         | prop_value                                 |
+      | activityLocation | Visitor : Directory                        |
+      | description      | Lawn & Garden menu category link in header |
+      | userId           |                                            |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/garage-builders.htm"
+
+  @companyListPageSegmentHeaderLawnTreeSvc @companyListPageHeader @companyListTreeHeader @companyListTreeRegression
+  Scenario: User hovers then clicks on Tree Service in the header on the CompanyList page
+    Given user is on the visitor site companylist page
+    When a user performs actions
+      | action_method   | action_params                                                                |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(3) > label                           |
+      | click           | css: #secondary-nav > ul > li:nth-child(3) > div > ul > li:nth-child(11) > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value        |
+      | activityLocation | Visitor : Directory |
+    And the segment call contains parameters
+      | prop_key         | prop_value                                 |
+      | activityLocation | Visitor : Directory                        |
+      | description      | Lawn & Garden menu category link in header |
+      | userId           |                                            |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/tree-service.htm"
+
+  @companyListPageSegmentHeaderLawnViewAll @companyListPageHeader @companyListTreeHeader @companyListTreeRegression
+  Scenario: User hovers then clicks on View All in the header on the CompanyList page
+    Given user is on the visitor site companylist page
+    When a user performs actions
+      | action_method   | action_params                                              |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(3) > label         |
+      | click           | css: #secondary-nav > ul > li:nth-child(3) > div > div > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value        |
+      | activityLocation | Visitor : Directory |
+    And the segment call contains parameters
+      | prop_key         | prop_value                                            |
+      | activityLocation | Visitor : Directory                                   |
+      | description      | Lawn & Garden menu view all categories link in header |
+      | userId           |                                                       |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/"
+
+  @companyListPageSegmentHeaderMoreBasement @companyListPageHeader @companyListTreeHeader @companyListTreeRegression
+  Scenario: User hovers then clicks on Basement Waterproofing in the header on the CompanyList page
+    Given user is on the visitor site companylist page
+    When a user performs actions
+      | action_method   | action_params                                                               |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(4) > label                          |
+      | click           | css: #secondary-nav > ul > li:nth-child(4) > div > ul > li:nth-child(1) > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value        |
+      | activityLocation | Visitor : Directory |
+    And the segment call contains parameters
+      | prop_key         | prop_value                        |
+      | activityLocation | Visitor : Directory               |
+      | description      | More menu category link in header |
+      | userId           |                                   |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/basement-waterproofing.htm"
+
+  @companyListPageSegmentHeaderMoreDogGrooming @companyListPageHeader @companyListTreeHeader @companyListTreeRegression
+  Scenario: User hovers then clicks on Dog Grooming in the header on the CompanyList page
+    Given user is on the visitor site companylist page
+    When a user performs actions
+      | action_method   | action_params                                                               |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(4) > label                          |
+      | click           | css: #secondary-nav > ul > li:nth-child(4) > div > ul > li:nth-child(2) > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value        |
+      | activityLocation | Visitor : Directory |
+    And the segment call contains parameters
+      | prop_key         | prop_value                        |
+      | activityLocation | Visitor : Directory               |
+      | description      | More menu category link in header |
+      | userId           |                                   |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/pet-grooming.htm"
+
+
+  @companyListPageSegmentHeaderMoreHandymen @companyListPageHeader @companyListTreeHeader @companyListTreeRegression @companyListTreeSmoke
+  Scenario: User hovers then clicks on Handymen in the header on the CompanyList page
+    Given user is on the visitor site companylist page
+    When a user performs actions
+      | action_method   | action_params                                                               |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(4) > label                          |
+      | click           | css: #secondary-nav > ul > li:nth-child(4) > div > ul > li:nth-child(3) > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value        |
+      | activityLocation | Visitor : Directory |
+    And the segment call contains parameters
+      | prop_key         | prop_value                        |
+      | activityLocation | Visitor : Directory               |
+      | description      | More menu category link in header |
+      | userId           |                                   |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/handyman-service.htm"
+
+  @companyListPageSegmentHeaderMoreJunk @companyListPageHeader @companyListTreeHeader @companyListTreeRegression
+  Scenario: User hovers then clicks on Junk Hauling in the header on the CompanyList page
+    Given user is on the visitor site companylist page
+    When a user performs actions
+      | action_method   | action_params                                                               |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(4) > label                          |
+      | click           | css: #secondary-nav > ul > li:nth-child(4) > div > ul > li:nth-child(4) > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value        |
+      | activityLocation | Visitor : Directory |
+    And the segment call contains parameters
+      | prop_key         | prop_value                        |
+      | activityLocation | Visitor : Directory               |
+      | description      | More menu category link in header |
+      | userId           |                                   |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/hauling.htm"
+
+  @companyListPageSegmentHeaderMoreLocksmiths @companyListPageHeader @companyListTreeHeader @companyListTreeRegression
+  Scenario: User hovers then clicks on Locksmiths in the header on the CompanyList page
+    Given user is on the visitor site companylist page
+    When a user performs actions
+      | action_method   | action_params                                                               |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(4) > label                          |
+      | click           | css: #secondary-nav > ul > li:nth-child(4) > div > ul > li:nth-child(5) > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value        |
+      | activityLocation | Visitor : Directory |
+    And the segment call contains parameters
+      | prop_key         | prop_value                        |
+      | activityLocation | Visitor : Directory               |
+      | description      | More menu category link in header |
+      | userId           |                                   |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/locksmiths.htm"
+
+  @companyListPageSegmentHeaderMoreMoving @companyListPageHeader @companyListTreeHeader @companyListTreeRegression
+  Scenario: User hovers then clicks on Moving Companies in the header on the CompanyList page
+    Given user is on the visitor site companylist page
+    When a user performs actions
+      | action_method   | action_params                                                               |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(4) > label                          |
+      | click           | css: #secondary-nav > ul > li:nth-child(4) > div > ul > li:nth-child(6) > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value        |
+      | activityLocation | Visitor : Directory |
+    And the segment call contains parameters
+      | prop_key         | prop_value                        |
+      | activityLocation | Visitor : Directory               |
+      | description      | More menu category link in header |
+      | userId           |                                   |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/moving.htm"
+
+  @companyListPageSegmentHeaderMorePests @companyListPageHeader @companyListTreeHeader @companyListTreeRegression
+  Scenario: User hovers then clicks on Pest Control Companies in the header on the CompanyList page
+    Given user is on the visitor site companylist page
+    When a user performs actions
+      | action_method   | action_params                                                               |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(4) > label                          |
+      | click           | css: #secondary-nav > ul > li:nth-child(4) > div > ul > li:nth-child(7) > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value        |
+      | activityLocation | Visitor : Directory |
+    And the segment call contains parameters
+      | prop_key         | prop_value                        |
+      | activityLocation | Visitor : Directory               |
+      | description      | More menu category link in header |
+      | userId           |                                   |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/pest-control.htm"
+
+  @companyListPageSegmentHeaderMorePressureWashing @companyListPageHeader @companyListTreeHeader @companyListTreeRegression
+  Scenario: User hovers then clicks on Pressure Washing Companies in the header on the CompanyList page
+    Given user is on the visitor site companylist page
+    When a user performs actions
+      | action_method   | action_params                                                               |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(4) > label                          |
+      | click           | css: #secondary-nav > ul > li:nth-child(4) > div > ul > li:nth-child(8) > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value        |
+      | activityLocation | Visitor : Directory |
+    And the segment call contains parameters
+      | prop_key         | prop_value                        |
+      | activityLocation | Visitor : Directory               |
+      | description      | More menu category link in header |
+      | userId           |                                   |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/pressure-washing.htm"
+
+  @companyListPageSegmentHeaderMoreSeptic @companyListPageHeader @companyListTreeHeader @companyListTreeRegression
+  Scenario: User hovers then clicks on Septic Tanks Companies in the header on the CompanyList page
+    Given user is on the visitor site companylist page
+    When a user performs actions
+      | action_method   | action_params                                                               |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(4) > label                          |
+      | click           | css: #secondary-nav > ul > li:nth-child(4) > div > ul > li:nth-child(9) > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value        |
+      | activityLocation | Visitor : Directory |
+    And the segment call contains parameters
+      | prop_key         | prop_value                        |
+      | activityLocation | Visitor : Directory               |
+      | description      | More menu category link in header |
+      | userId           |                                   |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/septic-tank.htm"
+
+  @companyListPageSegmentHeaderMoreViewAllCat @companyListPageHeader @companyListTreeHeader @companyListTreeRegression
+  Scenario: User hovers then clicks on View All Cats - More in the header on the CompanyList page
     Given user is on the visitor site companylist page
     When a user performs actions
       | action_method   | action_params                                      |
-      | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label |
-      | click           | css: #articles-toggle > div > a                    |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(4) > label |
+      | click           | css: #more-toggle > div:nth-child(5) > a           |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value              |
-      | activityLocation | Visitor : Directory   |
+      | unique_field     | unique_value        |
+      | activityLocation | Visitor : Directory |
     And the segment call contains parameters
-      | prop_key               | prop_value                                              |
-      | activityLocation       | Visitor : Directory                                     |
-      | description            | Articles & Advice menu view all articles link in header |
-      | userId                 |                                                         |
+      | prop_key         | prop_value                                   |
+      | activityLocation | Visitor : Directory                          |
+      | description      | More menu view all categories link in header |
+      | userId           |                                              |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/companylist/"
+
+  @companyListPageSegmentHeaderMoreNearMe @companyListPageHeader @companyListTreeHeader @companyListTreeRegression
+  Scenario: User hovers then clicks on Near Me in the header on the CompanyList page
+    Given user is on the visitor site companylist page
+    When a user performs actions
+      | action_method   | action_params                                      |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(4) > label |
+      | click           | css: #more-toggle > div:nth-child(3) > a           |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value        |
+      | activityLocation | Visitor : Directory |
+    And the segment call contains parameters
+      | prop_key         | prop_value                     |
+      | activityLocation | Visitor : Directory            |
+      | description      | Near Me link in desktop header |
+      | userId           |                                |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/nearme/"
+
+  @companyListPageSegmentHeaderArticlesAdviceAppliances @companyListPageHeader @companyListTreeHeader @companyListTreeRegression @companyListTreeSmoke
+  Scenario: User hovers then clicks on Appliances in the header on the CompanyList page
+    Given user is on the visitor site companylist page
+    When a user performs actions
+      | action_method   | action_params                                                               |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label                          |
+      | click           | css: #secondary-nav > ul > li:nth-child(5) > div > ul > li:nth-child(1) > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value        |
+      | activityLocation | Visitor : Directory |
+    And the segment call contains parameters
+      | prop_key         | prop_value                                     |
+      | activityLocation | Visitor : Directory                            |
+      | description      | Articles & Advice menu category link in header |
+      | userId           |                                                |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/appliances/"
+
+  @companyListPageSegmentHeaderArticlesAdviceBaseFound @companyListPageHeader @companyListTreeHeader @companyListTreeRegression
+  Scenario: User hovers then clicks on Basements & Foundations in the header on the CompanyList page
+    Given user is on the visitor site companylist page
+    When a user performs actions
+      | action_method   | action_params                                                               |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span                   |
+      | click           | css: #secondary-nav > ul > li:nth-child(5) > div > ul > li:nth-child(2) > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value        |
+      | activityLocation | Visitor : Directory |
+    And the segment call contains parameters
+      | prop_key         | prop_value                                     |
+      | activityLocation | Visitor : Directory                            |
+      | description      | Articles & Advice menu category link in header |
+      | userId           |                                                |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/basements-and-foundations/"
+
+  @companyListPageSegmentHeaderArticlesAdviceBathRemod @companyListPageHeader @companyListTreeHeader @companyListTreeRegression
+  Scenario: User hovers then clicks on Bathroom Remodel in the header on the CompanyList page
+    Given user is on the visitor site companylist page
+    When a user performs actions
+      | action_method   | action_params                                                               |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span                   |
+      | click           | css: #secondary-nav > ul > li:nth-child(5) > div > ul > li:nth-child(3) > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value        |
+      | activityLocation | Visitor : Directory |
+    And the segment call contains parameters
+      | prop_key         | prop_value                                     |
+      | activityLocation | Visitor : Directory                            |
+      | description      | Articles & Advice menu category link in header |
+      | userId           |                                                |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/bathroom-remodel/"
+
+  @companyListPageSegmentHeaderArticlesAdviceChimney @companyListPageHeader @companyListTreeHeader @companyListTreeRegression
+  Scenario: User hovers then clicks on Chimneys & Fireplaces in the header on the CompanyList page
+    Given user is on the visitor site companylist page
+    When a user performs actions
+      | action_method   | action_params                                                               |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span                   |
+      | click           | css: #secondary-nav > ul > li:nth-child(5) > div > ul > li:nth-child(4) > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value        |
+      | activityLocation | Visitor : Directory |
+    And the segment call contains parameters
+      | prop_key         | prop_value                                     |
+      | activityLocation | Visitor : Directory                            |
+      | description      | Articles & Advice menu category link in header |
+      | userId           |                                                |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/chimneys-fireplaces/"
+
+  @companyListPageSegmentHeaderArticlesAdviceCleaning @companyListPageHeader @companyListTreeHeader @companyListTreeRegression
+  Scenario: User hovers then clicks on Cleaning in the header on the CompanyList page
+    Given user is on the visitor site companylist page
+    When a user performs actions
+      | action_method   | action_params                                                               |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span                   |
+      | click           | css: #secondary-nav > ul > li:nth-child(5) > div > ul > li:nth-child(5) > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value        |
+      | activityLocation | Visitor : Directory |
+    And the segment call contains parameters
+      | prop_key         | prop_value                                     |
+      | activityLocation | Visitor : Directory                            |
+      | description      | Articles & Advice menu category link in header |
+      | userId           |                                                |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/cleaning/"
+
+  @companyListPageSegmentHeaderArticlesAdviceContractors @companyListPageHeader @companyListTreeHeader @companyListTreeRegression
+  Scenario: User hovers then clicks on Contractors in the header on the CompanyList page
+    Given user is on the visitor site companylist page
+    When a user performs actions
+      | action_method   | action_params                                                               |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span                   |
+      | click           | css: #secondary-nav > ul > li:nth-child(5) > div > ul > li:nth-child(6) > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value        |
+      | activityLocation | Visitor : Directory |
+    And the segment call contains parameters
+      | prop_key         | prop_value                                     |
+      | activityLocation | Visitor : Directory                            |
+      | description      | Articles & Advice menu category link in header |
+      | userId           |                                                |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/contractors/"
+
+  @companyListPageSegmentHeaderArticlesAdviceElectrical @companyListPageHeader @companyListTreeHeader @companyListTreeRegression
+  Scenario: User hovers then clicks on Electrical in the header on the CompanyList page
+    Given user is on the visitor site companylist page
+    When a user performs actions
+      | action_method   | action_params                                                               |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span                   |
+      | click           | css: #secondary-nav > ul > li:nth-child(5) > div > ul > li:nth-child(7) > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value        |
+      | activityLocation | Visitor : Directory |
+    And the segment call contains parameters
+      | prop_key         | prop_value                                     |
+      | activityLocation | Visitor : Directory                            |
+      | description      | Articles & Advice menu category link in header |
+      | userId           |                                                |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/electrical/"
+
+  @companyListPageSegmentHeaderArticlesAdviceFlooring @companyListPageHeader @companyListTreeHeader @companyListTreeRegression
+  Scenario: User hovers then clicks on Flooring in the header on the CompanyList page
+    Given user is on the visitor site companylist page
+    When a user performs actions
+      | action_method   | action_params                                                               |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span                   |
+      | click           | css: #secondary-nav > ul > li:nth-child(5) > div > ul > li:nth-child(8) > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value        |
+      | activityLocation | Visitor : Directory |
+    And the segment call contains parameters
+      | prop_key         | prop_value                                     |
+      | activityLocation | Visitor : Directory                            |
+      | description      | Articles & Advice menu category link in header |
+      | userId           |                                                |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/flooring/"
+
+  @companyListPageSegmentHeaderArticlesAdviceGarageDrive @companyListPageHeader @companyListTreeHeader @companyListTreeRegression
+  Scenario: User hovers then clicks on Garages & Driveways in the header on the CompanyList page
+    Given user is on the visitor site companylist page
+    When a user performs actions
+      | action_method   | action_params                                                               |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span                   |
+      | click           | css: #secondary-nav > ul > li:nth-child(5) > div > ul > li:nth-child(9) > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value        |
+      | activityLocation | Visitor : Directory |
+    And the segment call contains parameters
+      | prop_key         | prop_value                                     |
+      | activityLocation | Visitor : Directory                            |
+      | description      | Articles & Advice menu category link in header |
+      | userId           |                                                |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/garages-and-driveways/"
+
+  @companyListPageSegmentHeaderArticlesAdviceHVAC @companyListPageHeader @companyListTreeHeader @companyListTreeRegression
+  Scenario: User hovers then clicks on Heating & Cooling in the header on the CompanyList page
+    Given user is on the visitor site companylist page
+    When a user performs actions
+      | action_method   | action_params                                                                |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span                    |
+      | click           | css: #secondary-nav > ul > li:nth-child(5) > div > ul > li:nth-child(10) > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value        |
+      | activityLocation | Visitor : Directory |
+    And the segment call contains parameters
+      | prop_key         | prop_value                                     |
+      | activityLocation | Visitor : Directory                            |
+      | description      | Articles & Advice menu category link in header |
+      | userId           |                                                |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/hvac/"
+
+  @companyListPageSegmentHeaderArticlesAdviceHomeConstruction @companyListPageHeader @companyListTreeHeader @companyListTreeRegression
+  Scenario: User hovers then clicks on Home Construction in the header on the CompanyList page
+    Given user is on the visitor site companylist page
+    When a user performs actions
+      | action_method   | action_params                                                                |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span                    |
+      | click           | css: #secondary-nav > ul > li:nth-child(5) > div > ul > li:nth-child(11) > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value        |
+      | activityLocation | Visitor : Directory |
+    And the segment call contains parameters
+      | prop_key         | prop_value                                     |
+      | activityLocation | Visitor : Directory                            |
+      | description      | Articles & Advice menu category link in header |
+      | userId           |                                                |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/home-construction-design/"
+
+  @companyListPageSegmentHeaderArticlesAdviceHomeExterior @companyListPageHeader @companyListTreeHeader @companyListTreeRegression
+  Scenario: User hovers then clicks on Home Exteriors in the header on the CompanyList page
+    Given user is on the visitor site companylist page
+    When a user performs actions
+      | action_method   | action_params                                                                |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span                    |
+      | click           | css: #secondary-nav > ul > li:nth-child(5) > div > ul > li:nth-child(12) > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value        |
+      | activityLocation | Visitor : Directory |
+    And the segment call contains parameters
+      | prop_key         | prop_value                                     |
+      | activityLocation | Visitor : Directory                            |
+      | description      | Articles & Advice menu category link in header |
+      | userId           |                                                |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/home-exteriors/"
+
+  @companyListPageSegmentHeaderArticlesAdviceHomeInterior @companyListPageHeader @companyListTreeHeader @companyListTreeRegression
+  Scenario: User hovers then clicks on Home Interior in the header on the CompanyList page
+    Given user is on the visitor site companylist page
+    When a user performs actions
+      | action_method   | action_params                                                                |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span                    |
+      | click           | css: #secondary-nav > ul > li:nth-child(5) > div > ul > li:nth-child(13) > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value        |
+      | activityLocation | Visitor : Directory |
+    And the segment call contains parameters
+      | prop_key         | prop_value                                     |
+      | activityLocation | Visitor : Directory                            |
+      | description      | Articles & Advice menu category link in header |
+      | userId           |                                                |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/home-interiors/"
+
+  @companyListPageSegmentHeaderArticlesAdviceHomeSecurity @companyListPageHeader @companyListTreeHeader @companyListTreeRegression
+  Scenario: User hovers then clicks on Home Security in the header on the CompanyList page
+    Given user is on the visitor site companylist page
+    When a user performs actions
+      | action_method   | action_params                                                                |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span                    |
+      | click           | css: #secondary-nav > ul > li:nth-child(5) > div > ul > li:nth-child(14) > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value        |
+      | activityLocation | Visitor : Directory |
+    And the segment call contains parameters
+      | prop_key         | prop_value                                     |
+      | activityLocation | Visitor : Directory                            |
+      | description      | Articles & Advice menu category link in header |
+      | userId           |                                                |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/home-security-systems/"
+
+  @companyListPageSegmentHeaderArticlesAdviceKitchenRemod @companyListPageHeader @companyListTreeHeader @companyListTreeRegression
+  Scenario: User hovers then clicks on Kitchen Remodeling in the header on the CompanyList page
+    Given user is on the visitor site companylist page
+    When a user performs actions
+      | action_method   | action_params                                                                |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span                    |
+      | click           | css: #secondary-nav > ul > li:nth-child(5) > div > ul > li:nth-child(15) > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value        |
+      | activityLocation | Visitor : Directory |
+    And the segment call contains parameters
+      | prop_key         | prop_value                                     |
+      | activityLocation | Visitor : Directory                            |
+      | description      | Articles & Advice menu category link in header |
+      | userId           |                                                |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/kitchen-remodeling/"
+
+  @companyListPageSegmentHeaderArticlesAdviceLandscaping @companyListPageHeader @companyListTreeHeader @companyListTreeRegression
+  Scenario: User hovers then clicks on Landscaping in the header on the CompanyList page
+    Given user is on the visitor site companylist page
+    When a user performs actions
+      | action_method   | action_params                                                                |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span                    |
+      | click           | css: #secondary-nav > ul > li:nth-child(5) > div > ul > li:nth-child(16) > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value        |
+      | activityLocation | Visitor : Directory |
+    And the segment call contains parameters
+      | prop_key         | prop_value                                     |
+      | activityLocation | Visitor : Directory                            |
+      | description      | Articles & Advice menu category link in header |
+      | userId           |                                                |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/landscaping-lawn-care/"
+
+  @companyListPageSegmentHeaderArticlesAdviceLighting @companyListPageHeader @companyListTreeHeader @companyListTreeRegression
+  Scenario: User hovers then clicks on Lighting in the header on the CompanyList page
+    Given user is on the visitor site companylist page
+    When a user performs actions
+      | action_method   | action_params                                                                |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span                    |
+      | click           | css: #secondary-nav > ul > li:nth-child(5) > div > ul > li:nth-child(17) > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value        |
+      | activityLocation | Visitor : Directory |
+    And the segment call contains parameters
+      | prop_key         | prop_value                                     |
+      | activityLocation | Visitor : Directory                            |
+      | description      | Articles & Advice menu category link in header |
+      | userId           |                                                |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/lights/"
+
+  @companyListPageSegmentHeaderArticlesAdviceMoving @companyListPageHeader @companyListTreeHeader @companyListTreeRegression
+  Scenario: User hovers then clicks on Moving in the header on the CompanyList page
+    Given user is on the visitor site companylist page
+    When a user performs actions
+      | action_method   | action_params                                                                |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span                    |
+      | click           | css: #secondary-nav > ul > li:nth-child(5) > div > ul > li:nth-child(18) > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value        |
+      | activityLocation | Visitor : Directory |
+    And the segment call contains parameters
+      | prop_key         | prop_value                                     |
+      | activityLocation | Visitor : Directory                            |
+      | description      | Articles & Advice menu category link in header |
+      | userId           |                                                |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/movers/"
+
+  @companyListPageSegmentHeaderArticlesAdviceOutdoorLiving @companyListPageHeader @companyListTreeHeader @companyListTreeRegression
+  Scenario: User hovers then clicks on Outdoor Living in the header on the CompanyList page
+    Given user is on the visitor site companylist page
+    When a user performs actions
+      | action_method   | action_params                                                                |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span                    |
+      | click           | css: #secondary-nav > ul > li:nth-child(5) > div > ul > li:nth-child(19) > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value        |
+      | activityLocation | Visitor : Directory |
+    And the segment call contains parameters
+      | prop_key         | prop_value                                     |
+      | activityLocation | Visitor : Directory                            |
+      | description      | Articles & Advice menu category link in header |
+      | userId           |                                                |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/outdoor-living/"
+
+  @companyListPageSegmentHeaderArticlesAdvicePests @companyListPageHeader @companyListTreeHeader @companyListTreeRegression
+  Scenario: User hovers then clicks on Pests in the header on the CompanyList page
+    Given user is on the visitor site companylist page
+    When a user performs actions
+      | action_method   | action_params                                                                |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span                    |
+      | click           | css: #secondary-nav > ul > li:nth-child(5) > div > ul > li:nth-child(20) > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value        |
+      | activityLocation | Visitor : Directory |
+    And the segment call contains parameters
+      | prop_key         | prop_value                                     |
+      | activityLocation | Visitor : Directory                            |
+      | description      | Articles & Advice menu category link in header |
+      | userId           |                                                |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/household-pest-control/"
+
+  @companyListPageSegmentHeaderArticlesAdvicePlumbing @companyListPageHeader @companyListTreeHeader @companyListTreeRegression
+  Scenario: User hovers then clicks on Plumbing in the header on the CompanyList page
+    Given user is on the visitor site companylist page
+    When a user performs actions
+      | action_method   | action_params                                                                |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span                    |
+      | click           | css: #secondary-nav > ul > li:nth-child(5) > div > ul > li:nth-child(21) > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value        |
+      | activityLocation | Visitor : Directory |
+    And the segment call contains parameters
+      | prop_key         | prop_value                                     |
+      | activityLocation | Visitor : Directory                            |
+      | description      | Articles & Advice menu category link in header |
+      | userId           |                                                |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/plumbing/"
+
+  @companyListPageSegmentHeaderArticlesAdviceRemodeling @companyListPageHeader @companyListTreeHeader @companyListTreeRegression
+  Scenario: User hovers then clicks on Remodeling in the header on the CompanyList page
+    Given user is on the visitor site companylist page
+    When a user performs actions
+      | action_method   | action_params                                                                |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span                    |
+      | click           | css: #secondary-nav > ul > li:nth-child(5) > div > ul > li:nth-child(22) > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value        |
+      | activityLocation | Visitor : Directory |
+    And the segment call contains parameters
+      | prop_key         | prop_value                                     |
+      | activityLocation | Visitor : Directory                            |
+      | description      | Articles & Advice menu category link in header |
+      | userId           |                                                |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/remodeling/"
+
+  @companyListPageSegmentHeaderArticlesAdviceRoofing @companyListPageHeader @companyListTreeHeader @companyListTreeRegression
+  Scenario: User hovers then clicks on Roofing in the header on the CompanyList page
+    Given user is on the visitor site companylist page
+    When a user performs actions
+      | action_method   | action_params                                                                |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span                    |
+      | click           | css: #secondary-nav > ul > li:nth-child(5) > div > ul > li:nth-child(23) > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value        |
+      | activityLocation | Visitor : Directory |
+    And the segment call contains parameters
+      | prop_key         | prop_value                                     |
+      | activityLocation | Visitor : Directory                            |
+      | description      | Articles & Advice menu category link in header |
+      | userId           |                                                |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/roofing/"
+
+  @companyListPageSegmentHeaderArticlesAdviceStoreageOrg @companyListPageHeader @companyListTreeHeader @companyListTreeRegression
+  Scenario: User hovers then clicks on Storage & Organization in the header on the CompanyList page
+    Given user is on the visitor site companylist page
+    When a user performs actions
+      | action_method   | action_params                                                                |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span                    |
+      | click           | css: #secondary-nav > ul > li:nth-child(5) > div > ul > li:nth-child(24) > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value        |
+      | activityLocation | Visitor : Directory |
+    And the segment call contains parameters
+      | prop_key         | prop_value                                     |
+      | activityLocation | Visitor : Directory                            |
+      | description      | Articles & Advice menu category link in header |
+      | userId           |                                                |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/storage-organization/"
+
+  @companyListPageSegmentHeaderArticlesAdviceWasteManagement @companyListPageHeader @companyListTreeHeader @companyListTreeRegression
+  Scenario: User hovers then clicks on Waste Management in the header on the CompanyList page
+    Given user is on the visitor site companylist page
+    When a user performs actions
+      | action_method   | action_params                                                                |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span                    |
+      | click           | css: #secondary-nav > ul > li:nth-child(5) > div > ul > li:nth-child(25) > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value        |
+      | activityLocation | Visitor : Directory |
+    And the segment call contains parameters
+      | prop_key         | prop_value                                     |
+      | activityLocation | Visitor : Directory                            |
+      | description      | Articles & Advice menu category link in header |
+      | userId           |                                                |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/waste-management/"
+
+  @companyListPageSegmentHeaderArticlesAdviceViewAll @companyListPageHeader @companyListTreeHeader @companyListTreeRegression
+  Scenario: User hovers then clicks on View All in the header on the CompanyList page
+    Given user is on the visitor site companylist page
+    When a user performs actions
+      | action_method   | action_params                                              |
+      | move_to_element | css: #secondary-nav > ul > li:nth-child(5) > label > span  |
+      | click           | css: #secondary-nav > ul > li:nth-child(5) > div > div > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value        |
+      | activityLocation | Visitor : Directory |
+    And the segment call contains parameters
+      | prop_key         | prop_value                                              |
+      | activityLocation | Visitor : Directory                                     |
+      | description      | Articles & Advice menu view all articles link in header |
+      | userId           |                                                         |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/articles/"
-
 
 
 ##### Body Tests #####
