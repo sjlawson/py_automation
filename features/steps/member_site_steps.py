@@ -20,7 +20,7 @@ def step_impl(context):
 def step_impl(context):
     appsuite_env = 'al_member_site'
     appsuite_url = context.appsuites[appsuite_env]['base_url']
-    context.url = appsuite_url + '/app/lead/survey/sr/still_deciding?entry_point_id=34138796'
+    context.url = appsuite_url + '/app/lead/survey/sr/still_deciding?entry_point_id=34138796&postalCode=46143&taskName=Drain-Line-Breakage-Camera-Locate.2102383.3'
     context.browser.get(context.url)
     time.sleep(1.5)
 
@@ -29,16 +29,16 @@ def step_impl(context):
 def step_impl(context):
     appsuite_env = 'al_member_site'
     appsuite_url = context.appsuites[appsuite_env]['base_url']
-    context.url = appsuite_url + '/app/lead/survey/sr/working_with_pro?entry_point_id=34138795'
+    context.url = appsuite_url + '/app/lead/survey/sr/working_with_pro?entry_point_id=34138795&postalCode=46143&taskName=Drain-Line-Breakage-Camera-Locate.2102383.3'
     context.browser.get(context.url)
-    time.sleep(2)
+    time.sleep(1.5)
 
 
 @given('a user is on a member site SR No Contact page')
 def step_impl(context):
     appsuite_env = 'al_member_site'
     appsuite_url = context.appsuites[appsuite_env]['base_url']
-    context.url = appsuite_url + '/app/lead/survey/sr/no_contact?entry_point_id=34138797'
+    context.url = appsuite_url + '/app/lead/survey/sr/no_contact?entry_point_id=34138797&postalCode=46143&taskName=Drain-Line-Breakage-Camera-Locate.2102383.3'
     context.browser.get(context.url)
     time.sleep(1.5)
 
@@ -47,7 +47,7 @@ def step_impl(context):
 def step_impl(context):
     appsuite_env = 'al_member_site'
     appsuite_url = context.appsuites[appsuite_env]['base_url']
-    context.url = appsuite_url + '/app/lead/survey/sr/no_longer_doing?entry_point_id=34138798'
+    context.url = appsuite_url + '/app/lead/survey/sr/no_longer_doing?entry_point_id=34138798&postalCode=46143&taskName=Drain-Line-Breakage-Camera-Locate.2102383.3'
     context.browser.get(context.url)
     time.sleep(1.5)
 
