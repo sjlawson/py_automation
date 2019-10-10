@@ -167,7 +167,7 @@ class SegmentTestHelper():
         """
         wait = WebDriverWait(client, timeout)
         for action in actions:
-            wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, 'body > div')))
+            wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, 'body div')))
             # time.sleep(1)
             if action['action_params']:
                 for i in range(0, len(action['action_params'])):
