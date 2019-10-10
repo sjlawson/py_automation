@@ -1419,23 +1419,39 @@ Feature:
 
 ##### Body Tests #####
 
-  @companyListPageBreadCrumbClick @companyListPageBody @companyListTreeBody
-  Scenario: User clicks on the breadcrumb link in the body on the Drupal CompanyList Page
+  @companyListPageSecondBreadCrumbClick @companyListPageBody @companyListTreeBody
+  Scenario: User clicks on the Local Reviews breadcrumb link in the body on the Drupal CompanyList Page
     Given user is on the visitor site companylist page
     When a user performs actions
-      | action_method   | action_params       |
-      | move_to_element | css: #block-system-main > div > div.container.clearfix > div.panel-pane.pane-breadcrumb-block > div > div > div > a:nth-child(2) |
-      | click           | css: #block-system-main > div > div.container.clearfix > div.panel-pane.pane-breadcrumb-block > div > div > div > a:nth-child(2) |
+      | action_method   | action_params                     |
+      | click           | css: .breadcrumb > a:nth-child(2) |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value            |
+      | unique_field     | unique_value        |
       | activityLocation | Visitor : Directory |
     And the segment call contains parameters
-      | prop_key               | prop_value           |
-      | activityLocation       | Visitor : Directory  |
-      | description            | Breadcrumbs link     |
-      | userId                 |                      |
+      | prop_key         | prop_value           |
+      | activityLocation | Visitor : Directory  |
+      | description      | Breadcrumbs link     |
+      | userId           |                      |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/"
+
+  @companyListPageFirstBreadCrumbClick @companyListPageBody @companyListTreeBody
+  Scenario: User clicks on the Angie's List breadcrumb link in the body on the Drupal CompanyList Page
+    Given user is on the visitor site companylist page
+    When a user performs actions
+      | action_method | action_params                     |
+      | click         | css: .breadcrumb > a:nth-child(1) |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value        |
+      | activityLocation | Visitor : Directory |
+    And the segment call contains parameters
+      | prop_key         | prop_value          |
+      | activityLocation | Visitor : Directory |
+      | description      | Breadcrumbs link    |
+      | userId           |                     |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/"
 
   @companyListPageCatSearchSelectPlumbing @companyListPageBody @companyListTreeBody
   Scenario: User clicks on the Choose A Category link in the body and selects Plumbing - Drupal CompanyList Page
@@ -1447,19 +1463,19 @@ Feature:
       | send_keys       | plumbing            |
     Then we wait "1" seconds for the next page to load
     When a user performs actions
-      | action_method   | action_params                                                                                                                                                         |
-      | move_to_element | css: #al-geocat-filters-form > div > nav > div.geocat-category-select > div.autocomplete-suggestions > div:nth-child(1) > div.geocat-category-select__selection-group |
-      | click           | css: #al-geocat-filters-form > div > nav > div.geocat-category-select > div.autocomplete-suggestions > div:nth-child(1) > div.geocat-category-select__selection-group |
+      | action_method   | action_params                                                                        |
+      | move_to_element | css: .geocat-category-select > div.autocomplete-suggestions > div > div:nth-child(2) |
+      | click           | css: .geocat-category-select > div.autocomplete-suggestions > div > div:nth-child(2) |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value           |
+      | unique_field     | unique_value       |
       | activityLocation | Visitor : GeoCat   |
     And the segment call contains parameters
-      | prop_key               | prop_value                             |
-      | activityLocation       | Visitor : GeoCat                       |
-      | description            | Category selected from auto suggestion |
-      | userId                 |                                        |
+      | prop_key         | prop_value                             |
+      | activityLocation | Visitor : GeoCat                       |
+      | description      | Category selected from auto suggestion |
+      | userId           |                                        |
 
-  @companyListPageCatSearchPlumbing @companyListPageBody @companyListTreeBody
+  @companyListPageGeoCatSearchPlumbing @companyListPageBody @companyListTreeBody
   Scenario: User clicks on the Choose A Cat link in the body on the Drupal CompanyList Page
     Given user is on the visitor site companylist page
     When a user performs actions
@@ -1469,9 +1485,9 @@ Feature:
       | send_keys       | plumbing            |
     Then we wait "1" seconds for the next page to load
     When a user performs actions
-      | action_method   | action_params                                                                                                                                                         |
-      | move_to_element | css: #al-geocat-filters-form > div > nav > div.geocat-category-select > div.autocomplete-suggestions > div:nth-child(1) > div.geocat-category-select__selection-group |
-      | click           | css: #al-geocat-filters-form > div > nav > div.geocat-category-select > div.autocomplete-suggestions > div:nth-child(1) > div.geocat-category-select__selection-group |
+      | action_method   | action_params                                                                        |
+      | move_to_element | css: .geocat-category-select > div.autocomplete-suggestions > div > div:nth-child(2) |
+      | click           | css: .geocat-category-select > div.autocomplete-suggestions > div > div:nth-child(2) |
     Then we wait "1" seconds for the next page to load
     When a user performs actions
       | action_method   | action_params            |
@@ -1481,13 +1497,13 @@ Feature:
       | move_to_element | css: #edit-geocat-submit |
       | click           | css: #edit-geocat-submit |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value           |
+      | unique_field     | unique_value       |
       | activityLocation | Visitor : GeoCat   |
     And the segment call contains parameters
-      | prop_key               | prop_value            |
-      | activityLocation       | Visitor : GeoCat      |
-      | description            | Search bar submission |
-      | userId                 |                       |
+      | prop_key         | prop_value            |
+      | activityLocation | Visitor : GeoCat      |
+      | description      | Search bar submission |
+      | userId           |                       |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/mi/drummond-island/plumbing.htm"
 
@@ -1499,13 +1515,16 @@ Feature:
       | move_to_element | css: #geocat-category-select-all |
       | click           | css: #geocat-category-select-all |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value         |
+      | unique_field     | unique_value     |
       | activityLocation | Visitor : GeoCat |
     And the segment call contains parameters
       | prop_key               | prop_value                       |
       | activityLocation       | Visitor : GeoCat                 |
       | description            | See All Categories link clicked  |
       | userId                 |                                  |
+      | visitorPageCategory    | NO CATEGORY                      |
+      | visitorPageGeo         |                                  |
+      | visitorPageGeoCategory |                                  |
 
   @companyListPageSeeAllCat @companyListPageBody @companyListTreeBody
   Scenario: User clicks on the See All Categories link in the body on the Drupal CompanyList Page
@@ -1516,18 +1535,18 @@ Feature:
       | click           | css: #geocat-category-select-all |
     Then we wait "1" seconds for the next page to load
     When a user performs actions
-      | action_method   | action_params                                                                                                                                              |
-      | move_to_element | css: #block-system-main > div > div.container.clearfix > div.panel-pane.pane-al-geocat-filters > div > div > div:nth-child(1) > ul > li:nth-child(4) > a   |
-      | click           | css: #block-system-main > div > div.container.clearfix > div.panel-pane.pane-al-geocat-filters > div > div > div:nth-child(1) > ul > li:nth-child(4) > a   |
+      | action_method   | action_params                                                    |
+      | move_to_element | css: .geocat-filters__wrapper > div > div > ul > li:nth-child(4) |
+      | click           | css: .geocat-filters__wrapper > div > div > ul > li:nth-child(4) |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value         |
+      | unique_field     | unique_value     |
       | activityLocation | Visitor : GeoCat |
     And the segment call contains parameters
-      | prop_key               | prop_value                                  |
-      | activityLocation       | Visitor : GeoCat                            |
-      | categorySelected       | Cleaning                                    |
-      | description            | Category selected from all categories list  |
-      | userId                 |                                             |
+      | prop_key         | prop_value                                  |
+      | activityLocation | Visitor : GeoCat                            |
+      | categorySelected | Cleaning                                    |
+      | description      | Category selected from all categories list  |
+      | userId           |                                             |
     Then we wait "1" seconds for the next page to load
     When a user performs actions
       | action_method   | action_params            |
@@ -1537,13 +1556,13 @@ Feature:
       | move_to_element | css: #edit-geocat-submit |
       | click           | css: #edit-geocat-submit |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value           |
+      | unique_field     | unique_value       |
       | activityLocation | Visitor : GeoCat   |
     And the segment call contains parameters
-      | prop_key               | prop_value            |
-      | activityLocation       | Visitor : GeoCat      |
-      | description            | Search bar submission |
-      | userId                 |                       |
+      | prop_key         | prop_value            |
+      | activityLocation | Visitor : GeoCat      |
+      | description      | Search bar submission |
+      | userId           |                       |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/us/mi/drummond-island/cleaning.htm"
 
@@ -1551,29 +1570,29 @@ Feature:
   Scenario: User clicks on the category link in the body on the Drupal CompanyList Page
     Given user is on the visitor site companylist page
     When a user performs actions
-      | action_method   | action_params                                                                                                                                                                                  |
-      | move_to_element | css: #block-system-main > div > div.row.greyback.row--sub-header > div > section.geocat-cities-list__container.geocat-cities-list__container--static-top-categories > ul > li:nth-child(5) > a |
-      | click           | css: #block-system-main > div > div.row.greyback.row--sub-header > div > section.geocat-cities-list__container.geocat-cities-list__container--static-top-categories > ul > li:nth-child(5) > a |
+      | action_method   | action_params                                    |
+      | move_to_element | css: .container > section > ul > li:nth-child(5) |
+      | click           | css: .container > section > ul > li:nth-child(5) | 
     Then we wait "1" seconds for the next page to load
     Then the landing URL contains ".angieslist.com/companylist/asbestos-removal.htm"
 
-  @companyListPageCatClickGarage @companyListPageBody @companyListTreeBody
+  @companyListPageCatClickPainting @companyListPageBody @companyListTreeBody
   Scenario: User clicks on the category link in the body on the Drupal CompanyList Page
     Given user is on the visitor site companylist page
     When a user performs actions
-      | action_method   | action_params                                                                                                                                                                                   |
-      | move_to_element | css: #block-system-main > div > div.row.greyback.row--sub-header > div > section.geocat-cities-list__container.geocat-cities-list__container--static-top-categories > ul > li:nth-child(48) > a |
-      | click           | css: #block-system-main > div > div.row.greyback.row--sub-header > div > section.geocat-cities-list__container.geocat-cities-list__container--static-top-categories > ul > li:nth-child(48) > a |
+      | action_method   | action_params                                     |
+      | move_to_element | css: .container > section > ul > li:nth-child(67) |
+      | click           | css: .container > section > ul > li:nth-child(67) |
     Then we wait "1" seconds for the next page to load
-    Then the landing URL contains ".angieslist.com/companylist/garage-doors.htm"
+    Then the landing URL contains ".angieslist.com/companylist/exterior-painting.htm"
 
   @companyListPageStateClick @companyListPageBody @companyListTreeBody
   Scenario: User clicks on the state link in the body on the Drupal CompanyList Page
     Given user is on the visitor site companylist page
     When a user performs actions
-      | action_method   | action_params       |
-      | move_to_element | css: #block-system-main > div > div.row.greyback.row--sub-header > div > div > ul > li:nth-child(30) > a |
-      | click           | css: #block-system-main > div > div.row.greyback.row--sub-header > div > div > ul > li:nth-child(30) > a |
+      | action_method   | action_params                                     |
+      | move_to_element | css: .container > div > ul > li:nth-child(30) > a |
+      | click           | css: .container > div > ul > li:nth-child(30) > a |
     Then we wait "1" seconds for the next page to load
     Then the landing URL contains ".angieslist.com/companylist/us/nh/"
 
@@ -1581,9 +1600,9 @@ Feature:
   Scenario: User clicks on the major market link in the body on the Drupal CompanyList Page
     Given user is on the visitor site companylist page
     When a user performs actions
-      | action_method   | action_params                                                                                                                                                                                                          |
-      | move_to_element | css: #block-system-main > div > div.row.greyback.row--sub-header > div > section.geocat-cities-list__container.geocat-cities-list__container--major-markets.geocat-major-markets-processed > ul > li:nth-child(62) > a |
-      | click           | css: #block-system-main > div > div.row.greyback.row--sub-header > div > section.geocat-cities-list__container.geocat-cities-list__container--major-markets.geocat-major-markets-processed > ul > li:nth-child(62) > a |
+      | action_method   | action_params                                                                     |
+      | move_to_element | css: .geocat-cities-list.geocat-cities-list--major-markets > li:nth-child(62) > a |
+      | click           | css: .geocat-cities-list.geocat-cities-list--major-markets > li:nth-child(62) > a |
     Then we wait "1" seconds for the next page to load
     Then the landing URL contains ".angieslist.com/companylist/tucson/"
 
@@ -1598,7 +1617,7 @@ Feature:
       | move_to_element | id: footer-top-cities-new-york  |
       | click           |                                 |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value            |
+      | unique_field     | unique_value        |
       | activityLocation | Visitor : Directory |
     And the segment call contains parameters
       | prop_key               | prop_value                     |
@@ -1617,7 +1636,7 @@ Feature:
       | move_to_element | id: footer-top-cities-houston  |
       | click           |                                |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value            |
+      | unique_field     | unique_value        |
       | activityLocation | Visitor : Directory |
     And the segment call contains parameters
       | prop_key               | prop_value                     |
@@ -1636,7 +1655,7 @@ Feature:
       | move_to_element | id: footer-top-cities-chicago  |
       | click           |                                |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value            |
+      | unique_field     | unique_value        |
       | activityLocation | Visitor : Directory |
     And the segment call contains parameters
       | prop_key               | prop_value                     |
@@ -1655,7 +1674,7 @@ Feature:
       | move_to_element | id: footer-top-cities-indianapolis  |
       | click           |                                     |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value            |
+      | unique_field     | unique_value        |
       | activityLocation | Visitor : Directory |
     And the segment call contains parameters
       | prop_key               | prop_value                     |
@@ -1674,7 +1693,7 @@ Feature:
       | move_to_element | id: footer-top-cities-boston  |
       | click           |                               |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value            |
+      | unique_field     | unique_value        |
       | activityLocation | Visitor : Directory |
     And the segment call contains parameters
       | prop_key               | prop_value                     |
@@ -1692,7 +1711,7 @@ Feature:
       | move_to_element | id: footer-top-cities-atlanta  |
       | click           |                                |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value            |
+      | unique_field     | unique_value        |
       | activityLocation | Visitor : Directory |
     And the segment call contains parameters
       | prop_key               | prop_value                     |
@@ -1710,7 +1729,7 @@ Feature:
       | move_to_element | id: footer-top-cities-cincinnati  |
       | click           |                                   |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value            |
+      | unique_field     | unique_value        |
       | activityLocation | Visitor : Directory |
     And the segment call contains parameters
       | prop_key               | prop_value                     |
@@ -1728,7 +1747,7 @@ Feature:
       | move_to_element | id: footer-top-cities-los-angeles  |
       | click           |                                    |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value            |
+      | unique_field     | unique_value        |
       | activityLocation | Visitor : Directory |
     And the segment call contains parameters
       | prop_key               | prop_value                     |
@@ -1746,7 +1765,7 @@ Feature:
       | move_to_element | id: footer-top-cities-dallas  |
       | click           |                               |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value            |
+      | unique_field     | unique_value        |
       | activityLocation | Visitor : Directory |
     And the segment call contains parameters
       | prop_key               | prop_value                     |
@@ -1764,7 +1783,7 @@ Feature:
       | move_to_element | id: footer-top-cities-pittsburgh  |
       | click           |                                   |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value            |
+      | unique_field     | unique_value        |
       | activityLocation | Visitor : Directory |
     And the segment call contains parameters
       | prop_key               | prop_value                     |
@@ -1782,7 +1801,7 @@ Feature:
       | move_to_element | id: footer-top-cities-minneapolis  |
       | click           |                                    |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value            |
+      | unique_field     | unique_value        |
       | activityLocation | Visitor : Directory |
     And the segment call contains parameters
       | prop_key               | prop_value                     |
@@ -1800,7 +1819,7 @@ Feature:
       | move_to_element | id: footer-top-cities-las-vegas  |
       | click           |                                  |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value            |
+      | unique_field     | unique_value        |
       | activityLocation | Visitor : Directory |
     And the segment call contains parameters
       | prop_key               | prop_value                     |
@@ -1818,7 +1837,7 @@ Feature:
       | move_to_element | id: footer-top-cities-san-antonio  |
       | click           |                                    |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value            |
+      | unique_field     | unique_value        |
       | activityLocation | Visitor : Directory |
     And the segment call contains parameters
       | prop_key               | prop_value                     |
@@ -1836,7 +1855,7 @@ Feature:
       | move_to_element | id: footer-top-cities-tampa-bay  |
       | click           |                                  |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value            |
+      | unique_field     | unique_value        |
       | activityLocation | Visitor : Directory |
     And the segment call contains parameters
       | prop_key               | prop_value                     |
@@ -1854,7 +1873,7 @@ Feature:
       | move_to_element | css: #footer--join-for-free  |
       | click           |                              |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value            |
+      | unique_field     | unique_value        |
       | activityLocation | Visitor : Directory |
     And the segment call contains parameters
       | prop_key               | prop_value                        |
@@ -1872,7 +1891,7 @@ Feature:
       | move_to_element | id: footer--find-local-business  |
       | click           |                                  |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value            |
+      | unique_field     | unique_value        |
       | activityLocation | Visitor : Directory |
     And the segment call contains parameters
       | prop_key               | prop_value                             |
@@ -1890,7 +1909,7 @@ Feature:
       | move_to_element | id: footer--nearme |
       | click           |                    |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value            |
+      | unique_field     | unique_value        |
       | activityLocation | Visitor : Directory |
     And the segment call contains parameters
       | prop_key               | prop_value                        |
@@ -1908,7 +1927,7 @@ Feature:
       | move_to_element | id: footer--how-it-works |
       | click           |                          |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value            |
+      | unique_field     | unique_value        |
       | activityLocation | Visitor : Directory |
     And the segment call contains parameters
       | prop_key               | prop_value                        |
@@ -1926,7 +1945,7 @@ Feature:
       | move_to_element | id: footer--solution-center |
       | click           |                             |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value            |
+      | unique_field     | unique_value        |
       | activityLocation | Visitor : Directory |
     And the segment call contains parameters
       | prop_key               | prop_value                        |
@@ -1944,7 +1963,7 @@ Feature:
       | move_to_element | id: footer--photo-galleries |
       | click           |                             |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value            |
+      | unique_field     | unique_value        |
       | activityLocation | Visitor : Directory |
     And the segment call contains parameters
       | prop_key               | prop_value                        |
@@ -1962,7 +1981,7 @@ Feature:
       | move_to_element | id: footer--video  |
       | click           |                    |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value            |
+      | unique_field     | unique_value        |
       | activityLocation | Visitor : Directory |
     And the segment call contains parameters
       | prop_key               | prop_value                        |
@@ -1980,7 +1999,7 @@ Feature:
       | move_to_element | id: footer--answers |
       | click           |                     |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value            |
+      | unique_field     | unique_value        |
       | activityLocation | Visitor : Directory |
     And the segment call contains parameters
       | prop_key               | prop_value                  |
@@ -1998,7 +2017,7 @@ Feature:
       | move_to_element | id: footer--business-owners |
       | click           |                             |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value            |
+      | unique_field     | unique_value        |
       | activityLocation | Visitor : Directory |
     And the segment call contains parameters
       | prop_key               | prop_value                         |
@@ -2016,7 +2035,7 @@ Feature:
       | move_to_element | id: footer--investor |
       | click           |                      |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value            |
+      | unique_field     | unique_value        |
       | activityLocation | Visitor : Directory |
     And the segment call contains parameters
       | prop_key               | prop_value                         |
@@ -2032,7 +2051,7 @@ Feature:
       | move_to_element | id: footer--about-angie |
       | click           |                         |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value            |
+      | unique_field     | unique_value        |
       | activityLocation | Visitor : Directory |
     And the segment call contains parameters
       | prop_key               | prop_value                         |
@@ -2050,7 +2069,7 @@ Feature:
       | move_to_element | id: footer--careers     |
       | click           |                         |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value            |
+      | unique_field     | unique_value        |
       | activityLocation | Visitor : Directory |
     And the segment call contains parameters
       | prop_key               | prop_value                 |
@@ -2066,7 +2085,7 @@ Feature:
       | move_to_element | id: footer--faqs    |
       | click           |                     |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value       |
+      | unique_field     | unique_value        |
       | activityLocation | Visitor : Directory |
     And the segment call contains parameters
       | prop_key               | prop_value           |
@@ -2085,7 +2104,7 @@ Feature:
       | move_to_element | id: footer--contact-us  |
       | click           |                         |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value            |
+      | unique_field     | unique_value        |
       | activityLocation | Visitor : Directory |
     And the segment call contains parameters
       | prop_key               | prop_value                 |
@@ -2103,7 +2122,7 @@ Feature:
       | move_to_element | id: footer-join  |
       | click           |                  |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value            |
+      | unique_field     | unique_value        |
       | activityLocation | Visitor : Directory |
     And the segment call contains parameters
       | prop_key               | prop_value                 |
@@ -2121,7 +2140,7 @@ Feature:
       | move_to_element | id: footer--terms |
       | click           |                   |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value            |
+      | unique_field     | unique_value        |
       | activityLocation | Visitor : Directory |
     And the segment call contains parameters
       | prop_key               | prop_value                   |
@@ -2137,7 +2156,7 @@ Feature:
       | move_to_element | id: footer--privacy-policy |
       | click           |                            |
     Then a segment track call is sent for a unique field value pair
-      | unique_field | unique_value            |
+      | unique_field     | unique_value        |
       | activityLocation | Visitor : Directory |
     And the segment call contains parameters
       | prop_key               | prop_value                    |
