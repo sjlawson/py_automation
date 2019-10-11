@@ -35,7 +35,7 @@ Feature:
 ##### Header Tests #####
 
 
-  @geoCatHeaderJoin @geoCatHeader @companyListTreeHeader
+  @geoCatHeaderJoin @geoCatHeader @companyListTreeHeader @companyListTreeRegression @companyListTreeSmoke
   Scenario: The Join button is clicked on GeoCat(Denver Roofing) page
     Given user is on a visitor site geocat page
     When a user performs actions
@@ -54,7 +54,7 @@ Feature:
     And the landing URL contains ".angieslist.com/app/signup"
 
 
-  @headerSignInGeoCat @geoCatHeader @companyListTreeHeader
+  @headerSignInGeoCat @geoCatHeader @companyListTreeHeader @companyListTreeRegression @companyListTreeSmoke
   Scenario: The Sign In link is clicked on the GeoCat(Denver Roofing) header
     Given user is on a visitor site geocat page
     When a user performs actions
@@ -72,7 +72,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/member"
 
-  @headerBcGeoCat @geoCatHeader @companyListTreeHeader
+  @headerBcGeoCat @geoCatHeader @companyListTreeHeader @companyListTreeRegression @companyListTreeSmoke
   Scenario: The Business Center link is clicked on the GeoCat(Denver Roofing) header
     Given user is on a visitor site geocat page
     When a user performs actions
@@ -89,7 +89,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains "angieslistbusinesscenter.com"
 
-  @geoCatHeaderInteriorApplianceRepair @geoCatHeader @companyListTreeHeader
+  @geoCatHeaderInteriorApplianceRepair @geoCatHeader @companyListTreeHeader @companyListTreeRegression @companyListTreeSmoke
   Scenario: User hovers then clicks on Appliance Repair in the header on the Drupal GeoCat(Denver Roofing)
     Given user is on a visitor site geocat page
     When a user performs actions
@@ -107,7 +107,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/denver/appliance-repair.htm"
 
-  @geoCatHeaderInteriorHouseCleaning @geoCatHeader @companyListTreeHeader
+  @geoCatHeaderInteriorHouseCleaning @geoCatHeader @companyListTreeHeader @companyListTreeRegression @companyListTreeSmoke
   Scenario: User hovers then clicks on House Cleaning in the header on the Drupal GeoCat(Denver Roofing)
     Given user is on a visitor site geocat page
     When a user performs actions
@@ -125,7 +125,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/denver/house-cleaning.htm"
 
-  @geoCatHeaderExteriorPainting @geoCatHeader @companyListTreeHeader
+  @geoCatHeaderExteriorPainting @geoCatHeader @companyListTreeHeader @companyListTreeRegression @companyListTreeSmoke
   Scenario: User hovers then clicks on Exterior Painting in the header on the Drupal GeoCat(Denver Roofing)
     Given user is on a visitor site geocat page
     When a user performs actions
@@ -143,7 +143,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/denver/exterior-painting.htm"
 
-  @geoCatHeaderExteriorViewAllCats @geoCatHeader @companyListTreeHeader
+  @geoCatHeaderExteriorViewAllCats @geoCatHeader @companyListTreeHeader @companyListTreeRegression @companyListTreeSmoke
   Scenario: User hovers then clicks on Exterior View All in the header on the Drupal GeoCat(Denver Roofing)
     Given user is on a visitor site geocat page
     When a user performs actions
@@ -162,7 +162,7 @@ Feature:
     And the landing URL contains ".angieslist.com/companylist/"
 
 
-  @geoCatHeaderLawnGardenDecks @geoCatHeader @companyListTreeHeader
+  @geoCatHeaderLawnGardenDecks @geoCatHeader @companyListTreeHeader @companyListTreeRegression @companyListTreeSmoke
   Scenario: User hovers then clicks on Lawn & Garden and then Decks in the header on the Drupal GeoCat(Denver Roofing)
     Given user is on a visitor site geocat page
     When a user performs actions
@@ -181,7 +181,7 @@ Feature:
     And the landing URL contains ".angieslist.com/companylist/denver/decks-and-porches.htm"
 
 
-  @geoCatHeaderMoreNearMe @geoCatHeader @companyListTreeHeader
+  @geoCatHeaderMoreNearMe @geoCatHeader @companyListTreeHeader @companyListTreeRegression @companyListTreeSmoke
   Scenario: User hovers then clicks on More NearMe in the header on the Drupal GeoCat(Denver Roofing)
     Given user is on a visitor site geocat page
     When a user performs actions
@@ -199,7 +199,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/nearme/"
 
-  @geoCatHeaderArticlesAdviceElectrical @geoCatHeader @companyListTreeHeader
+  @geoCatHeaderArticlesAdviceElectrical @geoCatHeader @companyListTreeHeader @companyListTreeRegression @companyListTreeSmoke
   Scenario: User hovers then clicks on Articles & Advice and then Electrical in the header on the Drupal GeoCat(Denver Roofing)
     Given user is on a visitor site geocat page
     When a user performs actions
@@ -220,7 +220,7 @@ Feature:
 
 ##### Body Tests #####
 
-  @geoCatSegmentSRNoZip @geoCatBody @companyListTreeBody
+  @geoCatSegmentSRNoZip @geoCatBody @companyListTreeBody @companyListTreeRegression @companyListTreeSmoke
   Scenario: User is on a GeoCat Page and selects the SR flow without any postal code.
     Given user is on a visitor site geocat page
     When a user performs actions
@@ -237,7 +237,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/category.Roofing-Siding-Gutters.10217.html?entry_point_id=32723378&postalCode="
 
-  @geoCatSegmentSRWithZip @geoCatBody @companyListTreeBody
+  @geoCatSegmentSRWithZip @geoCatBody @companyListTreeBody @companyListTreeRegression @companyListTreeSmoke
   Scenario: SR CTA button click on GeoCat page
     Given user is on a visitor site geocat page
     When a user performs actions
@@ -257,7 +257,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/category.Roofing-Siding-Gutters.10217.html?entry_point_id=32723378&postalCode=90068"
     
-    @geoCatBodySeeAllCategoriesSearch @geoCatBody @companyListTreeBody
+    @geoCatBodySeeAllCategoriesSearch @geoCatBody @companyListTreeBody @companyListTreeRegression @companyListTreeSmoke
     Scenario: User clicks on See All Categories and selects Cleaning  on GeoCat page
       Given user is on a visitor site geocat page
       When a user performs actions
@@ -281,7 +281,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/denver/cleaning.htm"
 
-    @geoCatBodyEditLocation @geoCatBody @companyListTreeBody
+    @geoCatBodyEditLocation @geoCatBody @companyListTreeBody @companyListTreeRegression @companyListTreeSmoke
     Scenario: User clicks on Location Field by Category and types in Aurora on GeoCat page
       Given user is on a visitor site geocat page
       When the user clears text field with selector "id: edit-location"
@@ -313,7 +313,7 @@ Feature:
       And we wait "1" seconds for the next page to load
       And the landing URL contains ".angieslist.com/companylist/us/co/aurora/roofing.htm"
 
-@geoCatBreadcrumbs @geoCatBody @companyListTreeBody
+@geoCatBreadcrumbs @geoCatBody @companyListTreeBody @companyListTreeRegression @companyListTreeSmoke
  Scenario: User clicks on a Breadcrumpb on the GeoCat page
       Given user is on a visitor site geocat page
       When a user performs actions
@@ -335,7 +335,7 @@ Feature:
       And the landing URL contains ".angieslist.com/companylist/"
 
 
-@geoCatBodyFeaturedServiceProviderClick @geoCatBody @companyListTreeBody
+@geoCatBodyFeaturedServiceProviderClick @geoCatBody @companyListTreeBody @companyListTreeRegression @companyListTreeSmoke
     Scenario: User clicks on an Service Provicer in the Featured SP List on GeoCat page
       Given user is on a visitor site geocat page
       When a user performs actions
@@ -362,7 +362,7 @@ Feature:
     And the landing URL contains ".htm"
 
 
-  @geoCatBodyJoinCTA @geoCatBody @companyListTreeBody
+  @geoCatBodyJoinCTA @geoCatBody @companyListTreeBody @companyListTreeRegression @companyListTreeSmoke
   Scenario: User clicks Join button CTA in the body below featured SP's on GeoCat page
     Given user is on a visitor site geocat page
     When a user performs actions
@@ -384,7 +384,7 @@ Feature:
     And the landing URL contains ".angieslist.com/app/signup"
 
 
-@geoCatBodyArticles @geoCatBody @companyListTreeBody
+@geoCatBodyArticles @geoCatBody @companyListTreeBody @companyListTreeRegression @companyListTreeSmoke
   Scenario: User clickks on an Article below the Join CTA in the body on the GeoCat page
     Given user is on a visitor site geocat page
     When a user performs actions
@@ -407,7 +407,7 @@ Feature:
     And the landing URL contains ".angieslist.com/articles/"
 
 
-@geoCatCitiesNearMeLink @geoCatBody @companyListTreeBody
+@geoCatCitiesNearMeLink @geoCatBody @companyListTreeBody @companyListTreeRegression @companyListTreeSmoke
   Scenario: User clicks on the Cities Near Me below Articles is clicked on GeoCat page
     Given user is on a visitor site geocat page
     When a user performs actions
@@ -429,7 +429,7 @@ Feature:
     And the landing URL contains ".angieslist.com/companylist/"
 
 
-  @geoCatSPDirectoryJoinCTA @geoCatBody @companyListTreeBody
+  @geoCatSPDirectoryJoinCTA @geoCatBody @companyListTreeBody @companyListTreeRegression @companyListTreeSmoke
   Scenario: User clicks on the Join button CTA in the SP Directory below SP Reviews the on GeoCat page
     Given user is on a visitor site geocat page
     When a user performs actions
@@ -451,7 +451,7 @@ Feature:
     And the landing URL contains ".angieslist.com/app/signup"
 
 
-  @geoCatSPDirectoryClick @geoCatBody @companyListTreeBody
+  @geoCatSPDirectoryClick @geoCatBody @companyListTreeBody @companyListTreeRegression @companyListTreeSmoke
   Scenario: User clicks on a Service Provider in SP Directory below SP Reviews on GeoCat page
     Given user is on a visitor site geocat page
     When a user performs actions
@@ -474,7 +474,7 @@ Feature:
     And the landing URL contains ".angieslist.com/companylist"
     And the landing URL contains ".htm"
 
-  @geoCatSPDirectoryPagination @geoCatBody @companyListTreeBody
+  @geoCatSPDirectoryPagination @geoCatBody @companyListTreeBody @companyListTreeRegression @companyListTreeSmoke
   Scenario: User clicks on the pagination in SP Directory below SP Reviews on GeoCat page
     Given user is on a visitor site geocat page
     When a user performs actions
@@ -484,7 +484,7 @@ Feature:
     Then we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/denver/roofing.htm?page=2"
   
-  @geoCatSPDirectoryNext @geoCatBody @companyListTreeBody
+  @geoCatSPDirectoryNext @geoCatBody @companyListTreeBody @companyListTreeRegression @companyListTreeSmoke
   Scenario: User clicks on the Next link in SP Directory below SP Reviews on GeoCat page
     Given user is on a visitor site geocat page
     When a user performs actions
@@ -495,7 +495,7 @@ Feature:
     And the landing URL contains ".angieslist.com/companylist/denver/roofing.htm?page=1"
 
 
-  @geoCatSPDirectoryPrevious @geoCatBody @companyListTreeBody
+  @geoCatSPDirectoryPrevious @geoCatBody @companyListTreeBody @companyListTreeRegression @companyListTreeSmoke
   Scenario: User clicks on the Previous link in SP Directory below SP Reviews on GeoCat page
     Given user is on a visitor site geocat page
     When a user performs actions
@@ -509,7 +509,7 @@ Feature:
     Then we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/denver/roofing.htm"
 
-@geoCatGeoTaskLink @geoCatBody @companyListTreeBody
+@geoCatGeoTaskLink @geoCatBody @companyListTreeBody @companyListTreeRegression @companyListTreeSmoke
   Scenario: User clicks on a GeoTask Link below the SP Directory on GeoCat page
     Given user is on a visitor site geocat page
     When a user performs actions
@@ -532,7 +532,7 @@ Feature:
     And the landing URL contains ".angieslist.com/companylist/t"
     And the landing URL contains ".htm"
 
-@geoCatRelatedGeoCatLink @geoCatBody @companyListTreeBody
+@geoCatRelatedGeoCatLink @geoCatBody @companyListTreeBody @companyListTreeRegression @companyListTreeSmoke
   Scenario: User clicks on a Related GeoCat Link below the SP Directory on GeoCat page
     Given user is on a visitor site geocat page
     When a user performs actions
@@ -558,7 +558,7 @@ Feature:
 
 ##### Footer Tests #####
 
-  @geoCatFooterTopCityNYC @geoCatFooter @companyListTreeFooter
+  @geoCatFooterTopCityNYC @geoCatFooter @companyListTreeFooter @companyListTreeRegression @companyListTreeSmoke
   Scenario: User clicks on the footer NYC top city link on Drupal Company List Page
     Given user is on the visitor site geocat page
     When a user performs actions
@@ -577,7 +577,7 @@ Feature:
     And the landing URL contains ".angieslist.com/companylist/new-york-tristate-area/"
 
 
-  @geoCatFooterTopCityHouston @geoCatFooter @companyListTreeFooter
+  @geoCatFooterTopCityHouston @geoCatFooter @companyListTreeFooter @companyListTreeRegression @companyListTreeSmoke
   Scenario: User clicks on the footer Houston top city link on Drupal Company List Page
     Given user is on the visitor site geocat page
     When a user performs actions
@@ -596,7 +596,7 @@ Feature:
     And the landing URL contains ".angieslist.com/companylist/houston/"
 
 
-  @geoCatFooterTopCityChi @geoCatFooter @companyListTreeFooter
+  @geoCatFooterTopCityChi @geoCatFooter @companyListTreeFooter @companyListTreeRegression @companyListTreeSmoke
   Scenario: User clicks on the footer Chicago top city link on Drupal Company List Page
     Given user is on the visitor site geocat page
     When a user performs actions
@@ -615,7 +615,7 @@ Feature:
     And the landing URL contains ".angieslist.com/companylist/chicago/"
 
 
-  @geoCatFooterTopCityIndy @geoCatFooter @companyListTreeFooter
+  @geoCatFooterTopCityIndy @geoCatFooter @companyListTreeFooter @companyListTreeRegression @companyListTreeSmoke
   Scenario: User clicks on the footer Indianapolis top city link on Drupal Company List Page
     Given user is on the visitor site geocat page
     When a user performs actions
@@ -634,7 +634,7 @@ Feature:
     And the landing URL contains ".angieslist.com/companylist/indianapolis/"
 
 
-  @geoCatFooterTopCityBos @geoCatFooter @companyListTreeFooter
+  @geoCatFooterTopCityBos @geoCatFooter @companyListTreeFooter @companyListTreeRegression @companyListTreeSmoke
   Scenario: User clicks on the footer Boston top city link on Drupal Company List Page
     Given user is on the visitor site geocat page
     When a user performs actions
@@ -652,7 +652,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/boston/"
 
-  @geoCatFooterTopCityATL @geoCatFooter @companyListTreeFooter
+  @geoCatFooterTopCityATL @geoCatFooter @companyListTreeFooter @companyListTreeRegression @companyListTreeSmoke
   Scenario: User clicks on the footer Atlanta top city link on Drupal Company List Page
     Given user is on the visitor site geocat page
     When a user performs actions
@@ -670,7 +670,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/atlanta/"
 
-  @geoCatFooterTopCityCinci @geoCatFooter @companyListTreeFooter
+  @geoCatFooterTopCityCinci @geoCatFooter @companyListTreeFooter @companyListTreeRegression @companyListTreeSmoke
   Scenario: User clicks on the footer Cincinnati top city link on Drupal Company List Page
     Given user is on the visitor site geocat page
     When a user performs actions
@@ -688,7 +688,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/cincinnati/"
 
-  @geoCatFooterTopCityLA @geoCatFooter @companyListTreeFooter
+  @geoCatFooterTopCityLA @geoCatFooter @companyListTreeFooter @companyListTreeRegression @companyListTreeSmoke
   Scenario: User clicks on the footer Los Angeles top city link on Drupal Company List Page
     Given user is on the visitor site geocat page
     When a user performs actions
@@ -706,7 +706,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/los-angeles/"
 
-  @geoCatFooterTopCityDal @geoCatFooter @companyListTreeFooter
+  @geoCatFooterTopCityDal @geoCatFooter @companyListTreeFooter @companyListTreeRegression @companyListTreeSmoke
   Scenario: User clicks on the footer Dallas top city link on Drupal Company List Page
     Given user is on the visitor site geocat page
     When a user performs actions
@@ -724,7 +724,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/dallas/"
 
-  @geoCatFooterTopCityPitt @geoCatFooter @companyListTreeFooter
+  @geoCatFooterTopCityPitt @geoCatFooter @companyListTreeFooter @companyListTreeRegression @companyListTreeSmoke
   Scenario: User clicks on the footer Pittsburgh top city link on Drupal Company List Page
     Given user is on the visitor site geocat page
     When a user performs actions
@@ -742,7 +742,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/pittsburgh/"
 
-  @geoCatFooterTopCityMinn @geoCatFooter @companyListTreeFooter
+  @geoCatFooterTopCityMinn @geoCatFooter @companyListTreeFooter @companyListTreeRegression @companyListTreeSmoke
   Scenario: User clicks on the footer Minneapolis top city link on Drupal Company List Page
     Given user is on the visitor site geocat page
     When a user performs actions
@@ -760,7 +760,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/minneapolis/"
 
-  @geoCatFooterTopCityLV @geoCatFooter @companyListTreeFooter
+  @geoCatFooterTopCityLV @geoCatFooter @companyListTreeFooter @companyListTreeRegression @companyListTreeSmoke
   Scenario: User clicks on the footer Las Vegas top city link on Drupal Company List Page
     Given user is on the visitor site geocat page
     When a user performs actions
@@ -778,7 +778,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/las-vegas/"
 
-  @geoCatFooterTopCitySA @geoCatFooter @companyListTreeFooter
+  @geoCatFooterTopCitySA @geoCatFooter @companyListTreeFooter @companyListTreeRegression @companyListTreeSmoke
   Scenario: User clicks on the footer San Antonio top city link on Drupal Company List Page
     Given user is on the visitor site geocat page
     When a user performs actions
@@ -796,7 +796,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/san-antonio/"
 
-  @geoCatFooterTopCityTampa @geoCatFooter @companyListTreeFooter
+  @geoCatFooterTopCityTampa @geoCatFooter @companyListTreeFooter @companyListTreeRegression @companyListTreeSmoke
   Scenario: User clicks on the footer Tampa top city link on Drupal Company List Page
     Given user is on the visitor site geocat page
     When a user performs actions
@@ -814,7 +814,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/tampa-bay/"
 
-  @geoCatFooterSegmentJoinForFree @geoCatFooter @companyListTreeFooter
+  @geoCatFooterSegmentJoinForFree @geoCatFooter @companyListTreeFooter @companyListTreeRegression @companyListTreeSmoke
   Scenario: User clicks on the footer-left Join For Free icon on Drupal Company List Page
     Given user is on the visitor site geocat page
     When a user performs actions
@@ -832,7 +832,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/app/signup"
 
-  @geoCatFooterSegmentCompanyList @geoCatFooter @companyListTreeFooter
+  @geoCatFooterSegmentCompanyList @geoCatFooter @companyListTreeFooter @companyListTreeRegression @companyListTreeSmoke
   Scenario: User clicks on the footer-left Company List icon on Drupal Company List Page
     Given user is on the visitor site geocat page
     When a user performs actions
@@ -850,7 +850,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/"
 
-  @geoCatFooterSegmentNearMe @geoCatFooter @companyListTreeFooter
+  @geoCatFooterSegmentNearMe @geoCatFooter @companyListTreeFooter @companyListTreeRegression @companyListTreeSmoke
   Scenario: User clicks on the footer-left Near Me icon on Drupal Company List Page
     Given user is on the visitor site geocat page
     When a user performs actions
@@ -868,7 +868,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/nearme/"
 
-  @geoCatFooterSegmentHowItWorks @geoCatFooter @companyListTreeFooter
+  @geoCatFooterSegmentHowItWorks @geoCatFooter @companyListTreeFooter @companyListTreeRegression @companyListTreeSmoke
   Scenario: User clicks on the footer-left How It Works icon on Drupal Company List Page
     Given user is on the visitor site geocat page
     When a user performs actions
@@ -886,7 +886,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/how-it-works.htm"
 
-  @geoCatFooterSegmentSolutionCenter @geoCatFooter @companyListTreeFooter
+  @geoCatFooterSegmentSolutionCenter @geoCatFooter @companyListTreeFooter @companyListTreeRegression @companyListTreeSmoke
   Scenario: User clicks on the footer-left Solution Center icon on Drupal Company List Page
     Given user is on the visitor site geocat page
     When a user performs actions
@@ -904,7 +904,7 @@ Feature:
     And we wait "4" seconds for the next page to load
     And the landing URL contains ".angieslist.com/articles/"
 
-  @geoCatFooterSegmentPhotoGalleries @geoCatFooter @companyListTreeFooter
+  @geoCatFooterSegmentPhotoGalleries @geoCatFooter @companyListTreeFooter @companyListTreeRegression @companyListTreeSmoke
   Scenario: User clicks on the footer-left Photos icon on Drupal Company List Page
     Given user is on the visitor site geocat page
     When a user performs actions
@@ -922,7 +922,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/photos/"
 
-  @geoCatFooterSegmentVideos @geoCatFooter @companyListTreeFooter
+  @geoCatFooterSegmentVideos @geoCatFooter @companyListTreeFooter @companyListTreeRegression @companyListTreeSmoke
   Scenario: User clicks on the footer-left Videos icon on Drupal Company List Page
     Given user is on the visitor site geocat page
     When a user performs actions
@@ -940,7 +940,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/videos/"
 
-  @geoCatFooterSegmentAnswers @geoCatFooter @companyListTreeFooter
+  @geoCatFooterSegmentAnswers @geoCatFooter @companyListTreeFooter @companyListTreeRegression @companyListTreeSmoke
   Scenario: User clicks on the footer-left Answers icon on Drupal Company List Page
     Given user is on the visitor site geocat page
     When a user performs actions
@@ -958,7 +958,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com"
 
-  @geoCatFooterSegmentBusinessOwners @geoCatFooter @companyListTreeFooter
+  @geoCatFooterSegmentBusinessOwners @geoCatFooter @companyListTreeFooter @companyListTreeRegression @companyListTreeSmoke
   Scenario: User clicks on the footer-left Business Owners icon on Drupal Company List Page
     Given user is on the visitor site geocat page
     When a user performs actions
@@ -976,7 +976,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains "angieslistbusinesscenter.com/"
 
-  @geoCatFooterSegmentInvestorRelations @geoCatFooter @companyListTreeFooter
+  @geoCatFooterSegmentInvestorRelations @geoCatFooter @companyListTreeFooter @companyListTreeRegression @companyListTreeSmoke
   Scenario: User clicks on the footer-left Investor Relations icon on Drupal Company List Page
     Given user is on the visitor site geocat page
     When a user performs actions
@@ -992,7 +992,7 @@ Feature:
       | description            | Investor Relations link in footer  |
       | userId                 |                                    |
 
-  @geoCatFooterSegmentAboutUs @geoCatFooter @companyListTreeFooter
+  @geoCatFooterSegmentAboutUs @geoCatFooter @companyListTreeFooter @companyListTreeRegression @companyListTreeSmoke
   Scenario: User clicks on the footer-left About Us icon on Drupal Company List Page
     Given user is on the visitor site geocat page
     When a user performs actions
@@ -1010,7 +1010,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/aboutus.htm"
 
-  @geoCatFooterSegmentCareers @geoCatFooter @companyListTreeFooter
+  @geoCatFooterSegmentCareers @geoCatFooter @companyListTreeFooter @companyListTreeRegression @companyListTreeSmoke
   Scenario: User clicks on the footer-left Careers icon on Drupal Company List Page
     Given user is on the visitor site geocat page
     When a user performs actions
@@ -1026,7 +1026,7 @@ Feature:
       | description            | Careers link in footer     |
       | userId                 |                            |
 
-  @geoCatFooterSegmentFAQ @geoCatFooter @companyListTreeFooter
+  @geoCatFooterSegmentFAQ @geoCatFooter @companyListTreeFooter @companyListTreeRegression @companyListTreeSmoke
   Scenario: User clicks on the footer-left FAQ icon on Drupal Company List Page
     Given user is on the visitor site geocat page
     When a user performs actions
@@ -1045,7 +1045,7 @@ Feature:
     And the landing URL contains ".angieslist.com/faq/"
 
 
-  @geoCatFooterSegmentContactUs @geoCatFooter @companyListTreeFooter
+  @geoCatFooterSegmentContactUs @geoCatFooter @companyListTreeFooter @companyListTreeRegression @companyListTreeSmoke
   Scenario: User clicks on the footer-left Contact Us icon on Drupal Company List Page
     Given user is on the visitor site geocat page
     When a user performs actions
@@ -1063,7 +1063,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/member/login"
 
-  @geoCatFooterSegmentJoin @geoCatFooter @companyListTreeFooter
+  @geoCatFooterSegmentJoin @geoCatFooter @companyListTreeFooter @companyListTreeRegression @companyListTreeSmoke
   Scenario: User clicks on the footer-right Join icon on Drupal Company List Page
     Given user is on the visitor site geocat page
     When a user performs actions
@@ -1081,7 +1081,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/app/signup"
 
-  @geoCatFooterSegmentTermsOfUse @geoCatFooter @companyListTreeFooter
+  @geoCatFooterSegmentTermsOfUse @geoCatFooter @companyListTreeFooter @companyListTreeRegression @companyListTreeSmoke
   Scenario: User clicks on the footer TermsOfUse icon on Drupal Company List Page
     Given user is on the visitor site geocat page
     When a user performs actions
@@ -1097,7 +1097,7 @@ Feature:
       | description            | Terms of Use link in footer  |
       | userId                 |                              |
 
-  @geoCatFooterSegmentPrivacyPolicy @geoCatFooter @companyListTreeFooter
+  @geoCatFooterSegmentPrivacyPolicy @geoCatFooter @companyListTreeFooter @companyListTreeRegression @companyListTreeSmoke
   Scenario: User clicks on the footer Privacy Policy icon on Drupal Company List Page
     Given user is on the visitor site geocat page
     When a user performs actions
