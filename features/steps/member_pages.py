@@ -73,5 +73,6 @@ class MemberDealPageLocators(object):
   MODAL_PHONE_NUMBER_FIELD_2 = (By.NAME, 'part2')
   MODAL_PHONE_NUMBER_FIELD_3 = (By.NAME, 'part3')
 
-  class MmeberAddReviewPageLocators(object):
-    SEARCH_FOR_PROVIDER = (By,ID, 'reviews--sp-search-autocomplete-inputundefined')
+class MemberAddReviewPageLocators(object):
+  REVIEWS_SEARCH_FOR_PROVIDER = (By.ID, 'reviews--sp-search-autocomplete-inputundefined')
+  REVIEWS_SP_AUTOCOMPLETE_THIRD_OPTION = (By.ID, 'react-autowhatever-reviews--sp-search-autocomplete--item-2')
