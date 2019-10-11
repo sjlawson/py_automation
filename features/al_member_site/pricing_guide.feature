@@ -140,3 +140,22 @@ Feature:
       | userPrimaryZipCode      |                    |
       | userSelectedAdZone      |                    |
       | userSelectedZipCode     |                    |
+
+
+  @pricingGuidePageLoadSegment
+  Scenario: Member Pricing Guide Page Load Segment
+    Given user is logged into the member site
+    When a user navigates to the member pricing guide via the header link
+    When a segment page call is sent for a unique field value pair
+      | unique_field    | unique_value           |
+      | name            | Member - Pricing Guide |
+    Then the segment call contains parameters
+      | prop_key        | prop_value     |
+      | name            | Member - Pricing Guide |
+      | path            |           |
+      | referrer        |           |
+      | search          |           |
+      | title           |           |
+      | url             |           |
+      | userId          |           |
+      | userType        |           |
