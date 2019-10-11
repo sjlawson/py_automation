@@ -86,3 +86,57 @@ Feature:
       | userPrimaryZipCode  |                       |
       | userSelectedAdZone  |                       |
       | userSelectedZipCode |                       |
+
+  @pricingGuideServiceProviderClickSegment
+  Scenario: Member Pricing Guide Service Provider Selected Segment
+    Given user is logged into the member site
+    When a user navigates to the member pricing guide via the header link
+    When a user selects a valid category and task and selects a service provider
+    When a segment page call is sent for a unique field value pair
+      | unique_field         | unique_value      |
+      | activityLocation     | Pricing Guide     |
+    Then the segment call contains parameters
+      | prop_key            | prop_value         |
+      | activityLocation    | Pricing Guide      |
+      | categoryId          | 291       |
+      | description         | Service Provider Clicked |
+      | haCategoryId        | 21        |
+      | haCategoryName      | Plumbing  |
+      | haSubCategoryId     | 25        |
+      | haSubCategoryName   | Install a Bathtub  |
+      | href                |           |
+      | jobHighPrice        |           |
+      | jobLowPrice         |           |
+      | rank                |           |
+      | serviceProviderId   |           |
+      | userId              |                       |
+      | userPrimaryAdZone   |                       |
+      | userPrimaryZipCode  |                       |
+      | userSelectedAdZone  |                       |
+      | userSelectedZipCode |                       |
+    Then the landing URL contains ".angieslist.com/member/store/"
+    Then the landing URL contains "/about?categoryId="
+
+  @pricingGuideRaqSegment
+  Scenario: Member Pricing Guide RAQ Selected Segment
+    Given user is logged into the member site
+    When a user navigates to the member pricing guide via the header link
+    When a user selects a valid category and task and selects RAQ
+    When a segment page call is sent for a unique field value pair
+      | unique_field         | unique_value      |
+      | activityLocation     | Pricing Guide     |
+    Then the segment call contains parameters
+      | prop_key                | prop_value         |
+      | activityLocation        | Pricing Guide      |
+      | categoryId              | 291                |
+      | displayedGrade          |                    |
+      | displayedReviewCount    |                    |
+      | hasAd                   |                    |
+      | isSSA                   |                    |
+      | rank                    |                    |
+      | serviceProviderId       |                    |
+      | userId                  |                    |
+      | userPrimaryAdZone       |                    |
+      | userPrimaryZipCode      |                    |
+      | userSelectedAdZone      |                    |
+      | userSelectedZipCode     |                    |
