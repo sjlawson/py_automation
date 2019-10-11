@@ -560,7 +560,7 @@ Feature:
 
   @geoCatFooterTopCityNYC @geoCatFooter @companyListTreeFooter
   Scenario: User clicks on the footer NYC top city link on Drupal Company List Page
-    Given user is on the visitor site comnpanylist page
+    Given user is on the visitor site geocat page
     When a user performs actions
       | action_method   | action_params                   |
       | move_to_element | id: footer-top-cities-new-york  |
@@ -579,7 +579,7 @@ Feature:
 
   @geoCatFooterTopCityHouston @geoCatFooter @companyListTreeFooter
   Scenario: User clicks on the footer Houston top city link on Drupal Company List Page
-    Given user is on the visitor site comnpanylist page
+    Given user is on the visitor site geocat page
     When a user performs actions
       | action_method   | action_params                  |
       | move_to_element | id: footer-top-cities-houston  |
@@ -598,7 +598,7 @@ Feature:
 
   @geoCatFooterTopCityChi @geoCatFooter @companyListTreeFooter
   Scenario: User clicks on the footer Chicago top city link on Drupal Company List Page
-    Given user is on the visitor site comnpanylist page
+    Given user is on the visitor site geocat page
     When a user performs actions
       | action_method   | action_params                  |
       | move_to_element | id: footer-top-cities-chicago  |
@@ -617,7 +617,7 @@ Feature:
 
   @geoCatFooterTopCityIndy @geoCatFooter @companyListTreeFooter
   Scenario: User clicks on the footer Indianapolis top city link on Drupal Company List Page
-    Given user is on the visitor site comnpanylist page
+    Given user is on the visitor site geocat page
     When a user performs actions
       | action_method   | action_params                       |
       | move_to_element | id: footer-top-cities-indianapolis  |
@@ -636,7 +636,7 @@ Feature:
 
   @geoCatFooterTopCityBos @geoCatFooter @companyListTreeFooter
   Scenario: User clicks on the footer Boston top city link on Drupal Company List Page
-    Given user is on the visitor site comnpanylist page
+    Given user is on the visitor site geocat page
     When a user performs actions
       | action_method   | action_params                 |
       | move_to_element | id: footer-top-cities-boston  |
@@ -654,7 +654,7 @@ Feature:
 
   @geoCatFooterTopCityATL @geoCatFooter @companyListTreeFooter
   Scenario: User clicks on the footer Atlanta top city link on Drupal Company List Page
-    Given user is on the visitor site comnpanylist page
+    Given user is on the visitor site geocat page
     When a user performs actions
       | action_method   | action_params                  |
       | move_to_element | id: footer-top-cities-atlanta  |
@@ -672,7 +672,7 @@ Feature:
 
   @geoCatFooterTopCityCinci @geoCatFooter @companyListTreeFooter
   Scenario: User clicks on the footer Cincinnati top city link on Drupal Company List Page
-    Given user is on the visitor site comnpanylist page
+    Given user is on the visitor site geocat page
     When a user performs actions
       | action_method   | action_params                     |
       | move_to_element | id: footer-top-cities-cincinnati  |
@@ -690,7 +690,7 @@ Feature:
 
   @geoCatFooterTopCityLA @geoCatFooter @companyListTreeFooter
   Scenario: User clicks on the footer Los Angeles top city link on Drupal Company List Page
-    Given user is on the visitor site comnpanylist page
+    Given user is on the visitor site geocat page
     When a user performs actions
       | action_method   | action_params                      |
       | move_to_element | id: footer-top-cities-los-angeles  |
@@ -708,7 +708,7 @@ Feature:
 
   @geoCatFooterTopCityDal @geoCatFooter @companyListTreeFooter
   Scenario: User clicks on the footer Dallas top city link on Drupal Company List Page
-    Given user is on the visitor site comnpanylist page
+    Given user is on the visitor site geocat page
     When a user performs actions
       | action_method   | action_params                 |
       | move_to_element | id: footer-top-cities-dallas  |
@@ -726,7 +726,7 @@ Feature:
 
   @geoCatFooterTopCityPitt @geoCatFooter @companyListTreeFooter
   Scenario: User clicks on the footer Pittsburgh top city link on Drupal Company List Page
-    Given user is on the visitor site comnpanylist page
+    Given user is on the visitor site geocat page
     When a user performs actions
       | action_method   | action_params                     |
       | move_to_element | id: footer-top-cities-pittsburgh  |
@@ -744,7 +744,7 @@ Feature:
 
   @geoCatFooterTopCityMinn @geoCatFooter @companyListTreeFooter
   Scenario: User clicks on the footer Minneapolis top city link on Drupal Company List Page
-    Given user is on the visitor site comnpanylist page
+    Given user is on the visitor site geocat page
     When a user performs actions
       | action_method   | action_params                      |
       | move_to_element | id: footer-top-cities-minneapolis  |
@@ -762,7 +762,7 @@ Feature:
 
   @geoCatFooterTopCityLV @geoCatFooter @companyListTreeFooter
   Scenario: User clicks on the footer Las Vegas top city link on Drupal Company List Page
-    Given user is on the visitor site comnpanylist page
+    Given user is on the visitor site geocat page
     When a user performs actions
       | action_method   | action_params                    |
       | move_to_element | id: footer-top-cities-las-vegas  |
@@ -780,7 +780,7 @@ Feature:
 
   @geoCatFooterTopCitySA @geoCatFooter @companyListTreeFooter
   Scenario: User clicks on the footer San Antonio top city link on Drupal Company List Page
-    Given user is on the visitor site comnpanylist page
+    Given user is on the visitor site geocat page
     When a user performs actions
       | action_method   | action_params                      |
       | move_to_element | id: footer-top-cities-san-antonio  |
@@ -798,7 +798,7 @@ Feature:
 
   @geoCatFooterTopCityTampa @geoCatFooter @companyListTreeFooter
   Scenario: User clicks on the footer Tampa top city link on Drupal Company List Page
-    Given user is on the visitor site comnpanylist page
+    Given user is on the visitor site geocat page
     When a user performs actions
       | action_method   | action_params                    |
       | move_to_element | id: footer-top-cities-tampa-bay  |
@@ -816,7 +816,7 @@ Feature:
 
   @geoCatFooterSegmentJoinForFree @geoCatFooter @companyListTreeFooter
   Scenario: User clicks on the footer-left Join For Free icon on Drupal Company List Page
-    Given user is on the visitor site comnpanylist page
+    Given user is on the visitor site geocat page
     When a user performs actions
       | action_method   | action_params                |
       | move_to_element | css: #footer--join-for-free  |
@@ -834,7 +834,7 @@ Feature:
 
   @geoCatFooterSegmentCompanyList @geoCatFooter @companyListTreeFooter
   Scenario: User clicks on the footer-left Company List icon on Drupal Company List Page
-    Given user is on the visitor site comnpanylist page
+    Given user is on the visitor site geocat page
     When a user performs actions
       | action_method   | action_params                    |
       | move_to_element | id: footer--find-local-business  |
@@ -852,7 +852,7 @@ Feature:
 
   @geoCatFooterSegmentNearMe @geoCatFooter @companyListTreeFooter
   Scenario: User clicks on the footer-left Near Me icon on Drupal Company List Page
-    Given user is on the visitor site comnpanylist page
+    Given user is on the visitor site geocat page
     When a user performs actions
       | action_method   | action_params      |
       | move_to_element | id: footer--nearme |
@@ -870,7 +870,7 @@ Feature:
 
   @geoCatFooterSegmentHowItWorks @geoCatFooter @companyListTreeFooter
   Scenario: User clicks on the footer-left How It Works icon on Drupal Company List Page
-    Given user is on the visitor site comnpanylist page
+    Given user is on the visitor site geocat page
     When a user performs actions
       | action_method   | action_params            |
       | move_to_element | id: footer--how-it-works |
@@ -888,7 +888,7 @@ Feature:
 
   @geoCatFooterSegmentSolutionCenter @geoCatFooter @companyListTreeFooter
   Scenario: User clicks on the footer-left Solution Center icon on Drupal Company List Page
-    Given user is on the visitor site comnpanylist page
+    Given user is on the visitor site geocat page
     When a user performs actions
       | action_method   | action_params               |
       | move_to_element | id: footer--solution-center |
@@ -906,7 +906,7 @@ Feature:
 
   @geoCatFooterSegmentPhotoGalleries @geoCatFooter @companyListTreeFooter
   Scenario: User clicks on the footer-left Photos icon on Drupal Company List Page
-    Given user is on the visitor site comnpanylist page
+    Given user is on the visitor site geocat page
     When a user performs actions
       | action_method   | action_params               |
       | move_to_element | id: footer--photo-galleries |
@@ -924,7 +924,7 @@ Feature:
 
   @geoCatFooterSegmentVideos @geoCatFooter @companyListTreeFooter
   Scenario: User clicks on the footer-left Videos icon on Drupal Company List Page
-    Given user is on the visitor site comnpanylist page
+    Given user is on the visitor site geocat page
     When a user performs actions
       | action_method   | action_params      |
       | move_to_element | id: footer--video  |
@@ -942,7 +942,7 @@ Feature:
 
   @geoCatFooterSegmentAnswers @geoCatFooter @companyListTreeFooter
   Scenario: User clicks on the footer-left Answers icon on Drupal Company List Page
-    Given user is on the visitor site comnpanylist page
+    Given user is on the visitor site geocat page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | id: footer--answers |
@@ -960,7 +960,7 @@ Feature:
 
   @geoCatFooterSegmentBusinessOwners @geoCatFooter @companyListTreeFooter
   Scenario: User clicks on the footer-left Business Owners icon on Drupal Company List Page
-    Given user is on the visitor site comnpanylist page
+    Given user is on the visitor site geocat page
     When a user performs actions
       | action_method   | action_params               |
       | move_to_element | id: footer--business-owners |
@@ -978,7 +978,7 @@ Feature:
 
   @geoCatFooterSegmentInvestorRelations @geoCatFooter @companyListTreeFooter
   Scenario: User clicks on the footer-left Investor Relations icon on Drupal Company List Page
-    Given user is on the visitor site comnpanylist page
+    Given user is on the visitor site geocat page
     When a user performs actions
       | action_method   | action_params        |
       | move_to_element | id: footer--investor |
@@ -994,7 +994,7 @@ Feature:
 
   @geoCatFooterSegmentAboutUs @geoCatFooter @companyListTreeFooter
   Scenario: User clicks on the footer-left About Us icon on Drupal Company List Page
-    Given user is on the visitor site comnpanylist page
+    Given user is on the visitor site geocat page
     When a user performs actions
       | action_method   | action_params           |
       | move_to_element | id: footer--about-angie |
@@ -1012,7 +1012,7 @@ Feature:
 
   @geoCatFooterSegmentCareers @geoCatFooter @companyListTreeFooter
   Scenario: User clicks on the footer-left Careers icon on Drupal Company List Page
-    Given user is on the visitor site comnpanylist page
+    Given user is on the visitor site geocat page
     When a user performs actions
       | action_method   | action_params           |
       | move_to_element | id: footer--careers     |
@@ -1028,7 +1028,7 @@ Feature:
 
   @geoCatFooterSegmentFAQ @geoCatFooter @companyListTreeFooter
   Scenario: User clicks on the footer-left FAQ icon on Drupal Company List Page
-    Given user is on the visitor site comnpanylist page
+    Given user is on the visitor site geocat page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | id: footer--faqs    |
@@ -1047,7 +1047,7 @@ Feature:
 
   @geoCatFooterSegmentContactUs @geoCatFooter @companyListTreeFooter
   Scenario: User clicks on the footer-left Contact Us icon on Drupal Company List Page
-    Given user is on the visitor site comnpanylist page
+    Given user is on the visitor site geocat page
     When a user performs actions
       | action_method   | action_params           |
       | move_to_element | id: footer--contact-us  |
@@ -1065,7 +1065,7 @@ Feature:
 
   @geoCatFooterSegmentJoin @geoCatFooter @companyListTreeFooter
   Scenario: User clicks on the footer-right Join icon on Drupal Company List Page
-    Given user is on the visitor site comnpanylist page
+    Given user is on the visitor site geocat page
     When a user performs actions
       | action_method   | action_params    |
       | move_to_element | id: footer-join  |
@@ -1083,7 +1083,7 @@ Feature:
 
   @geoCatFooterSegmentTermsOfUse @geoCatFooter @companyListTreeFooter
   Scenario: User clicks on the footer TermsOfUse icon on Drupal Company List Page
-    Given user is on the visitor site comnpanylist page
+    Given user is on the visitor site geocat page
     When a user performs actions
       | action_method   | action_params     |
       | move_to_element | id: footer--terms |
@@ -1099,7 +1099,7 @@ Feature:
 
   @geoCatFooterSegmentPrivacyPolicy @geoCatFooter @companyListTreeFooter
   Scenario: User clicks on the footer Privacy Policy icon on Drupal Company List Page
-    Given user is on the visitor site comnpanylist page
+    Given user is on the visitor site geocat page
     When a user performs actions
       | action_method   | action_params              |
       | move_to_element | id: footer--privacy-policy |
