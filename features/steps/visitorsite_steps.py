@@ -15,15 +15,6 @@ def step_impl(context):
     time.sleep(1)
 
 
-@given('a user is on a member site visitor review page')
-def step_impl(context):
-    appsuite_env = 'al_member_site'
-    appsuite_url = context.appsuites[appsuite_env]['base_url']
-    context.url = appsuite_url + context.text
-    context.browser.get(context.url)
-    time.sleep(1)
-
-
 @given('a user is on a member site visitor page')
 def step_impl(context):
     appsuite_env = 'al_member_site'
@@ -143,7 +134,43 @@ def step_impl(context):
 def step_impl(context):
     appsuite_env = 'al_visitor_site'
     appsuite_url = context.appsuites[appsuite_env]['base_url']
-    context.url = appsuite_url + '/companylist/us/co/longmont/ace-of-diamonds-painting-reviews-3623201.htm'
+    context.url = appsuite_url + '/companylist/us/co/boulder/painting-plus-reviews-221961.htm'
+    context.browser.get(context.url)
+    time.sleep(1)
+
+
+@given('user is on a visitor site leaf advertiser page with deals')
+def step_impl(context):
+    appsuite_env = 'al_visitor_site'
+    appsuite_url = context.appsuites[appsuite_env]['base_url']
+    context.url = appsuite_url + '/companylist/us/oh/hilliard/the-eco-plumbers-and-drains-reviews-2066703.htm'
+    context.browser.get(context.url)
+    time.sleep(1)
+
+
+@given('user is on a visitor site leaf non advertiser page')
+def step_impl(context):
+    appsuite_env = 'al_visitor_site'
+    appsuite_url = context.appsuites[appsuite_env]['base_url']
+    context.url = appsuite_url + '/companylist/us/ga/cartersville/1-oak-roofing-reviews-9205981.htm'
+    context.browser.get(context.url)
+    time.sleep(1)
+
+
+@then('user is on a visitor site page')
+def step_impl(context):
+    appsuite_env = 'al_visitor_site'
+    appsuite_url = context.appsuites[appsuite_env]['base_url']
+    context.url = appsuite_url + context.text
+    context.browser.get(context.url)
+    time.sleep(1)
+
+
+@then('user returns to the visitor site page')
+def step_impl(context):
+    appsuite_env = 'al_visitor_site'
+    appsuite_url = context.appsuites[appsuite_env]['base_url']
+    context.url = appsuite_url + context.text
     context.browser.get(context.url)
     time.sleep(1)
 
