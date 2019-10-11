@@ -31,15 +31,15 @@ Feature:
       | userType          | Not Authenticated           |
 
 
-  @vrfOverallGradeA @vrfSegment @letterGrades
-  Scenario: VRF Overall Grade - A
+  @vrfOverallGradeA
+  Scenario: VRF Overall Grade - A WIP WIP WIP
     Given a user is on a member site visitor review page
     """
     /member/reviews/edit?serviceProviderId=1
     """
     When a user performs actions
       | action_method   | action_params                   |
-      | move_to_element | id: reviews--rating-Overall--A  |
+      | move_to_element | id: reviews--rating-Overall--B  |
       | click           |                                 |
     Then a segment track call is sent for a unique field value pair
       | unique_field    | unique_value  |
