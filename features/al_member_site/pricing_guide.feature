@@ -25,3 +25,64 @@ Feature:
     When a user navigates to the member pricing guide via the header link
     When a user selects a valid category and task
     Then the page should meet "wcag2a" accessibility guidelines
+
+  @pricingGuideCategorySegment
+  Scenario: Member Pricing Guide Category Click Segment Event
+    Given user is logged into the member site
+    When a user navigates to the member pricing guide via the header link
+    When a user selects a valid category
+    When a segment page call is sent for a unique field value pair
+      | unique_field      | unique_value |
+      | haCategoryName    | Plumbing |
+    Then the segment call contains parameters
+      | prop_key            | prop_value   |
+      | haCategoryName      | Plumbing     |
+      | userId              |              |
+      | userPrimaryAdZone   |              |
+      | userPrimaryZipCode  |              |
+      | userSelectedAdZone  |              |
+      | userSelectedZipCode |              |
+
+  @pricingGuideTaskSegment
+  Scenario: Member Pricing Guide Task Click Segment Event
+    Given user is logged into the member site
+    When a user navigates to the member pricing guide via the header link
+    When a user selects a valid category and task
+    When a segment page call is sent for a unique field value pair
+      | unique_field         | unique_value      |
+      | haSubCategoryName    | Install a Bathtub |
+    Then the segment call contains parameters
+      | prop_key            | prop_value            |
+      | haCategoryId        |                       |
+      | haSubCategoryId     |                       |
+      | haSubCategoryName   | Install a Bathtub     |
+      | haCategoryName      | Plumbing              |
+      | userId              |              |
+      | userPrimaryAdZone   |              |
+      | userPrimaryZipCode  |              |
+      | userSelectedAdZone  |              |
+      | userSelectedZipCode |              |
+
+  @pricingGuideLoadedSegment
+  Scenario: Member Pricing Guide Loaded Segment Event
+    Given user is logged into the member site
+    When a user navigates to the member pricing guide via the header link
+    When a user selects a valid category and task
+    When a segment page call is sent for a unique field value pair
+      | unique_field         | unique_value      |
+      | haSubCategoryName    | Install a Bathtub |
+    Then the segment call contains parameters
+      | prop_key            | prop_value            |
+      | categoryId          |                       |
+      | haCategoryId        |                       |
+      | haSubCategoryId     |                       |
+      | haSubCategoryName   | Install a Bathtub     |
+      | haCategoryName      | Plumbing              |
+      | jobHighPrice        |                       |
+      | jobLowPrice         |                       |
+      | jobTypeName         | Install a Bathtub     |
+      | userId              |                       |
+      | userPrimaryAdZone   |                       |
+      | userPrimaryZipCode  |                       |
+      | userSelectedAdZone  |                       |
+      | userSelectedZipCode |                       |
