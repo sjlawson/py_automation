@@ -18,6 +18,13 @@ Feature:
     Then the landing URL contains "/project?categoryId="
     Then the landing URL contains "&placementType=Web_PricingGuide_Bottom"
 
+  @jake @pricingGuideRegression
+  Scenario: Member Pricing Guide RAQ Selected
+    Given user is logged into the member site
+    When a user navigates to the member pricing guide via the header link
+    When a user selects a valid category and task that has NO Service Providers
+    Then the landing URL contains ".angieslist.com/app/search?category="
+
 
   @memberPricinGuideAccessibility
   Scenario: Member Pricing Guide Accessibility

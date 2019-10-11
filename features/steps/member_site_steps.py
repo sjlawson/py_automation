@@ -90,6 +90,19 @@ def step_impl(context):
     time.sleep(1)
 
 
+@when ('a user selects a valid category and task that has NO Service Providers')
+def step_impl(context):
+    pricing_guide_category_picked = context.browser.find_element(*MemberPricingGuideLocators.PICKACACTEGORY)
+    ActionChains(context.browser).move_to_element(pricing_guide_category_picked).click().send_keys(('Architects & Engineers'), Keys.ENTER).perform()
+    time.sleep(1)
+    pricing_guide_task_picked = context.browser.find_element(*MemberPricingGuideLocators.PICKATASK)
+    ActionChains(context.browser).move_to_element(pricing_guide_task_picked).click().send_keys(('Hire a Structural Engineer'), Keys.ENTER).perform()
+    time.sleep(1)
+    pricing_guide_no_providers = context.browser.find_element(*MemberPricingGuideLocators.SEARCHFORPROSCTA)
+    ActionChains(context.browser).move_to_element(pricing_guide_no_providers).click().perform()
+    time.sleep(1)
+
+
 @when ('a user selects a valid category')
 def step_impl(context):
     pricing_guide_category_picked = context.browser.find_element(*MemberPricingGuideLocators.PICKACACTEGORY)

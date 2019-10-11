@@ -85,3 +85,4 @@ class MemberPricingGuideLocators(object):
   SERVICEPROVIDERLINK = (By.XPATH, '//*[contains(@id, "pg-service-provider-button")]')
   PRICINGGUIDESEARCHFORPROS = (By.ID, 'pg-search-for-pros-button')
   PRICINGGUIDERAQCTA = (By.XPATH, '//*[contains(@id, "pg-service-provider--request-quote-button")]')
+  SEARCHFORPROSCTA = (By.ID, 'pg-search-for-pros-button')
