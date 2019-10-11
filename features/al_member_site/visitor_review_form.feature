@@ -4,7 +4,7 @@ Feature:
   Scenario: Vistor Review Form Accessibility Test
     Given a user is on a member site visitor review page
     """
-    /member/reviews/edit?serviceProviderId=1&at_preview_token=1OH6D8QWmHSyTdCaRZ4jBXWEFq%2Br1NJA9GWwjZnLpb4%3D&at_preview_index=1_1&at_preview_listed_activities_only=true&at_preview_evaluate_as_true_audience_ids=1100025
+    /member/reviews/edit?serviceProviderId=1
     """
     When the page has finished loading
     Then the page should meet "wcag2a" accessibility guidelines
@@ -14,7 +14,7 @@ Feature:
   Scenario: VRF Page Load Event
     Given a user is on a member site visitor review page
     """
-    /member/reviews/edit?serviceProviderId=1&at_preview_token=1OH6D8QWmHSyTdCaRZ4jBXWEFq%2Br1NJA9GWwjZnLpb4%3D&at_preview_index=1_1&at_preview_listed_activities_only=true&at_preview_evaluate_as_true_audience_ids=1100025
+    /member/reviews/edit?serviceProviderId=1
     """
     When a segment page call is sent for a unique field value pair
       | unique_field | unique_value           |
@@ -35,7 +35,7 @@ Feature:
   Scenario: VRF Overall Grade - A
     Given a user is on a member site visitor review page
     """
-    /member/reviews/edit?serviceProviderId=1&at_preview_token=1OH6D8QWmHSyTdCaRZ4jBXWEFq%2Br1NJA9GWwjZnLpb4%3D&at_preview_index=1_1&at_preview_listed_activities_only=true&at_preview_evaluate_as_true_audience_ids=1100025
+    /member/reviews/edit?serviceProviderId=1
     """
     When a user performs actions
       | action_method   | action_params                   |
@@ -57,7 +57,7 @@ Feature:
   Scenario: VRF Price Grade - A
     Given a user is on a member site visitor review page
     """
-    /member/reviews/edit?serviceProviderId=1&at_preview_token=1OH6D8QWmHSyTdCaRZ4jBXWEFq%2Br1NJA9GWwjZnLpb4%3D&at_preview_index=1_1&at_preview_listed_activities_only=true&at_preview_evaluate_as_true_audience_ids=1100025
+    /member/reviews/edit?serviceProviderId=1
     """
     When a user performs actions
       | action_method   | action_params                   |
@@ -79,7 +79,7 @@ Feature:
   Scenario: VRF Quality Grade - A
     Given a user is on a member site visitor review page
     """
-    /member/reviews/edit?serviceProviderId=1&at_preview_token=1OH6D8QWmHSyTdCaRZ4jBXWEFq%2Br1NJA9GWwjZnLpb4%3D&at_preview_index=1_1&at_preview_listed_activities_only=true&at_preview_evaluate_as_true_audience_ids=1100025
+    /member/reviews/edit?serviceProviderId=1
     """
     When a user performs actions
       | action_method   | action_params                   |
@@ -101,7 +101,7 @@ Feature:
   Scenario: VRF Responsiveness Grade - A
     Given a user is on a member site visitor review page
     """
-    /member/reviews/edit?serviceProviderId=1&at_preview_token=1OH6D8QWmHSyTdCaRZ4jBXWEFq%2Br1NJA9GWwjZnLpb4%3D&at_preview_index=1_1&at_preview_listed_activities_only=true&at_preview_evaluate_as_true_audience_ids=1100025
+    /member/reviews/edit?serviceProviderId=1
     """
     When a user performs actions
       | action_method   | action_params                          |
@@ -123,7 +123,7 @@ Feature:
   Scenario: VRF Punctuality Grade - A
     Given a user is on a member site visitor review page
     """
-    /member/reviews/edit?serviceProviderId=1&at_preview_token=1OH6D8QWmHSyTdCaRZ4jBXWEFq%2Br1NJA9GWwjZnLpb4%3D&at_preview_index=1_1&at_preview_listed_activities_only=true&at_preview_evaluate_as_true_audience_ids=1100025
+    /member/reviews/edit?serviceProviderId=1
     """
     When a user performs actions
       | action_method   | action_params                       |
@@ -145,7 +145,7 @@ Feature:
   Scenario: VRF Professionalism Grade - A
     Given a user is on a member site visitor review page
     """
-    /member/reviews/edit?serviceProviderId=1&at_preview_token=1OH6D8QWmHSyTdCaRZ4jBXWEFq%2Br1NJA9GWwjZnLpb4%3D&at_preview_index=1_1&at_preview_listed_activities_only=true&at_preview_evaluate_as_true_audience_ids=1100025
+    /member/reviews/edit?serviceProviderId=1
     """
     When a user performs actions
       | action_method   | action_params                           |
@@ -167,7 +167,7 @@ Feature:
   Scenario: VRF Work Done Click Event - Yes
     Given a user is on a member site visitor review page
     """
-    /member/reviews/edit?serviceProviderId=1&at_preview_token=1OH6D8QWmHSyTdCaRZ4jBXWEFq%2Br1NJA9GWwjZnLpb4%3D&at_preview_index=1_1&at_preview_listed_activities_only=true&at_preview_evaluate_as_true_audience_ids=1100025
+    /member/reviews/edit?serviceProviderId=1
     """
     When a user performs actions
       | action_method   | action_params                        |
@@ -189,7 +189,7 @@ Feature:
   Scenario: VRF Work Done Click Event - No
     Given a user is on a member site visitor review page
     """
-    /member/reviews/edit?serviceProviderId=1&at_preview_token=1OH6D8QWmHSyTdCaRZ4jBXWEFq%2Br1NJA9GWwjZnLpb4%3D&at_preview_index=1_1&at_preview_listed_activities_only=true&at_preview_evaluate_as_true_audience_ids=1100025
+    /member/reviews/edit?serviceProviderId=1
     """
     When a user performs actions
       | action_method   | action_params                        |
@@ -211,7 +211,7 @@ Feature:
   Scenario: VRF Hire Again Click Event - Yes
     Given a user is on a member site visitor review page
     """
-    /member/reviews/edit?serviceProviderId=1&at_preview_token=1OH6D8QWmHSyTdCaRZ4jBXWEFq%2Br1NJA9GWwjZnLpb4%3D&at_preview_index=1_1&at_preview_listed_activities_only=true&at_preview_evaluate_as_true_audience_ids=1100025
+    /member/reviews/edit?serviceProviderId=1
     """
     When a user performs actions
       | action_method   | action_params                         |
@@ -232,7 +232,7 @@ Feature:
   Scenario: VRF Hire Again Click Event - No
     Given a user is on a member site visitor review page
     """
-    /member/reviews/edit?serviceProviderId=1&at_preview_token=1OH6D8QWmHSyTdCaRZ4jBXWEFq%2Br1NJA9GWwjZnLpb4%3D&at_preview_index=1_1&at_preview_listed_activities_only=true&at_preview_evaluate_as_true_audience_ids=1100025
+    /member/reviews/edit?serviceProviderId=1
     """
     When a user performs actions
       | action_method   | action_params                         |
@@ -253,7 +253,7 @@ Feature:
   Scenario: VRF How Did It Go
     Given a user is on a member site visitor review page
     """
-    /member/reviews/edit?serviceProviderId=1&at_preview_token=1OH6D8QWmHSyTdCaRZ4jBXWEFq%2Br1NJA9GWwjZnLpb4%3D&at_preview_index=1_1&at_preview_listed_activities_only=true&at_preview_evaluate_as_true_audience_ids=1100025
+    /member/reviews/edit?serviceProviderId=1
     """
     When a user performs actions
       | action_method   | action_params                         |
@@ -275,7 +275,7 @@ Feature:
   Scenario: VRF How Did It Go - With Text
     Given a user is on a member site visitor review page
     """
-    /member/reviews/edit?serviceProviderId=1&at_preview_token=1OH6D8QWmHSyTdCaRZ4jBXWEFq%2Br1NJA9GWwjZnLpb4%3D&at_preview_index=1_1&at_preview_listed_activities_only=true&at_preview_evaluate_as_true_audience_ids=1100025
+    /member/reviews/edit?serviceProviderId=1
     """
     When a user performs actions
       | action_method   | action_params                         |
@@ -300,7 +300,7 @@ Feature:
   Scenario: VRF How Did It Go - With Text
     Given a user is on a member site visitor review page
     """
-    /member/reviews/edit?serviceProviderId=1&at_preview_token=1OH6D8QWmHSyTdCaRZ4jBXWEFq%2Br1NJA9GWwjZnLpb4%3D&at_preview_index=1_1&at_preview_listed_activities_only=true&at_preview_evaluate_as_true_audience_ids=1100025
+    /member/reviews/edit?serviceProviderId=1
     """
     When a user performs actions
       | action_method   | action_params                         |
@@ -325,7 +325,7 @@ Feature:
   Scenario: VRF Cost Of Service Click Event
     Given a user is on a member site visitor review page
     """
-    /member/reviews/edit?serviceProviderId=1&at_preview_token=1OH6D8QWmHSyTdCaRZ4jBXWEFq%2Br1NJA9GWwjZnLpb4%3D&at_preview_index=1_1&at_preview_listed_activities_only=true&at_preview_evaluate_as_true_audience_ids=1100025
+    /member/reviews/edit?serviceProviderId=1
     """
     When a user performs actions
       | action_method     | action_params                       |
@@ -347,7 +347,7 @@ Feature:
   Scenario: VRF Calendar Click Event
     Given a user is on a member site visitor review page
     """
-    /member/reviews/edit?serviceProviderId=1&at_preview_token=1OH6D8QWmHSyTdCaRZ4jBXWEFq%2Br1NJA9GWwjZnLpb4%3D&at_preview_index=1_1&at_preview_listed_activities_only=true&at_preview_evaluate_as_true_audience_ids=1100025
+    /member/reviews/edit?serviceProviderId=1
     """
     When a user performs actions
       | action_method   | action_params              |
@@ -368,7 +368,7 @@ Feature:
   Scenario: VRF Category Click Event
     Given a user is on a member site visitor review page
     """
-    /member/reviews/edit?serviceProviderId=1&at_preview_token=1OH6D8QWmHSyTdCaRZ4jBXWEFq%2Br1NJA9GWwjZnLpb4%3D&at_preview_index=1_1&at_preview_listed_activities_only=true&at_preview_evaluate_as_true_audience_ids=1100025
+    /member/reviews/edit?serviceProviderId=1
     """
     When a user performs actions
       | action_method   | action_params                        |
@@ -392,7 +392,7 @@ Feature:
   Scenario: VRF Attachment Click Event
     Given a user is on a member site visitor review page
     """
-    /member/reviews/edit?serviceProviderId=1&at_preview_token=1OH6D8QWmHSyTdCaRZ4jBXWEFq%2Br1NJA9GWwjZnLpb4%3D&at_preview_index=1_1&at_preview_listed_activities_only=true&at_preview_evaluate_as_true_audience_ids=1100025
+    /member/reviews/edit?serviceProviderId=1
     """
     When a user performs actions
       | action_method   | action_params                   |
@@ -413,7 +413,7 @@ Feature:
   Scenario: Submit review via VRF - Existing user
     Given a user is on a member site visitor review page
     """
-    /member/reviews/edit?serviceProviderId=1&at_preview_token=1OH6D8QWmHSyTdCaRZ4jBXWEFq%2Br1NJA9GWwjZnLpb4%3D&at_preview_index=1_1&at_preview_listed_activities_only=true&at_preview_evaluate_as_true_audience_ids=1100025
+    /member/reviews/edit?serviceProviderId=1
     """
     When the user fills out a review form as an existing user
     Then the landing URL contains ".angieslist.com/member?submissionconfirmation=true"
@@ -423,7 +423,7 @@ Feature:
   Scenario: Submit review via VRF - New user
     Given a user is on a member site visitor review page
     """
-    /member/reviews/edit?serviceProviderId=1&at_preview_token=1OH6D8QWmHSyTdCaRZ4jBXWEFq%2Br1NJA9GWwjZnLpb4%3D&at_preview_index=1_1&at_preview_listed_activities_only=true&at_preview_evaluate_as_true_audience_ids=1100025
+    /member/reviews/edit?serviceProviderId=1
     """
     When the user fills out a review form and joins
     Then the landing URL contains ".angieslist.com"
@@ -433,7 +433,7 @@ Feature:
   Scenario: VRF Overall Grade - A
     Given a user is on a member site visitor review page
     """
-    /member/reviews/edit?serviceProviderId=1&at_preview_token=1OH6D8QWmHSyTdCaRZ4jBXWEFq%2Br1NJA9GWwjZnLpb4%3D&at_preview_index=1_1&at_preview_listed_activities_only=true&at_preview_evaluate_as_true_audience_ids=1100025
+    /member/reviews/edit?serviceProviderId=1
     """
     When the user fills out a review form as an existing user but stops at clikcing sign in toggle
     Then a segment track call is sent for a unique field value pair
