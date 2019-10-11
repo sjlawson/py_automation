@@ -80,6 +80,16 @@ def step_impl(context):
     time.sleep(1)
 
 
+@when ('a user selects a valid category and task')
+def step_impl(context):
+    pricing_guide_category_picked = context.browser.find_element(*MemberPricingGuideLocators.PICKACACTEGORY)
+    ActionChains(context.browser).move_to_element(pricing_guide_category_picked).click().send_keys(('Plumbing'), Keys.ENTER).perform()
+    time.sleep(1)
+    pricing_guide_task_picked = context.browser.find_element(*MemberPricingGuideLocators.PICKATASK)
+    ActionChains(context.browser).move_to_element(pricing_guide_task_picked).click().send_keys(('Install a Bathtub'), Keys.ENTER).perform()
+    time.sleep(1)
+
+
 @when ('a user selects a valid category and task and selects a service provider')
 def step_impl(context):
     pricing_guide_category_picked = context.browser.find_element(*MemberPricingGuideLocators.PICKACACTEGORY)

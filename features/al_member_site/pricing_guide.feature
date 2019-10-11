@@ -17,3 +17,11 @@ Feature:
     Then the landing URL contains ".angieslist.com/app/lead/request_a_quote/"
     Then the landing URL contains "/project?categoryId="
     Then the landing URL contains "&placementType=Web_PricingGuide_Bottom"
+
+
+  @memberPricinGuideAccessibility
+  Scenario: Member Pricing Guide Accessibility
+    Given user is logged into the member site
+    When a user navigates to the member pricing guide via the header link
+    When a user selects a valid category and task
+    Then the page should meet "wcag2a" accessibility guidelines
