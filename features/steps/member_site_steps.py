@@ -77,23 +77,22 @@ def step_impl(context):
 def step_impl(context):
     header_pricing_guide_button = context.browser.find_element(*MemberHeaderLocators.PRICING_GUIDE)
     ActionChains(context.browser).move_to_element(header_pricing_guide_button).click().perform()
-    time.sleep(1.5)
+    time.sleep(1)
 
-@when ('a user selects a cat and task')
+@when ('a user selects a valid category and task')
 def step_impl(context):
     pricing_guide_category_picked = context.browser.find_element(*MemberPricingGuideLocators.PICKACACTEGORY)
     ActionChains(context.browser).move_to_element(pricing_guide_category_picked).click().send_keys(('Plumbing'), Keys.ENTER).perform()
-    time.sleep(1.5)
+    time.sleep(1)
     pricing_guide_task_picked = context.browser.find_element(*MemberPricingGuideLocators.PICKATASK)
     ActionChains(context.browser).move_to_element(pricing_guide_task_picked).click().send_keys(('Install a Bathtub'), Keys.ENTER).perform()
-    time.sleep(1.5)
+    time.sleep(1)
 
     pricing_guide_graph_presence = context.browser.find_elements(*MemberPricingGuideLocators.PRICINGGUIDEPRESENCE)
     if len(pricing_guide_graph_presence) > 0:
         sp_button = context.browser.find_element(*MemberPricingGuideLocators.SERVICEPROVIDERLINK)
         ActionChains(context.browser).move_to_element(sp_button).click().perform()
-        time.sleep(5.5)
-        context.wait.until(EC.presence_of_element_located(MemberHeaderLocators.PRICING_GUIDE))
+        time.sleep(2)
     else:
         context.wait.until(EC.presence_of_element_located(MemberPricingGuideLocators.PRICINGGUIDESEARCHFORPROS))
 
