@@ -4,7 +4,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
 from common.SegmentTestHelper import SegmentTestHelper
-from platform_pages import *
+from member_pages import *
 from faker import Faker
 import time
 
