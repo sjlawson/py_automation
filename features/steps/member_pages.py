@@ -92,12 +92,13 @@ class MemberDealRedemptionLocators(object):
   MODAL_PHONE_NUMBER_FIELD_2 = (By.NAME, 'part2')
   MODAL_PHONE_NUMBER_FIELD_3 = (By.NAME, 'part3')
 
-
 class MemberAddReviewPageLocators(object):
+  # Class locators on https://tampa-<env>.plat.angieslist.com/member/reviews
   REVIEWS_SEARCH_FOR_PROVIDER = (By.ID, 'reviews--sp-search-autocomplete-inputundefined')
   REVIEWS_SP_AUTOCOMPLETE_THIRD_OPTION = (By.ID, 'react-autowhatever-reviews--sp-search-autocomplete--item-2')
 
 class MemberPricingGuideLocators(object):
+  # Class locators on https://tampa-<env>.plat.angieslist.com/member/pricingguide
   PICKACACTEGORY = (By.ID, 'react-select-2--value')
   PICKATASK = (By.ID, 'react-select-3--value')
   PRICINGGUIDEPRESENCE = (By.ID, 'pricing-guide-graph')
