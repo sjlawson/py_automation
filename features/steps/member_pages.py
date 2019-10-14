@@ -1,13 +1,17 @@
 from selenium.webdriver.common.by import By
 
 class MemberLandingPageLocators(object):
-  """A class locators on https://tampa-<env>.plat.angieslist.com/member/login"""
+  #  A class locators on https://tampa-<env>.plat.angieslist.com/member/login
   LOGIN_EMAIL = (By.ID, 'login--login-email')
   LOGIN_PASSWORD = (By.ID, 'login--login-password')
   LOGIN_BUTTON = (By.ID, 'login--login-button')
   LOGIN_TEXT_LABEL = (By.ID, 'login--header-text-signin')
+  LOGIN_FORGOT_PASSWORD = (By.ID, 'login--forgot-link')
+  LOGIN_NO_PASSWORD = (By.ID, 'login--no-password-link')
+  LOGIN_BUSINESSCENTER_HEADER = (By.ID, 'header-right-nav--visit-business-center')
 
-class MemberHeaderLocators(object):
+class MemberHeaderLocators(object): sd
+  # Class locators on https://tampa-<env>.plat.angieslist.com/*
   ADD_REVIEW_BUTTON = (By.ID, 'header-add-review')
   HOUSE_SEARCH_TAB = (By.ID, 'sub-nav-tab-header-house')
   PLUMBING_SEARCH_LINK = (By.ID, 'header--sub-nav-plumbing')
@@ -16,9 +20,11 @@ class MemberHeaderLocators(object):
   PRICING_GUIDE = (By.ID, 'right-subnav--pricing-guide')
 
 class MemberHomePageLocators(object):
+  # Class locators on https://tampa-<env>.plat.angieslist.com
   WELCOME_MESSAGE = (By.CLASS_NAME, 'search-panel_welcome-msg')
 
 class MemberSignUpPageLocators(object):
+  # Class locators on https://tampa-<env>.plat.angieslist.com/app/signup
   SIGNUP_EMAIL = (By.ID, 'signup--signup-email')
   SIGNUP_PASSWORD = (By.ID, 'signup--signup-password')
   SIGNUP_AGREEMENT = (By.ID, 'signup--signup-membership-agreement')
@@ -26,6 +32,7 @@ class MemberSignUpPageLocators(object):
   AGREEMENT_ACCEPT = (By.ID, 'legal--accept')
 
 class MemberSignUpAddressLocators(object):
+  # Class locators on https://tampa-<env>.plat.angieslist.com/app/account/new_address
   ADDRESS_FIRST_NAME = (By.ID, 'address-collection--first-name')
   ADDRESS_LAST_NAME = (By.ID, 'address-collection--last-name')
   ADDRESS_FIRST_LINE = (By.ID, 'address-component--first-line')
@@ -35,9 +42,10 @@ class MemberSignUpAddressLocators(object):
   ADDRESS_ZIP = (By.ID, 'address-component--zip-code')
   ADDRESS_SUBMIT = (By.ID, 'address-collection--submit-button')
 
-
 class MemberSearchModalLocators(object):
+  # "Select a Project" modal
   DEFAULT_SEARCH_TERM = (By.ID, 'searchTerm')
+  TASK_SEARCH_TERM = (By.XPATH, '//*[@id="modal"]/div/div/div[2]/div/div/a[1]')
 
 class MemberSearchPageLocators(object):
   TOP_SEARCH_RESULT = (By.XPATH, "//ul[@id='spsearch--results-list']//li[1]//a[contains(@id,'spsearch--result-')]")
