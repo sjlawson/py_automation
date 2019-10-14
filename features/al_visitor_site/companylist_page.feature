@@ -2132,6 +2132,111 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/app/signup"
 
+  @companyListFooterSegmentiOS  @companyListFooter
+  Scenario: User clicks on the footer-right iOS App icon on Drupal companylist page
+    Given user is on the visitor site companylist page
+    When a user performs actions
+      | action_method   | action_params         |
+      | move_to_element | id: footer--app-store |
+      | click           |                       |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value        |
+      | activityLocation | Visitor : Directory |
+    And the segment call contains parameters
+      | prop_key         | prop_value                |
+      | activityLocation | Visitor : Directory       |
+      | description      | App Store badge in footer |
+      | userId           |                           |
+
+
+  @footeriostest
+  Scenario: iOS test
+    Given user is on the visitor site companylist page
+    When a user performs actions
+      | action_method | action_params |
+      | click | id: footer--app-store |
+    Then we wait "10" seconds for the next page to load
+
+  @companyListFooterSegmentGoogle  @companyListFooter
+  Scenario: User clicks on the footer-right Google App icon on Drupal companylist page
+    Given user is on the visitor site companylist page
+    When a user performs actions
+      | action_method   | action_params           |
+      | move_to_element | id: footer--google-play |
+      | click           |                         |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value        |
+      | activityLocation | Visitor : Directory |
+    And the segment call contains parameters
+      | prop_key         | prop_value                  |
+      | activityLocation | Visitor : Directory         |
+      | description      | Google Play badge in footer |
+      | userId           |                             |
+
+  @companyListFooterSegmentTwitter  @companyListFooter
+  Scenario: User clicks on the footer-right Twitter icon on Drupal companylist page
+    Given user is on the visitor site companylist page
+    When a user performs actions
+      | action_method   | action_params       |
+      | move_to_element | id: footer--twitter |
+      | click           |                     |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value        |
+      | activityLocation | Visitor : Directory |
+    And the segment call contains parameters
+      | prop_key         | prop_value             |
+      | activityLocation | Visitor : Directory    |
+      | description      | Twitter icon in footer |
+      | userId           |                        |
+
+  @companyListFooterSegmentFaceBook  @companyListFooter
+  Scenario: User clicks on the footer-right Facebook icon on Drupal companylist page
+    Given user is on the visitor site companylist page
+    When a user performs actions
+      | action_method   | action_params        |
+      | move_to_element | css: #footer--facebook |
+      | click           | css: #footer--facebook |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value        |
+      | activityLocation | Visitor : Directory |
+    And the segment call contains parameters
+      | prop_key         | prop_value              |
+      | activityLocation | Visitor : Directory     |
+      | description      | Facebook icon in footer |
+      | userId           |                         |
+
+  @companyListFooterSegmentPinterest  @companyListFooter
+  Scenario: User clicks on the footer-right Pinterest icon on Drupal companylist page
+    Given user is on the visitor site companylist page
+    When a user performs actions
+      | action_method   | action_params         |
+      | move_to_element | id: footer--pinterest |
+      | click           |                       |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value        |
+      | activityLocation | Visitor : Directory |
+    And the segment call contains parameters
+      | prop_key         | prop_value               |
+      | activityLocation | Visitor : Directory      |
+      | description      | Pinterest icon in footer |
+      | userId           |                          |
+
+  @companyListFooterSegmentYouTube  @companyListFooter
+  Scenario: User clicks on the footer-right YouTube icon on Drupal companylist page
+    Given user is on the visitor site companylist page
+    When a user performs actions
+      | action_method   | action_params       |
+      | move_to_element | id: footer--youtube |
+      | click           |                     |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field     | unique_value        |
+      | activityLocation | Visitor : Directory |
+    And the segment call contains parameters
+      | prop_key         | prop_value             |
+      | activityLocation | Visitor : Directory    |
+      | description      | YouTube icon in footer |
+      | userId           |                        |
+
   @companyListPageFooterSegmentTermsOfUse @companyListPageFooter @companyListTreeFooter
   Scenario: User clicks on the footer TermsOfUse icon on Drupal Company List Page
     Given user is on the visitor site companylist page
