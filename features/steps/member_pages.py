@@ -13,6 +13,7 @@ class MemberHeaderLocators(object):
   PLUMBING_SEARCH_LINK = (By.ID, 'header--sub-nav-plumbing')
   MESSAGES_BUTTON = (By.ID, 'main-menu--view-messages-icon')
   DEALS_BUTTON = (By.ID, 'right-subnav--shop-offers')
+  PRICING_GUIDE = (By.ID, 'right-subnav--pricing-guide')
 
 class MemberHomePageLocators(object):
   WELCOME_MESSAGE = (By.CLASS_NAME, 'search-panel_welcome-msg')
@@ -76,3 +77,12 @@ class MemberDealPageLocators(object):
 class MemberAddReviewPageLocators(object):
   REVIEWS_SEARCH_FOR_PROVIDER = (By.ID, 'reviews--sp-search-autocomplete-inputundefined')
   REVIEWS_SP_AUTOCOMPLETE_THIRD_OPTION = (By.ID, 'react-autowhatever-reviews--sp-search-autocomplete--item-2')
+
+class MemberPricingGuideLocators(object):
+  PICKACACTEGORY = (By.ID, 'react-select-2--value')
+  PICKATASK = (By.ID, 'react-select-3--value')
+  PRICINGGUIDEPRESENCE = (By.ID, 'pricing-guide-graph')
+  SERVICEPROVIDERLINK = (By.XPATH, '//*[contains(@id, "pg-service-provider-button")]')
+  PRICINGGUIDESEARCHFORPROS = (By.ID, 'pg-search-for-pros-button')
+  PRICINGGUIDERAQCTA = (By.XPATH, '//*[contains(@id, "pg-service-provider--request-quote-button")]')
+  SEARCHFORPROSCTA = (By.ID, 'pg-search-for-pros-button')
