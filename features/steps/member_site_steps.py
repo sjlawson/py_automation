@@ -123,7 +123,7 @@ def step_impl(context):
     if len(pricing_guide_graph_presence) > 0:
         sp_button = context.browser.find_element(*MemberPricingGuideLocators.SERVICEPROVIDERLINK)
         ActionChains(context.browser).move_to_element(sp_button).click().perform()
-        time.sleep(2)
+        time.sleep(4)
     else:
         context.wait.until(EC.presence_of_element_located(MemberPricingGuideLocators.PRICINGGUIDESEARCHFORPROS))
 
