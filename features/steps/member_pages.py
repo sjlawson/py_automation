@@ -10,7 +10,7 @@ class MemberLandingPageLocators(object):
   LOGIN_NO_PASSWORD = (By.ID, 'login--no-password-link')
   LOGIN_BUSINESSCENTER_HEADER = (By.ID, 'header-right-nav--visit-business-center')
 
-class MemberHeaderLocators(object): sd
+class MemberHeaderLocators(object):
   # Class locators on https://tampa-<env>.plat.angieslist.com/*
   ADD_REVIEW_BUTTON = (By.ID, 'header-add-review')
   HOUSE_SEARCH_TAB = (By.ID, 'sub-nav-tab-header-house')
