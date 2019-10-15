@@ -145,3 +145,17 @@ def step_impl(context):
     else:
         context.wait.until(EC.presence_of_element_located(MemberPricingGuideLocators.PRICINGGUIDESEARCHFORPROS))
 
+@when ('deals have loaded on the member homepage')
+def step_impl(context):
+    context.wait.until(EC.presence_of_element_located(MemberBodyClickLocators.MEMBER_HOME_POPULAR_DEALS))
+
+@when ('the user is able to click on an offer')
+def step_impl (context):
+    member_home_offer_click = context.browser.find_element(*MemberBodyClickLocators.MEMBER_HOME_POPULAR_DEALS)
+    ActionChains(context.browser).move_to_element(member_home_offer_click).click().perform()
+
+@then ('the deal detail page loads')
+def step_impl(context):
+    context.wait.until(EC.presence_of_element_located(MemberBodyClickLocators.MEMBER_DEAL_DETAIL_CONTACT_PRO_CTA))
+    context.wait.until(EC.presence_of_element_located(MemberBodyClickLocators.MEMBER_DEAL_DETAIL_OFFER_GRADE))
+    context.wait.until(EC.presence_of_element_located(MemberBodyClickLocators.MEMBER_DEAL_DETAIL_RECENT_REVIEWS))
