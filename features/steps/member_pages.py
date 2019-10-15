@@ -1,5 +1,26 @@
 from selenium.webdriver.common.by import By
 
+class MemberHeaderLocators(object):
+  # Memebr Header class locators on https://tampa-<env>.plat.angieslist.com/*
+  ADD_REVIEW_BUTTON = (By.ID, 'header-add-review')
+  HOUSE_SEARCH_TAB = (By.ID, 'sub-nav-tab-header-house')
+  PLUMBING_SEARCH_LINK = (By.ID, 'header--sub-nav-plumbing')
+  MESSAGES_BUTTON = (By.ID, 'main-menu--view-messages-icon')
+  DEALS_BUTTON = (By.ID, 'right-subnav--shop-offers')
+  PRICING_GUIDE = (By.ID, 'right-subnav--pricing-guide')
+
+class MemberBodyLocators(object):
+  # Memeber body page locators(this can be any page)
+  MEMBER_HOME_POPULAR_DEALS = (By.XPATH, '//*[contains(@id, "enhanced-offer-card--")]')
+  MEMBER_DEAL_DETAIL_CONTACT_PRO_CTA = (By.XPATH, '//*[contains(@id, "offer-view-anon--buy-offer-button-")]')
+  MEMBER_DEAL_DETAIL_OFFER_GRADE = (By.XPATH, '//*[@id="app"]/div/div/div/div/div[1]/div/div/div/div[1]/div[2]/div[1]/div[2]/div[2]')
+  MEMBER_DEAL_DETAIL_RECENT_REVIEWS = (By.ID, 'offer--recent-reviews')
+
+class MemberMessagesLocators(object):
+  # This is a place to define class locators for text displayed on the Member pages
+  MEMBER_HOME_POPULAR_SHOP = (By.CLASS_NAME, 'popular-offers-label')
+  MEMBER_DEAL_DETAIL_DEAL_DETAIL = (By.CLASS_NAME, 'enhanced-offer_header')
+
 class MemberLandingPageLocators(object):
   #  A class locators on https://tampa-<env>.plat.angieslist.com/member/login
   LOGIN_EMAIL = (By.ID, 'login--login-email')
@@ -9,15 +30,6 @@ class MemberLandingPageLocators(object):
   LOGIN_FORGOT_PASSWORD = (By.ID, 'login--forgot-link')
   LOGIN_NO_PASSWORD = (By.ID, 'login--no-password-link')
   LOGIN_BUSINESSCENTER_HEADER = (By.ID, 'header-right-nav--visit-business-center')
-
-class MemberHeaderLocators(object):
-  # Class locators on https://tampa-<env>.plat.angieslist.com/*
-  ADD_REVIEW_BUTTON = (By.ID, 'header-add-review')
-  HOUSE_SEARCH_TAB = (By.ID, 'sub-nav-tab-header-house')
-  PLUMBING_SEARCH_LINK = (By.ID, 'header--sub-nav-plumbing')
-  MESSAGES_BUTTON = (By.ID, 'main-menu--view-messages-icon')
-  DEALS_BUTTON = (By.ID, 'right-subnav--shop-offers')
-  PRICING_GUIDE = (By.ID, 'right-subnav--pricing-guide')
 
 class MemberHomePageLocators(object):
   # Class locators on https://tampa-<env>.plat.angieslist.com
@@ -106,13 +118,3 @@ class MemberPricingGuideLocators(object):
   PRICINGGUIDESEARCHFORPROS = (By.ID, 'pg-search-for-pros-button')
   PRICINGGUIDERAQCTA = (By.XPATH, '//*[contains(@id, "pg-service-provider--request-quote-button")]')
   SEARCHFORPROSCTA = (By.ID, 'pg-search-for-pros-button')
-
-class MemberMessagesLocators(object):
-  # This is a place to define class locators for text displayed on the Member pages
-  MEMBER_HOME_POPULAR_SHOP = (By.CLASS_NAME, 'popular-offers-label')
-
-class MemberBodyClickLocators(object):
-  MEMBER_HOME_POPULAR_DEALS = (By.XPATH, '//*[contains(@id, "enhanced-offer-card--")]')
-  MEMBER_DEAL_DETAIL_CONTACT_PRO_CTA = (By.XPATH, '//*[contains(@id, "offer-view-anon--buy-offer-button-")]')
-  MEMBER_DEAL_DETAIL_OFFER_GRADE = (By.XPATH, '//*[@id="app"]/div/div/div/div/div[1]/div/div/div/div[1]/div[2]/div[1]/div[2]/div[2]')
-  MEMBER_DEAL_DETAIL_RECENT_REVIEWS = (By.ID, 'offer--recent-reviews')
