@@ -73,6 +73,15 @@ def step_impl(context):
     time.sleep(1.5)
 
 
+@given('a user is on a member site unauthenticated deals search page')
+def step_impl(context):
+    appsuite_env = 'al_member_site'
+    appsuite_url = context.appsuites[appsuite_env]['base_url']
+    context.url = appsuite_url + '/deals/search'
+    context.browser.get(context.url)
+    time.sleep(1.5)
+
+
 @when('a user navigates to the member pricing guide via the header link')
 def step_impl(context):
     header_pricing_guide_button = context.browser.find_element(*MemberHeaderLocators.PRICING_GUIDE)
@@ -153,6 +162,11 @@ def step_impl(context):
 def step_impl (context):
     member_home_offer_click = context.browser.find_element(*MemberBodyLocators.MEMBER_HOME_POPULAR_DEALS)
     ActionChains(context.browser).move_to_element(member_home_offer_click).click().perform()
+
+@when ('a user enters their postal code to see offers')
+def step_impl (context):
+    member_unauth_postalcode_enter = context.browser.find_element(*MemberModalLocators.DEAL_UNAUTH_POSTALCODE_MODAL_SET_CODE)
+    ActionChains(context.browser).move_to_element(member_unauth_postalcode_enter).click().send_keys(('49726'), Keys.ENTER).perform()
 
 @then ('the deal detail page loads')
 def step_impl(context):
