@@ -1,6 +1,7 @@
 from selenium.webdriver.common.by import By
 
 class ReviewLetterGradeSelectors(object):
+  # Class locators on https://tampa-<env>.plat.angieslist.com/member/reviews/edit?serviceProviderId=<serviceProviderId>
   AVAILABILITY_A_GRADE = (By.ID, 'reviews--rating-Availability--A')
   AVAILABILITY_B_GRADE = (By.ID, 'reviews--rating-Availability--B')
   AVAILABILITY_C_GRADE = (By.ID, 'reviews--rating-Availability--C')
@@ -80,6 +81,7 @@ class ReviewLetterGradeSelectors(object):
   STAFF_FRIENDLINESS_NA_GRADE = (By.ID, 'reviews--rating-Staff Friendliness--N/A')
 
 class ReviewButtons(object):
+  # Class locators on https://tampa-<env>.plat.angieslist.com/member/reviews/edit?serviceProviderId=<serviceProviderId>
   WORK_COMPLETED_YES = (By.ID, 'reviews--workComplete-button-yes')
   WORK_COMPLETED_NO = (By.ID, 'reviews--workComplete-button-no')
   WILL_HIRE_AGAIN_YES = (By.ID, 'reviews--willHireAgain-button-yes')
@@ -94,6 +96,7 @@ class ReviewButtons(object):
   REVIEW_SUBMIT_BUTTON = (By.ID, 'reviews--submit-button')
 
 class ReviewInputFields(object):
+  # Class locators on https://tampa-<env>.plat.angieslist.com/member/reviews/edit?serviceProviderId=<serviceProviderId>
   CALENDAR_INPUT = (By.ID, 'calendar-input-input')
   CATEGORY_INPUT = (By.ID, 'write-a-review--category-auto-complete-input-input')
   COST_OF_SERVICE_INPUT = (By.ID, 'review--cost-of-service-input')
