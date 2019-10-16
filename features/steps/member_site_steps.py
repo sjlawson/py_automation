@@ -73,6 +73,15 @@ def step_impl(context):
     time.sleep(1.5)
 
 
+@given('a user is on a member site unauthenticated deals search page')
+def step_impl(context):
+    appsuite_env = 'al_member_site'
+    appsuite_url = context.appsuites[appsuite_env]['base_url']
+    context.url = appsuite_url + '/deals/search'
+    context.browser.get(context.url)
+    time.sleep(1.5)
+
+
 @when('a user navigates to the member pricing guide via the header link')
 def step_impl(context):
     header_pricing_guide_button = context.browser.find_element(*MemberHeaderLocators.PRICING_GUIDE)
@@ -145,3 +154,31 @@ def step_impl(context):
     else:
         context.wait.until(EC.presence_of_element_located(MemberPricingGuideLocators.PRICINGGUIDESEARCHFORPROS))
 
+@when ('deals have loaded on the member homepage')
+def step_impl(context):
+    context.wait.until(EC.presence_of_element_located(MemberBodyLocators.DEAL_CARD))
+
+@when ('the user is able to click on an offer')
+def step_impl (context):
+    member_home_offer_click = context.browser.find_element(*MemberBodyLocators.DEAL_CARD)
+    ActionChains(context.browser).move_to_element(member_home_offer_click).click().perform()
+
+@when ('a user enters their postal code to see offers')
+def step_impl (context):
+    member_unauth_postalcode_enter = context.browser.find_element(*MemberModalLocators.DEAL_UNAUTH_POSTALCODE_MODAL_SET_CODE)
+    ActionChains(context.browser).move_to_element(member_unauth_postalcode_enter).click().send_keys(('49726'), Keys.ENTER).perform()
+
+@then ('the deal detail page loads')
+def step_impl(context):
+    context.wait.until(EC.presence_of_element_located(MemberBodyLocators.CONTACT_PRO_CTA))
+    context.wait.until(EC.presence_of_element_located(MemberBodyLocators.MEMBER_DEAL_DETAIL_OFFER_GRADE))
+    context.wait.until(EC.presence_of_element_located(MemberBodyLocators.MEMBER_DEAL_DETAIL_RECENT_REVIEWS))
+
+@then ('the user selects a deal from the unauth experience')
+def step_impl(context):
+    unauth_deals_search_offer_click = context.browser.find_element(*MemberBodyLocators.DEAL_CARD)
+    ActionChains(context.browser).move_to_element(unauth_deals_search_offer_click).click().perform()
+    time.sleep(2)
+    unauth_deals_contact_pro_cta = context.browser.find_element(*MemberBodyLocators.CONTACT_PRO_CTA)
+    ActionChains(context.browser).move_to_element(unauth_deals_contact_pro_cta).click().perform()
+    time.sleep(2)
