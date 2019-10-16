@@ -14,9 +14,9 @@ Feature: Member Deals for the Auth and UnAuth experience
   Scenario: Unauth - Deals
     Given a user is on a member site unauthenticated deals search page
     When a user enters their postal code to see offers
-    Then we wait "1" seconds for the next page to load
+    Then we wait "2" seconds for the next page to load
     Then the user selects a deal from the unauth experience
-    Then we wait "1" seconds for the next page to load
+    Then we wait "2" seconds for the next page to load
     Then the landing URL contains ".angieslist.com/member/login?redirect="
     Then the landing URL contains "startRedemption"
     Then the landing URL contains "true"
