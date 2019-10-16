@@ -41,7 +41,6 @@ class MemberModalLocators(object):
   DEAL_UNAUTH_POSTALCODE_MODAL = (By.CLASS_NAME, 'modal-body request-postal-code')
   DEAL_UNAUTH_POSTALCODE_MODAL_SET_CODE = (By.ID, 'offer-search--set-location--postal-code')
 
-
 class MemberSignUpPageLocators(object):
   # Class locators on https://tampa-<env>.plat.angieslist.com/app/signup
   SIGNUP_EMAIL = (By.ID, 'signup--signup-email')
