@@ -156,11 +156,11 @@ def step_impl(context):
 
 @when ('deals have loaded on the member homepage')
 def step_impl(context):
-    context.wait.until(EC.presence_of_element_located(MemberBodyLocators.MEMBER_HOME_POPULAR_DEALS))
+    context.wait.until(EC.presence_of_element_located(MemberBodyLocators.DEAL_CARD))
 
 @when ('the user is able to click on an offer')
 def step_impl (context):
-    member_home_offer_click = context.browser.find_element(*MemberBodyLocators.MEMBER_HOME_POPULAR_DEALS)
+    member_home_offer_click = context.browser.find_element(*MemberBodyLocators.DEAL_CARD)
     ActionChains(context.browser).move_to_element(member_home_offer_click).click().perform()
 
 @when ('a user enters their postal code to see offers')
@@ -170,6 +170,15 @@ def step_impl (context):
 
 @then ('the deal detail page loads')
 def step_impl(context):
-    context.wait.until(EC.presence_of_element_located(MemberBodyLocators.MEMBER_DEAL_DETAIL_CONTACT_PRO_CTA))
+    context.wait.until(EC.presence_of_element_located(MemberBodyLocators.CONTACT_PRO_CTA))
     context.wait.until(EC.presence_of_element_located(MemberBodyLocators.MEMBER_DEAL_DETAIL_OFFER_GRADE))
     context.wait.until(EC.presence_of_element_located(MemberBodyLocators.MEMBER_DEAL_DETAIL_RECENT_REVIEWS))
+
+@then ('the user selects a deal from the unauth experience')
+def step_impl(context):
+    unauth_deals_search_offer_click = context.browser.find_element(*MemberBodyLocators.DEAL_CARD)
+    ActionChains(context.browser).move_to_element(unauth_deals_search_offer_click).click().perform()
+    time.sleep(2)
+    unauth_deals_contact_pro_cta = context.browser.find_element(*MemberBodyLocators.CONTACT_PRO_CTA)
+    ActionChains(context.browser).move_to_element(unauth_deals_contact_pro_cta).click().perform()
+    time.sleep(2)

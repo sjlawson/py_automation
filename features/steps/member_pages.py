@@ -11,8 +11,8 @@ class MemberHeaderLocators(object):
 
 class MemberBodyLocators(object):
   # Memeber body page locators(this can be any page)
-  MEMBER_HOME_POPULAR_DEALS = (By.XPATH, '//*[contains(@id, "enhanced-offer-card--")]')
-  MEMBER_DEAL_DETAIL_CONTACT_PRO_CTA = (By.XPATH, '//*[contains(@id, "offer-view-anon--buy-offer-button-")]')
+  DEAL_CARD = (By.XPATH, '//*[contains(@id, "enhanced-offer-card--")]')
+  CONTACT_PRO_CTA = (By.XPATH, '//*[contains(@id, "offer-view-anon--buy-offer-button-")]')
   MEMBER_DEAL_DETAIL_OFFER_GRADE = (By.XPATH, '//*[@id="app"]/div/div/div/div/div[1]/div/div/div/div[1]/div[2]/div[1]/div[2]/div[2]')
   MEMBER_DEAL_DETAIL_RECENT_REVIEWS = (By.ID, 'offer--recent-reviews')
 

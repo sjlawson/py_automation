@@ -11,7 +11,13 @@ Feature: Member Deals for the Auth and UnAuth experience
     Then the landing URL contains "?placementType=Web_MemberHomePage_Deals"
 
   @memberDealSearchUnauth
-  Scenario: Member Unauth - Deals Have Loaded
+  Scenario: Unauth - Deals
     Given a user is on a member site unauthenticated deals search page
     When a user enters their postal code to see offers
-    Then the landing URL contains ".angieslist.com/deals/search"
+    Then we wait "1" seconds for the next page to load
+    Then the user selects a deal from the unauth experience
+    Then we wait "1" seconds for the next page to load
+    Then the landing URL contains ".angieslist.com/member/login?redirect="
+    Then the landing URL contains "startRedemption"
+    Then the landing URL contains "true"
+
