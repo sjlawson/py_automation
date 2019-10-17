@@ -258,15 +258,15 @@ Feature:
     And the landing URL contains ".angieslist.com/category.Roofing-Siding-Gutters.10217.html?entry_point_id=32723378&postalCode=90068"
     
     @geoCatBodySeeAllCategoriesSearch @geoCatBody @companyListTreeBody @companyListTreeRegression @companyListTreeSmoke
-    Scenario: User clicks on See All Categories and selects Cleaning  on GeoCat page
+    Scenario: User clicks on See All Categories and selects Cleaning on GeoCat page
       Given user is on a visitor site geocat page
       When a user performs actions
-    | action_method   | action_params                 |
-    | move_to_element | #geocat-category-select-all   |
-    | click           | #geocat-category-select-all   |
-    | click           | #block-system-main > div > div:nth-child(1) > div.panel-pane.pane-al-geocat-filters.panel-pane.pane-al-geocat-filters.row.greyback.row--sub-header > div > div > div:nth-child(1) > ul > li:nth-child(4) > a |
+    | action_method   | action_params                                                |
+    | move_to_element | #geocat-category-select-all                                  |
+    | click           | #geocat-category-select-all                                  |
+    | click           | css: .geocat-category-select__dropdown-menu.al-dropdown-menu.clearfix > div > ul > li:nth-child(4) |
     Then a segment track call is sent for a unique field value pair
-    | unique_field | unique_value                      |
+    | unique_field | unique_value                               |
     | description  | Category selected from all categories list |
     And the segment call contains parameters
     | prop_key               | prop_value                                 |
@@ -560,17 +560,17 @@ Feature:
 
   @geoCatFooterTopCityNYC @geoCatFooter @companyListTreeFooter @companyListTreeRegression @companyListTreeSmoke
   Scenario: User clicks on the footer NYC top city link on Drupal Company List Page
-    Given user is on the visitor site geocat page
+    Given user is on a visitor site geocat page
     When a user performs actions
       | action_method   | action_params                   |
       | move_to_element | id: footer-top-cities-new-york  |
       | click           |                                 |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value            |
-      | activityLocation | Visitor : Directory |
+      | activityLocation | Visitor : Geocat |
     And the segment call contains parameters
       | prop_key               | prop_value                     |
-      | activityLocation       | Visitor : Directory            |
+      | activityLocation       | Visitor : Geocat               |
       | description            | Top Cities link in footer      |
       | userId                 |                                |
     And we wait "1" seconds for the next page to load
@@ -579,17 +579,17 @@ Feature:
 
   @geoCatFooterTopCityHouston @geoCatFooter @companyListTreeFooter @companyListTreeRegression @companyListTreeSmoke
   Scenario: User clicks on the footer Houston top city link on Drupal Company List Page
-    Given user is on the visitor site geocat page
+    Given user is on a visitor site geocat page
     When a user performs actions
       | action_method   | action_params                  |
       | move_to_element | id: footer-top-cities-houston  |
       | click           |                                |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value            |
-      | activityLocation | Visitor : Directory |
+      | activityLocation | Visitor : Geocat |
     And the segment call contains parameters
       | prop_key               | prop_value                     |
-      | activityLocation       | Visitor : Directory            |
+      | activityLocation       | Visitor : Geocat               |
       | description            | Top Cities link in footer      |
       | userId                 |                                |
     And we wait "1" seconds for the next page to load
@@ -598,17 +598,17 @@ Feature:
 
   @geoCatFooterTopCityChi @geoCatFooter @companyListTreeFooter @companyListTreeRegression @companyListTreeSmoke
   Scenario: User clicks on the footer Chicago top city link on Drupal Company List Page
-    Given user is on the visitor site geocat page
+    Given user is on a visitor site geocat page
     When a user performs actions
       | action_method   | action_params                  |
       | move_to_element | id: footer-top-cities-chicago  |
       | click           |                                |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value            |
-      | activityLocation | Visitor : Directory |
+      | activityLocation | Visitor : Geocat |
     And the segment call contains parameters
       | prop_key               | prop_value                     |
-      | activityLocation       | Visitor : Directory            |
+      | activityLocation       | Visitor : Geocat               |
       | description            | Top Cities link in footer      |
       | userId                 |                                |
     And we wait "1" seconds for the next page to load
@@ -617,17 +617,17 @@ Feature:
 
   @geoCatFooterTopCityIndy @geoCatFooter @companyListTreeFooter @companyListTreeRegression @companyListTreeSmoke
   Scenario: User clicks on the footer Indianapolis top city link on Drupal Company List Page
-    Given user is on the visitor site geocat page
+    Given user is on a visitor site geocat page
     When a user performs actions
       | action_method   | action_params                       |
       | move_to_element | id: footer-top-cities-indianapolis  |
       | click           |                                     |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value            |
-      | activityLocation | Visitor : Directory |
+      | activityLocation | Visitor : Geocat |
     And the segment call contains parameters
       | prop_key               | prop_value                     |
-      | activityLocation       | Visitor : Directory            |
+      | activityLocation       | Visitor : Geocat               |
       | description            | Top Cities link in footer      |
       | userId                 |                                |
     And we wait "1" seconds for the next page to load
@@ -636,17 +636,17 @@ Feature:
 
   @geoCatFooterTopCityBos @geoCatFooter @companyListTreeFooter @companyListTreeRegression @companyListTreeSmoke
   Scenario: User clicks on the footer Boston top city link on Drupal Company List Page
-    Given user is on the visitor site geocat page
+    Given user is on a visitor site geocat page
     When a user performs actions
       | action_method   | action_params                 |
       | move_to_element | id: footer-top-cities-boston  |
       | click           |                               |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value            |
-      | activityLocation | Visitor : Directory |
+      | activityLocation | Visitor : Geocat |
     And the segment call contains parameters
       | prop_key               | prop_value                     |
-      | activityLocation       | Visitor : Directory            |
+      | activityLocation       | Visitor : Geocat               |
       | description            | Top Cities link in footer      |
       | userId                 |                                |
     And we wait "1" seconds for the next page to load
@@ -654,17 +654,17 @@ Feature:
 
   @geoCatFooterTopCityATL @geoCatFooter @companyListTreeFooter @companyListTreeRegression @companyListTreeSmoke
   Scenario: User clicks on the footer Atlanta top city link on Drupal Company List Page
-    Given user is on the visitor site geocat page
+    Given user is on a visitor site geocat page
     When a user performs actions
       | action_method   | action_params                  |
       | move_to_element | id: footer-top-cities-atlanta  |
       | click           |                                |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value            |
-      | activityLocation | Visitor : Directory |
+      | activityLocation | Visitor : Geocat |
     And the segment call contains parameters
       | prop_key               | prop_value                     |
-      | activityLocation       | Visitor : Directory            |
+      | activityLocation       | Visitor : Geocat               |
       | description            | Top Cities link in footer      |
       | userId                 |                                |
     And we wait "1" seconds for the next page to load
@@ -672,17 +672,17 @@ Feature:
 
   @geoCatFooterTopCityCinci @geoCatFooter @companyListTreeFooter @companyListTreeRegression @companyListTreeSmoke
   Scenario: User clicks on the footer Cincinnati top city link on Drupal Company List Page
-    Given user is on the visitor site geocat page
+    Given user is on a visitor site geocat page
     When a user performs actions
       | action_method   | action_params                     |
       | move_to_element | id: footer-top-cities-cincinnati  |
       | click           |                                   |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value            |
-      | activityLocation | Visitor : Directory |
+      | activityLocation | Visitor : Geocat |
     And the segment call contains parameters
       | prop_key               | prop_value                     |
-      | activityLocation       | Visitor : Directory            |
+      | activityLocation       | Visitor : Geocat               |
       | description            | Top Cities link in footer      |
       | userId                 |                                |
     And we wait "1" seconds for the next page to load
@@ -690,17 +690,17 @@ Feature:
 
   @geoCatFooterTopCityLA @geoCatFooter @companyListTreeFooter @companyListTreeRegression @companyListTreeSmoke
   Scenario: User clicks on the footer Los Angeles top city link on Drupal Company List Page
-    Given user is on the visitor site geocat page
+    Given user is on a visitor site geocat page
     When a user performs actions
       | action_method   | action_params                      |
       | move_to_element | id: footer-top-cities-los-angeles  |
       | click           |                                    |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value            |
-      | activityLocation | Visitor : Directory |
+      | activityLocation | Visitor : Geocat |
     And the segment call contains parameters
       | prop_key               | prop_value                     |
-      | activityLocation       | Visitor : Directory            |
+      | activityLocation       | Visitor : Geocat               |
       | description            | Top Cities link in footer      |
       | userId                 |                                |
     And we wait "1" seconds for the next page to load
@@ -708,17 +708,17 @@ Feature:
 
   @geoCatFooterTopCityDal @geoCatFooter @companyListTreeFooter @companyListTreeRegression @companyListTreeSmoke
   Scenario: User clicks on the footer Dallas top city link on Drupal Company List Page
-    Given user is on the visitor site geocat page
+    Given user is on a visitor site geocat page
     When a user performs actions
       | action_method   | action_params                 |
       | move_to_element | id: footer-top-cities-dallas  |
       | click           |                               |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value            |
-      | activityLocation | Visitor : Directory |
+      | activityLocation | Visitor : Geocat |
     And the segment call contains parameters
       | prop_key               | prop_value                     |
-      | activityLocation       | Visitor : Directory            |
+      | activityLocation       | Visitor : Geocat               |
       | description            | Top Cities link in footer      |
       | userId                 |                                |
     And we wait "1" seconds for the next page to load
@@ -726,17 +726,17 @@ Feature:
 
   @geoCatFooterTopCityPitt @geoCatFooter @companyListTreeFooter @companyListTreeRegression @companyListTreeSmoke
   Scenario: User clicks on the footer Pittsburgh top city link on Drupal Company List Page
-    Given user is on the visitor site geocat page
+    Given user is on a visitor site geocat page
     When a user performs actions
       | action_method   | action_params                     |
       | move_to_element | id: footer-top-cities-pittsburgh  |
       | click           |                                   |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value            |
-      | activityLocation | Visitor : Directory |
+      | activityLocation | Visitor : Geocat |
     And the segment call contains parameters
       | prop_key               | prop_value                     |
-      | activityLocation       | Visitor : Directory            |
+      | activityLocation       | Visitor : Geocat               |
       | description            | Top Cities link in footer      |
       | userId                 |                                |
     And we wait "1" seconds for the next page to load
@@ -744,17 +744,17 @@ Feature:
 
   @geoCatFooterTopCityMinn @geoCatFooter @companyListTreeFooter @companyListTreeRegression @companyListTreeSmoke
   Scenario: User clicks on the footer Minneapolis top city link on Drupal Company List Page
-    Given user is on the visitor site geocat page
+    Given user is on a visitor site geocat page
     When a user performs actions
       | action_method   | action_params                      |
       | move_to_element | id: footer-top-cities-minneapolis  |
       | click           |                                    |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value            |
-      | activityLocation | Visitor : Directory |
+      | activityLocation | Visitor : Geocat |
     And the segment call contains parameters
       | prop_key               | prop_value                     |
-      | activityLocation       | Visitor : Directory            |
+      | activityLocation       | Visitor : Geocat               |
       | description            | Top Cities link in footer      |
       | userId                 |                                |
     And we wait "1" seconds for the next page to load
@@ -762,17 +762,17 @@ Feature:
 
   @geoCatFooterTopCityLV @geoCatFooter @companyListTreeFooter @companyListTreeRegression @companyListTreeSmoke
   Scenario: User clicks on the footer Las Vegas top city link on Drupal Company List Page
-    Given user is on the visitor site geocat page
+    Given user is on a visitor site geocat page
     When a user performs actions
       | action_method   | action_params                    |
       | move_to_element | id: footer-top-cities-las-vegas  |
       | click           |                                  |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value            |
-      | activityLocation | Visitor : Directory |
+      | activityLocation | Visitor : Geocat |
     And the segment call contains parameters
       | prop_key               | prop_value                     |
-      | activityLocation       | Visitor : Directory            |
+      | activityLocation       | Visitor : Geocat               |
       | description            | Top Cities link in footer      |
       | userId                 |                                |
     And we wait "1" seconds for the next page to load
@@ -780,17 +780,17 @@ Feature:
 
   @geoCatFooterTopCitySA @geoCatFooter @companyListTreeFooter @companyListTreeRegression @companyListTreeSmoke
   Scenario: User clicks on the footer San Antonio top city link on Drupal Company List Page
-    Given user is on the visitor site geocat page
+    Given user is on a visitor site geocat page
     When a user performs actions
       | action_method   | action_params                      |
       | move_to_element | id: footer-top-cities-san-antonio  |
       | click           |                                    |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value            |
-      | activityLocation | Visitor : Directory |
+      | activityLocation | Visitor : Geocat |
     And the segment call contains parameters
       | prop_key               | prop_value                     |
-      | activityLocation       | Visitor : Directory            |
+      | activityLocation       | Visitor : Geocat               |
       | description            | Top Cities link in footer      |
       | userId                 |                                |
     And we wait "1" seconds for the next page to load
@@ -798,17 +798,17 @@ Feature:
 
   @geoCatFooterTopCityTampa @geoCatFooter @companyListTreeFooter @companyListTreeRegression @companyListTreeSmoke
   Scenario: User clicks on the footer Tampa top city link on Drupal Company List Page
-    Given user is on the visitor site geocat page
+    Given user is on a visitor site geocat page
     When a user performs actions
       | action_method   | action_params                    |
       | move_to_element | id: footer-top-cities-tampa-bay  |
       | click           |                                  |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value            |
-      | activityLocation | Visitor : Directory |
+      | activityLocation | Visitor : Geocat |
     And the segment call contains parameters
       | prop_key               | prop_value                     |
-      | activityLocation       | Visitor : Directory            |
+      | activityLocation       | Visitor : Geocat               |
       | description            | Top Cities link in footer      |
       | userId                 |                                |
     And we wait "1" seconds for the next page to load
@@ -816,17 +816,17 @@ Feature:
 
   @geoCatFooterSegmentJoinForFree @geoCatFooter @companyListTreeFooter @companyListTreeRegression @companyListTreeSmoke
   Scenario: User clicks on the footer-left Join For Free icon on Drupal Company List Page
-    Given user is on the visitor site geocat page
+    Given user is on a visitor site geocat page
     When a user performs actions
       | action_method   | action_params                |
       | move_to_element | css: #footer--join-for-free  |
       | click           |                              |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value            |
-      | activityLocation | Visitor : Directory |
+      | activityLocation | Visitor : Geocat |
     And the segment call contains parameters
       | prop_key               | prop_value                        |
-      | activityLocation       | Visitor : Directory               |
+      | activityLocation       | Visitor : Geocat                  |
       | description            | Join For Free link in footer      |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
@@ -834,17 +834,17 @@ Feature:
 
   @geoCatFooterSegmentCompanyList @geoCatFooter @companyListTreeFooter @companyListTreeRegression @companyListTreeSmoke
   Scenario: User clicks on the footer-left Company List icon on Drupal Company List Page
-    Given user is on the visitor site geocat page
+    Given user is on a visitor site geocat page
     When a user performs actions
       | action_method   | action_params                    |
       | move_to_element | id: footer--find-local-business  |
       | click           |                                  |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value            |
-      | activityLocation | Visitor : Directory |
+      | activityLocation | Visitor : Geocat |
     And the segment call contains parameters
       | prop_key               | prop_value                             |
-      | activityLocation       | Visitor : Directory                    |
+      | activityLocation       | Visitor : Geocat                       |
       | description            | Find Local Businesses link in footer   |
       | userId                 |                                        |
     And we wait "1" seconds for the next page to load
@@ -852,17 +852,17 @@ Feature:
 
   @geoCatFooterSegmentNearMe @geoCatFooter @companyListTreeFooter @companyListTreeRegression @companyListTreeSmoke
   Scenario: User clicks on the footer-left Near Me icon on Drupal Company List Page
-    Given user is on the visitor site geocat page
+    Given user is on a visitor site geocat page
     When a user performs actions
       | action_method   | action_params      |
       | move_to_element | id: footer--nearme |
       | click           |                    |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value            |
-      | activityLocation | Visitor : Directory |
+      | activityLocation | Visitor : Geocat |
     And the segment call contains parameters
       | prop_key               | prop_value                        |
-      | activityLocation       | Visitor : Directory               |
+      | activityLocation       | Visitor : Geocat                  |
       | description            | Services Near Me link in footer   |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
@@ -870,17 +870,17 @@ Feature:
 
   @geoCatFooterSegmentHowItWorks @geoCatFooter @companyListTreeFooter @companyListTreeRegression @companyListTreeSmoke
   Scenario: User clicks on the footer-left How It Works icon on Drupal Company List Page
-    Given user is on the visitor site geocat page
+    Given user is on a visitor site geocat page
     When a user performs actions
       | action_method   | action_params            |
       | move_to_element | id: footer--how-it-works |
       | click           |                          |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value            |
-      | activityLocation | Visitor : Directory |
+      | activityLocation | Visitor : Geocat |
     And the segment call contains parameters
       | prop_key               | prop_value                        |
-      | activityLocation       | Visitor : Directory               |
+      | activityLocation       | Visitor : Geocat                  |
       | description            | How It Works link in footer       |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
@@ -888,17 +888,17 @@ Feature:
 
   @geoCatFooterSegmentSolutionCenter @geoCatFooter @companyListTreeFooter @companyListTreeRegression @companyListTreeSmoke
   Scenario: User clicks on the footer-left Solution Center icon on Drupal Company List Page
-    Given user is on the visitor site geocat page
+    Given user is on a visitor site geocat page
     When a user performs actions
       | action_method   | action_params               |
       | move_to_element | id: footer--solution-center |
       | click           |                             |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value            |
-      | activityLocation | Visitor : Directory |
+      | activityLocation | Visitor : Geocat |
     And the segment call contains parameters
       | prop_key               | prop_value                        |
-      | activityLocation       | Visitor : Directory               |
+      | activityLocation       | Visitor : Geocat                  |
       | description            | Solution Center link in footer    |
       | userId                 |                                   |
     And we wait "4" seconds for the next page to load
@@ -906,17 +906,17 @@ Feature:
 
   @geoCatFooterSegmentPhotoGalleries @geoCatFooter @companyListTreeFooter @companyListTreeRegression @companyListTreeSmoke
   Scenario: User clicks on the footer-left Photos icon on Drupal Company List Page
-    Given user is on the visitor site geocat page
+    Given user is on a visitor site geocat page
     When a user performs actions
       | action_method   | action_params               |
       | move_to_element | id: footer--photo-galleries |
       | click           |                             |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value            |
-      | activityLocation | Visitor : Directory |
+      | activityLocation | Visitor : Geocat |
     And the segment call contains parameters
       | prop_key               | prop_value                        |
-      | activityLocation       | Visitor : Directory               |
+      | activityLocation       | Visitor : Geocat                  |
       | description            | Photo Galleries link in footer    |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
@@ -924,17 +924,17 @@ Feature:
 
   @geoCatFooterSegmentVideos @geoCatFooter @companyListTreeFooter @companyListTreeRegression @companyListTreeSmoke
   Scenario: User clicks on the footer-left Videos icon on Drupal Company List Page
-    Given user is on the visitor site geocat page
+    Given user is on a visitor site geocat page
     When a user performs actions
       | action_method   | action_params      |
       | move_to_element | id: footer--video  |
       | click           |                    |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value            |
-      | activityLocation | Visitor : Directory |
+      | activityLocation | Visitor : Geocat |
     And the segment call contains parameters
       | prop_key               | prop_value                        |
-      | activityLocation       | Visitor : Directory               |
+      | activityLocation       | Visitor : Geocat                  |
       | description            | Videos link in footer             |
       | userId                 |                                   |
     And we wait "1" seconds for the next page to load
@@ -942,17 +942,17 @@ Feature:
 
   @geoCatFooterSegmentAnswers @geoCatFooter @companyListTreeFooter @companyListTreeRegression @companyListTreeSmoke
   Scenario: User clicks on the footer-left Answers icon on Drupal Company List Page
-    Given user is on the visitor site geocat page
+    Given user is on a visitor site geocat page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | id: footer--answers |
       | click           |                     |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value            |
-      | activityLocation | Visitor : Directory |
+      | activityLocation | Visitor : Geocat |
     And the segment call contains parameters
       | prop_key               | prop_value                  |
-      | activityLocation       | Visitor : Directory         |
+      | activityLocation       | Visitor : Geocat            |
       | description            | Answers link in footer      |
       | userId                 |                             |
     And we wait "1" seconds for the next page to load
@@ -960,17 +960,17 @@ Feature:
 
   @geoCatFooterSegmentBusinessOwners @geoCatFooter @companyListTreeFooter @companyListTreeRegression @companyListTreeSmoke
   Scenario: User clicks on the footer-left Business Owners icon on Drupal Company List Page
-    Given user is on the visitor site geocat page
+    Given user is on a visitor site geocat page
     When a user performs actions
       | action_method   | action_params               |
       | move_to_element | id: footer--business-owners |
       | click           |                             |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value            |
-      | activityLocation | Visitor : Directory |
+      | activityLocation | Visitor : Geocat |
     And the segment call contains parameters
       | prop_key               | prop_value                         |
-      | activityLocation       | Visitor : Directory                |
+      | activityLocation       | Visitor : Geocat                   |
       | description            | For Business Owners link in footer |
       | userId                 |                                    |
     And we wait "1" seconds for the next page to load
@@ -978,33 +978,33 @@ Feature:
 
   @geoCatFooterSegmentInvestorRelations @geoCatFooter @companyListTreeFooter @companyListTreeRegression @companyListTreeSmoke
   Scenario: User clicks on the footer-left Investor Relations icon on Drupal Company List Page
-    Given user is on the visitor site geocat page
+    Given user is on a visitor site geocat page
     When a user performs actions
       | action_method   | action_params        |
       | move_to_element | id: footer--investor |
       | click           |                      |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value            |
-      | activityLocation | Visitor : Directory |
+      | activityLocation | Visitor : Geocat |
     And the segment call contains parameters
       | prop_key               | prop_value                         |
-      | activityLocation       | Visitor : Directory                |
+      | activityLocation       | Visitor : Geocat                   |
       | description            | Investor Relations link in footer  |
       | userId                 |                                    |
 
   @geoCatFooterSegmentAboutUs @geoCatFooter @companyListTreeFooter @companyListTreeRegression @companyListTreeSmoke
   Scenario: User clicks on the footer-left About Us icon on Drupal Company List Page
-    Given user is on the visitor site geocat page
+    Given user is on a visitor site geocat page
     When a user performs actions
       | action_method   | action_params           |
       | move_to_element | id: footer--about-angie |
       | click           |                         |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value            |
-      | activityLocation | Visitor : Directory |
+      | activityLocation | Visitor : Geocat |
     And the segment call contains parameters
       | prop_key               | prop_value                         |
-      | activityLocation       | Visitor : Directory                |
+      | activityLocation       | Visitor : Geocat                   |
       | description            | About Angie’s List link in footer  |
       | userId                 |                                    |
     And we wait "1" seconds for the next page to load
@@ -1012,33 +1012,33 @@ Feature:
 
   @geoCatFooterSegmentCareers @geoCatFooter @companyListTreeFooter @companyListTreeRegression @companyListTreeSmoke
   Scenario: User clicks on the footer-left Careers icon on Drupal Company List Page
-    Given user is on the visitor site geocat page
+    Given user is on a visitor site geocat page
     When a user performs actions
       | action_method   | action_params           |
       | move_to_element | id: footer--careers     |
       | click           |                         |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value            |
-      | activityLocation | Visitor : Directory |
+      | activityLocation | Visitor : Geocat |
     And the segment call contains parameters
       | prop_key               | prop_value                 |
-      | activityLocation       | Visitor : Directory        |
+      | activityLocation       | Visitor : Geocat           |
       | description            | Careers link in footer     |
       | userId                 |                            |
 
   @geoCatFooterSegmentFAQ @geoCatFooter @companyListTreeFooter @companyListTreeRegression @companyListTreeSmoke
   Scenario: User clicks on the footer-left FAQ icon on Drupal Company List Page
-    Given user is on the visitor site geocat page
+    Given user is on a visitor site geocat page
     When a user performs actions
       | action_method   | action_params       |
       | move_to_element | id: footer--faqs    |
       | click           |                     |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value       |
-      | activityLocation | Visitor : Directory |
+      | activityLocation | Visitor : Geocat |
     And the segment call contains parameters
       | prop_key               | prop_value           |
-      | activityLocation       | Visitor : Directory  |
+      | activityLocation       | Visitor : Geocat     |
       | description            | FAQs link in footer  |
       | userId                 |                      |
     And we wait "1" seconds for the next page to load
@@ -1047,17 +1047,17 @@ Feature:
 
   @geoCatFooterSegmentContactUs @geoCatFooter @companyListTreeFooter @companyListTreeRegression @companyListTreeSmoke
   Scenario: User clicks on the footer-left Contact Us icon on Drupal Company List Page
-    Given user is on the visitor site geocat page
+    Given user is on a visitor site geocat page
     When a user performs actions
       | action_method   | action_params           |
       | move_to_element | id: footer--contact-us  |
       | click           |                         |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value            |
-      | activityLocation | Visitor : Directory |
+      | activityLocation | Visitor : Geocat |
     And the segment call contains parameters
       | prop_key               | prop_value                 |
-      | activityLocation       | Visitor : Directory        |
+      | activityLocation       | Visitor : Geocat           |
       | description            | Contact Us link in footer  |
       | userId                 |                            |
     And we wait "1" seconds for the next page to load
@@ -1065,17 +1065,17 @@ Feature:
 
   @geoCatFooterSegmentJoin @geoCatFooter @companyListTreeFooter @companyListTreeRegression @companyListTreeSmoke
   Scenario: User clicks on the footer-right Join icon on Drupal Company List Page
-    Given user is on the visitor site geocat page
+    Given user is on a visitor site geocat page
     When a user performs actions
       | action_method   | action_params    |
       | move_to_element | id: footer-join  |
       | click           |                  |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value            |
-      | activityLocation | Visitor : Directory |
+      | activityLocation | Visitor : Geocat |
     And the segment call contains parameters
       | prop_key               | prop_value                 |
-      | activityLocation       | Visitor : Directory        |
+      | activityLocation       | Visitor : Geocat           |
       | description            | Join button in footer      |
       | userId                 |                            |
     And we wait "1" seconds for the next page to load
@@ -1083,32 +1083,32 @@ Feature:
 
   @geoCatFooterSegmentTermsOfUse @geoCatFooter @companyListTreeFooter @companyListTreeRegression @companyListTreeSmoke
   Scenario: User clicks on the footer TermsOfUse icon on Drupal Company List Page
-    Given user is on the visitor site geocat page
+    Given user is on a visitor site geocat page
     When a user performs actions
       | action_method   | action_params     |
       | move_to_element | id: footer--terms |
       | click           |                   |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value            |
-      | activityLocation | Visitor : Directory |
+      | activityLocation | Visitor : Geocat |
     And the segment call contains parameters
       | prop_key               | prop_value                   |
-      | activityLocation       | Visitor : Directory          |
+      | activityLocation       | Visitor : Geocat             |
       | description            | Terms of Use link in footer  |
       | userId                 |                              |
 
   @geoCatFooterSegmentPrivacyPolicy @geoCatFooter @companyListTreeFooter @companyListTreeRegression @companyListTreeSmoke
   Scenario: User clicks on the footer Privacy Policy icon on Drupal Company List Page
-    Given user is on the visitor site geocat page
+    Given user is on a visitor site geocat page
     When a user performs actions
       | action_method   | action_params              |
       | move_to_element | id: footer--privacy-policy |
       | click           |                            |
     Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value            |
-      | activityLocation | Visitor : Directory |
+      | activityLocation | Visitor : Geocat |
     And the segment call contains parameters
       | prop_key               | prop_value                    |
-      | activityLocation       | Visitor : Directory           |
+      | activityLocation       | Visitor : Geocat              |
       | description            | Privacy Policy link in footer |
       | userId                 |                               |
