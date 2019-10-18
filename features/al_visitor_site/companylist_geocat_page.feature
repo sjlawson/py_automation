@@ -357,7 +357,7 @@ Feature:
     | visitorPageCategory    | ROOFING                                    |
     | visitorPageGeo         | DENVER                                     |
     | visitorPageGeoCategory | DENVER - ROOFING                           |
-    And we wait "1" seconds for the next page to load
+    And we wait "2" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/"
     And the landing URL contains ".htm"
 
