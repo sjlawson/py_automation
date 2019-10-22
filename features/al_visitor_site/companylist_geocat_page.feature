@@ -1,7 +1,7 @@
 @companyListTree
 Feature:
 
-  @geoCatPageCall @companyListTreeSmoke
+  @geoCatPageCall @companyListTreeRegression @companyListTreeSmoke
   Scenario: Segment pagecall when GeoCat(Denver Roofing) loads
     Given user is on a visitor site geocat page
     When a segment page call is sent for a unique field value pair
