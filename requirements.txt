@@ -4,7 +4,7 @@ axe-selenium-python==2.1.6
 behave==1.2.6
 certifi==2018.4.16
 chardet==3.0.4
-chromedriver-binary==76.0.3809.126
+chromedriver-binary==78.0.3904.70
 click==6.7
 codegen==1.0
 data==0.4
