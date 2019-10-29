@@ -4,6 +4,7 @@ appsuites:
       base_url: http://visitordev3.angieslist.com
       # base_url: http://angieslist.local
       # base_url: https://wwwstg.angieslist.com
+      # base_url: https://visitorstg.angieslist.com
   al_visitor_tball:
       base_url: https://visitor-app-stage5.plat.angieslist.com
   al_member_site:
