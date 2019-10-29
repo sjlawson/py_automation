@@ -516,7 +516,7 @@ Feature:
     And the landing URL contains ".angieslist.com/companylist/window-treatments.htm"
 
   @companyListPageSegmentHeaderExteriorViewAll @companyListPageHeader @companyListTreeHeader @companyListTreeRegression
-  Scenario: User hovers then clicks and clicks on Exterior View All in the header on the CompanyList page
+  Scenario: User hovers then clicks on Exterior View All in the header on the CompanyList page
     Given user is on the visitor site companylist page
     When a user performs actions
       | action_method   | action_params                                              |
@@ -534,7 +534,7 @@ Feature:
     And the landing URL contains ".angieslist.com/companylist/"
 
   @companyListPageSegmentHeaderLawnDecks @companyListPageHeader @companyListTreeHeader @companyListTreeRegression
-  Scenario: User hovers then clicks on and clicks on Decks in the header on the CompanyList page
+  Scenario: User hovers then clicks on Decks in the header on the CompanyList page
     Given user is on the visitor site companylist page
     When a user performs actions
       | action_method   | action_params                                                               |
@@ -2132,7 +2132,7 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/app/signup"
 
-  @companyListFooterSegmentiOS  @companyListFooter
+  @companyListFooterSegmentiOS  @companyListPageFooter
   Scenario: User clicks on the footer-right iOS App icon on Drupal companylist page
     Given user is on the visitor site companylist page
     When a user performs actions
@@ -2148,16 +2148,7 @@ Feature:
       | description      | App Store badge in footer |
       | userId           |                           |
 
-
-  @footeriostest
-  Scenario: iOS test
-    Given user is on the visitor site companylist page
-    When a user performs actions
-      | action_method | action_params |
-      | click | id: footer--app-store |
-    Then we wait "10" seconds for the next page to load
-
-  @companyListFooterSegmentGoogle  @companyListFooter
+  @companyListFooterSegmentGoogle  @companyListPageFooter
   Scenario: User clicks on the footer-right Google App icon on Drupal companylist page
     Given user is on the visitor site companylist page
     When a user performs actions
@@ -2173,7 +2164,7 @@ Feature:
       | description      | Google Play badge in footer |
       | userId           |                             |
 
-  @companyListFooterSegmentTwitter  @companyListFooter
+  @companyListFooterSegmentTwitter  @companyListPageFooter
   Scenario: User clicks on the footer-right Twitter icon on Drupal companylist page
     Given user is on the visitor site companylist page
     When a user performs actions
@@ -2189,11 +2180,11 @@ Feature:
       | description      | Twitter icon in footer |
       | userId           |                        |
 
-  @companyListFooterSegmentFaceBook  @companyListFooter
+  @companyListFooterSegmentFaceBook  @companyListPageFooter
   Scenario: User clicks on the footer-right Facebook icon on Drupal companylist page
     Given user is on the visitor site companylist page
     When a user performs actions
-      | action_method   | action_params        |
+      | action_method   | action_params          |
       | move_to_element | css: #footer--facebook |
       | click           | css: #footer--facebook |
     Then a segment track call is sent for a unique field value pair
@@ -2205,7 +2196,7 @@ Feature:
       | description      | Facebook icon in footer |
       | userId           |                         |
 
-  @companyListFooterSegmentPinterest  @companyListFooter
+  @companyListFooterSegmentPinterest  @companyListPageFooter
   Scenario: User clicks on the footer-right Pinterest icon on Drupal companylist page
     Given user is on the visitor site companylist page
     When a user performs actions
@@ -2221,7 +2212,7 @@ Feature:
       | description      | Pinterest icon in footer |
       | userId           |                          |
 
-  @companyListFooterSegmentYouTube  @companyListFooter
+  @companyListFooterSegmentYouTube  @companyListPageFooter
   Scenario: User clicks on the footer-right YouTube icon on Drupal companylist page
     Given user is on the visitor site companylist page
     When a user performs actions
