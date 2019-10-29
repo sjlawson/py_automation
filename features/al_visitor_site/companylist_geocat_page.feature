@@ -259,8 +259,8 @@ Feature:
     
     @geoCatBodySeeAllCategoriesSearch @geoCatBody @companyListTreeBody @companyListTreeRegression @companyListTreeSmoke
     Scenario: User clicks on See All Categories and selects Cleaning on GeoCat page
-      Given user is on a visitor site geocat page
-      When a user performs actions
+    Given user is on a visitor site geocat page
+    When a user performs actions
     | action_method   | action_params                                                |
     | move_to_element | #geocat-category-select-all                                  |
     | click           | #geocat-category-select-all                                  |
@@ -314,12 +314,12 @@ Feature:
       And the landing URL contains ".angieslist.com/companylist/us/co/aurora/roofing.htm"
 
 @geoCatBreadcrumbs @geoCatBody @companyListTreeBody @companyListTreeRegression @companyListTreeSmoke
- Scenario: User clicks on a Breadcrumpb on the GeoCat page
+ Scenario: User clicks on a Breadcrumb on the GeoCat page
       Given user is on a visitor site geocat page
       When a user performs actions
-      | action_method   | action_params                 |
-      | move_to_element | css: #block-system-main > div > div:nth-child(1) > div.panel-pane.pane-breadcrumb-block.clearfix > div > div > div > a:nth-child(4) |
-      | click           | css: #block-system-main > div > div:nth-child(1) > div.panel-pane.pane-breadcrumb-block.clearfix > div > div > div > a:nth-child(4) |
+      | action_method   | action_params                     |
+      | move_to_element | css: .breadcrumb > a:nth-child(4) |
+      | click           | css: .breadcrumb > a:nth-child(4) |
       Then a segment track call is sent for a unique field value pair
       | unique_field | unique_value          |
       | description  | Breadcrumbs link      |
@@ -336,15 +336,15 @@ Feature:
 
 
 @geoCatBodyFeaturedServiceProviderClick @geoCatBody @companyListTreeBody @companyListTreeRegression @companyListTreeSmoke
-    Scenario: User clicks on an Service Provicer in the Featured SP List on GeoCat page
+    Scenario: User clicks on an Service Provider in the Featured SP List on GeoCat page
       Given user is on a visitor site geocat page
       When a user performs actions
-    | action_method   | action_params                 |
-    | move_to_element | css: #block-system-main > div > div:nth-child(1) > div.panel-pane.pane-al-geocat-featured-sp-list-v2.legacy_width_fix > ul > li:nth-child(1) > div.geocat-featured-sp-list__cta > div.geocat-featured-sp-list__cta-content > h3.geocat-featured-sp-list__cta-title > a.geocat-featured-sp-list__cta-title-link  |
-    | click           | css: #block-system-main > div > div:nth-child(1) > div.panel-pane.pane-al-geocat-featured-sp-list-v2.legacy_width_fix > ul > li:nth-child(1) > div.geocat-featured-sp-list__cta > div.geocat-featured-sp-list__cta-content > h3.geocat-featured-sp-list__cta-title > a.geocat-featured-sp-list__cta-title-link  |
+    | action_method   | action_params                                                                                           |
+    | move_to_element | css: .geocat-featured-sp-list.geocat-featured-sp-list-processed > li > div:nth-child(2) > div > h3 > a  |
+    | click           | css: .geocat-featured-sp-list.geocat-featured-sp-list-processed > li > div:nth-child(2) > div > h3 > a  |
       Then a segment track call is sent for a unique field value pair
-    | unique_field | unique_value                      |
-    | description  | SP name in featured list |
+    | unique_field | unique_value                  |
+    | description  | SP name in featured list      |
       And the segment call contains parameters
     | prop_key               | prop_value                                 |
     | description            | SP name in featured list                   |
@@ -366,8 +366,8 @@ Feature:
   Scenario: User clicks Join button CTA in the body below featured SP's on GeoCat page
     Given user is on a visitor site geocat page
     When a user performs actions
-    | action_method | action_params                         |
-    | click         | #block-system-main > div > div:nth-child(1) > section.geocat-see-all-cta > a > span.geocat-see-all-cta__no-wrap > span  |
+    | action_method | action_params                  |
+    | click         | css: .geocat-see-all-cta > a   |
     Then a segment track call is sent for a unique field value pair
     | unique_field | unique_value        |
     | description  | Join button beneath list of featured SPs |
@@ -385,13 +385,13 @@ Feature:
 
 
 @geoCatBodyArticles @geoCatBody @companyListTreeBody @companyListTreeRegression @companyListTreeSmoke
-  Scenario: User clickks on an Article below the Join CTA in the body on the GeoCat page
+  Scenario: User clicks on an Article below the Join CTA in the body on the GeoCat page
     Given user is on a visitor site geocat page
     When a user performs actions
-    | action_method | action_params                         |
-    | click         | #block-system-main > div > div:nth-child(1) > div.geocat-article-breaker__container.panel-pane.pane-al-geocat-articles.legacy_width_fix > div > div:nth-child(1) > a > h3  |
+    | action_method | action_params                                 |
+    | click         | css: .geocat-article-breaker__row > div > a   |
     Then a segment track call is sent for a unique field value pair
-    | unique_field | unique_value        |
+    | unique_field | unique_value                    |
     | description  | Solution Center helpful article |
     And the segment call contains parameters
     | prop_key                 | prop_value          |
@@ -408,14 +408,14 @@ Feature:
 
 
 @geoCatCitiesNearMeLink @geoCatBody @companyListTreeBody @companyListTreeRegression @companyListTreeSmoke
-  Scenario: User clicks on the Cities Near Me below Articles is clicked on GeoCat page
+  Scenario: User clicks on the Cities Near Me below Articles on GeoCat page
     Given user is on a visitor site geocat page
     When a user performs actions
-    | action_method | action_params                  |
-    | click         | #mini-panel-geocat_near_me_and_zip_codes > div > div > section > div > ul > li:nth-child(1) > a  |
+    | action_method | action_params                                     |
+    | click         | css: .geocat-near-me__list > li:nth-child(1) > a  |
     Then a segment track call is sent for a unique field value pair
     | unique_field | unique_value        |
-    | description  | Near Me city link |
+    | description  | Near Me city link   |
     And the segment call contains parameters
     | prop_key                 | prop_value          |
     | description              | Near Me city link|
@@ -455,21 +455,21 @@ Feature:
   Scenario: User clicks on a Service Provider in SP Directory below SP Reviews on GeoCat page
     Given user is on a visitor site geocat page
     When a user performs actions
-    | action_method | action_params                         |
-    | click         | #geocat-full-sp-list > div > div.geocat-full-sp-list__dropdown-menu.al-dropdown-menu > ul:nth-child(3) > li:nth-child(2) > p > a  |
+    | action_method | action_params                                    |
+    | click         | css: .geocat-full-sp-list__sp-list > li > p > a  |
     Then a segment track call is sent for a unique field value pair
-    | unique_field | unique_value        |
+    | unique_field | unique_value         |
     | description  | SP name in directory |
     And the segment call contains parameters
-    | prop_key                 | prop_value          |
+    | prop_key                 | prop_value           |
     | description              | SP name in directory |
-    | activityLocation         | Visitor : GeoCat    |
-    | marketId                 | 27                  |
-    | userId                   |                     |
-    | visitorPageCategory      | ROOFING             |
-    | serviceProviderId        |                     |
-    | visitorPageGeo           | DENVER              |
-    | visitorPageGeoCategory   | DENVER - ROOFING    |
+    | activityLocation         | Visitor : GeoCat     |
+    | marketId                 | 27                   |
+    | userId                   |                      |
+    | visitorPageCategory      | ROOFING              |
+    | serviceProviderId        |                      |
+    | visitorPageGeo           | DENVER               |
+    | visitorPageGeoCategory   | DENVER - ROOFING     |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist"
     And the landing URL contains ".htm"
@@ -488,9 +488,9 @@ Feature:
   Scenario: User clicks on the Next link in SP Directory below SP Reviews on GeoCat page
     Given user is on a visitor site geocat page
     When a user performs actions
-    | action_method   | action_params                 |
-    | move_to_element | #geocat-full-sp-list > div > div.geocat-full-sp-list__dropdown-menu.al-dropdown-menu > div:nth-child(2) > ul > li.pager-next.right-caret > a |
-    | click           | #geocat-full-sp-list > div > div.geocat-full-sp-list__dropdown-menu.al-dropdown-menu > div:nth-child(2) > ul > li.pager-next.right-caret > a |
+    | action_method   | action_params                    |
+    | move_to_element | css: .pager-next.right-caret > a |
+    | click           | css: .pager-next.right-caret > a |
     Then we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/denver/roofing.htm?page=1"
 
@@ -499,13 +499,13 @@ Feature:
   Scenario: User clicks on the Previous link in SP Directory below SP Reviews on GeoCat page
     Given user is on a visitor site geocat page
     When a user performs actions
-    | action_method   | action_params                 |
-    | move_to_element | #geocat-full-sp-list > div > div.geocat-full-sp-list__dropdown-menu.al-dropdown-menu > div:nth-child(2) > ul > li.pager-next.right-caret > a |
-    | click           | #geocat-full-sp-list > div > div.geocat-full-sp-list__dropdown-menu.al-dropdown-menu > div:nth-child(2) > ul > li.pager-next.right-caret > a |
+    | action_method   | action_params                    |
+    | move_to_element | css: .pager-next.right-caret > a |
+    | click           | css: .pager-next.right-caret > a |
     And a user performs actions
     | action_method   | action_params                 |
-    | move_to_element | #geocat-full-sp-list > div > div.geocat-full-sp-list__dropdown-menu.al-dropdown-menu > div:nth-child(2) > ul > li.pager-previous.left-caret > a |
-    | click           | #geocat-full-sp-list > div > div.geocat-full-sp-list__dropdown-menu.al-dropdown-menu > div:nth-child(2) > ul > li.pager-previous.left-caret > a |
+    | move_to_element | css: .pager-previous.left-caret > a |
+    | click           | css: .pager-previous.left-caret > a |
     Then we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/denver/roofing.htm"
 
@@ -513,8 +513,8 @@ Feature:
   Scenario: User clicks on a GeoTask Link below the SP Directory on GeoCat page
     Given user is on a visitor site geocat page
     When a user performs actions
-    | action_method | action_params                         |
-    | click         | css: #block-system-main > div > div:nth-child(1) > section.geocat-related-to.panel-pane.pane-al-geocat-related-v2 > div > div.geocat-related-to__tasks-wrapper.half > div:nth-child(3) > a |
+    | action_method | action_params                                                      |
+    | click         | css: .geocat-related-to__tasks-wrapper.half > div:nth-child(3) > a |
     Then a segment track call is sent for a unique field value pair
     | unique_field | unique_value         |
     | description  | GeoTask project link |
@@ -536,8 +536,8 @@ Feature:
   Scenario: User clicks on a Related GeoCat Link below the SP Directory on GeoCat page
     Given user is on a visitor site geocat page
     When a user performs actions
-    | action_method | action_params                         |
-    | click         | css: #block-system-main > div > div:nth-child(1) > section.geocat-related-to.panel-pane.pane-al-geocat-related-v2 > div > div.geocat-related-to__cats-wrapper.half > div:nth-child(2) > a |
+    | action_method | action_params                                                     |
+    | click         | css: .geocat-related-to__cats-wrapper.half > div:nth-child(2) > a |
     Then a segment track call is sent for a unique field value pair
     | unique_field | unique_value        |
     | description  | Related GeoCat link |
