@@ -47,7 +47,7 @@ Feature:
       | path                  | /companylist/eye-care.htm                                                |
       | referrer              |                                                                          |
       | search                |                                                                          |
-      | srCtaDisplayed        | false                                                                    |
+      | srCtaDisplayed        | false                                                                   |
       | title                 | Local Eye Doctors - Find a Top-Rated Eye Doctor on Angie's List          |
       | url                   |                                                                          |
       | userId                |                                                                          |
@@ -938,7 +938,7 @@ Feature:
     And the segment call contains parameters
       | prop_key         | prop_value                        |
       | activityLocation | Visitor : CatNoGeo                |
-      | descripti        | More menu category link in header |
+      | description      | More menu category link in header |
       | userId           |                                   |
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/companylist/locksmiths.htm"
