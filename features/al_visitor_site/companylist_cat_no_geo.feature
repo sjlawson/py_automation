@@ -30,6 +30,7 @@ Feature:
       | userType              | Visitor - New                                                                    |
       | visitorPageCategory   | DRYWALL                                                                          |
 
+## TODO-The srCtaDisplayed prop_value needs researched and added back in this test
   @catNoGeoPageCallNonOverlap @companyTreeDaily
   Scenario: a user lands the CatNoGeo page that is an SR overlap category
     Given user is on a visitor site non-overlap catnogeo page
@@ -47,7 +48,7 @@ Feature:
       | path                  | /companylist/eye-care.htm                                                |
       | referrer              |                                                                          |
       | search                |                                                                          |
-      | srCtaDisplayed        | false                                                                   |
+      | srCtaDisplayed        |                                                                          |
       | title                 | Local Eye Doctors - Find a Top-Rated Eye Doctor on Angie's List          |
       | url                   |                                                                          |
       | userId                |                                                                          |
