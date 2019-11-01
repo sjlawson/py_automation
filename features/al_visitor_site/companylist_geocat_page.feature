@@ -654,6 +654,41 @@ Feature:
       | visitorPageCategory    | ROOFING                            |
       | visitorPageGeo         | DENVER                             |
       | visitorPageGeoCategory | DENVER - ROOFING                   |
+
+@geoCatReviewsReadMoreReadLess @geoCatBody @companyListTreeRegression @companyListTreeSmoke
+  Scenario: Click on the Read More/Read Less in the Reviews
+    Given user is on a visitor site geocat page
+    When a user performs actions
+      | action_method | action_params       |
+      | click         | css: .read-more > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value                     |
+      | description  | Read more link in sample reviews |
+    Then the segment call contains parameters
+      | prop_key               | prop_value                       |
+      | activityLocation       | Visitor : GeoCat                 |
+      | description            | Read more link in sample reviews |
+      | marketId               | 27                               |
+      | userId                 |                                  |
+      | visitorPageCategory    | ROOFING                          |
+      | visitorPageGeo         | DENVER                           |
+      | visitorPageGeoCategory | DENVER - ROOFING                 |
+    Then we wait "1" seconds for the next page to load
+    When a user performs actions
+      | action_method | action_params       |
+      | click         | css: .read-less > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value                     |
+      | description  | Read less link in sample reviews |
+    And the segment call contains parameters
+      | prop_key               | prop_value                       |
+      | activityLocation       | Visitor : GeoCat                 |
+      | description            | Read less link in sample reviews |
+      | marketId               | 27                               |
+      | userId                 |                                  |
+      | visitorPageCategory    | ROOFING                          |
+      | visitorPageGeo         | DENVER                           |
+      | visitorPageGeoCategory | DENVER - ROOFING                 |
       
   @geoCatSPDirectoryClick @geoCatBody @companyListTreeBody @companyListTreeRegression @companyListTreeSmoke
   Scenario: User clicks on a Service Provider in SP Directory below SP Reviews on GeoCat page
