@@ -433,10 +433,10 @@ Feature:
   Scenario: User clicks on the Join button CTA in the SP Directory below SP Reviews the on GeoCat page
     Given user is on a visitor site geocat page
     When a user performs actions
-    | action_method | action_params                         |
+    | action_method | action_params          |
     | click         | #join-angies-list-now  |
     Then a segment track call is sent for a unique field value pair
-    | unique_field | unique_value        |
+    | unique_field | unique_value                           |
     | description  | Join link within directory list of SPs |
     And the segment call contains parameters
     | prop_key                 | prop_value          |
@@ -450,6 +450,175 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/app/signup"
 
+  @geoCatFirstOfferClick @geoCatBody @companyListTreeRegression @companyListTreeSmoke
+  Scenario: Click on first offer - GeoCat page
+    Given user is on a visitor site geocat page
+    When a user performs actions
+      | action_method | action_params                                                 |
+      | click         | css: #offers > div.owl-wrapper-outer > div > div:nth-child(1) |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value  |
+      | description  | View Deal CTA |
+    And the segment call contains parameters
+      | prop_key               | prop_value           |
+      | activityLocation       | Visitor : GeoCat     |
+      | dealsDisplayed         |                      |
+      | description            | View Deal CTA        |
+      | gradeDisplayed         |                      |
+      | marketId               | 27                   |
+      | offerId                |                      |
+      | priceDisplayed         |                      |
+      | rank                   |                      |
+      | serviceProviderId      |                      |
+      | userId                 |                      |
+      | visitorPageCategory    | ROOFING              |
+      | visitorPageGeo         | DENVER               |
+      | visitorPageGeoCategory | DENVER - ROOFING     |
+
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/app/offer/search/"
+    And the landing URL contains "placementType=Web_GeoCat"
+
+  @geoCatFirstOfferButtonClick @geoCatBody @companyListTreeRegression
+  Scenario: Click on button - first offer - GeoCat page
+    Given user is on a visitor site geocat page
+    When a user performs actions
+      | action_method | action_params                                      |
+      | click         | css: #offer-105692 > a > div:nth-child(5) > button |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value  |
+      | description  | View Deal CTA |
+    And the segment call contains parameters
+      | prop_key               | prop_value           |
+      | activityLocation       | Visitor : GeoCat |
+      | dealsDisplayed         |                      |
+      | description            | View Deal CTA        |
+      | gradeDisplayed         |                      |
+      | marketId               | 27                   |
+      | offerId                |                      |
+      | priceDisplayed         |                      |
+      | rank                   |                      |
+      | serviceProviderId      |                      |
+      | userId                 |                      |
+      | visitorPageCategory    | ROOFING              |
+      | visitorPageGeo         | DENVER               |
+      | visitorPageGeoCategory | DENVER - ROOFING     |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/app/offer/search/"
+    And the landing URL contains "placementType=Web_GeoCat"
+
+  @geoCatSecondOfferClick @geoCatBody @companyListTreeRegression
+  Scenario: Click on button - second offer - GeoCat page
+    Given user is on a visitor site geocat page
+    When a user performs actions
+      | action_method | action_params                                                 |
+      | click         | css: #offers > div.owl-wrapper-outer > div > div:nth-child(2) |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value  |
+      | description  | View Deal CTA |
+    And the segment call contains parameters
+      | prop_key               | prop_value           |
+      | activityLocation       | Visitor : GeoCat     |
+      | dealsDisplayed         |                      |
+      | description            | View Deal CTA        |
+      | gradeDisplayed         |                      |
+      | marketId               | 27                   |
+      | offerId                |                      |
+      | priceDisplayed         |                      |
+      | rank                   |                      |
+      | serviceProviderId      |                      |
+      | userId                 |                      |
+      | visitorPageCategory    | ROOFING              |
+      | visitorPageGeo         | DENVER               |
+      | visitorPageGeoCategory | DENVER - ROOFING     |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/app/offer/search/"
+    And the landing URL contains "placementType=Web_GeoCat"
+
+  @geoCatThirdOfferClick @geoCatBody @companyListTreeRegression
+  Scenario: Click on button - third offer - GeoCat page
+    Given user is on a visitor site geocat page
+    When a user performs actions
+      | action_method | action_params                                                 |
+      | click         | css: #offers > div.owl-wrapper-outer > div > div:nth-child(3) |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value  |
+      | description  | View Deal CTA |
+    And the segment call contains parameters
+      | prop_key               | prop_value           |
+      | activityLocation       | Visitor : GeoCat     |
+      | dealsDisplayed         |                      |
+      | description            | View Deal CTA        |
+      | gradeDisplayed         |                      |
+      | marketId               | 27                   |
+      | offerId                |                      |
+      | priceDisplayed         |                      |
+      | rank                   |                      |
+      | serviceProviderId      |                      |
+      | userId                 |                      |
+      | visitorPageCategory    | ROOFING              |
+      | visitorPageGeo         | DENVER               |
+      | visitorPageGeoCategory | DENVER - ROOFING     |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/app/offer/search/"
+    And the landing URL contains "placementType=Web_GeoCat"
+
+  @geoCatSeeAllDealButtonClick @geoCatBody @companyListTreeRegression @companyListTreeSmoke
+  Scenario: Click on button - See All Deals - GeoCat page
+    Given user is on a visitor site geocat page
+    When a user performs actions
+      | action_method | action_params       |
+      | click         | css: #see-all-deals |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value         |
+      | description  | See All Deals button |
+    And the segment call contains parameters
+      | prop_key               | prop_value           |
+      | activityLocation       | Visitor : GeoCat     |
+      | dealsDisplayed         |                      |
+      | description            | See All Deals button |
+      | marketId               | 27                   |
+      | userId                 |                      |
+      | visitorPageCategory    | ROOFING              |
+      | visitorPageGeo         | DENVER               |
+      | visitorPageGeoCategory | DENVER - ROOFING     |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/app/offer/search"
+
+  @geoCatDealsScrollButtonClick @geoCatBody @companyListTreeRegression
+  Scenario: Click on Deals scroll button on GeoCat page
+    Given user is on a visitor site geocat page
+    When a user performs actions
+      | action_method | action_params                                            |
+      | click         | css: #offers > div:nth-child(2) > div > div:nth-child(2) |
+      | click         | css: #offers > div:nth-child(2) > div > div:nth-child(3) |
+      | click         | css: #offers > div:nth-child(2) > div > div:nth-child(2) |
+      | click         | css: #offers > div:nth-child(2) > div > div:nth-child(1) |
+      | click         | css: #offers > div:nth-child(2) > div > div:nth-child(2) |
+    Then we wait "1" seconds for the next page to load
+    When a user performs actions
+      | action_method | action_params                                                 |
+      | click         | css: #offers > div.owl-wrapper-outer > div > div:nth-child(5) |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value  |
+      | description  | View Deal CTA |
+    And the segment call contains parameters
+      | prop_key               | prop_value           |
+      | activityLocation       | Visitor : GeoCat     |
+      | dealsDisplayed         |                      |
+      | description            | View Deal CTA        |
+      | gradeDisplayed         |                      |
+      | marketId               | 27                   |
+      | offerId                |                      |
+      | priceDisplayed         |                      |
+      | rank                   |                      |
+      | serviceProviderId      |                      |
+      | userId                 |                      |
+      | visitorPageCategory    | ROOFING              |
+      | visitorPageGeo         | DENVER               |
+      | visitorPageGeoCategory | DENVER - ROOFING     |
+    And we wait "1" seconds for the next page to load
+    And the landing URL contains ".angieslist.com/app/offer/search"
 
   @geoCatSPDirectoryClick @geoCatBody @companyListTreeBody @companyListTreeRegression @companyListTreeSmoke
   Scenario: User clicks on a Service Provider in SP Directory below SP Reviews on GeoCat page
