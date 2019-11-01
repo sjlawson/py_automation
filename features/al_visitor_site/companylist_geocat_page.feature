@@ -490,7 +490,7 @@ Feature:
       | description  | View Deal CTA |
     And the segment call contains parameters
       | prop_key               | prop_value           |
-      | activityLocation       | Visitor : GeoCat |
+      | activityLocation       | Visitor : GeoCat     |
       | dealsDisplayed         |                      |
       | description            | View Deal CTA        |
       | gradeDisplayed         |                      |
@@ -620,6 +620,41 @@ Feature:
     And we wait "1" seconds for the next page to load
     And the landing URL contains ".angieslist.com/app/offer/search"
 
+  @geoCatSPDescriptionReadMoreReadLess @geoCatBody @companyListTreeRegression @companyListTreeSmoke
+  Scenario: Click on the Read More/Read Less in the SP Business Description
+    Given user is on a visitor site geocat page
+    When a user performs actions
+      | action_method | action_params          |
+      | click         | css: .sp-read-more > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value                       |
+      | description  | Read more link in Featured SP list |
+    Then the segment call contains parameters
+      | prop_key               | prop_value                         |
+      | activityLocation       | Visitor : GeoCat                   |
+      | description            | Read more link in Featured SP list |
+      | marketId               | 27                                 |
+      | userId                 |                                    |
+      | visitorPageCategory    | ROOFING                            |
+      | visitorPageGeo         | DENVER                             |
+      | visitorPageGeoCategory | DENVER - ROOFING                   |
+    Then we wait "1" seconds for the next page to load
+    When a user performs actions
+      | action_method | action_params          |
+      | click         | css: .sp-read-less > a |
+    Then a segment track call is sent for a unique field value pair
+      | unique_field | unique_value                       |
+      | description  | Read less link in Featured SP list |
+    And the segment call contains parameters
+      | prop_key               | prop_value                         |
+      | activityLocation       | Visitor : GeoCat                   |
+      | description            | Read less link in Featured SP list |
+      | marketId               | 27                                 |
+      | userId                 |                                    |
+      | visitorPageCategory    | ROOFING                            |
+      | visitorPageGeo         | DENVER                             |
+      | visitorPageGeoCategory | DENVER - ROOFING                   |
+      
   @geoCatSPDirectoryClick @geoCatBody @companyListTreeBody @companyListTreeRegression @companyListTreeSmoke
   Scenario: User clicks on a Service Provider in SP Directory below SP Reviews on GeoCat page
     Given user is on a visitor site geocat page
