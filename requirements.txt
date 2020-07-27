@@ -12,7 +12,7 @@ decorator==4.3.2
 dominate==2.3.1
 EasyProcess==0.2.5
 Faker==1.0.2
-Flask==0.12.2
+Flask==1.0
 Flask-Bootstrap==3.3.7.1
 Flask-Script==2.0.6
 funcsigs==1.0.2
